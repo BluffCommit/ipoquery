@@ -45,6 +45,9 @@ TRACKED = INITIAL | AMEND | PRICED | WITHDRAWN | EFFECTIVE | LISTING | DRAFT | M
 STALLED_AFTER_DAYS = 270       # no filing for this long and not priced: shown as stalled
 REFRESH_PENDING_DAYS = 540     # stop re-checking a pending deal after this long without activity
 REFRESH_PRICED_DAYS = 45       # keep re-checking a priced deal this long
+UNPRICED_AFTER_DAYS = 30       # cleared by the SEC this long ago with no pricing: not a normal IPO any more
+MAX_HISTORY_FILES = 5          # companies with more pages of filing history than this are long-established
+STATE_VERSION = 2              # bump to make every run start again from the index
 
 
 class NotFound(Exception):
@@ -145,7 +148,7 @@ def filing_url(cik, accession, document):
 def sector_for(sic):
     """Map a 4-digit SIC code to one of a few plain sectors."""
     if not sic:
-        return "Other"
+        return "Not yet classified"
     two = sic // 100
     if sic in (2833, 2834, 2835, 2836, 8731):
         return "Biotech and pharma"
@@ -165,15 +168,19 @@ def sector_for(sic):
         return "Telecom and media"
     if 52 <= two <= 59 or two in (20, 21, 22, 23, 31, 70, 79):
         return "Consumer and retail"
+    if two in (72, 75, 76, 82):
+        return "Consumer and retail"
     if 15 <= two <= 17 or 24 <= two <= 39 or 40 <= two <= 47 or two in (50, 51):
         return "Industrials"
+    if two in (73, 81, 87, 89):
+        return "Business services"
     return "Other"
 
 
 def kind_for(sic, name):
     """company, spac (blank-check shell) or fund (commodity or crypto trust, ETF)."""
-    if sic == 6770:
-        return "spac"
+    if sic == 6770 or re.search(r"\bacquisition\b", name, re.I):
+        return "spac"                                  # new registrants named "... Acquisition ..." are shells
     if sic == 6221 or re.search(r"\bETF\b", name, re.I):
         return "fund"
     if sic in (6199, 6211, 6722, 6726) and re.search(r"\b(TRUST|FUND)\b", name, re.I):
@@ -255,7 +262,10 @@ def classify(sub, today):
     last_activity = cycle["events"][-1]["date"]
     idle_days = (today - dt.date.fromisoformat(last_activity)).days
     drafts = [r["date"] for r in rows if r["form"] in DRAFT and r["date"] <= cycle["start"]]
-    business = ((sub.get("addresses") or {}).get("business") or {})
+    addresses = sub.get("addresses") or {}
+    business, mailing = addresses.get("business") or {}, addresses.get("mailing") or {}
+    location = next((a.get(k) for a in (business, mailing) for k in ("stateOrCountryDescription", "stateOrCountry", "country", "foreignStateTerritory") if a.get(k)), "")
+    cleared_days = (today - dt.date.fromisoformat(cycle["effective"])).days if cycle["effective"] else 0
     sic = int(sub["sic"]) if str(sub.get("sic") or "").isdigit() else 0
     documents = [e for e in cycle["events"] if e["form"] in INITIAL | AMEND | PRICED]
     record = {
@@ -267,11 +277,12 @@ def classify(sub, today):
         "industry": sub.get("sicDescription") or "",
         "sector": sector_for(sic),
         "kind": kind_for(sic, name),
-        "location": business.get("stateOrCountryDescription") or business.get("stateOrCountry") or "",
+        "location": location,
         "foreign": bool(business.get("isForeignLocation")) or cycle["form"] == "F-1",
         "form": cycle["form"],
         "stage": stage,
         "stalled": stage in ("filed", "amended") and idle_days > STALLED_AFTER_DAYS,
+        "unpriced": stage == "effective" and cleared_days > UNPRICED_AFTER_DAYS,
         "first_filed": cycle["start"],
         "draft_date": min(drafts) if drafts else None,
         "amendments": cycle["amendments"],
@@ -287,6 +298,31 @@ def classify(sub, today):
         "edgar_url": f"https://www.sec.gov/edgar/browse/?CIK={cik}",
     }
     return record, None
+
+
+def add_older_filings(fetcher, sub):
+    """A busy company's history is split over several files. Merge the older ones in, if there are only a few."""
+    filings = sub.get("filings") or {}
+    files = filings.get("files") or []
+    if not files or len(files) > MAX_HISTORY_FILES:
+        return
+    recent = filings.setdefault("recent", {})
+    columns = ("form", "filingDate", "accessionNumber", "primaryDocument", "acceptanceDateTime")
+    merged = {c: list(recent.get(c) or []) for c in columns}
+    for entry in files:
+        try:
+            older = json.loads(fetcher.get("https://data.sec.gov/submissions/" + entry["name"]))
+        except (NotFound, KeyError, TypeError, json.JSONDecodeError):
+            return                                     # leave "files" in place: classify() will skip the company
+        older = older if "form" in older else ((older.get("filings") or {}).get("recent") or {})
+        count = len(older.get("form") or [])
+        if not count or len(older.get("filingDate") or []) != count:
+            return
+        for c in columns:
+            values = older.get(c) or []
+            merged[c] += values if len(values) == count else [""] * count
+    recent.update(merged)
+    filings["files"] = []
 
 
 def is_active(record, today):
@@ -310,7 +346,8 @@ def load_json(path, default):
 
 def run(fetcher, today, lookback_days, state_path, out_dir, force_index=False, log=print):
     state = load_json(state_path, {})
-    state.setdefault("version", 1)
+    if state.get("version") != STATE_VERSION:
+        state = {"version": STATE_VERSION}             # older or missing state: start again from the index
     state.setdefault("quarters_done", [])
     state.setdefault("index_day", None)
     state.setdefault("skip", {})
@@ -346,18 +383,21 @@ def run(fetcher, today, lookback_days, state_path, out_dir, force_index=False, l
         checked.add(cik)
         try:
             sub = json.loads(fetcher.get(submissions_url(cik)))
+            add_older_filings(fetcher, sub)
         except NotFound:
             return
         except (RuntimeError, json.JSONDecodeError) as error:
             log(f"CIK {cik}: skipped this run ({error})")
             return
         record, reason = classify(sub, today)
+        if record and record["stage"] in ("priced", "withdrawn") and (record["priced_date"] or record["withdrawn_date"]) < cutoff:
+            record, reason = None, "outside_window"     # an old IPO that only surfaced through a later filing
         key = str(cik)
         if record:
             companies[key] = record
             skip.pop(key, None)
         else:
-            skip[key] = reason
+            skip[key] = {"reason": reason, "name": (sub.get("name") or "").strip()}
             companies.pop(key, None)
 
     new = sorted(c for c in candidates if str(c) not in companies and str(c) not in skip)
@@ -382,7 +422,10 @@ def run(fetcher, today, lookback_days, state_path, out_dir, force_index=False, l
         payload = {"source": "SEC EDGAR", "data_changed": today.isoformat(), "counts": counts, "ipos": ipos}
         json_path.parent.mkdir(parents=True, exist_ok=True)
         json_path.write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-        (out_dir / "index.html").write_text(render_page(payload), encoding="utf-8")
+        keep = ("name", "tickers", "sector", "kind", "location", "stage", "stalled", "unpriced", "first_filed", "draft_date", "amendments",
+                "marketing", "effective_date", "priced_date", "withdrawn_date", "last_activity", "latest", "edgar_url")
+        page_data = {"data_changed": payload["data_changed"], "ipos": [{k: r[k] for k in keep} for r in ipos]}
+        (out_dir / "index.html").write_text(render_page(page_data), encoding="utf-8")
     Path(state_path).parent.mkdir(parents=True, exist_ok=True)
     Path(state_path).write_text(json.dumps(state, indent=1, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
     log(f"{len(new)} new companies looked up, {len(refreshed)} re-checked, {len(ipos)} tracked, "
@@ -439,37 +482,39 @@ footer{margin-top:18px;font-size:13px;color:var(--ink2);max-width:80ch}
   <div class="tabs" role="group" aria-label="Show" id="tabs"></div>
   <label class="f" for="q">Search<input id="q" type="search" placeholder="Company or ticker"></label>
   <label class="f" for="sector">Sector<select id="sector"><option value="">All sectors</option></select></label>
+  <label class="c"><input id="ticker" type="checkbox"> Has a ticker symbol</label>
   <label class="c"><input id="shells" type="checkbox"> Include blank-check shells and funds</label>
 </div>
 <div class="box"><table>
 <thead><tr><th>Company</th><th>Stage</th><th>First filed</th><th>Amendments</th><th>Latest document</th></tr></thead>
 <tbody id="rows"></tbody>
 </table><div class="none" id="none" hidden>Nothing matches these filters.</div></div>
-<footer>Source: SEC EDGAR filing index and company filing histories. Priced means a final prospectus was filed; the date shown is that filing's date. Stalled means no registration filing for over 270 days. Not investment advice.</footer>
+<footer>Source: SEC EDGAR filing index and company filing histories. Priced means a final prospectus was filed; the date shown is that filing's date. Stalled means no registration filing for over 270 days. Never priced means the SEC cleared the registration more than 30 days ago and no final prospectus followed, which is typical of small offerings sold directly by the company. Not investment advice.</footer>
 </div>
 <script>
 const DATA = /*DATA*/null;
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const day = s => s ? new Date(s + 'T00:00:00Z').toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric', timeZone:'UTC'}) : '';
-const TABS = [['upcoming','Upcoming'],['priced','Priced'],['closed','Withdrawn or stalled']];
-const bucket = r => r.stage === 'priced' ? 'priced' : (r.stage === 'withdrawn' || r.stalled) ? 'closed' : 'upcoming';
-const state = {tab:'upcoming', q:'', sector:'', shells:false};
+const TABS = [['upcoming','Upcoming'],['priced','Priced'],['closed','Withdrawn, stalled or never priced']];
+const bucket = r => r.stage === 'priced' ? 'priced' : (r.stage === 'withdrawn' || r.stalled || r.unpriced) ? 'closed' : 'upcoming';
+const state = {tab:'upcoming', q:'', sector:'', shells:false, ticker:false};
 const all = (DATA && DATA.ipos) || [];
 function stage(r){
   if (r.stage === 'priced') return ['Priced', 'final prospectus ' + day(r.priced_date)];
   if (r.stage === 'withdrawn') return ['Withdrawn', day(r.withdrawn_date)];
   if (r.stalled) return ['Stalled', 'last filing ' + day(r.last_activity)];
+  if (r.unpriced) return ['Cleared, never priced', 'cleared ' + day(r.effective_date)];
   if (r.stage === 'effective') return ['Cleared by the SEC', day(r.effective_date)];
   if (r.stage === 'amended') return ['Amended', 'latest ' + day(r.last_activity) + (r.marketing ? ' · marketing documents filed' : '')];
   return ['Filed', day(r.first_filed)];
 }
 function visible(){
   const q = state.q.trim().toLowerCase();
-  return all.filter(r => bucket(r) === state.tab && (state.shells || r.kind === 'company') && (!state.sector || r.sector === state.sector)
+  return all.filter(r => bucket(r) === state.tab && (state.shells || r.kind === 'company') && (!state.ticker || r.tickers.length) && (!state.sector || r.sector === state.sector)
     && (!q || r.name.toLowerCase().includes(q) || r.tickers.some(t => t.toLowerCase().includes(q))));
 }
 function render(){
-  const base = all.filter(r => state.shells || r.kind === 'company');
+  const base = all.filter(r => (state.shells || r.kind === 'company') && (!state.ticker || r.tickers.length));
   document.getElementById('tabs').innerHTML = TABS.map(([id, label]) =>
     `<button class="tab" data-tab="${id}" aria-pressed="${state.tab === id}">${label} · ${base.filter(r => bucket(r) === id).length}</button>`).join('');
   const rows = visible();
@@ -487,6 +532,7 @@ document.getElementById('tabs').addEventListener('click', e => { const b = e.tar
 document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
 document.getElementById('sector').addEventListener('change', e => { state.sector = e.target.value; render(); });
 document.getElementById('shells').addEventListener('change', e => { state.shells = e.target.checked; render(); });
+document.getElementById('ticker').addEventListener('change', e => { state.ticker = e.target.checked; render(); });
 render();
 </script>
 </body>

@@ -27,6 +27,7 @@ uses no AI model, and needs no paid service.
    | 424B4 | Priced |
    | RW | Withdrawn |
    | nothing for 270 days | Stalled |
+   | EFFECT, then no 424B4 for 30 days | Cleared, never priced |
 
 4. Every run re-checks deals still in motion, so an amendment, pricing or
    withdrawal shows up at the next run (every 6 hours as set; hourly is
@@ -36,12 +37,18 @@ uses no AI model, and needs no paid service.
 Blank-check shells (SPACs) and commodity or crypto trusts also file S-1s. They
 are kept in the data, labelled, and hidden on the page unless you tick the box.
 
+Companies it decides are not IPOs are listed with the reason in
+`data/state.json` under `skip`, so a missing name can be traced.
+
 ## What it cannot tell yet
 
 - **Price range, deal size, exchange.** These are inside the documents. They
   arrive with the next slice, which reads the cover page.
 - **Tiny self-run offerings.** Some S-1 filers are very small companies with no
   underwriter. They look the same as real IPOs until the cover page is read.
+  The "Has a ticker symbol" box on the page is a rough filter in the meantime:
+  it hides most of them, but also hides real deals that have not named a
+  symbol yet.
 
 ## Set it up on GitHub (about ten minutes)
 
@@ -79,7 +86,5 @@ checks a real snapshot of Anthropic's filing history.
 
 ## Status
 
-Tested offline only. The company filing-history format was checked against a
-live EDGAR record. The quarterly index was confirmed to exist at the address
-used, but its contents could not be read from the build environment, so the
-first live run is the real test of that step.
+Running live since Nov 17, 2026. The first run read a year of EDGAR filings in
+about four minutes.

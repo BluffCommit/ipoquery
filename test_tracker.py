@@ -38,10 +38,17 @@ COMPANIES = {
     9000007: ("TESTCO ACQUISITION CORP", "6770", {}, [("S-1", "2026-09-02")]),
     9000008: ("TESTCO FOREIGN LTD", "7374", {"addresses": {"business": {"stateOrCountry": "K3", "stateOrCountryDescription": "Hong Kong", "isForeignLocation": 1}}},
               [("F-1", "2026-08-20"), ("F-1/A", "2026-10-28")]),
-    9000009: ("TESTCO BIG FILER INC", "6021", {"files": [{"name": "CIK0009000009-submissions-001.json"}]}, [("S-1", "2026-10-05")]),
+    9000009: ("TESTCO BIG FILER INC", "6021", {"files": [{"name": f"CIK0009000009-submissions-00{i}.json"} for i in range(1, 7)]}, [("S-1", "2026-10-05")]),
     9000010: ("TESTCO BITCOIN TRUST", "6221", {}, [("S-1", "2026-05-05"), ("S-1/A", "2026-07-01")]),
     9000011: ("TESTCO STALLED INC", "3841", {}, [("S-1", "2025-12-01")]),
     9000012: ("TESTCO EFFECTIVE INC", "6798", {}, [("S-1", "2026-10-01"), ("S-1/A", "2026-11-02"), ("EFFECT", "2026-11-12"), ("8-A12B", "2026-11-12")]),
+    9000013: ("TESTCO II ACQUISITION CORP", "", {}, [("S-1", "2026-10-08")]),
+    9000014: ("TESTCO NEVER PRICED INC", "1040", {}, [("S-1", "2026-06-01"), ("EFFECT", "2026-08-01"), ("424B3", "2026-08-02")]),
+    9000015: ("TESTCO OLD IPO INC", "7372", {}, [("S-1", "2024-01-10"), ("424B4", "2024-02-20"), ("10-K", "2025-03-01"), ("S-1", "2026-09-01")]),
+    9000016: ("TESTCO BUSY IPO INC", "3674", {"older": [("S-1", "2026-05-01"), ("S-1/A", "2026-05-20"), ("EFFECT", "2026-06-10")]},
+              [("424B4", "2026-06-12")] + [("4", "2026-06-15")] * 6),
+    9000017: ("TESTCO UK PLC", "7389", {"addresses": {"business": {"stateOrCountry": None, "stateOrCountryDescription": None, "isForeignLocation": 1, "country": "United Kingdom"}}},
+              [("S-1", "2026-10-12")]),
 }
 
 # Real snapshot: data.sec.gov/submissions/CIK0002130357.json as of Nov 16, 2026 (newest first, as EDGAR returns it).
@@ -70,14 +77,18 @@ def submission(cik, name, sic, extra, filings):
                                   "accessionNumber": [f"{cik:010d}-26-{i:06d}" for i in range(len(newest_first), 0, -1)],
                                   "primaryDocument": ["doc.htm"] * len(newest_first),
                                   "acceptanceDateTime": [d + "T12:00:00.000Z" for _, d in newest_first]},
-                       "files": extra.get("files", [])}}
+                       "files": [{"name": older_name(cik)}] if "older" in extra else extra.get("files", [])}}
     return sub
+
+
+def older_name(cik):
+    return f"CIK{cik:010d}-submissions-001.json"
 
 
 def build_fixtures(folder, companies):
     folder.mkdir(parents=True, exist_ok=True)
     rows = {}
-    everyone = {cik: (name, filings) for cik, (name, _, _, filings) in companies.items()}
+    everyone = {cik: (name, extra.get("older", []) + filings) for cik, (name, _, extra, filings) in companies.items()}
     recent = ANTHROPIC["filings"]["recent"]
     everyone[2130357] = ("Anthropic, PBC", list(zip(recent["form"], recent["filingDate"])))
     for cik, (name, filings) in everyone.items():
@@ -91,6 +102,11 @@ def build_fixtures(folder, companies):
         (folder / tracker.Fetcher.fixture_name(tracker.index_url(year, quarter))).write_bytes(text.encode("latin-1"))
     for cik, (name, sic, extra, filings) in companies.items():
         (folder / tracker.Fetcher.fixture_name(tracker.submissions_url(cik))).write_text(json.dumps(submission(cik, name, sic, extra, filings)))
+        if "older" in extra:      # the second page of a busy company's history: bare columns, newest first
+            newest_first = list(reversed(extra["older"]))
+            page = {"form": [f for f, _ in newest_first], "filingDate": [d for _, d in newest_first],
+                    "accessionNumber": [f"{cik:010d}-25-{i:06d}" for i in range(len(newest_first), 0, -1)], "primaryDocument": ["old.htm"] * len(newest_first)}
+            (folder / tracker.Fetcher.fixture_name("https://data.sec.gov/submissions/" + older_name(cik))).write_text(json.dumps(page))
     (folder / tracker.Fetcher.fixture_name(tracker.submissions_url(2130357))).write_text(json.dumps(ANTHROPIC))
 
 
@@ -113,20 +129,25 @@ def main():
         saved = json.loads(state.read_text())
         c, skip = saved["companies"], saved["skip"]
         check("index files read", len(saved["quarters_done"]), 4)
-        check("companies tracked", result["tracked"], 11)
+        check("companies tracked", result["tracked"], 15)
         check("new filing", (c["9000001"]["stage"], c["9000001"]["first_filed"], c["9000001"]["sector"]), ("filed", "2026-11-03", "Software and internet"))
         check("amended, with drafts", (c["9000002"]["stage"], c["9000002"]["amendments"], c["9000002"]["draft_date"], c["9000002"]["sector"]), ("amended", 2, "2026-05-01", "Biotech and pharma"))
         check("priced; later follow-on ignored", (c["9000003"]["stage"], c["9000003"]["priced_date"], c["9000003"]["first_filed"], c["9000003"]["tickers"]), ("priced", "2026-09-18", "2026-07-10", ["TPRC"]))
         check("priced: latest document is the final prospectus", c["9000003"]["latest"]["form"], "424B4")
         check("withdrawn", (c["9000004"]["stage"], c["9000004"]["withdrawn_date"]), ("withdrawn", "2026-06-01"))
         check("refiled after withdrawal", (c["9000005"]["stage"], c["9000005"]["first_filed"], c["9000005"]["prior_attempts"]), ("filed", "2026-10-01", 1))
-        check("already public is skipped", skip.get("9000006"), "already_public")
+        check("already public is skipped", skip["9000006"], {"reason": "already_public", "name": "TESTCO ALREADY PUBLIC INC"})
         check("blank-check shell flagged", (c["9000007"]["kind"], c["9000007"]["stage"]), ("spac", "filed"))
         check("foreign issuer", (c["9000008"]["stage"], c["9000008"]["form"], c["9000008"]["foreign"], c["9000008"]["location"]), ("amended", "F-1", True, "Hong Kong"))
-        check("established filer is skipped", skip.get("9000009"), "established_filer")
+        check("established filer is skipped", skip["9000009"]["reason"], "established_filer")
         check("crypto trust flagged as fund", c["9000010"]["kind"], "fund")
         check("stalled", (c["9000011"]["stage"], c["9000011"]["stalled"]), ("filed", True))
         check("declared effective", (c["9000012"]["stage"], c["9000012"]["effective_date"], c["9000012"]["listing_date"], c["9000012"]["sector"]), ("effective", "2026-11-12", "2026-11-12", "Real estate"))
+        check("shell spotted by name, no industry code yet", (c["9000013"]["kind"], c["9000013"]["sector"]), ("spac", "Not yet classified"))
+        check("cleared long ago, never priced", (c["9000014"]["stage"], c["9000014"]["unpriced"], c["9000012"]["unpriced"]), ("effective", True, False))
+        check("old IPO outside the window is skipped", skip["9000015"]["reason"], "outside_window")
+        check("busy company: older history page merged", (c["9000016"]["stage"], c["9000016"]["first_filed"], c["9000016"]["amendments"], c["9000016"]["priced_date"]), ("priced", "2026-05-01", 1, "2026-06-12"))
+        check("foreign address without a state code", (c["9000017"]["location"], c["9000017"]["sector"]), ("United Kingdom", "Business services"))
         a = c["2130357"]
         check("Anthropic (real snapshot)", (a["stage"], a["amendments"], a["first_filed"], a["draft_date"], a["tickers"], a["exchanges"], a["marketing"], a["kind"], a["sector"], a["location"]),
               ("amended", 2, "2026-10-26", "2026-06-01", ["ANT"], [], True, "company", "Software and internet", "CA"))
@@ -135,13 +156,13 @@ def main():
         check("page has the data built in", ("/*DATA*/null" not in page, "Anthropic, PBC" in page), (True, True))
         payload = json.loads((out / "data" / "ipos.json").read_text())
         check("json sorted newest activity first", payload["ipos"][0]["name"], "TESTCO EFFECTIVE INC")
-        check("stage counts", payload["counts"], {"priced": 1, "amended": 4, "effective": 1, "filed": 4, "withdrawn": 1})
+        check("stage counts", payload["counts"], {"priced": 2, "amended": 4, "effective": 2, "filed": 6, "withdrawn": 1})
 
         print("second run, same day")
         fetcher = tracker.Fetcher("test", fixtures)
         result = tracker.run(fetcher, TODAY, 365, state, out, log=quiet)
         check("no index re-read, only active deals re-checked", (fetcher.requests, result["new"], result["changed"]), (result["refreshed"], 0, False))
-        check("active deals re-checked", result["refreshed"], 9)
+        check("active deals re-checked", result["refreshed"], 12)
 
         print("third run, next day, after one company amends and one prices")
         updated = dict(COMPANIES)
