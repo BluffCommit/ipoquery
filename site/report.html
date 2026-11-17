@@ -312,14 +312,16 @@ const kindLabel = r => r.kind === 'spac' ? 'Blank-check shell' : r.kind === 'fun
 const subline = r => esc([r.tickers.join(', '), kindLabel(r), r.location].filter(Boolean).join(' · '));
 
 /* ---------- breakdown maths ---------- */
-function calc(b, p){ const o = b.offer, n = o.company_shares + o.holder_shares;
-  return {p, shares:n, raised:n*p, co:o.company_shares*p, se:o.holder_shares*p, val:o.shares_after*p}; }
-const mid = b => (b.offer.low + b.offer.high) / 2;
+function calc(b, p){ const o = b.offer, hs = o.holder_shares || 0, n = o.company_shares + hs;
+  return {p, shares:n, raised:n*p, co:o.company_shares*p, se:hs*p, val:o.shares_after ? o.shares_after*p : null}; }
+const mid = b => b.offer.price != null ? b.offer.price : (b.offer.low + b.offer.high) / 2;
+const raising = r => BD[r.cik] ? calc(BD[r.cik], mid(BD[r.cik])).raised : 0;
+const units = b => b.offer.unit === 'ADS' ? 'depositary shares' : 'shares';
 const bestRound = b => (b.rounds || []).reduce((m, r) => Math.max(m, mid(b) / r.price), 0);
 
 /* ---------- home ---------- */
-const F = {tab:'upcoming', q:'', sector:'', stage:'', ticker:false, shells:false, limit:40};
-const pool = () => ALL.filter(r => (F.shells || r.kind === 'company') && (!F.ticker || r.tickers.length));
+const F = {tab:'upcoming', q:'', sector:'', stage:'', ticker:false, shells:false, bd:false, limit:40};
+const pool = () => ALL.filter(r => (F.shells || r.kind === 'company') && (!F.ticker || r.tickers.length) && (!F.bd || BD[r.cik]));
 function rows(){ const q = F.q.trim().toLowerCase();
   return pool().filter(r => bucket(r) === F.tab && (!F.sector || r.sector === F.sector) && (!F.stage || r.stage === F.stage)
     && (!q || r.name.toLowerCase().includes(q) || r.tickers.some(t => t.toLowerCase().includes(q)))); }
@@ -329,13 +331,14 @@ function tableHTML(){
   const list = rows(), shown = list.slice(0, F.limit);
   const co = r => `<td><div class="co"><a href="#ipo-${r.cik}">${esc(nice(r.name))}</a>${BD[r.cik] ? ' <span class="tag">Breakdown</span>' : ''}</div><small>${subline(r)}</small></td>`;
   const doc = r => `<td><a href="${esc(r.latest.url)}">${esc(r.latest.form)} ↗</a><small>${day(r.latest.date)}</small></td>`;
+  const amt = r => `<td class="num">${BD[r.cik] ? money(raising(r)) : '<span class="muted">—</span>'}</td>`;
   let head, body;
   if (F.tab === 'upcoming') {
-    head = '<th>Company</th><th>Stage</th><th>First filed</th><th class="num">Amendments</th><th>Latest document</th>';
-    body = shown.map(r => `<tr>${co(r)}<td>${stageHTML(r)}</td><td>${day(r.first_filed)}${r.draft_date ? `<small>draft sent ${day(r.draft_date)}</small>` : ''}</td><td class="num">${r.amendments}</td>${doc(r)}</tr>`).join('');
+    head = '<th>Company</th><th>Stage</th><th>First filed</th><th class="num">Amendments</th><th class="num">Raising</th><th>Latest document</th>';
+    body = shown.map(r => `<tr>${co(r)}<td>${stageHTML(r)}</td><td>${day(r.first_filed)}${r.draft_date ? `<small>draft sent ${day(r.draft_date)}</small>` : ''}</td><td class="num">${r.amendments}</td>${amt(r)}${doc(r)}</tr>`).join('');
   } else if (F.tab === 'priced') {
-    head = '<th>Company</th><th>Final prospectus</th><th>Exchange</th><th>First filed</th><th class="num">Filing to pricing</th><th>Latest document</th>';
-    body = shown.map(r => `<tr>${co(r)}<td>${day(r.priced_date)}</td><td>${esc(r.exchanges.join(', ')) || '<span class="muted">Not listed in EDGAR</span>'}</td><td>${day(r.first_filed)}</td><td class="num">${daysBetween(r.first_filed, r.priced_date)} days</td>${doc(r)}</tr>`).join('');
+    head = '<th>Company</th><th>Final prospectus</th><th>Exchange</th><th class="num">Raised</th><th class="num">Filing to pricing</th><th>Latest document</th>';
+    body = shown.map(r => `<tr>${co(r)}<td>${day(r.priced_date)}</td><td>${esc(r.exchanges.join(', ')) || '<span class="muted">Not listed in EDGAR</span>'}</td>${amt(r)}<td class="num">${daysBetween(r.first_filed, r.priced_date)} days</td>${doc(r)}</tr>`).join('');
   } else {
     head = '<th>Company</th><th>What happened</th><th>First filed</th><th class="num">Amendments</th><th>Latest document</th>';
     body = shown.map(r => `<tr>${co(r)}<td>${stageHTML(r)}</td><td>${day(r.first_filed)}</td><td class="num">${r.amendments}</td>${doc(r)}</tr>`).join('');
@@ -354,6 +357,7 @@ function filtersHTML(){
     <label for="f-sector">Sector<select id="f-sector">${opt('','All sectors',F.sector)}${sectors.map(s => opt(s, s, F.sector)).join('')}</select></label>
     <label for="f-stage">Stage<select id="f-stage"${F.tab !== 'upcoming' ? ' disabled' : ''}>${opt('','Any stage',F.stage)}${opt('filed','Filed',F.stage)}${opt('amended','Amended',F.stage)}${opt('effective','Cleared by the SEC',F.stage)}</select></label>
     <label class="chk" for="f-ticker"><input id="f-ticker" type="checkbox"${F.ticker ? ' checked' : ''}> Has a ticker symbol</label>
+    <label class="chk" for="f-bd"><input id="f-bd" type="checkbox"${F.bd ? ' checked' : ''}> Has a breakdown</label>
     <label class="chk" for="f-shells"><input id="f-shells" type="checkbox"${F.shells ? ' checked' : ''}> Include shells and funds</label>`;
 }
 function refresh(){
@@ -361,20 +365,22 @@ function refresh(){
   document.getElementById('tbl').innerHTML = tableHTML();
   document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { F.tab = b.dataset.tab; F.limit = 40; if (F.tab !== 'upcoming') F.stage = ''; refresh(); });
   const on = (id, k, chk) => { const el = document.getElementById(id); if (el) el.onchange = e => { F[k] = chk ? e.target.checked : e.target.value; F.limit = 40; refresh(); }; };
-  on('f-sector','sector'); on('f-stage','stage'); on('f-ticker','ticker',true); on('f-shells','shells',true);
+  on('f-sector','sector'); on('f-stage','stage'); on('f-ticker','ticker',true); on('f-bd','bd',true); on('f-shells','shells',true);
   const m = document.getElementById('more'); if (m) m.onclick = () => { F.limit += 40; refresh(); };
 }
-function featCard(r, solo){ const b = BD[r.cik], m = calc(b, mid(b)), o = b.offer, upcoming = o.expected_pricing && o.expected_pricing >= today() && r.stage !== 'priced';
+function featCard(r, solo){ const b = BD[r.cik], m = calc(b, mid(b)), o = b.offer, ahead = o.expected_pricing && o.expected_pricing >= today();
+  const third = (b.rounds || []).length ? [X(bestRound(b)), 'return for the earliest round'] : m.val ? [money(m.val), 'company value at the midpoint'] : [shares(m.shares), units(b) + ' offered'];
   return `<article class="card${solo ? ' solo' : ''}"><div class="card-l">
-    <div class="card-top"><span>${esc([r.tickers[0], b.exchange, r.sector].filter(Boolean).join(' · '))}</span><span class="date">${upcoming ? 'Prices ' + dayW(o.expected_pricing) : esc(stageOf(r).label)}</span></div>
-    <h3><a href="#ipo-${r.cik}">${esc(nice(r.name))}</a></h3><p>${esc(b.what)}</p>
+    <div class="card-top"><span>${esc([r.tickers[0], b.exchange, r.sector].filter(Boolean).join(' · '))}</span><span class="date">${ahead ? 'Prices ' + dayW(o.expected_pricing) : esc(stageOf(r).label)}</span></div>
+    <h3><a href="#ipo-${r.cik}">${esc(nice(r.name))}</a></h3>${b.what ? `<p>${esc(b.what)}</p>` : ''}
     <a class="more" href="#ipo-${r.cik}">Open the breakdown →</a></div>
     <div class="trio"><div><b>${money(m.raised)}</b><small>raising at ${price(o.low)} to ${price(o.high)}</small></div>
-      <div><b class="${o.holder_shares ? 'g' : ''}">${pc(m.se, m.raised)}</b><small>of the money goes to insiders selling</small></div>
-      <div><b>${X(bestRound(b))}</b><small>return for the earliest round</small></div></div></article>`; }
+      <div><b class="${m.se ? 'g' : ''}">${pc(m.se, m.raised)}</b><small>of the money goes to insiders selling</small></div>
+      <div><b>${third[0]}</b><small>${third[1]}</small></div></div></article>`; }
 function home(){
   const co = ALL.filter(r => r.kind === 'company'), n = f => co.filter(f).length, up = r => bucket(r) === 'upcoming';
-  const feats = ALL.filter(r => BD[r.cik]);
+  const ranged = ALL.filter(r => BD[r.cik] && bucket(r) === 'upcoming' && BD[r.cik].offer.price == null);
+  const feats = [...ranged].sort((a, b) => raising(b) - raising(a)).slice(0, 3);
   const latest = [...co].sort((a, b) => b.latest.date.localeCompare(a.latest.date)).slice(0, 8);
   const bySector = Object.entries(co.filter(up).reduce((m, r) => (m[r.sector] = (m[r.sector] || 0) + 1, m), {})).sort((a, b) => b[1] - a[1]);
   return `
@@ -392,6 +398,7 @@ function home(){
         <dt>Filed, not yet amended</dt><dd>${n(r => up(r) && r.stage === 'filed')}</dd>
         <dt>Amended</dt><dd>${n(r => up(r) && r.stage === 'amended')}</dd>
         <dt>Cleared by the SEC</dt><dd>${n(r => up(r) && r.stage === 'effective')}</dd>
+        <dt>With a price range</dt><dd>${ranged.length}</dd>
         <dt>Priced, last 12 months</dt><dd>${n(r => r.stage === 'priced')}</dd>
         <dt>Withdrawn</dt><dd>${n(r => r.stage === 'withdrawn')}</dd>
       </dl>
@@ -399,7 +406,7 @@ function home(){
     </aside>
   </section>
   <div class="wrap stack">
-    ${feats.length ? `<section><div class="bar"><h2>Breakdowns</h2><span>Deals whose filing has been read in full</span></div><div class="hair feat">${feats.map(r => featCard(r, feats.length === 1)).join('')}</div></section>` : ''}
+    ${feats.length ? `<section><div class="bar"><h2>Breakdowns</h2><span>The largest upcoming deals with a price range</span></div><div class="hair feat">${feats.map(r => featCard(r, feats.length === 1)).join('')}</div></section>` : ''}
     <div class="cols">
       <div class="main">
         <section><div class="bar" id="all-ipos"><h2>All IPOs</h2><span>Filter by stage or sector</span></div>
@@ -408,7 +415,7 @@ function home(){
       <aside class="rail">
         <section class="rbox"><h2>Latest filings</h2><ul>${latest.map(r => `<li><a href="#ipo-${r.cik}">${esc(nice(r.name))}</a><small>${esc(r.latest.form)} · ${day(r.latest.date)}</small></li>`).join('')}</ul></section>
         <section class="rbox"><h2>Upcoming, by sector</h2><ul>${bySector.map(([s, c]) => `<li class="kv"><button type="button" data-sector="${esc(s)}">${esc(s)}</button><span>${c}</span></li>`).join('')}</ul></section>
-        <section class="rbox"><h2>How this page is made</h2><p>A script reads SEC EDGAR every six hours and works out each deal’s stage from the filings made. Breakdowns are read from the filing itself.</p></section>
+        <section class="rbox"><h2>How this page is made</h2><p>A script reads SEC EDGAR every six hours and works out each deal’s stage from the filings made. Breakdowns are read from the filing itself, and a figure is shown only if it passes a consistency check.</p></section>
       </aside>
     </div>
   </div>`;
@@ -439,7 +446,7 @@ function stepsHTML(r, b){
 }
 function filingsBox(r){
   const NAMES = {'S-1':'S-1, the registration statement', 'F-1':'F-1, the registration statement', 'S-1/A':'S-1 amendment', 'F-1/A':'F-1 amendment', '424B4':'Final prospectus (424B4)', '424B1':'Final prospectus (424B1)',
-    'EFFECT':'SEC notice: registration effective', 'RW':'Request to withdraw', '8-A12B':'Exchange registration (8-A)'};
+    'EFFECT':'SEC notice: registration effective', 'CERT':'Exchange approval', 'CERTNYS':'Exchange approval', 'CERTNAS':'Exchange approval', 'RW':'Request to withdraw', '8-A12B':'Exchange registration (8-A)'};
   const all = [...(r.ev || [])].reverse(), fwp = all.filter(e => e[0] === 'FWP'), ev = all.filter(e => e[0] !== 'FWP');
   const mk = fwp.length ? `<li><b style="font-weight:600">${fwp.length} marketing document${fwp.length > 1 ? 's' : ''}</b><small>latest ${day(fwp[0][1])}</small></li>` : '';
   return `<section class="rbox"><h2>The filings</h2><ul>${mk}${ev.map(e => `<li><a href="${esc(filingUrl(r, e[2]))}">${esc(NAMES[e[0]] || e[0])} ↗</a><small>${day(e[1])}</small></li>`).join('')}</ul><p><a href="${esc(r.edgar_url)}">Everything this company has filed ↗</a></p></section>`;
@@ -449,7 +456,7 @@ function ipoPage(r){
   const head = keys => `<div class="wrap">
     <a class="crumb" href="#home">← All IPOs</a>
     <div class="cohead"><div>
-      <p class="eyebrow">${esc(bucket(r) === 'upcoming' ? 'Upcoming IPO · ' + (b && b.range_set && r.stage !== 'effective' ? 'price range set' : st.label) : st.label)}</p>
+      <p class="eyebrow">${esc(bucket(r) === 'upcoming' ? 'Upcoming IPO · ' + (b && b.offer.price == null && r.stage !== 'effective' ? 'price range set' : st.label) : st.label)}</p>
       <h1>${esc(nice(r.name))}</h1>${b ? `<p>${esc(b.what)}</p>` : ''}
       <p class="meta">${r.tickers.length ? 'Ticker <b>' + esc(r.tickers.join(', ')) + '</b> · ' : ''}${esc([(b && b.exchange) || r.exchanges.join(', '), kindLabel(r), r.location].filter(Boolean).join(' · '))} · <a href="${esc(r.latest.url)}">Latest: ${esc(r.latest.form)}, ${day(r.latest.date)} ↗</a></p>
     </div><div class="hair keys">${keys}</div></div>
@@ -467,83 +474,136 @@ function ipoPage(r){
           <p><a href="${esc(r.latest.url)}">Read the latest filing yourself ↗</a></p></div></div></section>
     </div><aside class="rail">${filingsBox(r)}</aside></div></div>`;
   }
-  const o = b.offer, m = calc(b, mid(b)), lo = calc(b, o.low), hi = calc(b, o.high), fin = b.financials, short = b.short || r.name;
-  const span = o.high - o.low, a0 = Math.floor(o.low - span), a1 = Math.ceil(o.high + span), pos = v => ((v - a0) / (a1 - a0) * 100) + '%';
-  const fy = fin.years, lastY = fy[fy.length - 1], maxRev = Math.max(...fy.map(y => y.revenue), fin.ytd ? fin.ytd.revenue : 0), maxLoss = Math.max(...fy.map(y => Math.abs(y.operating)), fin.ytd ? Math.abs(fin.ytd.operating) : 0);
+  const o = b.offer, P = mid(b), m = calc(b, P), priced = o.price != null, hasRange = o.low != null && o.high != null;
+  const fin = b.financials, short = b.short || nice(r.name), U = units(b), sellers = b.sellers || [], rounds = b.rounds || [];
+  const pricingAhead = !priced && o.expected_pricing && r.stage !== 'priced';
   const M6 = v => money(v * 1e6), P6 = v => paren(v * 1e6);
-  const maxSell = Math.max(...b.sellers.map(s => s.sold)), top = bestRound(b), L = Math.log, lw = x => Math.max(2, (L(x) - L(.5)) / (L(top * 1.4) - L(.5)) * 100);
-  const first = b.rounds[0], lastR = b.rounds[b.rounds.length - 1], under = b.rounds.filter(q => mid(b) < q.price);
-  const pricingAhead = o.expected_pricing && r.stage !== 'priced';
-  const lockMax = Math.max(...b.lockup.events.map(e => e.shares)), lockTotal = b.lockup.events.reduce((s, e) => s + e.shares, 0);
-  const holders = [...b.sellers, ...(b.others || [])];
-  return head(`<div><b>${price(o.low)} to ${price(o.high)}</b><small>price range per share</small></div><div><b>${money(m.raised)}</b><small>raising at the ${price(mid(b))} midpoint</small></div>
-      <div><b>${money(m.val)}</b><small>company value at the midpoint</small></div>
-      <div class="hi"><b>${pricingAhead ? dayW(o.expected_pricing).replace(/^\w+, /, '') : day(r.priced_date)}</b><small>${pricingAhead ? 'expected pricing, ' + dt(o.expected_pricing).toLocaleDateString('en-US', {weekday:'long', timeZone:'UTC'}) : 'final prospectus filed'}</small></div>`) + `
+  const inP = l => /^Year/.test(l) ? 'in the y' + l.slice(1) : 'in ' + l;
+  const pending = t => `<div class="hair"><p class="note">${t}</p></div>`;
+  const grid = list => { list = list.filter(Boolean); const n = list.filter(x => !x.wide).length; let seen = 0;
+    return `<div class="hair grid2">${list.map(x => `<div class="mod${x.wide || (++seen === n && n % 2) ? ' wide' : ''}">${x.html}</div>`).join('')}</div>`; };
+
+  /* key figures */
+  const keys = [
+    priced ? `<div><b>${price(P)}</b><small>final price per share${hasRange ? `; the range was ${price(o.low)} to ${price(o.high)}` : ''}</small></div>`
+           : `<div><b>${price(o.low)} to ${price(o.high)}</b><small>price range per share</small></div>`,
+    `<div><b>${money(m.raised)}</b><small>${priced ? 'raised in the IPO' : 'raising at the ' + price(P) + ' midpoint'}</small></div>`,
+    m.val ? `<div><b>${money(m.val)}</b><small>company value at ${priced ? 'the IPO price' : 'the midpoint'}</small></div>` : `<div><b>${shares(m.shares)}</b><small>${U} offered</small></div>`,
+    pricingAhead ? `<div class="hi"><b>${dayW(o.expected_pricing).replace(/^\w+, /, '')}</b><small>expected pricing, ${dt(o.expected_pricing).toLocaleDateString('en-US', {weekday:'long', timeZone:'UTC'})}</small></div>`
+      : r.stage === 'priced' ? `<div class="hi"><b>${day(r.priced_date).replace(/, \d+$/, '')}</b><small>final prospectus filed, ${r.priced_date.slice(0, 4)}</small></div>`
+      : `<div class="hi"><b>${esc(st.label)}</b><small>${esc(st.note)}</small></div>`].join('');
+
+  /* in one minute */
+  const fy = fin ? fin.years : [], lastY = fy[fy.length - 1], net = fin && fin.measure === 'net';
+  const result = v => v < 0 ? (net ? `It made a net loss of ${M6(-v)}` : `It lost ${M6(-v)} from operations`) : (net ? `It made a net profit of ${M6(v)}` : `It earned ${M6(v)} from operations`);
+  let biz = 'The financial statements in this filing have not been read yet.';
+  if (fin) { biz = '';
+    if (lastY.revenue != null) { biz = `Revenue was ${M6(lastY.revenue)} ${inP(lastY.label)}`;
+      if (fy.length > 1 && fy[0].revenue != null) biz += `, ${lastY.revenue >= fy[0].revenue ? 'up' : 'down'} from ${M6(fy[0].revenue)} ${inP(fy[0].label)}`;
+      biz += '.'; if (fin.ytd && fin.ytd.revenue != null) biz += ` In ${fin.ytd.label} it was ${M6(fin.ytd.revenue)}.`; }
+    biz += ` ${result(lastY.operating)} ${inP(lastY.label)}.`; }
+  const deal = priced ? `Sold ${shares(m.shares)} ${U} at ${price(P)}, raising ${money(m.raised)}.${m.val ? ` That valued ${esc(short)} at about ${money(m.val)}.` : ''}`
+    : `Selling ${shares(m.shares)} ${U} at ${price(o.low)} to ${price(o.high)} to raise about ${money(m.raised)}${m.val ? `, valuing ${esc(short)} at about ${money(m.val)}` : ''}.`;
+  const cash = !m.se ? 'No existing holder is selling in the IPO. All of the money goes to the company.'
+    : `${sellers.length ? sellers.length + ' holders sell' : 'Existing holders sell'} ${shares(o.holder_shares)} ${U} worth about ${money(m.se)}: ${pc(m.se, m.raised)} of the deal. The company ${priced ? 'gets' : 'keeps'} ${money(m.co)}.`;
+  const next = [pricingAhead ? `Pricing is expected ${dayW(o.expected_pricing)}${o.expected_trading ? ' and trading ' + dayW(o.expected_trading) : ''}.` : priced ? 'The shares have priced.' : 'The filing gives no pricing date.',
+    b.lockup ? esc(b.lockup.summary) : 'When insiders can sell has not been read yet.'].join(' ');
+
+  /* what's the deal */
+  let rangeMod = null;
+  if (hasRange) { const span = o.high - o.low, a0 = Math.max(0, Math.floor(Math.min(o.low - span, P - 1))), a1 = Math.ceil(Math.max(o.high + span, P + 1)), pos = v => ((v - a0) / (a1 - a0) * 100) + '%';
+    const where = P > o.high ? 'above' : P < o.low ? 'below' : 'within';
+    rangeMod = {html: `<h3>${priced ? `It priced at ${price(P)}, ${where} the ${price(o.low)} to ${price(o.high)} range` : `Shares are offered at ${price(o.low)} to ${price(o.high)}`}</h3>
+      <p>${priced ? 'The grey band is the range the company set before pricing.' : `The midpoint, used for the figures on this page, is ${price(P)}.`}</p>
+      <div class="range" role="img" aria-label="Price range ${price(o.low)} to ${price(o.high)}, ${priced ? 'final price' : 'midpoint'} ${price(P)}">
+        <div class="trk"></div><div class="band" style="left:${pos(o.low)};width:${(o.high - o.low) / (a1 - a0) * 100}%"></div>
+        <div class="mk" style="left:${pos(P)}"></div><div class="mkl" style="left:${pos(P)}">${price(P)} ${priced ? 'final price' : 'midpoint'}</div>
+        <span class="tk" style="left:0;transform:none">${price(a0)}</span><span class="tk" style="left:${pos(o.low)}">${price(o.low)}</span><span class="tk" style="left:${pos(o.high)}">${price(o.high)}</span><span class="tk" style="left:100%;transform:translateX(-100%)">${price(a1)}</span>
+      </div>${src(b, 'cover page')}`}; }
+  else rangeMod = {html: `<h3>The final price is ${price(P)} a share</h3><p>The price range set before pricing has not been read.</p>${src(b, 'cover page')}`};
+  const splitMod = {html: m.se ? `<h3>${pc(m.co, m.raised)} of the money goes to the company</h3><p>The rest, ${pc(m.se, m.raised)}, goes to existing holders selling their own shares.</p>
+      <div class="split" role="img" aria-label="${pc(m.co, m.raised)} to the company, ${pc(m.se, m.raised)} to selling holders"><div class="co" style="flex:${m.co} 1 0">${money(m.co)} to the company</div><div class="se" style="flex:${m.se} 1 0"></div></div>
+      <p class="key"><span><i style="background:var(--maroon-fill)"></i>Company ${money(m.co)}</span><span><i style="background:var(--gold-fill)"></i>Selling holders ${money(m.se)}</span></p>${src(b, 'cover page')}`
+    : `<h3>All of the money goes to the company</h3><p>No existing holder is selling shares in the IPO.</p>
+      <div class="split" role="img" aria-label="All of the money goes to the company"><div class="co" style="flex:1 1 0">${money(m.co)} to the company</div></div>${src(b, 'cover page')}`};
+  const floatMod = o.shares_after ? {html: `<h3>Only ${pc(m.shares, o.shares_after, 1)} of the company ${priced ? 'was sold' : 'will trade'}</h3><p>${shares(m.shares)} of ${shares(o.shares_after)} shares are sold in the IPO. The rest stay with insiders and earlier investors.</p>
+      <div class="split" role="img" aria-label="${pc(m.shares, o.shares_after, 1)} sold in the IPO"><div class="pub" style="flex:${m.shares} 1 0"></div><div class="rest" style="flex:${o.shares_after - m.shares} 1 0">${pc(o.shares_after - m.shares, o.shares_after, 1)} kept by existing holders</div></div>${src(b, 'The offering')}`} : null;
+  const useMod = b.proceeds ? {html: `<h3>What the company says it will do with its share</h3><p>${esc(b.proceeds)}</p>${b.side_sale ? `<p>${esc(b.side_sale)}</p>` : ''}${src(b, 'Use of proceeds')}`} : null;
+  let scenMod = null;
+  if (hasRange && !priced) { const lo = calc(b, o.low), hi = calc(b, o.high), lines = [['Raised', c => money(c.raised)], ['To the company', c => money(c.co)]];
+    if (m.se) lines.push(['To selling holders', c => money(c.se)]);
+    if (m.val) lines.push(['Company value', c => money(c.val)]);
+    if (rounds.length) { const f = rounds[0], l = rounds[rounds.length - 1]; lines.push([f.name + ' return', c => X(c.p / f.price)], [l.name + ' return', c => X(c.p / l.price)]); }
+    scenMod = {wide: 1, html: `<h3>Where the price lands changes who gets what</h3>
+      <div class="scroll"><table class="scen"><thead><tr><th>If it prices at</th><th>Low, ${price(o.low)}</th><th class="mid">Midpoint, ${price(P)}</th><th>High, ${price(o.high)}</th></tr></thead><tbody>
+      ${lines.map(([l, f]) => `<tr><th>${esc(l)}</th><td>${f(lo)}</td><td class="mid">${f(m)}</td><td>${f(hi)}</td></tr>`).join('')}
+      </tbody></table></div>${src(b, rounds.length ? 'cover page; preferred stock note' : 'cover page')}`}; }
+
+  /* how's the business */
+  let business = pending('The financial statements in this filing have not been read yet.');
+  if (fin) { const cols = [...fy, ...(fin.ytd ? [{label: fin.ytd.label, revenue: fin.ytd.revenue, operating: fin.ytd.operating, part: 1}] : [])];
+    const hasRev = cols.every(y => y.revenue != null) && cols.some(y => y.revenue > 0), maxRev = Math.max(...cols.map(y => y.revenue || 0)), maxRes = Math.max(...cols.map(y => Math.abs(y.operating)));
+    const revMod = hasRev ? {html: `<h3>${fy.length > 1 && fy[0].revenue > 0 ? `Revenue went from ${M6(fy[0].revenue)} to ${M6(lastY.revenue)} in ${fy.length - 1} year${fy.length > 2 ? 's' : ''}` : `Revenue was ${M6(lastY.revenue)} ${inP(lastY.label)}`}</h3>
+      <p>${fin.ytd ? `The hatched bar is ${fin.ytd.label}, a part year: ${M6(fin.ytd.revenue)}${fin.ytd.prior_revenue != null ? `, against ${M6(fin.ytd.prior_revenue)} in ${fin.ytd.prior_label}` : ''}.` : 'Revenue for each financial year.'}</p>
+      <div class="colchart" role="img" aria-label="Revenue by period">${cols.map(y => `<div><span>${M6(y.revenue)}</span><i${y.part ? ' class="part"' : ''} style="height:${y.revenue / maxRev * 130}px"></i></div>`).join('')}</div>
+      <div class="xl">${cols.map(y => `<span>${esc(y.label)}</span>`).join('')}</div>${src(b, 'statements of operations')}`} : null;
+    const resMod = {html: `<h3>${net ? (lastY.operating < 0 ? 'It made a net loss ' : 'It made a net profit ') + inP(lastY.label) : lastY.operating < 0 ? 'It loses money from operations' : 'It earns money from operations'}</h3>
+      <p>${net ? 'Net result' : 'Operating result'} each period. Parentheses mean a loss.</p>
+      <div class="rows">${cols.map(y => `<span class="lab">${esc(y.label)}</span><span class="trk"><i class="${y.operating < 0 ? '' : 'm'}" style="width:${maxRes ? Math.abs(y.operating) / maxRes * 100 : 0}%"></i></span><span class="v">${P6(y.operating)}</span>`).join('')}</div>${src(b, 'statements of operations')}`};
+    const facts = fin.facts || [];
+    business = grid([revMod, resMod])
+      + (facts.length ? `<div class="hair trio2" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">${facts.map(f => `<div><b>${f.signed && f.value > 0 ? '+' : ''}${M6(f.value)}</b><small>${esc(f.label)}</small></div>`).join('')}</div>` : '')
+      + (fin.note ? `<p class="note">${esc(fin.note)}</p>` : ''); }
+
+  /* who's cashing out */
+  const holders = [...sellers, ...(b.others || [])];
+  let trail = [];
+  if (sellers.length) { const maxSell = Math.max(...sellers.map(x => x.sold));
+    trail.push({html: `<h3>${sellers.length} holders split ${money(m.se)} in the IPO</h3><p>Value of the shares each sells at ${priced ? 'the IPO price' : 'the ' + price(P) + ' midpoint'}, before underwriting fees.</p>
+      <div class="rows r2">${sellers.map(x => `<span class="lab">${esc(x.name)}<small>${esc(x.role)} · sells ${pc(x.sold, x.before, 1)} of stake</small></span><span class="trk"><i class="g" style="width:${x.sold / maxSell * 100}%"></i></span><span class="v">${money(x.sold * P)}</span>`).join('')}</div>${src(b, 'Principal and selling stockholders')}`}); }
+  else if (m.se) trail.push({html: `<h3>Existing holders sell ${money(m.se)} of shares in the IPO</h3><p>That is ${shares(o.holder_shares)} ${U}, ${pc(m.se, m.raised)} of the deal. Who the sellers are has not been read from this filing yet.</p>${src(b, 'cover page')}`});
+  if (rounds.length) { const top = bestRound(b), L = Math.log, lw = x => Math.max(2, (L(x) - L(.5)) / (L(top * 1.4) - L(.5)) * 100), first = rounds[0], lastR = rounds[rounds.length - 1], under = rounds.filter(q => P < q.price);
+    trail.push({html: `<h3>${esc(first.name)} investors are up ${X(P / first.price)}${under.length ? '. The last round is under water' : `. ${esc(lastR.name)} is up ${X(P / lastR.price)}`}</h3><p>Price paid per share in each round, against ${price(P)}. Log scale; the dashed line is break-even.</p>
+      <div class="rows">${rounds.map(q => { const x = P / q.price; return `<span class="lab">${esc(q.name)}${q.when ? ', ' + esc(q.when) : ''}<small>paid $${q.price.toFixed(2)} a share</small></span><span class="trk"><i class="${x < 1 ? 'x' : 'm'}" style="width:${lw(x)}%"></i><span class="one" style="left:${lw(1)}%"></span></span><span class="v">${X(x)}${x < 1 ? ', a loss' : ''}</span>`; }).join('')}</div>
+      ${b.rounds_note ? `<p style="font-size:12.5px">${esc(b.rounds_note)}</p>` : ''}${src(b, 'preferred stock note')}`}); }
+  if (holders.length) trail.push({wide: 1, html: `<h3>The holders named in the filing</h3><p>Shares held before the IPO, how much each is registered to sell, and the stake left after it.</p>
+      <div class="scroll"><table class="hold"><thead><tr><th>Holder</th><th>Role</th><th class="num">Shares before</th><th class="num">Selling</th><th class="num">Share of stake sold</th><th class="num">Stake after IPO</th></tr></thead><tbody>
+      ${holders.map(h => `<tr><td>${esc(h.name)}</td><td>${esc(h.role)}</td><td class="num">${shares(h.before)}</td><td class="num ${h.sold ? 'g' : ''}">${h.sold ? shares(h.sold) : 'None'}</td><td class="num">${h.sold ? pc(h.sold, h.before, 1) : '—'}</td><td class="num">${o.shares_after ? pc(h.before - h.sold, o.shares_after, h.before / o.shares_after < .01 ? 2 : 1) : '—'}</td></tr>`).join('')}
+      </tbody></table></div>
+      ${b.holders_note ? `<p>${esc(b.holders_note)}</p>` : ''}${b.control_note ? `<p>${esc(b.control_note)}</p>` : ''}${src(b, 'Principal and selling stockholders')}`});
+  const trailHTML = (trail.length ? grid(trail) : '') + (sellers.length && rounds.length ? '' : pending(`${sellers.length ? '' : 'Who holds the shares'}${sellers.length || rounds.length ? '' : ', and '}${rounds.length ? '' : (sellers.length ? 'What' : 'what') + ' earlier investors paid for theirs'}, has not been read from this filing yet.`));
+
+  /* what happens next */
+  let nextHTML = '';
+  if (pricingAhead) nextHTML += `<div class="hair"><table class="tl"><tbody>
+      <tr class="hi"><th>${dayW(o.expected_pricing)}</th><td>The final price is expected to be set. A final prospectus follows with the share counts.</td></tr>
+      ${o.expected_trading ? `<tr><th>${dayW(o.expected_trading)}</th><td>Shares are expected to start trading on ${esc(b.exchange)}${r.tickers.length ? ' as ' + esc(r.tickers[0]) : ''}.</td></tr>` : ''}
+      </tbody></table></div><p class="note">Dates: <a href="${esc(o.dates_url)}">${esc(o.dates_from)} ↗</a>. They are not in the filing and can move.</p>`;
+  if (b.lockup) { const lockMax = Math.max(...b.lockup.events.map(e => e.shares)), lockTotal = b.lockup.events.reduce((t, e) => t + e.shares, 0);
+    nextHTML += `<div class="hair"${pricingAhead ? ' style="border-top:1px solid var(--line);margin-top:6px"' : ''}><div class="mod"><h3>When insiders can sell</h3><p>${esc(b.lockup.summary)} In total, up to ${shares(lockTotal)} more shares can come to market, ${Math.round(lockTotal / m.shares)} times the number sold in the IPO.</p>
+      <div class="rows r2">${b.lockup.events.map(e => `<span class="lab">${esc(e.when)}<small>${esc(e.what)}</small></span><span class="trk"><i style="width:${e.shares / lockMax * 100}%"></i></span><span class="v">up to ${shares(e.shares)}</span>`).join('')}</div>${src(b, 'Shares eligible for future sale')}</div></div>`; }
+  else nextHTML += pending(`${pricingAhead ? '' : priced ? '' : 'The filing gives no pricing date; that is announced separately. '}When insiders are allowed to sell has not been read from this filing yet.`);
+
+  const manual = b.method === 'manual';
+  return head(keys) + `
   <div class="wrap stack" style="margin-top:22px">
-    <section><div class="bar"><h2>In one minute</h2>${b.method === 'manual' ? `<span>Read by hand on ${day(b.loaded)}</span>` : ''}</div>
+    <section><div class="bar"><h2>In one minute</h2><span>${manual ? 'Read by hand' : 'Read automatically'} on ${day(b.loaded)}</span></div>
       <div class="hair min">
-        <div><h3>The deal</h3><p>Selling ${shares(m.shares)} shares at ${price(o.low)} to ${price(o.high)} to raise about ${money(m.raised)}, valuing ${esc(short)} at about ${money(m.val)}.</p></div>
-        <div><h3>The business</h3><p>Revenue was ${M6(lastY.revenue)} in ${lastY.label}, up from ${M6(fy[0].revenue)} in ${fy[0].label}.${fin.ytd ? ` In ${fin.ytd.label} it was ${M6(fin.ytd.revenue)}.` : ''} ${lastY.operating < 0 ? `It lost ${M6(-lastY.operating)} from operations in ${lastY.label}.` : `It earned ${M6(lastY.operating)} from operations in ${lastY.label}.`}</p></div>
-        <div><h3>Who’s cashing out</h3><p>${o.holder_shares ? `${b.sellers.length} holders sell ${shares(o.holder_shares)} shares worth about ${money(m.se)}: ${pc(m.se, m.raised)} of the deal. The company keeps ${money(m.co)}.` : 'No existing holder is selling. All of the money goes to the company.'}</p></div>
-        <div><h3>What happens next</h3><p>${pricingAhead ? `Pricing is expected ${dayW(o.expected_pricing)}${o.expected_trading ? ' and trading ' + dayW(o.expected_trading) : ''}. ` : ''}${esc(b.lockup.summary)}</p></div>
+        <div><h3>The deal</h3><p>${deal}</p></div><div><h3>The business</h3><p>${biz}</p></div>
+        <div><h3>Who’s cashing out</h3><p>${cash}</p></div><div><h3>What happens next</h3><p>${next}</p></div>
       </div></section>
     <div class="cols"><div class="main">
-      <section><div class="bar"><h2>What’s the deal?</h2><span>From the filing dated ${day(b.range_set)}</span></div>
-        <div class="hair grid2">
-          <div class="mod"><h3>Shares are offered at ${price(o.low)} to ${price(o.high)}</h3><p>The midpoint, used for the figures on this page, is ${price(mid(b))}.</p>
-            <div class="range" role="img" aria-label="Price range ${price(o.low)} to ${price(o.high)}, midpoint ${price(mid(b))}">
-              <div class="trk"></div><div class="band" style="left:${pos(o.low)};width:${(o.high - o.low) / (a1 - a0) * 100}%"></div>
-              <div class="mk" style="left:${pos(mid(b))}"></div><div class="mkl" style="left:${pos(mid(b))}">${price(mid(b))} midpoint</div>
-              <span class="tk" style="left:0;transform:none">${price(a0)}</span><span class="tk" style="left:${pos(o.low)}">${price(o.low)}</span><span class="tk" style="left:${pos(o.high)}">${price(o.high)}</span><span class="tk" style="left:100%;transform:translateX(-100%)">${price(a1)}</span>
-            </div>${src(b, 'cover page')}</div>
-          <div class="mod"><h3>${pc(m.co, m.raised)} of the money goes to the company</h3><p>The rest, ${pc(m.se, m.raised)}, goes to existing holders selling their own shares.</p>
-            <div class="split" role="img" aria-label="${pc(m.co, m.raised)} to the company, ${pc(m.se, m.raised)} to selling holders"><div class="co" style="flex:${m.co} 1 0">${money(m.co)} to the company</div><div class="se" style="flex:${m.se} 1 0"></div></div>
-            <p class="key"><span><i style="background:var(--maroon-fill)"></i>Company ${money(m.co)}</span><span><i style="background:var(--gold-fill)"></i>Selling holders ${money(m.se)}</span></p>${src(b, 'cover page')}</div>
-          <div class="mod"><h3>Only ${pc(m.shares, o.shares_after, 1)} of the company will trade</h3><p>${shares(m.shares)} of ${shares(o.shares_after)} shares are sold in the IPO. The rest stay with insiders and earlier investors.</p>
-            <div class="split" role="img" aria-label="${pc(m.shares, o.shares_after, 1)} sold in the IPO"><div class="pub" style="flex:${m.shares} 1 0"></div><div class="rest" style="flex:${o.shares_after - m.shares} 1 0">${pc(o.shares_after - m.shares, o.shares_after, 1)} kept by existing holders</div></div>${src(b, 'The offering')}</div>
-          <div class="mod"><h3>What the company says it will do with its share</h3><p>${esc(b.proceeds)}</p>${b.side_sale ? `<p>${esc(b.side_sale)}</p>` : ''}${src(b, 'Use of proceeds')}</div>
-          <div class="mod wide"><h3>Where the price lands changes who gets what</h3>
-            <div class="scroll"><table class="scen"><thead><tr><th>If it prices at</th><th>Low, ${price(o.low)}</th><th class="mid">Midpoint, ${price(mid(b))}</th><th>High, ${price(o.high)}</th></tr></thead><tbody>
-              ${[['Raised', c => money(c.raised)], ['To the company', c => money(c.co)], ['To selling holders', c => money(c.se)], ['Company value', c => money(c.val)],
-                 [first.name + ' return', c => X(c.p / first.price)], [lastR.name + ' return', c => X(c.p / lastR.price)]].map(([l, f]) => `<tr><th>${esc(l)}</th><td>${f(lo)}</td><td class="mid">${f(m)}</td><td>${f(hi)}</td></tr>`).join('')}
-            </tbody></table></div>${src(b, 'cover page; preferred stock note')}</div>
-        </div></section>
-      <section><div class="bar"><h2>How’s the business?</h2><span>${esc(fin.unit === 'USD millions' ? 'From the financial statements in the filing' : '')}</span></div>
-        <div class="hair grid2">
-          <div class="mod"><h3>Revenue went from ${M6(fy[0].revenue)} to ${M6(lastY.revenue)} in ${fy.length - 1} years</h3><p>${fin.ytd ? `The hatched bar is ${fin.ytd.label}, a part year: ${M6(fin.ytd.revenue)}, against ${M6(fin.ytd.prior_revenue)} in ${fin.ytd.prior_label}.` : 'Revenue by fiscal year.'}</p>
-            <div class="colchart" role="img" aria-label="Revenue by year">${fy.map(y => `<div><span>${M6(y.revenue)}</span><i style="height:${y.revenue / maxRev * 130}px"></i></div>`).join('')}${fin.ytd ? `<div><span>${M6(fin.ytd.revenue)}</span><i class="part" style="height:${fin.ytd.revenue / maxRev * 130}px"></i></div>` : ''}</div>
-            <div class="xl">${fy.map(y => `<span>${esc(y.label)}</span>`).join('')}${fin.ytd ? `<span>${esc(fin.ytd.label)}</span>` : ''}</div>${src(b, 'statements of operations')}</div>
-          <div class="mod"><h3>${lastY.operating < 0 ? 'It loses money from operations' : 'It earns money from operations'}</h3><p>Operating result each period. Parentheses mean a loss.</p>
-            <div class="rows">${[...fy, ...(fin.ytd ? [{label: fin.ytd.label, operating: fin.ytd.operating, part: 1}] : [])].map(y => `<span class="lab">${esc(y.label)}</span><span class="trk"><i class="${y.operating < 0 ? '' : 'm'}" style="width:${Math.abs(y.operating) / maxLoss * 100}%"></i></span><span class="v">${P6(y.operating)}</span>`).join('')}</div>${src(b, 'statements of operations')}</div>
-        </div>
-        <div class="hair trio2">${fin.facts.map(f => `<div><b>${f.signed && f.value > 0 ? '+' : ''}${M6(f.value)}</b><small>${esc(f.label)}</small></div>`).join('')}</div>
-        ${fin.note ? `<p class="note">${esc(fin.note)}</p>` : ''}</section>
-      <section><div class="bar"><h2>Who’s cashing out?</h2><span>The money trail</span></div>
-        <div class="hair grid2">
-          <div class="mod"><h3>${b.sellers.length} holders split ${money(m.se)} in the IPO</h3><p>Value of the shares each sells at the ${price(mid(b))} midpoint, before underwriting fees.</p>
-            <div class="rows r2">${b.sellers.map(s => `<span class="lab">${esc(s.name)}<small>${esc(s.role)} · sells ${pc(s.sold, s.before, 1)} of stake</small></span><span class="trk"><i class="g" style="width:${s.sold / maxSell * 100}%"></i></span><span class="v">${money(s.sold * mid(b))}</span>`).join('')}</div>${src(b, 'Principal and selling stockholders')}</div>
-          <div class="mod"><h3>${esc(first.name)} investors are up ${X(mid(b) / first.price)}${under.length ? '. The last round is under water' : `. ${esc(lastR.name)} is up ${X(mid(b) / lastR.price)}`}</h3><p>Price paid per share in each round, against ${price(mid(b))}. Log scale; the dashed line is break-even.</p>
-            <div class="rows">${b.rounds.map(q => { const x = mid(b) / q.price; return `<span class="lab">${esc(q.name)}${q.when ? ', ' + esc(q.when) : ''}<small>paid $${q.price.toFixed(2)} a share</small></span><span class="trk"><i class="${x < 1 ? 'x' : 'm'}" style="width:${lw(x)}%"></i><span class="one" style="left:${lw(1)}%"></span></span><span class="v">${X(x)}${x < 1 ? ', a loss' : ''}</span>`; }).join('')}</div>
-            ${b.rounds_note ? `<p style="font-size:12.5px">${esc(b.rounds_note)}</p>` : ''}${src(b, 'preferred stock note')}</div>
-          <div class="mod wide"><h3>The holders named in the filing</h3><p>Shares held before the IPO, how much each is registered to sell, and the stake left after it.</p>
-            <div class="scroll"><table class="hold"><thead><tr><th>Holder</th><th>Role</th><th class="num">Shares before</th><th class="num">Selling</th><th class="num">Share of stake sold</th><th class="num">Stake after IPO</th></tr></thead><tbody>
-              ${holders.map(h => `<tr><td>${esc(h.name)}</td><td>${esc(h.role)}</td><td class="num">${shares(h.before)}</td><td class="num ${h.sold ? 'g' : ''}">${h.sold ? shares(h.sold) : 'None'}</td><td class="num">${h.sold ? pc(h.sold, h.before, 1) : '—'}</td><td class="num">${pc(h.before - h.sold, o.shares_after, h.before / o.shares_after < .01 ? 2 : 1)}</td></tr>`).join('')}
-            </tbody></table></div>
-            ${b.holders_note ? `<p>${esc(b.holders_note)}</p>` : ''}${b.control_note ? `<p>${esc(b.control_note)}</p>` : ''}${src(b, 'Principal and selling stockholders')}</div>
-        </div></section>
-      <section><div class="bar"><h2>What happens next?</h2></div>
-        ${pricingAhead ? `<div class="hair"><table class="tl"><tbody>
-          <tr class="hi"><th>${dayW(o.expected_pricing)}</th><td>The final price is expected to be set. A final prospectus follows with the share counts.</td></tr>
-          ${o.expected_trading ? `<tr><th>${dayW(o.expected_trading)}</th><td>Shares are expected to start trading on ${esc(b.exchange)}${r.tickers.length ? ' as ' + esc(r.tickers[0]) : ''}.</td></tr>` : ''}
-        </tbody></table></div>
-        <p class="note">Dates: <a href="${esc(o.dates_url)}">${esc(o.dates_from)} ↗</a>. They are not in the filing and can move.</p>` : ''}
-        <div class="hair"${pricingAhead ? ' style="border-top:1px solid var(--line);margin-top:6px"' : ''}><div class="mod"><h3>When insiders can sell</h3><p>${esc(b.lockup.summary)} In total, up to ${shares(lockTotal)} more shares can come to market, ${Math.round(lockTotal / m.shares)} times the number sold in the IPO.</p>
-          <div class="rows r2">${b.lockup.events.map(e => `<span class="lab">${esc(e.when)}<small>${esc(e.what)}</small></span><span class="trk"><i style="width:${e.shares / lockMax * 100}%"></i></span><span class="v">up to ${shares(e.shares)}</span>`).join('')}</div>${src(b, 'Shares eligible for future sale')}</div></div></section>
-      <section><div class="bar"><h2>Risks the company lists first</h2><span>${esc(b.risks_note || '')}</span></div>
-        <div class="hair"><ol class="risks">${b.risks.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div><p class="note">${src(b, 'Risk factors')}</p></section>
+      <section><div class="bar"><h2>What’s the deal?</h2><span>From the filing dated ${day(b.doc_date || b.range_set)}</span></div>${grid([rangeMod, splitMod, floatMod, useMod, scenMod])}</section>
+      <section><div class="bar"><h2>How’s the business?</h2><span>${fin ? 'From the financial statements in the filing' : 'Not read yet'}</span></div>${business}</section>
+      <section><div class="bar"><h2>Who’s cashing out?</h2><span>The money trail</span></div>${trailHTML}</section>
+      <section><div class="bar"><h2>What happens next?</h2></div>${nextHTML}</section>
+      ${b.risks && b.risks.length ? `<section><div class="bar"><h2>Risks the company lists first</h2><span>${esc(b.risks_note || '')}</span></div>
+        <div class="hair"><ol class="risks">${b.risks.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div><p class="note">${src(b, 'Risk factors')}</p></section>` : ''}
     </div>
     <aside class="rail">${filingsBox(r)}
-      <section class="rbox"><h2>How this page is made</h2><p>${b.method === 'manual' ? `This breakdown was read by hand from ${esc(b.basis)}, as the first test of the format. The automated reader will replace it.` : `Read automatically from ${esc(b.basis)}.`} Dollar figures use the midpoint of the price range until the deal prices.</p></section>
+      <section class="rbox"><h2>How this page is made</h2><p>${manual ? `This breakdown was read by hand from ${esc(b.basis)}, as the first test of the format. The automated reader will replace it.` : `Read automatically from ${esc(b.basis)}. A figure is shown only if it passes a consistency check.`} ${priced ? '' : 'Dollar figures use the midpoint of the price range until the deal prices.'}</p></section>
+      ${b.checks && b.checks.length ? `<section class="rbox"><h2>Checks passed</h2><ul>${b.checks.map(c => `<li><b style="font-weight:600">${esc(c.item)}</b><small>${esc(c.how)}</small></li>`).join('')}</ul></section>` : ''}
+      ${b.hidden && b.hidden.length ? `<section class="rbox"><h2>Left out</h2><ul>${b.hidden.map(c => `<li><b style="font-weight:600">${esc(c.item)}</b><small>${esc(c.why)}</small></li>`).join('')}</ul></section>` : ''}
     </aside></div>
   </div>`;
 }

@@ -27,6 +27,31 @@ yearly revenue and operating result, who is selling, what each funding round
 paid per share, the lock-up schedule and the first risk factors. The page
 works out everything else (amounts raised, company value, returns) from those.
 
+## The reader
+
+`reader.py` runs after the tracker. For each upcoming deal, and each deal that
+priced in the last 120 days, it downloads the newest prospectus (at most 40 a
+run, and each document only once) and writes `data/breakdowns/<CIK>.json`.
+This first part uses no model and costs nothing. It reads:
+
+- the offer terms: price range or final price, shares sold by the company and
+  by existing holders, shares outstanding afterwards
+- revenue, operating or net result and cash, from the tagged (XBRL) statements
+
+A figure is kept only if a consistency check passes: the filing states it in
+two places, the midpoint used in the filing matches the range on the cover,
+price times shares equals the total on the cover, or a tagged figure also
+appears in the printed statements. Anything that fails is left out, and the
+page lists what was left out and why. If the offer terms fail, no breakdown is
+written. `data/reader.json` records what happened for every deal.
+
+The reader never replaces a breakdown marked `"method": "manual"`.
+
+    python test_reader.py      # offline tests, on made-up filings
+
+Not built yet: who is selling, what earlier rounds paid, lock-ups, use of
+proceeds and risks. Those need a model to read the filing.
+
 ## How it decides
 
 1. Once a day it reads EDGAR's quarterly filing index and picks out companies

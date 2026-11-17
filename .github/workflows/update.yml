@@ -6,7 +6,7 @@ on:
   workflow_dispatch:        # lets you press "Run workflow" by hand
   push:                     # also run when the tracker itself changes
     branches: [main]
-    paths: ["tracker.py", "site/**", "data/breakdowns/**", ".github/workflows/update.yml"]
+    paths: ["tracker.py", "reader.py", "site/**", "data/breakdowns/**", ".github/workflows/update.yml"]
 
 permissions:
   contents: write           # so the job can save the updated list back to the repository
@@ -29,6 +29,13 @@ jobs:
         env:
           # The SEC requires a contact on every request. Override it with a repository variable of the same name.
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'IPO Query info@ipoquery.com' }}
+      - name: Read the latest prospectus for each deal
+        continue-on-error: true   # a problem here must not stop the list from updating
+        run: python reader.py
+        env:
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'IPO Query info@ipoquery.com' }}
+      - name: Rebuild the page with the breakdowns
+        run: python tracker.py --render-only
       - name: Save changes
         run: |
           git config user.name "ipo-tracker"
