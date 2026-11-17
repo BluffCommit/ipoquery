@@ -49756,7 +49756,7 @@
    "withdrawn_date": null
   },
   "2130357": {
-   "amendments": 2,
+   "amendments": 3,
    "cik": 2130357,
    "draft_date": "2026-06-01",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2130357",
@@ -49802,6 +49802,16 @@
      "date": "2026-11-12",
      "form": "FWP",
      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073045/anthropicpbc-fwpjapanamend.htm"
+    },
+    {
+     "date": "2026-11-17",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm"
+    },
+    {
+     "date": "2026-11-17",
+     "form": "8-A12B",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074342/anthropic-8xa12b.htm"
     }
    ],
    "first_filed": "2026-10-26",
@@ -49809,13 +49819,13 @@
    "form": "S-1",
    "industry": "Services-Prepackaged Software",
    "kind": "company",
-   "last_activity": "2026-11-12",
+   "last_activity": "2026-11-17",
    "latest": {
-    "date": "2026-11-10",
+    "date": "2026-11-17",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm"
    },
-   "listing_date": null,
+   "listing_date": "2026-11-17",
    "location": "CA",
    "marketing": true,
    "name": "Anthropic, PBC",
