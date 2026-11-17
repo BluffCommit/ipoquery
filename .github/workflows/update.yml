@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "17 */6 * * *"   # every 6 hours at :17 (UTC). On a public repository this can be hourly: "17 * * * *"
   workflow_dispatch:        # lets you press "Run workflow" by hand
+  push:                     # also run when the tracker itself changes
+    branches: [main]
+    paths: ["tracker.py", ".github/workflows/update.yml"]
 
 permissions:
   contents: write           # so the job can save the updated list back to the repository
@@ -24,7 +27,8 @@ jobs:
       - name: Update the list from SEC EDGAR
         run: python tracker.py
         env:
-          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+          # The SEC requires a contact on every request. Override it with a repository variable of the same name.
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'IPO Query info@ipoquery.com' }}
       - name: Save changes
         run: |
           git config user.name "ipo-tracker"

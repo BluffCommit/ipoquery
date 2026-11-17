@@ -48,12 +48,10 @@ are kept in the data, labelled, and hidden on the page unless you tick the box.
 1. Create a new **public** repository and upload these files, keeping the
    folders as they are. Hourly runs are free on public repositories; on a
    private one they use up the monthly allowance.
-2. In the repository go to Settings, then Secrets and variables, then Actions,
-   then the Variables tab. Add a variable named `SEC_USER_AGENT` with the value
-   `IPO Query info@ipoquery.com`. The SEC requires automated requests
-   to name a contact and blocks ones that do not. This address is sent to the
-   SEC with every request and is visible to people who can see the
-   repository's settings.
+2. The SEC requires automated requests to name a contact and blocks ones that
+   do not. The workflow sends `IPO Query info@ipoquery.com`. To change it, go
+   to Settings, then Secrets and variables, then Actions, then the Variables
+   tab, and add a variable named `SEC_USER_AGENT`.
 3. Open the Actions tab, choose "Update IPO tracker" and press "Run workflow".
    The first run reads a year of filings and takes several minutes.
 4. Go to Settings, then Pages. Under "Build and deployment" choose "Deploy from
