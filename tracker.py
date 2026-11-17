@@ -6,7 +6,7 @@ works out where each deal stands from the *types* of filings made (no document
 reading, no AI model), and writes:
 
     docs/data/ipos.json   the list, for other tools
-    docs/index.html       a filterable page with the same data built in
+    docs/index.html       the site: site/report.html with the data written into it
     data/state.json       what has already been looked at, so runs stay small
 
 Run it on a schedule (see .github/workflows/update.yml). Python 3.9+, no
@@ -413,8 +413,8 @@ def run(fetcher, today, lookback_days, state_path, out_dir, force_index=False, l
     out_dir = Path(out_dir)
     ipos = sorted(companies.values(), key=lambda r: (r["last_activity"], r["name"]), reverse=True)
     json_path = out_dir / "data" / "ipos.json"
-    previous = load_json(json_path, {})
-    changed = previous.get("ipos") != ipos or not (out_dir / "index.html").exists()
+    payload = load_json(json_path, {})
+    changed = payload.get("ipos") != ipos
     if changed:
         counts = {}
         for r in ipos:
@@ -422,10 +422,7 @@ def run(fetcher, today, lookback_days, state_path, out_dir, force_index=False, l
         payload = {"source": "SEC EDGAR", "data_changed": today.isoformat(), "counts": counts, "ipos": ipos}
         json_path.parent.mkdir(parents=True, exist_ok=True)
         json_path.write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-        keep = ("name", "tickers", "sector", "kind", "location", "stage", "stalled", "unpriced", "first_filed", "draft_date", "amendments",
-                "marketing", "effective_date", "priced_date", "withdrawn_date", "last_activity", "latest", "edgar_url")
-        page_data = {"data_changed": payload["data_changed"], "ipos": [{k: r[k] for k in keep} for r in ipos]}
-        (out_dir / "index.html").write_text(render_page(page_data), encoding="utf-8")
+    changed = write_page(payload, out_dir) or changed      # also picks up a new template or breakdown file
     Path(state_path).parent.mkdir(parents=True, exist_ok=True)
     Path(state_path).write_text(json.dumps(state, indent=1, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
     log(f"{len(new)} new companies looked up, {len(refreshed)} re-checked, {len(ipos)} tracked, "
@@ -433,111 +430,44 @@ def run(fetcher, today, lookback_days, state_path, out_dir, force_index=False, l
     return {"new": len(new), "refreshed": len(refreshed), "tracked": len(ipos), "changed": changed}
 
 
+PAGE_FIELDS = ("cik", "name", "tickers", "exchanges", "sector", "kind", "location", "stage", "stalled", "unpriced", "first_filed", "draft_date",
+               "amendments", "marketing", "effective_date", "priced_date", "withdrawn_date", "last_activity", "latest", "edgar_url")
+
+
+def load_breakdowns(ciks):
+    """Per-deal breakdown files in data/breakdowns/<cik>.json, for deals that are being tracked."""
+    out = {}
+    for path in sorted((ROOT / "data" / "breakdowns").glob("*.json")):
+        try:
+            item = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        if item.get("cik") in ciks:
+            out[str(item["cik"])] = item
+    return out
+
+
 def render_page(payload):
-    data = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
-    return PAGE.replace("/*DATA*/null", data)
+    """Build the site page: the report template with the data it needs written into it."""
+    ipos = []
+    for r in payload["ipos"]:
+        slim = {k: r.get(k) for k in PAGE_FIELDS}
+        base = f"https://www.sec.gov/Archives/edgar/data/{r['cik']}/"
+        slim["ev"] = [[e["form"], e["date"], e["url"].replace(base, "")] for e in r.get("filings", [])[-10:]]
+        ipos.append(slim)
+    data = {"data_changed": payload["data_changed"], "ipos": ipos, "breakdowns": load_breakdowns({r["cik"] for r in payload["ipos"]})}
+    template = (ROOT / "site" / "report.html").read_text(encoding="utf-8")
+    return template.replace("/*DATA*/null", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
 
 
-PAGE = r"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IPO Query: companies filing to go public</title>
-<style>
-:root{--plane:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--line:#e1e0d9;--edge:#898781;--accent:#1c5cab;--wash:#e6eefa}
-@media (prefers-color-scheme:dark){:root{color-scheme:dark;--plane:#0d0d0d;--surface:#1a1a19;--ink:#f0efec;--ink2:#c3c2b7;--line:#2c2c2a;--edge:#6b6a65;--accent:#6da7ec;--wash:#152438}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--plane);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px 48px}
-.brand{margin:24px 0 0;font:600 15px/1 Georgia,"Times New Roman",serif;color:var(--accent)}
-h1{font:600 30px/1.15 Georgia,"Times New Roman",serif;margin:10px 0 6px}
-p.lede{margin:0 0 20px;color:var(--ink2);max-width:70ch}
-a{color:var(--accent);text-underline-offset:2px}
-.bar{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end;margin-bottom:14px}
-.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-right:auto}
-button.tab{min-height:44px;padding:0 14px;border:1px solid var(--edge);border-radius:22px;background:var(--surface);color:var(--ink);font:inherit;font-weight:500;cursor:pointer}
-button.tab[aria-pressed="true"]{background:var(--ink);color:var(--plane);border-color:var(--ink)}
-label.f{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--ink2)}
-label.f input,label.f select{height:44px;border:1px solid var(--edge);border-radius:8px;background:var(--surface);color:var(--ink);padding:0 10px;font:inherit;font-size:14px;min-width:170px}
-label.c{display:flex;align-items:center;gap:8px;min-height:44px;font-size:14px}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.box{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
-table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px;font-variant-numeric:tabular-nums}
-th{text-align:left;font-size:12px;font-weight:500;color:var(--ink2);padding:10px 14px;border-bottom:1px solid var(--edge);white-space:nowrap}
-td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-td small{display:block;color:var(--ink2);font-size:12px}
-td b{font-weight:600}
-.pill{display:inline-block;border-radius:4px;padding:1px 7px;background:var(--wash);font-size:12px;font-weight:600;white-space:nowrap}
-.none{padding:28px 14px;color:var(--ink2)}
-footer{margin-top:18px;font-size:13px;color:var(--ink2);max-width:80ch}
-</style>
-</head>
-<body>
-<div class="wrap">
-<p class="brand">IPO Query</p>
-<h1>Companies filing to go public in the US</h1>
-<p class="lede">Built automatically from SEC EDGAR. Each stage comes from the type of filing a company has made, not from reading the documents. <span id="stamp"></span></p>
-<div class="bar">
-  <div class="tabs" role="group" aria-label="Show" id="tabs"></div>
-  <label class="f" for="q">Search<input id="q" type="search" placeholder="Company or ticker"></label>
-  <label class="f" for="sector">Sector<select id="sector"><option value="">All sectors</option></select></label>
-  <label class="c"><input id="ticker" type="checkbox"> Has a ticker symbol</label>
-  <label class="c"><input id="shells" type="checkbox"> Include blank-check shells and funds</label>
-</div>
-<div class="box"><table>
-<thead><tr><th>Company</th><th>Stage</th><th>First filed</th><th>Amendments</th><th>Latest document</th></tr></thead>
-<tbody id="rows"></tbody>
-</table><div class="none" id="none" hidden>Nothing matches these filters.</div></div>
-<footer>Source: SEC EDGAR filing index and company filing histories. Priced means a final prospectus was filed; the date shown is that filing's date. Stalled means no registration filing for over 270 days. Never priced means the SEC cleared the registration more than 30 days ago and no final prospectus followed, which is typical of small offerings sold directly by the company. Not investment advice.</footer>
-</div>
-<script>
-const DATA = /*DATA*/null;
-const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const day = s => s ? new Date(s + 'T00:00:00Z').toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric', timeZone:'UTC'}) : '';
-const TABS = [['upcoming','Upcoming'],['priced','Priced'],['closed','Withdrawn, stalled or never priced']];
-const bucket = r => r.stage === 'priced' ? 'priced' : (r.stage === 'withdrawn' || r.stalled || r.unpriced) ? 'closed' : 'upcoming';
-const state = {tab:'upcoming', q:'', sector:'', shells:false, ticker:false};
-const all = (DATA && DATA.ipos) || [];
-function stage(r){
-  if (r.stage === 'priced') return ['Priced', 'final prospectus ' + day(r.priced_date)];
-  if (r.stage === 'withdrawn') return ['Withdrawn', day(r.withdrawn_date)];
-  if (r.stalled) return ['Stalled', 'last filing ' + day(r.last_activity)];
-  if (r.unpriced) return ['Cleared, never priced', 'cleared ' + day(r.effective_date)];
-  if (r.stage === 'effective') return ['Cleared by the SEC', day(r.effective_date)];
-  if (r.stage === 'amended') return ['Amended', 'latest ' + day(r.last_activity) + (r.marketing ? ' · marketing documents filed' : '')];
-  return ['Filed', day(r.first_filed)];
-}
-function visible(){
-  const q = state.q.trim().toLowerCase();
-  return all.filter(r => bucket(r) === state.tab && (state.shells || r.kind === 'company') && (!state.ticker || r.tickers.length) && (!state.sector || r.sector === state.sector)
-    && (!q || r.name.toLowerCase().includes(q) || r.tickers.some(t => t.toLowerCase().includes(q))));
-}
-function render(){
-  const base = all.filter(r => (state.shells || r.kind === 'company') && (!state.ticker || r.tickers.length));
-  document.getElementById('tabs').innerHTML = TABS.map(([id, label]) =>
-    `<button class="tab" data-tab="${id}" aria-pressed="${state.tab === id}">${label} · ${base.filter(r => bucket(r) === id).length}</button>`).join('');
-  const rows = visible();
-  document.getElementById('rows').innerHTML = rows.map(r => { const [s, note] = stage(r); const kind = r.kind === 'spac' ? 'Blank-check shell' : r.kind === 'fund' ? 'Fund or trust' : r.sector;
-    return `<tr><td><b><a href="${esc(r.edgar_url)}">${esc(r.name)}</a></b><small>${esc([r.tickers.join(', '), kind, r.location].filter(Boolean).join(' · '))}</small></td>
-      <td><span class="pill">${s}</span><small>${esc(note)}</small></td>
-      <td>${day(r.first_filed)}${r.draft_date ? `<small>draft sent ${day(r.draft_date)}</small>` : ''}</td>
-      <td>${r.amendments}</td>
-      <td><a href="${esc(r.latest.url)}">${esc(r.latest.form)}</a><small>${day(r.latest.date)}</small></td></tr>`; }).join('');
-  document.getElementById('none').hidden = rows.length > 0;
-}
-document.getElementById('sector').insertAdjacentHTML('beforeend', [...new Set(all.map(r => r.sector))].sort().map(s => `<option>${esc(s)}</option>`).join(''));
-document.getElementById('stamp').textContent = DATA ? 'Data last changed ' + day(DATA.data_changed) + '.' : '';
-document.getElementById('tabs').addEventListener('click', e => { const b = e.target.closest('[data-tab]'); if (b) { state.tab = b.dataset.tab; render(); } });
-document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
-document.getElementById('sector').addEventListener('change', e => { state.sector = e.target.value; render(); });
-document.getElementById('shells').addEventListener('change', e => { state.shells = e.target.checked; render(); });
-document.getElementById('ticker').addEventListener('change', e => { state.ticker = e.target.checked; render(); });
-render();
-</script>
-</body>
-</html>
-"""
+def write_page(payload, out_dir):
+    """Write index.html if its content has changed. Returns True when it was rewritten."""
+    path, page = Path(out_dir) / "index.html", render_page(payload)
+    if path.exists() and path.read_text(encoding="utf-8") == page:
+        return False
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(page, encoding="utf-8")
+    return True
 
 
 def main(argv=None):
@@ -546,10 +476,17 @@ def main(argv=None):
     parser.add_argument("--state", default=str(ROOT / "data" / "state.json"))
     parser.add_argument("--out", default=str(ROOT / "docs"))
     parser.add_argument("--force-index", action="store_true", help="re-read this quarter's index even if already read today")
+    parser.add_argument("--render-only", action="store_true", help="rebuild index.html from the saved list without contacting the SEC")
     parser.add_argument("--fixtures", help="read saved responses from this folder instead of the network (for tests)")
     parser.add_argument("--today", help="pretend today is this date, YYYY-MM-DD (for tests)")
     args = parser.parse_args(argv)
 
+    if args.render_only:
+        payload = load_json(Path(args.out) / "data" / "ipos.json", None)
+        if not payload:
+            sys.exit("No saved list yet. Run the tracker once first.")
+        print("page rewritten" if write_page(payload, args.out) else "page unchanged")
+        return
     user_agent = os.environ.get("SEC_USER_AGENT", "").strip()
     if not args.fixtures and "@" not in user_agent:
         sys.exit("Set SEC_USER_AGENT to your site or name plus a contact email, for example:\n"

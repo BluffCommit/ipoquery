@@ -6,9 +6,26 @@ uses no AI model, and needs no paid service.
 
 ## What it produces
 
-- `docs/index.html`: a filterable list (Upcoming, Priced, Withdrawn or stalled).
+- `docs/index.html`: the site, with the list and every IPO page.
 - `docs/data/ipos.json`: the same list as data, for the IPO pages built later.
 - `data/state.json`: the script's memory, so each run only fetches what is new.
+
+## The site
+
+`site/report.html` is the report view: the homepage and the page for each IPO,
+in one file. The tracker writes the data into it and saves the result as
+`docs/index.html`. To rebuild the page after changing the template, without
+contacting the SEC:
+
+    python tracker.py --render-only
+
+An IPO page shows the full breakdown when `data/breakdowns/<CIK>.json` exists
+for that company, and a "not read yet" page otherwise. `2130357.json`
+(Anthropic) is the first example, read by hand from the filing. It is the
+format the automated reader has to produce: the price range and share counts,
+yearly revenue and operating result, who is selling, what each funding round
+paid per share, the lock-up schedule and the first risk factors. The page
+works out everything else (amounts raised, company value, returns) from those.
 
 ## How it decides
 

@@ -6,7 +6,7 @@ on:
   workflow_dispatch:        # lets you press "Run workflow" by hand
   push:                     # also run when the tracker itself changes
     branches: [main]
-    paths: ["tracker.py", ".github/workflows/update.yml"]
+    paths: ["tracker.py", "site/**", "data/breakdowns/**", ".github/workflows/update.yml"]
 
 permissions:
   contents: write           # so the job can save the updated list back to the repository

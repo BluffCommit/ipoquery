@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPO Query</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,600..700&display=swap">
+<style>
+:root{
+  /* Report view: a research sheet. Greyscale structure, maroon for emphasis and the company's side, gold for money going to insiders. */
+  --bg:#ffffff;--shade:#f4f4f3;--shade2:#e9e9e7;--band:#1f1f1f;--band-ink:#ffffff;
+  --ink:#141414;--ink2:#555553;--line:#cfcfcc;--line2:#e7e7e4;--track:#dededb;
+  --maroon:#7b1e2b;--maroon-fill:#8c2535;--maroon-wash:#f6e9eb;
+  --gold:#7a5f14;--gold-fill:#c2a03a;--gold-wash:#f7f0d8;--on-gold:#1d1606;
+  --head:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --cond:"IBM Plex Sans Condensed","IBM Plex Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --bg:#121212;--shade:#1b1b1b;--shade2:#262625;--band:#dcdcd9;--band-ink:#121212;
+  --ink:#ececea;--ink2:#a8a8a5;--line:#3a3a38;--line2:#272726;--track:#333331;
+  --maroon:#e7a0aa;--maroon-fill:#a8394a;--maroon-wash:#2a1518;
+  --gold:#dcba5c;--gold-fill:#c2a03a;--gold-wash:#2b2514}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#121212;--shade:#1b1b1b;--shade2:#262625;--band:#dcdcd9;--band-ink:#121212;
+  --ink:#ececea;--ink2:#a8a8a5;--line:#3a3a38;--line2:#272726;--track:#333331;
+  --maroon:#e7a0aa;--maroon-fill:#a8394a;--maroon-wash:#2a1518;
+  --gold:#dcba5c;--gold-fill:#c2a03a;--gold-wash:#2b2514}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:3px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--maroon);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.scroll{overflow-x:auto}
+.muted{color:var(--ink2)}
+
+/* header and footer */
+.hdr{border-top:4px solid var(--ink);border-bottom:1px solid var(--ink)}
+.hdr-in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;padding-block:13px}
+.logo{font:700 25px/1 var(--head);letter-spacing:.04em;text-decoration:none;white-space:nowrap}
+.logo span{color:var(--maroon)}
+.hsearch{flex:1 1 260px;max-width:420px;display:flex}
+.hsearch input{width:100%;height:40px;padding:0 12px;border:1px solid var(--line);background:var(--bg);border-radius:0}
+.hnav{display:flex;gap:20px;margin-left:auto;flex-wrap:wrap}
+.hnav a{text-decoration:none;font-weight:600;font-size:14px;min-height:40px;display:inline-flex;align-items:center}
+.ftr{border-top:1px solid var(--ink);color:var(--ink2);margin-top:44px}
+.ftr-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-block:20px 40px;font-size:13px}
+
+/* shared pieces */
+.eyebrow{font:600 11.5px/1.3 var(--cond);letter-spacing:.09em;text-transform:uppercase;color:var(--ink2);margin:0}
+.bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 14px;background:var(--band);color:var(--band-ink);padding:8px 12px;border-bottom:2px solid var(--gold-fill);margin:0}
+.bar h2{margin:0;font:600 12.5px/1.2 var(--cond);letter-spacing:.09em;text-transform:uppercase}
+.bar span{font-size:12.5px;opacity:.85}
+.hair{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-top:0}
+.hair>*{background:var(--bg);min-width:0}
+.stack{display:grid;gap:30px}
+.stack>*,.cols>*,.main>*{min-width:0}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:30px;align-items:start}
+.main{display:grid;gap:30px}
+.src{font-size:12px;color:var(--ink2)}
+.src a{text-decoration-color:var(--line)}
+.tag{display:inline-block;font:600 10.5px/1.5 var(--cond);letter-spacing:.07em;text-transform:uppercase;border:1px solid var(--line);padding:0 5px;color:var(--ink2);white-space:nowrap}
+.stage{display:inline-flex;align-items:center;gap:7px;font-weight:600;white-space:nowrap}
+.stage::before{content:"";width:9px;height:9px;border:1.5px solid var(--ink2);flex:none}
+.stage[data-s="amended"]::before{background:linear-gradient(90deg,var(--ink2) 50%,transparent 50%)}
+.stage[data-s="effective"]::before{background:var(--ink2)}
+.stage[data-s="priced"]::before{background:var(--maroon-fill);border-color:var(--maroon-fill)}
+.stage[data-s="closed"]::before{background:repeating-linear-gradient(135deg,var(--ink2) 0 2px,transparent 2px 4px)}
+
+/* home */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;padding-block:28px 30px;align-items:start}
+.h1{font:700 clamp(30px,4.4vw,46px)/1.07 var(--head);margin:.3em 0 .35em;text-wrap:balance;max-width:19ch}
+.h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--gold-wash) 62%)}
+.lede{font-size:16.5px;line-height:1.55;color:var(--ink2);max-width:60ch;margin:0 0 18px}
+.search{display:flex;max-width:620px}
+.search input{flex:1;min-width:0;height:46px;border:1px solid var(--ink2);border-right:0;background:var(--bg);padding:0 14px;font-size:15px;border-radius:0}
+.search button{height:46px;padding:0 22px;border:0;background:var(--band);color:var(--band-ink);font:600 13px var(--cond);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.snap{border:1px solid var(--line)}
+.snap h2{margin:0;background:var(--band);color:var(--band-ink);font:600 11.5px/1 var(--cond);letter-spacing:.09em;text-transform:uppercase;padding:9px 12px;border-bottom:2px solid var(--gold-fill)}
+.snap dl{margin:0;display:grid;grid-template-columns:1fr auto}
+.snap dt,.snap dd{margin:0;padding:8px 12px;border-bottom:1px solid var(--line2);font-size:13.5px}
+.snap dt{color:var(--ink2)}
+.snap dd{font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.snap dl>:nth-child(4n+1),.snap dl>:nth-child(4n+2){background:var(--shade)}
+.snap p{margin:0;padding:8px 12px;font-size:12px;color:var(--ink2)}
+.feat{grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))}
+.card{padding:16px 18px;display:grid;gap:10px;align-content:start}
+.card-top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font:600 11px/1.4 var(--cond);letter-spacing:.07em;text-transform:uppercase;color:var(--ink2)}
+.date{background:var(--maroon-wash);color:var(--maroon);padding:1px 6px;white-space:nowrap}
+.card h3{margin:0;font:700 22px/1.15 var(--head)}
+.card h3 a{text-decoration:none}
+.card p{margin:0;color:var(--ink2);font-size:14px}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid var(--line2);padding-block:9px}
+.trio div+div{border-left:1px solid var(--line2);padding-left:12px}
+.trio b{display:block;font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.trio b.g{color:var(--gold)}
+.trio small{display:block;font-size:12px;color:var(--ink2);line-height:1.3}
+.more{font-weight:600;font-size:14px}
+.card-l{display:contents}
+.card .trio{order:2}.card .more{order:3}
+.card.solo{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);align-items:center;column-gap:36px}
+.card.solo .card-l{display:grid;gap:10px}
+.filters{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end;padding:12px;background:var(--shade);border:1px solid var(--line);border-top:0}
+.tabs{display:flex;flex-wrap:wrap;margin-right:auto;border:1px solid var(--ink2)}
+.tabs button{min-height:38px;padding:0 13px;border:0;background:var(--bg);cursor:pointer;font:600 12px var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.tabs button+button{border-left:1px solid var(--ink2)}
+.tabs button[aria-pressed="true"]{background:var(--band);color:var(--band-ink)}
+.filters label{display:grid;gap:3px;font:600 11px var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.filters select{height:38px;min-width:150px;border:1px solid var(--line);background:var(--bg);padding:0 8px;font:14px var(--body);color:var(--ink);border-radius:0}
+.filters label.chk{display:flex;align-items:center;gap:7px;min-height:38px;font:14px var(--body);text-transform:none;letter-spacing:0;color:var(--ink)}
+.tbox{border:1px solid var(--line);border-top:0}
+.tbl{width:100%;min-width:640px;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+.tbl th{background:var(--shade2);text-align:left;font:600 11px/1.25 var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);padding:8px 10px;border-bottom:1px solid var(--ink2);vertical-align:bottom;white-space:nowrap}
+.tbl th.num{text-align:right}
+.tbl td{padding:9px 10px;border-bottom:1px solid var(--line2);vertical-align:top}
+.tbl tbody tr:nth-child(even) td{background:var(--shade)}
+.tbl small{display:block;color:var(--ink2);font-size:12px}
+.tbl .co{font:600 15px/1.25 var(--head)}
+.tbl .co a{text-decoration-color:var(--maroon-fill);text-decoration-thickness:1.5px}
+.tfoot{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;padding:9px 12px;font-size:12.5px;color:var(--ink2);background:var(--shade);border-top:1px solid var(--line)}
+.tfoot button{min-height:34px;padding:0 14px;border:1px solid var(--ink2);background:var(--bg);cursor:pointer;font:600 12px var(--cond);letter-spacing:.06em;text-transform:uppercase}
+.none{padding:22px 12px;color:var(--ink2)}
+.rail{display:grid;gap:22px}
+.rbox h2{margin:0;font:600 12px/1.2 var(--cond);letter-spacing:.09em;text-transform:uppercase;padding:8px 0 7px;border-top:3px solid var(--ink);border-bottom:1px solid var(--line)}
+.rbox ul{list-style:none;margin:0;padding:0}
+.rbox li{padding:9px 0;border-bottom:1px solid var(--line2);font-size:13.5px}
+.rbox li a{font-weight:600;text-decoration:none}
+.rbox li a:hover{text-decoration:underline}
+.rbox li small{display:block;color:var(--ink2);font-size:12px}
+.rbox .kv{display:flex;justify-content:space-between;gap:10px}
+.rbox .kv span{color:var(--ink2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.rbox .kv button{all:unset;cursor:pointer;font-weight:600}
+.rbox .kv button:hover{text-decoration:underline}
+.rbox .kv button:focus-visible{outline:2px solid var(--maroon);outline-offset:2px}
+.rbox p{font-size:13.5px;color:var(--ink2);margin:10px 0 0}
+
+/* IPO page */
+.crumb{display:inline-flex;align-items:center;min-height:40px;margin-top:12px;font-size:13.5px;font-weight:600;text-decoration:none}
+.cohead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 30px;align-items:end;padding-bottom:18px}
+.cohead h1{font:700 clamp(30px,4vw,44px)/1.05 var(--head);margin:4px 0 6px;text-wrap:balance}
+.cohead p{margin:0;color:var(--ink2)}
+.meta{font-size:13px;margin-top:6px!important}
+.meta a,.meta b{color:var(--ink)}
+.keys{grid-template-columns:repeat(4,minmax(118px,1fr));border-top:1px solid var(--line)}
+.keys>div{padding:10px 14px}
+.keys b{display:block;font-size:24px;font-weight:600;line-height:1.15;font-variant-numeric:tabular-nums;white-space:nowrap}
+.keys small{display:block;font-size:12px;color:var(--ink2);line-height:1.3;max-width:17ch}
+.keys>.hi{background:var(--maroon-wash)}
+.keys>.hi b{color:var(--maroon)}
+.stepsbox{border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:14px 0 12px}
+.steps{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(128px,1fr);position:relative;margin:0;padding:0;list-style:none}
+.steps::before{content:"";position:absolute;left:6px;right:6px;top:6px;height:2px;background:var(--track)}
+.steps li{position:relative;padding:20px 10px 0 0;font-size:13px;line-height:1.35}
+.steps li::before{content:"";position:absolute;left:0;top:0;width:10px;height:10px;border-radius:50%;border:2px solid var(--ink2);background:var(--bg)}
+.steps li.done::before{background:var(--ink2)}
+.steps li.now::before{background:var(--maroon-fill);border-color:var(--maroon-fill);box-shadow:0 0 0 4px var(--maroon-wash)}
+.steps li b{display:block;font-weight:600}
+.steps li small{color:var(--ink2);font-size:12.5px}
+.steps li.now b{color:var(--maroon)}
+.min{grid-template-columns:repeat(4,minmax(0,1fr))}
+.min>div{padding:14px 16px}
+.min h3,.mod h3{margin:0 0 6px;font:700 17px/1.25 var(--head);text-wrap:balance}
+.min p{margin:0;font-size:14px;line-height:1.5}
+.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mod{padding:16px 18px 14px;display:grid;gap:10px;align-content:start}
+.mod>p{margin:0;font-size:14px;color:var(--ink2)}
+.mod.wide{grid-column:1/-1}
+.range{position:relative;height:74px;margin:4px 6px 0}
+.range .trk{position:absolute;left:0;right:0;top:30px;height:12px;background:var(--track)}
+.range .band{position:absolute;top:30px;height:12px;background:var(--ink2)}
+.range .mk{position:absolute;top:22px;width:3px;height:28px;background:var(--maroon-fill);transform:translateX(-1px)}
+.range .mkl{position:absolute;top:0;transform:translateX(-50%);font-size:12.5px;font-weight:600;white-space:nowrap;color:var(--maroon)}
+.range .tk{position:absolute;top:50px;transform:translateX(-50%);font-size:12px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.split{display:flex;height:30px;font-size:12.5px;font-weight:600;gap:2px}
+.split div{display:flex;align-items:center;padding:0 8px;white-space:nowrap;overflow:hidden;min-width:3px}
+.split .co{background:var(--maroon-fill);color:#fff}
+.split .se{background:var(--gold-fill);color:var(--on-gold);padding:0}
+.split .pub{background:var(--band);color:var(--band-ink);padding:0}
+.split .rest{background:var(--shade2);color:var(--ink2)}
+.key{margin:0;font-size:12.5px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:4px 16px}
+.key i{display:inline-block;width:10px;height:10px;margin-right:5px}
+.scen{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums;min-width:460px}
+.scen th,.scen td{padding:7px 10px;border-bottom:1px solid var(--line2)}
+.scen thead th{background:var(--shade2);font:600 11px/1.3 var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);text-align:right}
+.scen thead th:first-child{text-align:left}
+.scen tbody th{text-align:left;font-weight:500;color:var(--ink2)}
+.scen td{text-align:right}
+.scen .mid{background:var(--maroon-wash);font-weight:600}
+.colchart{display:flex;align-items:flex-end;gap:22px;height:170px;padding:0 4px;border-bottom:1px solid var(--ink2)}
+.colchart div{flex:0 1 72px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-size:13px;font-weight:600;white-space:nowrap}
+.colchart i{display:block;width:100%;min-height:2px;background:var(--ink2)}
+.colchart i.part{background:repeating-linear-gradient(135deg,var(--maroon-fill) 0 4px,transparent 4px 7px);outline:1.5px solid var(--maroon-fill);outline-offset:-1.5px}
+.xl{display:flex;gap:22px;padding:4px 4px 0;font-size:12px;color:var(--ink2)}
+.xl span{flex:0 1 72px;text-align:center}
+.rows{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:9px 12px;align-items:center;font-size:13.5px}
+.rows.r2{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) auto}
+.rows .lab{font-weight:600}
+.rows .lab small{display:block;font-weight:400;color:var(--ink2);font-size:12px}
+.rows .trk{height:14px;background:var(--shade2);position:relative}
+.rows .trk i{position:absolute;inset:0 auto 0 0;background:var(--ink2)}
+.rows .trk i.g{background:var(--gold-fill)}
+.rows .trk i.m{background:var(--maroon-fill)}
+.rows .trk i.x{background:repeating-linear-gradient(135deg,var(--ink2) 0 3px,transparent 3px 6px)}
+.rows .trk .one{position:absolute;top:-4px;bottom:-4px;width:0;border-left:1.5px dashed var(--ink)}
+.rows .v{font-weight:600;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.trio2{grid-template-columns:repeat(3,minmax(0,1fr))}
+.trio2>div{padding:14px 18px}
+.trio2 b{display:block;font-size:25px;font-weight:600;font-variant-numeric:tabular-nums}
+.trio2 small{color:var(--ink2);font-size:12.5px}
+.hold{width:100%;min-width:620px;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+.hold th{background:var(--shade2);font:600 11px/1.3 var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);padding:8px 10px;text-align:left;border-bottom:1px solid var(--ink2)}
+.hold th.num{text-align:right}
+.hold td{padding:8px 10px;border-bottom:1px solid var(--line2)}
+.hold tbody tr:nth-child(even) td{background:var(--shade)}
+.hold td:first-child{font-weight:600}
+.hold .g{color:var(--gold);font-weight:600}
+.tl{width:100%;border-collapse:collapse;font-size:14px}
+.tl th{width:190px;text-align:left;font-weight:600;padding:10px 14px;vertical-align:top}
+.tl td{padding:10px 14px}
+.tl tr{border-bottom:1px solid var(--line2)}
+.tl tr:last-child{border-bottom:0}
+.tl tr.hi{background:var(--maroon-wash)}
+.tl tr.hi th{color:var(--maroon)}
+.tl tr.done th,.tl tr.done td{color:var(--ink2)}
+.risks{margin:0;padding:14px 18px 14px 40px;font-size:14.5px;display:grid;gap:7px}
+.risks li::marker{font-weight:700;color:var(--maroon)}
+.note{font-size:12.5px;color:var(--ink2);margin:0;padding:10px 18px}
+.pending{padding:18px;display:grid;gap:8px}
+.pending h3{margin:0;font:700 18px/1.25 var(--head)}
+.pending p,.pending ul{margin:0;font-size:14px;color:var(--ink2)}
+.pending ul{padding-left:18px}
+@media (max-width:980px){.hero,.cols,.cohead{grid-template-columns:minmax(0,1fr)}.snap{max-width:420px}.min{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.grid2,.min,.trio2,.card.solo{grid-template-columns:minmax(0,1fr)}.keys{grid-template-columns:repeat(2,minmax(0,1fr))}.hnav{margin-left:0}.tl th{width:auto}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="logo" href="#home">IPO <span>QUERY</span></a>
+    <form class="hsearch" id="hsearch" role="search">
+      <label class="sr" for="hq">Search a company or ticker</label>
+      <input id="hq" type="search" placeholder="Search a company or ticker" autocomplete="off">
+    </form>
+    <nav class="hnav" aria-label="Site">
+      <a href="#home" data-go="upcoming">Upcoming</a>
+      <a href="#home" data-go="priced">Priced</a>
+    </nav>
+  </div>
+</header>
+<main id="app"></main>
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <span>IPO Query · Built from SEC filings. Every number links to the filing it came from. A number that fails a consistency check is hidden, not guessed.</span>
+    <span>Not investment advice.</span>
+  </div>
+</footer>
+
+<script>
+const DATA = /*DATA*/null;
+const D = DATA || {ipos: [], breakdowns: {}, data_changed: ''};
+const BD = D.breakdowns || {};
+const ALL = D.ipos || [];
+const BY = Object.fromEntries(ALL.map(r => [String(r.cik), r]));
+const NOW = new Date();
+
+/* ---------- formatting ---------- */
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const dt = s => new Date(s + 'T00:00:00Z');
+const day = s => s ? dt(s).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric', timeZone:'UTC'}) : '';
+const dayW = s => s ? dt(s).toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric', timeZone:'UTC'}) : '';
+const daysBetween = (a, b) => Math.round((dt(b) - dt(a)) / 864e5);
+const today = () => NOW.toISOString().slice(0, 10);
+function money(v){ const a = Math.abs(v), s = v < 0 ? '−' : '';
+  return s + '$' + (a >= 1e12 ? (a/1e12 + 1e-9).toFixed(2) + 'T' : a >= 1e10 ? (a/1e9 + 1e-9).toFixed(1) + 'B' : a >= 1e9 ? (a/1e9 + 1e-9).toFixed(2) + 'B'
+    : a >= 1e8 ? Math.round(a/1e6) + 'M' : a >= 1e6 ? (a/1e6 + 1e-9).toFixed(1).replace(/\.0$/, '') + 'M' : Math.round(a).toLocaleString('en-US')); }
+const paren = v => v < 0 ? '(' + money(-v) + ')' : money(v);
+const shares = n => n >= 1e9 ? (n/1e9).toFixed(2) + 'B' : n >= 1e6 ? (n/1e6).toFixed(1) + 'M' : Math.round(n).toLocaleString('en-US');
+const X = x => (x >= 10 ? Math.round(x) : x >= 2 ? x.toFixed(1) : x.toFixed(2)) + '×';
+const pc = (a, b, d = 0) => (a / b * 100).toFixed(d) + '%';
+const price = p => '$' + (Number.isInteger(p) ? p : p.toFixed(2));
+const filingUrl = (r, path) => 'https://www.sec.gov/Archives/edgar/data/' + r.cik + '/' + path;
+
+/* ---------- stage ---------- */
+const bucket = r => r.stage === 'priced' ? 'priced' : (r.stage === 'withdrawn' || r.stalled || r.unpriced) ? 'closed' : 'upcoming';
+function stageOf(r){
+  if (r.stage === 'priced') return {k:'priced', label:'Priced', note:'final prospectus ' + day(r.priced_date)};
+  if (r.stage === 'withdrawn') return {k:'closed', label:'Withdrawn', note:day(r.withdrawn_date)};
+  if (r.stalled) return {k:'closed', label:'Stalled', note:'last filing ' + day(r.last_activity)};
+  if (r.unpriced) return {k:'closed', label:'Cleared, never priced', note:'cleared ' + day(r.effective_date)};
+  if (r.stage === 'effective') return {k:'effective', label:'Cleared by the SEC', note:day(r.effective_date)};
+  if (r.stage === 'amended') return {k:'amended', label:'Amended', note:'latest ' + day(r.last_activity)};
+  return {k:'filed', label:'Filed', note:day(r.first_filed)};
+}
+const stageHTML = r => { const s = stageOf(r); return `<span class="stage" data-s="${s.k}">${s.label}</span><small>${esc(s.note)}</small>`; };
+const KEEP = new Set(['AG','SA','NV','SE','AB','AS','PLC','LLC','LP','USA','US','UK','AI','II','III','IV','VI','VII','IX','XI','XIV']);
+const LOWER = {INC:'Inc', CORP:'Corp', LTD:'Ltd', CO:'Co', THE:'The', AND:'and', OF:'of', FOR:'for', DE:'de', LA:'la'};
+function nice(name){
+  if (/[a-z]/.test(name)) return name;                       // already mixed case: leave as filed
+  return name.split(' ').map(w => { const core = w.replace(/[^A-Z0-9]/g, '');
+    if (KEEP.has(core)) return w;
+    if (LOWER[core]) return w.replace(core, LOWER[core]);
+    if (core.length <= 3 && !/[.,]/.test(w)) return w;         // short all-caps words are usually acronyms
+    return w.toLowerCase().replace(/(^|[-/&.'(])([a-z])/g, (m, a, c) => a + c.toUpperCase()); }).join(' ');
+}
+const kindLabel = r => r.kind === 'spac' ? 'Blank-check shell' : r.kind === 'fund' ? 'Fund or trust' : r.sector;
+const subline = r => esc([r.tickers.join(', '), kindLabel(r), r.location].filter(Boolean).join(' · '));
+
+/* ---------- breakdown maths ---------- */
+function calc(b, p){ const o = b.offer, n = o.company_shares + o.holder_shares;
+  return {p, shares:n, raised:n*p, co:o.company_shares*p, se:o.holder_shares*p, val:o.shares_after*p}; }
+const mid = b => (b.offer.low + b.offer.high) / 2;
+const bestRound = b => (b.rounds || []).reduce((m, r) => Math.max(m, mid(b) / r.price), 0);
+
+/* ---------- home ---------- */
+const F = {tab:'upcoming', q:'', sector:'', stage:'', ticker:false, shells:false, limit:40};
+const pool = () => ALL.filter(r => (F.shells || r.kind === 'company') && (!F.ticker || r.tickers.length));
+function rows(){ const q = F.q.trim().toLowerCase();
+  return pool().filter(r => bucket(r) === F.tab && (!F.sector || r.sector === F.sector) && (!F.stage || r.stage === F.stage)
+    && (!q || r.name.toLowerCase().includes(q) || r.tickers.some(t => t.toLowerCase().includes(q)))); }
+function search(q){ F.q = q; F.limit = 40; F.stage = '';
+  if (q.trim() && !rows().length) { const hit = ['upcoming','priced','closed'].find(t => { F.tab = t; return rows().length; }); if (!hit) F.tab = 'upcoming'; } }
+function tableHTML(){
+  const list = rows(), shown = list.slice(0, F.limit);
+  const co = r => `<td><div class="co"><a href="#ipo-${r.cik}">${esc(nice(r.name))}</a>${BD[r.cik] ? ' <span class="tag">Breakdown</span>' : ''}</div><small>${subline(r)}</small></td>`;
+  const doc = r => `<td><a href="${esc(r.latest.url)}">${esc(r.latest.form)} ↗</a><small>${day(r.latest.date)}</small></td>`;
+  let head, body;
+  if (F.tab === 'upcoming') {
+    head = '<th>Company</th><th>Stage</th><th>First filed</th><th class="num">Amendments</th><th>Latest document</th>';
+    body = shown.map(r => `<tr>${co(r)}<td>${stageHTML(r)}</td><td>${day(r.first_filed)}${r.draft_date ? `<small>draft sent ${day(r.draft_date)}</small>` : ''}</td><td class="num">${r.amendments}</td>${doc(r)}</tr>`).join('');
+  } else if (F.tab === 'priced') {
+    head = '<th>Company</th><th>Final prospectus</th><th>Exchange</th><th>First filed</th><th class="num">Filing to pricing</th><th>Latest document</th>';
+    body = shown.map(r => `<tr>${co(r)}<td>${day(r.priced_date)}</td><td>${esc(r.exchanges.join(', ')) || '<span class="muted">Not listed in EDGAR</span>'}</td><td>${day(r.first_filed)}</td><td class="num">${daysBetween(r.first_filed, r.priced_date)} days</td>${doc(r)}</tr>`).join('');
+  } else {
+    head = '<th>Company</th><th>What happened</th><th>First filed</th><th class="num">Amendments</th><th>Latest document</th>';
+    body = shown.map(r => `<tr>${co(r)}<td>${stageHTML(r)}</td><td>${day(r.first_filed)}</td><td class="num">${r.amendments}</td>${doc(r)}</tr>`).join('');
+  }
+  const more = list.length > shown.length ? `<button type="button" id="more">Show ${Math.min(40, list.length - shown.length)} more</button>` : '';
+  return `<div class="scroll"><table class="tbl"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>
+    ${list.length ? '' : '<div class="none">Nothing matches these filters.</div>'}
+    <div class="tfoot"><span>Showing ${shown.length} of ${list.length}${F.tab === 'upcoming' && !F.ticker ? '. Many are very small offerings; “Has a ticker symbol” hides most of them.' : ''}</span>${more}</div>`;
+}
+function filtersHTML(){
+  const p = pool(), n = k => p.filter(r => bucket(r) === k).length;
+  const tab = (k, l) => `<button type="button" data-tab="${k}" aria-pressed="${F.tab === k}">${l} · ${n(k)}</button>`;
+  const opt = (v, l, cur) => `<option value="${esc(v)}"${v === cur ? ' selected' : ''}>${esc(l)}</option>`;
+  const sectors = [...new Set(ALL.filter(r => r.kind === 'company').map(r => r.sector))].sort();
+  return `<div class="tabs" role="group" aria-label="Which IPOs">${tab('upcoming','Upcoming')}${tab('priced','Priced')}${tab('closed','Withdrawn or stalled')}</div>
+    <label for="f-sector">Sector<select id="f-sector">${opt('','All sectors',F.sector)}${sectors.map(s => opt(s, s, F.sector)).join('')}</select></label>
+    <label for="f-stage">Stage<select id="f-stage"${F.tab !== 'upcoming' ? ' disabled' : ''}>${opt('','Any stage',F.stage)}${opt('filed','Filed',F.stage)}${opt('amended','Amended',F.stage)}${opt('effective','Cleared by the SEC',F.stage)}</select></label>
+    <label class="chk" for="f-ticker"><input id="f-ticker" type="checkbox"${F.ticker ? ' checked' : ''}> Has a ticker symbol</label>
+    <label class="chk" for="f-shells"><input id="f-shells" type="checkbox"${F.shells ? ' checked' : ''}> Include shells and funds</label>`;
+}
+function refresh(){
+  document.getElementById('filters').innerHTML = filtersHTML();
+  document.getElementById('tbl').innerHTML = tableHTML();
+  document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { F.tab = b.dataset.tab; F.limit = 40; if (F.tab !== 'upcoming') F.stage = ''; refresh(); });
+  const on = (id, k, chk) => { const el = document.getElementById(id); if (el) el.onchange = e => { F[k] = chk ? e.target.checked : e.target.value; F.limit = 40; refresh(); }; };
+  on('f-sector','sector'); on('f-stage','stage'); on('f-ticker','ticker',true); on('f-shells','shells',true);
+  const m = document.getElementById('more'); if (m) m.onclick = () => { F.limit += 40; refresh(); };
+}
+function featCard(r, solo){ const b = BD[r.cik], m = calc(b, mid(b)), o = b.offer, upcoming = o.expected_pricing && o.expected_pricing >= today() && r.stage !== 'priced';
+  return `<article class="card${solo ? ' solo' : ''}"><div class="card-l">
+    <div class="card-top"><span>${esc([r.tickers[0], b.exchange, r.sector].filter(Boolean).join(' · '))}</span><span class="date">${upcoming ? 'Prices ' + dayW(o.expected_pricing) : esc(stageOf(r).label)}</span></div>
+    <h3><a href="#ipo-${r.cik}">${esc(nice(r.name))}</a></h3><p>${esc(b.what)}</p>
+    <a class="more" href="#ipo-${r.cik}">Open the breakdown →</a></div>
+    <div class="trio"><div><b>${money(m.raised)}</b><small>raising at ${price(o.low)} to ${price(o.high)}</small></div>
+      <div><b class="${o.holder_shares ? 'g' : ''}">${pc(m.se, m.raised)}</b><small>of the money goes to insiders selling</small></div>
+      <div><b>${X(bestRound(b))}</b><small>return for the earliest round</small></div></div></article>`; }
+function home(){
+  const co = ALL.filter(r => r.kind === 'company'), n = f => co.filter(f).length, up = r => bucket(r) === 'upcoming';
+  const feats = ALL.filter(r => BD[r.cik]);
+  const latest = [...co].sort((a, b) => b.latest.date.localeCompare(a.latest.date)).slice(0, 8);
+  const bySector = Object.entries(co.filter(up).reduce((m, r) => (m[r.sector] = (m[r.sector] || 0) + 1, m), {})).sort((a, b) => b[1] - a[1]);
+  return `
+  <section class="wrap hero">
+    <div>
+      <p class="eyebrow">US IPO pipeline · data last changed ${day(D.data_changed)}</p>
+      <h1 class="h1">Every upcoming US IPO, and <em>who gets paid</em> when it lists</h1>
+      <p class="lede">We read each company’s filing so you don’t have to: the deal, the business, who is cashing out and what earlier investors paid. Free, sourced and updated as filings land.</p>
+      <form class="search" id="hero-search" role="search"><label class="sr" for="hero-q">Search</label><input id="hero-q" type="search" placeholder="Search a company or ticker" value="${esc(F.q)}" autocomplete="off"><button>Search</button></form>
+    </div>
+    <aside class="snap" aria-label="Pipeline at a glance">
+      <h2>Pipeline at a glance</h2>
+      <dl>
+        <dt>In registration</dt><dd>${n(up)}</dd>
+        <dt>Filed, not yet amended</dt><dd>${n(r => up(r) && r.stage === 'filed')}</dd>
+        <dt>Amended</dt><dd>${n(r => up(r) && r.stage === 'amended')}</dd>
+        <dt>Cleared by the SEC</dt><dd>${n(r => up(r) && r.stage === 'effective')}</dd>
+        <dt>Priced, last 12 months</dt><dd>${n(r => r.stage === 'priced')}</dd>
+        <dt>Withdrawn</dt><dd>${n(r => r.stage === 'withdrawn')}</dd>
+      </dl>
+      <p>From SEC EDGAR. Leaves out ${ALL.length - co.length} blank-check shells and funds.</p>
+    </aside>
+  </section>
+  <div class="wrap stack">
+    ${feats.length ? `<section><div class="bar"><h2>Breakdowns</h2><span>Deals whose filing has been read in full</span></div><div class="hair feat">${feats.map(r => featCard(r, feats.length === 1)).join('')}</div></section>` : ''}
+    <div class="cols">
+      <div class="main">
+        <section><div class="bar" id="all-ipos"><h2>All IPOs</h2><span>Filter by stage or sector</span></div>
+          <div class="filters" id="filters"></div><div class="tbox" id="tbl"></div></section>
+      </div>
+      <aside class="rail">
+        <section class="rbox"><h2>Latest filings</h2><ul>${latest.map(r => `<li><a href="#ipo-${r.cik}">${esc(nice(r.name))}</a><small>${esc(r.latest.form)} · ${day(r.latest.date)}</small></li>`).join('')}</ul></section>
+        <section class="rbox"><h2>Upcoming, by sector</h2><ul>${bySector.map(([s, c]) => `<li class="kv"><button type="button" data-sector="${esc(s)}">${esc(s)}</button><span>${c}</span></li>`).join('')}</ul></section>
+        <section class="rbox"><h2>How this page is made</h2><p>A script reads SEC EDGAR every six hours and works out each deal’s stage from the filings made. Breakdowns are read from the filing itself.</p></section>
+      </aside>
+    </div>
+  </div>`;
+}
+function bindHome(){
+  refresh();
+  document.getElementById('hero-search').onsubmit = e => { e.preventDefault(); search(document.getElementById('hero-q').value); refresh(); document.getElementById('all-ipos').scrollIntoView(); };
+  document.querySelectorAll('[data-sector]').forEach(b => b.onclick = () => { F.sector = b.dataset.sector; F.tab = 'upcoming'; F.limit = 40; refresh(); document.getElementById('all-ipos').scrollIntoView(); });
+}
+
+/* ---------- IPO page ---------- */
+const src = (b, text) => `<span class="src">Source: <a href="${esc(b.doc)}">${esc(b.basis)} ↗</a>${text ? ', ' + esc(text) : ''}</span>`;
+function stepsHTML(r, b){
+  const s = [];
+  if (r.draft_date) s.push(['Draft sent to the SEC', day(r.draft_date), 1]);
+  s.push(['Filed', day(r.first_filed), 1]);
+  if (r.amendments) s.push(['Amended ' + (r.amendments > 1 ? r.amendments + ' times' : 'once'), r.stage === 'amended' ? 'latest ' + day(r.latest.date) : '', 1]);
+  if (b && b.range_set) s.push(['Price range set', day(b.range_set), 1]);
+  if (r.stage === 'withdrawn') s.push(['Withdrawn', day(r.withdrawn_date), 1]);
+  else {
+    if (r.effective_date) s.push(['Cleared by the SEC', day(r.effective_date), 1]);
+    if (r.stage === 'priced') s.push(['Priced', 'final prospectus ' + day(r.priced_date), 1]);
+    else if (b && b.offer.expected_pricing) { s.push(['Pricing', 'expected ' + day(b.offer.expected_pricing), 0]); if (b.offer.expected_trading) s.push(['First trade', 'expected ' + day(b.offer.expected_trading), 0]); }
+    else if (!r.stalled && !r.unpriced) s.push(['Pricing', 'no date yet', 0]);
+  }
+  const last = s.map(x => x[2]).lastIndexOf(1);
+  return `<div class="stepsbox scroll"><ol class="steps">${s.map((x, i) => `<li class="${i === last ? 'now' : x[2] ? 'done' : ''}"><b>${esc(x[0])}</b><small>${esc([x[1], i === last ? 'we are here' : ''].filter(Boolean).join(' · '))}</small></li>`).join('')}</ol></div>`;
+}
+function filingsBox(r){
+  const NAMES = {'S-1':'S-1, the registration statement', 'F-1':'F-1, the registration statement', 'S-1/A':'S-1 amendment', 'F-1/A':'F-1 amendment', '424B4':'Final prospectus (424B4)', '424B1':'Final prospectus (424B1)',
+    'EFFECT':'SEC notice: registration effective', 'RW':'Request to withdraw', '8-A12B':'Exchange registration (8-A)'};
+  const all = [...(r.ev || [])].reverse(), fwp = all.filter(e => e[0] === 'FWP'), ev = all.filter(e => e[0] !== 'FWP');
+  const mk = fwp.length ? `<li><b style="font-weight:600">${fwp.length} marketing document${fwp.length > 1 ? 's' : ''}</b><small>latest ${day(fwp[0][1])}</small></li>` : '';
+  return `<section class="rbox"><h2>The filings</h2><ul>${mk}${ev.map(e => `<li><a href="${esc(filingUrl(r, e[2]))}">${esc(NAMES[e[0]] || e[0])} ↗</a><small>${day(e[1])}</small></li>`).join('')}</ul><p><a href="${esc(r.edgar_url)}">Everything this company has filed ↗</a></p></section>`;
+}
+function ipoPage(r){
+  const b = BD[r.cik], st = stageOf(r);
+  const head = keys => `<div class="wrap">
+    <a class="crumb" href="#home">← All IPOs</a>
+    <div class="cohead"><div>
+      <p class="eyebrow">${esc(bucket(r) === 'upcoming' ? 'Upcoming IPO · ' + (b && b.range_set && r.stage !== 'effective' ? 'price range set' : st.label) : st.label)}</p>
+      <h1>${esc(nice(r.name))}</h1>${b ? `<p>${esc(b.what)}</p>` : ''}
+      <p class="meta">${r.tickers.length ? 'Ticker <b>' + esc(r.tickers.join(', ')) + '</b> · ' : ''}${esc([(b && b.exchange) || r.exchanges.join(', '), kindLabel(r), r.location].filter(Boolean).join(' · '))} · <a href="${esc(r.latest.url)}">Latest: ${esc(r.latest.form)}, ${day(r.latest.date)} ↗</a></p>
+    </div><div class="hair keys">${keys}</div></div>
+    ${stepsHTML(r, b)}
+  </div>`;
+  if (!b) {
+    const end = r.priced_date || r.withdrawn_date || today();
+    return head(`<div class="hi"><b>${esc(st.label)}</b><small>${esc(st.note)}</small></div><div><b>${day(r.first_filed).replace(/, \d+$/, '')}</b><small>first filed, ${r.first_filed.slice(0, 4)}</small></div>
+      <div><b>${r.amendments}</b><small>amendment${r.amendments === 1 ? '' : 's'} so far</small></div><div><b>${daysBetween(r.first_filed, end)} days</b><small>${r.stage === 'priced' ? 'from filing to pricing' : r.stage === 'withdrawn' ? 'from filing to withdrawal' : 'in registration'}</small></div>`) + `
+    <div class="wrap stack" style="margin-top:22px"><div class="cols"><div class="main">
+      <section><div class="bar"><h2>The breakdown</h2><span>Not read yet</span></div>
+        <div class="hair"><div class="pending"><h3>This filing has not been read in full yet</h3>
+          <p>So far this page shows only what the filing index tells us: when the company filed, how often it has amended and where the deal stands. Once the filing itself is read, this page adds:</p>
+          <ul><li>the price range, the amount being raised and what that values the company at</li><li>revenue, profit or loss, and cash</li><li>who is selling shares in the IPO and how much they receive</li><li>what earlier funding rounds paid per share</li><li>the dates that matter next</li></ul>
+          <p><a href="${esc(r.latest.url)}">Read the latest filing yourself ↗</a></p></div></div></section>
+    </div><aside class="rail">${filingsBox(r)}</aside></div></div>`;
+  }
+  const o = b.offer, m = calc(b, mid(b)), lo = calc(b, o.low), hi = calc(b, o.high), fin = b.financials, short = b.short || r.name;
+  const span = o.high - o.low, a0 = Math.floor(o.low - span), a1 = Math.ceil(o.high + span), pos = v => ((v - a0) / (a1 - a0) * 100) + '%';
+  const fy = fin.years, lastY = fy[fy.length - 1], maxRev = Math.max(...fy.map(y => y.revenue), fin.ytd ? fin.ytd.revenue : 0), maxLoss = Math.max(...fy.map(y => Math.abs(y.operating)), fin.ytd ? Math.abs(fin.ytd.operating) : 0);
+  const M6 = v => money(v * 1e6), P6 = v => paren(v * 1e6);
+  const maxSell = Math.max(...b.sellers.map(s => s.sold)), top = bestRound(b), L = Math.log, lw = x => Math.max(2, (L(x) - L(.5)) / (L(top * 1.4) - L(.5)) * 100);
+  const first = b.rounds[0], lastR = b.rounds[b.rounds.length - 1], under = b.rounds.filter(q => mid(b) < q.price);
+  const pricingAhead = o.expected_pricing && r.stage !== 'priced';
+  const lockMax = Math.max(...b.lockup.events.map(e => e.shares)), lockTotal = b.lockup.events.reduce((s, e) => s + e.shares, 0);
+  const holders = [...b.sellers, ...(b.others || [])];
+  return head(`<div><b>${price(o.low)} to ${price(o.high)}</b><small>price range per share</small></div><div><b>${money(m.raised)}</b><small>raising at the ${price(mid(b))} midpoint</small></div>
+      <div><b>${money(m.val)}</b><small>company value at the midpoint</small></div>
+      <div class="hi"><b>${pricingAhead ? dayW(o.expected_pricing).replace(/^\w+, /, '') : day(r.priced_date)}</b><small>${pricingAhead ? 'expected pricing, ' + dt(o.expected_pricing).toLocaleDateString('en-US', {weekday:'long', timeZone:'UTC'}) : 'final prospectus filed'}</small></div>`) + `
+  <div class="wrap stack" style="margin-top:22px">
+    <section><div class="bar"><h2>In one minute</h2>${b.method === 'manual' ? `<span>Read by hand on ${day(b.loaded)}</span>` : ''}</div>
+      <div class="hair min">
+        <div><h3>The deal</h3><p>Selling ${shares(m.shares)} shares at ${price(o.low)} to ${price(o.high)} to raise about ${money(m.raised)}, valuing ${esc(short)} at about ${money(m.val)}.</p></div>
+        <div><h3>The business</h3><p>Revenue was ${M6(lastY.revenue)} in ${lastY.label}, up from ${M6(fy[0].revenue)} in ${fy[0].label}.${fin.ytd ? ` In ${fin.ytd.label} it was ${M6(fin.ytd.revenue)}.` : ''} ${lastY.operating < 0 ? `It lost ${M6(-lastY.operating)} from operations in ${lastY.label}.` : `It earned ${M6(lastY.operating)} from operations in ${lastY.label}.`}</p></div>
+        <div><h3>Who’s cashing out</h3><p>${o.holder_shares ? `${b.sellers.length} holders sell ${shares(o.holder_shares)} shares worth about ${money(m.se)}: ${pc(m.se, m.raised)} of the deal. The company keeps ${money(m.co)}.` : 'No existing holder is selling. All of the money goes to the company.'}</p></div>
+        <div><h3>What happens next</h3><p>${pricingAhead ? `Pricing is expected ${dayW(o.expected_pricing)}${o.expected_trading ? ' and trading ' + dayW(o.expected_trading) : ''}. ` : ''}${esc(b.lockup.summary)}</p></div>
+      </div></section>
+    <div class="cols"><div class="main">
+      <section><div class="bar"><h2>What’s the deal?</h2><span>From the filing dated ${day(b.range_set)}</span></div>
+        <div class="hair grid2">
+          <div class="mod"><h3>Shares are offered at ${price(o.low)} to ${price(o.high)}</h3><p>The midpoint, used for the figures on this page, is ${price(mid(b))}.</p>
+            <div class="range" role="img" aria-label="Price range ${price(o.low)} to ${price(o.high)}, midpoint ${price(mid(b))}">
+              <div class="trk"></div><div class="band" style="left:${pos(o.low)};width:${(o.high - o.low) / (a1 - a0) * 100}%"></div>
+              <div class="mk" style="left:${pos(mid(b))}"></div><div class="mkl" style="left:${pos(mid(b))}">${price(mid(b))} midpoint</div>
+              <span class="tk" style="left:0;transform:none">${price(a0)}</span><span class="tk" style="left:${pos(o.low)}">${price(o.low)}</span><span class="tk" style="left:${pos(o.high)}">${price(o.high)}</span><span class="tk" style="left:100%;transform:translateX(-100%)">${price(a1)}</span>
+            </div>${src(b, 'cover page')}</div>
+          <div class="mod"><h3>${pc(m.co, m.raised)} of the money goes to the company</h3><p>The rest, ${pc(m.se, m.raised)}, goes to existing holders selling their own shares.</p>
+            <div class="split" role="img" aria-label="${pc(m.co, m.raised)} to the company, ${pc(m.se, m.raised)} to selling holders"><div class="co" style="flex:${m.co} 1 0">${money(m.co)} to the company</div><div class="se" style="flex:${m.se} 1 0"></div></div>
+            <p class="key"><span><i style="background:var(--maroon-fill)"></i>Company ${money(m.co)}</span><span><i style="background:var(--gold-fill)"></i>Selling holders ${money(m.se)}</span></p>${src(b, 'cover page')}</div>
+          <div class="mod"><h3>Only ${pc(m.shares, o.shares_after, 1)} of the company will trade</h3><p>${shares(m.shares)} of ${shares(o.shares_after)} shares are sold in the IPO. The rest stay with insiders and earlier investors.</p>
+            <div class="split" role="img" aria-label="${pc(m.shares, o.shares_after, 1)} sold in the IPO"><div class="pub" style="flex:${m.shares} 1 0"></div><div class="rest" style="flex:${o.shares_after - m.shares} 1 0">${pc(o.shares_after - m.shares, o.shares_after, 1)} kept by existing holders</div></div>${src(b, 'The offering')}</div>
+          <div class="mod"><h3>What the company says it will do with its share</h3><p>${esc(b.proceeds)}</p>${b.side_sale ? `<p>${esc(b.side_sale)}</p>` : ''}${src(b, 'Use of proceeds')}</div>
+          <div class="mod wide"><h3>Where the price lands changes who gets what</h3>
+            <div class="scroll"><table class="scen"><thead><tr><th>If it prices at</th><th>Low, ${price(o.low)}</th><th class="mid">Midpoint, ${price(mid(b))}</th><th>High, ${price(o.high)}</th></tr></thead><tbody>
+              ${[['Raised', c => money(c.raised)], ['To the company', c => money(c.co)], ['To selling holders', c => money(c.se)], ['Company value', c => money(c.val)],
+                 [first.name + ' return', c => X(c.p / first.price)], [lastR.name + ' return', c => X(c.p / lastR.price)]].map(([l, f]) => `<tr><th>${esc(l)}</th><td>${f(lo)}</td><td class="mid">${f(m)}</td><td>${f(hi)}</td></tr>`).join('')}
+            </tbody></table></div>${src(b, 'cover page; preferred stock note')}</div>
+        </div></section>
+      <section><div class="bar"><h2>How’s the business?</h2><span>${esc(fin.unit === 'USD millions' ? 'From the financial statements in the filing' : '')}</span></div>
+        <div class="hair grid2">
+          <div class="mod"><h3>Revenue went from ${M6(fy[0].revenue)} to ${M6(lastY.revenue)} in ${fy.length - 1} years</h3><p>${fin.ytd ? `The hatched bar is ${fin.ytd.label}, a part year: ${M6(fin.ytd.revenue)}, against ${M6(fin.ytd.prior_revenue)} in ${fin.ytd.prior_label}.` : 'Revenue by fiscal year.'}</p>
+            <div class="colchart" role="img" aria-label="Revenue by year">${fy.map(y => `<div><span>${M6(y.revenue)}</span><i style="height:${y.revenue / maxRev * 130}px"></i></div>`).join('')}${fin.ytd ? `<div><span>${M6(fin.ytd.revenue)}</span><i class="part" style="height:${fin.ytd.revenue / maxRev * 130}px"></i></div>` : ''}</div>
+            <div class="xl">${fy.map(y => `<span>${esc(y.label)}</span>`).join('')}${fin.ytd ? `<span>${esc(fin.ytd.label)}</span>` : ''}</div>${src(b, 'statements of operations')}</div>
+          <div class="mod"><h3>${lastY.operating < 0 ? 'It loses money from operations' : 'It earns money from operations'}</h3><p>Operating result each period. Parentheses mean a loss.</p>
+            <div class="rows">${[...fy, ...(fin.ytd ? [{label: fin.ytd.label, operating: fin.ytd.operating, part: 1}] : [])].map(y => `<span class="lab">${esc(y.label)}</span><span class="trk"><i class="${y.operating < 0 ? '' : 'm'}" style="width:${Math.abs(y.operating) / maxLoss * 100}%"></i></span><span class="v">${P6(y.operating)}</span>`).join('')}</div>${src(b, 'statements of operations')}</div>
+        </div>
+        <div class="hair trio2">${fin.facts.map(f => `<div><b>${f.signed && f.value > 0 ? '+' : ''}${M6(f.value)}</b><small>${esc(f.label)}</small></div>`).join('')}</div>
+        ${fin.note ? `<p class="note">${esc(fin.note)}</p>` : ''}</section>
+      <section><div class="bar"><h2>Who’s cashing out?</h2><span>The money trail</span></div>
+        <div class="hair grid2">
+          <div class="mod"><h3>${b.sellers.length} holders split ${money(m.se)} in the IPO</h3><p>Value of the shares each sells at the ${price(mid(b))} midpoint, before underwriting fees.</p>
+            <div class="rows r2">${b.sellers.map(s => `<span class="lab">${esc(s.name)}<small>${esc(s.role)} · sells ${pc(s.sold, s.before, 1)} of stake</small></span><span class="trk"><i class="g" style="width:${s.sold / maxSell * 100}%"></i></span><span class="v">${money(s.sold * mid(b))}</span>`).join('')}</div>${src(b, 'Principal and selling stockholders')}</div>
+          <div class="mod"><h3>${esc(first.name)} investors are up ${X(mid(b) / first.price)}${under.length ? '. The last round is under water' : `. ${esc(lastR.name)} is up ${X(mid(b) / lastR.price)}`}</h3><p>Price paid per share in each round, against ${price(mid(b))}. Log scale; the dashed line is break-even.</p>
+            <div class="rows">${b.rounds.map(q => { const x = mid(b) / q.price; return `<span class="lab">${esc(q.name)}${q.when ? ', ' + esc(q.when) : ''}<small>paid $${q.price.toFixed(2)} a share</small></span><span class="trk"><i class="${x < 1 ? 'x' : 'm'}" style="width:${lw(x)}%"></i><span class="one" style="left:${lw(1)}%"></span></span><span class="v">${X(x)}${x < 1 ? ', a loss' : ''}</span>`; }).join('')}</div>
+            ${b.rounds_note ? `<p style="font-size:12.5px">${esc(b.rounds_note)}</p>` : ''}${src(b, 'preferred stock note')}</div>
+          <div class="mod wide"><h3>The holders named in the filing</h3><p>Shares held before the IPO, how much each is registered to sell, and the stake left after it.</p>
+            <div class="scroll"><table class="hold"><thead><tr><th>Holder</th><th>Role</th><th class="num">Shares before</th><th class="num">Selling</th><th class="num">Share of stake sold</th><th class="num">Stake after IPO</th></tr></thead><tbody>
+              ${holders.map(h => `<tr><td>${esc(h.name)}</td><td>${esc(h.role)}</td><td class="num">${shares(h.before)}</td><td class="num ${h.sold ? 'g' : ''}">${h.sold ? shares(h.sold) : 'None'}</td><td class="num">${h.sold ? pc(h.sold, h.before, 1) : '—'}</td><td class="num">${pc(h.before - h.sold, o.shares_after, h.before / o.shares_after < .01 ? 2 : 1)}</td></tr>`).join('')}
+            </tbody></table></div>
+            ${b.holders_note ? `<p>${esc(b.holders_note)}</p>` : ''}${b.control_note ? `<p>${esc(b.control_note)}</p>` : ''}${src(b, 'Principal and selling stockholders')}</div>
+        </div></section>
+      <section><div class="bar"><h2>What happens next?</h2></div>
+        ${pricingAhead ? `<div class="hair"><table class="tl"><tbody>
+          <tr class="hi"><th>${dayW(o.expected_pricing)}</th><td>The final price is expected to be set. A final prospectus follows with the share counts.</td></tr>
+          ${o.expected_trading ? `<tr><th>${dayW(o.expected_trading)}</th><td>Shares are expected to start trading on ${esc(b.exchange)}${r.tickers.length ? ' as ' + esc(r.tickers[0]) : ''}.</td></tr>` : ''}
+        </tbody></table></div>
+        <p class="note">Dates: <a href="${esc(o.dates_url)}">${esc(o.dates_from)} ↗</a>. They are not in the filing and can move.</p>` : ''}
+        <div class="hair"${pricingAhead ? ' style="border-top:1px solid var(--line);margin-top:6px"' : ''}><div class="mod"><h3>When insiders can sell</h3><p>${esc(b.lockup.summary)} In total, up to ${shares(lockTotal)} more shares can come to market, ${Math.round(lockTotal / m.shares)} times the number sold in the IPO.</p>
+          <div class="rows r2">${b.lockup.events.map(e => `<span class="lab">${esc(e.when)}<small>${esc(e.what)}</small></span><span class="trk"><i style="width:${e.shares / lockMax * 100}%"></i></span><span class="v">up to ${shares(e.shares)}</span>`).join('')}</div>${src(b, 'Shares eligible for future sale')}</div></div></section>
+      <section><div class="bar"><h2>Risks the company lists first</h2><span>${esc(b.risks_note || '')}</span></div>
+        <div class="hair"><ol class="risks">${b.risks.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div><p class="note">${src(b, 'Risk factors')}</p></section>
+    </div>
+    <aside class="rail">${filingsBox(r)}
+      <section class="rbox"><h2>How this page is made</h2><p>${b.method === 'manual' ? `This breakdown was read by hand from ${esc(b.basis)}, as the first test of the format. The automated reader will replace it.` : `Read automatically from ${esc(b.basis)}.`} Dollar figures use the midpoint of the price range until the deal prices.</p></section>
+    </aside></div>
+  </div>`;
+}
+
+/* ---------- routing ---------- */
+function render(){
+  const h = (location.hash || '').slice(1), app = document.getElementById('app');
+  const m = /^ipo-(\d+)$/.exec(h), r = m && BY[m[1]];
+  if (r) { app.innerHTML = ipoPage(r); document.title = nice(r.name) + ' · IPO Query'; }
+  else { app.innerHTML = home(); bindHome(); document.title = 'IPO Query'; }
+}
+window.addEventListener('hashchange', () => { render(); window.scrollTo(0, 0); });
+document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault(); F.tab = a.dataset.go; F.q = ''; F.stage = ''; F.limit = 40;
+  if (location.hash && location.hash !== '#home') location.hash = '#home'; else render();
+  setTimeout(() => { const el = document.getElementById('all-ipos'); if (el) el.scrollIntoView(); }, 30);
+}));
+document.getElementById('hsearch').addEventListener('submit', e => {
+  e.preventDefault(); search(document.getElementById('hq').value);
+  if (location.hash && location.hash !== '#home') location.hash = '#home'; else render();
+  setTimeout(() => { const el = document.getElementById('all-ipos'); if (el) el.scrollIntoView(); }, 30);
+});
+render();
+</script>
+</body>
+</html>
