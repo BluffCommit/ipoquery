@@ -1,0 +1,87 @@
+# IPO Query tracker
+
+The first slice of IPO Query (ipoquery.com): a script that finds companies filing to go
+public in the US and works out where each deal stands. It reads SEC EDGAR only,
+uses no AI model, and needs no paid service.
+
+## What it produces
+
+- `docs/index.html`: a filterable list (Upcoming, Priced, Withdrawn or stalled).
+- `docs/data/ipos.json`: the same list as data, for the IPO pages built later.
+- `data/state.json`: the script's memory, so each run only fetches what is new.
+
+## How it decides
+
+1. Once a day it reads EDGAR's quarterly filing index and picks out companies
+   that filed an S-1 or F-1 (the forms used to register an IPO) or an amendment.
+2. For each new company it reads that company's filing history and keeps it only
+   if it had not already been filing annual or quarterly reports. That removes
+   public companies registering more shares.
+3. The stage comes from the types of filing made since:
+
+   | Filing seen | Stage shown |
+   |---|---|
+   | S-1 or F-1 | Filed |
+   | S-1/A or F-1/A | Amended |
+   | EFFECT | Cleared by the SEC |
+   | 424B4 | Priced |
+   | RW | Withdrawn |
+   | nothing for 270 days | Stalled |
+
+4. Every run re-checks deals still in motion, so an amendment, pricing or
+   withdrawal shows up at the next run (every 6 hours as set; hourly is
+   possible on a public repository). A brand-new filer appears the
+   morning after it files, because the index is rebuilt overnight.
+
+Blank-check shells (SPACs) and commodity or crypto trusts also file S-1s. They
+are kept in the data, labelled, and hidden on the page unless you tick the box.
+
+## What it cannot tell yet
+
+- **Price range, deal size, exchange.** These are inside the documents. They
+  arrive with the next slice, which reads the cover page.
+- **Tiny self-run offerings.** Some S-1 filers are very small companies with no
+  underwriter. They look the same as real IPOs until the cover page is read.
+
+## Set it up on GitHub (about ten minutes)
+
+1. Create a new **public** repository and upload these files, keeping the
+   folders as they are. Hourly runs are free on public repositories; on a
+   private one they use up the monthly allowance.
+2. In the repository go to Settings, then Secrets and variables, then Actions,
+   then the Variables tab. Add a variable named `SEC_USER_AGENT` with the value
+   `IPO Query info@ipoquery.com`. The SEC requires automated requests
+   to name a contact and blocks ones that do not. This address is sent to the
+   SEC with every request and is visible to people who can see the
+   repository's settings.
+3. Open the Actions tab, choose "Update IPO tracker" and press "Run workflow".
+   The first run reads a year of filings and takes several minutes.
+4. Go to Settings, then Pages. Under "Build and deployment" choose "Deploy from
+   a branch", branch `main`, folder `/docs`. The list appears at the address
+   GitHub shows there.
+
+After that it updates itself on the schedule in
+`.github/workflows/update.yml`. If updates ever stop, check the
+Actions tab: GitHub can pause scheduled jobs on repositories with no activity.
+
+## Run it on your own computer
+
+    SEC_USER_AGENT="IPO Query info@ipoquery.com" python tracker.py
+
+Then open `docs/index.html`.
+
+## Tests
+
+    python test_tracker.py
+
+Runs offline against saved EDGAR-shaped responses: a new filing, an amended
+one, a priced one, a withdrawal, a refiling, a foreign issuer, a blank-check
+shell, a crypto trust, a stalled deal and an already-public company. It also
+checks a real snapshot of Anthropic's filing history.
+
+## Status
+
+Tested offline only. The company filing-history format was checked against a
+live EDGAR record. The quarterly index was confirmed to exist at the address
+used, but its contents could not be read from the build environment, so the
+first live run is the real test of that step.

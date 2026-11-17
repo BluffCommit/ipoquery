@@ -1,0 +1,34 @@
+name: Update IPO tracker
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours at :17 (UTC). On a public repository this can be hourly: "17 * * * *"
+  workflow_dispatch:        # lets you press "Run workflow" by hand
+
+permissions:
+  contents: write           # so the job can save the updated list back to the repository
+
+concurrency:
+  group: ipo-tracker
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Update the list from SEC EDGAR
+        run: python tracker.py
+        env:
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+      - name: Save changes
+        run: |
+          git config user.name "ipo-tracker"
+          git config user.email "ipo-tracker@users.noreply.github.com"
+          git add docs data
+          git diff --cached --quiet || git commit -m "Update IPO list"
+          git push
