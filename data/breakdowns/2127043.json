@@ -54,6 +54,11 @@
    "item": "When insiders can sell",
    "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
    "by": "model"
+  },
+  {
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "by": "model"
   }
  ],
  "financials": {
@@ -96,44 +101,6 @@
    "role": "Government-run investor",
    "before": 40525336,
    "sold": 4411064
-  }
- ],
- "others": [
-  {
-   "name": "Peter Cancro",
-   "role": "Long-time owner of the business; director or officer",
-   "before": 30274744,
-   "sold": 0
-  },
-  {
-   "name": "Charles R. Morrison",
-   "role": "Director or executive officer",
-   "before": 93492,
-   "sold": 0
-  },
-  {
-   "name": "Walter C. Tombs",
-   "role": "Director or executive officer",
-   "before": 61522,
-   "sold": 0
-  },
-  {
-   "name": "Nigel Travis",
-   "role": "Director or executive officer",
-   "before": 52797,
-   "sold": 0
-  },
-  {
-   "name": "Fran Horowitz",
-   "role": "Director or executive officer",
-   "before": 25199,
-   "sold": 0
-  },
-  {
-   "name": "Michele Allen",
-   "role": "Director or executive officer",
-   "before": 18675,
-   "sold": 0
   }
  ],
  "what": "It franchises fast casual submarine sandwich shops, with 3,300 stores in two countries, nearly all run by franchise owners.",
