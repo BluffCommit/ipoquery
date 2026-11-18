@@ -1,0 +1,39 @@
+{
+ "cik": 2104827,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "F-1 filed Aug 17, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2104827/000121390026090335/ea0302259-f1_bang.htm",
+ "doc_date": "2026-08-17",
+ "offer": {
+  "low": 5.0,
+  "high": 6.0,
+  "holder_shares": 0,
+  "company_shares": 5000000
+ },
+ "exchange": "Nasdaq",
+ "checks": [
+  {
+   "item": "Price range",
+   "how": "stated more than once in the filing, always the same"
+  },
+  {
+   "item": "No existing holder is selling",
+   "how": "the cover page and summary do not mention selling holders"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated more than once in the filing"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "the number of shares outstanding after the offering could not be read"
+  },
+  {
+   "item": "Revenue, results and cash",
+   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "version": 1,
+ "run": "2026-11-18",
+ "asked_model": false,
+ "deals": [
+  {
+   "cik": 2130357,
+   "name": "Anthropic, PBC",
+   "form": "S-1/A",
+   "date": "2026-11-17",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm",
+   "sections": {
+    "cover": {
+     "characters": 6908,
+     "starts": "Subject to Completion. Dated November 17, 2026. / Class A Common Stock / 825,000,000 Shares / An"
+    },
+    "summary": {
+     "characters": 2976,
+     "starts": "Prospectus Summary / This summary highlights selected information that is presented in great"
+    },
+    "offering": {
+     "characters": 8956,
+     "starts": "the offering. / Selling Restrictions / Barclays Bank PLC is not a broker-dealer registered wit"
+    },
+    "summary_financials": {
+     "characters": 8959,
+     "starts": "Summary Consolidated Financial and Other Data / The following tables summarize our consolida"
+    },
+    "risks": {
+     "characters": 8912,
+     "starts": "Risk Factors / Investing in our Class A common stock involves a high degree of risk. You sho"
+    },
+    "proceeds": {
+     "characters": 4991,
+     "starts": "Use of Proceeds / We estimate that the net proceeds to us from the sale of shares of our Cla"
+    },
+    "holders": {
+     "characters": 17982,
+     "starts": "Principal and Selling Stockholders / The following table sets forth certain information with"
+    },
+    "future_sale": {
+     "characters": 8991,
+     "starts": "Shares Eligible for Future Sale / Prior to this offering, there has been no public market fo"
+    },
+    "item15": {
+     "characters": 8964,
+     "starts": "Item 15.Recent Sales of Unregistered Securities. / From November 2023 through the filing dat"
+    },
+    "preferred": {
+     "characters": 5951,
+     "starts": "billion, issuable in three tranches. The Company issued the first tranche of notes in an a"
+    }
+   },
+   "sections_not_found": [],
+   "characters_sent": 86156,
+   "tokens_estimated": 24616,
+   "models": {}
+  },
+  {
+   "cik": 1698506,
+   "name": "Simwon America Corp.",
+   "form": "S-1/A",
+   "date": "2026-11-06",
+   "doc": "https://www.sec.gov/Archives/edgar/data/1698506/000121390026116984/ea0270032-21.htm",
+   "sections": {
+    "cover": {
+     "characters": 6885,
+     "starts": "Information contained herein is subject to completion or amendment. A registration stateme"
+    },
+    "summary": {
+     "characters": 2272,
+     "starts": "PROSPECTUS SUMMARY / This summary highlights certain information appearing elsewhere in this"
+    },
+    "offering": {
+     "characters": 8405,
+     "starts": "THE OFFERING / Issuer / Simwon America Corp. / Common Stock Offered by us / 1,500,000 shares offer"
+    },
+    "summary_financials": {
+     "characters": 8857,
+     "starts": "Summary of Annual Key Financial and Operational Metrics / The following table summarizes sel"
+    },
+    "risks": {
+     "characters": 8639,
+     "starts": "RISK FACTORS / An investment in shares of our Common Stock involves risks and uncertainties."
+    },
+    "proceeds": {
+     "characters": 4999,
+     "starts": "USE OF PROCEEDS / We estimate that the net proceeds to us from this offering will be approxi"
+    },
+    "holders": {
+     "characters": 17634,
+     "starts": "SELLING STOCKHOLDERS / This prospectus covers the offering of 1,000,000 Common Stock Shares "
+    },
+    "future_sale": {
+     "characters": 8897,
+     "starts": "SHARES ELIGIBLE FOR FUTURE SALE / Prior to this offering, there has been no public market fo"
+    },
+    "item15": {
+     "characters": 8912,
+     "starts": "Item 15. Recent Sales of Unregistered Securities / Set forth below is information regarding "
+    }
+   },
+   "sections_not_found": [
+    "preferred"
+   ],
+   "characters_sent": 78046,
+   "tokens_estimated": 22299,
+   "models": {}
+  }
+ ]
+}
