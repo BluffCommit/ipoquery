@@ -522,7 +522,7 @@ function ipoPage(r){
       </div>${src(b, 'cover page')}`}; }
   else rangeMod = {html: `<h3>The final price is ${price(P)} a share</h3><p>The price range set before pricing has not been read.</p>${src(b, 'cover page')}`};
   const splitMod = {html: m.se ? `<h3>${pc(m.co, m.raised)} of the money goes to the company</h3><p>The rest, ${pc(m.se, m.raised)}, goes to existing holders selling their own shares.</p>
-      <div class="split" role="img" aria-label="${pc(m.co, m.raised)} to the company, ${pc(m.se, m.raised)} to selling holders"><div class="co" style="flex:${m.co} 1 0">${money(m.co)} to the company</div><div class="se" style="flex:${m.se} 1 0"></div></div>
+      <div class="split" role="img" aria-label="${pc(m.co, m.raised)} to the company, ${pc(m.se, m.raised)} to selling holders"><div class="co" style="flex:${m.co} 1 0">${m.co >= m.se ? money(m.co) + ' to the company' : ''}</div><div class="se" style="flex:${m.se} 1 0;${m.se > m.co ? 'padding:0 8px' : ''}">${m.se > m.co ? money(m.se) + ' to selling holders' : ''}</div></div>
       <p class="key"><span><i style="background:var(--maroon-fill)"></i>Company ${money(m.co)}</span><span><i style="background:var(--gold-fill)"></i>Selling holders ${money(m.se)}</span></p>${src(b, 'cover page')}`
     : `<h3>All of the money goes to the company</h3><p>No existing holder is selling shares in the IPO.</p>
       <div class="split" role="img" aria-label="All of the money goes to the company"><div class="co" style="flex:1 1 0">${money(m.co)} to the company</div></div>${src(b, 'cover page')}`};
@@ -571,7 +571,7 @@ function ipoPage(r){
       ${holders.map(h => `<tr><td>${esc(h.name)}</td><td>${esc(h.role)}</td><td class="num">${shares(h.before)}</td><td class="num ${h.sold ? 'g' : ''}">${h.sold ? shares(h.sold) : 'None'}</td><td class="num">${h.sold ? pc(h.sold, h.before, 1) : '—'}</td><td class="num">${o.shares_after ? pc(h.before - h.sold, o.shares_after, h.before / o.shares_after < .01 ? 2 : 1) : '—'}</td></tr>`).join('')}
       </tbody></table></div>
       ${b.holders_note ? `<p>${esc(b.holders_note)}</p>` : ''}${b.control_note ? `<p>${esc(b.control_note)}</p>` : ''}${src(b, 'Principal and selling stockholders')}`});
-  const trailHTML = (trail.length ? grid(trail) : '') + (sellers.length && rounds.length ? '' : pending(`${sellers.length ? '' : 'Who holds the shares'}${sellers.length || rounds.length ? '' : ', and '}${rounds.length ? '' : (sellers.length ? 'What' : 'what') + ' earlier investors paid for theirs'}, has not been read from this filing yet.`));
+  const trailHTML = (trail.length ? grid(trail) : '') + (sellers.length && rounds.length ? '' : pending(sellers.length || (holders.length && !m.se) ? 'What earlier investors paid per share has not been read from this filing yet.' : rounds.length ? 'Who holds the shares has not been read from this filing yet.' : 'Who holds the shares, and what earlier investors paid for theirs, has not been read from this filing yet.'));
 
   /* what happens next */
   let nextHTML = '';
@@ -579,7 +579,7 @@ function ipoPage(r){
       <tr class="hi"><th>${dayW(o.expected_pricing)}</th><td>The final price is expected to be set. A final prospectus follows with the share counts.</td></tr>
       ${o.expected_trading ? `<tr><th>${dayW(o.expected_trading)}</th><td>Shares are expected to start trading on ${esc(b.exchange)}${r.tickers.length ? ' as ' + esc(r.tickers[0]) : ''}.</td></tr>` : ''}
       </tbody></table></div><p class="note">Dates: <a href="${esc(o.dates_url)}">${esc(o.dates_from)} ↗</a>. They are not in the filing and can move.</p>`;
-  if (b.lockup && !(b.lockup.events || []).length) nextHTML += `<div class="hair"${pricingAhead ? ' style="border-top:1px solid var(--line);margin-top:6px"' : ''}><div class="mod"><h3>${b.lockup.days ? `Insiders are locked up for ${b.lockup.days} days` : 'When insiders can sell'}</h3><p>${esc(b.lockup.summary)}</p>${src(b, 'Shares eligible for future sale')}</div></div>`;
+  if (b.lockup && !(b.lockup.events || []).length) nextHTML += `<div class="hair"${pricingAhead ? ' style="border-top:1px solid var(--line);margin-top:6px"' : ''}><div class="mod"><h3>${b.lockup.days ? `Insiders are locked up for up to ${b.lockup.days} days` : 'When insiders can sell'}</h3><p>${esc(b.lockup.summary)}</p>${src(b, 'Shares eligible for future sale')}</div></div>`;
   else if (b.lockup) { const lockMax = Math.max(...b.lockup.events.map(e => e.shares)), lockTotal = b.lockup.events.reduce((t, e) => t + e.shares, 0);
     nextHTML += `<div class="hair"${pricingAhead ? ' style="border-top:1px solid var(--line);margin-top:6px"' : ''}><div class="mod"><h3>When insiders can sell</h3><p>${esc(b.lockup.summary)} In total, up to ${shares(lockTotal)} more shares can come to market, ${Math.round(lockTotal / m.shares)} times the number sold in the IPO.</p>
       <div class="rows r2">${b.lockup.events.map(e => `<span class="lab">${esc(e.when)}<small>${esc(e.what)}</small></span><span class="trk"><i style="width:${e.shares / lockMax * 100}%"></i></span><span class="v">up to ${shares(e.shares)}</span>`).join('')}</div>${src(b, 'Shares eligible for future sale')}</div></div>`; }
