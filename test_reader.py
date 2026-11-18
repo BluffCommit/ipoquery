@@ -16,9 +16,27 @@ import tracker
 TODAY = dt.date(2026, 11, 16)
 
 
+PERIODS = {"y23": ("2023-01-01", "2023-12-31"), "y24": ("2024-01-01", "2024-12-31"), "y25": ("2025-01-01", "2025-12-31"), "p25": ("2025-01-01", "2025-09-30"),
+           "p26": ("2026-01-01", "2026-09-30"), "i26": (None, "2026-09-30")}
+CONTEXTS = "".join(
+    f"<xbrli:context id='{key}'><xbrli:entity><xbrli:identifier scheme='http://www.sec.gov/CIK'>1</xbrli:identifier></xbrli:entity><xbrli:period>"
+    + (f"<xbrli:startDate>{start}</xbrli:startDate><xbrli:endDate>{end}</xbrli:endDate>" if start else f"<xbrli:instant>{end}</xbrli:instant>")
+    + "</xbrli:period></xbrli:context>" for key, (start, end) in PERIODS.items())
+CONTEXTS += ("<xbrli:context id='seg'><xbrli:entity><xbrli:identifier scheme='x'>1</xbrli:identifier><xbrli:segment><xbrldi:explicitMember dimension='us-gaap:StatementBusinessSegmentsAxis'>"
+             "x:CloudMember</xbrldi:explicitMember></xbrli:segment></xbrli:entity><xbrli:period><xbrli:startDate>2025-01-01</xbrli:startDate><xbrli:endDate>2025-12-31</xbrli:endDate></xbrli:period></xbrli:context>"
+             "<xbrli:unit id='usd'><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unit>"
+             "<xbrli:unit id='usdPerShare'><xbrli:divide><xbrli:unitNumerator><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unitNumerator></xbrli:divide></xbrli:unit>")
+
+
 def page(*blocks):
-    return ("<html><head><title>S-1</title><style>p{margin:0}</style></head><body><div style='display:none'><ix:header><ix:hidden>801,351,354 9,999,999</ix:hidden></ix:header></div>"
-            + "".join(blocks) + "</body></html>").encode()
+    return ("<html><head><title>S-1</title><style>p{margin:0}</style></head><body><div style='display:none'><ix:header><ix:hidden>801,351,354 9,999,999</ix:hidden>"
+            "<ix:resources>" + CONTEXTS + "</ix:resources></ix:header></div>" + "".join(blocks) + "</body></html>").encode()
+
+
+def ix(name, context, shown, negative=False, scale=6, unit="usd"):
+    """A tagged figure, the way filings print them: in millions, negatives in brackets."""
+    return (f"<ix:nonFraction name=\"us-gaap:{name}\" contextRef=\"{context}\" unitRef=\"{unit}\" decimals=\"-{scale}\" scale=\"{scale}\" format=\"ixt:num-dot-decimal\""
+            + (" sign=\"-\"" if negative else "") + f">{shown}</ix:nonFraction>")
 
 
 def p(text):
@@ -47,6 +65,17 @@ BIG = page(
     FILLER, p("Consolidated statements of operations (in millions)"),
     table(("", "2023", "2024", "2025"), ("Revenue", "$", "41", "$", "386", "$", "4,585"), ("Loss from operations", "(551)", "(2,980)", "(8,060)")),
     table(("Nine months ended September 30", "2025", "2026"), ("Revenue", "2,545", "33,242"), ("Loss from operations", "(5,224)", "(1,260)")))
+
+# the same deal with the figures tagged inside the filing, as real filings with a price range have
+BIG_TAGGED = BIG.replace(b"</body>", (
+    table(("Revenue", ix("Revenues", "y23", "41"), ix("Revenues", "y24", "386"), ix("Revenues", "y25", "4,585"), ix("Revenues", "p25", "2,545"), ix("Revenues", "p26", "33,242")),
+          ("Loss from operations", "(" + ix("OperatingIncomeLoss", "y23", "551", True) + ")", "(" + ix("OperatingIncomeLoss", "y24", "2,980", True) + ")",
+           "(" + ix("OperatingIncomeLoss", "y25", "8,060", True) + ")", "(" + ix("OperatingIncomeLoss", "p25", "5,224", True) + ")", "(" + ix("OperatingIncomeLoss", "p26", "1,260", True) + ")"),
+          ("Cloud segment revenue", ix("Revenues", "seg", "999")),
+          ("Net loss", "(" + ix("NetIncomeLoss", "p26", "104,000", True) + ")", "Net loss per share", ix("EarningsPerShareBasic", "p26", "8.10", True, 0, "usdPerShare")),
+          ("Cash", ix("CashAndCashEquivalentsAtCarryingValue", "i26", "131,845"), "Cash from operations", ix("NetCashProvidedByUsedInOperatingActivities", "p26", "6,569")),
+          ("Summary, in billions: revenue", ix("Revenues", "y25", "4.6", scale=9), "net loss tagged twice with different values",
+           ix("NetIncomeLoss", "y25", "9,000", True), ix("NetIncomeLoss", "y25", "7,000", True))) + "</body>").encode())
 
 SMALL = page(
     p("PRELIMINARY PROSPECTUS"), p("Testco Trading Ltd"),
@@ -83,6 +112,31 @@ ADS = page(
     table(("ADSs offered by us", "7,500,000 ADSs"), ("Ordinary shares outstanding immediately after this offering", "150,000,000 ordinary shares")),
     p("an assumed initial public offering price of US$10.00 per ADS, the midpoint of the estimated range"), FILLER)
 
+BEFORE_PRICING = page(p("We are offering 5,000,000 shares of our common stock. We expect the initial public offering price to be between $19.00 and $22.00 per share."),
+                      p("an assumed initial public offering price of $20.50 per share, which is the midpoint of the price range"), FILLER)
+
+# wordings met on the first live run
+IN_THIS_OFFERING = page(
+    p("This is the initial public offering of 20,000,000 shares of Class A common stock of Testco Insurance Group Inc."),
+    table(("", "Per Share", "Total"), ("Initial public offering price", "$", "12.00", "$", "240,000,000.00")),
+    table(("Class A common stock offered by us in this offering", "20,000,000 shares (or 23,000,000 shares if the underwriters exercise their option in full)"),
+          ("Class A common stock to be outstanding immediately after this offering", "39,097,192 shares (or 42,097,192 shares if the underwriters exercise their option in full)"),
+          ("Class B common stock to be outstanding immediately after this offering", "59,935,260 shares"),
+          ("Total common stock to be outstanding immediately after this offering", "99,032,452 shares")), FILLER)
+SHARES_OFFERED = page(
+    p("1,875,000 Ordinary Shares"), p("This is the initial public offering of our ordinary shares."),
+    table(("", "Per Share", "Total"), ("Initial public offering price", "$", "8.00", "$", "15,000,000")),
+    table(("Shares offered:", "1,875,000 Ordinary Shares (or 2,156,250 shares if the underwriters exercise the over-allotment in full)."),
+          ("Shares to be outstanding after this offering: (1)", "12,064,525 Ordinary Shares (or 12,345,775 shares if the underwriters exercise the over-allotment option in full).")), FILLER)
+UNLIKE_CLASSES = page(
+    p("We are offering a total of 9,722,223 Class A ordinary shares, CHF 0.006 par value, of Testco Holding AG."),
+    table(("", "Per Share", "Total"), ("Public offering price", "$", "18.00", "$", "175,000,014.00")),
+    table(("Class A Ordinary Shares Offered by Us", "9,722,223 Class A ordinary shares"),
+          ("Class A Ordinary Shares to be Outstanding After This Offering", "38,594,629 Class A ordinary shares (40,052,962 if the over-allotment option is exercised in full)"),
+          ("Class B Voting Rights Shares to be Outstanding After This Offering", "143,888,790 Class B voting rights shares")), FILLER)
+DIRECT = page(p("This prospectus relates to the registration of the resale of up to 70,728,866 shares of our common stock by the registered stockholders. "
+                "We are not selling any shares and will not receive any proceeds."), FILLER)
+
 UNCONFIRMED = page(p("We are offering 3,000,000 shares of our common stock. We expect the initial public offering price to be between $10.00 and $12.00 per share."), FILLER)
 
 
@@ -107,7 +161,7 @@ NOT_PRINTED = {"facts": {"us-gaap": {"NetIncomeLoss": {"units": {"USD": [fact("2
 
 # cik: (name, stage, form of the document, date, document, tagged facts or None)
 DEALS = {
-    9100001: ("TESTCO AI PBC", "amended", "S-1/A", "2026-11-10", BIG, FACTS),
+    9100001: ("TESTCO AI PBC", "amended", "S-1/A", "2026-11-10", BIG_TAGGED, None),
     9100002: ("Testco Trading Ltd", "amended", "F-1/A", "2026-11-12", SMALL, None),
     9100003: ("TESTCO BLANK INC", "filed", "S-1", "2026-11-03", BLANK, None),
     9100004: ("TESTCO CHIPS INC", "priced", "424B4", "2026-11-13", PRICED, NOT_PRINTED),
@@ -118,6 +172,11 @@ DEALS = {
     9100009: ("TESTCO HAND INC", "amended", "S-1/A", "2026-11-01", SMALL, None),
     9100010: ("TESTCO ACQUISITION CORP", "amended", "S-1/A", "2026-11-01", SMALL, None),
     9100011: ("TESTCO WITHDRAWN INC", "withdrawn", "S-1/A", "2026-06-01", SMALL, None),
+    9100012: ("TESTCO UNTAGGED PBC", "amended", "S-1/A", "2026-11-10", BIG, FACTS),
+    9100013: ("TESTCO INSURANCE GROUP INC", "priced", "424B4", "2026-10-20", IN_THIS_OFFERING, None),
+    9100014: ("Testco Tickets Ltd", "priced", "424B4", "2026-10-21", SHARES_OFFERED, None),
+    9100015: ("Testco Holding AG", "priced", "424B4", "2026-10-22", UNLIKE_CLASSES, None),
+    9100016: ("TESTCO DIRECT INC", "priced", "424B4", "2026-10-23", DIRECT, None),
 }
 
 
@@ -127,6 +186,8 @@ def build(folder):
     for cik, (name, stage, form, date, doc, facts) in DEALS.items():
         url = f"https://www.sec.gov/Archives/edgar/data/{cik}/000000000026000001/doc.htm"
         (fixtures / tracker.Fetcher.fixture_name(url)).write_bytes(doc)
+        if doc is PRICED:
+            (fixtures / tracker.Fetcher.fixture_name(url.replace("doc.htm", "first.htm"))).write_bytes(BEFORE_PRICING)
         if facts:
             (fixtures / tracker.Fetcher.fixture_name(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json")).write_text(json.dumps(facts))
         ipos.append({"cik": cik, "name": name, "kind": "spac" if "ACQUISITION" in name else "company", "stage": stage, "stalled": False, "unpriced": False,
@@ -152,7 +213,7 @@ def main():
         first = go()
         state = json.loads((folder / "reader.json").read_text())["deals"]
         load = lambda cik: json.loads((folder / "breakdowns" / f"{cik}.json").read_text())
-        check("shells and withdrawn deals are not read", (first["queued"], "9100010" in state, "9100011" in state), (9, False, False))
+        check("shells and withdrawn deals are not read", (first["queued"], "9100010" in state, "9100011" in state), (14, False, False))
 
         big = load(9100001)
         check("large deal: offer terms", big["offer"], {"low": 70.0, "high": 78.0, "holder_shares": 23648646, "company_shares": 801351354, "shares_after": 13086672593})
@@ -164,7 +225,14 @@ def main():
                                                     "prior_revenue": 2545.0, "prior_operating": -5224.0})
         check("large deal: facts", [(f["value"], f["label"]) for f in fin["facts"]],
               [(131845.0, "cash on Sep 30, 2026"), (6569.0, "cash from operations, Jan to Sep 2026"), (-104000.0, "net result, Jan to Sep 2026")])
+        check("large deal: a figure tagged with two different values is dropped", "NetIncomeLoss" in str(reader.inline_facts(BIG_TAGGED)[0]) and
+              all(row["end"] != "2025-12-31" for row in reader.inline_facts(BIG_TAGGED)[0]["facts"]["us-gaap"]["NetIncomeLoss"]["units"]["USD"]), True)
+        check("large deal: figures come from the tags inside the filing", (big["checks"][-1]["how"][:38], state["9100001"]["notes"]),
+              ("tagged in the filing's own financial s", ["14 tagged figures in the filing, 1 disagree"]))
         check("large deal: nothing left out, five checks", (big["hidden"], len(big["checks"])), ([], 5))
+        other = load(9100012)
+        check("same deal without tags: falls back on the company facts file", (other["financials"]["years"] == fin["years"], other["checks"][-1]["how"][:32]),
+              (True, "taken from the tagged statements"))
 
         small = load(9100002)
         check("small foreign deal: offer terms", small["offer"], {"low": 4.0, "high": 6.0, "holder_shares": 0, "company_shares": 1500000, "shares_after": 12500000})
@@ -173,16 +241,25 @@ def main():
         check("blank price range: no breakdown", (state["9100003"]["result"], state["9100003"]["notes"]), ("not confirmed", ["no price range in this filing yet"]))
 
         priced = load(9100004)
-        check("priced deal: final price and shares", priced["offer"], {"price": 21.0, "holder_shares": 1000000, "company_shares": 5000000, "shares_after": 48000000})
-        check("priced deal: price checked against the cover total", priced["checks"][-2]["how"], "price times shares sold equals the total on the cover")
-        check("priced deal: tagged figures not in the printed statements are left out", ("financials" in priced, priced["hidden"][0]["why"]),
+        check("priced deal: final price, shares, and the range from the filing before", priced["offer"],
+              {"price": 21.0, "holder_shares": 1000000, "company_shares": 5000000, "shares_after": 48000000, "low": 19.0, "high": 22.0})
+        check("priced deal: price checked against the cover total", [c["how"] for c in priced["checks"] if c["item"] == "Final price"], ["price times shares sold equals the total on the cover"])
+        check("priced deal: tagged figures not in the printed statements are left out", ("financials" in priced, priced["hidden"][-1]["why"]),
               (False, "the tagged figures for the latest year could not be found in the printed statements"))
 
         check("cover and summary disagree: no breakdown", (state["9100005"]["result"], (folder / "breakdowns" / "9100005.json").exists()), ("not confirmed", False))
         check("holders selling an unread number: no breakdown", state["9100006"]["notes"], ["existing holders are selling, but the number of shares could not be read"])
+        check("a failed share count keeps a short piece of the filing in the log", state["9100005"]["notes"][1].startswith("near:"), True)
         ads = load(9100007)
         check("depositary shares: no company value, non-dollar accounts left out", ("shares_after" in ads["offer"], ads["offer"]["company_shares"], len(ads["hidden"]),
               ads["hidden"][1]["why"]), (False, 7500000, 2, "the company reports in EUR, not US dollars"))
+        check("'offered by us in this offering', with the filing's own total", load(9100013)["offer"],
+              {"price": 12.0, "holder_shares": 0, "company_shares": 20000000, "shares_after": 99032452})
+        check("'Shares offered:' with a footnote mark", load(9100014)["offer"], {"price": 8.0, "holder_shares": 0, "company_shares": 1875000, "shares_after": 12064525})
+        unlike = load(9100015)
+        check("share classes that are not alike are not added up", (unlike["offer"], unlike["hidden"][0]["why"]),
+              ({"price": 18.0, "holder_shares": 0, "company_shares": 9722223}, "the share classes are not alike, so their counts cannot simply be added up"))
+        check("a direct listing is recognised, not read", state["9100016"]["result"], "resale")
         check("range stated once and nowhere else: no breakdown", state["9100008"]["result"], "not confirmed")
         check("a hand-made breakdown is kept", (load(9100009)["method"], state["9100009"]["note"]), ("manual", "a hand-made breakdown exists and was kept"))
 

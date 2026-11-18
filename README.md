@@ -36,18 +36,22 @@ This first part uses no model and costs nothing. It reads:
 
 - the offer terms: price range or final price, shares sold by the company and
   by existing holders, shares outstanding afterwards
-- revenue, operating or net result and cash, from the tagged (XBRL) statements
+- revenue, operating or net result and cash, from the figures tagged (XBRL)
+  inside the filing. For a deal that has priced it also reads the filing
+  before pricing, which has the price range and the tagged statements.
 
 A figure is kept only if a consistency check passes: the filing states it in
 two places, the midpoint used in the filing matches the range on the cover,
-price times shares equals the total on the cover, or a tagged figure also
-appears in the printed statements. Anything that fails is left out, and the
+price times shares equals the total on the cover, or no figure is tagged
+with two different values. Anything that fails is left out, and the
 page lists what was left out and why. If the offer terms fail, no breakdown is
-written. `data/reader.json` records what happened for every deal.
+written. `data/reader.json` records what happened for every deal; when a
+share count fails it keeps a short piece of the filing to show why. Direct
+listings and other resales have no set price and are marked as such.
 
 The reader never replaces a breakdown marked `"method": "manual"`.
 
-    python test_reader.py      # offline tests, on made-up filings
+    python test_reader.py      # offline tests, on made-up filings in real wording
 
 Not built yet: who is selling, what earlier rounds paid, lock-ups, use of
 proceeds and risks. Those need a model to read the filing.

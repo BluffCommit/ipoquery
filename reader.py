@@ -38,8 +38,9 @@ READ_FORMS = tracker.INITIAL | tracker.AMEND | tracker.PRICED
 MAX_DOCS = 40                 # prospectuses downloaded per run; a backlog clears over a few runs
 PRICED_DAYS = 120             # keep reading deals that priced this recently
 FRONT = 400_000               # characters of text that hold the cover page and the summary
-STATE_VERSION = 1
+STATE_VERSION = 2              # bump to read every deal again after the reader changes
 NO_RANGE = "no price range in this filing yet"
+RESALE_ONLY = "a resale by existing holders, such as a direct listing: nothing is sold at a set price"
 
 FORM_NAMES = {"S-1": "S-1", "F-1": "F-1", "S-1/A": "S-1 amendment", "F-1/A": "F-1 amendment", "424B4": "Final prospectus", "424B1": "Final prospectus"}
 
@@ -79,9 +80,12 @@ FINAL = re.compile(r"public offering price(?: per (?:[a-z]+ ){0,3}?(?:share|ads)
 FINAL_ROW = re.compile(r"public offering price(?: per (?:[a-z]+ ){0,3}?(?:share|ads))?[ :]{1,3}" + USD + r" " + USD)
 SELL_COVER = re.compile(HOLDERS + r"[^.;]{0,140}? (?:are|is) (?:offering|selling) (?:an additional |up to )?" + NUM + r" ")
 SELL_ROW = re.compile(r"offered by (?:the )?" + HOLDERS + r"[^\d.]{0,60}" + NUM + r" ")
-US_COVER = re.compile(r"(?:\bwe are|[a-z0-9 ,&'.-]{3,80}? is) (?:offering|selling) " + NUM + r" (?:shares|ordinary|american|adss?|class|common)")
-US_ROW = re.compile(r"offered by us[ :.]{0,5}" + NUM + r" ")
-AFTER = re.compile(r"outstanding (?:immediately )?after (?:this|the|our) offering[ :.]{0,5}" + NUM + r" (?:shares|ordinary|common|class)")
+KIND = r"(?:shares|ordinary|american|adss?|class|common)"
+US_COVER = re.compile(r"(?:(?:\bwe are|[a-z0-9 ,&'.-]{3,80}? is) (?:offering|selling)|initial public offering of) " + NUM + r" " + KIND)
+US_ROW = re.compile(r"offered by us[^\d.]{0,40}?" + NUM + r" ")
+ANY_ROW = re.compile(r"(?:shares|stock|securities|adss?) (?:being )?offered(?: hereby)?(?:[ :.]|\(\d\))*" + NUM + r" ")      # "Shares offered: 1,875,000"
+AFTER = re.compile(r"outstanding (?:immediately )?after (?:this|the|our) offering(?:[ :.]|\(\d\))*" + NUM + r" " + KIND)
+RESALE = re.compile(r"registration of the resale|resale of up to|direct listing")
 LISTING = re.compile(r"(?:list|listing|listed|quot|trad)[^.]{0,200}? on (?:the )?(nasdaq|new york stock exchange|nyse american|nyse|cboe)[^.]{0,80}?under the (?:ticker )?symbol \"?([a-z]{1,5}(?:\.[a-z])?)\b")
 EXCHANGES = {"nasdaq": "Nasdaq", "new york stock exchange": "NYSE", "nyse": "NYSE", "nyse american": "NYSE American", "cboe": "Cboe"}
 
@@ -101,6 +105,28 @@ def agree(first, second, text):
     return None, None
 
 
+def near(text, pattern, width=200):
+    """A short piece of the filing around the first match, kept in the reader's log when a figure fails."""
+    match = re.search(pattern, text)
+    return [] if not match else ["near: " + text[max(0, match.start() - 80):match.start() + width]]
+
+
+def price_range(text):
+    """Returns (low, high, how it was checked), or (None, None, reason)."""
+    front = text[:FRONT]
+    pairs = [(number(a), number(b)) for a, b in RANGE_A.findall(front) + RANGE_B.findall(front)]
+    pairs = [(lo, hi) for lo, hi in pairs if 0 < lo < hi <= lo * 2]
+    if not pairs:
+        return None, None, NO_RANGE
+    (low, high), seen = Counter(pairs).most_common(1)[0]
+    mids = {number(m) for m in MIDPOINT.findall(text)}
+    if any(abs(m - (low + high) / 2) < 0.006 for m in mids):
+        return low, high, "the midpoint used elsewhere in the filing matches the range on the cover"
+    if seen >= 2 and len(set(pairs)) == 1:
+        return low, high, "stated more than once in the filing, always the same"
+    return None, None, f"price range {low} to {high} is not confirmed anywhere else in the filing"
+
+
 def offer_terms(text, form):
     """Read the offer terms. Returns (offer, exchange, checks, hidden), or (None, None, [], reasons)
     when a term the page depends on could not be confirmed."""
@@ -108,26 +134,19 @@ def offer_terms(text, form):
     checks, hidden, offer = [], [], {}
 
     # price: a range before pricing, a final price in the final prospectus
-    pairs = [(number(a), number(b)) for a, b in RANGE_A.findall(front) + RANGE_B.findall(front)]
-    pairs = [(lo, hi) for lo, hi in pairs if 0 < lo < hi <= lo * 2]
     if form in tracker.PRICED:
         prices = Counter(number(p) for p in FINAL.findall(text))
         rows = [(number(p), number(total)) for p, total in FINAL_ROW.findall(front)]
         if not prices and not rows:
-            return None, None, [], ["no final price found"]
-        price = prices.most_common(1)[0][0] if prices else rows[0][0]
-        offer["price"] = price
+            if RESALE.search(front[:40_000]):
+                return None, None, [], [RESALE_ONLY]
+            return None, None, [], ["no final price found"] + near(front, r"offering price")
+        offer["price"] = prices.most_common(1)[0][0] if prices else rows[0][0]
     else:
-        if not pairs:
-            return None, None, [], [NO_RANGE]
-        (low, high), seen = Counter(pairs).most_common(1)[0]
-        mids = {number(m) for m in MIDPOINT.findall(text)}
-        if any(abs(m - (low + high) / 2) < 0.006 for m in mids):
-            checks.append({"item": "Price range", "how": "the midpoint used elsewhere in the filing matches the range on the cover"})
-        elif seen >= 2 and len(set(pairs)) == 1:
-            checks.append({"item": "Price range", "how": "stated more than once in the filing, always the same"})
-        else:
-            return None, None, [], [f"price range {low} to {high} is not confirmed anywhere else in the filing"]
+        low, high, how = price_range(text)
+        if low is None:
+            return None, None, [], [how]
+        checks.append({"item": "Price range", "how": how})
         offer["low"], offer["high"] = low, high
 
     # shares sold by existing holders: found first, so the company's own sentence is not confused with theirs
@@ -136,7 +155,7 @@ def offer_terms(text, form):
     if sell_cover or sell_row:
         holder, how = agree(sell_cover, sell_row, text)
         if holder is None:
-            return None, None, [], ["the number of shares sold by existing holders is not stated the same way twice"]
+            return None, None, [], ["the number of shares sold by existing holders is not stated the same way twice"] + near(front, HOLDERS + r"[^.]{0,80}offering")
         checks.append({"item": "Shares sold by existing holders", "how": how})
     elif re.search(HOLDERS, front[:60_000]):
         return None, None, [], ["existing holders are selling, but the number of shares could not be read"]
@@ -149,12 +168,14 @@ def offer_terms(text, form):
     cleared = SELL_COVER.sub(" ", front)
     us_cover = [number(n) for n in US_COVER.findall(cleared)]
     us_row = [number(n) for n in US_ROW.findall(front)]
+    if not us_row and not holder:
+        us_row = [number(n) for n in ANY_ROW.findall(front)]
     company, how = agree(us_cover, us_row, text)
     if company is None:
         if holder and not us_cover and not us_row:
             company, how = 0, "only existing holders are selling"       # a sale by holders alone
         else:
-            return None, None, [], ["the number of shares the company is selling is not stated the same way twice"]
+            return None, None, [], ["the number of shares the company is selling is not stated the same way twice"] + near(front, r"(?:is|are) offering|offered by|initial public offering of")
     offer["company_shares"] = company
     checks.append({"item": "Shares sold by the company", "how": how})
 
@@ -165,41 +186,46 @@ def offer_terms(text, form):
         elif prices and prices.most_common(1)[0][1] >= 2:
             checks.append({"item": "Final price", "how": "stated more than once in the filing"})
         else:
-            return None, None, [], ["the final price is not confirmed by the total on the cover"]
-        if pairs:                                   # a final prospectus rarely repeats the range, but keep it if it does
-            offer["low"], offer["high"] = Counter(pairs).most_common(1)[0][0]
+            return None, None, [], ["the final price is not confirmed by the total on the cover"] + near(front, r"public offering price")
 
     # shares outstanding after the offering: needed for the company's value and the share that trades
     ads = "american depositary share" in front[:80_000]
     after = []
     for match in AFTER.finditer(front):
         label = front[max(0, match.start() - 110):match.start()]
-        label = re.split(r"\d shares|\. ", label)[-1]
-        share_class = re.search(r"class ([a-z])\b", label)
-        after.append((number(match.group(1)), "total" in label, share_class.group(1) if share_class else ""))
+        label = re.split(r"\d shares|\. |\)", label)[-1]
+        share_class = re.search(r"class ([a-z]) ([a-z ]+?) (?:to be|issued|outstanding)", label + " outstanding")
+        after.append((number(match.group(1)), "total" in label, share_class.group(1) if share_class else "", share_class.group(2) if share_class else ""))
     sold = company + holder
-    shares_after = None
+    why = None
     if ads:
         offer["unit"] = "ADS"
-        hidden.append({"item": "Company value and the share that trades", "why": "the offer is in depositary shares, which are not counted the same way as the shares outstanding"})
+        why = "the offer is in depositary shares, which are not counted the same way as the shares outstanding"
     elif not after:
-        hidden.append({"item": "Company value and the share that trades", "why": "the number of shares outstanding after the offering could not be read"})
+        why = "the number of shares outstanding after the offering could not be read"
     else:
-        totals = [n for n, is_total, _ in after if is_total]
+        totals = [n for n, is_total, _, _ in after if is_total]
         by_class = {}
-        for n, _, share_class in after:
-            by_class.setdefault(share_class, n)
+        for n, _, share_class, noun in after:
+            by_class.setdefault(share_class, (n, noun))
+        classes = [c for c in by_class if c]
         if totals:
             shares_after, how = totals[0], "the filing's own total"
-        elif len(by_class) > 1 and "" not in by_class:
-            shares_after, how = sum(by_class.values()), "the sum of each share class"
+        elif len(classes) > 1 and "" not in by_class:
+            if len({noun for _, noun in by_class.values()}) > 1:
+                why = "the share classes are not alike, so their counts cannot simply be added up"
+            shares_after, how = sum(n for n, _ in by_class.values()), "the sum of each share class"
+        elif len(classes) == 1 and re.search(r"class [^" + classes[0] + r"\W] (?:common|ordinary)", front):
+            why = "only one share class's count could be read"
         else:
-            shares_after, how = Counter(n for n, _, _ in after).most_common(1)[0][0], "from the offering summary"
-        if sold and 0.002 <= sold / shares_after <= 0.9:
+            shares_after, how = Counter(n for n, _, _, _ in after).most_common(1)[0][0], "from the offering summary"
+        if not why and not (sold and 0.002 <= sold / shares_after <= 0.9):
+            why = "the shares outstanding after the offering do not fit with the number sold"
+        if not why:
             offer["shares_after"] = shares_after
             checks.append({"item": "Shares outstanding after the offering", "how": how + "; larger than the number sold"})
-        else:
-            hidden.append({"item": "Company value and the share that trades", "why": "the shares outstanding after the offering do not fit with the number sold"})
+    if why:
+        hidden.append({"item": "Company value and the share that trades", "why": why})
 
     listing = LISTING.search(front)
     exchange = EXCHANGES.get(listing.group(1)) if listing else None
@@ -234,6 +260,62 @@ def tagged(facts, names):
     return {}, None
 
 
+CONTEXT = re.compile(r"<(?:xbrli:)?context\b[^>]*?\bid=[\"']([^\"']+)[\"'][^>]*>(.*?)</(?:xbrli:)?context>", re.S | re.I)
+UNIT = re.compile(r"<(?:xbrli:)?unit\b[^>]*?\bid=[\"']([^\"']+)[\"'][^>]*>(.*?)</(?:xbrli:)?unit>", re.S | re.I)
+FACT = re.compile(r"<ix:nonfraction\b([^>]*)>(.*?)</ix:nonfraction>", re.S | re.I)
+ATTR = re.compile(r"([a-z:]+)\s*=\s*[\"']([^\"']*)[\"']", re.I)
+
+
+def inline_facts(page):
+    """The figures tagged inside the filing itself, in the same shape as the SEC's company facts file.
+    Only company-wide figures are kept (no segments). Returns (facts, how many tagged figures, how many disagree)."""
+    page = page.decode("utf-8", errors="replace") if isinstance(page, bytes) else page
+    date = lambda name, body: (re.search(r"<(?:xbrli:)?" + name + r">\s*(\d{4}-\d\d-\d\d)", body, re.I) or [None, None])[1]
+    contexts = {}
+    for key, body in CONTEXT.findall(page):
+        if re.search(r"<(?:xbrli:)?(?:segment|scenario)\b", body, re.I):
+            continue
+        start, end = date("startdate", body), date("enddate", body) or date("instant", body)
+        if end:
+            contexts[key] = (start, end)
+    currencies = {}
+    for key, body in UNIT.findall(page):
+        measure = re.search(r"iso4217:([a-z]{3})", body, re.I)
+        if measure and "divide" not in body.lower():
+            currencies[key] = measure.group(1).upper()
+    seen = {}
+    for attributes, inner in FACT.findall(page):
+        a = {k.lower(): v for k, v in ATTR.findall(attributes)}
+        taxonomy, _, name = a.get("name", "").partition(":")
+        period, currency = contexts.get(a.get("contextref")), currencies.get(a.get("unitref"))
+        if taxonomy not in ("us-gaap", "ifrs-full") or not period or not currency:
+            continue
+        shown = TAG.sub("", inner).replace("\u00a0", "").replace(" ", "").strip("()")
+        layout = a.get("format", "").lower()
+        if "zerodash" in layout or "fixed-zero" in layout or shown in ("", "-", "\u2014", "\u2013"):
+            value = 0.0
+        else:
+            shown = shown.replace(".", "").replace(",", ".") if "commadecimal" in layout else shown.replace(",", "")
+            try:
+                value = float(shown)
+            except ValueError:
+                continue
+        scale = int(a.get("scale") or 0)
+        value = value * 10 ** scale * (-1 if a.get("sign") == "-" else 1)
+        seen.setdefault((taxonomy, name, currency, period), []).append((scale, value))
+    facts, clash = {}, 0
+    for (taxonomy, name, currency, (start, end)), values in seen.items():
+        scale, value = min(values)                       # the most exact statement of the figure
+        if any(abs(v - value) > max(abs(value) * 0.01, 10 ** max(sc, scale)) for sc, v in values):
+            clash += 1                                   # the filing tags this figure with two different values
+            continue
+        row = {"end": end, "val": value, "filed": ""}
+        if start:
+            row["start"] = start
+        facts.setdefault(taxonomy, {}).setdefault(name, {"units": {}})["units"].setdefault(currency, []).append(row)
+    return {"facts": facts}, len(seen), clash
+
+
 def days(start, end):
     return (dt.date.fromisoformat(end) - dt.date.fromisoformat(start)).days
 
@@ -252,7 +334,7 @@ def printed(value, text):
     return any(len(shape) >= 3 and re.search(r"(?<![\d,.])" + re.escape(shape) + r"(?![\d,]|\.\d)", text) for shape in shapes)
 
 
-def financials(facts, text, doc_date):
+def financials(facts, text, doc_date, inline=False):
     """Revenue, result and cash from the tagged statements. Returns (block, checks, reason it was left out)."""
     revenue, rev_currency = tagged(facts, REVENUE)
     result, currency = tagged(facts, OPERATING)
@@ -282,7 +364,7 @@ def financials(facts, text, doc_date):
         return str(day.replace(year=day.year - 1, day=min(day.day, 28) if day.month == 2 else day.day))
 
     to_print = [result[last]] + ([near(last, revenue)] if near(last, revenue) is not None else [])
-    if not all(printed(v, text) for v in to_print):
+    if not inline and not all(printed(v, text) for v in to_print):
         return None, [], "the tagged figures for the latest year could not be found in the printed statements"
 
     m = lambda v: None if v is None else round(v / 1e6, 3)
@@ -294,7 +376,7 @@ def financials(facts, text, doc_date):
         k = max(part, key=lambda k: k[1])
         before = (year_before(k[0]), year_before(k[1]))
         prior = near(before, result)
-        if prior is not None and printed(result[k], text):
+        if prior is not None and (inline or printed(result[k], text)):
             block["ytd"] = {"label": period_label(*k), "revenue": m(near(k, revenue)), "operating": m(result[k]),
                             "prior_label": period_label(*before), "prior_revenue": m(near(before, revenue)), "prior_operating": m(prior)}
             latest = k
@@ -313,7 +395,9 @@ def financials(facts, text, doc_date):
         if near(latest, net) is not None and net_currency == "USD":
             facts_out.append({"value": m(near(latest, net)), "label": f"net result, {period_label(*latest)}", "signed": True})
     block["facts"] = facts_out
-    return block, [{"item": "Financial figures", "how": "taken from the tagged statements, and the latest year's figures also appear in the printed statements"}], None
+    how = ("tagged in the filing's own financial statements; no figure used is tagged with two different values" if inline
+           else "taken from the tagged statements, and the latest year's figures also appear in the printed statements")
+    return block, [{"item": "Financial figures", "how": how}], None
 
 
 # ---------- reading one deal ----------
@@ -342,40 +426,64 @@ def long_date(day):
 def read_deal(fetcher, record, doc, earlier, today):
     """Returns (breakdown or None, notes)."""
     form, date, url = doc
-    text = to_text(fetcher.get(url))
+    page = fetcher.get(url)
+    text = to_text(page)
     offer, exchange, checks, hidden = offer_terms(text, form)
     if offer is None:
         return None, hidden
-    if "low" not in offer and earlier and earlier.get("offer", {}).get("low"):      # keep the range from before pricing
+    facts, count, clash = inline_facts(page)
+    if form in tracker.PRICED:                           # the filing before pricing has the range, and usually the tagged statements
+        before = [e for e in record.get("filings", []) if e["form"] in tracker.INITIAL | tracker.AMEND and e["date"] <= date]
+        if before:
+            try:
+                page_before = fetcher.get(before[-1]["url"])
+            except tracker.NotFound:
+                page_before = None
+            if page_before:
+                low, high, how = price_range(to_text(page_before))
+                if low is not None:
+                    offer["low"], offer["high"] = low, high
+                    checks.append({"item": "Price range before pricing", "how": how})
+                if not count:
+                    facts, count, clash = inline_facts(page_before)
+    if "low" not in offer and earlier and earlier.get("method") == "auto" and earlier.get("offer", {}).get("low"):
         offer["low"], offer["high"] = earlier["offer"]["low"], earlier["offer"]["high"]
     out = {"cik": record["cik"], "method": "auto", "loaded": today.isoformat(), "basis": f"{FORM_NAMES[form]} filed {long_date(date)}",
            "doc": url, "doc_date": date, "offer": offer}
     if exchange:
         out["exchange"] = exchange
-    if earlier and earlier.get("range_set"):
+    if earlier and earlier.get("method") == "auto" and earlier.get("range_set"):
         out["range_set"] = earlier["range_set"]
-    try:
-        facts = json.loads(fetcher.get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{record['cik']:010d}.json"))
-    except tracker.NotFound:
-        facts = None
-    if facts is None:
-        hidden.append({"item": "Revenue, results and cash", "why": "the financial statements in this filing are not tagged yet"})
+    block, why, log = None, "the financial statements in this filing are not tagged yet", "no tags in the filing"
+    if count:
+        block, fin_checks, why = financials(facts, text, date, inline=True)
+        log = f"{count} tagged figures in the filing, {clash} disagree" + ("" if block else f": {why}")
+    if not block:                                        # fall back on the SEC's company facts file
+        try:
+            block, fin_checks, why2 = financials(json.loads(fetcher.get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{record['cik']:010d}.json")), text, date)
+            log += "; company facts file" + ("" if block else f": {why2}")
+            if not block and not count:
+                why = why2
+        except tracker.NotFound:
+            log += "; no company facts file"
+    if block:
+        out["financials"] = block
+        checks += fin_checks
     else:
-        block, fin_checks, why = financials(facts, text, date)
-        if block:
-            out["financials"] = block
-            checks += fin_checks
-        else:
-            hidden.append({"item": "Revenue, results and cash", "why": why})
+        hidden.append({"item": "Revenue, results and cash", "why": why})
     out["checks"], out["hidden"] = checks, hidden
-    return out, []
+    return out, [log]
 
 
 def run(fetcher, today, list_path, breakdown_dir, state_path, max_docs=MAX_DOCS, log=print):
     records = tracker.load_json(list_path, {}).get("ipos", [])
     state = tracker.load_json(state_path, {})
-    if state.get("version") != STATE_VERSION:
+    breakdown_dir = Path(breakdown_dir)
+    if state.get("version") != STATE_VERSION:               # the reader changed: read everything again from a clean start
         state = {"version": STATE_VERSION, "deals": {}}
+        for path in breakdown_dir.glob("*.json"):
+            if tracker.load_json(path, {}).get("method") == "auto":
+                path.unlink()
     deals = state["deals"]
     queue = []
     for record in records:
@@ -383,7 +491,6 @@ def run(fetcher, today, list_path, breakdown_dir, state_path, max_docs=MAX_DOCS,
         if doc and deals.get(str(record["cik"]), {}).get("url") != doc[2]:
             queue.append((record["stage"] not in ("priced", "effective"), doc[1], record, doc))
     queue.sort(key=lambda item: (item[0], -dt.date.fromisoformat(item[1]).toordinal()))
-    breakdown_dir = Path(breakdown_dir)
     written = 0
     for _, _, record, doc in queue[:max_docs]:
         cik = str(record["cik"])
@@ -397,12 +504,12 @@ def run(fetcher, today, list_path, breakdown_dir, state_path, max_docs=MAX_DOCS,
             deals[cik] = entry
             continue
         if breakdown is None:
-            entry.update(result="not confirmed", notes=notes)
+            entry.update(result="resale" if notes == [RESALE_ONLY] else "not confirmed", notes=notes)
         else:
             before = deals.get(cik, {})
             if "low" in breakdown["offer"] and "range_set" not in breakdown and before.get("notes") == [NO_RANGE]:
                 breakdown["range_set"] = doc[1]         # the document before this one had no range
-            entry.update(result="read", found=breakdown["offer"], left_out=[h["item"] for h in breakdown["hidden"]])
+            entry.update(result="read", found=breakdown["offer"], left_out=[h["why"] for h in breakdown["hidden"]], notes=notes)
             if earlier and earlier.get("method") == "manual":
                 entry["note"] = "a hand-made breakdown exists and was kept"
             else:
