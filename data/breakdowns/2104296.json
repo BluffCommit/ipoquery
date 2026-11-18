@@ -15,11 +15,11 @@
  "checks": [
   {
    "item": "No existing holder is selling",
-   "how": "the cover page and summary do not mention selling holders"
+   "how": "price times shares sold equals the total on the cover"
   },
   {
    "item": "Shares sold by the company",
-   "how": "stated more than once in the filing"
+   "how": "price times shares sold equals the total on the cover"
   },
   {
    "item": "Final price",

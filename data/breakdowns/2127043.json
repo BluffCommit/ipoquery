@@ -15,11 +15,11 @@
  "checks": [
   {
    "item": "Shares sold by existing holders",
-   "how": "stated on the cover and again in the offering summary"
+   "how": "price times shares sold equals the total on the cover"
   },
   {
    "item": "Shares sold by the company",
-   "how": "stated more than once in the filing"
+   "how": "price times shares sold equals the total on the cover"
   },
   {
    "item": "Final price",

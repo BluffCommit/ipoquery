@@ -1,5 +1,5 @@
 {
- "version": 1,
+ "version": 2,
  "run": "2026-11-18",
  "asked_model": false,
  "deals": [
@@ -19,8 +19,8 @@
      "starts": "Prospectus Summary / This summary highlights selected information that is presented in great"
     },
     "offering": {
-     "characters": 8956,
-     "starts": "the offering. / Selling Restrictions / Barclays Bank PLC is not a broker-dealer registered wit"
+     "characters": 8962,
+     "starts": "The Offering / Class A common stock offered by us / 801,351,354 shares / Class A common stock of"
     },
     "summary_financials": {
      "characters": 8959,
@@ -31,8 +31,8 @@
      "starts": "Risk Factors / Investing in our Class A common stock involves a high degree of risk. You sho"
     },
     "proceeds": {
-     "characters": 4991,
-     "starts": "Use of Proceeds / We estimate that the net proceeds to us from the sale of shares of our Cla"
+     "characters": 4984,
+     "starts": "Use of proceeds / We estimate that the net proceeds from the sale of shares of / our Class A c"
     },
     "holders": {
      "characters": 17982,
@@ -52,7 +52,7 @@
     }
    },
    "sections_not_found": [],
-   "characters_sent": 86156,
+   "characters_sent": 86155,
    "tokens_estimated": 24616,
    "models": {}
   },
