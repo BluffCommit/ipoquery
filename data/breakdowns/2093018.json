@@ -1,0 +1,40 @@
+{
+ "cik": 2093018,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "S-1 amendment filed Jun 23, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2093018/000157587226000437/ctm006_s1a.htm",
+ "doc_date": "2026-06-23",
+ "offer": {
+  "low": 16.0,
+  "high": 18.0,
+  "holder_shares": 0,
+  "company_shares": 23529412,
+  "shares_after": 198529512
+ },
+ "exchange": "NYSE",
+ "checks": [
+  {
+   "item": "Price range",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "No existing holder is selling",
+   "how": "the cover page and summary do not mention selling holders"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Shares outstanding after the offering",
+   "how": "from the offering summary; larger than the number sold"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Revenue, results and cash",
+   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+  }
+ ]
+}

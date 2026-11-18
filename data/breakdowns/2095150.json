@@ -1,0 +1,38 @@
+{
+ "cik": 2095150,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "F-1 filed Jun 25, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2095150/000149315226030109/formf-1.htm",
+ "doc_date": "2026-06-25",
+ "offer": {
+  "low": 4,
+  "high": 6,
+  "holder_shares": 0,
+  "company_shares": 6250000
+ },
+ "checks": [
+  {
+   "item": "Price range",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "No existing holder is selling",
+   "how": "the cover page and summary do not mention selling holders"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated on the cover and again in the offering summary"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "only one share class's count could be read"
+  },
+  {
+   "item": "Revenue, results and cash",
+   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+  }
+ ]
+}
