@@ -575,7 +575,8 @@ function ipoPage(r){
       ${holders.map(h => `<tr><td>${esc(h.name)}</td><td>${esc(h.role)}</td><td class="num">${shares(h.before)}</td><td class="num ${h.sold ? 'g' : ''}">${h.sold ? shares(h.sold) : 'None'}</td><td class="num">${h.sold ? pc(h.sold, h.before, 1) : '—'}</td><td class="num">${o.shares_after ? pc(h.before - h.sold, o.shares_after, h.before / o.shares_after < .01 ? 2 : 1) : '—'}</td></tr>`).join('')}
       </tbody></table></div>
       ${b.holders_note ? `<p>${esc(b.holders_note)}</p>` : ''}${b.control_note ? `<p>${esc(b.control_note)}</p>` : ''}${src(b, 'Principal and selling stockholders')}`});
-  const trailHTML = (trail.length ? grid(trail) : '') + (sellers.length && rounds.length ? '' : pending(sellers.length || (holders.length && !m.se) ? 'What earlier investors paid per share has not been read from this filing yet.' : rounds.length ? 'Who holds the shares has not been read from this filing yet.' : 'Who holds the shares, and what earlier investors paid for theirs, has not been read from this filing yet.'));
+  const trailHTML = (trail.length ? grid(trail) : '') + (holders.length && rounds.length ? '' : pending(!holders.length && !rounds.length ? 'Who holds the shares, and what earlier investors paid for theirs, has not been read from this filing yet.'
+    : !rounds.length ? 'What earlier investors paid per share has not been read from this filing yet.' : 'Who holds the shares has not been read from this filing yet.'));
 
   /* what happens next */
   let nextHTML = '';
