@@ -44,7 +44,7 @@ BIG = page(
           ("Class A common stock to be outstanding after this offering and the concurrent private placement", "7,427,991,791 shares (7,551,741,791 shares if the underwriters exercise their option in full)"),
           ("Class N common stock to be outstanding after this offering and the concurrent private placement", "5,658,680,800 shares"),
           ("Class T common stock to be outstanding after this offering and the concurrent private placement", "1 share"),
-          ("Total Class A, Class N, Class T, Class E and Class F common stock to be outstanding after this offering and the concurrent private placement", "13,086,672,593 shares")),
+          ("Class F common stock, all classes together, to be outstanding after this offering and the concurrent private placement", "13,086,672,593 shares")),
     p("Unless otherwise indicated, this prospectus assumes an initial public offering price of $74.00 per share, which is the midpoint of the estimated offering price range set forth on the cover page."),
     FILLER, p("Consolidated statements of operations (in millions)"),
     table(("", "2023", "2024", "2025"), ("Revenue", "$", "41", "$", "386", "$", "4,585"), ("Loss from operations", "(551)", "(2,980)", "(8,060)")),

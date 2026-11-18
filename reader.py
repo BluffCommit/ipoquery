@@ -40,7 +40,7 @@ READ_FORMS = tracker.INITIAL | tracker.AMEND | tracker.PRICED
 MAX_DOCS = 80                 # prospectuses downloaded per run; a backlog clears over a few runs
 PRICED_DAYS = 120             # keep reading deals that priced this recently
 FRONT = 400_000               # characters of text that hold the cover page and the summary
-STATE_VERSION = 4              # bump to read every deal again after the reader changes
+STATE_VERSION = 5              # bump to read every deal again after the reader changes
 NO_RANGE = "no price range in this filing yet"
 RESALE_ONLY = "a resale by existing holders, such as a direct listing: nothing is sold at a set price"
 
@@ -86,7 +86,7 @@ KIND = r"(?:shares|ordinary|american|adss?|class|common)"
 US_COVER = re.compile(r"(?:(?:\bwe are|[a-z0-9 ,&'.-]{3,80}? is) (?:offering|selling)|initial public offering of) (?:an aggregate (?:of )?|a total of )?" + NUM + r" " + KIND)
 US_ROW = re.compile(r"offered by us[^\d.]{0,40}?" + NUM + r" ")
 ANY_ROW = re.compile(r"(?:shares|stock|securities|adss?) (?:being )?offered(?: hereby)?(?:[ :.]|\(\d\))*" + NUM + r" ")      # "Shares offered: 1,875,000"
-AFTER = re.compile(r"outstanding (?:immediately )?after (?:this|the|our) offering(?: and [a-z ]{0,60}?)?(?:[ :.]|\(\d\))*" + NUM + r" " + KIND)
+AFTER = re.compile(r"outstanding (?:immediately )?after (?:this|the|our) offering(?: and (?:the )?concurrent [a-z ]{0,40}?)?(?:[ :.]|\(\d\))*" + NUM + r" " + KIND)
 RESALE = re.compile(r"registration of the resale|resale of up to|direct listing")
 LISTING = re.compile(r"(?:list|listing|listed|quot|trad)[^.]{0,200}? on (?:the )?(nasdaq|new york stock exchange|nyse american|nyse|cboe)[^.]{0,80}?under the (?:ticker )?symbol \"?([a-z]{1,5}(?:\.[a-z])?)\b")
 EXCHANGES = {"nasdaq": "Nasdaq", "new york stock exchange": "NYSE", "nyse": "NYSE", "nyse american": "NYSE American", "cboe": "Cboe"}
@@ -194,8 +194,8 @@ def offer_terms(text, form):
     ads = "american depositary share" in front[:80_000]
     after = []
     for match in AFTER.finditer(front):
-        label = front[max(0, match.start() - 110):match.start()]
-        label = re.split(r"\d shares|\. |\)", label)[-1]
+        label = front[max(0, match.start() - 260):match.start()]
+        label = re.split(r"\d shares?\b|\. |\)", label)[-1]
         share_class = re.search(r"class ([a-z]) ([a-z ]+?) (?:to be|issued|outstanding)", label + " outstanding")
         after.append((number(match.group(1)), "total" in label, share_class.group(1) if share_class else "", share_class.group(2) if share_class else ""))
     sold = company + holder
@@ -211,6 +211,9 @@ def offer_terms(text, form):
         for n, _, share_class, noun in after:
             by_class.setdefault(share_class, (n, noun))
         classes = [c for c in by_class if c]
+        counts = sorted(n for n, _ in by_class.values())
+        if not totals and len(counts) > 2 and abs(counts[-1] - sum(counts[:-1])) <= counts[-1] * 1e-6:
+            totals = [counts[-1]]                        # one row is the total of the others, whatever its label says
         if totals:
             shares_after, how = totals[0], "the filing's own total"
         elif len(classes) > 1 and "" not in by_class:
@@ -219,6 +222,10 @@ def offer_terms(text, form):
             shares_after, how = sum(n for n, _ in by_class.values()), "the sum of each share class"
         elif len(classes) == 1 and re.search(r"class [^" + classes[0] + r"\W] (?:common|ordinary)", front):
             why = "only one share class's count could be read"
+        elif classes and "" in by_class and by_class[""][0] < max(by_class[c][0] for c in classes):
+            why = "the share counts for each class could not be reconciled"
+        elif classes and "" in by_class:
+            shares_after, how = by_class[""][0], "from the offering summary"
         else:
             shares_after, how = Counter(n for n, _, _, _ in after).most_common(1)[0][0], "from the offering summary"
         if not why and not (sold and 0.002 <= sold / shares_after <= 0.9):
