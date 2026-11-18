@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "run": "2026-11-18",
  "asked_model": true,
  "deals": [
@@ -56,12 +56,195 @@
    "tokens_estimated": 24616,
    "models": {
     "claude-haiku-5-5": {
-     "tokens": {},
-     "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.\"},\"request_id\":\"req_011Ch"
+     "tokens": {
+      "input_tokens": 29268,
+      "output_tokens": 5000
+     },
+     "cost_usd": 0.00543,
+     "error": "the reply was not JSON: {\"what\":\"Anthropic builds frontier AI models, including Claude, and delivers them to customers through its platform and apps.\",\"short\":\"Anthropic\",\"proceeds\":\"The company estimates about $84.6 billion"
     },
     "claude-sonnet-5-5": {
-     "tokens": {},
-     "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.\"},\"request_id\":\"req_011Ch"
+     "tokens": {
+      "input_tokens": 29268,
+      "output_tokens": 3170
+     },
+     "cost_usd": 0.09024,
+     "checks": {
+      "figures_given": 42,
+      "figures_not_printed_in_filing": [],
+      "sellers_add_up": {
+       "model_total": 23648646,
+       "cover": 23648646,
+       "agree": true
+      },
+      "against_hand_made": {
+       "sellers_missed": [],
+       "holder_differences": [],
+       "rounds_same": 0,
+       "rounds_in_hand_made": 8,
+       "rounds_from_model": 7,
+       "years": [
+        "2023: same",
+        "2024: same",
+        "2025: same"
+       ]
+      }
+     },
+     "answer": {
+      "what": "Anthropic builds Claude, an AI system that businesses and people use through its models, platform and apps.",
+      "short": "Anthropic",
+      "proceeds": "It expects about $84.6 billion in net money from this sale and a private sale, and will use it for general business costs, such as computing power, equipment and hiring, plus taxes on some employee stock awards. It gets nothing from shares sold by existing holders.",
+      "financials": {
+       "unit": "millions",
+       "currency": "USD",
+       "years": [
+        {
+         "label": "2023",
+         "revenue": 41,
+         "operating": -551,
+         "net": -1531
+        },
+        {
+         "label": "2024",
+         "revenue": 386,
+         "operating": -2980,
+         "net": -8309
+        },
+        {
+         "label": "2025",
+         "revenue": 4585,
+         "operating": -8060,
+         "net": -41965
+        }
+       ],
+       "part_year": {
+        "label": "Jan to Sep 2026",
+        "revenue": 33242,
+        "operating": -1260,
+        "net": -104039,
+        "prior_label": "Jan to Sep 2025",
+        "prior_revenue": 2545,
+        "prior_operating": -5224,
+        "prior_net": -25107
+       }
+      },
+      "sellers": [
+       {
+        "name": "Dario Amodei",
+        "role": "Co-founder, chief executive",
+        "before": 240637980,
+        "sold": 3378378
+       },
+       {
+        "name": "Daniela Amodei",
+        "role": "Co-founder, president, board chairperson",
+        "before": 241408940,
+        "sold": 3378378
+       },
+       {
+        "name": "Tom Brown",
+        "role": "Co-founder, Chief Compute Officer",
+        "before": 244173040,
+        "sold": 3378378
+       },
+       {
+        "name": "Jack Clark",
+        "role": "Co-founder, leads the Anthropic Institute",
+        "before": 242271840,
+        "sold": 3378378
+       },
+       {
+        "name": "Jared Kaplan",
+        "role": "Co-founder",
+        "before": 242351170,
+        "sold": 3378378
+       },
+       {
+        "name": "Sam McCandlish",
+        "role": "Co-founder",
+        "before": 243383850,
+        "sold": 3378378
+       },
+       {
+        "name": "Christopher Olah",
+        "role": "Co-founder",
+        "before": 242882420,
+        "sold": 3378378
+       }
+      ],
+      "others": [
+       {
+        "name": "Krishna Rao",
+        "role": "Named executive officer",
+        "before": 9497900
+       },
+       {
+        "name": "Vas Narasimhan",
+        "role": "Director",
+        "before": 176050
+       },
+       {
+        "name": "Reed Hastings",
+        "role": "Director",
+        "before": 9410
+       },
+       {
+        "name": "Christopher Liddell",
+        "role": "Director",
+        "before": 9410
+       },
+       {
+        "name": "Long-Term Benefit Trust",
+        "role": "Holder of the one Class T share, which elects most board members",
+        "before": 1
+       }
+      ],
+      "rounds": [
+       {
+        "name": "Series D-1 and D-3",
+        "when": "2024",
+        "price": 30.0045
+       },
+       {
+        "name": "Series E-1",
+        "when": "2025",
+        "price": 56.0865
+       },
+       {
+        "name": "Series F-1",
+        "when": "2025",
+        "price": 140.9676
+       },
+       {
+        "name": "Series G-1",
+        "when": "2026",
+        "price": 259.1364
+       },
+       {
+        "name": "Series G-2",
+        "when": "2026",
+        "price": 259.1364
+       },
+       {
+        "name": "Series H-1",
+        "when": "2026",
+        "price": 589.0095
+       },
+       {
+        "name": "Series H-2",
+        "when": "2026",
+        "price": 589.0095
+       }
+      ],
+      "lockup": {
+       "days": 180,
+       "summary": "Directors, officers and holders of nearly all stock agreed not to sell for up to 180 days. Co-founders and some large holders are restricted for up to 365 days.",
+       "early": true
+      },
+      "risks": [
+       "Our AI models have acted in unintended or harmful ways before and may do so again, which could hurt our reputation and business."
+      ]
+     }
     }
    }
   },
@@ -116,12 +299,160 @@
    "tokens_estimated": 22299,
    "models": {
     "claude-haiku-5-5": {
-     "tokens": {},
-     "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.\"},\"request_id\":\"req_011Ch"
+     "tokens": {
+      "input_tokens": 26109,
+      "output_tokens": 2211
+     },
+     "cost_usd": 0.00372,
+     "checks": {
+      "figures_given": 16,
+      "figures_not_printed_in_filing": []
+     },
+     "answer": {
+      "what": "Supplies structural body parts for electric vehicles, mainly to Tesla, through certain of Tesla's manufacturing hubs.",
+      "short": "Simwon America",
+      "proceeds": "The company plans to use its share of the money for an East Coast acquisition (about 25%), market expansion into Mexico and Canada (about 25%), a research and development team (about 10%), and general working capital (about 40%).",
+      "financials": {
+       "unit": "dollars",
+       "currency": "USD",
+       "years": [
+        {
+         "label": "2024",
+         "revenue": 413132675,
+         "operating": 18352886,
+         "net": 13708162
+        },
+        {
+         "label": "2025",
+         "revenue": 373257752,
+         "operating": 13532100,
+         "net": 11267529
+        },
+        {
+         "label": "2026",
+         "revenue": 323854938,
+         "operating": 19041255,
+         "net": 16928518
+        }
+       ],
+       "part_year": null
+      },
+      "sellers": [
+       {
+        "name": "First MVG Fund",
+        "role": "Investment partnership, pre-IPO investor",
+        "before": 152299,
+        "sold": 111112
+       },
+       {
+        "name": "J&J Holdings Limited",
+        "role": "Hong Kong company, pre-IPO investor",
+        "before": 609195,
+        "sold": 444444
+       },
+       {
+        "name": "Jade Technology Enterprise Limited",
+        "role": "British Virgin Islands company, pre-IPO investor",
+        "before": 609195,
+        "sold": 444444
+       }
+      ],
+      "others": [],
+      "rounds": [],
+      "lockup": {
+       "days": 180,
+       "summary": "The company, its directors, officers and existing stockholders agreed not to sell shares for 180 days after closing. The 1,000,000 shares sold by the selling stockholders in this offering are excluded.",
+       "early": false
+      },
+      "risks": [
+       "We have a limited operating history, which makes it hard for investors to judge our business and prospects.",
+       "Our business strategy may not be carried out successfully, which could hurt our financial results and stock price.",
+       "Our future growth depends on developing new technologies that gain market acceptance and anticipating regulatory changes.",
+       "We have experienced, and may again face, significant delays in designing and manufacturing our products.",
+       "We plan production based on estimates, so we may end up with excess inventory or shortages."
+      ]
+     }
     },
     "claude-sonnet-5-5": {
-     "tokens": {},
-     "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.\"},\"request_id\":\"req_011Ch"
+     "tokens": {
+      "input_tokens": 26109,
+      "output_tokens": 1565
+     },
+     "cost_usd": 0.06787,
+     "checks": {
+      "figures_given": 16,
+      "figures_not_printed_in_filing": []
+     },
+     "answer": {
+      "what": "It makes steel body structure parts for electric vehicles, mainly for its largest customer, Tesla.",
+      "short": "Simwon America",
+      "proceeds": "The company plans to use about 25% to buy a company on the East Coast and 25% to expand into Mexico and Canada. About 10% is for a new research team and about 40% for day-to-day working capital.",
+      "financials": {
+       "unit": "dollars",
+       "currency": "USD",
+       "years": [
+        {
+         "label": "2024",
+         "revenue": 413132675,
+         "operating": 18352886,
+         "net": 13708162
+        },
+        {
+         "label": "2025",
+         "revenue": 373257752,
+         "operating": 13532100,
+         "net": 11267529
+        },
+        {
+         "label": "2026",
+         "revenue": 323854938,
+         "operating": 19041255,
+         "net": 16928518
+        }
+       ],
+       "part_year": null
+      },
+      "sellers": [
+       {
+        "name": "First MVG Fund",
+        "role": "Pre-IPO investor",
+        "before": 152299,
+        "sold": 111112
+       },
+       {
+        "name": "J&J Holdings Limited",
+        "role": "Pre-IPO investor",
+        "before": 609195,
+        "sold": 444444
+       },
+       {
+        "name": "Jade Technology Enterprise Limited",
+        "role": "Pre-IPO investor",
+        "before": 609195,
+        "sold": 444444
+       }
+      ],
+      "others": [
+       {
+        "name": "Simwon Tech Inc.",
+        "role": "Parent company",
+        "before": null
+       }
+      ],
+      "rounds": [],
+      "lockup": {
+       "days": 180,
+       "summary": "The company, its directors and officers, and existing stockholders have agreed not to sell shares for 180 days after the offering closes. The 1,000,000 shares sold by the selling stockholders in this offering are not covered.",
+       "early": false
+      },
+      "risks": [
+       "The company is young, so it is hard to judge its business and future.",
+       "The company's growth plans may not work, which could hurt its results and share price.",
+       "Growth depends on developing new technology that customers accept and on predicting rule changes, in a very competitive industry.",
+       "The company has had, and may have again, major delays in designing and making its products.",
+       "The company may plan production badly and be left with extra raw materials it cannot use or sell."
+      ]
+     }
     }
    }
   }

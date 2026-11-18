@@ -1,0 +1,40 @@
+{
+ "cik": 2053475,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "F-1 filed Feb 27, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2053475/000189341726000005/form1.htm",
+ "doc_date": "2026-02-27",
+ "offer": {
+  "low": 5.0,
+  "high": 6.0,
+  "holder_shares": 1250000,
+  "company_shares": 1750000,
+  "shares_after": 5000000
+ },
+ "exchange": "Nasdaq",
+ "checks": [
+  {
+   "item": "Price range",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Shares sold by existing holders",
+   "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Shares outstanding after the offering",
+   "how": "from the offering summary; larger than the number sold"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Revenue, results and cash",
+   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+  }
+ ]
+}

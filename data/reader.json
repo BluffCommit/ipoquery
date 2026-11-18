@@ -3113,6 +3113,240 @@
    "notes": [
     "price range 7.0 to 9.0 is not confirmed anywhere else in the filing"
    ]
+  },
+  "2058976": {
+   "form": "F-1",
+   "date": "2026-03-16",
+   "url": "https://www.sec.gov/Archives/edgar/data/2058976/000149315226010264/formf-1.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "the number of shares sold by existing holders is not stated the same way twice",
+    "near:  set forth below. ● public offering prospectus. a prospectus to be used for the initial public offering of class a ordinary shares (the \"class a ordinary shares\") of the registrant, consisting of a maximum of 5,750,000 class a ordinary shares (comprising of a firm commitment offe"
+   ]
+  },
+  "2070577": {
+   "form": "S-1/A",
+   "date": "2026-03-16",
+   "url": "https://www.sec.gov/Archives/edgar/data/2070577/000152013826000074/opti-202603_s1a1.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "low": 10.0,
+    "high": 12.0,
+    "holder_shares": 0,
+    "company_shares": 1818182
+   },
+   "left_out": [
+    "the number of shares outstanding after the offering could not be read",
+    "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   ],
+   "notes": [
+    "no company facts file"
+   ]
+  },
+  "2064863": {
+   "form": "F-1",
+   "date": "2026-03-16",
+   "url": "https://www.sec.gov/Archives/edgar/data/2064863/000189341726000006/form1.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "the number of shares the company is selling is not stated the same way twice",
+    "near:  mclaren international holdings limited (\"class a ordinary shares\"). prior to this offering, there has been no public market for our class a ordinary shares. it is currently estimated that the initial public offering price per share will be between $4 and $6. we have applied to l"
+   ]
+  },
+  "2066926": {
+   "form": "S-1/A",
+   "date": "2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/2066926/000182912626002259/guidentcorp_s1a7.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "the number of shares the company is selling is not stated the same way twice",
+    "near:  shares of the company's common stock, par value $0.00001 per share. prior to this offering, there has been no public market for our common stock. we anticipate that the initial public offering price of our shares will be between $4.00 and $5.00 and the number of shares of common"
+   ]
+  },
+  "2115864": {
+   "form": "F-1",
+   "date": "2026-03-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/2115864/000109991026000110/f1.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2034767": {
+   "form": "F-1/A",
+   "date": "2026-03-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/2034767/000149315226009485/formf-1a.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "low": 4.0,
+    "high": 5.0,
+    "holder_shares": 1250000,
+    "company_shares": 2500000,
+    "shares_after": 41100000
+   },
+   "left_out": [
+    "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   ],
+   "notes": [
+    "no company facts file"
+   ]
+  },
+  "1736734": {
+   "form": "S-1/A",
+   "date": "2026-03-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1736734/000119312526096942/d715014ds1a.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2095038": {
+   "form": "F-1",
+   "date": "2026-03-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/2095038/000121390026023996/ea0261322-04.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2080803": {
+   "form": "F-1/A",
+   "date": "2026-03-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/2080803/000121390026023555/ea0279064-f1a3_evvolutions.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "the number of shares sold by existing holders is not stated the same way twice",
+    "near: ech inc 3,950,000 class a ordinary shares and 1,072,552 class a ordinary shares offered by the selling shareholders this is the initial public offering of evvolutions leadtech inc (the \"company\" or \"evvolutions\"). we are offering 3,950,000 class a ordinary shares of the company o"
+   ]
+  },
+  "1996450": {
+   "form": "S-1/A",
+   "date": "2026-03-03",
+   "url": "https://www.sec.gov/Archives/edgar/data/1996450/000121390026022622/ea0275904-s1a1_dmint.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2069821": {
+   "form": "F-1",
+   "date": "2026-03-03",
+   "url": "https://www.sec.gov/Archives/edgar/data/2069821/000121390026022729/ea0279010-01.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2080335": {
+   "form": "F-1/A",
+   "date": "2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/2080335/000118518526000718/tyamgf1a2022626.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "price range 4.0 to 6.0 is not confirmed anywhere else in the filing"
+   ]
+  },
+  "2047859": {
+   "form": "F-1/A",
+   "date": "2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/2047859/000121390026022361/ea0227331-11.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "low": 4.0,
+    "high": 5.0,
+    "holder_shares": 0,
+    "company_shares": 3750000
+   },
+   "left_out": [
+    "the number of shares outstanding after the offering could not be read",
+    "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   ],
+   "notes": [
+    "no company facts file"
+   ]
+  },
+  "2051146": {
+   "form": "F-1/A",
+   "date": "2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/2051146/000121390026022037/ea0225045-13.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2053475": {
+   "form": "F-1",
+   "date": "2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/2053475/000189341726000005/form1.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "low": 5.0,
+    "high": 6.0,
+    "holder_shares": 1250000,
+    "company_shares": 1750000,
+    "shares_after": 5000000
+   },
+   "left_out": [
+    "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   ],
+   "notes": [
+    "no company facts file"
+   ]
+  },
+  "2078532": {
+   "form": "F-1/A",
+   "date": "2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/2078532/000121390026020805/ea0250270-07.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "low": 4.0,
+    "high": 5.0,
+    "holder_shares": 0,
+    "company_shares": 6250000
+   },
+   "left_out": [
+    "only one share class's count could be read",
+    "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   ],
+   "notes": [
+    "no company facts file"
+   ]
+  },
+  "2064555": {
+   "form": "F-1/A",
+   "date": "2026-02-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/2064555/000149315226007858/formf-1a.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2065707": {
+   "form": "S-1/A",
+   "date": "2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/2065707/000147793226000984/hillhouse_s1a.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
   }
  }
 }
