@@ -31,7 +31,7 @@ from pathlib import Path
 import reader
 import tracker
 
-TEST_VERSION = 1                       # bump to run the test again
+TEST_VERSION = 2                       # bump to run the test again
 TEST_CIKS = [2130357, 1698506]         # Anthropic (a hand-made breakdown exists to compare with) and an ordinary small deal
 MODELS = ["claude-haiku-5-5", "claude-sonnet-5-5"]
 PRICES = {"claude-haiku-5-5": (0.10, 0.50), "claude-sonnet-5-5": (2.00, 10.00)}    # US$ per million tokens in, out (list prices, Nov 2026)
@@ -88,8 +88,8 @@ def cut(lines):
     section title; of several such lines (the contents page lists them all) the one with the longest body wins."""
     hits = []
     for i, line in enumerate(lines):
-        if len(line) > 110:
-            continue
+        if len(line) > 110 or not line[0].isupper() or (line.endswith(".") and not line.lower().startswith("item")):
+            continue                                     # a heading starts with a capital and is not a sentence
         plain = re.sub(r"\s+", " ", re.sub(r"[^a-z ]", "", line.lower())).strip()
         for name, pattern in HEADINGS.items():
             if re.fullmatch(pattern, plain):
@@ -100,6 +100,8 @@ def cut(lines):
     for n, (i, name) in enumerate(hits):
         body = lines[i + 1:starts[n + 1]]
         size = sum(len(line) for line in body)
+        if name == "offering" and name in best and best[name][0] > 1000:
+            continue                                     # "The Offering" comes early, in the summary; later lines with those words are something else
         if size > best.get(name, (0, None))[0]:
             best[name] = (size, i)
     out = {}

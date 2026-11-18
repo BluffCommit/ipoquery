@@ -40,7 +40,7 @@ READ_FORMS = tracker.INITIAL | tracker.AMEND | tracker.PRICED
 MAX_DOCS = 80                 # prospectuses downloaded per run; a backlog clears over a few runs
 PRICED_DAYS = 120             # keep reading deals that priced this recently
 FRONT = 400_000               # characters of text that hold the cover page and the summary
-STATE_VERSION = 6              # bump to read every deal again after the reader changes
+STATE_VERSION = 7              # bump to read every deal again after the reader changes
 NO_RANGE = "no price range in this filing yet"
 RESALE_ONLY = "a resale by existing holders, such as a direct listing: nothing is sold at a set price"
 
@@ -96,15 +96,16 @@ def number(text):
     return float(text.replace(",", "")) if "." in text else int(text.replace(",", ""))
 
 
-def agree(first, second, text):
-    """A share count is kept only if the filing states it in two places."""
-    both = [n for n in first if n in second]
+def agree(cover, row):
+    """A share count is kept only if the filing states it in two places that are about the same thing:
+    the cover sentence and the offering summary, or either of them twice."""
+    both = [n for n in cover if n in row]
     if both:
         return Counter(both).most_common(1)[0][0], "stated on the cover and again in the offering summary"
-    for n in dict.fromkeys(first + second):
-        if text.count(f"{n:,}") >= 2:
-            return n, "stated more than once in the filing"
-    return None, None
+    if cover and row:
+        return None, None                                # the two places disagree
+    twice = [n for n, seen in Counter(cover + row).items() if seen >= 2]
+    return (twice[0], "stated twice, the same each time") if len(twice) == 1 else (None, None)
 
 
 def near(text, pattern, width=200):
@@ -151,39 +152,44 @@ def offer_terms(text, form):
         checks.append({"item": "Price range", "how": how})
         offer["low"], offer["high"] = low, high
 
-    # shares sold by existing holders: found first, so the company's own sentence is not confused with theirs
+    # shares sold by the company and by existing holders
     sell_cover = [number(n) for n in SELL_COVER.findall(front)]
     sell_row = [number(n) for n in SELL_ROW.findall(front)]
-    if sell_cover or sell_row:
-        holder, how = agree(sell_cover, sell_row, text)
-        if holder is None:
-            return None, None, [], ["the number of shares sold by existing holders is not stated the same way twice"] + near(front, HOLDERS + r"[^.]{0,140}?\d,\d{3}")
-        checks.append({"item": "Shares sold by existing holders", "how": how})
-    elif re.search(HOLDERS, front[:60_000]):
+    selling = bool(sell_cover or sell_row)
+    if not selling and re.search(HOLDERS, front[:60_000]):
         return None, None, [], ["existing holders are selling, but the number of shares could not be read"]
-    else:
-        holder = 0
-        checks.append({"item": "No existing holder is selling", "how": "the cover page and summary do not mention selling holders"})
-    offer["holder_shares"] = holder
-
-    # shares sold by the company
-    cleared = SELL_COVER.sub(" ", front)
-    us_cover = [number(n) for n in US_COVER.findall(cleared)]
+    us_cover = [number(n) for n in US_COVER.findall(SELL_COVER.sub(" ", front))]     # their sentence removed, so it is not taken for the company's
     us_row = [number(n) for n in US_ROW.findall(front)]
-    if not us_row and not holder:
+    if not us_row and not selling:
         us_row = [number(n) for n in ANY_ROW.findall(front)]
-    company, how = agree(us_cover, us_row, text)
-    if company is None:
-        if holder and not us_cover and not us_row:
-            company, how = 0, "only existing holders are selling"       # a sale by holders alone
-        else:
-            return None, None, [], ["the number of shares the company is selling is not stated the same way twice"] + near(front, r"(?:is|are) offering|offered by|initial public offering of")
-    offer["company_shares"] = company
-    checks.append({"item": "Shares sold by the company", "how": how})
+    holder, how_holder = agree(sell_cover, sell_row) if selling else (0, "the cover page and summary do not mention selling holders")
+    company, how_company = agree(us_cover, us_row)
+    price_ok = False
+    if holder is None or company is None:
+        # the two places do not settle it: try each stated figure and keep the pair that adds up to a total on the cover
+        start = re.search(r"subject to completion|filed pursuant to rule 424|prospectus", front)
+        window = front[start.start() if start else 0:][:3000]
+        headline = {number(n) for n in re.findall(NUM + r" " + KIND, window)}
+        fits = []
+        for c in ([company] if company is not None else list(dict.fromkeys(us_cover + us_row)) + ([0] if selling else [])):
+            for h in ([holder] if holder is not None else list(dict.fromkeys(sell_cover + sell_row))):
+                if "price" in offer and c + h and any(p == offer["price"] and abs(t - (c + h) * p) <= t * 0.005 for p, t in rows):
+                    fits.append((c, h, "price times shares sold equals the total on the cover"))
+                elif c and h and c + h in headline:
+                    fits.append((c, h, "the two add up to the total number of shares on the cover"))
+        if len({(c, h) for c, h, _ in fits}) != 1:
+            which = "sold by existing holders" if holder is None else "the company is selling"
+            return None, None, [], [f"the number of shares {which} is not stated the same way twice"] + near(front, r"(?:is|are) offering|offered by|initial public offering of")
+        company, holder, how_company = fits[0]
+        how_holder = how_company
+        price_ok = "price" in how_company
+    offer["holder_shares"], offer["company_shares"] = holder, company
+    checks.append({"item": "Shares sold by existing holders" if holder else "No existing holder is selling", "how": how_holder})
+    checks.append({"item": "Shares sold by the company", "how": how_company})
 
     if "price" in offer:
         total = (company + holder) * offer["price"]
-        if any(p == offer["price"] and abs(t - total) <= total * 0.005 for p, t in rows):
+        if price_ok or any(p == offer["price"] and abs(t - total) <= total * 0.005 for p, t in rows):
             checks.append({"item": "Final price", "how": "price times shares sold equals the total on the cover"})
         elif prices and prices.most_common(1)[0][1] >= 2:
             checks.append({"item": "Final price", "how": "stated more than once in the filing", "weak": True})

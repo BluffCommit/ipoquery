@@ -112,6 +112,14 @@ WEAK_PRICE = page(p("We are offering 300,000 shares of our common stock. The pub
 MOST_OF_COMPANY = page(p("We are offering 16,666,667 shares of our common stock. We expect the initial public offering price to be between $11.00 and $13.00 per share."),
                        table(("Common stock offered by us", "16,666,667 shares"), ("Common stock to be outstanding immediately after this offering", "20,776,793 shares")),
                        p("an assumed initial public offering price of $12.00 per share, which is the midpoint of the price range"), FILLER)
+# the cover names another seller in words the company's own sentence uses; only the total on the cover settles it
+TWO_STORIES = page(
+    p("Subject to completion, dated November 6, 2026"), p("2,500,000 Shares"), p("Common Stock"),
+    p("This is a firm commitment initial public offering. Testco Parent Co., Ltd. is offering 1,000,000 shares and the selling stockholders are offering 1,000,000 shares in total. "
+      "We expect the initial public offering price to be between $18.00 and $22.00 per share."),
+    table(("Common Stock Offered by us", "1,500,000 shares offered by the Company"), ("Common Stock offered by the selling stockholders", "1,000,000 shares"),
+          ("Common Stock to be outstanding after this offering", "14,750,000 shares")),
+    p("an assumed initial public offering price of $20.00 per share, the midpoint of the price range"), FILLER)
 DIRECT = page(p("This prospectus relates to the registration of the resale of up to 70,728,866 shares of our common stock by the registered stockholders. "
                 "We are not selling any shares and will not receive any proceeds."), FILLER)
 
@@ -156,6 +164,7 @@ DEALS = {
     9100015: ("Testco Holding AG", "priced", "424B4", "2026-10-22", UNLIKE_CLASSES, None),
     9100016: ("TESTCO DIRECT INC", "priced", "424B4", "2026-10-23", DIRECT, None),
     9100017: ("TESTCO NONVOTING INC", "amended", "S-1/A", "2026-11-09", MOST_OF_COMPANY, None),
+    9100018: ("TESTCO TWO STORIES CORP", "amended", "S-1/A", "2026-11-06", TWO_STORIES, None),
 }
 
 
@@ -223,7 +232,7 @@ def main():
         first = go()
         state = json.loads((folder / "reader.json").read_text())["deals"]
         load = lambda cik: json.loads((folder / "breakdowns" / f"{cik}.json").read_text())
-        check("shells and withdrawn deals are not read", (first["queued"], "9100010" in state, "9100011" in state), (15, False, False))
+        check("shells and withdrawn deals are not read", (first["queued"], "9100010" in state, "9100011" in state), (16, False, False))
 
         big = load(9100001)
         check("large deal: offer terms", big["offer"], {"low": 70.0, "high": 78.0, "holder_shares": 23648646, "company_shares": 801351354, "shares_after": 13086672593})
@@ -266,6 +275,9 @@ def main():
               ({"price": 18.0, "holder_shares": 0, "company_shares": 9722223}, "the share classes are not alike, so their counts cannot simply be added up"))
         check("a sale of most of the company gets no company value", ("shares_after" in load(9100017)["offer"], load(9100017)["hidden"][0]["why"][:41]),
               (False, "the shares sold would be more than 60% of"))
+        two = load(9100018)
+        check("cover and summary disagree, but one pair adds up to the cover total", (two["offer"]["company_shares"], two["offer"]["holder_shares"], two["checks"][-2]["how"]),
+              (1500000, 1000000, "the two add up to the total number of shares on the cover"))
         check("a direct listing is recognised, not read", state["9100016"]["result"], "resale")
         check("range stated once and nowhere else: no breakdown", state["9100008"]["result"], "not confirmed")
         check("a hand-made breakdown is kept", (load(9100009)["method"], state["9100009"]["note"]), ("manual", "a hand-made breakdown exists and was kept"))
