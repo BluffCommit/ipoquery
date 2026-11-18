@@ -40,7 +40,7 @@ READ_FORMS = tracker.INITIAL | tracker.AMEND | tracker.PRICED
 MAX_DOCS = 80                 # prospectuses downloaded per run; a backlog clears over a few runs
 PRICED_DAYS = 120             # keep reading deals that priced this recently
 FRONT = 400_000               # characters of text that hold the cover page and the summary
-STATE_VERSION = 5              # bump to read every deal again after the reader changes
+STATE_VERSION = 6              # bump to read every deal again after the reader changes
 NO_RANGE = "no price range in this filing yet"
 RESALE_ONLY = "a resale by existing holders, such as a direct listing: nothing is sold at a set price"
 
@@ -194,10 +194,10 @@ def offer_terms(text, form):
     ads = "american depositary share" in front[:80_000]
     after = []
     for match in AFTER.finditer(front):
-        label = front[max(0, match.start() - 260):match.start()]
-        label = re.split(r"\d shares?\b|\. |\)", label)[-1]
-        share_class = re.search(r"class ([a-z]) ([a-z ]+?) (?:to be|issued|outstanding)", label + " outstanding")
-        after.append((number(match.group(1)), "total" in label, share_class.group(1) if share_class else "", share_class.group(2) if share_class else ""))
+        label = re.split(r"\d", front[max(0, match.start() - 260):match.start()])[-1]      # the row's label: the words since the last figure
+        share_class = re.search(r".*class ([a-z]) ([a-z ]+?) (?:to be|issued|outstanding)", label + " outstanding")
+        is_total = bool(re.search(r"\btotal\b", label))
+        after.append((number(match.group(1)), is_total, share_class.group(1) if share_class else "", share_class.group(2) if share_class else ""))
     sold = company + holder
     why = None
     if ads:
