@@ -129,7 +129,10 @@
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2053475/000189341726000005/form1.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

@@ -39,7 +39,7 @@
   },
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   },
   {
@@ -51,44 +51,47 @@
  "others": [
   {
    "name": "Queen Holdings Limited",
-   "role": "Investor owned by Korean private equity funds",
+   "role": "Investor, owned by Korean private equity funds",
    "before": 5489787,
    "sold": 0
   },
   {
    "name": "KC Small Medium Value up PEF I",
-   "role": "Korean private equity investor",
+   "role": "Investor, Korean private equity fund",
    "before": 3829728,
    "sold": 0
   },
   {
    "name": "Nol Universe Co., Ltd.",
-   "role": "Shareholder, Korean company",
+   "role": "Shareholder",
    "before": 1059896,
    "sold": 0
   },
   {
    "name": "Rivendell Investments 2018-2 LLC",
-   "role": "Investor owned by Peter Thiel",
+   "role": "Investor, owned by Peter Thiel",
    "before": 897563,
    "sold": 0
   }
  ],
- "what": "Tracx Logis provides technology-driven shipping and logistics services across borders for online sellers and for businesses.",
+ "what": "It provides technology-based cross-border shipping, logistics and fulfillment services for online sellers and businesses in Asia and beyond.",
  "short": "Tracx Logis",
- "proceeds": "It expects about $16.4 million after costs. About 10% goes to improving its platforms, 10% to upkeep of fulfillment centers, and 40% to working capital, including paying suppliers. The rest is for general business needs, which may include acquisitions.",
+ "proceeds": "It expects about $16.4 million in net proceeds. It plans to use the money for its e-commerce and logistics platforms, upkeep of fulfillment centers, working capital including bills owed to suppliers, and general business needs.",
  "risks": [
-  "Trade barriers, inflation, wars and other economic problems could reduce demand for its shipping services in Asia and worldwide.",
-  "Higher trade tensions and tariffs will likely hurt its finances and results.",
-  "Pandemics, wars and higher oil and gas prices could cut consumer demand and raise transport costs, hurting its business.",
-  "Sudden or large rises in freight and transport costs could hurt its business and results.",
-  "Its business depends on continued growth of e-commerce platforms across Asia."
+  "Rising trade barriers, inflation, conflict and other factors could cut demand for its services in Asia or worldwide and harm its business.",
+  "Higher trade tensions and tariffs will hurt its finances and results.",
+  "Pandemics, global conflicts and higher fuel costs that raise transport prices will likely hurt its business and results.",
+  "Large or unexpected rises in freight and transport costs could harm its business, finances and results.",
+  "Its business depends on e-commerce continuing to grow across Asia."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2114145/000121390026115596/ea0274222-16.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

@@ -89,7 +89,10 @@
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2034767/000149315226009485/formf-1a.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

@@ -92,7 +92,10 @@
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2067016/000118518526000995/hamaf1a2031826.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

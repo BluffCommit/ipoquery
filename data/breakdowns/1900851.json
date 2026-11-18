@@ -38,7 +38,7 @@
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   },
   {
@@ -75,12 +75,15 @@
   ],
   "by": "model"
  },
- "what": "It sources, finances, develops and produces series and movies, and sells them to streaming services and movie studios.",
+ "what": "It develops, finances and produces movies and series based on existing stories, then sells them to streaming services and studios.",
  "short": "Ambitious Entertainment",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/1900851/000149315226048068/forms-1a.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

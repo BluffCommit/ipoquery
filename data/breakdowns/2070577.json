@@ -83,7 +83,10 @@
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2070577/000152013826000074/opti-202603_s1a1.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

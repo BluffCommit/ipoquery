@@ -102,7 +102,10 @@
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2087716/000147793226003627/rokit_s1a.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

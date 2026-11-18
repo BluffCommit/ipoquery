@@ -39,7 +39,7 @@
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   },
   {
@@ -76,13 +76,16 @@
   ],
   "by": "model"
  },
- "what": "It mines copper and cobalt in Zambia and makes and sells finished copper through its Konkola Copper Mines subsidiary.",
+ "what": "It mines copper and cobalt in Zambia and sells finished copper and copper-cobalt products.",
  "short": "CopperTech",
- "proceeds": "It expects net proceeds of about $372.0 million. It will pass all of this to a subsidiary, which will lend it to Konkola Plc for the Konkola Deep Mine Project and related infrastructure.",
+ "proceeds": "It expects net proceeds of about $372.0 million. It will pass all of this to a subsidiary, which will lend it to Konkola Plc. Konkola Plc will use it for capital development and infrastructure at the Konkola Deep Mine Project.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2093018/000157587226000437/ctm006_s1a.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

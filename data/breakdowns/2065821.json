@@ -34,17 +34,17 @@
    "item": "Revenue and results",
    "how": "two AI readers gave the same figures, and each is printed in the filing",
    "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
-   "by": "model"
-  },
-  {
-   "item": "When insiders can sell",
-   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   }
  ],
@@ -92,19 +92,26 @@
    "sold": 0
   }
  ],
- "what": "Little West makes and sells cold-pressed juices and other health-focused drinks from its base in California.",
+ "lockup": {
+  "summary": "The company, its directors, its officers and all current holders agreed not to sell shares for six months after the offering closes. The 3,750,000 shares sold in the offering can be traded right away.",
+  "days": 180
+ },
+ "what": "Little West is a California company that makes and sells cold-pressed juices and health and wellness products.",
  "short": "Little West",
- "proceeds": "It plans to split the net proceeds equally, 20% each, across growing distribution, marketing, working capital, hiring staff, and general corporate purposes. It says it has broad freedom in how it uses the money.",
+ "proceeds": "It plans to split the net money equally: 20% each for expanding distribution, marketing, working capital, hiring staff and general company needs. It says it has broad freedom in how it uses the money.",
  "risks": [
-  "Little West is a holding company, so it depends on cash and payments from its subsidiaries to cover its costs and pay any dividends.",
-  "Produce and other raw materials may become scarce or costly because of weather, disasters and competition for supply, which could cut sales and raise costs.",
-  "It relies on a few outside partners, mainly for produce, and has no formal contracts requiring suppliers to provide what it needs."
+  "It is a holding company and depends on payments from its subsidiaries to cover its costs and pay any dividends.",
+  "It may not get enough produce and other raw materials, because it relies on few growers and one broker and distributor.",
+  "It has no formal contracts with its suppliers of produce and bottles, so its business could suffer if partners fail it."
  ],
  "risks_note": "The first 3 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2065821/000121390026099701/ea0305381-s1a9_little.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

@@ -44,7 +44,7 @@
   },
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   }
  ],
@@ -87,37 +87,37 @@
  "others": [
   {
    "name": "AFintronic Limited",
-   "role": "Holding company wholly owned by James Zhou, non-executive chairman",
+   "role": "Holding company owned by James Zhou, chairman",
    "before": 257909521,
    "sold": 0
   },
   {
    "name": "OPay Tech",
-   "role": "Holding vehicle for Stephen Wen, Lars Rahbaek Boilesen and Fang Han",
+   "role": "Holding company for Fang Han, Stephen Wen and Lars Rahbaek Boilesen",
    "before": 186581278,
    "sold": 0
   },
   {
    "name": "Bloom Haven Limited",
-   "role": "Trust vehicle for the 2026 employee equity plan",
+   "role": "Trust vehicle holding shares for the 2026 employee equity plan",
    "before": 168664930,
    "sold": 0
   },
   {
    "name": "Opera",
-   "role": "Nasdaq-listed company, Opera Limited",
+   "role": "Listed company, Opera Limited",
    "before": 159806239,
    "sold": 0
   },
   {
    "name": "Bright Holding Limited",
-   "role": "Holding company wholly owned by James Zhou, non-executive chairman",
+   "role": "Holding company owned by James Zhou, chairman",
    "before": 137359180,
    "sold": 0
   },
   {
    "name": "Softbank Entities",
-   "role": "Investor, SoftBank Vision Fund II",
+   "role": "Investor, SoftBank Vision Fund",
    "before": 123214065,
    "sold": 0
   },
@@ -135,23 +135,26 @@
   }
  ],
  "lockup": {
-  "summary": "Directors, executive officers, existing shareholders and the private placement investor have agreed not to sell for 365 days after the prospectus date, with some exceptions. The company itself has agreed to a 180-day lock-up.",
+  "summary": "Directors, executive officers, existing shareholders and the private placement investor agreed not to sell for 365 days after the prospectus date, with some exceptions. The company itself is bound for 180 days.",
   "days": 365
  },
- "what": "OPay runs a mobile app for payments, loans and other financial services, mainly in Nigeria and other emerging markets.",
+ "what": "It runs a mobile app offering payments, loans and other financial services, mainly in Nigeria and other emerging markets.",
  "short": "OPay",
- "proceeds": "It plans to use the money for general corporate purposes. This includes technology, distribution, new products, market expansion, and possible acquisitions or investments in other businesses.",
+ "proceeds": "OPay plans to use the money for general business purposes, such as technology, distribution, new products, market expansion and possible acquisitions. It expects about US$291.0 million from the offering and US$183.6 million from a concurrent private placement.",
  "risks": [
-  "It faces strong and growing competition in fintech, including from banks, phone companies and rivals with more money and bigger user bases.",
-  "Outages or failures in its computer systems or third-party data centres could disrupt its services and hurt its business.",
-  "Demand for its services may fall if it fails to keep up with new technology and changing customer needs.",
-  "It is growing fast but has a short operating history, which makes its future results hard to predict."
+  "OPay faces strong and growing competition, including from larger rivals with more money and users, which could hurt its prices, growth and profits.",
+  "Failures in OPay's computer systems or in third-party data centers and cloud providers could disrupt its services and harm its business.",
+  "Demand for OPay's services could fall if it fails to keep up with new technology and changing customer needs.",
+  "OPay is growing fast but has a short operating history, which makes its future results hard to predict."
  ],
  "risks_note": "The first 4 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2103076/000119312526430437/d56487df1a.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

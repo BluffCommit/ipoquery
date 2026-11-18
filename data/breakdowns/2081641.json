@@ -68,7 +68,10 @@
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2081641/000121390026073347/ea0254465-08.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

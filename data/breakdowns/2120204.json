@@ -108,7 +108,10 @@
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2120204/000118518526004773/haofengf1a1101426.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

@@ -1,6 +1,6 @@
 {
  "version": [
-  2,
+  3,
   1
  ],
  "deals": [
@@ -7764,6 +7764,179 @@
    }
   }
  ],
- "spent_usd": 10.5992,
- "later": []
+ "spent_usd": 11.2709,
+ "later": [
+  {
+   "cik": 2133022,
+   "name": "Oura Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.10029,
+    "claude-haiku-5-5": 0.0059
+   },
+   "kept": [
+    "Revenue and results",
+    "Who is selling"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the two AI readers named different rounds",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "rounds series a 1: named by one reader only",
+    "rounds series a 2: named by one reader only",
+    "rounds series b 1: named by one reader only",
+    "rounds series b 2: named by one reader only",
+    "rounds series c 1: named by one reader only",
+    "rounds series c 2: named by one reader only",
+    "rounds series c 3: named by one reader only",
+    "rounds series seed 1: named by one reader only",
+    "rounds series seed 2: named by one reader only",
+    "rounds series seed 3: named by one reader only",
+    "lock-up days: 181 / 180"
+   ],
+   "sections_not_found": [],
+   "preferred_starts": "Oura Inc. and Subsidiaries / Notes to Condensed Consolidated Financial Statements / (unaudited) / Note 12. Redeemable Convertible Preferred Stock / As described in Note"
+  },
+  {
+   "cik": 2093018,
+   "name": "CopperTech Metals Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07687,
+    "claude-haiku-5-5": 0.00402
+   },
+   "kept": [
+    "Revenue and results"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "sections_not_found": [],
+   "preferred_starts": "preferences and privileges of our common stock will be subject to those of the holders of any shares of our preferred stock or any other / series or class of stoc"
+  },
+  {
+   "cik": 2103076,
+   "name": "OPAY Ltd",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.09271,
+    "claude-haiku-5-5": 0.00527
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock"
+   },
+   "readers_differ": [],
+   "sections_not_found": [],
+   "preferred_starts": "Total / 67,728 / 103,441 / 12. REDEEMABLE CONVERTIBLE PREFERRED SHARES / As of January 1, 2024, several investors held in an aggregate of 62,428,225 Series Seed, 150,22"
+  },
+  {
+   "cik": 2141583,
+   "name": "Rezera Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.10774,
+    "claude-haiku-5-5": 0.00613
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock"
+   },
+   "readers_differ": [],
+   "sections_not_found": [],
+   "preferred_starts": "The Notes accrued interest at 8.0% per annum with all outstanding principal and accrued interest due. The Notes were originally set to mature on December 31, 20"
+  },
+  {
+   "cik": 2114145,
+   "name": "Tracx Logis Ltd.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.09494,
+    "claude-haiku-5-5": 0.00563
+   },
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the company reports in SGD, not US dollars",
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "lock-up days: None / 180"
+   ],
+   "sections_not_found": [],
+   "preferred_starts": "Amounts in Singapore dollars (\"SGD\") / 26. Share capital (cont.) / The ordinary shareholders are entitled to receive dividends whenever funds are legally available "
+  },
+  {
+   "cik": 2065821,
+   "name": "Little West Holdings Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07314,
+    "claude-haiku-5-5": 0.0043
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "future_sale"
+   ],
+   "preferred_starts": "of our directors. In general, a majority of the votes cast at a meeting of shareholders must authorize shareholder actions other than / the election of directors."
+  },
+  {
+   "cik": 1973276,
+   "name": "LIS Technologies Inc",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.05307,
+    "claude-haiku-5-5": 0.00305
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "offering",
+    "holders",
+    "future_sale",
+    "item15"
+   ],
+   "preferred_starts": "Rights. Holders of shares of common stock are entitled to ratably receive dividends when and if declared by the board of directors / out of funds legally availabl"
+  },
+  {
+   "cik": 1900851,
+   "name": "Ambitious Entertainment, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.03663,
+    "claude-haiku-5-5": 0.00206
+   },
+   "kept": [
+    "Revenue and results"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "offering",
+    "risks",
+    "proceeds",
+    "holders",
+    "future_sale",
+    "item15"
+   ],
+   "preferred_starts": "Protection / Except / for Exempt Issuances, if the Company issues securities at a price less than the Conversion Price, the Conversion Price shall be reduced / to the"
+  }
+ ]
 }
