@@ -9,6 +9,7 @@
   "price": 17.0,
   "holder_shares": 0,
   "company_shares": 10294117,
+  "shares_after": 58038748,
   "low": 16.0,
   "high": 18.0
  },
@@ -27,15 +28,15 @@
    "how": "price times shares sold equals the total on the cover"
   },
   {
+   "item": "Shares outstanding after the offering",
+   "how": "the filing's own total; larger than the number sold"
+  },
+  {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
   }
  ],
  "hidden": [
-  {
-   "item": "Company value and the share that trades",
-   "why": "the number of shares outstanding after the offering could not be read"
-  },
   {
    "item": "Revenue, results and cash",
    "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"

@@ -1,5 +1,5 @@
 {
- "version": 3,
+ "version": 4,
  "deals": {
   "1907709": {
    "form": "424B4",
@@ -32,11 +32,11 @@
     "price": 17.0,
     "holder_shares": 0,
     "company_shares": 10294117,
+    "shares_after": 58038748,
     "low": 16.0,
     "high": 18.0
    },
    "left_out": [
-    "the number of shares outstanding after the offering could not be read",
     "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
    ],
    "notes": [
@@ -349,11 +349,11 @@
     "price": 17.0,
     "holder_shares": 0,
     "company_shares": 26250000,
+    "shares_after": 106801325,
     "low": 15.0,
     "high": 17.0
    },
    "left_out": [
-    "the number of shares outstanding after the offering could not be read",
     "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
    ],
    "notes": [
@@ -720,11 +720,11 @@
     "price": 15.0,
     "holder_shares": 0,
     "company_shares": 8580000,
+    "shares_after": 17577386,
     "low": 13.0,
     "high": 15.0
    },
    "left_out": [
-    "the number of shares outstanding after the offering could not be read",
     "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
    ],
    "notes": [
@@ -803,10 +803,10 @@
     "low": 70.0,
     "high": 78.0,
     "holder_shares": 23648646,
-    "company_shares": 801351354
+    "company_shares": 801351354,
+    "shares_after": 26173345184
    },
    "left_out": [
-    "the number of shares outstanding after the offering could not be read",
     "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
    ],
    "notes": [
@@ -874,10 +874,10 @@
     "low": 11.0,
     "high": 13.0,
     "holder_shares": 0,
-    "company_shares": 16666667,
-    "shares_after": 20776793
+    "company_shares": 16666667
    },
    "left_out": [
+    "the shares outstanding after the offering do not fit with the number sold",
     "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
    ],
    "notes": [
@@ -979,10 +979,19 @@
    "date": "2026-11-03",
    "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226049736/formf-1a.htm",
    "read": "2026-11-18",
-   "result": "not confirmed",
+   "result": "read",
+   "found": {
+    "low": 4.0,
+    "high": 6.0,
+    "holder_shares": 0,
+    "company_shares": 7000000
+   },
+   "left_out": [
+    "the number of shares outstanding after the offering could not be read",
+    "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   ],
    "notes": [
-    "the number of shares the company is selling is not stated the same way twice",
-    "near: ia through our wholly-owned subsidiary, fit food tech sdn. bhd (\"fit food\"). we are offering an aggregate 7,000,000 ordinary shares on a firm commitment basis (the \"offering\"). we anticipate that the offering price of the ordinary shares will be between $4.00 and $6.00 per ordina"
+    "company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2092291": {

@@ -9,8 +9,7 @@
   "low": 11.0,
   "high": 13.0,
   "holder_shares": 0,
-  "company_shares": 16666667,
-  "shares_after": 20776793
+  "company_shares": 16666667
  },
  "exchange": "Nasdaq",
  "checks": [
@@ -25,13 +24,13 @@
   {
    "item": "Shares sold by the company",
    "how": "stated on the cover and again in the offering summary"
-  },
-  {
-   "item": "Shares outstanding after the offering",
-   "how": "from the offering summary; larger than the number sold"
   }
  ],
  "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "the shares outstanding after the offering do not fit with the number sold"
+  },
   {
    "item": "Revenue, results and cash",
    "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
