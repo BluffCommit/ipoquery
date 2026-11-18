@@ -1,0 +1,40 @@
+{
+ "cik": 1698506,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "S-1 amendment filed Nov 6, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/1698506/000121390026116984/ea0270032-21.htm",
+ "doc_date": "2026-11-06",
+ "offer": {
+  "low": 18.0,
+  "high": 22.0,
+  "holder_shares": 1000000,
+  "company_shares": 1000000,
+  "shares_after": 14750000
+ },
+ "exchange": "Nasdaq",
+ "checks": [
+  {
+   "item": "Price range",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Shares sold by existing holders",
+   "how": "stated more than once in the filing"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated more than once in the filing"
+  },
+  {
+   "item": "Shares outstanding after the offering",
+   "how": "from the offering summary; larger than the number sold"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Revenue, results and cash",
+   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+  }
+ ]
+}

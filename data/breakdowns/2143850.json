@@ -25,7 +25,7 @@
   },
   {
    "item": "Final price",
-   "how": "stated more than once in the filing"
+   "how": "stated more than once in the filing, and in line with the range set before pricing"
   },
   {
    "item": "Shares outstanding after the offering",
@@ -39,7 +39,7 @@
  "hidden": [
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are not tagged with an operating or net result"
+   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
   }
  ]
 }

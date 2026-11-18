@@ -1,0 +1,43 @@
+{
+ "cik": 2127043,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "Final prospectus filed Jul 31, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2127043/000119312526326453/project_70_424b4.htm",
+ "doc_date": "2026-07-31",
+ "offer": {
+  "price": 23.0,
+  "holder_shares": 29695652,
+  "company_shares": 13782609,
+  "low": 21.0,
+  "high": 25.0
+ },
+ "checks": [
+  {
+   "item": "Shares sold by existing holders",
+   "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated more than once in the filing"
+  },
+  {
+   "item": "Final price",
+   "how": "price times shares sold equals the total on the cover"
+  },
+  {
+   "item": "Price range before pricing",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "the number of shares outstanding after the offering could not be read"
+  },
+  {
+   "item": "Revenue, results and cash",
+   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+  }
+ ]
+}
