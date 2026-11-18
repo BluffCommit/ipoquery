@@ -465,7 +465,7 @@ def run(fetcher, today, list_path, breakdown_dir, state_path, max_docs=MAX_DOCS,
             if "low" in breakdown["offer"] and "range_set" not in breakdown and before.get("notes") == [NO_RANGE]:
                 breakdown["range_set"] = doc[1]         # the document before this one had no range
             entry.update(result="read", found=breakdown["offer"], left_out=[h["why"] for h in breakdown["hidden"]], notes=notes)
-            if earlier and earlier.get("method") == "manual":
+            if earlier and earlier.get("method") == "manual" and doc[0] not in tracker.PRICED:       # once the deal prices, a hand-made page is out of date
                 entry["note"] = "a hand-made breakdown exists and was kept"
             else:
                 breakdown_dir.mkdir(parents=True, exist_ok=True)

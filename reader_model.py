@@ -16,9 +16,8 @@ into the deal's breakdown only if it passes these checks:
 
 Anything that fails is left out, with the reason recorded for the page.
 
-For the first COMPARE_DEALS deals a third, stronger model reads the filing too.
-Every disagreement between the three is written to data/model_compare.json, so
-the choice of reader can be made on evidence.
+data/model_compare.json logs where the two readers differed on each deal. It
+also holds a one-off comparison in which a third, stronger model read 32 deals.
 
 Needs ANTHROPIC_API_KEY. Without it, nothing happens. Only the Python standard
 library is used.
@@ -37,12 +36,11 @@ from pathlib import Path
 import reader
 import tracker
 
-PROMPT_VERSION = 2                     # bump to have the models read every deal again (costs money)
+PROMPT_VERSION = 3                     # bump to have the models read every deal again (costs money)
 CHECKS_VERSION = 1                     # bump to apply changed checks to every deal again (free where the answers are saved)
 MODEL_VERSION = [PROMPT_VERSION, CHECKS_VERSION]
 READERS = ["claude-sonnet-5-5", "claude-haiku-5-5"]     # the first one's wording is used; figures need both to agree
-REFEREE = "claude-opus-5-5"            # also reads the first COMPARE_DEALS deals, for the comparison only
-COMPARE_DEALS = 32                     # the first 20 were mostly small deals; the next 12 are priced IPOs, which have more to read
+REFEREE = "claude-opus-5-5"            # read 32 deals as a comparison in Nov 2026; the results are in data/model_compare.json
 MAX_DEALS = 40                         # deals read per run
 PRICES = {"claude-haiku-5-5": (0.10, 0.50), "claude-sonnet-5-5": (2.00, 10.00), "claude-opus-5-5": (4.00, 20.00)}    # US$ per million tokens in, out (list prices, Nov 2026)
 API_URL = "https://api.anthropic.com/v1/messages"
@@ -77,7 +75,7 @@ HEADINGS = {
     "item15": r"(?:item )?recent sales of unregistered securities",
 }
 WANTED = {"cover": 7000, "summary": 3000, "offering": 9000, "summary_financials": 10000, "risks": 12000, "proceeds": 5000, "holders": 18000,
-          "future_sale": 9000, "preferred": 7000, "item15": 9000}
+          "future_sale": 9000, "preferred": 14000, "item15": 9000}
 PREFERRED = re.compile(r"(?:note )?\d*\.? ?(?:redeemable )?(?:convertible )?(?:redeemable )?preferred (?:stock|shares)(?: and .{0,60})?", re.I)
 
 
@@ -182,7 +180,8 @@ The JSON object has exactly these keys:
 "share_classes": how many classes of shares the ownership table shows holdings for, as a number.
 "sellers": only the existing holders who are selling shares in this offering, each {"name": exactly as printed, without footnote marks, "role": a few words such as "Co-founder, chief executive" or "Venture investor", "before": shares beneficially owned before the offering, "sold": shares being sold in the offering, not counting any option given to the underwriters}. Empty list if none.
 "others": up to eight of the largest holders named in the ownership table who are not selling, each {"name", "role", "before"}.
-"rounds": the company's series of preferred stock, oldest first, each {"name": e.g. "Series A", "when": the year it was first sold, or null if not stated, "price": the original issue price per share}. Take prices from the PREFERRED excerpt (the note to the financial statements), not from ITEM 15, which may predate a share split. Use ITEM 15 only for the year. Empty list if the PREFERRED excerpt has no price table.
+"rounds": the company's series of preferred stock, oldest first, each {"name": e.g. "Series A", "when": the year it was first sold, or null if not stated, "price": the original issue price per share, "conversion_price": the conversion price per share the filing states for this series, or null if it states none}. Take both prices from the PREFERRED excerpt (the note to the financial statements), not from ITEM 15, which may predate a share split. Use ITEM 15 only for the year. Empty list if the PREFERRED excerpt gives no prices.
+"preferred_converts": "one_for_one" if the filing says each preferred share converts into one share of common stock, "other" if it gives any other rate or says the rate was adjusted, null if it does not say.
 "lockup": null, or {"days": the main lock-up length in days, "summary": one or two sentences on when insiders may sell, "early": true if the filing describes any release before that period ends}
 "risks": the first five risk factors in the order the filing gives them, each rewritten as one plain sentence of at most 25 words."""
 
@@ -260,7 +259,7 @@ def same(a, b):
         return a == b
 
 
-NUMERIC = ("revenue", "operating", "net", "prior_revenue", "prior_operating", "prior_net", "value", "before", "sold", "price", "days")
+NUMERIC = ("revenue", "operating", "net", "prior_revenue", "prior_operating", "prior_net", "value", "before", "sold", "price", "conversion_price", "days")
 
 
 def tidy(answer):
@@ -308,7 +307,9 @@ def differences(a, b):
     for k in ("value", "date"):
         if not same((fa.get("cash") or {}).get(k), (fb.get("cash") or {}).get(k)):
             out.append(f"cash {k}: {(fa.get('cash') or {}).get(k)} / {(fb.get('cash') or {}).get(k)}")
-    for key, fields in (("sellers", ("before", "sold")), ("others", ("before",)), ("rounds", ("price",))):
+    if a.get("preferred_converts") != b.get("preferred_converts"):
+        out.append(f"preferred converts: {a.get('preferred_converts')} / {b.get('preferred_converts')}")
+    for key, fields in (("sellers", ("before", "sold")), ("others", ("before",)), ("rounds", ("price", "conversion_price"))):
         ta, tb = table(a, key), table(b, key)
         for n in sorted(set(ta) | set(tb)):
             if key != "others" and (n not in ta or n not in tb):
@@ -416,27 +417,35 @@ def merge(first, second, text, offer):
     elif others:
         out["others"] = [{"name": str(r["name"]), "role": str(r.get("role") or ""), "before": r["before"], "sold": 0} for r in others[:8]]
 
-    # what earlier rounds paid
+    # what earlier rounds paid, per share of common stock. A preferred share does not always become one common share
+    # (after a reverse split it rarely does), so the price that can be set against the IPO price is the conversion price,
+    # or the issue price only where the filing says conversion is one for one.
     ra, rb = table(first, "rounds"), table(second, "rounds")
     item = "What earlier rounds paid"
     price = offer.get("price") or (offer["low"] + offer["high"]) / 2
     rows = list(ra.values())
+    good = lambda k: bool(rows) and all(isinstance(r.get(k), (int, float)) and r[k] > 0 and same(r[k], rb.get(norm(r["name"]), {}).get(k)) and is_printed(r[k], text) for r in rows)
     if not ra:
-        leave(item, "the readers found no table of preferred stock prices")
-    elif not all(isinstance(r.get("price"), (int, float)) and r["price"] > 0 for r in rows):
-        leave(item, "a round has no price in US dollars")
-    elif set(ra) != set(rb) or not all(same(ra[n]["price"], rb[n].get("price")) for n in ra):
-        leave(item, "the two AI readers gave different rounds or prices")
-    elif not all(is_printed(r["price"], text) for r in rows):
-        leave(item, "a price the readers gave is not printed in the filing")
+        leave(item, "the readers found no prices for the company's preferred stock")
+    elif set(ra) != set(rb):
+        leave(item, "the two AI readers named different rounds")
     elif offer.get("unit") == "ADS":
         leave(item, "the offer is in depositary shares, so the prices cannot be compared directly")
-    elif not price / 4 <= max(r["price"] for r in rows) <= price * 3:
-        leave(item, "the highest round price is less than a quarter of the IPO price or more than three times it, which usually means a share split is not allowed for")
     else:
-        out["rounds"] = [{"name": str(r["name"]), "when": str(r["when"]) if r.get("when") and same(r["when"], rb[norm(r["name"])].get("when")) else None, "price": r["price"]} for r in rows]
-        out["rounds_note"] = "Prices are the original issue prices in the notes to the financial statements."
-        keep(item, "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price")
+        if good("conversion_price"):
+            use, how, note = "conversion_price", "the conversion price of each round", "Prices are each round's conversion price: what it paid for each share of common stock it becomes."
+        elif good("price") and first.get("preferred_converts") == second.get("preferred_converts") == "one_for_one":
+            use, how, note = "price", "the issue price of each round, which converts one for one into common stock", "Prices are each round's original issue price. The filing says each preferred share becomes one share of common stock."
+        else:
+            use = None
+        if not use:
+            leave(item, "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock")
+        elif not price / 4 <= max(r[use] for r in rows) <= price * 3:
+            leave(item, "the highest round price is less than a quarter of the IPO price or more than three times it, which usually means a share split is not allowed for")
+        else:
+            out["rounds"] = [{"name": str(r["name"]), "when": str(r["when"]) if r.get("when") and same(r["when"], rb[norm(r["name"])].get("when")) else None, "price": r[use]} for r in rows]
+            out["rounds_note"] = note
+            keep(item, f"two AI readers agree on {how}, each is printed in the filing, and the highest sits believably next to the IPO price")
 
     # lock-up and the written summaries
     la, lb = first.get("lockup") or {}, second.get("lockup") or {}
@@ -468,11 +477,10 @@ def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, 
     compare.setdefault("deals", [])
     if compare.get("version") != MODEL_VERSION:              # a new version reads every deal again; the three-reader comparisons already made are kept
         compare.update(version=MODEL_VERSION, later=[])
-    compared = {deal["cik"] for deal in compare["deals"]}
     waiting = []
     for path in sorted(Path(breakdown_dir).glob("*.json")):
         b = tracker.load_json(path, {})
-        if b.get("method") == "auto" and b.get("cik") in records and (b.get("model") or {}).get("key") not in ([b["doc"], MODEL_VERSION], [b["doc"], 2]):
+        if b.get("method") == "auto" and b.get("cik") in records and (b.get("model") or {}).get("key") != [b["doc"], MODEL_VERSION]:
             offer = b["offer"]
             raising = (offer.get("price") or (offer["low"] + offer["high"]) / 2) * (offer["company_shares"] + offer.get("holder_shares", 0))
             waiting.append(("price" in offer, -raising, path, b))
@@ -487,11 +495,15 @@ def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, 
         sections = cut(to_lines(page))
         text = reader.to_text(page)
         user = "\n\n".join(f"=== {name.upper().replace('_', ' ')} ===\n{body}" for name, body in sections.items())
-        referee = len(compare["deals"]) < COMPARE_DEALS and b["cik"] not in compared and "price" in b["offer"]
-        models = READERS + ([REFEREE] if referee else [])
+        before = (b.get("model") or {}).get("key") or [None, None]
+        if before[0] == b["doc"] and before[1] in (2, [2, 1]) and PROMPT_VERSION == 3 and "preferred" not in sections:
+            b["model"]["key"] = [b["doc"], MODEL_VERSION]         # only the reading of preferred stock changed, and this filing has none
+            path.write_text(json.dumps(b, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+            continue
+        models = READERS
         saved_path = Path(breakdown_dir).parent / "model_answers" / f"{b['cik']}.json"
         saved = tracker.load_json(saved_path, {})
-        if not referee and saved.get("key") == [b["doc"], PROMPT_VERSION] and all(model in saved["answers"] for model in READERS):
+        if saved.get("key") == [b["doc"], PROMPT_VERSION] and all(model in saved["answers"] for model in READERS):
             replies = {model: (saved["answers"][model], {}, None) for model in READERS}
         else:
             with ThreadPoolExecutor(max_workers=len(models)) as pool:
@@ -534,17 +546,7 @@ def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, 
         entry["kept"] = [c["item"] for c in checks]
         entry["left_out"] = {h["item"]: h["why"] for h in hidden}
         entry["readers_differ"] = differences(first, second)
-        if REFEREE in replies:
-            third = replies[REFEREE][0]
-            if third:
-                entry["referee_differs_from_first"] = differences(first, third)
-                entry["referee_differs_from_second"] = differences(second, third)
-                entry["answers"] = {model: reply[0] for model, reply in replies.items()}
-            else:
-                entry["errors"] = errors
-            compare["deals"].append(entry)
-        else:
-            compare.setdefault("later", []).append({k: entry[k] for k in ("cik", "name", "cost_usd", "kept", "left_out", "readers_differ", "sections_not_found", "preferred_starts")})
+        compare.setdefault("later", []).append({k: entry[k] for k in ("cik", "name", "cost_usd", "kept", "left_out", "readers_differ", "sections_not_found", "preferred_starts")})
     compare["spent_usd"] = round(compare.get("spent_usd", 0) + spent, 4)
     Path(compare_path).write_text(json.dumps(compare, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     log(f"model step: read {done} of {len(waiting)} waiting deals, about ${spent:.2f} this run")

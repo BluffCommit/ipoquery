@@ -289,6 +289,7 @@ const filingUrl = (r, path) => 'https://www.sec.gov/Archives/edgar/data/' + r.ci
 /* ---------- stage ---------- */
 const bucket = r => r.stage === 'priced' ? 'priced' : (r.stage === 'withdrawn' || r.stalled || r.unpriced) ? 'closed' : 'upcoming';
 function stageOf(r){
+  if (r.stage === 'priced' && r.direct) return {k:'priced', label:'Direct listing', note:'prospectus ' + day(r.priced_date)};
   if (r.stage === 'priced') return {k:'priced', label:'Priced', note:'final prospectus ' + day(r.priced_date)};
   if (r.stage === 'withdrawn') return {k:'closed', label:'Withdrawn', note:day(r.withdrawn_date)};
   if (r.stalled) return {k:'closed', label:'Stalled', note:'last filing ' + day(r.last_activity)};
@@ -437,7 +438,7 @@ function stepsHTML(r, b){
   if (r.stage === 'withdrawn') s.push(['Withdrawn', day(r.withdrawn_date), 1]);
   else {
     if (r.effective_date) s.push(['Cleared by the SEC', day(r.effective_date), 1]);
-    if (r.stage === 'priced') s.push(['Priced', 'final prospectus ' + day(r.priced_date), 1]);
+    if (r.stage === 'priced') s.push([r.direct ? 'Listed directly' : 'Priced', 'final prospectus ' + day(r.priced_date), 1]);
     else if (b && b.offer.expected_pricing) { s.push(['Pricing', 'expected ' + day(b.offer.expected_pricing), 0]); if (b.offer.expected_trading) s.push(['First trade', 'expected ' + day(b.offer.expected_trading), 0]); }
     else if (!r.stalled && !r.unpriced) s.push(['Pricing', 'no date yet', 0]);
   }
@@ -465,13 +466,16 @@ function ipoPage(r){
   if (!b) {
     const end = r.priced_date || r.withdrawn_date || today();
     return head(`<div class="hi"><b>${esc(st.label)}</b><small>${esc(st.note)}</small></div><div><b>${day(r.first_filed).replace(/, \d+$/, '')}</b><small>first filed, ${r.first_filed.slice(0, 4)}</small></div>
-      <div><b>${r.amendments}</b><small>amendment${r.amendments === 1 ? '' : 's'} so far</small></div><div><b>${daysBetween(r.first_filed, end)} days</b><small>${r.stage === 'priced' ? 'from filing to pricing' : r.stage === 'withdrawn' ? 'from filing to withdrawal' : 'in registration'}</small></div>`) + `
+      <div><b>${r.amendments}</b><small>amendment${r.amendments === 1 ? '' : 's'} so far</small></div><div><b>${daysBetween(r.first_filed, end)} days</b><small>${r.stage === 'priced' ? (r.direct ? 'from filing to listing' : 'from filing to pricing') : r.stage === 'withdrawn' ? 'from filing to withdrawal' : 'in registration'}</small></div>`) + `
     <div class="wrap stack" style="margin-top:22px"><div class="cols"><div class="main">
-      <section><div class="bar"><h2>The breakdown</h2><span>Not read yet</span></div>
+      ${r.direct ? `<section><div class="bar"><h2>The breakdown</h2><span>Direct listing</span></div>
+        <div class="hair"><div class="pending"><h3>This filing lets existing holders sell their shares; nothing was sold at a set price</h3>
+          <p>In a direct listing or resale like this one, holders may sell on the open market once the shares trade. The company does not sell new shares to the public at an offer price, so there is no price range, amount raised or split of the money to show.</p>
+          <p><a href="${esc(r.latest.url)}">Read the prospectus ↗</a></p></div></div></section>` : `<section><div class="bar"><h2>The breakdown</h2><span>Not read yet</span></div>
         <div class="hair"><div class="pending"><h3>This filing has not been read in full yet</h3>
           <p>So far this page shows only what the filing index tells us: when the company filed, how often it has amended and where the deal stands. Once the filing itself is read, this page adds:</p>
           <ul><li>the price range, the amount being raised and what that values the company at</li><li>revenue, profit or loss, and cash</li><li>who is selling shares in the IPO and how much they receive</li><li>what earlier funding rounds paid per share</li><li>the dates that matter next</li></ul>
-          <p><a href="${esc(r.latest.url)}">Read the latest filing yourself ↗</a></p></div></div></section>
+          <p><a href="${esc(r.latest.url)}">Read the latest filing yourself ↗</a></p></div></div></section>`}
     </div><aside class="rail">${filingsBox(r)}</aside></div></div>`;
   }
   const o = b.offer, P = mid(b), m = calc(b, P), priced = o.price != null, hasRange = o.low != null && o.high != null;

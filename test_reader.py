@@ -206,7 +206,7 @@ LONG = page(
     p("SHARES ELIGIBLE FOR FUTURE SALE"), p("Our directors and officers have agreed not to sell shares for 180 days after the date of this prospectus. " * 3),
     p("The underwriting discount is $1.26 per share."), p("Convertible notes"), p("The notes have an issuance price of $125.00 per unit."),
     p("INDEX TO CONSOLIDATED FINANCIAL STATEMENTS"), p("Notes. " * 50), p("8. Convertible Preferred Stock"),
-    table(("Series", "Shares", "Original issue price"), ("Series A", "4,000,000", "$1.25"), ("Series B", "2,000,000", "$6.00")),
+    table(("Series", "Shares", "Original issue price", "Conversion price"), ("Series A", "4,000,000", "$1.25", "$9.375"), ("Series B", "2,000,000", "$6.00", "$45.00")),
     p("Item 15. Recent Sales of Unregistered Securities."), p("In March 2024 we sold 4,000,000 shares of Series A preferred stock at $1.25 per share. " * 2))
 
 GOOD = {"share_classes": 1, "what": "Testco makes widgets for hospitals.", "short": "Testco", "proceeds": "It will spend about 40% on a new factory and the rest on general costs.",
@@ -215,7 +215,8 @@ GOOD = {"share_classes": 1, "what": "Testco makes widgets for hospitals.", "shor
                        "part_year": None, "cash": {"value": 8765, "date": "2025-12-31"}},
         "sellers": [{"name": "Jane Roe", "role": "Founder", "before": 5000000, "sold": 600000}, {"name": "Venture Fund I", "role": "Venture investor", "before": 9000000, "sold": 400000}],
         "others": [{"name": "John Doe", "role": "Director", "before": 3000000}],
-        "rounds": [{"name": "Series A", "when": "2024", "price": 1.25}, {"name": "Series B", "when": None, "price": 6.0}],
+        "rounds": [{"name": "Series A", "when": "2024", "price": 1.25, "conversion_price": 9.375}, {"name": "Series B", "when": None, "price": 6.0, "conversion_price": 45.0}],
+        "preferred_converts": "other",
         "lockup": {"days": 180, "summary": "Directors and officers cannot sell for 180 days.", "early": False},
         "risks": ["It has lost money every year.", "It relies on one supplier.", "A third risk.", "A fourth risk.", "A fifth risk."]}
 
@@ -225,7 +226,7 @@ def model_checks(folder):
     import reader_model as rm
     sections = rm.cut(rm.to_lines(LONG))
     check("sections: all found, the real section rather than its contents-page entry",
-          (sorted(sections), sections["holders"].split("\n")[1], "Series B 2,000,000 $6.00" in sections["preferred"], "issuance price of $125" in sections["preferred"]),
+          (sorted(sections), sections["holders"].split("\n")[1], "Series B 2,000,000 $6.00 $45.00" in sections["preferred"], "issuance price of $125" in sections["preferred"]),
           (sorted(rm.WANTED), "Jane Roe(1) 5,000,000 600,000", True, False))
     check("sections: risk factors keep the headings and drop the long explanations", sections["risks"].split("\n")[:3],
           ["RISK FACTORS", "We have a history of losses and may never be profitable.", "We depend on a single supplier for our main component."])
@@ -248,8 +249,16 @@ def model_checks(folder):
     check("holders that do not add up to the cover are left out", left(both, copy.deepcopy(both))["Who is selling"], "the named holders' shares add up to 900,000, not the 1,000,000 on the cover")
     both = changed(lambda a: a["financials"]["years"][1].update(revenue=99999))
     check("a figure both readers give but the filing does not print is left out", left(both, copy.deepcopy(both)), {"Revenue, results and cash": "a figure the readers gave is not printed in the filing"})
-    both = changed(lambda a: a["rounds"][1].update(price=125.0))
-    check("a round priced far above the IPO is treated as a missed share split", left(both, copy.deepcopy(both))["What earlier rounds paid"][:52], "the highest round price is less than a quarter of th")
+    check("rounds use the conversion price, which is per share of common stock", (rm.merge(GOOD, copy.deepcopy(GOOD), text, offer)[0]["rounds"], rm.merge(GOOD, copy.deepcopy(GOOD), text, offer)[0]["rounds_note"][:42]),
+          ([{"name": "Series A", "when": "2024", "price": 9.375}, {"name": "Series B", "when": None, "price": 45.0}], "Prices are each round's conversion price: "))
+    both = changed(lambda a: [r.update(conversion_price=None) for r in a["rounds"]])
+    check("with no conversion price and no one-for-one statement, rounds are left out", left(both, copy.deepcopy(both))["What earlier rounds paid"],
+          "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock")
+    both = changed(lambda a: ([r.update(conversion_price=None) for r in a["rounds"]], a.update(preferred_converts="one_for_one")))
+    kept = rm.merge(both, copy.deepcopy(both), text, offer)[0]
+    check("issue prices are used when the filing says conversion is one for one", ([r["price"] for r in kept["rounds"]], kept["rounds_note"][:47]), ([1.25, 6.0], "Prices are each round's original issue price. T"))
+    both = changed(lambda a: a["rounds"][1].update(conversion_price=125.0))
+    check("a round priced far above the IPO is left out", left(both, copy.deepcopy(both))["What earlier rounds paid"][:52], "the highest round price is less than a quarter of th")
     both = changed(lambda a: a.update(share_classes=2))
     check("with two share classes the other holders are left out", ("others" in rm.merge(both, both, text, offer)[0], left(both, both)), (False, {"Other large holders": "the ownership table splits holdings between share classes, and they are not added up here"}))
     both = changed(lambda a: a.update(proceeds="It will raise $84.6 billion."))
@@ -279,7 +288,7 @@ def model_checks(folder):
     go = lambda: rm.run(tracker.Fetcher("test", fixtures=folder / "fixtures"), TODAY, folder / "list.json", bdir, folder / "compare.json", "key", log=lambda *_: None)
     report = go()
     b = json.loads((bdir / "9200001.json").read_text())
-    check("run: an upcoming deal gets the two readers, hand-made breakdowns are left alone", (sorted(asked), json.loads((bdir / "9100009.json").read_text()).get("model")),
+    check("run: each deal gets the two readers, hand-made breakdowns are left alone", (sorted(asked), json.loads((bdir / "9100009.json").read_text()).get("model")),
           (["claude-haiku-5-5", "claude-sonnet-5-5"], None))
     check("run: the breakdown gains the checked fields and loses the 'not tagged' note", ("sellers" in b, "financials" in b, [h["item"] for h in b["hidden"]], len(b["checks"])), (True, True, [], 5))
     check("run: the log records agreement and cost", (report["later"][0]["readers_differ"], report["spent_usd"]), ([], 0.0777))
@@ -288,12 +297,7 @@ def model_checks(folder):
     check("run: a deal already read is not read again", asked, [])
     rm.CHECKS_VERSION, rm.MODEL_VERSION = 2, [rm.PROMPT_VERSION, 2]
     go()
-    check("run: changed checks are applied from the saved answers, without asking again", (asked, json.loads((bdir / "9200001.json").read_text())["model"]["key"][1]), ([], [2, 2]))
-    priced = dict(offer, price=20.0)
-    (bdir / "9200001.json").write_text(json.dumps({"cik": 9200001, "method": "auto", "doc": url, "offer": priced, "checks": [], "hidden": []}))
-    report = go()
-    check("run: a priced deal is also read by the referee, and differences are logged", (sorted(asked), report["deals"][0]["referee_differs_from_first"]),
-          (["claude-haiku-5-5", "claude-opus-5-5", "claude-sonnet-5-5"], []))
+    check("run: changed checks are applied from the saved answers, without asking again", (asked, json.loads((bdir / "9200001.json").read_text())["model"]["key"][1]), ([], [rm.PROMPT_VERSION, 2]))
     check("without a key nothing is asked", rm.run(None, TODAY, folder / "list.json", bdir, folder / "compare.json", "", log=lambda *_: None), {})
 
 

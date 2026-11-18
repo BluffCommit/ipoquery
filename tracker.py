@@ -450,8 +450,11 @@ def load_breakdowns(ciks):
 def render_page(payload):
     """Build the site page: the report template with the data it needs written into it."""
     ipos = []
+    read = load_json(ROOT / "data" / "reader.json", {}).get("deals", {})
     for r in payload["ipos"]:
         slim = {k: r.get(k) for k in PAGE_FIELDS}
+        if read.get(str(r["cik"]), {}).get("result") == "resale":
+            slim["direct"] = True                        # the reader found a resale by existing holders, not a priced offering
         base = f"https://www.sec.gov/Archives/edgar/data/{r['cik']}/"
         slim["ev"] = [[e["form"], e["date"], e["url"].replace(base, "")] for e in r.get("filings", [])[-10:]]
         ipos.append(slim)

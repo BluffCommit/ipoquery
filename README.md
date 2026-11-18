@@ -50,7 +50,9 @@ written. `data/reader.json` records what happened for every deal; when a
 share count fails it keeps a short piece of the filing to show why. Direct
 listings and other resales have no set price and are marked as such.
 
-The reader never replaces a breakdown marked `"method": "manual"`.
+The reader does not replace a breakdown marked `"method": "manual"` until the
+deal prices; after that the hand-made page is out of date and the automatic
+one takes over.
 
     python test_reader.py      # offline tests, on made-up filings in real wording
 
@@ -65,8 +67,10 @@ and the first risk factors. A figure is added only when:
 
 - both readers give the same number, and it is printed in the filing
 - the named sellers' shares add up to the number on the cover
-- the highest funding round price is between a quarter of the IPO price and
-  three times it (otherwise a share split has usually been missed)
+- round prices are per share of common stock: the conversion price of each
+  round, or its issue price where the filing says conversion is one for one
+- the highest round price is between a quarter of the IPO price and three
+  times it (otherwise a share split has usually been missed)
 - other large holders are shown only when the ownership table has a single
   share class
 
