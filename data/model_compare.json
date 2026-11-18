@@ -7764,7 +7764,7 @@
    }
   }
  ],
- "spent_usd": 13.0386,
+ "spent_usd": 13.0962,
  "later": [
   {
    "cik": 2133022,
@@ -8384,6 +8384,29 @@
     "item15"
    ],
    "preferred_starts": "$ / (7,780,521 / ) / 4. Convertible Preferred Stock / As of December 31, 2025, the Company was authorized to issue 23,436,264 shares of preferred stock, consisting of 1"
+  },
+  {
+   "cik": 1973276,
+   "name": "LIS Technologies Inc",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.05448,
+    "claude-haiku-5-5": 0.00315
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "offering",
+    "holders",
+    "future_sale",
+    "item15"
+   ],
+   "preferred_starts": "Rights. Holders of shares of common stock are entitled to ratably receive dividends when and if declared by the board of directors / out of funds legally availabl"
   }
  ]
 }

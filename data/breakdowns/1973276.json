@@ -2,9 +2,9 @@
  "cik": 1973276,
  "method": "auto",
  "loaded": "2026-11-18",
- "basis": "S-1 amendment filed Nov 5, 2026",
- "doc": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226050287/forms-1a.htm",
- "doc_date": "2026-11-05",
+ "basis": "S-1 amendment filed Nov 18, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226052907/forms-1a.htm",
+ "doc_date": "2026-11-18",
  "offer": {
   "low": 5.0,
   "high": 7.0,
@@ -84,15 +84,15 @@
   "by": "model"
  },
  "lockup": {
-  "summary": "Executive officers, directors and their affiliates cannot sell for 180 days after the prospectus date without the lead underwriter's consent. Other holders of 0.5% or more can sell 25% after 90 days, another 25% after 120 days, and the rest after 180 days.",
+  "summary": "Executive officers, directors and their affiliates cannot sell for 180 days after the date of the prospectus unless the lead underwriter, Titan, agrees. Other holders of 0.5% or more may sell 25% after 90 days, another 25% after 120 days, and the last 50% after 180 days.",
   "days": 180
  },
- "what": "It is developing uranium enrichment technology, including laser and separator systems, for nuclear fuel.",
+ "what": "It is developing uranium enrichment technology, including laser and separator systems, to supply fuel for nuclear power.",
  "short": "LIS Technologies",
- "proceeds": "The company expects net proceeds of about $16.6 million. It plans to use them for research and development of its enrichment technology, site work at the LIST Island site, marketing, and general business costs.",
+ "proceeds": "It expects net proceeds of about $16.4 million. It plans to spend them on research and development of its enrichment technology, site work at the LIST Island site, marketing and business development, and general company costs.",
  "model": {
   "key": [
-   "https://www.sec.gov/Archives/edgar/data/1973276/000149315226050287/forms-1a.htm",
+   "https://www.sec.gov/Archives/edgar/data/1973276/000149315226052907/forms-1a.htm",
    [
     3,
     1
