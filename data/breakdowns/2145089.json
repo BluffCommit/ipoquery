@@ -34,12 +34,91 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the two AI readers gave different figures",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "Novo Holdings A/S",
+   "role": "Investor",
+   "before": 6170156,
+   "sold": 0
+  },
+  {
+   "name": "OrbiMed Private Investments IX, LP",
+   "role": "Investor",
+   "before": 5921244,
+   "sold": 0
+  },
+  {
+   "name": "Luca Santarelli",
+   "role": "Executive officer or director",
+   "before": 4609976,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with SR One",
+   "role": "Investor",
+   "before": 3948580,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Omega Funds",
+   "role": "Investor",
+   "before": 3588520,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with RTW Investments",
+   "role": "Investor",
+   "before": 2632388,
+   "sold": 0
+  },
+  {
+   "name": "Funds managed by Blue Owl Capital",
+   "role": "Investor",
+   "before": 2555058,
+   "sold": 0
+  },
+  {
+   "name": "Claudia D'Augusta",
+   "role": "Executive officer or director",
+   "before": 934228,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Directors, executive officers and certain shareholders agreed not to sell their shares for 180 days after the prospectus date, unless the lead underwriters give written consent.",
+  "days": 180
+ },
+ "what": "Windward Bio develops long-acting antibody medicines for people with asthma, COPD and atopic dermatitis.",
+ "short": "Windward Bio",
+ "proceeds": "It plans to use the money, along with its existing cash, to pay for clinical trials of its two lead medicines, WIN378 and WIN027. It will also fund early work on bispecific antibody programs, with the rest going to general business costs.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2145089/000119312526461203/d111653d424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

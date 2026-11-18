@@ -34,12 +34,145 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
- "hidden": [
+ "hidden": [],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 27.413,
+    "operating": -42.829
+   },
+   {
+    "label": "2025",
+    "revenue": 51.174,
+    "operating": -26.07
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Mar 2026",
+   "revenue": 2.233,
+   "operating": -12.427,
+   "prior_label": "Jan to Mar 2025",
+   "prior_revenue": 17.125,
+   "prior_operating": -5.557
+  },
+  "facts": [
+   {
+    "value": -17.347,
+    "label": "net result, Jan to Mar 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "name": "Entities affiliated with Andreessen Horowitz",
+   "role": "Venture investor, over 5% holder",
+   "before": 2749392,
+   "sold": 0
+  },
+  {
+   "name": "Eli Lilly and Company",
+   "role": "Drug company, over 5% holder",
+   "before": 1054828,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Avoro Life Sciences Fund LLC",
+   "role": "Investment fund, over 5% holder; its manager is a director",
+   "before": 697650,
+   "sold": 0
+  },
+  {
+   "name": "Benjamin L. Oakes, Ph.D.",
+   "role": "Director or named officer",
+   "before": 660998,
+   "sold": 0
+  },
+  {
+   "name": "Jennifer A. Doudna",
+   "role": "Over 5% holder",
+   "before": 603547,
+   "sold": 0
+  },
+  {
+   "name": "Brett T. Staahl",
+   "role": "Over 5% holder",
+   "before": 550056,
+   "sold": 0
+  },
+  {
+   "name": "Carl L. Gordon, Ph.D., CFA",
+   "role": "Director; shares held by an OrbiMed fund",
+   "before": 348825,
+   "sold": 0
   }
- ]
+ ],
+ "rounds": [
+  {
+   "name": "Series A",
+   "when": "2018",
+   "price": 9.77
+  },
+  {
+   "name": "Series A-1",
+   "when": "2018",
+   "price": 7.82
+  },
+  {
+   "name": "Series A-2",
+   "when": "2019",
+   "price": 10.72
+  },
+  {
+   "name": "Series B",
+   "when": "2021",
+   "price": 35.83
+  }
+ ],
+ "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
+ "lockup": {
+  "summary": "Directors, officers and almost all other holders cannot sell their shares for 180 days after the date of the prospectus. The lead underwriters can allow sales sooner by giving written consent.",
+  "days": 180
+ },
+ "what": "It develops CRISPR gene-editing medicines meant to prevent common heart and metabolic diseases, starting with high cholesterol.",
+ "short": "Scribe Therapeutics",
+ "risks": [
+  "It is a young company that has not finished any clinical trial and has no approved products, so its future is hard to judge.",
+  "It has lost money every period, has never earned product revenue, and expects to keep losing money.",
+  "Its management and auditors have serious doubt it can keep operating, because its cash will not last twelve months.",
+  "Even after this offering, it will need a lot more money, which may not be available on acceptable terms."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1853921/000119312526316503/d21355d424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

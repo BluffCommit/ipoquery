@@ -34,12 +34,131 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the two AI readers gave different rounds or prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 39.108,
+    "operating": -2.381
+   },
+   {
+    "label": "2025",
+    "revenue": 0.0,
+    "operating": -37.845
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 0.0,
+   "operating": -31.018,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 0.0,
+   "prior_operating": -19.224
+  },
+  "facts": [
+   {
+    "value": -29.308,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Eli Lilly and Company",
+   "role": "Drug company and investor",
+   "before": 4605872,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with SV Health Investors",
+   "role": "Venture investor",
+   "before": 3882485,
+   "sold": 0
+  },
+  {
+   "name": "Pfizer Ventures (US) LLC",
+   "role": "Venture arm of Pfizer",
+   "before": 1265066,
+   "sold": 0
+  },
+  {
+   "name": "Johnson & Johnson Innovation - JJDC, Inc.",
+   "role": "Venture arm of Johnson & Johnson",
+   "before": 1261017,
+   "sold": 0
+  },
+  {
+   "name": "Janus Henderson Biotech Innovation Master Fund Limited",
+   "role": "Investment fund",
+   "before": 1256136,
+   "sold": 0
+  },
+  {
+   "name": "Alexandria Venture Investments, LLC",
+   "role": "Venture investor",
+   "before": 1167929,
+   "sold": 0
+  },
+  {
+   "name": "Delos Capital Fund III, LP",
+   "role": "Venture investor",
+   "before": 1149411,
+   "sold": 0
+  },
+  {
+   "name": "Polaris Partners X, L.P.",
+   "role": "Venture investor",
+   "before": 1018825,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors, officers and holders of nearly all its stock agreed not to sell for 180 days after the prospectus date without written consent from J.P. Morgan and Evercore.",
+  "days": 180
+ },
+ "what": "TRex Bio is a drug company testing medicines that use immune cells in body tissue to treat autoimmune and inflammatory diseases.",
+ "short": "TRex Bio",
+ "proceeds": "It expects net proceeds of about $103.5 million. About $90.0 million is for Phase 2 trials of TRB-061 and about $10.0 million for a Phase 1 trial of TRB-071. The rest is for general business needs.",
+ "risks": [
+  "The company is young, has no approved products and has lost money in every year except one, and it expects more losses.",
+  "Raising more money later may dilute current shareholders, limit how the company operates, or force it to give up rights to its drug candidates.",
+  "The company depends heavily on two drug candidates, TRB-061 and TRB-071, and their clinical trials may not succeed.",
+  "Trouble enrolling and treating patients in clinical trials could delay the trials or block the approvals the company needs.",
+  "Serious side effects from its drug candidates could delay or stop approval or market acceptance, or cause problems after approval."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2139097/000119312526419203/project_dino_-_424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

@@ -34,12 +34,135 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
- "hidden": [
+ "hidden": [],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2025",
+    "revenue": null,
+    "operating": -66.749
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Mar 2026",
+   "revenue": null,
+   "operating": -15.049,
+   "prior_label": "Jan to Mar 2025",
+   "prior_revenue": null,
+   "prior_operating": -0.099
+  },
+  "facts": [
+   {
+    "value": 80.576,
+    "label": "cash on Mar 31, 2026"
+   },
+   {
+    "value": -14.28,
+    "label": "net result, Jan to Mar 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "name": "Entities affiliated with Forbion",
+   "role": "Venture investor",
+   "before": 18226024,
+   "sold": 0
+  },
+  {
+   "name": "Orbimed Private Investments IX, LP",
+   "role": "Venture investor",
+   "before": 10235159,
+   "sold": 0
+  },
+  {
+   "name": "AH Bio Fund IV, L.P.",
+   "role": "Venture investor",
+   "before": 9132420,
+   "sold": 0
+  },
+  {
+   "name": "Travis Murdoch, M.D.",
+   "role": "Chief executive, president and director",
+   "before": 8250304,
+   "sold": 0
+  },
+  {
+   "name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+   "role": "Drug licensor and shareholder",
+   "before": 7420091,
+   "sold": 0
+  },
+  {
+   "name": "ES Braveheart Aggregator, L.P.",
+   "role": "Investor",
+   "before": 3424657,
+   "sold": 0
+  },
+  {
+   "name": "Frazier Life Sciences Public Fund, L.P.",
+   "role": "Investor",
+   "before": 3424657,
+   "sold": 0
+  },
+  {
+   "name": "Jason Coloma, Ph.D., M.B.A.",
+   "role": "Director",
+   "before": 1100456,
+   "sold": 0
   }
- ]
+ ],
+ "rounds": [
+  {
+   "name": "Series A",
+   "when": "2025",
+   "price": 1.0
+  }
+ ],
+ "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
+ "lockup": {
+  "summary": "The company, its directors and officers, and holders of almost all its stock agree not to sell for at least 180 days after the prospectus date. The lead underwriters can allow sales sooner, and some exceptions apply.",
+  "days": 180
+ },
+ "what": "A drug developer testing an oral medicine for hypertrophic cardiomyopathy, a serious heart muscle disease, and other heart conditions.",
+ "short": "Braveheart Bio",
+ "risks": [
+  "It is a young company with a short history and big losses, and it may never make a profit.",
+  "Even after this offering it will need much more money, and it may not be able to raise it.",
+  "Raising more money could dilute current owners, limit how the company operates, or force it to give up rights to its drug.",
+  "The process for getting regulators' approval is long and unpredictable, and without approval its business would be badly hurt."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2131524/000162828026054354/braveheartbioinc-sx1a2.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

@@ -34,12 +34,150 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
- "hidden": [
+ "hidden": [],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": null,
+    "operating": -36.401
+   },
+   {
+    "label": "2025",
+    "revenue": null,
+    "operating": -64.024
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Mar 2026",
+   "revenue": null,
+   "operating": -22.107,
+   "prior_label": "Jan to Mar 2025",
+   "prior_revenue": null,
+   "prior_operating": -11.454
+  },
+  "facts": [
+   {
+    "value": 116.003,
+    "label": "cash on Mar 31, 2026"
+   },
+   {
+    "value": -21.008,
+    "label": "net result, Jan to Mar 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "name": "J. Jean Cui, Ph.D. and Y. Peter Li, Ph.D., MBA and related affiliates",
+   "role": "Married couple, officers or directors",
+   "before": 3973138,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Cormorant Asset Management LP",
+   "role": "Healthcare investor",
+   "before": 3301534,
+   "sold": 0
+  },
+  {
+   "name": "OrbiMed Private Investments VIII, LP",
+   "role": "Healthcare investor",
+   "before": 2089279,
+   "sold": 0
+  },
+  {
+   "name": "Vivo Innovation Fund II Holdings, L.P.",
+   "role": "Venture investor",
+   "before": 1493740,
+   "sold": 0
+  },
+  {
+   "name": "Janus Henderson Biotech Innovation Master Fund Limited",
+   "role": "Investment fund",
+   "before": 1134361,
+   "sold": 0
+  },
+  {
+   "name": "Sundeep Agrawal, M.D.",
+   "role": "Director",
+   "before": 589195,
+   "sold": 0
+  },
+  {
+   "name": "Sheila Gujrathi, M.D.",
+   "role": "Director",
+   "before": 90160,
+   "sold": 0
+  },
+  {
+   "name": "Geoff Oxnard, M.D.",
+   "role": "Executive officer",
+   "before": 75861,
+   "sold": 0
   }
- ]
+ ],
+ "rounds": [
+  {
+   "name": "Series Angel",
+   "when": "2020",
+   "price": 0.9371
+  },
+  {
+   "name": "Series A",
+   "when": "2021",
+   "price": 12.5
+  },
+  {
+   "name": "Series B",
+   "when": "2023",
+   "price": 17.6311
+  }
+ ],
+ "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
+ "lockup": {
+  "summary": "The company, its directors, executives and holders of nearly all its shares agreed not to sell for 180 days after the prospectus date. The lead underwriters can give written permission to sell sooner.",
+  "days": 180
+ },
+ "what": "It is a drug developer testing small-molecule medicines for cancer, including lung cancer and blood cancers.",
+ "short": "BlossomHill",
+ "proceeds": "It expects about $134.9 million after costs. It plans to spend about $70.0 million on its lung cancer drug, $20.0 million on its blood cancer drug and $15.0 million on its KRAS drug, and the rest on research and general costs.",
+ "risks": [
+  "It is a young drug company with no late-stage trials finished and no products sold, so its future is hard to judge.",
+  "It has lost money since it began, expects larger losses ahead, and may never make a profit.",
+  "Even after this offering it will need a lot more money, which could dilute owners or force it to cut back its work."
+ ],
+ "risks_note": "The first 3 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1839970/000119312526340215/d98958d424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

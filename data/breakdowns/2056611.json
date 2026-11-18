@@ -34,12 +34,123 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": null,
+    "operating": -63.451
+   },
+   {
+    "label": "2025",
+    "revenue": null,
+    "operating": -110.392
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Mar 2026",
+   "revenue": null,
+   "operating": -23.436,
+   "prior_label": "Jan to Mar 2025",
+   "prior_revenue": null,
+   "prior_operating": -21.512
+  },
+  "facts": [
+   {
+    "value": 42.177,
+    "label": "cash on Mar 31, 2026"
+   },
+   {
+    "value": -22.961,
+    "label": "net result, Jan to Mar 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Entities affiliated with Westlake BioPartners",
+   "role": "Venture investor",
+   "before": 13199669,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Foresite Capital",
+   "role": "Venture investor",
+   "before": 9041328,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with 5AM Ventures",
+   "role": "Venture investor",
+   "before": 7325962,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Blue Owl Healthcare",
+   "role": "Investor",
+   "before": 3146780,
+   "sold": 0
+  },
+  {
+   "name": "Nima Farzan",
+   "role": "Named executive officer",
+   "before": 2902419,
+   "sold": 0
+  },
+  {
+   "name": "Deep Track Biotechnology Master Fund, Ltd.",
+   "role": "Investment fund",
+   "before": 2496656,
+   "sold": 0
+  },
+  {
+   "name": "Neil Singla, M.D.",
+   "role": "Named executive officer",
+   "before": 532795,
+   "sold": 0
+  },
+  {
+   "name": "Timothy P. Walbert",
+   "role": "Named executive officer",
+   "before": 329819,
+   "sold": 0
+  }
+ ],
+ "what": "It develops pain medicines that are not opioids and are still in human trials, aiming to stop pain signals without addiction risk.",
+ "short": "Latigo",
+ "proceeds": "It expects about $315.7 million in net proceeds. With its existing cash, it plans to move its two lead pain drugs, LTG-001 and LTG-321, through further trials and toward approval. The rest is for other research, working capital and general costs.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2056611/000119312526340329/d38775d424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

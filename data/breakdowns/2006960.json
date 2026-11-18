@@ -30,6 +30,11 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
@@ -39,7 +44,70 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the company reports in RMB, not US dollars",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "DR Global Holdings Limited",
+   "role": "Holding company controlled by chairman Guanran Wang",
+   "before": 131493850,
+   "sold": 0
+  },
+  {
+   "name": "Golden Pearl EV Solutions Limited",
+   "role": "Wholly owned subsidiary of SK Inc.",
+   "before": 67193167,
+   "sold": 0
+  },
+  {
+   "name": "Alexandria III Corp. Limited",
+   "role": "Investor tied to Mirae Asset",
+   "before": 35488829,
+   "sold": 0
+  },
+  {
+   "name": "Jesi Industrial Development (Hong Kong) Limited",
+   "role": "Company controlled by Guanran Wang",
+   "before": 30206719,
+   "sold": 0
+  },
+  {
+   "name": "Advanced New Energy Material Technology Holding Ltd.",
+   "role": "Company controlled by Guanran Wang",
+   "before": 28453440,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors, executive officers and existing shareholders cannot sell shares for 180 days after the prospectus date. After that, sales must follow Rule 144 limits or a registered offering.",
+  "days": 180
+ },
+ "what": "It makes electrolytic copper foil, used mainly in lithium-ion batteries and electronic circuit boards.",
+ "short": "Londian Wason",
+ "proceeds": "It plans to put about 45% into new factories and more production capacity. About 40% will go to research and development, and about 15% to general company needs.",
+ "risks": [
+  "Its copper foil is used in electric vehicles and electronics, so weaker demand in those markets could cut its sales.",
+  "Past growth may not continue, and it may fail to keep customers, keep up with technology or stay profitable.",
+  "It faces strong competition from rivals that may have more money and may cut prices.",
+  "Its future depends on developing new products that customers may not adopt, even if they are launched."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2006960/000119312526351136/d476818d424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

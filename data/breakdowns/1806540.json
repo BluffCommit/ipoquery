@@ -34,12 +34,124 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the two AI readers gave different rounds or prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 14.936,
+    "operating": -32.533
+   },
+   {
+    "label": "2025",
+    "revenue": 6.741,
+    "operating": -41.406
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 0.0,
+   "operating": -20.87,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 2.306,
+   "prior_operating": -28.346
+  },
+  "facts": [
+   {
+    "value": -19.196,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Entities affiliated with Versant Ventures",
+   "role": "Venture investor",
+   "before": 7058576,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Venrock Healthcare Capital Partners",
+   "role": "Healthcare investor",
+   "before": 4779793,
+   "sold": 0
+  },
+  {
+   "name": "Redmile Biopharma Investments III, L.P.",
+   "role": "Investment fund",
+   "before": 4164899,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with RTW Investments, LP",
+   "role": "Investment firm",
+   "before": 3639364,
+   "sold": 0
+  },
+  {
+   "name": "Janus Henderson Biotech Innovation Master Fund Limited",
+   "role": "Investment fund",
+   "before": 3476215,
+   "sold": 0
+  },
+  {
+   "name": "Aetna Wun Trombley, Ph.D.",
+   "role": "Director or executive officer",
+   "before": 2050921,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Blue Owl",
+   "role": "Healthcare investor",
+   "before": 1955616,
+   "sold": 0
+  },
+  {
+   "name": "Steve Staben, Ph.D.",
+   "role": "Director or executive officer",
+   "before": 510123,
+   "sold": 0
+  }
+ ],
+ "what": "Lycia is a clinical-stage biotech company using its LYTAC platform to develop medicines, including an IgE portfolio and a Graves' disease program.",
+ "short": "Lycia",
+ "risks": [
+  "It is a young company with no approved products and no completed clinical trials, so it is hard to judge its chances of success.",
+  "It has lost a lot of money since it began, has no product sales, and may never make a profit.",
+  "Delays or trouble enrolling patients in clinical trials could hold up or block the approvals it needs."
+ ],
+ "risks_note": "The first 3 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1806540/000162828026067048/lyciatherapeutics-424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

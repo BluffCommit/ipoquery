@@ -33,7 +33,39 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the company reports in AUD, not US dollars",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "what": "It explores for heavy mineral sands and rare earth elements at the Chilwa Critical Minerals Project in southern Malawi.",
+ "short": "Chilwa Minerals",
+ "proceeds": "Chilwa expects about US$2.5 million in net proceeds. It plans to use this, plus its existing cash, for exploration, working capital and general business needs.",
+ "risks": [
+  "It has lost money since it began and expects more losses until the project produces minerals and earns enough revenue.",
+  "It needs a lot more money, may not be able to raise it, and there is serious doubt it can keep operating.",
+  "Mineral exploration is very risky, and many programs find nothing that can be mined at a profit.",
+  "Exploration needs large sums of money, and the real costs and timelines could be much higher than Chilwa expects."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2113605/000121390026106090/ea0307489-424b1_chilwa.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

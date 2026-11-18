@@ -11,6 +11,40 @@
   "company_shares": 3100000
  },
  "exchange": "NYSE American",
+ "checks": [
+  {
+   "item": "No existing holder is selling",
+   "how": "price times shares sold equals the total on the cover"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "price times shares sold equals the total on the cover"
+  },
+  {
+   "item": "Final price",
+   "how": "price times shares sold equals the total on the cover"
+  },
+  {
+   "item": "Financial figures",
+   "how": "taken from the tagged statements, and the latest year's figures also appear in the printed statements"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "only one share class's count could be read"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
+  }
+ ],
  "financials": {
   "unit": "USD millions",
   "measure": "operating",
@@ -48,28 +82,52 @@
    }
   ]
  },
- "checks": [
+ "others": [
   {
-   "item": "No existing holder is selling",
-   "how": "price times shares sold equals the total on the cover"
+   "name": "Mr. Edwin Cywinski",
+   "role": "Founder, chief executive, chairman",
+   "before": 6600000,
+   "sold": 0
   },
   {
-   "item": "Shares sold by the company",
-   "how": "price times shares sold equals the total on the cover"
+   "name": "Mr. Marc Cywinski",
+   "role": "Founder, chief operating officer",
+   "before": 5360000,
+   "sold": 0
   },
   {
-   "item": "Final price",
-   "how": "price times shares sold equals the total on the cover"
+   "name": "Mr. Jacob Pretorius",
+   "role": "Director or executive officer",
+   "before": 1040000,
+   "sold": 0
   },
   {
-   "item": "Financial figures",
-   "how": "taken from the tagged statements, and the latest year's figures also appear in the printed statements"
+   "name": "Mr. Joshua Marotske",
+   "role": "Founder, director or executive officer",
+   "before": 920000,
+   "sold": 0
   }
  ],
- "hidden": [
-  {
-   "item": "Company value and the share that trades",
-   "why": "only one share class's count could be read"
-  }
- ]
+ "what": "It makes solar-powered robotic lawnmowers and also provides engineering products and solar power development services in New Zealand and the United States.",
+ "short": "SunScout",
+ "proceeds": "It plans to build a factory in Austin, Texas, and spend on marketing, product development and stock. It will also repay a loan, pay US$2,000,000 for Brightway Energy, and use the rest for working capital.",
+ "risks": [
+  "A lender can convert its loan into shares of a subsidiary, which could dilute the company's ownership and cost it control.",
+  "The company has little history of selling its SunScout robotic mower products at large scale, so growth is uncertain.",
+  "Growth depends on its own DSA technology being sold successfully and working reliably.",
+  "Geopolitical tensions and international trade rules could hurt its business and results.",
+  "Political, legal, social and economic conditions in the places it operates or plans to expand could hurt its business."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2101240/000121390026088617/ea0268485-18.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

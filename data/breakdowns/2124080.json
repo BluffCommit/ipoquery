@@ -34,12 +34,131 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "a price the readers gave is not printed in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": null,
+    "operating": -53.458
+   },
+   {
+    "label": "2025",
+    "revenue": null,
+    "operating": -59.305
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": null,
+   "operating": -38.218,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": null,
+   "prior_operating": -30.886
+  },
+  "facts": [
+   {
+    "value": -36.546,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Entities affiliated with OrbiMed Private Investments VII, LP",
+   "role": "Investment firm, 5% holder",
+   "before": 2589132,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with ARCH Venture Fund X, L.P.",
+   "role": "Venture investor, 5% holder",
+   "before": 2421589,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Gilead Sciences, Inc.",
+   "role": "Drug company, 5% holder",
+   "before": 1666663,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Frazier Life Sciences X, L.P.",
+   "role": "Venture investor, 5% holder",
+   "before": 1340988,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Q Healthcare Holding LLC",
+   "role": "Arm of Qatar Investment Authority, 5% holder",
+   "before": 1333330,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Abu Dhabi Investment Authority",
+   "role": "Abu Dhabi government investment body, 5% holder",
+   "before": 1296927,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Medical Excellence Capital Partners, LP",
+   "role": "Investor, 5% holder",
+   "before": 1078524,
+   "sold": 0
+  },
+  {
+   "name": "Damien McDevitt",
+   "role": "Named executive officer",
+   "before": 835259,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its officers, directors and nearly all other holders agreed not to sell shares for 180 days after the prospectus date, unless the lead underwriters agree in writing. Nearly all shares then become eligible for sale.",
+  "days": 180
+ },
+ "what": "Develops stem cell therapies, made from each patient's own cells, to treat Parkinson's disease and other brain diseases.",
+ "short": "Aspen Neuroscience",
+ "proceeds": "It expects to raise about $125.8 million after costs. It plans to spend about $110.0 million on a Phase 3 trial of its Parkinson's treatment, $8.0 million on the current trial and $4.0 million on early-stage research, with the rest for general costs.",
+ "risks": [
+  "It is a young company with no approved products, so it is hard to judge its approach or its future.",
+  "It has lost a lot of money since it started and may never make a profit.",
+  "Its financial condition raises serious doubt about whether it can keep operating.",
+  "Even after this offering, it will need a lot more money, and may have to cut or stop programs without it.",
+  "Raising more money could dilute shareholders, limit how it operates, or force it to give up rights to its technology."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2124080/000119312526441782/elevation_424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

@@ -3896,9 +3896,3872 @@
      ]
     }
    }
+  },
+  {
+   "cik": 2127043,
+   "name": "Jersey Mike's Subs Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2127043/000119312526326453/project_70_424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08039,
+    "claude-haiku-5-5": 0.00533,
+    "claude-opus-5-5": 0.13681
+   },
+   "sections_not_found": [
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": "",
+   "kept": [
+    "Revenue and results",
+    "Who is selling"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [
+    "others charles r morrison before: 93492 / 118",
+    "others fran horowitz before: 25199 / 59",
+    "others michele allen before: 18675 / 43",
+    "others nigel travis before: 52797 / 118",
+    "others peter cancro before: 30274744 / 72072",
+    "others walter c tombs before: 61522 / 118"
+   ],
+   "referee_differs_from_second": [
+    "others charles r morrison before: 93492 / 118",
+    "others fran horowitz before: 25199 / 59",
+    "others michele allen before: 18675 / 43",
+    "others nigel travis before: 52797 / 118",
+    "others peter cancro before: 30274744 / 72072",
+    "others walter c tombs before: 61522 / 118"
+   ],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It franchises fast casual submarine sandwich shops, with 3,300 stores in two countries, nearly all run by franchise owners.",
+     "short": "Jersey Mike's",
+     "proceeds": "The company expects about $301 million from its own share sales. It will pass this to its holding company, which will use $295 million to repay part of its Series 2026-1 Notes debt and the rest for general business needs. It gets nothing from shares sold by existing owners.",
+     "financials": {
+      "unit": "millions",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2023-12-31",
+        "revenue": 561,
+        "operating": 57,
+        "net": 21
+       },
+       {
+        "period_end": "2024-12-31",
+        "revenue": 653,
+        "operating": 44,
+        "net": 5
+       }
+      ],
+      "part_year": {
+       "label": "13 weeks to Mar 29, 2026",
+       "period_end": "2026-03-29",
+       "revenue": 185,
+       "operating": 12,
+       "net": -24,
+       "prior_label": "Jan 16 to Mar 30, 2025",
+       "prior_revenue": 139,
+       "prior_operating": 29,
+       "prior_net": 14
+      },
+      "cash": {
+       "value": 232,
+       "date": "2026-03-29"
+      }
+     },
+     "sellers": [
+      {
+       "name": "Blackstone",
+       "role": "Private equity firm and majority owner",
+       "before": 171858631,
+       "sold": 25284588
+      },
+      {
+       "name": "Abu Dhabi Investment Authority",
+       "role": "Government-run investor",
+       "before": 40525336,
+       "sold": 4411064
+      }
+     ],
+     "others": [
+      {
+       "name": "Peter Cancro",
+       "role": "Long-time owner of the business; director or officer",
+       "before": 30274744
+      },
+      {
+       "name": "Charles R. Morrison",
+       "role": "Director or executive officer",
+       "before": 93492
+      },
+      {
+       "name": "Walter C. Tombs",
+       "role": "Director or executive officer",
+       "before": 61522
+      },
+      {
+       "name": "Nigel Travis",
+       "role": "Director or executive officer",
+       "before": 52797
+      },
+      {
+       "name": "Fran Horowitz",
+       "role": "Director or executive officer",
+       "before": 25199
+      },
+      {
+       "name": "Michele Allen",
+       "role": "Director or executive officer",
+       "before": 18675
+      }
+     ],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "The company works in a very competitive industry, which could hurt its business and results.",
+      "Food safety problems, food-borne illness and public health worries could harm the business.",
+      "The store returns and earnings figures it reports may not predict how well a new franchise store will do.",
+      "Unexpected events have hurt the business before and could hurt it again.",
+      "If the company or its franchise owners' outside providers cannot carry out a recovery plan after a disaster, the business could suffer badly."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Franchises fast casual, submarine-style sandwich restaurants in 50 states and two countries.",
+     "short": "Jersey Mike's",
+     "proceeds": "Jersey Mike's Subs Inc. will use about $301 million of its net proceeds to buy newly issued units from Jersey Mike's Holdings. Holdings will use $295 million to repay part of its Series 2026-1 Notes debt and the rest for general corporate purposes.",
+     "financials": {
+      "unit": "millions",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2023-12-31",
+        "revenue": 561,
+        "operating": 57,
+        "net": 21
+       },
+       {
+        "period_end": "2024-12-31",
+        "revenue": 653,
+        "operating": 44,
+        "net": 5
+       }
+      ],
+      "part_year": {
+       "label": "13 weeks to March 29, 2026",
+       "period_end": "2026-03-29",
+       "revenue": 185,
+       "operating": 12,
+       "net": -24,
+       "prior_label": "Jan 16 to Mar 30, 2025",
+       "prior_revenue": 139,
+       "prior_operating": 29,
+       "prior_net": 14
+      },
+      "cash": {
+       "value": 232,
+       "date": "2026-03-29"
+      }
+     },
+     "sellers": [
+      {
+       "name": "Blackstone",
+       "role": "Controlling investor (private equity sponsor)",
+       "before": 171858631,
+       "sold": 25284588
+      },
+      {
+       "name": "Abu Dhabi Investment Authority",
+       "role": "Abu Dhabi state investment fund, co-investor",
+       "before": 40525336,
+       "sold": 4411064
+      }
+     ],
+     "others": [
+      {
+       "name": "Peter Cancro",
+       "role": "Director; controls Original 56ers Inc.",
+       "before": 30274744
+      },
+      {
+       "name": "Charles R. Morrison",
+       "role": "Director or executive officer",
+       "before": 93492
+      },
+      {
+       "name": "Walter C. Tombs",
+       "role": "Director or executive officer",
+       "before": 61522
+      },
+      {
+       "name": "Nigel Travis",
+       "role": "Director or executive officer",
+       "before": 52797
+      },
+      {
+       "name": "Fran Horowitz",
+       "role": "Director or executive officer",
+       "before": 25199
+      },
+      {
+       "name": "Michele Allen",
+       "role": "Director or executive officer",
+       "before": 18675
+      }
+     ],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "The company works in a highly competitive industry, which could hurt its business and results.",
+      "Food safety problems, packaging issues, food-borne illness and public health concerns may harm the business.",
+      "Reported store returns and profit figures may not predict results for new franchise restaurants.",
+      "Unexpected events have affected the business and may affect it again in the future.",
+      "If the company or its franchise owners' outside providers fail to plan for disasters, the business could be seriously harmed."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Jersey Mike's franchises fast casual sub sandwich shops, with 3,300 stores across all 50 states and two countries.",
+     "short": "Jersey Mike's",
+     "proceeds": "The company expects about $301 million from its new shares. Its operating business will use $295 million to repay part of its Series 2026-1 Notes debt and the rest for general business needs.",
+     "financials": {
+      "unit": "millions",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2023-12-31",
+        "revenue": 561,
+        "operating": 57,
+        "net": 21
+       },
+       {
+        "period_end": "2024-12-31",
+        "revenue": 653,
+        "operating": 44,
+        "net": 5
+       }
+      ],
+      "part_year": {
+       "label": "13 weeks to Mar 29 2026",
+       "period_end": "2026-03-29",
+       "revenue": 185,
+       "operating": 12,
+       "net": -24,
+       "prior_label": "Jan 16 to Mar 30 2025",
+       "prior_revenue": 139,
+       "prior_operating": 29,
+       "prior_net": 14
+      },
+      "cash": {
+       "value": 232,
+       "date": "2026-03-29"
+      }
+     },
+     "sellers": [
+      {
+       "name": "Blackstone",
+       "role": "Private equity owner, controlling holder",
+       "before": 171858631,
+       "sold": 25284588
+      },
+      {
+       "name": "Abu Dhabi Investment Authority",
+       "role": "Abu Dhabi government investor",
+       "before": 40525336,
+       "sold": 4411064
+      }
+     ],
+     "others": [
+      {
+       "name": "Peter Cancro",
+       "role": "Bought the original shop, built the chain",
+       "before": 72072
+      },
+      {
+       "name": "Charles R. Morrison",
+       "role": "Director or executive",
+       "before": 118
+      },
+      {
+       "name": "Walter C. Tombs",
+       "role": "Director or executive",
+       "before": 118
+      },
+      {
+       "name": "Nigel Travis",
+       "role": "Director or executive",
+       "before": 118
+      },
+      {
+       "name": "Fran Horowitz",
+       "role": "Director or executive",
+       "before": 59
+      },
+      {
+       "name": "Michele Allen",
+       "role": "Director or executive",
+       "before": 43
+      }
+     ],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "The restaurant industry is very competitive, which could hurt the business.",
+      "Food safety problems, food-borne illness or public health concerns could harm the business.",
+      "The returns and store profits the company reports for franchise stores may not predict how new stores will do.",
+      "Unexpected events have hurt the business before and could again.",
+      "If the company's or franchise owners' outside providers fail to keep running after a disaster, the business could suffer badly."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2141406,
+   "name": "Accelevation Holdings Corp.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2141406/000162828026064097/accelevationllc-424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07647,
+    "claude-haiku-5-5": 0.00492,
+    "claude-opus-5-5": 0.13813
+   },
+   "sections_not_found": [
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": "",
+   "kept": [
+    "Revenue and results"
+   ],
+   "left_out": {
+    "Who is selling": "the two AI readers gave different names or figures",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "part year period_end: 2026-06-30 / None",
+    "part year revenue: 437451 / None",
+    "part year operating: 35268 / None",
+    "part year net: 19325 / None",
+    "part year prior_revenue: 158630 / None",
+    "part year prior_operating: 3450 / None",
+    "part year prior_net: -8711 / None",
+    "sellers olympus funds sold: 20000000 / 8011999"
+   ],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [
+    "part year period_end: None / 2026-06-30",
+    "part year revenue: None / 437451",
+    "part year operating: None / 35268",
+    "part year net: None / 19325",
+    "part year prior_revenue: None / 158630",
+    "part year prior_operating: None / 3450",
+    "part year prior_net: None / -8711",
+    "sellers olympus funds sold: 8011999 / 20000000",
+    "others charles hillman before: 0 / None",
+    "others ericka harrison before: 0 / None",
+    "others michael rubiera before: 0 / None"
+   ],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It designs, builds and installs power systems and equipment for large data centers, including those used for AI and cloud computing.",
+     "short": "Accelevation",
+     "proceeds": "It will use about $170.6 million of net proceeds to buy units of Holdings LLC. Holdings LLC will then use that money to repay about $170.6 million of its credit agreement borrowings. It gets none of the money from shares sold by existing holders.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 181350,
+        "operating": 18459,
+        "net": 9409
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 447819,
+        "operating": 44304,
+        "net": 21747
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 437451,
+       "operating": 35268,
+       "net": 19325,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 158630,
+       "prior_operating": 3450,
+       "prior_net": -8711
+      },
+      "cash": {
+       "value": 28346,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [
+      {
+       "name": "Olympus Funds",
+       "role": "Principal stockholder, private equity investor",
+       "before": 98034471,
+       "sold": 20000000
+      }
+     ],
+     "others": [],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "The company, its officers and directors, the selling stockholders and other holders of nearly all shares have agreed not to sell without written consent from Morgan Stanley and J.P. Morgan. The excerpt cuts off before giving the length of the lock-up.",
+      "early": false
+     },
+     "risks": [
+      "Its business depends on continued building of data centers, and weaker demand for data center capacity would hurt its sales.",
+      "Local opposition, zoning limits and power shortages could delay or stop data center projects that use its products.",
+      "Bad publicity about data centers, its customers or its products could reduce demand and harm its customer relationships.",
+      "It relies on a few large customers; two of them made up about 61.2% of its direct revenue in 2025.",
+      "Its customers often rely on outside financing to pay for their data center construction projects."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Designs, manufactures and installs power distribution and white space infrastructure products for data centers.",
+     "short": "Accelevation",
+     "proceeds": "Accelevation Holdings Corp. will use its net proceeds to buy Series A units of Holdings LLC. Holdings LLC plans to use the money to repay about $170.6 million of borrowings under its Credit Agreement.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 181350,
+        "operating": 18459,
+        "net": 9409
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 447819,
+        "operating": 44304,
+        "net": 21747
+       }
+      ],
+      "part_year": null,
+      "cash": {
+       "value": 28346,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [
+      {
+       "name": "Olympus Funds",
+       "role": "Principal stockholder, Olympus private equity funds",
+       "before": 98034471,
+       "sold": 8011999
+      }
+     ],
+     "others": [
+      {
+       "name": "Michael Rubiera",
+       "role": "Chief executive officer",
+       "before": 0
+      },
+      {
+       "name": "Charles Hillman",
+       "role": "Named executive officer",
+       "before": 0
+      },
+      {
+       "name": "Ericka Harrison",
+       "role": "Named executive officer",
+       "before": 0
+      }
+     ],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "Its business depends on continued data center construction; any drop in demand could hurt its results.",
+      "Community opposition and local siting limits could reduce data center construction and demand for its products.",
+      "Negative publicity about data centers or its customers could reduce demand and harm customer relationships.",
+      "It relies on a few large customers; two accounted for 61.2% of 2025 direct revenue, so losing one could hurt it."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Accelevation designs, builds and installs power distribution and equipment-room systems for large data centers.",
+     "short": "Accelevation",
+     "proceeds": "The company expects about $170.6 million from its own shares. It will use this money to repay about $170.6 million of debt under its credit agreement, through its operating subsidiary.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 181350,
+        "operating": 18459,
+        "net": 9409
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 447819,
+        "operating": 44304,
+        "net": 21747
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 437451,
+       "operating": 35268,
+       "net": 19325,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 158630,
+       "prior_operating": 3450,
+       "prior_net": -8711
+      },
+      "cash": {
+       "value": 28346,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [
+      {
+       "name": "Olympus Funds",
+       "role": "Private equity owner, controlling holder",
+       "before": 98034471,
+       "sold": 20000000
+      }
+     ],
+     "others": [
+      {
+       "name": "Michael Rubiera",
+       "role": "Chief executive",
+       "before": null
+      },
+      {
+       "name": "Charles Hillman",
+       "role": "Named executive officer",
+       "before": null
+      },
+      {
+       "name": "Ericka Harrison",
+       "role": "Named executive officer",
+       "before": null
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "The company, its officers and directors, the selling stockholders and nearly all other holders agreed not to sell shares for a set period after the offering. The excerpt does not state how long that period is.",
+      "early": true
+     },
+     "risks": [
+      "The business depends on continued spending on data centers, so any slowdown in demand could hurt sales.",
+      "Local opposition, power limits and new rules could delay or stop data center projects that use its products.",
+      "Bad publicity about data centers or its customers could reduce demand for its products.",
+      "Two customers made up about 61.2% of direct revenue in 2025, so losing a key customer could seriously hurt the business."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 1802369,
+   "name": "ADARx Pharmaceuticals, Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/1802369/000119312526403094/d903461d424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07743,
+    "claude-haiku-5-5": 0.00503,
+    "claude-opus-5-5": 0.14305
+   },
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "and litigation arising in the ordinary course of business. The Company is not a party to any material legal proceedings, nor is it aware of any material pending",
+   "kept": [
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the two AI readers gave different figures"
+   },
+   "readers_differ": [
+    "revenue 2024-12-31: None / 0",
+    "cash value: None / 427252",
+    "cash date: None / 2026-06-30"
+   ],
+   "referee_differs_from_first": [
+    "revenue 2024-12-31: None / 0"
+   ],
+   "referee_differs_from_second": [
+    "cash value: 427252 / None",
+    "cash date: 2026-06-30 / None"
+   ],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It develops RNA-based medicines called siRNA drugs to treat many diseases, with three in human trials.",
+     "short": "ADARx",
+     "proceeds": "It expects about $408.1 million from the offering and $87.2 million from a private sale to AbbVie. It plans about $180 million for agazisiran, $65 million for onvuzosiran, $80 million for ADX-626, $25 million for ADX-077 and $20 million for ADX-199, with the rest for research and general costs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -58233,
+        "net": -46360
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 3449,
+        "operating": -88365,
+        "net": -73088
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 2886,
+       "operating": -56947,
+       "net": -48426,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 208,
+       "prior_operating": -39010,
+       "prior_net": -33644
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with OrbiMed",
+       "role": "Venture investor",
+       "before": 23255789
+      },
+      {
+       "name": "Entities affiliated with LAV Fund",
+       "role": "Venture investor",
+       "before": 11858655
+      },
+      {
+       "name": "Zhen Li, Ph.D.",
+       "role": "Director or named executive officer",
+       "before": 10748214
+      },
+      {
+       "name": "Entities affiliated with SR One",
+       "role": "Venture investor",
+       "before": 8336661
+      },
+      {
+       "name": "BCLS Fund III Investments, LP",
+       "role": "Venture investor",
+       "before": 5128970
+      },
+      {
+       "name": "Chen Yu, M.D., M.B.A.",
+       "role": "Director, holds shares through TCG Crossover Fund I",
+       "before": 3590279
+      },
+      {
+       "name": "A. Robert MacLeod, Ph.D.",
+       "role": "Director or named executive officer",
+       "before": 491898
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": null,
+       "price": 1.1786
+      },
+      {
+       "name": "Series B",
+       "when": null,
+       "price": 5.9971
+      },
+      {
+       "name": "Series B-1",
+       "when": null,
+       "price": 7.7963
+      },
+      {
+       "name": "Series C",
+       "when": null,
+       "price": 9.7485
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers, directors and holders of nearly all its stock cannot sell for 180 days after the prospectus date without the lead banks' written consent. The banks say they do not plan to release any shares early.",
+      "early": false
+     },
+     "risks": [
+      "It is a young company with no approved products and has not finished any clinical program, so its future is hard to judge.",
+      "It expects to keep losing money for the foreseeable future and may never become profitable.",
+      "Even after this offering it will need much more money, which could dilute shareholders or force it to cut research programs."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "ADARx is a late-clinical biotechnology company developing next-generation siRNA medicines to treat a broad range of diseases.",
+     "short": "ADARx",
+     "proceeds": "The company plans to spend about $180.0 million on agazisiran, $65.0 million on onvuzosiran, $80.0 million on ADX-626, $25.0 million on ADX-077 and $20.0 million on ADX-199. The remainder will go to other research and general corporate purposes.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 0,
+        "operating": -58233,
+        "net": -46360
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 3449,
+        "operating": -88365,
+        "net": -73088
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 2886,
+       "operating": -56947,
+       "net": -48426,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 208,
+       "prior_operating": -39010,
+       "prior_net": -33644
+      },
+      "cash": {
+       "value": 427252,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with OrbiMed",
+       "role": "Venture investor",
+       "before": 23255789
+      },
+      {
+       "name": "Entities affiliated with LAV Fund",
+       "role": "Venture investor",
+       "before": 11858655
+      },
+      {
+       "name": "Zhen Li, Ph.D.",
+       "role": "Director and executive officer",
+       "before": 10748214
+      },
+      {
+       "name": "Erez Chimovits, M.B.A.",
+       "role": "Director",
+       "before": 9230509
+      },
+      {
+       "name": "Entities affiliated with SR One",
+       "role": "Venture investor",
+       "before": 8336661
+      },
+      {
+       "name": "BCLS Fund III Investments, LP",
+       "role": "Venture investor",
+       "before": 5128970
+      },
+      {
+       "name": "Chen Yu, M.D., M.B.A.",
+       "role": "Former director",
+       "before": 3590279
+      },
+      {
+       "name": "A. Robert MacLeod, Ph.D.",
+       "role": "Director and named executive officer",
+       "before": 491898
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": null,
+       "price": 1.1786
+      },
+      {
+       "name": "Series B",
+       "when": null,
+       "price": 5.9971
+      },
+      {
+       "name": "Series B-1",
+       "when": null,
+       "price": 7.7963
+      },
+      {
+       "name": "Series C",
+       "when": null,
+       "price": 9.7485
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "Officers, directors and holders of substantially all common stock agreed not to sell for 180 days after the prospectus date. J.P. Morgan and Morgan Stanley may consent to earlier sales, but say they have no current plan to release shares early.",
+      "early": true
+     },
+     "risks": [
+      "The company has a limited operating history, has finished no clinical programs and has no approved products, making its future hard to judge.",
+      "The company expects significant losses for the foreseeable future and may never become profitable.",
+      "Even if this offering succeeds, the company will need substantial additional funding, and failing to raise it could force cuts to its programs.",
+      "Developing drug candidates is capital-intensive, and additional financing may not be available on acceptable terms or at all.",
+      "The company's cash may run out sooner than planned, because its estimate of funding into 2030 depends on assumptions that may prove wrong."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "ADARx is a late-stage biotech company developing gene-silencing (siRNA) medicines for a broad range of diseases.",
+     "short": "ADARx",
+     "proceeds": "It plans to spend about $180.0 million on agazisiran, $65.0 million on onvuzosiran, $80.0 million on ADX-626, $25.0 million on ADX-077 and $20.0 million on ADX-199. The rest will go to other research and general company needs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 0,
+        "operating": -58233,
+        "net": -46360
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 3449,
+        "operating": -88365,
+        "net": -73088
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 2886,
+       "operating": -56947,
+       "net": -48426,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 208,
+       "prior_operating": -39010,
+       "prior_net": -33644
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with OrbiMed",
+       "role": "Venture investor",
+       "before": 23255789
+      },
+      {
+       "name": "Entities affiliated with LAV Fund",
+       "role": "Venture investor",
+       "before": 11858655
+      },
+      {
+       "name": "Zhen Li, Ph.D.",
+       "role": "Director and executive officer",
+       "before": 10748214
+      },
+      {
+       "name": "Entities affiliated with SR One",
+       "role": "Venture investor",
+       "before": 8336661
+      },
+      {
+       "name": "BCLS Fund III Investments, LP",
+       "role": "Venture investor (Bain Capital)",
+       "before": 5128970
+      },
+      {
+       "name": "Chen Yu, M.D., M.B.A.",
+       "role": "Former director, crossover fund investor",
+       "before": 3590279
+      },
+      {
+       "name": "A. Robert MacLeod, Ph.D.",
+       "role": "Executive officer",
+       "before": 491898
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": null,
+       "price": 1.1786
+      },
+      {
+       "name": "Series B",
+       "when": null,
+       "price": 5.9971
+      },
+      {
+       "name": "Series B-1",
+       "when": null,
+       "price": 7.7963
+      },
+      {
+       "name": "Series C",
+       "when": null,
+       "price": 9.7485
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers and directors, and holders of nearly all its shares agreed not to sell for 180 days after the prospectus date. J.P. Morgan and Morgan Stanley can allow earlier sales, but they say they have no current plan to do so.",
+      "early": false
+     },
+     "risks": [
+      "ADARx has a short history, has not finished any clinical programs and has no approved products, so its future is hard to judge.",
+      "It expects large losses for years to come and may never make a profit.",
+      "It will need much more money after this offering, which could dilute shareholders, or force it to cut programs if it cannot raise funds."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2131524,
+   "name": "Braveheart Bio, Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2131524/000162828026054354/braveheartbioinc-sx1a2.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07566,
+    "claude-haiku-5-5": 0.0047,
+    "claude-opus-5-5": 0.14416
+   },
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "F-17 / Table of Contents / The Company has not recorded any such liabilities as of December 31, 2025. / 7. Convertible Preferred Stock and Stockholders' Deficit / Stock",
+   "kept": [
+    "Revenue and results",
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {},
+   "readers_differ": [],
+   "referee_differs_from_first": [
+    "rounds non voting series a: named by one reader only"
+   ],
+   "referee_differs_from_second": [
+    "rounds non voting series a: named by one reader only"
+   ],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "A drug developer testing an oral medicine for hypertrophic cardiomyopathy, a serious heart muscle disease, and other heart conditions.",
+     "short": "Braveheart Bio",
+     "proceeds": "It expects to raise about $351.2 million after costs. It plans to pay for two Phase 3 trials of its drug BHB-1893, research staff and overhead, and general business needs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -66749,
+        "net": -66052
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": null,
+       "operating": -15049,
+       "net": -14280,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": null,
+       "prior_operating": -99,
+       "prior_net": -99
+      },
+      "cash": {
+       "value": 80576,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with Forbion",
+       "role": "Venture investor",
+       "before": 18226024
+      },
+      {
+       "name": "Orbimed Private Investments IX, LP",
+       "role": "Venture investor",
+       "before": 10235159
+      },
+      {
+       "name": "AH Bio Fund IV, L.P.",
+       "role": "Venture investor",
+       "before": 9132420
+      },
+      {
+       "name": "Travis Murdoch, M.D.",
+       "role": "Chief executive, president and director",
+       "before": 8250304
+      },
+      {
+       "name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+       "role": "Drug licensor and shareholder",
+       "before": 7420091
+      },
+      {
+       "name": "ES Braveheart Aggregator, L.P.",
+       "role": "Investor",
+       "before": 3424657
+      },
+      {
+       "name": "Frazier Life Sciences Public Fund, L.P.",
+       "role": "Investor",
+       "before": 3424657
+      },
+      {
+       "name": "Jason Coloma, Ph.D., M.B.A.",
+       "role": "Director",
+       "before": 1100456
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": 2025,
+       "price": 1.0
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and holders of almost all its stock agree not to sell for at least 180 days after the prospectus date. The lead underwriters can allow sales sooner, and some exceptions apply.",
+      "early": false
+     },
+     "risks": [
+      "It is a young company with a short history and big losses, and it may never make a profit.",
+      "Even after this offering it will need much more money, and it may not be able to raise it.",
+      "Raising more money could dilute current owners, limit how the company operates, or force it to give up rights to its drug.",
+      "Success of its lead drug, BHB-1893, depends on many things, including good trial results, safety, approval and doctor and patient acceptance.",
+      "The process for getting regulators' approval is long and unpredictable, and without approval its business would be badly hurt."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Clinical-stage biopharmaceutical company developing therapies for hypertrophic cardiomyopathy and other serious cardiovascular diseases.",
+     "short": "Braveheart Bio",
+     "proceeds": "The company plans to use the money to advance its lead drug, BHB-1893, in two forms of heart disease, including Phase 3 trials. It will also fund research staff and overhead, with the remainder for working capital and general corporate purposes.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -66749,
+        "net": -66052
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": null,
+       "operating": -15049,
+       "net": -14280,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": null,
+       "prior_operating": -99,
+       "prior_net": -99
+      },
+      "cash": {
+       "value": 80576,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with Forbion",
+       "role": "5% shareholder",
+       "before": 18226024
+      },
+      {
+       "name": "Orbimed Private Investments IX, LP",
+       "role": "5% shareholder",
+       "before": 10235159
+      },
+      {
+       "name": "AH Bio Fund IV, L.P.",
+       "role": "5% shareholder",
+       "before": 9132420
+      },
+      {
+       "name": "Travis Murdoch, M.D.",
+       "role": "Chief Executive Officer, President and Director",
+       "before": 8250304
+      },
+      {
+       "name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+       "role": "5% shareholder",
+       "before": 7420091
+      },
+      {
+       "name": "ES Braveheart Aggregator, L.P.",
+       "role": "5% shareholder",
+       "before": 3424657
+      },
+      {
+       "name": "Frazier Life Sciences Public Fund, L.P.",
+       "role": "5% shareholder",
+       "before": 3424657
+      },
+      {
+       "name": "Jason Coloma, Ph.D., M.B.A.",
+       "role": "Director",
+       "before": 1100456
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": "2025",
+       "price": 1.0
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, officers and most existing holders may not sell shares for at least 180 days after the prospectus date without underwriter consent. Certain exceptions apply.",
+      "early": false
+     },
+     "risks": [
+      "The company is early-stage with a short track record, has lost money every year, and may never become profitable.",
+      "The company will need substantial more funding and may not raise it on acceptable terms, which could force delays or cuts to development.",
+      "Raising more capital may dilute shareholders, restrict operations, or require giving up rights to its drug candidates.",
+      "The success of its lead drug BHB-1893 depends on many factors, including clinical trial results, safety, and regulatory approval.",
+      "The regulatory approval process is lengthy and unpredictable, and failing to win approval would substantially harm the business."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Braveheart Bio is an early-stage drug developer working on treatments for a thickened heart muscle condition and other serious heart diseases.",
+     "short": "Braveheart Bio",
+     "proceeds": "It plans to spend about $90 million and $100 million on late-stage trials of its drug BHB-1893 in two forms of the heart disease, and about $135 million on research staff and overhead. The rest will go to general company needs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -66749,
+        "net": -66052
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": null,
+       "operating": -15049,
+       "net": -14280,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": null,
+       "prior_operating": -99,
+       "prior_net": -99
+      },
+      "cash": {
+       "value": 80576,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with Forbion",
+       "role": "Venture investor",
+       "before": 18226024
+      },
+      {
+       "name": "Orbimed Private Investments IX, LP",
+       "role": "Venture investor",
+       "before": 10235159
+      },
+      {
+       "name": "AH Bio Fund IV, L.P.",
+       "role": "Venture investor",
+       "before": 9132420
+      },
+      {
+       "name": "Travis Murdoch, M.D.",
+       "role": "Chief executive, president and director",
+       "before": 8250304
+      },
+      {
+       "name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+       "role": "Drug licensing partner",
+       "before": 7420091
+      },
+      {
+       "name": "ES Braveheart Aggregator, L.P.",
+       "role": "Investor",
+       "before": 3424657
+      },
+      {
+       "name": "Frazier Life Sciences Public Fund, L.P.",
+       "role": "Investor",
+       "before": 3424657
+      },
+      {
+       "name": "Jason Coloma, Ph.D., M.B.A.",
+       "role": "Director",
+       "before": 1100456
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": 2025,
+       "price": 1.0
+      },
+      {
+       "name": "Non-Voting Series A",
+       "when": 2025,
+       "price": 1.0
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and holders of nearly all its shares agreed not to sell for at least 180 days after the offering. Selling earlier needs written consent from the lead banks.",
+      "early": false
+     },
+     "risks": [
+      "Braveheart Bio has a short history, has lost a lot of money since it started, and may never make a profit.",
+      "Even after this offering, it will need much more money and may have to delay or cut its drug programs if it cannot raise it.",
+      "Raising more money could reduce existing shareholders' stake, limit how it operates, or force it to give up rights to its drug.",
+      "The success of its only drug, BHB-1893, depends on many factors, including good trial results, safety, approval and acceptance by doctors.",
+      "Getting approval from the FDA and other regulators is long and unpredictable, and failure to win approval would badly hurt the business."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2088082,
+   "name": "Electra Therapeutics, Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2088082/000119312526395670/d61940d424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08219,
+    "claude-haiku-5-5": 0.00476,
+    "claude-opus-5-5": 0.14714
+   },
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "$ / 311,171 / On October 15, 2025, pursuant to a Series C Preferred Stock Purchase Agreement (the \"Purchase Agreement\"), the Company issued 9,134,315 shares of its ",
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "a round has no price in US dollars"
+   },
+   "readers_differ": [
+    "rounds series a: named by one reader only",
+    "rounds series b: named by one reader only",
+    "rounds series c: named by one reader only"
+   ],
+   "referee_differs_from_first": [
+    "rounds series a: named by one reader only",
+    "rounds series b: named by one reader only",
+    "rounds series c: named by one reader only"
+   ],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "Electra Therapeutics develops antibody medicines that remove disease-causing immune cells, aiming to treat immune-mediated diseases and cancer.",
+     "short": "Electra Therapeutics",
+     "proceeds": "It expects about $319.9 million in net proceeds. It plans to fund trials of its lead drug ipsoprubart and its drug ELA822, and to pay for other research, working capital and general costs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -26317,
+        "net": -24786
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -61889,
+        "net": -61975
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": null,
+       "operating": -50230,
+       "net": -48912,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": null,
+       "prior_operating": -25369,
+       "prior_net": -25361
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Electra Therapeutics LLC",
+       "role": "Holding entity for early Series A shareholders",
+       "before": 15065741
+      },
+      {
+       "name": "Entities affiliated with OrbiMed",
+       "role": "Venture investor",
+       "before": 3549527
+      },
+      {
+       "name": "Entities affiliated with Westlake BioPartners Fund I, L.P.",
+       "role": "Venture investor",
+       "before": 2820403
+      },
+      {
+       "name": "Redmile Biopharma Investments II, L.P.",
+       "role": "Investor",
+       "before": 2811887
+      },
+      {
+       "name": "Aventis Inc.",
+       "role": "Investor, linked to Sanofi",
+       "before": 2461948
+      },
+      {
+       "name": "LSP 7 Coöperatief U.A.",
+       "role": "Investor",
+       "before": 2461948
+      },
+      {
+       "name": "Entities affiliated with New Leaf Ventures",
+       "role": "Venture investor",
+       "before": 1722233
+      },
+      {
+       "name": "Quehuong (Kathy) Dong, Pharm.D., M.B.A.",
+       "role": "Executive officer",
+       "before": 1399175
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": null,
+       "price": null
+      },
+      {
+       "name": "Series B",
+       "when": null,
+       "price": null
+      },
+      {
+       "name": "Series C",
+       "when": 2025,
+       "price": 10.15
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "Directors, executives and holders of nearly all shares agreed not to sell for 180 days after the prospectus date. The underwriters can allow sales sooner with written consent.",
+      "early": false
+     },
+     "risks": [
+      "Electra is young, has no approved products and has never earned revenue, so its chances of success are hard to judge.",
+      "It has lost money every period and expects bigger losses ahead. It may never make a profit.",
+      "Even after this offering, it will need much more money, and may have to cut or delay its programs if it cannot raise it."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Electra Therapeutics is a late clinical-stage biopharmaceutical company developing precision medicines for immune-mediated diseases and cancer.",
+     "short": "Electra Therapeutics",
+     "proceeds": "The company plans to spend about $220.0 million on ipsoprubart in sHLH, $25.0 million on ipsoprubart in T/NK cell malignancies, and $50.0 million on ELA822. The rest will go to other research, working capital and general corporate purposes.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -26317,
+        "net": -24786
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -61889,
+        "net": -61975
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": null,
+       "operating": -50230,
+       "net": -48912,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": null,
+       "prior_operating": -25369,
+       "prior_net": -25361
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Electra Therapeutics LLC",
+       "role": "Entity that distributed its Series A shares to members before the offering",
+       "before": 15065741
+      },
+      {
+       "name": "Entities affiliated with OrbiMed",
+       "role": "Investor; affiliated with director Carl L. Gordon",
+       "before": 3549527
+      },
+      {
+       "name": "Entities affiliated with Westlake BioPartners Fund I, L.P.",
+       "role": "Investor; affiliated with former director Beth Seidenberg",
+       "before": 2820403
+      },
+      {
+       "name": "Redmile Biopharma Investments II, L.P.",
+       "role": "Investor",
+       "before": 2811887
+      },
+      {
+       "name": "Aventis Inc.",
+       "role": "Investor; filing links it to Sanofi",
+       "before": 2461948
+      },
+      {
+       "name": "LSP 7 Coöperatief U.A.",
+       "role": "Investor",
+       "before": 2461948
+      },
+      {
+       "name": "Entities affiliated with New Leaf Ventures",
+       "role": "Investor",
+       "before": 1722233
+      },
+      {
+       "name": "Quehuong (Kathy) Dong, Pharm.D., M.B.A.",
+       "role": "Named executive officer and director",
+       "before": 1399175
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, its executive officers and holders of substantially all its equity agreed not to sell or transfer shares for 180 days after the prospectus date, unless the underwriters consent.",
+      "early": false
+     },
+     "risks": [
+      "It has a short operating history and no approved products, so its success is hard to judge.",
+      "It has never earned revenue, has lost money in every period since it began, and expects losses to keep growing."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Electra develops antibody drugs that remove harmful immune cells to treat immune diseases and cancer.",
+     "short": "Electra Therapeutics",
+     "proceeds": "Electra plans to spend about $220.0 million to finish a late-stage trial of its lead drug, ipsoprubart, in a rare immune disorder and to prepare to seek approval and sell it. It also plans about $25.0 million for testing ipsoprubart in certain blood cancers, about $50.0 million for its second drug, ELA822, and the rest for other research and general costs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -26317,
+        "net": -24786
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -61889,
+        "net": -61975
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": null,
+       "operating": -50230,
+       "net": -48912,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": null,
+       "prior_operating": -25369,
+       "prior_net": -25361
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Electra Therapeutics LLC",
+       "role": "Holding company of early investors and staff",
+       "before": 15065741
+      },
+      {
+       "name": "Entities affiliated with OrbiMed",
+       "role": "Venture investor",
+       "before": 3549527
+      },
+      {
+       "name": "Entities affiliated with Westlake BioPartners Fund I, L.P.",
+       "role": "Venture investor",
+       "before": 2820403
+      },
+      {
+       "name": "Redmile Biopharma Investments II, L.P.",
+       "role": "Investment fund",
+       "before": 2811887
+      },
+      {
+       "name": "Aventis Inc.",
+       "role": "Drug company investor, part of Sanofi",
+       "before": 2461948
+      },
+      {
+       "name": "LSP 7 Coöperatief U.A.",
+       "role": "Venture investor",
+       "before": 2461948
+      },
+      {
+       "name": "Entities affiliated with New Leaf Ventures",
+       "role": "Venture investor",
+       "before": 1722233
+      },
+      {
+       "name": "Quehuong (Kathy) Dong, Pharm.D., M.B.A.",
+       "role": "Executive officer and director",
+       "before": 1399175
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and holders of almost all its shares agreed not to sell for 180 days after September 17, 2026, unless the lead banks agree.",
+      "early": false
+     },
+     "risks": [
+      "Electra has a short history and no approved products, so it is hard to judge how likely it is to succeed.",
+      "Electra has lost money every year, has never earned revenue, and may never become profitable.",
+      "Electra will need much more money after this offering, and without it may have to delay or cut its drug programs."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2056611,
+   "name": "Latigo Biotherapeutics, Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2056611/000119312526340329/d38775d424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07389,
+    "claude-haiku-5-5": 0.00447,
+    "claude-opus-5-5": 0.13793
+   },
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "The rights, privileges, and preferences of the redeemable convertible preferred stock are as follows: / Dividend Rights / The holders of Series Seed, Series A, / Seri",
+   "kept": [
+    "Revenue and results"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It develops pain medicines that are not opioids and are still in human trials, aiming to stop pain signals without addiction risk.",
+     "short": "Latigo",
+     "proceeds": "It expects about $315.7 million in net proceeds. With its existing cash, it plans to move its two lead pain drugs, LTG-001 and LTG-321, through further trials and toward approval. The rest is for other research, working capital and general costs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -63451,
+        "net": -61183
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -110392,
+        "net": -109167
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": null,
+       "operating": -23436,
+       "net": -22961,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": null,
+       "prior_operating": -21512,
+       "prior_net": -20952
+      },
+      "cash": {
+       "value": 42177,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with Westlake BioPartners",
+       "role": "Venture investor",
+       "before": 13199669
+      },
+      {
+       "name": "Entities affiliated with Foresite Capital",
+       "role": "Venture investor",
+       "before": 9041328
+      },
+      {
+       "name": "Entities affiliated with 5AM Ventures",
+       "role": "Venture investor",
+       "before": 7325962
+      },
+      {
+       "name": "Entities affiliated with Blue Owl Healthcare",
+       "role": "Investor",
+       "before": 3146780
+      },
+      {
+       "name": "Nima Farzan",
+       "role": "Named executive officer",
+       "before": 2902419
+      },
+      {
+       "name": "Deep Track Biotechnology Master Fund, Ltd.",
+       "role": "Investment fund",
+       "before": 2496656
+      },
+      {
+       "name": "Neil Singla, M.D.",
+       "role": "Named executive officer",
+       "before": 532795
+      },
+      {
+       "name": "Timothy P. Walbert",
+       "role": "Named executive officer",
+       "before": 329819
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, executives and holders of nearly all its shares agreed not to sell for 180 days after the August 6, 2026 prospectus date. The lead underwriters can give written consent to make exceptions.",
+      "early": false
+     },
+     "risks": [
+      "It is a young drug developer formed in 2018 with no approved products, which makes its future hard to judge.",
+      "It has lost a lot of money since it started and may never make a profit.",
+      "It will need much more money even after this offering, and raising it could dilute shareholders or force cutbacks."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Develops non-opioid pain medicines that aim to stop pain signals without the risk of addiction.",
+     "short": "Latigo Biotherapeutics",
+     "proceeds": "The company plans to spend about $124.7 million advancing LTG-001 and about $46.2 million advancing LTG-321. The rest goes to other research, working capital and general corporate purposes.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -63451,
+        "net": -61183
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -110392,
+        "net": -109167
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": null,
+       "operating": -23436,
+       "net": -22961,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": null,
+       "prior_operating": -21512,
+       "prior_net": -20952
+      },
+      "cash": {
+       "value": 42177,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with Westlake BioPartners",
+       "role": "Venture investor",
+       "before": 13199669
+      },
+      {
+       "name": "Entities affiliated with Foresite Capital",
+       "role": "Venture investor",
+       "before": 9041328
+      },
+      {
+       "name": "Entities affiliated with 5AM Ventures",
+       "role": "Venture investor",
+       "before": 7325962
+      },
+      {
+       "name": "Entities affiliated with Blue Owl Healthcare",
+       "role": "Investment fund",
+       "before": 3146780
+      },
+      {
+       "name": "Nima Farzan",
+       "role": null,
+       "before": 2902419
+      },
+      {
+       "name": "Deep Track Biotechnology Master Fund, Ltd.",
+       "role": "Investment fund",
+       "before": 2496656
+      },
+      {
+       "name": "Neil Singla, M.D.",
+       "role": null,
+       "before": 532795
+      },
+      {
+       "name": "Timothy P. Walbert",
+       "role": null,
+       "before": 329819
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, officers and holders of substantially all equity securities agreed not to sell shares for 180 days after the prospectus date. The underwriters can consent to earlier sales.",
+      "early": false
+     },
+     "risks": [
+      "The company is clinical-stage with a short operating history and has never sold a product, making its prospects hard to judge.",
+      "The company has lost money since it began and may never become profitable.",
+      "The company will need more capital, which could dilute shareholders or delay or halt its development programs."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Latigo is developing non-opioid pain pills designed to block pain signals without the risk of addiction.",
+     "short": "Latigo",
+     "proceeds": "Latigo plans to use the money to finish late-stage testing of its lead pain drug LTG-001, seek approval and prepare to sell it, and move LTG-321 toward late-stage trials. The rest will go to other research, including LTG-418, and general business needs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -63451,
+        "net": -61183
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -110392,
+        "net": -109167
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": null,
+       "operating": -23436,
+       "net": -22961,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": null,
+       "prior_operating": -21512,
+       "prior_net": -20952
+      },
+      "cash": {
+       "value": 42177,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with Westlake BioPartners",
+       "role": "Venture investor",
+       "before": 13199669
+      },
+      {
+       "name": "Entities affiliated with Foresite Capital",
+       "role": "Venture investor",
+       "before": 9041328
+      },
+      {
+       "name": "Entities affiliated with 5AM Ventures",
+       "role": "Venture investor",
+       "before": 7325962
+      },
+      {
+       "name": "Entities affiliated with Blue Owl Healthcare",
+       "role": "Investor",
+       "before": 3146780
+      },
+      {
+       "name": "Nima Farzan",
+       "role": "Executive officer or director",
+       "before": 2902419
+      },
+      {
+       "name": "Deep Track Biotechnology Master Fund, Ltd.",
+       "role": "Investment fund",
+       "before": 2496656
+      },
+      {
+       "name": "Neil Singla, M.D.",
+       "role": "Executive officer or director",
+       "before": 532795
+      },
+      {
+       "name": "Timothy P. Walbert",
+       "role": "Executive officer or director",
+       "before": 329819
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Latigo, its directors, executives and nearly all shareholders agreed not to sell shares for 180 days after the IPO without the lead banks' written consent.",
+      "early": false
+     },
+     "risks": [
+      "Latigo is a young company that has never sold a product, so its future is hard to judge.",
+      "Latigo has lost a lot of money, expects bigger losses ahead, and may never make a profit.",
+      "Latigo will need much more money after this IPO, which could shrink existing owners' stakes or force it to cut back."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 1806540,
+   "name": "Lycia Therapeutics, Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/1806540/000162828026067048/lyciatherapeutics-424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.0763,
+    "claude-haiku-5-5": 0.00466,
+    "claude-opus-5-5": 0.1425
+   },
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "44 / Total restructuring and impairment charges / $1,407 / 10. Convertible Preferred Stock / In June 2026, the Company issued 36,734,094 shares of its Series D converti",
+   "kept": [
+    "Revenue and results"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the two AI readers gave different rounds or prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "rounds series d price: 2.0417 / 2.04"
+   ],
+   "referee_differs_from_first": [
+    "rounds series d price: 2.0417 / 2.04"
+   ],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "Lycia is a clinical-stage biotech company using its LYTAC platform to develop medicines, including an IgE portfolio and a Graves' disease program.",
+     "short": "Lycia",
+     "proceeds": "It expects net proceeds of about $290.7 million. It plans about $240 million for Phase 2 trials of LCA-0061, LCA-0062 and LCA-0321, and the rest for research, working capital and general costs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 14936,
+        "operating": -32533,
+        "net": -26503
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 6741,
+        "operating": -41406,
+        "net": -36460
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 0,
+       "operating": -20870,
+       "net": -19196,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 2306,
+       "prior_operating": -28346,
+       "prior_net": -25624
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with Versant Ventures",
+       "role": "Venture investor",
+       "before": 7058576
+      },
+      {
+       "name": "Entities affiliated with Venrock Healthcare Capital Partners",
+       "role": "Healthcare investor",
+       "before": 4779793
+      },
+      {
+       "name": "Redmile Biopharma Investments III, L.P.",
+       "role": "Investment fund",
+       "before": 4164899
+      },
+      {
+       "name": "Entities affiliated with RTW Investments, LP",
+       "role": "Investment firm",
+       "before": 3639364
+      },
+      {
+       "name": "Janus Henderson Biotech Innovation Master Fund Limited",
+       "role": "Investment fund",
+       "before": 3476215
+      },
+      {
+       "name": "Aetna Wun Trombley, Ph.D.",
+       "role": "Director or executive officer",
+       "before": 2050921
+      },
+      {
+       "name": "Entities affiliated with Blue Owl",
+       "role": "Healthcare investor",
+       "before": 1955616
+      },
+      {
+       "name": "Steve Staben, Ph.D.",
+       "role": "Director or executive officer",
+       "before": 510123
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": null,
+       "price": 1.0
+      },
+      {
+       "name": "Series B",
+       "when": null,
+       "price": 1.8
+      },
+      {
+       "name": "Series C",
+       "when": null,
+       "price": 2.04
+      },
+      {
+       "name": "Series D",
+       "when": 2026,
+       "price": 2.0417
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers, directors and holders of nearly all its shares have agreed not to sell for 180 days after the October 22, 2026 prospectus date. The lead underwriters can release shares sooner.",
+      "early": true
+     },
+     "risks": [
+      "It is a young company with no approved products and no completed clinical trials, so it is hard to judge its chances of success.",
+      "It has lost a lot of money since it began, has no product sales, and may never make a profit.",
+      "Delays or trouble enrolling patients in clinical trials could hold up or block the approvals it needs."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Lycia Therapeutics is a clinical-stage biotechnology company developing medicines based on its LYTAC platform.",
+     "short": "Lycia Therapeutics",
+     "proceeds": "The company plans to use the net proceeds to advance clinical development of LCA-0061, LCA-0062 and LCA-0321. The rest will go to research, other development work and general corporate purposes.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 14936,
+        "operating": -32533,
+        "net": -26503
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 6741,
+        "operating": -41406,
+        "net": -36460
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 0,
+       "operating": -20870,
+       "net": -19196,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 2306,
+       "prior_operating": -28346,
+       "prior_net": -25624
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with Versant Ventures",
+       "role": "Venture investor",
+       "before": 7058576
+      },
+      {
+       "name": "Entities affiliated with Venrock Healthcare Capital Partners",
+       "role": "Venture investor",
+       "before": 4779793
+      },
+      {
+       "name": "Redmile Biopharma Investments III, L.P.",
+       "role": "Investment fund",
+       "before": 4164899
+      },
+      {
+       "name": "Entities affiliated with RTW Investments, LP",
+       "role": "Investment fund",
+       "before": 3639364
+      },
+      {
+       "name": "Janus Henderson Biotech Innovation Master Fund Limited",
+       "role": "Investment fund",
+       "before": 3476215
+      },
+      {
+       "name": "Aetna Wun Trombley, Ph.D.",
+       "role": "Director and executive officer",
+       "before": 2050921
+      },
+      {
+       "name": "Entities affiliated with Blue Owl",
+       "role": "Investment fund",
+       "before": 1955616
+      },
+      {
+       "name": "Steve Staben, Ph.D.",
+       "role": "Executive officer",
+       "before": 510123
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": null,
+       "price": 1.0
+      },
+      {
+       "name": "Series B",
+       "when": null,
+       "price": 1.8
+      },
+      {
+       "name": "Series C",
+       "when": null,
+       "price": 2.04
+      },
+      {
+       "name": "Series D",
+       "when": "2026",
+       "price": 2.04
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "Officers, directors and holders of substantially all securities agreed not to sell for 180 days after the prospectus date. Jefferies and TD Securities may release shares before that period ends.",
+      "early": true
+     },
+     "risks": [
+      "The company has a short operating history, has finished no clinical trials and has no approved products, so its prospects are hard to judge.",
+      "The company has lost money since it started, has no product sales, and expects losses to continue for a long time.",
+      "Delays or difficulties in enrolling patients in clinical trials could delay or block needed regulatory approvals."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Lycia Therapeutics is a clinical-stage biotech company developing drugs for immune conditions like allergies and Graves' disease.",
+     "short": "Lycia",
+     "proceeds": "It plans to spend about $80.0 million on LCA-0061, $70.0 million on LCA-0062 and $90.0 million on LCA-0321, each through planned Phase 2 trials. The rest will go to other research, working capital and general company needs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 14936,
+        "operating": -32533,
+        "net": -26503
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 6741,
+        "operating": -41406,
+        "net": -36460
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 0,
+       "operating": -20870,
+       "net": -19196,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 2306,
+       "prior_operating": -28346,
+       "prior_net": -25624
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Entities affiliated with Versant Ventures",
+       "role": "Venture investor",
+       "before": 7058576
+      },
+      {
+       "name": "Entities affiliated with Venrock Healthcare Capital Partners",
+       "role": "Investment fund",
+       "before": 4779793
+      },
+      {
+       "name": "Redmile Biopharma Investments III, L.P.",
+       "role": "Investment fund",
+       "before": 4164899
+      },
+      {
+       "name": "Entities affiliated with RTW Investments, LP",
+       "role": "Investment fund",
+       "before": 3639364
+      },
+      {
+       "name": "Janus Henderson Biotech Innovation Master Fund Limited",
+       "role": "Investment fund",
+       "before": 3476215
+      },
+      {
+       "name": "Aetna Wun Trombley, Ph.D.",
+       "role": "Director or executive officer",
+       "before": 2050921
+      },
+      {
+       "name": "Entities affiliated with Blue Owl",
+       "role": "Investment fund",
+       "before": 1955616
+      },
+      {
+       "name": "Steve Staben, Ph.D.",
+       "role": "Director or executive officer",
+       "before": 510123
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": null,
+       "price": 1.0
+      },
+      {
+       "name": "Series B",
+       "when": null,
+       "price": 1.8
+      },
+      {
+       "name": "Series C",
+       "when": null,
+       "price": 2.04
+      },
+      {
+       "name": "Series D",
+       "when": 2026,
+       "price": 2.04
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers, directors and nearly all shareholders agreed not to sell shares for 180 days after the prospectus date. Jefferies and TD Securities may release shares early at their own choice.",
+      "early": true
+     },
+     "risks": [
+      "Lycia has a short track record, has finished no clinical trials and has no approved products, so its business is hard to judge.",
+      "Lycia has lost a lot of money since it started, has no product sales and may never make a profit.",
+      "If it is slow or unable to sign up patients for clinical trials, drug approvals could be delayed or blocked."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2058707,
+   "name": "Attovia Therapeutics, Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2058707/000119312526334997/d40469d424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07453,
+    "claude-haiku-5-5": 0.00448,
+    "claude-opus-5-5": 0.13979
+   },
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "liquidation event, including a merger, acquisition or sale of all or substantially all of the Company's assets, (each a \"Liquidation Event\"), the holders of Ser",
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the two AI readers gave different figures",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [
+    "revenue 2024-12-31: None / 0",
+    "part year revenue: None / 0",
+    "part year prior_revenue: None / 0"
+   ],
+   "referee_differs_from_first": [
+    "revenue 2024-12-31: None / 0",
+    "part year revenue: None / 0",
+    "part year prior_revenue: None / 0"
+   ],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "Attovia is a clinical-stage biotech company developing new antibody-based medicines for diseases caused by the immune system.",
+     "short": "Attovia",
+     "proceeds": "It expects net proceeds of about $265.1 million. It plans to use them, with its existing cash, to advance clinical development of ATTO-1310, ATTO-2306 and its research pipeline, and for working capital and general costs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -41553,
+        "net": -39801
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 1350,
+        "operating": -67159,
+        "net": -60627
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": null,
+       "operating": -19955,
+       "net": -18656,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": null,
+       "prior_operating": -16104,
+       "prior_net": -15151
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Frazier Life Sciences XI, L.P.",
+       "role": "Venture investor, over 5% holder",
+       "before": 5565980
+      },
+      {
+       "name": "venBio Global Strategic Fund IV, L.P.",
+       "role": "Venture investor, over 5% holder",
+       "before": 3799016
+      },
+      {
+       "name": "Alamar HoldCo, LLC",
+       "role": "Over 5% holder, linked to the company that licensed its core technology",
+       "before": 3229279
+      },
+      {
+       "name": "Entities affiliated with Goldman Sachs & Co. LLC",
+       "role": "Investor, over 5% holder",
+       "before": 2435641
+      },
+      {
+       "name": "Deep Track Biotechnology Master Fund, Ltd",
+       "role": "Investment fund, over 5% holder",
+       "before": 1957139
+      },
+      {
+       "name": "Tao Fu",
+       "role": "Director or named executive officer",
+       "before": 893456
+      },
+      {
+       "name": "Petter Veiby",
+       "role": "Director or named executive officer",
+       "before": 212258
+      },
+      {
+       "name": "Hubert Chen",
+       "role": "Director or named executive officer",
+       "before": 153279
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers, directors and all stockholders agreed not to sell shares for 180 days after the date of this prospectus, with some exceptions. After that, nearly all locked-up shares can be sold.",
+      "early": true
+     },
+     "risks": [
+      "It is a young company with no approved products and no completed clinical trials, so its chances of success are hard to judge.",
+      "It has lost money since it began, has no product revenue, and may never become profitable.",
+      "Even with this offering, it will need a lot more money, and may have to cut or delay its programs if it cannot raise it."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Clinical-stage biopharmaceutical company developing next-generation biotherapeutics for immune-mediated diseases.",
+     "short": "Attovia Therapeutics",
+     "proceeds": "The company plans to use the money, with its existing cash, to advance ATTO-1310 and ATTO-2306 in clinical trials. It will also fund its research pipeline, including ATTO-1091, plus working capital and general purposes.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 0,
+        "operating": -41553,
+        "net": -39801
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 1350,
+        "operating": -67159,
+        "net": -60627
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": 0,
+       "operating": -19955,
+       "net": -18656,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": 0,
+       "prior_operating": -16104,
+       "prior_net": -15151
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Frazier Life Sciences XI, L.P.",
+       "role": "Existing stockholder, over 5%",
+       "before": 5565980
+      },
+      {
+       "name": "venBio Global Strategic Fund IV, L.P.",
+       "role": "Existing stockholder, over 5%",
+       "before": 3799016
+      },
+      {
+       "name": "Alamar HoldCo, LLC",
+       "role": "Existing stockholder, over 5%",
+       "before": 3229279
+      },
+      {
+       "name": "Entities affiliated with Goldman Sachs & Co. LLC",
+       "role": "Existing stockholder, over 5%",
+       "before": 2435641
+      },
+      {
+       "name": "Deep Track Biotechnology Master Fund, Ltd",
+       "role": "Existing stockholder, over 5%",
+       "before": 1957139
+      },
+      {
+       "name": "Tao Fu",
+       "role": "Director or named executive officer",
+       "before": 893456
+      },
+      {
+       "name": "Petter Veiby",
+       "role": "Director or named executive officer",
+       "before": 212258
+      },
+      {
+       "name": "Hubert Chen",
+       "role": "Director or named executive officer",
+       "before": 153279
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Officers, directors and all stockholders agreed not to sell or transfer their shares for 180 days after the prospectus date. Four underwriters may release shares before then, in some cases without public notice.",
+      "early": true
+     },
+     "risks": [
+      "The company has a short operating history, has finished no clinical trials and has no approved products, making it hard to judge its prospects.",
+      "The company has incurred significant operating losses, has no product revenue, and may never become profitable."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Attovia is a clinical-stage drug developer creating antibody-based treatments for immune system diseases, such as severe itch and skin inflammation.",
+     "short": "Attovia",
+     "proceeds": "Attovia plans to spend about $110 million to $130 million on mid-stage testing of ATTO-1310 and about $60 million to $80 million on mid-stage testing of ATTO-2306. The rest goes to early-stage research, including a first human trial of ATTO-1091, and general company needs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 0,
+        "operating": -41553,
+        "net": -39801
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 1350,
+        "operating": -67159,
+        "net": -60627
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": 0,
+       "operating": -19955,
+       "net": -18656,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": 0,
+       "prior_operating": -16104,
+       "prior_net": -15151
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Frazier Life Sciences XI, L.P.",
+       "role": "Venture investor",
+       "before": 5565980
+      },
+      {
+       "name": "venBio Global Strategic Fund IV, L.P.",
+       "role": "Venture investor",
+       "before": 3799016
+      },
+      {
+       "name": "Alamar HoldCo, LLC",
+       "role": "Licensor of its core technology",
+       "before": 3229279
+      },
+      {
+       "name": "Entities affiliated with Goldman Sachs & Co. LLC",
+       "role": "Investment funds",
+       "before": 2435641
+      },
+      {
+       "name": "Deep Track Biotechnology Master Fund, Ltd",
+       "role": "Investment fund",
+       "before": 1957139
+      },
+      {
+       "name": "Tao Fu",
+       "role": "Director or executive officer",
+       "before": 893456
+      },
+      {
+       "name": "Petter Veiby",
+       "role": "Director or executive officer",
+       "before": 212258
+      },
+      {
+       "name": "Hubert Chen",
+       "role": "Director or executive officer",
+       "before": 153279
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers, directors and all shareholders agreed not to sell shares for 180 days after August 4, 2026. After that, almost all locked-up shares can be sold.",
+      "early": true
+     },
+     "risks": [
+      "Attovia has a short history, has finished no clinical trials and has no approved products, so its future is hard to judge.",
+      "It has lost a lot of money since it started and expects to keep losing money, and may never make a profit.",
+      "Even after this offering, it will need much more money, and if it cannot raise it, it may have to cut programs."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2124472,
+   "name": "Orion180 Insurance Group Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2124472/000162828026062794/orion180-424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06658,
+    "claude-haiku-5-5": 0.00385,
+    "claude-opus-5-5": 0.12642
+   },
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "Debt represents the unpaid principal balance on credit agreements for long-term loans payable, net of unamortized issuance costs. Amortization of issuance costs",
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "Orion180 sells home insurance, mainly in the excess and surplus market, through independent agents in 14 U.S. states.",
+     "short": "Orion180",
+     "proceeds": "The company expects about $220 million in net proceeds. It plans to use them to grow its business and for general purposes, and may repay part of its $282 million credit facility debt.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 89284,
+        "operating": null,
+        "net": -288
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 123478,
+        "operating": null,
+        "net": 16314
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 80077,
+       "operating": null,
+       "net": 13547,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 50416,
+       "prior_operating": null,
+       "prior_net": -3042
+      },
+      "cash": {
+       "value": 170756,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Kenneth Gregg",
+       "role": "Founder, chief executive (Class B shares)",
+       "before": 59935260
+      },
+      {
+       "name": "DARLING STRATEGIC INVESTMENTS LLC",
+       "role": "Shareholder owning more than 5%",
+       "before": 5703100
+      },
+      {
+       "name": "Ryan Jesenik",
+       "role": "Named executive officer or director",
+       "before": 3577248
+      },
+      {
+       "name": "Christoph Birchler",
+       "role": "Named executive officer or director",
+       "before": 104337
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, executive officers and nearly all shareholders agreed not to sell shares for 180 days after the prospectus date, with some exceptions.",
+      "early": false
+     },
+     "risks": [
+      "The company relies on independent agents to sell its products, and losing key agents or their support could hurt its business.",
+      "The company has grown fast, but its recent growth rates may not continue in the future.",
+      "Fast growth may put heavy demands on the company's resources, systems and staff, which could hurt its business.",
+      "If the company handles insurance claims poorly, its business, results and prospects could suffer.",
+      "Competition in the industry is intense, and the company may struggle to compete, grow or keep its market share."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Sells homeowners and other insurance policies, mostly on the excess and surplus lines market, through independent agents.",
+     "short": "Orion180",
+     "proceeds": "The company plans to use the money to grow its business and for general corporate purposes. It may also repay part of its $282 million credit facility debt.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 89284,
+        "operating": null,
+        "net": -288
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 123478,
+        "operating": null,
+        "net": 16314
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 80077,
+       "operating": null,
+       "net": 13547,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 50416,
+       "prior_operating": null,
+       "prior_net": -3042
+      },
+      "cash": {
+       "value": 170756,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Kenneth Gregg",
+       "role": "Founder, chief executive officer",
+       "before": 59935260
+      },
+      {
+       "name": "DARLING STRATEGIC INVESTMENTS LLC",
+       "role": "Greater than 5% shareholder",
+       "before": 5703100
+      },
+      {
+       "name": "Ryan Jesenik",
+       "role": "Named executive officer or director",
+       "before": 3577248
+      },
+      {
+       "name": "Christoph Birchler",
+       "role": "Named executive officer or director",
+       "before": 104337
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Shareholders, directors and officers agreed not to sell their Class A shares for 180 days after the prospectus date, subject to certain exceptions. Some restricted shares may be eligible for sale upon completion of the offering.",
+      "early": true
+     },
+     "risks": [
+      "The company depends on third-party independent agents, and failure to promote its products or losing key agents could hurt the business.",
+      "The company has grown quickly, and its recent growth rates may not continue in the future.",
+      "Rapid growth may place heavy demands on the company's resources, systems and personnel, which could hurt the business.",
+      "Ineffective management of the claims adjustment process could harm the company's business, results, financial condition and prospects.",
+      "Competition in the insurance industry is intense, and failure to compete well could reduce market share and hurt financial results."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Orion180 sells home, flood and other insurance in 14 US states through independent agents.",
+     "short": "Orion180",
+     "proceeds": "It plans to use the money to grow its business and for general company needs. It may also use some of it to pay back part of a $282 million loan.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 89284,
+        "operating": null,
+        "net": -288
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 123478,
+        "operating": null,
+        "net": 16314
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 80077,
+       "operating": null,
+       "net": 13547,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 50416,
+       "prior_operating": null,
+       "prior_net": -3042
+      },
+      "cash": {
+       "value": 170756,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Kenneth Gregg",
+       "role": "Founder, chief executive",
+       "before": 59935260
+      },
+      {
+       "name": "DARLING STRATEGIC INVESTMENTS LLC",
+       "role": "Major shareholder",
+       "before": 5703100
+      },
+      {
+       "name": "Ryan Jesenik",
+       "role": "Director or executive officer",
+       "before": 3577248
+      },
+      {
+       "name": "Christoph Birchler",
+       "role": "Director or executive officer",
+       "before": 104337
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and almost all shareholders agreed not to sell shares for 180 days after the offering, with some exceptions.",
+      "early": false
+     },
+     "risks": [
+      "Orion180 relies on independent agents to sell its insurance, and losing key agents could hurt its business.",
+      "Its fast growth in recent years may not continue.",
+      "Rapid growth may strain its staff, systems and other resources.",
+      "If it cannot handle insurance claims well, its business and results could suffer.",
+      "Competition in insurance is intense, and it may lose market share if it cannot compete well."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2143850,
+   "name": "CITY THERAPEUTICS, INC.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2143850/000110465926116636/tm2619715-10_424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08372,
+    "claude-haiku-5-5": 0.00477,
+    "claude-opus-5-5": 0.15838
+   },
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "2,078 / ​ / ​ / 10. Convertible Preferred Stock / Series Seed Convertible Preferred Stock / Beginning in September 2023 and in multiple closings through March 2024, the C",
+   "kept": [
+    "Revenue and results",
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {},
+   "readers_differ": [
+    "cash value: None / 172109",
+    "cash date: None / 2026-06-30"
+   ],
+   "referee_differs_from_first": [
+    "cash value: None / 172109",
+    "cash date: None / 2026-06-30"
+   ],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "City Therapeutics is a clinical-stage biotech company developing RNA interference medicines that switch off proteins linked to disease.",
+     "short": "City Therapeutics",
+     "proceeds": "It expects net proceeds of about $181.5 million. It plans about $30.0 million for CITY-FXI, $20.0 million for CITY-RBP4, $40.0 million for CITY-TFR2 and $70.0 million for its City Platform. The rest goes to working capital and general costs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 2778,
+        "operating": -29090,
+        "net": -27836
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 13562,
+        "operating": -59922,
+        "net": -58505
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 6358,
+       "operating": -51131,
+       "net": -53443,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 5578,
+       "prior_operating": -26593,
+       "prior_net": -24282
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "ARCH Venture Fund XII, L.P.",
+       "role": "Venture investor",
+       "before": 13522507
+      },
+      {
+       "name": "FMR LLC",
+       "role": "Investment manager (Fidelity funds)",
+       "before": 3863783
+      },
+      {
+       "name": "Invus Public Equities, L.P.",
+       "role": "Investor",
+       "before": 3227866
+      },
+      {
+       "name": "John Maraganore, Ph.D.",
+       "role": "Director",
+       "before": 2121831
+      },
+      {
+       "name": "Entities Affiliated with Viking",
+       "role": "Investor",
+       "before": 2027005
+      },
+      {
+       "name": "Andrew (Andy) Orth, M.B.A.",
+       "role": "President, chief executive, director",
+       "before": 1094544
+      },
+      {
+       "name": "Tracy Zimmermann, Ph.D.",
+       "role": "Chief scientific officer",
+       "before": 269569
+      },
+      {
+       "name": "Baisong Mei, M.D., Ph.D.",
+       "role": "Chief medical officer",
+       "before": 234678
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series Seed",
+       "when": 2023,
+       "price": 1.0
+      },
+      {
+       "name": "Series A",
+       "when": 2024,
+       "price": 10.0295
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and holders of nearly all its stock cannot sell for at least 180 days after the prospectus date. Goldman Sachs and Jefferies can approve a sale earlier, and some exceptions apply.",
+      "early": false
+     },
+     "risks": [
+      "The company is young, has no approved products, and has a short history, so it is hard to judge its prospects.",
+      "It has never earned revenue from selling drugs, and becoming profitable depends on many things going right.",
+      "Its way of finding and developing drugs is new and may never produce products that can be sold.",
+      "It has focused on RNAi technology and its City Platform, so its future depends heavily on them working.",
+      "Its approach to designing and developing programs is unproven, and it may fail to find product candidates of commercial value."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "City Therapeutics develops next-generation RNA interference (RNAi) medicines for thromboembolic diseases, Stargardt disease and anemia of chronic disease.",
+     "short": "City Therapeutics",
+     "proceeds": "The company plans to spend about $30.0 million on CITY-FXI, $20.0 million on CITY-RBP4, $40.0 million on CITY-TFR2 and $70.0 million on its City Platform. The rest will go to working capital and general corporate purposes.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 2778,
+        "operating": -29090,
+        "net": -27836
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 13562,
+        "operating": -59922,
+        "net": -58505
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 6358,
+       "operating": -51131,
+       "net": -53443,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 5578,
+       "prior_operating": -26593,
+       "prior_net": -24282
+      },
+      "cash": {
+       "value": 172109,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "ARCH Venture Fund XII, L.P.",
+       "role": "5% or greater stockholder",
+       "before": 13522507
+      },
+      {
+       "name": "FMR LLC",
+       "role": "5% or greater stockholder",
+       "before": 3863783
+      },
+      {
+       "name": "Invus Public Equities, L.P.",
+       "role": "5% or greater stockholder",
+       "before": 3227866
+      },
+      {
+       "name": "John Maraganore, Ph.D.",
+       "role": null,
+       "before": 2121831
+      },
+      {
+       "name": "Entities Affiliated with Viking",
+       "role": "5% or greater stockholder",
+       "before": 2027005
+      },
+      {
+       "name": "Andrew (Andy) Orth, M.B.A.",
+       "role": "President, Chief Executive Officer and Director",
+       "before": 1094544
+      },
+      {
+       "name": "Tracy Zimmermann, Ph.D.",
+       "role": "Chief Scientific Officer",
+       "before": 269569
+      },
+      {
+       "name": "Baisong Mei, M.D., Ph.D.",
+       "role": "Chief Medical Officer",
+       "before": 234678
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series Seed",
+       "when": "2023",
+       "price": 1.0
+      },
+      {
+       "name": "Series A",
+       "when": "2024",
+       "price": 10.0295
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "Company insiders, directors, officers and most major holders agreed not to sell their shares for at least 180 days after the prospectus date. Goldman Sachs and Jefferies must consent to any earlier sale, subject to certain exceptions.",
+      "early": false
+     },
+     "risks": [
+      "The company is an early-stage drug developer with a short track record and no approved products, making its prospects hard to judge.",
+      "The company expects to keep spending heavily and to keep posting operating losses for the foreseeable future.",
+      "The company has never earned revenue from selling drugs, and it may never become profitable.",
+      "The company's approach to discovering and developing its drugs is novel and may never produce marketable products.",
+      "The company has focused its research on RNAi technology, so its future depends on that technology and its City Platform working."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "City Therapeutics is an early-stage biotech company developing RNA-based medicines that switch off proteins that cause disease.",
+     "short": "City Therapeutics",
+     "proceeds": "It expects about $181.5 million and plans to spend it on clinical trials of three drug candidates (CITY-FXI, CITY-RBP4 and CITY-TFR2) and on its City Platform for finding new drugs. The rest will go to day-to-day running costs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 2778,
+        "operating": -29090,
+        "net": -27836
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 13562,
+        "operating": -59922,
+        "net": -58505
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 6358,
+       "operating": -51131,
+       "net": -53443,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 5578,
+       "prior_operating": -26593,
+       "prior_net": -24282
+      },
+      "cash": {
+       "value": 172109,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "ARCH Venture Fund XII, L.P.",
+       "role": "Venture investor",
+       "before": 13522507
+      },
+      {
+       "name": "FMR LLC",
+       "role": "Investment firm (Fidelity)",
+       "before": 3863783
+      },
+      {
+       "name": "Invus Public Equities, L.P.",
+       "role": "Investment fund",
+       "before": 3227866
+      },
+      {
+       "name": "John Maraganore, Ph.D.",
+       "role": "Director",
+       "before": 2121831
+      },
+      {
+       "name": "Entities Affiliated with Viking",
+       "role": "Investment funds",
+       "before": 2027005
+      },
+      {
+       "name": "Andrew (Andy) Orth, M.B.A.",
+       "role": "President, chief executive, director",
+       "before": 1094544
+      },
+      {
+       "name": "Tracy Zimmermann, Ph.D.",
+       "role": "Chief scientific officer",
+       "before": 269569
+      },
+      {
+       "name": "Baisong Mei, M.D., Ph.D.",
+       "role": "Chief medical officer",
+       "before": 234678
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series Seed",
+       "when": 2023,
+       "price": 1.0
+      },
+      {
+       "name": "Series A",
+       "when": 2024,
+       "price": 10.0295
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and nearly all existing shareholders agreed not to sell shares for at least 180 days after October 15, 2026. They can sell earlier only with consent from Goldman Sachs and Jefferies, with some exceptions.",
+      "early": false
+     },
+     "risks": [
+      "City Therapeutics is a young drug developer with no approved products, so its future is hard to judge.",
+      "It has lost money every year, with total losses of $142.5 million, and expects losses to keep growing.",
+      "It has never made money from selling drugs, and becoming profitable depends on many uncertain factors.",
+      "Its new way of finding and developing medicines is unproven and may never produce a product it can sell.",
+      "It relies entirely on RNAi technology, so its success depends on that technology and its City Platform working."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 1745648,
+   "name": "Apnimed, Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/1745648/000119312526328422/apmd_424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07622,
+    "claude-haiku-5-5": 0.00453,
+    "claude-opus-5-5": 0.14638
+   },
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "F-50 / Table of Contents / 11. / CONVERTIBLE PREFERRED STOCK / The Company has issued and outstanding convertible Series A Preferred Stock, Series A-2 Preferred Stock, ",
+   "kept": [
+    "Revenue and results",
+    "What earlier rounds paid"
+   ],
+   "left_out": {
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "Apnimed is a late-stage drug company developing Oxnimbi, an oral pill to treat obstructive sleep apnea.",
+     "short": "Apnimed",
+     "proceeds": "It expects net proceeds of about $173.6 million. With its existing cash, about $237.8 million will go to getting Oxnimbi approved and, if approved, launching it. The rest will fund research on other drug candidates, working capital and general costs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 8012,
+        "operating": -114234,
+        "net": -111305
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 38467,
+        "operating": -53818,
+        "net": -128191
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": 84814,
+       "operating": 68044,
+       "net": 67719,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": 3131,
+       "prior_operating": -27112,
+       "prior_net": -28646
+      },
+      "cash": {
+       "value": 46886,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Alpha Wave",
+       "role": "Investor",
+       "before": 7054954
+      },
+      {
+       "name": "Morningside",
+       "role": "Investor",
+       "before": 6915837
+      },
+      {
+       "name": "Columbia Fund",
+       "role": "Investor",
+       "before": 4298843
+      },
+      {
+       "name": "Shionogi",
+       "role": "Large shareholder",
+       "before": 2953817
+      },
+      {
+       "name": "Lawrence G. Miller, M.D.",
+       "role": "Named executive officer or director",
+       "before": 2451036
+      },
+      {
+       "name": "Tao",
+       "role": "Investor",
+       "before": 1865638
+      },
+      {
+       "name": "Dennis P. Molnar",
+       "role": "Named executive officer or director",
+       "before": 664452
+      },
+      {
+       "name": "Ronald H. Farkas",
+       "role": "Named executive officer or director",
+       "before": 502298
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": "2018",
+       "price": 4.7736
+      },
+      {
+       "name": "Series A-2",
+       "when": "2020",
+       "price": 6.3854
+      },
+      {
+       "name": "Series B",
+       "when": "2021",
+       "price": 8.8685
+      },
+      {
+       "name": "Series C-1",
+       "when": "2022",
+       "price": 8.8808
+      },
+      {
+       "name": "Series C-2",
+       "when": "2022",
+       "price": 11.101
+      },
+      {
+       "name": "Series C-3",
+       "when": "2022",
+       "price": 11.101
+      },
+      {
+       "name": "Series D",
+       "when": "2025",
+       "price": 9.6522
+      },
+      {
+       "name": "Series D-1",
+       "when": "2026",
+       "price": 9.66
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers, directors and nearly all shareholders agreed not to sell shares for 180 days after July 30, 2026. After that, nearly all of these shares can be sold.",
+      "early": true
+     },
+     "risks": [
+      "The company has lost a lot of money since it started, expects more losses, and may never become profitable.",
+      "The pro forma financial figures rest on early estimates and assumptions, so real results could be very different.",
+      "Its early estimate of cash at June 30, 2026 has limits because its auditors have not finished their review.",
+      "Its current and future debt could make it harder to run the business.",
+      "Even after this offering, it will need much more money, and may have to delay or cut programs if it cannot raise it."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Clinical pharmaceutical company developing Oxnimbi (AD109), an oral therapy for obstructive sleep apnea.",
+     "short": "Apnimed",
+     "proceeds": "The company plans to use about $237.8 million, with existing cash, to fund the regulatory approval process and, if approved, the commercial launch of Oxnimbi. The remaining proceeds will fund other research and general corporate purposes.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 8012,
+        "operating": -114234,
+        "net": -111305
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 38467,
+        "operating": -53818,
+        "net": -128191
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": 84814,
+       "operating": 68044,
+       "net": 67719,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": 3131,
+       "prior_operating": -27112,
+       "prior_net": -28646
+      },
+      "cash": {
+       "value": 46886,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Alpha Wave",
+       "role": "Venture investor",
+       "before": 7054954
+      },
+      {
+       "name": "Morningside",
+       "role": "Venture investor",
+       "before": 6915837
+      },
+      {
+       "name": "Columbia Fund",
+       "role": "Investor",
+       "before": 4298843
+      },
+      {
+       "name": "Shionogi",
+       "role": "Corporate investor",
+       "before": 2953817
+      },
+      {
+       "name": "Lawrence G. Miller, M.D.",
+       "role": "Director, named executive officer",
+       "before": 2451036
+      },
+      {
+       "name": "Tao",
+       "role": "Venture investor",
+       "before": 1865638
+      },
+      {
+       "name": "Dennis P. Molnar",
+       "role": "Named executive officer or director",
+       "before": 664452
+      },
+      {
+       "name": "Ronald H. Farkas",
+       "role": "Named executive officer or director",
+       "before": 502298
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": "2018",
+       "price": 4.7736
+      },
+      {
+       "name": "Series A-2",
+       "when": "2020",
+       "price": 6.3854
+      },
+      {
+       "name": "Series B",
+       "when": "2021",
+       "price": 8.8685
+      },
+      {
+       "name": "Series C-1",
+       "when": "2022",
+       "price": 8.8808
+      },
+      {
+       "name": "Series C-2",
+       "when": "2022",
+       "price": 11.101
+      },
+      {
+       "name": "Series C-3",
+       "when": "2022",
+       "price": 11.101
+      },
+      {
+       "name": "Series D",
+       "when": "2025",
+       "price": 9.6522
+      },
+      {
+       "name": "Series D-1",
+       "when": "2026",
+       "price": 9.66
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "Officers, directors and substantially all securityholders agreed not to sell or transfer shares for 180 days after the prospectus date. BofA Securities, Evercore and Cantor may release shares from the lock-up at any time in their discretion.",
+      "early": true
+     },
+     "risks": [
+      "The company has lost money since it began and expects losses to continue. It may never become profitable, or may not stay profitable.",
+      "The pro forma financial information relies on preliminary estimates and assumptions, so actual results may differ materially.",
+      "The company's existing and future debt could hurt its ability to run the business, and its loan covenants may limit its actions without lender consent.",
+      "Even if this offering succeeds, the company will need substantial additional funding, and without it may have to delay or cut programs.",
+      "There is substantial doubt about the company's ability to continue as a going concern."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Apnimed develops pills to treat obstructive sleep apnea; its only drug in trials, Oxnimbi, is under FDA review.",
+     "short": "Apnimed",
+     "proceeds": "Together with existing cash, it plans to spend about $237.8 million to seek FDA approval for Oxnimbi and, if approved, to launch it for obstructive sleep apnea. The rest will go to research on possible future drugs and general business needs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 8012,
+        "operating": -114234,
+        "net": -111305
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 38467,
+        "operating": -53818,
+        "net": -128191
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Mar 2026",
+       "period_end": "2026-03-31",
+       "revenue": 84814,
+       "operating": 68044,
+       "net": 67719,
+       "prior_label": "Jan to Mar 2025",
+       "prior_revenue": 3131,
+       "prior_operating": -27112,
+       "prior_net": -28646
+      },
+      "cash": {
+       "value": 46886,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Alpha Wave",
+       "role": "Investment firm",
+       "before": 7054954
+      },
+      {
+       "name": "Morningside",
+       "role": "Investor",
+       "before": 6915837
+      },
+      {
+       "name": "Columbia Fund",
+       "role": "Investment fund",
+       "before": 4298843
+      },
+      {
+       "name": "Shionogi",
+       "role": "Major shareholder",
+       "before": 2953817
+      },
+      {
+       "name": "Lawrence G. Miller, M.D.",
+       "role": "Named executive officer",
+       "before": 2451036
+      },
+      {
+       "name": "Tao",
+       "role": "Investment firm",
+       "before": 1865638
+      },
+      {
+       "name": "Dennis P. Molnar",
+       "role": "Named executive officer",
+       "before": 664452
+      },
+      {
+       "name": "Ronald H. Farkas",
+       "role": "Named executive officer",
+       "before": 502298
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series A",
+       "when": 2018,
+       "price": 4.7736
+      },
+      {
+       "name": "Series A-2",
+       "when": 2020,
+       "price": 6.3854
+      },
+      {
+       "name": "Series B",
+       "when": 2021,
+       "price": 8.8685
+      },
+      {
+       "name": "Series C-1",
+       "when": 2022,
+       "price": 8.8808
+      },
+      {
+       "name": "Series C-2",
+       "when": 2022,
+       "price": 11.101
+      },
+      {
+       "name": "Series C-3",
+       "when": 2022,
+       "price": 11.101
+      },
+      {
+       "name": "Series D",
+       "when": 2025,
+       "price": 9.6522
+      },
+      {
+       "name": "Series D-1",
+       "when": 2026,
+       "price": 9.66
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers, directors and nearly all shareholders agreed not to sell shares for 180 days after the July 30, 2026 prospectus date.",
+      "early": true
+     },
+     "risks": [
+      "Apnimed has lost a lot of money since it started, expects more losses, and may never make a profit.",
+      "The pro forma financial figures in the filing rest on early estimates, and actual results could be very different.",
+      "Early estimates of its cash at June 30, 2026 were made before review was finished and could be wrong.",
+      "Its current and future debts could make it harder to run the business.",
+      "Its loan agreement stops it from taking some actions without the lenders' consent, which limits its flexibility."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 1907709,
+   "name": "vVARDIS Holding AG",
+   "doc": "https://www.sec.gov/Archives/edgar/data/1907709/000114036126043938/ny20076472x18_424b4.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06792,
+    "claude-haiku-5-5": 0.00411,
+    "claude-opus-5-5": 0.13806
+   },
+   "sections_not_found": [
+    "future_sale",
+    "item15"
+   ],
+   "preferred_starts": "Consolidated Statements of Mezzanine Equity and Shareholders' Equity (Deficit) / (In thousands of U.S. Dollars, except share data) / Redeemable Series A / Convertible",
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It makes Curodont, a peptide-based treatment that repairs early tooth cavities and helps keep the natural tooth.",
+     "short": "vVARDIS",
+     "proceeds": "It expects about $154.5 million in net proceeds. It plans to use the money for general business needs such as working capital, operating costs and equipment, and it may use some to buy other businesses.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 12157,
+        "operating": -30966,
+        "net": -34737
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 30209,
+        "operating": -42084,
+        "net": -56447
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 28558,
+       "operating": -17550,
+       "net": -27807,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 9088,
+       "prior_operating": -24081,
+       "prior_net": -32057
+      },
+      "cash": {
+       "value": 28974,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Haley Abivardi",
+       "role": "Co-founder, co-chief executive",
+       "before": 14635193
+      },
+      {
+       "name": "Goly Abivardi",
+       "role": "Co-founder, co-chief executive",
+       "before": 14635193
+      },
+      {
+       "name": "vVardis Investment Holding AG",
+       "role": "Holding company controlled by the founders",
+       "before": 4275026
+      },
+      {
+       "name": "Cerebro Equity GmbH",
+       "role": "Investor",
+       "before": 2629565
+      },
+      {
+       "name": "Entities affiliated with OrbiMed Advisors LLC",
+       "role": "Investor",
+       "before": 2516883
+      },
+      {
+       "name": "Heartland Dental, LLC",
+       "role": "Customer and investor",
+       "before": 2160651
+      },
+      {
+       "name": "Curo Bidco Limited",
+       "role": "Investor, owned by Apollo funds",
+       "before": 1827374
+      },
+      {
+       "name": "Thomas Rondot",
+       "role": "Executive officer",
+       "before": 768013
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Officers, directors and holders of nearly all shares agreed not to sell for 180 days after the prospectus date. The two co-founders and their related entities agreed to 270 days.",
+      "early": false
+     },
+     "risks": [
+      "The company's success depends on dentists and patients accepting and understanding Curodont, a new kind of cavity treatment.",
+      "Its results depend on distributors, especially Henry Schein, and on large customers such as Heartland.",
+      "Growing revenue depends on building up its sales and marketing team.",
+      "It may have trouble managing its fast growth.",
+      "It relies on outside companies to make, supply and assemble its products."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Develops and sells Curodont dental products to treat early-stage tooth cavities.",
+     "short": "vVARDIS",
+     "proceeds": "The company intends to use the net proceeds for general corporate purposes, including working capital, operating expenses and capital expenditures. It may also use part of the money for acquisitions or strategic investments.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 12157,
+        "operating": -30966,
+        "net": -34737
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 30209,
+        "operating": -42084,
+        "net": -56447
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 28558,
+       "operating": -17550,
+       "net": -27807,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 9088,
+       "prior_operating": -24081,
+       "prior_net": -32057
+      },
+      "cash": {
+       "value": 28974,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Haley Abivardi",
+       "role": "Co-founder, co-CEO",
+       "before": 14635193
+      },
+      {
+       "name": "Goly Abivardi",
+       "role": "Co-founder, co-CEO",
+       "before": 14635193
+      },
+      {
+       "name": "vVardis Investment Holding AG",
+       "role": "Entity controlled by the Co-founders",
+       "before": 4275026
+      },
+      {
+       "name": "Cerebro Equity GmbH",
+       "role": "5% shareholder",
+       "before": 2629565
+      },
+      {
+       "name": "Entities affiliated with OrbiMed Advisors LLC",
+       "role": "OrbiMed-affiliated investor",
+       "before": 2516883
+      },
+      {
+       "name": "Heartland Dental, LLC",
+       "role": "Key customer",
+       "before": 2160651
+      },
+      {
+       "name": "Curo Bidco Limited",
+       "role": "Apollo-affiliated shareholder",
+       "before": 1827374
+      },
+      {
+       "name": "Thomas Rondot",
+       "role": "Executive officer",
+       "before": 768013
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers, directors and holders of substantially all of its share capital agreed not to sell or hedge shares for 180 days after the prospectus date. The Co-Founders and their affiliated entities agreed to a 270-day period.",
+      "early": false
+     },
+     "risks": [
+      "Market acceptance of the company's products is critical to its commercial success.",
+      "Results depend heavily on third-party distributors, especially Henry Schein, and on key customers including Heartland.",
+      "Growing sales depends on expanding its sales and marketing capabilities.",
+      "The company may struggle to manage its growth.",
+      "The company relies on third-party manufacturers and suppliers to make and supply its products."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "vVARDIS makes Curodont, a peptide-based treatment for early tooth cavities that helps rebuild enamel without drilling.",
+     "short": "vVARDIS",
+     "proceeds": "vVARDIS plans to use the money for general business needs, including day-to-day running costs and equipment. It may also use some to buy or invest in related businesses, though it has no deals in place.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 12157,
+        "operating": -30966,
+        "net": -34737
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 30209,
+        "operating": -42084,
+        "net": -56447
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 28558,
+       "operating": -17550,
+       "net": -27807,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 9088,
+       "prior_operating": -24081,
+       "prior_net": -32057
+      },
+      "cash": {
+       "value": 28974,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Haley Abivardi",
+       "role": "Co-founder, co-chief executive (shares held jointly)",
+       "before": 14635193
+      },
+      {
+       "name": "Goly Abivardi",
+       "role": "Co-founder, co-chief executive (shares held jointly)",
+       "before": 14635193
+      },
+      {
+       "name": "vVardis Investment Holding AG",
+       "role": "Founders' holding company",
+       "before": 4275026
+      },
+      {
+       "name": "Cerebro Equity GmbH",
+       "role": "Investor",
+       "before": 2629565
+      },
+      {
+       "name": "Entities affiliated with OrbiMed Advisors LLC",
+       "role": "Investor",
+       "before": 2516883
+      },
+      {
+       "name": "Heartland Dental, LLC",
+       "role": "Key customer and investor",
+       "before": 2160651
+      },
+      {
+       "name": "Curo Bidco Limited",
+       "role": "Apollo-owned investor",
+       "before": 1827374
+      },
+      {
+       "name": "Thomas Rondot",
+       "role": "Executive officer",
+       "before": 768013
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers, directors and most shareholders agreed not to sell shares for 180 days after the IPO. For the co-founders and their entities, the period is 270 days.",
+      "early": false
+     },
+     "risks": [
+      "The company's success depends on dentists and patients knowing about and accepting its new kind of cavity treatment.",
+      "Its results depend heavily on distributors, especially Henry Schein, and on key customers such as Heartland.",
+      "It must grow its sales and marketing teams to increase revenue.",
+      "It may struggle to manage its growth.",
+      "It relies on outside manufacturers and suppliers to make and assemble its products."
+     ]
+    }
+   }
   }
  ],
- "spent_usd": 6.7015,
+ "spent_usd": 10.5992,
  "later": [
   {
    "cik": 2133022,
@@ -4567,6 +8430,413 @@
     "What earlier rounds paid": "the readers found no table of preferred stock prices"
    },
    "readers_differ": []
+  },
+  {
+   "cik": 2089160,
+   "name": "Santa Ana Global Enterprises, S.A.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.04286,
+    "claude-haiku-5-5": 0.00274
+   },
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the company reports in EUR, not US dollars",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "financial unit: dollars / thousands"
+   ],
+   "sections_not_found": [
+    "offering",
+    "proceeds",
+    "holders",
+    "future_sale",
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 1851535,
+   "name": "Lannister Mining Corp.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.03302,
+    "claude-haiku-5-5": 0.00195
+   },
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the company reports in CAD, not US dollars",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "offering",
+    "summary_financials",
+    "holders",
+    "future_sale",
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 1953988,
+   "name": "Helio Corp /FL/",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07145,
+    "claude-haiku-5-5": 0.00396
+   },
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "holders"
+   ],
+   "preferred_starts": "Common Stock / On July 20, 2026, the Company completed a 1 for / 5 reverse stock split. The Company's financial statements have been retroactively adjusted to effec"
+  },
+  {
+   "cik": 2145089,
+   "name": "WINDWARD BIO GROUP AG",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07219,
+    "claude-haiku-5-5": 0.00467
+   },
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the two AI readers gave different figures",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [
+    "operating 2024-12-31: None / -1188",
+    "net 2024-12-31: None / -1188",
+    "cash value: None / 207299",
+    "cash date: None / 2026-06-30"
+   ],
+   "sections_not_found": [
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 2044950,
+   "name": "Bambusa Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07734,
+    "claude-haiku-5-5": 0.00464
+   },
+   "kept": [
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the two AI readers gave different figures"
+   },
+   "readers_differ": [
+    "operating 2024-12-31: None / -13880",
+    "net 2024-12-31: None / -13741"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "231 68 / Total accrued expenses and other current liabilities / $10,609 $7,743 / 7.CONVERTIBLE PREFERRED STOCK / The Company has issued Series Seed convertible preferre"
+  },
+  {
+   "cik": 1839970,
+   "name": "BlossomHill Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07584,
+    "claude-haiku-5-5": 0.0046
+   },
+   "kept": [
+    "Revenue and results",
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {},
+   "readers_differ": [],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "As of March 31, 2026, under the / Company's Amended and Restated Certificate of Incorporation, the Company had a total of 195,552,612 shares of capital stock auth"
+  },
+  {
+   "cik": 1997038,
+   "name": "Iambic Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06987,
+    "claude-haiku-5-5": 0.00413
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "In November 2025, the Company and certain investors entered into a Series B-3 Preferred Stock Purchase Agreement to sell up to 7,667,783 shares of its Series B-"
+  },
+  {
+   "cik": 2124080,
+   "name": "Aspen Neuroscience, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07655,
+    "claude-haiku-5-5": 0.00455
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "a price the readers gave is not printed in the filing"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "$ / 6,857 / 6. / Convertible Preferred Stock and Stockholders' Deficit / The Company's convertible preferred stock has been classified as temporary equity on the accomp"
+  },
+  {
+   "cik": 1853921,
+   "name": "Scribe Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07493,
+    "claude-haiku-5-5": 0.00453
+   },
+   "kept": [
+    "Revenue and results",
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {},
+   "readers_differ": [
+    "cash value: None / 49731",
+    "cash date: None / 2026-03-31"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "Agreements / The Company entered into the Regents Agreement and Acuitas Agreements (Note 6), which requires it to pay milestones / contingent upon the meeting of sp"
+  },
+  {
+   "cik": 2139097,
+   "name": "TRex Bio, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.082,
+    "claude-haiku-5-5": 0.00497
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the two AI readers gave different rounds or prices"
+   },
+   "readers_differ": [
+    "cash value: None / 90854",
+    "cash date: None / 2026-06-30",
+    "rounds series b price: 3.0897 / 3.09"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "Total / 3,141,388 / 2,874,761 / Redeemable Convertible Preferred Stock / Between June 2018 and February 2022, the Company issued its Series A-1 redeemable convertible p"
+  },
+  {
+   "cik": 2006960,
+   "name": "Londian Wason New Energy Tech Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.05835,
+    "claude-haiku-5-5": 0.00339
+   },
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the company reports in RMB, not US dollars",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "summary_financials",
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 1903784,
+   "name": "Vogenx, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06845,
+    "claude-haiku-5-5": 0.00357
+   },
+   "kept": [
+    "Revenue and results"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "rounds series a: named by one reader only"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "In the event of any liquidation, / dissolution or winding up of the Company, the holders of Series A Convertible Preferred Stock are entitled to be paid out of Co"
+  },
+  {
+   "cik": 2002988,
+   "name": "Retension Pharmaceuticals, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06968,
+    "claude-haiku-5-5": 0.00441
+   },
+   "kept": [
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the two AI readers gave different figures"
+   },
+   "readers_differ": [
+    "revenue 2024-12-31: None / 0",
+    "revenue 2025-12-31: None / 0",
+    "part year revenue: None / 0",
+    "part year prior_revenue: None / 0"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "$ / (7,780,521 / ) / 4. Convertible Preferred Stock / As of December 31, 2025, the Company was authorized to issue 23,436,264 shares of preferred stock, consisting of 1"
+  },
+  {
+   "cik": 2141616,
+   "name": "Amaero Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.0656,
+    "claude-haiku-5-5": 0.00398
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 2098395,
+   "name": "IMC Rare Earths Ltd",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06293,
+    "claude-haiku-5-5": 0.00365
+   },
+   "kept": [
+    "Revenue and results"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "lock-up days: None / 90"
+   ],
+   "sections_not_found": [
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 2101240,
+   "name": "SunScout Holding Ltd",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06295,
+    "claude-haiku-5-5": 0.00387
+   },
+   "kept": [],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 2104296,
+   "name": "Ticketplus Ltd.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.05626,
+    "claude-haiku-5-5": 0.00324
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "offering",
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 2113605,
+   "name": "Chilwa Minerals Ltd",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.0426,
+    "claude-haiku-5-5": 0.00234
+   },
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the company reports in AUD, not US dollars",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "operating 2024-06-30: None / -1814609",
+    "operating 2025-06-30: None / -3363095",
+    "cash value: 1101524 / 687022",
+    "cash date: 2026-06-30 / 2025-06-30",
+    "lock-up days: 180 / None"
+   ],
+   "sections_not_found": [
+    "offering",
+    "holders",
+    "future_sale",
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": ""
   }
  ]
 }

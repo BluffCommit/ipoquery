@@ -34,12 +34,73 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": null,
+    "operating": -2.301
+   },
+   {
+    "label": "2025",
+    "revenue": null,
+    "operating": -1.439
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Mar 2026",
+   "revenue": null,
+   "operating": -0.463,
+   "prior_label": "Jan to Mar 2025",
+   "prior_revenue": null,
+   "prior_operating": -0.372
+  },
+  "facts": [
+   {
+    "value": 0.251,
+    "label": "cash on Mar 31, 2026"
+   },
+   {
+    "value": -0.475,
+    "label": "net result, Jan to Mar 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "what": "A clinical-stage drug developer working on treatments for metabolic diseases, including post-bariatric hypoglycemia and gastroparesis.",
+ "short": "Vogenx",
+ "proceeds": "It plans to use the money, with its existing cash, to keep developing its lead drug mizagliflozin and to pay accrued expenses. The rest is for more research, general business needs and working capital.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1903784/000118518526003448/vogenx424b4081126.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

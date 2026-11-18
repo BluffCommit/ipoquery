@@ -13,6 +13,40 @@
   "shares_after": 7365008
  },
  "exchange": "Nasdaq",
+ "checks": [
+  {
+   "item": "Price range",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "No existing holder is selling",
+   "how": "the cover page and summary do not mention selling holders"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Shares outstanding after the offering",
+   "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Financial figures",
+   "how": "taken from the tagged statements, and the latest year's figures also appear in the printed statements"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  }
+ ],
  "financials": {
   "unit": "USD millions",
   "measure": "operating",
@@ -49,27 +83,30 @@
    }
   ]
  },
- "checks": [
-  {
-   "item": "Price range",
-   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
-  },
-  {
-   "item": "No existing holder is selling",
-   "how": "the cover page and summary do not mention selling holders"
-  },
-  {
-   "item": "Shares sold by the company",
-   "how": "stated on the cover and again in the offering summary"
-  },
-  {
-   "item": "Shares outstanding after the offering",
-   "how": "from the offering summary; larger than the number sold"
-  },
-  {
-   "item": "Financial figures",
-   "how": "taken from the tagged statements, and the latest year's figures also appear in the printed statements"
-  }
+ "lockup": {
+  "summary": "Executives, directors and holders of 5% or more have agreed not to sell for six months after the offering closes. The lead underwriter can give written consent to allow exceptions.",
+  "days": 180
+ },
+ "what": "Through its subsidiary Heliospace, Helio designs, builds and tests spacecraft hardware and provides space engineering services.",
+ "short": "Helio",
+ "proceeds": "It expects net proceeds of about $7.993 million. It plans about $1 million to repay notes and up to $4.25 million for research and development. The rest goes to sales, facilities, manufacturing and working capital.",
+ "risks": [
+  "The company needs more money than it has and may not be able to raise it on good terms.",
+  "It has a history of missing payments on its loans. All have been resolved, but new ones could happen.",
+  "Its auditors have said there is serious doubt the company can keep operating.",
+  "It has weak internal financial controls, which could lead to late or wrong financial reports.",
+  "It has lost money every year, has built up large losses, and expects more losses."
  ],
- "hidden": []
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1953988/000168316826008001/helio_s1.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

@@ -28,12 +28,48 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the company reports in CAD, not US dollars",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "lockup": {
+  "summary": "The company, its directors and officers, and holders of 5% or more of its shares agree not to sell shares for 180 days after the offering closes. Customary exceptions apply.",
+  "days": 180
+ },
+ "what": "It is a Montana gold and silver explorer working to develop its Basin Gulch Project, with no revenue yet.",
+ "short": "Lannister Mining",
+ "proceeds": "It plans to pay for more drilling and testing at the Basin Gulch site and to prepare a first resource report. It will also cover its working capital shortfall, overhead and general business costs.",
+ "risks": [
+  "All of its work is at the exploration stage, and it may never find gold or silver that can be mined for profit.",
+  "It works in only one area, so any problem with that site or its permits hurts the whole business.",
+  "Gold and silver prices swing widely, so any minerals it finds may not sell at a profit.",
+  "It may spend money on exploration and find nothing worth mining, or find deposits too small to make a profit."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1851535/000121390026100639/ea0303268-f1a13_lannister.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

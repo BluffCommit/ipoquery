@@ -28,12 +28,135 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 1.317,
+    "operating": -13.924
+   },
+   {
+    "label": "2025",
+    "revenue": 6.305,
+    "operating": -18.96
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 7.397,
+   "operating": -13.211,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 1.219,
+   "prior_operating": -9.101
+  },
+  "facts": [
+   {
+    "value": 13.589,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": -13.433,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Pegasus Growth Capital Fund I LP",
+   "role": "Largest shareholder",
+   "before": 7459232,
+   "sold": 0
+  },
+  {
+   "name": "Hank J. Holland",
+   "role": "Managing member of Pegasus; director or executive",
+   "before": 7499232,
+   "sold": 0
+  },
+  {
+   "name": "Affiliates of FIL Limited",
+   "role": "Investor holding more than 5%",
+   "before": 1534410,
+   "sold": 0
+  },
+  {
+   "name": "Omer Granit",
+   "role": "Director or executive",
+   "before": 686259,
+   "sold": 0
+  },
+  {
+   "name": "Eric Bono",
+   "role": "Executive officer or director",
+   "before": 239663,
+   "sold": 0
+  },
+  {
+   "name": "Brett Paduch",
+   "role": "Executive officer or director",
+   "before": 82001,
+   "sold": 0
+  },
+  {
+   "name": "Robert Latta",
+   "role": "Director",
+   "before": 52500,
+   "sold": 0
+  },
+  {
+   "name": "Erik Levy",
+   "role": "Director",
+   "before": 44722,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Directors, officers and Pegasus cannot sell for 180 days after the prospectus date without the lead underwriter's consent. The company itself is locked up for 90 days.",
+  "days": 180
+ },
+ "what": "It makes metal powders for 3D printing and large metal parts, mainly for defense, aerospace and medical uses, at a Tennessee plant.",
+ "short": "Amaero",
+ "proceeds": "It plans to use up to about $10.0 million to buy equipment over the next 12 months. The rest is for general business needs such as working capital, running costs and research.",
+ "risks": [
+  "The company has a history of losses, expects more losses, and will need to raise more money.",
+  "Its growth depends on being able to expand its metal powder and large-part production.",
+  "All its manufacturing is at one site, so a serious disruption there could hurt the whole business.",
+  "Unexpected costs or delays in bringing its powders and large parts to market could hurt its finances.",
+  "It may be unable to make powders that meet its customers' required specifications."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2141616/000119312526422334/project_alchemy_-_424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

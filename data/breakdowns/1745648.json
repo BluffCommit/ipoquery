@@ -34,12 +34,173 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 8.012,
+    "operating": -114.234
+   },
+   {
+    "label": "2025",
+    "revenue": 38.467,
+    "operating": -53.818
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Mar 2026",
+   "revenue": 84.814,
+   "operating": 68.044,
+   "prior_label": "Jan to Mar 2025",
+   "prior_revenue": 3.131,
+   "prior_operating": -27.112
+  },
+  "facts": [
+   {
+    "value": 46.886,
+    "label": "cash on Mar 31, 2026"
+   },
+   {
+    "value": 67.719,
+    "label": "net result, Jan to Mar 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Alpha Wave",
+   "role": "Investor",
+   "before": 7054954,
+   "sold": 0
+  },
+  {
+   "name": "Morningside",
+   "role": "Investor",
+   "before": 6915837,
+   "sold": 0
+  },
+  {
+   "name": "Columbia Fund",
+   "role": "Investor",
+   "before": 4298843,
+   "sold": 0
+  },
+  {
+   "name": "Shionogi",
+   "role": "Large shareholder",
+   "before": 2953817,
+   "sold": 0
+  },
+  {
+   "name": "Lawrence G. Miller, M.D.",
+   "role": "Named executive officer or director",
+   "before": 2451036,
+   "sold": 0
+  },
+  {
+   "name": "Tao",
+   "role": "Investor",
+   "before": 1865638,
+   "sold": 0
+  },
+  {
+   "name": "Dennis P. Molnar",
+   "role": "Named executive officer or director",
+   "before": 664452,
+   "sold": 0
+  },
+  {
+   "name": "Ronald H. Farkas",
+   "role": "Named executive officer or director",
+   "before": 502298,
+   "sold": 0
+  }
+ ],
+ "rounds": [
+  {
+   "name": "Series A",
+   "when": "2018",
+   "price": 4.7736
+  },
+  {
+   "name": "Series A-2",
+   "when": "2020",
+   "price": 6.3854
+  },
+  {
+   "name": "Series B",
+   "when": "2021",
+   "price": 8.8685
+  },
+  {
+   "name": "Series C-1",
+   "when": "2022",
+   "price": 8.8808
+  },
+  {
+   "name": "Series C-2",
+   "when": "2022",
+   "price": 11.101
+  },
+  {
+   "name": "Series C-3",
+   "when": "2022",
+   "price": 11.101
+  },
+  {
+   "name": "Series D",
+   "when": "2025",
+   "price": 9.6522
+  },
+  {
+   "name": "Series D-1",
+   "when": "2026",
+   "price": 9.66
+  }
+ ],
+ "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
+ "what": "Apnimed is a late-stage drug company developing Oxnimbi, an oral pill to treat obstructive sleep apnea.",
+ "short": "Apnimed",
+ "proceeds": "It expects net proceeds of about $173.6 million. With its existing cash, about $237.8 million will go to getting Oxnimbi approved and, if approved, launching it. The rest will fund research on other drug candidates, working capital and general costs.",
+ "risks": [
+  "The company has lost a lot of money since it started, expects more losses, and may never become profitable.",
+  "The pro forma financial figures rest on early estimates and assumptions, so real results could be very different.",
+  "Its current and future debt could make it harder to run the business.",
+  "Even after this offering, it will need much more money, and may have to delay or cut programs if it cannot raise it."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1745648/000119312526328422/apmd_424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

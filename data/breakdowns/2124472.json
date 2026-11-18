@@ -34,12 +34,106 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "net",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 89.284,
+    "operating": -0.288
+   },
+   {
+    "label": "2025",
+    "revenue": 123.478,
+    "operating": 16.314
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 80.077,
+   "operating": 13.547,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 50.416,
+   "prior_operating": -3.042
+  },
+  "facts": [
+   {
+    "value": 170.756,
+    "label": "cash on Jun 30, 2026"
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Kenneth Gregg",
+   "role": "Founder, chief executive (Class B shares)",
+   "before": 59935260,
+   "sold": 0
+  },
+  {
+   "name": "DARLING STRATEGIC INVESTMENTS LLC",
+   "role": "Shareholder owning more than 5%",
+   "before": 5703100,
+   "sold": 0
+  },
+  {
+   "name": "Ryan Jesenik",
+   "role": "Named executive officer or director",
+   "before": 3577248,
+   "sold": 0
+  },
+  {
+   "name": "Christoph Birchler",
+   "role": "Named executive officer or director",
+   "before": 104337,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors, executive officers and nearly all shareholders agreed not to sell shares for 180 days after the prospectus date, with some exceptions.",
+  "days": 180
+ },
+ "what": "Orion180 sells home insurance, mainly in the excess and surplus market, through independent agents in 14 U.S. states.",
+ "short": "Orion180",
+ "proceeds": "The company expects about $220 million in net proceeds. It plans to use them to grow its business and for general purposes, and may repay part of its $282 million credit facility debt.",
+ "risks": [
+  "The company relies on independent agents to sell its products, and losing key agents or their support could hurt its business.",
+  "The company has grown fast, but its recent growth rates may not continue in the future.",
+  "Fast growth may put heavy demands on the company's resources, systems and staff, which could hurt its business.",
+  "If the company handles insurance claims poorly, its business, results and prospects could suffer.",
+  "Competition in the industry is intense, and the company may struggle to compete, grow or keep its market share."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2124472/000162828026062794/orion180-424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

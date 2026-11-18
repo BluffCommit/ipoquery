@@ -28,12 +28,86 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "net",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 17.963,
+    "operating": 0.931
+   },
+   {
+    "label": "2025",
+    "revenue": 29.463,
+    "operating": 2.244
+   }
+  ],
+  "facts": [
+   {
+    "value": 3.981,
+    "label": "cash on Dec 31, 2025"
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Yethro Dinamarca Santelices",
+   "role": "Director and Chair of the board",
+   "before": 7756267,
+   "sold": 0
+  },
+  {
+   "name": "Chien-Fu Chen Chen",
+   "role": "Chief executive officer and director",
+   "before": 2243733,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors and officers, and holders of 5% or more of its shares agreed not to sell shares for 180 days after the date of the prospectus, with some exceptions.",
+  "days": 180
+ },
+ "what": "It runs a ticketing and event technology platform for concerts, sports and other live events across Latin America.",
+ "short": "Ticketplus",
+ "proceeds": "The company expects about $13.1 million after costs. It plans to use the money to develop its platform, expand abroad, make acquisitions, fund sales and marketing, and for general business needs.",
+ "risks": [
+  "Ticket sales depend on how many live events are held and whether people choose to attend them.",
+  "Events like disease outbreaks, attacks, unrest or severe weather could stop events and force the company to refund tickets.",
+  "The ticketing industry is very competitive, which could push the company to cut fees, spend more or lose sales.",
+  "The company needs to keep attracting and keeping ticket buyers, sellers and event partners, and losing them would hurt its business.",
+  "If the company fails to keep improving its platform and launching useful new features, its business will suffer."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2104296/000121390026086641/ea0301091-424b4_ticket.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

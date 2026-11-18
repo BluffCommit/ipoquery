@@ -34,12 +34,77 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "Who is selling",
+   "why": "the two AI readers gave different names or figures",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 181.35,
+    "operating": 18.459
+   },
+   {
+    "label": "2025",
+    "revenue": 447.819,
+    "operating": 44.304
+   }
+  ],
+  "facts": [
+   {
+    "value": 28.346,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": 21.747,
+    "label": "net result, 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "what": "It designs, builds and installs power systems and equipment for large data centers, including those used for AI and cloud computing.",
+ "short": "Accelevation",
+ "proceeds": "It will use about $170.6 million of net proceeds to buy units of Holdings LLC. Holdings LLC will then use that money to repay about $170.6 million of its credit agreement borrowings. It gets none of the money from shares sold by existing holders.",
+ "risks": [
+  "Its business depends on continued building of data centers, and weaker demand for data center capacity would hurt its sales.",
+  "Local opposition, zoning limits and power shortages could delay or stop data center projects that use its products.",
+  "Bad publicity about data centers, its customers or its products could reduce demand and harm its customer relationships.",
+  "Its customers often rely on outside financing to pay for their data center construction projects."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2141406/000162828026064097/accelevationllc-424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

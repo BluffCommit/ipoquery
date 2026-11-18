@@ -28,6 +28,16 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Who is selling",
+   "how": "two AI readers agree, and the shares add up to the number on the cover",
+   "by": "model"
   }
  ],
  "hidden": [
@@ -36,8 +46,115 @@
    "why": "the number of shares outstanding after the offering could not be read"
   },
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2023",
+    "revenue": 561,
+    "operating": 57
+   },
+   {
+    "label": "2024",
+    "revenue": 653,
+    "operating": 44
+   }
+  ],
+  "facts": [
+   {
+    "value": 232,
+    "label": "cash on Mar 29, 2026"
+   },
+   {
+    "value": 5,
+    "label": "net result, 2024",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "sellers": [
+  {
+   "name": "Blackstone",
+   "role": "Private equity firm and majority owner",
+   "before": 171858631,
+   "sold": 25284588
+  },
+  {
+   "name": "Abu Dhabi Investment Authority",
+   "role": "Government-run investor",
+   "before": 40525336,
+   "sold": 4411064
+  }
+ ],
+ "others": [
+  {
+   "name": "Peter Cancro",
+   "role": "Long-time owner of the business; director or officer",
+   "before": 30274744,
+   "sold": 0
+  },
+  {
+   "name": "Charles R. Morrison",
+   "role": "Director or executive officer",
+   "before": 93492,
+   "sold": 0
+  },
+  {
+   "name": "Walter C. Tombs",
+   "role": "Director or executive officer",
+   "before": 61522,
+   "sold": 0
+  },
+  {
+   "name": "Nigel Travis",
+   "role": "Director or executive officer",
+   "before": 52797,
+   "sold": 0
+  },
+  {
+   "name": "Fran Horowitz",
+   "role": "Director or executive officer",
+   "before": 25199,
+   "sold": 0
+  },
+  {
+   "name": "Michele Allen",
+   "role": "Director or executive officer",
+   "before": 18675,
+   "sold": 0
+  }
+ ],
+ "what": "It franchises fast casual submarine sandwich shops, with 3,300 stores in two countries, nearly all run by franchise owners.",
+ "short": "Jersey Mike's",
+ "risks": [
+  "The company works in a very competitive industry, which could hurt its business and results.",
+  "Food safety problems, food-borne illness and public health worries could harm the business.",
+  "The store returns and earnings figures it reports may not predict how well a new franchise store will do.",
+  "Unexpected events have hurt the business before and could hurt it again.",
+  "If the company or its franchise owners' outside providers cannot carry out a recovery plan after a disaster, the business could suffer badly."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2127043/000119312526326453/project_70_424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

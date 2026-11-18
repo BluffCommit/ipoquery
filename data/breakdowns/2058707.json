@@ -28,12 +28,96 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the two AI readers gave different figures",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "Frazier Life Sciences XI, L.P.",
+   "role": "Venture investor, over 5% holder",
+   "before": 5565980,
+   "sold": 0
+  },
+  {
+   "name": "venBio Global Strategic Fund IV, L.P.",
+   "role": "Venture investor, over 5% holder",
+   "before": 3799016,
+   "sold": 0
+  },
+  {
+   "name": "Alamar HoldCo, LLC",
+   "role": "Over 5% holder, linked to the company that licensed its core technology",
+   "before": 3229279,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Goldman Sachs & Co. LLC",
+   "role": "Investor, over 5% holder",
+   "before": 2435641,
+   "sold": 0
+  },
+  {
+   "name": "Deep Track Biotechnology Master Fund, Ltd",
+   "role": "Investment fund, over 5% holder",
+   "before": 1957139,
+   "sold": 0
+  },
+  {
+   "name": "Tao Fu",
+   "role": "Director or named executive officer",
+   "before": 893456,
+   "sold": 0
+  },
+  {
+   "name": "Petter Veiby",
+   "role": "Director or named executive officer",
+   "before": 212258,
+   "sold": 0
+  },
+  {
+   "name": "Hubert Chen",
+   "role": "Director or named executive officer",
+   "before": 153279,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its officers, directors and all stockholders agreed not to sell shares for 180 days after the date of this prospectus, with some exceptions. After that, nearly all locked-up shares can be sold.",
+  "days": 180
+ },
+ "what": "Attovia is a clinical-stage biotech company developing new antibody-based medicines for diseases caused by the immune system.",
+ "short": "Attovia",
+ "risks": [
+  "It is a young company with no approved products and no completed clinical trials, so its chances of success are hard to judge.",
+  "It has lost money since it began, has no product revenue, and may never become profitable.",
+  "Even with this offering, it will need a lot more money, and may have to cut or delay its programs if it cannot raise it."
+ ],
+ "risks_note": "The first 3 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2058707/000119312526334997/d40469d424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

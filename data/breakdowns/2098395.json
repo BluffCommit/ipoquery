@@ -34,12 +34,73 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to Mar 2025",
+    "revenue": null,
+    "operating": -1.93
+   },
+   {
+    "label": "Year to Mar 2026",
+    "revenue": null,
+    "operating": -3.191
+   }
+  ],
+  "facts": [
+   {
+    "value": 0.009,
+    "label": "cash on Mar 31, 2026"
+   },
+   {
+    "value": -3.157,
+    "label": "net result, Year to Mar 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "what": "IMC Rare Earths explores for rare earth minerals at its Itarantim Project in Brazil. It has no mines and no revenue.",
+ "short": "IMC Rare Earths",
+ "proceeds": "It plans to spend $13,000,000 on exploring and developing the Itarantim Project, $2,000,000 on licences, permits and reporting, and $1,000,000 on general costs. Management can change these amounts.",
+ "risks": [
+  "It runs no mines, and exploring and developing the Itarantim Project is highly speculative and may never lead to a working mine.",
+  "Its success depends on the Itarantim Project, its main project, which is still at the exploration stage.",
+  "It cannot guarantee that its properties will lead to commercial mining of mineral deposits or to mines.",
+  "It has a short operating history and no revenue, and may have to scale back or stop operating if it does not advance to production.",
+  "The Itarantim Project needs much more exploration and technical study before any decision to develop it, and this may not succeed."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2098395/000149315226035207/form424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

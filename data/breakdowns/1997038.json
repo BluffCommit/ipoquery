@@ -34,12 +34,134 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 1.194,
+    "operating": -53.877
+   },
+   {
+    "label": "2025",
+    "revenue": 9.426,
+    "operating": -82.35
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 12.753,
+   "operating": -53.511,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 3.928,
+   "prior_operating": -35.675
+  },
+  "facts": [
+   {
+    "value": 207.878,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": -50.116,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Entities affiliated with Catalio",
+   "role": "Investor",
+   "before": 4196585,
+   "sold": 0
+  },
+  {
+   "name": "Nexus Ventures V Ltd.",
+   "role": "Investor",
+   "before": 3237199,
+   "sold": 0
+  },
+  {
+   "name": "Frederick Manby, Ph.D.",
+   "role": "Executive officer or director",
+   "before": 1964408,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Ascenta Capital",
+   "role": "Investor",
+   "before": 1927252,
+   "sold": 0
+  },
+  {
+   "name": "Thomas Miller, Ph.D.",
+   "role": "Executive officer or director",
+   "before": 1393924,
+   "sold": 0
+  },
+  {
+   "name": "Michael Secora, Ph.D.",
+   "role": "Executive officer or director",
+   "before": 442851,
+   "sold": 0
+  },
+  {
+   "name": "William Rastetter, Ph.D.",
+   "role": "Director",
+   "before": 257770,
+   "sold": 0
+  },
+  {
+   "name": "Peter Olson, Ph.D.",
+   "role": "Executive officer or director",
+   "before": 97127,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors and officers, and nearly all other holders agreed not to sell shares for 180 days after the prospectus date without the underwriters' consent. After that, the remaining shares can be sold.",
+  "days": 180
+ },
+ "what": "Iambic uses artificial intelligence and automated lab work to discover and develop new medicines, with drug candidates in clinical trials.",
+ "short": "Iambic",
+ "risks": [
+  "Iambic is young and has no approved products, so it is hard to judge its prospects.",
+  "It has lost a lot of money since it started and may never become profitable.",
+  "It will need a large amount of extra money to develop its drug candidates and run its business.",
+  "Its quarterly and yearly results may swing widely, which could push its stock price down.",
+  "Future deals or acquisitions could raise its costs, dilute shareholders, add debt, or bring other risks."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1997038/000119312526422865/iambic_inception_424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

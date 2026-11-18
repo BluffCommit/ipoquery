@@ -34,12 +34,143 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
- "hidden": [
+ "hidden": [],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 2.778,
+    "operating": -29.09
+   },
+   {
+    "label": "2025",
+    "revenue": 13.562,
+    "operating": -59.922
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 6.358,
+   "operating": -51.131,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 5.578,
+   "prior_operating": -26.593
+  },
+  "facts": [
+   {
+    "value": -53.443,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "name": "ARCH Venture Fund XII, L.P.",
+   "role": "Venture investor",
+   "before": 13522507,
+   "sold": 0
+  },
+  {
+   "name": "FMR LLC",
+   "role": "Investment manager (Fidelity funds)",
+   "before": 3863783,
+   "sold": 0
+  },
+  {
+   "name": "Invus Public Equities, L.P.",
+   "role": "Investor",
+   "before": 3227866,
+   "sold": 0
+  },
+  {
+   "name": "John Maraganore, Ph.D.",
+   "role": "Director",
+   "before": 2121831,
+   "sold": 0
+  },
+  {
+   "name": "Entities Affiliated with Viking",
+   "role": "Investor",
+   "before": 2027005,
+   "sold": 0
+  },
+  {
+   "name": "Andrew (Andy) Orth, M.B.A.",
+   "role": "President, chief executive, director",
+   "before": 1094544,
+   "sold": 0
+  },
+  {
+   "name": "Tracy Zimmermann, Ph.D.",
+   "role": "Chief scientific officer",
+   "before": 269569,
+   "sold": 0
+  },
+  {
+   "name": "Baisong Mei, M.D., Ph.D.",
+   "role": "Chief medical officer",
+   "before": 234678,
+   "sold": 0
   }
- ]
+ ],
+ "rounds": [
+  {
+   "name": "Series Seed",
+   "when": "2023",
+   "price": 1.0
+  },
+  {
+   "name": "Series A",
+   "when": "2024",
+   "price": 10.0295
+  }
+ ],
+ "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
+ "lockup": {
+  "summary": "The company, its directors and officers, and holders of nearly all its stock cannot sell for at least 180 days after the prospectus date. Goldman Sachs and Jefferies can approve a sale earlier, and some exceptions apply.",
+  "days": 180
+ },
+ "what": "City Therapeutics is a clinical-stage biotech company developing RNA interference medicines that switch off proteins linked to disease.",
+ "short": "City Therapeutics",
+ "proceeds": "It expects net proceeds of about $181.5 million. It plans about $30.0 million for CITY-FXI, $20.0 million for CITY-RBP4, $40.0 million for CITY-TFR2 and $70.0 million for its City Platform. The rest goes to working capital and general costs.",
+ "risks": [
+  "The company is young, has no approved products, and has a short history, so it is hard to judge its prospects.",
+  "It has never earned revenue from selling drugs, and becoming profitable depends on many things going right.",
+  "Its way of finding and developing drugs is new and may never produce products that can be sold.",
+  "It has focused on RNAi technology and its City Platform, so its future depends heavily on them working.",
+  "Its approach to designing and developing programs is unproven, and it may fail to find product candidates of commercial value."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2143850/000110465926116636/tm2619715-10_424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

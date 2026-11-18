@@ -34,12 +34,129 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "a round has no price in US dollars",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": null,
+    "operating": -26.317
+   },
+   {
+    "label": "2025",
+    "revenue": null,
+    "operating": -61.889
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": null,
+   "operating": -50.23,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": null,
+   "prior_operating": -25.369
+  },
+  "facts": [
+   {
+    "value": -48.912,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Electra Therapeutics LLC",
+   "role": "Holding entity for early Series A shareholders",
+   "before": 15065741,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with OrbiMed",
+   "role": "Venture investor",
+   "before": 3549527,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with Westlake BioPartners Fund I, L.P.",
+   "role": "Venture investor",
+   "before": 2820403,
+   "sold": 0
+  },
+  {
+   "name": "Redmile Biopharma Investments II, L.P.",
+   "role": "Investor",
+   "before": 2811887,
+   "sold": 0
+  },
+  {
+   "name": "Aventis Inc.",
+   "role": "Investor, linked to Sanofi",
+   "before": 2461948,
+   "sold": 0
+  },
+  {
+   "name": "LSP 7 Coöperatief U.A.",
+   "role": "Investor",
+   "before": 2461948,
+   "sold": 0
+  },
+  {
+   "name": "Entities affiliated with New Leaf Ventures",
+   "role": "Venture investor",
+   "before": 1722233,
+   "sold": 0
+  },
+  {
+   "name": "Quehuong (Kathy) Dong, Pharm.D., M.B.A.",
+   "role": "Executive officer",
+   "before": 1399175,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Directors, executives and holders of nearly all shares agreed not to sell for 180 days after the prospectus date. The underwriters can allow sales sooner with written consent.",
+  "days": 180
+ },
+ "what": "Electra Therapeutics develops antibody medicines that remove disease-causing immune cells, aiming to treat immune-mediated diseases and cancer.",
+ "short": "Electra Therapeutics",
+ "proceeds": "It expects about $319.9 million in net proceeds. It plans to fund trials of its lead drug ipsoprubart and its drug ELA822, and to pay for other research, working capital and general costs.",
+ "risks": [
+  "Electra is young, has no approved products and has never earned revenue, so its chances of success are hard to judge.",
+  "It has lost money every period and expects bigger losses ahead. It may never make a profit.",
+  "Even after this offering, it will need much more money, and may have to cut or delay its programs if it cannot raise it."
+ ],
+ "risks_note": "The first 3 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2088082/000119312526395670/d61940d424b4.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

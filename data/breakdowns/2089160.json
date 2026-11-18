@@ -34,7 +34,39 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the company reports in EUR, not US dollars",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "what": "It develops real estate projects on land in Latin America, including Costa Rica.",
+ "short": "Santa Ana",
+ "risks": [
+  "Property development carries sales risk and building risk, such as cost overruns and delays, so its projects may not succeed.",
+  "It will need a lot more money after this offering, and there is serious doubt it can keep operating without extra financing.",
+  "Political, legal and financial problems in the Latin American countries where it works could hurt its business.",
+  "It is a young company with a short track record, and its controls and compliance habits are untested.",
+  "Its projects are in countries with different currencies, so exchange rate swings could make its reported results less steady."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2089160/000149315226043362/formf-1.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }
