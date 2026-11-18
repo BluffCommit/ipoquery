@@ -6,7 +6,7 @@ on:
   workflow_dispatch:        # lets you press "Run workflow" by hand
   push:                     # also run when the tracker itself changes
     branches: [main]
-    paths: ["tracker.py", "reader.py", "site/**", "data/breakdowns/**", ".github/workflows/update.yml"]
+    paths: ["tracker.py", "reader.py", "reader_model.py", "site/**", "data/breakdowns/**", ".github/workflows/update.yml"]
 
 permissions:
   contents: write           # so the job can save the updated list back to the repository
@@ -34,6 +34,12 @@ jobs:
         run: python reader.py
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'IPO Query info@ipoquery.com' }}
+      - name: Test the model step on two filings (asks a model only when an API key is set)
+        continue-on-error: true
+        run: python reader_model.py
+        env:
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'IPO Query info@ipoquery.com' }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - name: Rebuild the page with the breakdowns
         run: python tracker.py --render-only
       - name: Save changes

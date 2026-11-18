@@ -184,6 +184,37 @@ def check(label, got, want):
     print(f"  ok  {label}")
 
 
+LONG = page(
+    p("Subject to completion, dated November 10, 2026"), p("We are offering 2,000,000 shares and the selling stockholders are offering 1,000,000 shares."),
+    p("TABLE OF CONTENTS"), table(("Prospectus Summary", "1"), ("Risk Factors", "14")), p("Risk Factors"), p("Use of Proceeds"), p("Principal and Selling Stockholders"),
+    p("PROSPECTUS SUMMARY"), p("Testco makes widgets for hospitals. " * 30), p("The Offering"), table(("Common stock offered by us", "2,000,000 shares")),
+    p("Summary Consolidated Financial Data"), table(("(in thousands)", "2024", "2025"), ("Revenue", "$", "12,345", "$", "23,456"), ("Loss from operations", "(1,111)", "(2,222)")),
+    p("RISK FACTORS"), p("We have a history of losses. " * 60), p("USE OF PROCEEDS"), p("We will use the money for general corporate purposes. " * 5),
+    p("PRINCIPAL AND SELLING STOCKHOLDERS"), table(("Jane Roe", "5,000,000", "600,000"), ("Venture Fund I", "9,000,000", "400,000"), ("John Doe", "3,000,000", "-")),
+    p("SHARES ELIGIBLE FOR FUTURE SALE"), p("Our directors and officers have agreed not to sell shares for 180 days after the date of this prospectus. " * 3),
+    p("INDEX TO CONSOLIDATED FINANCIAL STATEMENTS"), p("Notes. " * 50), p("We issued Series A convertible preferred stock at an original issue price of $1.2500 per share."),
+    p("Item 15. Recent Sales of Unregistered Securities."), p("In March 2024 we sold 4,000,000 shares of Series A preferred stock at $1.25 per share. " * 2))
+
+
+def model_checks(folder):
+    import reader_model
+    sections = reader_model.cut(reader_model.to_lines(LONG))
+    check("sections: all found, the real section rather than its contents-page entry",
+          (sorted(sections), sections["risks"].count("history of losses") > 5, sections["holders"].split("\n")[1]),
+          (sorted(reader_model.WANTED), True, "Jane Roe 5,000,000 600,000"))
+    answer = {"financials": {"unit": "thousands", "years": [{"label": "2024", "revenue": 12345, "operating": -1111}, {"label": "2025", "revenue": 23456, "operating": -9999}]},
+              "sellers": [{"name": "Jane Roe", "before": 5000000, "sold": 600000}, {"name": "Venture Fund I", "before": 9000000, "sold": 400000}],
+              "others": [{"name": "John Doe", "before": 3000000}], "rounds": [{"name": "Series A", "price": 1.25}], "lockup": {"days": 180}}
+    report = reader_model.check(answer, reader.to_text(LONG), {"holder_shares": 1000000}, None)
+    check("answers: an invented figure is caught, sellers add up to the cover", (report["figures_given"], report["figures_not_printed_in_filing"], report["sellers_add_up"]["agree"]),
+          (11, ["financials 2025 operating"], True))
+    (folder / "fixtures" / tracker.Fetcher.fixture_name("https://www.sec.gov/x/long.htm")).write_bytes(LONG)
+    (folder / "list.json").write_text(json.dumps({"ipos": [{"cik": reader_model.TEST_CIKS[0], "name": "Testco", "filings": [{"form": "S-1/A", "date": "2026-11-10", "url": "https://www.sec.gov/x/long.htm"}]}]}))
+    dry = reader_model.run(tracker.Fetcher("test", fixtures=folder / "fixtures"), TODAY, folder / "list.json", folder / "breakdowns", folder / "model_test.json", "", log=lambda *_: None)
+    check("without a key: the filing is cut and sized, no model is asked", (dry["asked_model"], dry["deals"][0]["sections_not_found"], dry["deals"][0]["models"], dry["deals"][0]["tokens_estimated"] > 1000),
+          (False, [], {}, True))
+
+
 def main():
     folder = Path(tempfile.mkdtemp())
     try:
@@ -253,6 +284,7 @@ def main():
         third = go()
         check("an amended filing is read again and the range date recorded", (third["queued"], load(9100003)["range_set"]), (1, "2026-11-15"))
         check("text: hidden tagging data is ignored", "9,999,999" in reader.to_text(BIG), False)
+        model_checks(folder)
         print("\nall checks passed")
     finally:
         shutil.rmtree(folder, ignore_errors=True)
