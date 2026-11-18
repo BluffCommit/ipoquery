@@ -579,7 +579,8 @@ function ipoPage(r){
       <tr class="hi"><th>${dayW(o.expected_pricing)}</th><td>The final price is expected to be set. A final prospectus follows with the share counts.</td></tr>
       ${o.expected_trading ? `<tr><th>${dayW(o.expected_trading)}</th><td>Shares are expected to start trading on ${esc(b.exchange)}${r.tickers.length ? ' as ' + esc(r.tickers[0]) : ''}.</td></tr>` : ''}
       </tbody></table></div><p class="note">Dates: <a href="${esc(o.dates_url)}">${esc(o.dates_from)} ↗</a>. They are not in the filing and can move.</p>`;
-  if (b.lockup) { const lockMax = Math.max(...b.lockup.events.map(e => e.shares)), lockTotal = b.lockup.events.reduce((t, e) => t + e.shares, 0);
+  if (b.lockup && !(b.lockup.events || []).length) nextHTML += `<div class="hair"${pricingAhead ? ' style="border-top:1px solid var(--line);margin-top:6px"' : ''}><div class="mod"><h3>${b.lockup.days ? `Insiders are locked up for ${b.lockup.days} days` : 'When insiders can sell'}</h3><p>${esc(b.lockup.summary)}</p>${src(b, 'Shares eligible for future sale')}</div></div>`;
+  else if (b.lockup) { const lockMax = Math.max(...b.lockup.events.map(e => e.shares)), lockTotal = b.lockup.events.reduce((t, e) => t + e.shares, 0);
     nextHTML += `<div class="hair"${pricingAhead ? ' style="border-top:1px solid var(--line);margin-top:6px"' : ''}><div class="mod"><h3>When insiders can sell</h3><p>${esc(b.lockup.summary)} In total, up to ${shares(lockTotal)} more shares can come to market, ${Math.round(lockTotal / m.shares)} times the number sold in the IPO.</p>
       <div class="rows r2">${b.lockup.events.map(e => `<span class="lab">${esc(e.when)}<small>${esc(e.what)}</small></span><span class="trk"><i style="width:${e.shares / lockMax * 100}%"></i></span><span class="v">up to ${shares(e.shares)}</span>`).join('')}</div>${src(b, 'Shares eligible for future sale')}</div></div>`; }
   else nextHTML += pending(`${pricingAhead ? '' : priced ? '' : 'The filing gives no pricing date; that is announced separately. '}When insiders are allowed to sell has not been read from this filing yet.`);
@@ -587,7 +588,7 @@ function ipoPage(r){
   const manual = b.method === 'manual';
   return head(keys) + `
   <div class="wrap stack" style="margin-top:22px">
-    <section><div class="bar"><h2>In one minute</h2><span>${manual ? 'Read by hand' : 'Read automatically'} on ${day(b.loaded)}</span></div>
+    <section><div class="bar"><h2>In one minute</h2><span>${manual ? 'Read by hand' : 'Read automatically'} on ${day((b.model && b.model.read) || b.loaded)}</span></div>
       <div class="hair min">
         <div><h3>The deal</h3><p>${deal}</p></div><div><h3>The business</h3><p>${biz}</p></div>
         <div><h3>Who’s cashing out</h3><p>${cash}</p></div><div><h3>What happens next</h3><p>${next}</p></div>
@@ -601,7 +602,8 @@ function ipoPage(r){
         <div class="hair"><ol class="risks">${b.risks.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div><p class="note">${src(b, 'Risk factors')}</p></section>` : ''}
     </div>
     <aside class="rail">${filingsBox(r)}
-      <section class="rbox"><h2>How this page is made</h2><p>${manual ? `This breakdown was read by hand from ${esc(b.basis)}, as the first test of the format. The automated reader will replace it.` : `Read automatically from ${esc(b.basis)}. A figure is shown only if it passes a consistency check.`} ${priced ? '' : 'Dollar figures use the midpoint of the price range until the deal prices.'}</p></section>
+      <section class="rbox"><h2>How this page is made</h2><p>${manual ? `This breakdown was read by hand from ${esc(b.basis)}, as the first test of the format. The automated reader will replace it.` : b.model ? `Read automatically from ${esc(b.basis)}. The offer terms are read by fixed rules. The rest is read by two AI models working separately: a figure is shown only when both give the same number and it is printed in the filing. The written summaries are by AI.`
+        : `Read automatically from ${esc(b.basis)}. A figure is shown only if it passes a consistency check.`} ${priced ? '' : 'Dollar figures use the midpoint of the price range until the deal prices.'}</p></section>
       ${b.checks && b.checks.length ? `<section class="rbox"><h2>Checks passed</h2><ul>${b.checks.map(c => `<li><b style="font-weight:600">${esc(c.item)}</b><small>${esc(c.how)}</small></li>`).join('')}</ul></section>` : ''}
       ${b.hidden && b.hidden.length ? `<section class="rbox"><h2>Left out</h2><ul>${b.hidden.map(c => `<li><b style="font-weight:600">${esc(c.item)}</b><small>${esc(c.why)}</small></li>`).join('')}</ul></section>` : ''}
     </aside></div>

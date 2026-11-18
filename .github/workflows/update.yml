@@ -18,7 +18,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -34,7 +34,7 @@ jobs:
         run: python reader.py
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'IPO Query info@ipoquery.com' }}
-      - name: Test the model step on two filings (asks a model only when an API key is set)
+      - name: Have two AI readers fill in the rest of each breakdown (skipped when no API key is set)
         continue-on-error: true
         run: python reader_model.py
         env:

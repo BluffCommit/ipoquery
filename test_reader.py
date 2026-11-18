@@ -197,31 +197,86 @@ LONG = page(
     p("Subject to completion, dated November 10, 2026"), p("We are offering 2,000,000 shares and the selling stockholders are offering 1,000,000 shares."),
     p("TABLE OF CONTENTS"), table(("Prospectus Summary", "1"), ("Risk Factors", "14")), p("Risk Factors"), p("Use of Proceeds"), p("Principal and Selling Stockholders"),
     p("PROSPECTUS SUMMARY"), p("Testco makes widgets for hospitals. " * 30), p("The Offering"), table(("Common stock offered by us", "2,000,000 shares")),
-    p("Summary Consolidated Financial Data"), table(("(in thousands)", "2024", "2025"), ("Revenue", "$", "12,345", "$", "23,456"), ("Loss from operations", "(1,111)", "(2,222)")),
-    p("RISK FACTORS"), p("We have a history of losses. " * 60), p("USE OF PROCEEDS"), p("We will use the money for general corporate purposes. " * 5),
-    p("PRINCIPAL AND SELLING STOCKHOLDERS"), table(("Jane Roe", "5,000,000", "600,000"), ("Venture Fund I", "9,000,000", "400,000"), ("John Doe", "3,000,000", "-")),
+    p("Summary Consolidated Financial Data"), table(("(in thousands)", "2024", "2025"), ("Revenue", "$", "12,345", "$", "23,456"), ("Loss from operations", "(1,111)", "(2,222)"),
+                                                    ("Net loss", "(1,500)", "(2,900)"), ("Cash and cash equivalents", "", "8,765")),
+    p("RISK FACTORS"), p("We have a history of losses and may never be profitable."), p("We have incurred losses in every year. " * 30),
+    p("We depend on a single supplier for our main component."), p("Our supplier could stop supplying us. " * 30), p("USE OF PROCEEDS"),
+    p("We will use the money for general corporate purposes, including about 40% for a new factory. " * 3),
+    p("PRINCIPAL AND SELLING STOCKHOLDERS"), table(("Jane Roe(1)", "5,000,000", "600,000"), ("Venture Fund I", "9,000,000", "400,000"), ("John Doe", "3,000,000", "-")),
     p("SHARES ELIGIBLE FOR FUTURE SALE"), p("Our directors and officers have agreed not to sell shares for 180 days after the date of this prospectus. " * 3),
-    p("INDEX TO CONSOLIDATED FINANCIAL STATEMENTS"), p("Notes. " * 50), p("We issued Series A convertible preferred stock at an original issue price of $1.2500 per share."),
+    p("The underwriting discount is $1.26 per share."), p("Convertible notes"), p("The notes have an issuance price of $125.00 per unit."),
+    p("INDEX TO CONSOLIDATED FINANCIAL STATEMENTS"), p("Notes. " * 50), p("8. Convertible Preferred Stock"),
+    table(("Series", "Shares", "Original issue price"), ("Series A", "4,000,000", "$1.25"), ("Series B", "2,000,000", "$6.00")),
     p("Item 15. Recent Sales of Unregistered Securities."), p("In March 2024 we sold 4,000,000 shares of Series A preferred stock at $1.25 per share. " * 2))
+
+GOOD = {"what": "Testco makes widgets for hospitals.", "short": "Testco", "proceeds": "It will spend about 40% on a new factory and the rest on general costs.",
+        "financials": {"unit": "thousands", "currency": "USD", "years": [{"period_end": "2024-12-31", "revenue": 12345, "operating": -1111, "net": -1500},
+                                                                         {"period_end": "2025-12-31", "revenue": 23456, "operating": -2222, "net": -2900}],
+                       "part_year": None, "cash": {"value": 8765, "date": "2025-12-31"}},
+        "sellers": [{"name": "Jane Roe", "role": "Founder", "before": 5000000, "sold": 600000}, {"name": "Venture Fund I", "role": "Venture investor", "before": 9000000, "sold": 400000}],
+        "others": [{"name": "John Doe", "role": "Director", "before": 3000000}],
+        "rounds": [{"name": "Series A", "when": "2024", "price": 1.25}, {"name": "Series B", "when": None, "price": 6.0}],
+        "lockup": {"days": 180, "summary": "Directors and officers cannot sell for 180 days.", "early": False},
+        "risks": ["It has lost money every year.", "It relies on one supplier.", "A third risk.", "A fourth risk.", "A fifth risk."]}
 
 
 def model_checks(folder):
-    import reader_model
-    sections = reader_model.cut(reader_model.to_lines(LONG))
+    import copy
+    import reader_model as rm
+    sections = rm.cut(rm.to_lines(LONG))
     check("sections: all found, the real section rather than its contents-page entry",
-          (sorted(sections), sections["risks"].count("history of losses") > 5, sections["holders"].split("\n")[1]),
-          (sorted(reader_model.WANTED), True, "Jane Roe 5,000,000 600,000"))
-    answer = {"financials": {"unit": "thousands", "years": [{"label": "2024", "revenue": 12345, "operating": -1111}, {"label": "2025", "revenue": 23456, "operating": -9999}]},
-              "sellers": [{"name": "Jane Roe", "before": 5000000, "sold": 600000}, {"name": "Venture Fund I", "before": 9000000, "sold": 400000}],
-              "others": [{"name": "John Doe", "before": 3000000}], "rounds": [{"name": "Series A", "price": 1.25}], "lockup": {"days": 180}}
-    report = reader_model.check(answer, reader.to_text(LONG), {"holder_shares": 1000000}, None)
-    check("answers: an invented figure is caught, sellers add up to the cover", (report["figures_given"], report["figures_not_printed_in_filing"], report["sellers_add_up"]["agree"]),
-          (11, ["financials 2025 operating"], True))
-    (folder / "fixtures" / tracker.Fetcher.fixture_name("https://www.sec.gov/x/long.htm")).write_bytes(LONG)
-    (folder / "list.json").write_text(json.dumps({"ipos": [{"cik": reader_model.TEST_CIKS[0], "name": "Testco", "filings": [{"form": "S-1/A", "date": "2026-11-10", "url": "https://www.sec.gov/x/long.htm"}]}]}))
-    dry = reader_model.run(tracker.Fetcher("test", fixtures=folder / "fixtures"), TODAY, folder / "list.json", folder / "breakdowns", folder / "model_test.json", "", log=lambda *_: None)
-    check("without a key: the filing is cut and sized, no model is asked", (dry["asked_model"], dry["deals"][0]["sections_not_found"], dry["deals"][0]["models"], dry["deals"][0]["tokens_estimated"] > 1000),
-          (False, [], {}, True))
+          (sorted(sections), sections["holders"].split("\n")[1], "Series B 2,000,000 $6.00" in sections["preferred"], "issuance price of $125" in sections["preferred"]),
+          (sorted(rm.WANTED), "Jane Roe(1) 5,000,000 600,000", True, False))
+    check("sections: risk factors keep the headings and drop the long explanations", sections["risks"].split("\n")[:3],
+          ["RISK FACTORS", "We have a history of losses and may never be profitable.", "We depend on a single supplier for our main component."])
+    text, offer = reader.to_text(LONG), {"low": 18.0, "high": 22.0, "company_shares": 2000000, "holder_shares": 1000000}
+    fields, checks, hidden = rm.merge(GOOD, copy.deepcopy(GOOD), text, offer)
+    check("two readers agree: everything is kept", (sorted(fields), hidden, len(checks)),
+          (["financials", "lockup", "others", "proceeds", "risks", "risks_note", "rounds", "rounds_note", "sellers", "short", "what"], [], 4))
+    check("figures are turned into millions, with cash and the net result",
+          (fields["financials"]["years"][1], [(f["value"], f["label"]) for f in fields["financials"]["facts"]]),
+          ({"label": "2025", "revenue": 23.456, "operating": -2.222}, [(8.765, "cash on Dec 31, 2025"), (-2.9, "net result, 2025")]))
+
+    def changed(edit):
+        other = copy.deepcopy(GOOD)
+        edit(other)
+        return other
+    left = lambda first, second: {h["item"]: h["why"] for h in rm.merge(first, second, text, offer)[2]}
+    check("readers differ on one holder: the sellers are left out, the rest stays",
+          left(GOOD, changed(lambda a: a["sellers"][0].update(before=5100000))), {"Who is selling": "the two AI readers gave different names or figures"})
+    both = changed(lambda a: a["sellers"][1].update(sold=300000))
+    check("holders that do not add up to the cover are left out", left(both, copy.deepcopy(both))["Who is selling"], "the named holders' shares add up to 900,000, not the 1,000,000 on the cover")
+    both = changed(lambda a: a["financials"]["years"][1].update(revenue=99999))
+    check("a figure both readers give but the filing does not print is left out", left(both, copy.deepcopy(both)), {"Revenue, results and cash": "a figure the readers gave is not printed in the filing"})
+    both = changed(lambda a: a["rounds"][1].update(price=125.0))
+    check("a round priced far above the IPO is treated as a missed share split", left(both, copy.deepcopy(both))["What earlier rounds paid"][:52], "the last round's price does not sit believably next ")
+    both = changed(lambda a: a.update(proceeds="It will raise $84.6 billion."))
+    check("a summary with a number the filing does not print is dropped", "proceeds" in rm.merge(both, both, text, offer)[0], False)
+    check("differences between readers are listed", rm.differences(GOOD, changed(lambda a: (a["rounds"][0].update(price=12.5), a["lockup"].update(days=90)))),
+          ["rounds series a price: 1.25 / 12.5", "lock-up days: 180 / 90"])
+
+    # a whole run, with the models replaced by canned answers
+    url = "https://www.sec.gov/x/long.htm"
+    (folder / "fixtures" / tracker.Fetcher.fixture_name(url)).write_bytes(LONG)
+    (folder / "list.json").write_text(json.dumps({"ipos": [{"cik": 9200001, "name": "TESTCO WIDGETS INC"}, {"cik": 9100009, "name": "TESTCO HAND INC"}]}))
+    bdir = folder / "model_breakdowns"
+    bdir.mkdir()
+    (bdir / "9200001.json").write_text(json.dumps({"cik": 9200001, "method": "auto", "doc": url, "offer": offer, "checks": [{"item": "Price range", "how": "x"}],
+                                                   "hidden": [{"item": "Revenue, results and cash", "why": "not tagged"}]}))
+    (bdir / "9100009.json").write_text(json.dumps({"cik": 9100009, "method": "manual", "doc": url, "offer": offer}))
+    asked = []
+    rm.ask = lambda model, user, key: (asked.append(model), (copy.deepcopy(GOOD), {"input_tokens": 27000, "output_tokens": 2000}, None))[1]
+    go = lambda: rm.run(tracker.Fetcher("test", fixtures=folder / "fixtures"), TODAY, folder / "list.json", bdir, folder / "compare.json", "key", log=lambda *_: None)
+    report = go()
+    b = json.loads((bdir / "9200001.json").read_text())
+    check("run: both readers and the referee are asked, hand-made breakdowns are left alone", (sorted(asked), json.loads((bdir / "9100009.json").read_text()).get("model")),
+          (["claude-haiku-5-5", "claude-opus-5-5", "claude-sonnet-5-5"], None))
+    check("run: the breakdown gains the checked fields and loses the 'not tagged' note", ("sellers" in b, "financials" in b, [h["item"] for h in b["hidden"]], len(b["checks"])), (True, True, [], 5))
+    check("run: the comparison records agreement and cost", (report["deals"][0]["readers_differ"], report["deals"][0]["referee_differs_from_first"], report["spent_usd"]), ([], [], 0.2257))
+    asked.clear()
+    go()
+    check("run: a deal already read is not read again", asked, [])
+    check("without a key nothing is asked", rm.run(None, TODAY, folder / "list.json", bdir, folder / "compare.json", "", log=lambda *_: None), {})
 
 
 def main():

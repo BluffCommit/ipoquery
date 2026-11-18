@@ -1,40 +1,48 @@
-#!/usr/bin/env python3
-"""IPO Query reader, model step. For now this only runs a test:
+"""IPO Query reader, model step.
 
     python reader_model.py
 
-It takes the newest prospectus of a few test deals, cuts out the sections that
-answer the site's questions, and asks a model to read them. Nothing it produces
-goes on the site yet. Everything is written to data/model_test.json so the
-result, the checks and the cost can be judged first.
+Runs after reader.py. For each deal whose offer terms the no-model reader has
+confirmed, it cuts the sections that answer the site's questions out of the
+prospectus and has two models read them independently. What they return goes
+into the deal's breakdown only if it passes these checks:
 
-Without ANTHROPIC_API_KEY it still fetches and cuts the filing and reports how
-much text the model would be sent. With the key it also asks each model in
-MODELS and checks the answers:
+    both readers give the same figure
+    the figure is printed in the filing
+    shares sold by the named holders add up to the number on the cover
+    the price of the last funding round sits believably next to the IPO price
+    (if it does not, a share split has usually been missed)
+    any number inside a written summary is printed in the filing
 
-    every figure the model gives must be printed in the filing
-    shares sold by the named holders must add up to the number on the cover,
-    which the no-model reader has already confirmed
-    where a hand-made breakdown exists, the answers are compared with it
+Anything that fails is left out, with the reason recorded for the page.
 
-Only the Python standard library is used.
+For the first COMPARE_DEALS deals a third, stronger model reads the filing too.
+Every disagreement between the three is written to data/model_compare.json, so
+the choice of reader can be made on evidence.
+
+Needs ANTHROPIC_API_KEY. Without it, nothing happens. Only the Python standard
+library is used.
 """
 import datetime as dt
 import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import reader
 import tracker
 
-TEST_VERSION = 3                       # bump to run the test again
-TEST_CIKS = [2130357, 1698506]         # Anthropic (a hand-made breakdown exists to compare with) and an ordinary small deal
-MODELS = ["claude-haiku-5-5", "claude-sonnet-5-5"]
-PRICES = {"claude-haiku-5-5": (0.10, 0.50), "claude-sonnet-5-5": (2.00, 10.00)}    # US$ per million tokens in, out (list prices, Nov 2026)
+MODEL_VERSION = 1                      # bump to have every deal read again
+READERS = ["claude-sonnet-5-5", "claude-haiku-5-5"]     # the first one's wording is used; figures need both to agree
+REFEREE = "claude-opus-5-5"            # also reads the first COMPARE_DEALS deals, for the comparison only
+COMPARE_DEALS = 20
+MAX_DEALS = 20                         # deals read per run
+PRICES = {"claude-haiku-5-5": (0.10, 0.50), "claude-sonnet-5-5": (2.00, 10.00), "claude-opus-5-5": (4.00, 20.00)}    # US$ per million tokens in, out (list prices, Nov 2026)
 API_URL = "https://api.anthropic.com/v1/messages"
 
 # ---------- cutting the filing into sections ----------
@@ -66,8 +74,9 @@ HEADINGS = {
     "index": r"index to (?:the )?(?:consolidated |combined )?financial statements",
     "item15": r"(?:item )?recent sales of unregistered securities",
 }
-WANTED = {"cover": 7000, "summary": 3000, "offering": 9000, "summary_financials": 9000, "risks": 9000, "proceeds": 5000, "holders": 18000,
-          "future_sale": 9000, "item15": 9000, "preferred": 6000}
+WANTED = {"cover": 7000, "summary": 3000, "offering": 9000, "summary_financials": 9000, "risks": 12000, "proceeds": 5000, "holders": 18000,
+          "future_sale": 9000, "preferred": 7000, "item15": 9000}
+PREFERRED = re.compile(r"(?:note )?\d*\.? ?(?:redeemable )?(?:convertible )?(?:redeemable )?preferred (?:stock|shares)(?: and .{0,60})?", re.I)
 
 
 def to_lines(raw):
@@ -119,10 +128,25 @@ def cut(lines):
     for name, limit in WANTED.items():
         if name in best:
             out[name] = take(best[name][1], limit)
+    if "risks" in best:
+        # risk factors run to dozens of pages: keep the headings and short paragraphs, drop the long explanations
+        start = best["risks"][1]
+        short = [lines[start]] + [line for line in lines[start + 1:start + 500] if len(line) <= 320]
+        out["risks"] = ""
+        for line in short:
+            if len(out["risks"]) + len(line) > WANTED["risks"]:
+                break
+            out["risks"] += line + "\n"
+    # what each funding round paid: the preferred stock note in the financial statements, which is restated for share splits
     after = best.get("index", (0, 0))[1]
-    issue = next((i for i, line in enumerate(lines) if i > after and re.search(r"original issue price|issuance price|issue price per share", line, re.I)), None)
-    if issue is not None:
-        out["preferred"] = take(max(after, issue - 12), WANTED["preferred"])
+    spots = [i for i, line in enumerate(lines) if i > after and ((len(line) < 90 and PREFERRED.fullmatch(line.strip(" .:")))
+                                                                or re.search(r"original issue price|issuance price|issue price per share", line, re.I))]
+    scored = []
+    for i in spots:
+        body = take(max(after, i - 3), WANTED["preferred"])
+        scored.append((len(re.findall(r"series [a-z]", body, re.I)) + 10 * len(re.findall(r"issue price|issuance price", body, re.I)), -i, body))
+    if scored and max(scored)[0] > 0:
+        out["preferred"] = max(scored)[2]
     return out
 
 
@@ -133,41 +157,56 @@ SYSTEM = """You pull facts out of excerpts from an IPO prospectus, for a website
 Rules:
 - Use only the excerpts. If something is not stated there, give null or an empty list. Never estimate, calculate or fill in from memory.
 - Copy every figure exactly as the filing prints it, as a plain number with no commas. A loss printed in brackets is a negative number.
-- Text you write must be plain English a general reader understands at once: short sentences, no jargon, no opinions.
-- Reply with one JSON object and nothing else.
+- Text you write must be plain English a general reader understands at once: short sentences, no jargon, no opinions. Write about the company as "it" or by name, never "we" or "our".
+- Reply with one JSON object and nothing else. Keep it compact.
 
 The JSON object has exactly these keys:
 "what": one sentence, at most 20 words, saying what the company does.
 "short": the name people call the company, without Inc., Ltd. and so on.
 "proceeds": one or two sentences on what the company says it will do with the money it raises. null if not stated.
 "financials": {"unit": "dollars" | "thousands" | "millions" (how the summary financial table states its figures), "currency": e.g. "USD",
-   "years": up to three full financial years, oldest first, each {"label": e.g. "2025", "revenue": number or null, "operating": operating profit or loss, or null, "net": net profit or loss, or null},
-   "part_year": null, or {"label": e.g. "Jan to Sep 2026", "revenue", "operating", "net", "prior_label", "prior_revenue", "prior_operating", "prior_net"} for the latest period shorter than a year and the same period a year earlier}
-"sellers": the existing holders selling shares in this offering, each {"name", "role": a few words such as "Co-founder, chief executive" or "Venture investor", "before": shares owned before the offering, "sold": shares being sold in the offering, not counting any option given to the underwriters}. Empty list if none.
+   "years": up to three full financial years, oldest first, each {"period_end": the last day of the year as "YYYY-MM-DD", "revenue": total revenue or null, "operating": profit or loss from operations or null, "net": net profit or loss or null},
+   "part_year": null, or {"label": e.g. "Jan to Sep 2026", "period_end": "YYYY-MM-DD", "revenue", "operating", "net", "prior_label", "prior_revenue", "prior_operating", "prior_net"} for the latest period shorter than a year and the same period a year earlier,
+   "cash": null, or {"value": cash and cash equivalents as printed, "date": the balance sheet date as "YYYY-MM-DD"}}
+"sellers": the existing holders selling shares in this offering, each {"name": exactly as printed, without footnote marks, "role": a few words such as "Co-founder, chief executive" or "Venture investor", "before": shares beneficially owned before the offering, "sold": shares being sold in the offering, not counting any option given to the underwriters}. Empty list if none.
 "others": up to eight of the largest holders named in the ownership table who are not selling, each {"name", "role", "before"}.
-"rounds": the company's past sales of preferred stock, oldest first, each {"name": e.g. "Series A", "when": the year or null if not stated, "price": price per share as printed}.
+"rounds": the company's series of preferred stock, oldest first, each {"name": e.g. "Series A", "when": the year it was first sold, or null if not stated, "price": the original issue price per share}. Take prices from the PREFERRED excerpt (the note to the financial statements), not from ITEM 15, which may predate a share split. Use ITEM 15 only for the year. Empty list if the PREFERRED excerpt has no price table.
 "lockup": null, or {"days": the main lock-up length in days, "summary": one or two sentences on when insiders may sell, "early": true if the filing describes any release before that period ends}
 "risks": the first five risk factors in the order the filing gives them, each rewritten as one plain sentence of at most 25 words."""
 
 
 def ask(model, user, key):
-    body = json.dumps({"model": model, "max_tokens": 5000, "system": SYSTEM, "messages": [{"role": "user", "content": user}]}).encode()
+    """Returns (answer, usage, error)."""
+    body = json.dumps({"model": model, "max_tokens": 8000, "system": SYSTEM, "messages": [{"role": "user", "content": user}]}).encode()
     headers = {"x-api-key": key, "anthropic-version": os.environ.get("ANTHROPIC_VERSION", "2023-06-01"), "content-type": "application/json"}
     if os.environ.get("ANTHROPIC_WORKSPACE_ID", "").strip():        # only needed for a key that is not tied to one workspace
         headers["anthropic-workspace-id"] = os.environ["ANTHROPIC_WORKSPACE_ID"].strip()
-    request = urllib.request.Request(API_URL, data=body, headers=headers)
-    try:
-        with urllib.request.urlopen(request, timeout=600) as response:
-            data = json.load(response)
-    except urllib.error.HTTPError as error:
-        return None, {}, f"HTTP {error.code}: {error.read().decode('utf-8', 'replace')[:300]}"
-    except (urllib.error.URLError, TimeoutError) as error:
-        return None, {}, f"{type(error).__name__}: {error}"[:300]
+    error = None
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(API_URL, data=body, headers=headers), timeout=600) as response:
+                data = json.load(response)
+            break
+        except urllib.error.HTTPError as problem:
+            error = f"HTTP {problem.code}: {problem.read().decode('utf-8', 'replace')[:300]}"
+            if problem.code not in (429, 500, 502, 503, 529):
+                return None, {}, error
+            time.sleep(float(problem.headers.get("retry-after") or 0) or 10 * 3 ** attempt)
+        except (urllib.error.URLError, TimeoutError, ConnectionError) as problem:
+            error = f"{type(problem).__name__}: {problem}"[:300]
+            time.sleep(10 * 3 ** attempt)
+    else:
+        return None, {}, error
     text = "".join(block.get("text", "") for block in data.get("content", []) if block.get("type") == "text")
     try:
         return json.loads(text[text.index("{"):text.rindex("}") + 1]), data.get("usage", {}), None
     except ValueError:
         return None, data.get("usage", {}), "the reply was not JSON: " + text[:200]
+
+
+def cost(model, usage):
+    price_in, price_out = PRICES[model]
+    return round((usage.get("input_tokens", 0) * price_in + usage.get("output_tokens", 0) * price_out) / 1e6, 5)
 
 
 # ---------- checking the answers ----------
@@ -182,99 +221,272 @@ def shapes(value):
         text = f"{value:,.{places}f}"
         if float(text.replace(",", "")) == value:
             out.add(text)
-    return {shape for shape in out if len(shape) >= 2}
+    return out
 
 
 def is_printed(value, text):
+    if isinstance(value, (int, float)) and not isinstance(value, bool) and abs(value) < 10 and float(value).is_integer():
+        return True                                      # a single digit proves nothing either way
     return any(re.search(r"(?<![\d,.])" + re.escape(shape) + r"(?![\d,]|\.\d)", text) for shape in shapes(value))
 
 
-def check(answer, text, offer, manual):
-    """Returns a report: which figures are printed in the filing, whether sellers add up, and how the answer compares
-    with a hand-made breakdown where there is one."""
-    figures = []
-    fin = answer.get("financials") or {}
-    for row in (fin.get("years") or []) + ([fin["part_year"]] if fin.get("part_year") else []):
-        figures += [(f"financials {row.get('label')} {k}", v) for k, v in row.items() if k != "label" and k != "prior_label" and v is not None]
-    for person in (answer.get("sellers") or []):
-        figures += [(f"seller {person.get('name')} {k}", person.get(k)) for k in ("before", "sold") if person.get(k) is not None]
-    for person in (answer.get("others") or []):
-        figures += [(f"holder {person.get('name')} before", person.get("before"))] if person.get("before") is not None else []
-    for item in (answer.get("rounds") or []):
-        figures += [(f"round {item.get('name')} price", item.get("price"))] if item.get("price") is not None else []
-    if (answer.get("lockup") or {}).get("days") is not None:
-        figures.append(("lock-up days", answer["lockup"]["days"]))
-    missing = [label for label, value in figures if not is_printed(value, text)]
-    report = {"figures_given": len(figures), "figures_not_printed_in_filing": missing}
-    sold = sum(person.get("sold") or 0 for person in (answer.get("sellers") or []))
-    if offer:
-        report["sellers_add_up"] = {"model_total": sold, "cover": offer.get("holder_shares"), "agree": sold == offer.get("holder_shares")}
-    if manual:
-        diff = []
-        by_name = {p["name"].lower(): p for p in manual.get("sellers", []) + manual.get("others", [])}
-        for person in (answer.get("sellers") or []) + (answer.get("others") or []):
-            known = by_name.get(str(person.get("name", "")).lower())
-            if known and (known["before"] != person.get("before") or known.get("sold", 0) != (person.get("sold") or 0)):
-                diff.append(f"{person['name']}: model {person.get('before')}/{person.get('sold')}, hand-made {known['before']}/{known.get('sold', 0)}")
-        missed = [p["name"] for p in manual.get("sellers", []) if p["name"].lower() not in {str(x.get("name", "")).lower() for x in (answer.get("sellers") or [])}]
-        hand_rounds = {r["name"].lower(): r["price"] for r in manual.get("rounds", [])}
-        got_rounds = {str(r.get("name", "")).lower(): r.get("price") for r in (answer.get("rounds") or [])}
-        scale = {"dollars": 1e-6, "thousands": 1e-3, "millions": 1}.get(fin.get("unit"), None)
-        hand_years = {y["label"]: y for y in manual.get("financials", {}).get("years", [])}
-        years = []
-        for row in fin.get("years") or []:
-            known = hand_years.get(str(row.get("label")))
-            if known and scale:
-                same = all(row.get(k) is not None and abs(row[k] * scale - known[k]) <= max(1, abs(known[k]) * 0.001) for k in ("revenue", "operating"))
-                years.append(f"{row['label']}: {'same' if same else 'DIFFERENT'}")
-        report["against_hand_made"] = {"sellers_missed": missed, "holder_differences": diff,
-                                       "rounds_same": sum(1 for k, v in hand_rounds.items() if got_rounds.get(k) is not None and abs(got_rounds[k] - v) < 0.0006),
-                                       "rounds_in_hand_made": len(hand_rounds), "rounds_from_model": len(got_rounds), "years": years}
-    return report
+def prose_ok(sentence, text):
+    """Every number written into a summary must be printed in the filing."""
+    return all(is_printed(reader.number(n), text) for n in re.findall(r"\d[\d,]*(?:\.\d+)?", sentence or "") if n.strip(",."))
 
 
-# ---------- the test ----------
+def norm(name):
+    return re.sub(r"\s+", " ", re.sub(r"\(\d+\)|[^a-z0-9& ]", " ", str(name).lower())).strip()
 
-def run(fetcher, today, list_path, breakdown_dir, out_path, key, log=print):
-    previous = tracker.load_json(out_path, {})
-    failed = any("error" in result for deal in previous.get("deals", []) for result in deal.get("models", {}).values())
-    if previous.get("version") == TEST_VERSION and not (key and (failed or not previous.get("asked_model"))):
-        log("model test: nothing new to do")
-        return previous
+
+def same(a, b):
+    if a is None or b is None:
+        return a is None and b is None
+    try:
+        return abs(float(a) - float(b)) <= abs(float(a)) * 1e-9
+    except (TypeError, ValueError):
+        return a == b
+
+
+def table(answer, key, name="name"):
+    clean = norm if name == "name" else str
+    return {clean(row[name]): row for row in (answer.get(key) or []) if isinstance(row, dict) and row.get(name)}
+
+
+def differences(a, b):
+    """Every figure on which two readers differ, as short notes."""
+    out = []
+    fa, fb = a.get("financials") or {}, b.get("financials") or {}
+    if fa.get("unit") != fb.get("unit"):
+        out.append(f"financial unit: {fa.get('unit')} / {fb.get('unit')}")
+    ya, yb = table(fa, "years", "period_end"), table(fb, "years", "period_end")
+    for end in sorted(set(ya) | set(yb)):
+        for k in ("revenue", "operating", "net"):
+            if not same(ya.get(end, {}).get(k), yb.get(end, {}).get(k)):
+                out.append(f"{k} {end}: {ya.get(end, {}).get(k)} / {yb.get(end, {}).get(k)}")
+    pa, pb = fa.get("part_year") or {}, fb.get("part_year") or {}
+    for k in ("period_end", "revenue", "operating", "net", "prior_revenue", "prior_operating", "prior_net"):
+        if not same(pa.get(k), pb.get(k)):
+            out.append(f"part year {k}: {pa.get(k)} / {pb.get(k)}")
+    for k in ("value", "date"):
+        if not same((fa.get("cash") or {}).get(k), (fb.get("cash") or {}).get(k)):
+            out.append(f"cash {k}: {(fa.get('cash') or {}).get(k)} / {(fb.get('cash') or {}).get(k)}")
+    for key, fields in (("sellers", ("before", "sold")), ("others", ("before",)), ("rounds", ("price",))):
+        ta, tb = table(a, key), table(b, key)
+        for n in sorted(set(ta) | set(tb)):
+            if key != "others" and (n not in ta or n not in tb):
+                out.append(f"{key} {n}: named by one reader only")
+            for k in fields:
+                if n in ta and n in tb and not same(ta[n].get(k), tb[n].get(k)):
+                    out.append(f"{key} {n} {k}: {ta[n].get(k)} / {tb[n].get(k)}")
+    if not same((a.get("lockup") or {}).get("days"), (b.get("lockup") or {}).get("days")):
+        out.append(f"lock-up days: {(a.get('lockup') or {}).get('days')} / {(b.get('lockup') or {}).get('days')}")
+    return out
+
+
+def merge(first, second, text, offer):
+    """What goes into the breakdown: the first reader's answer, keeping a figure only where the second reader
+    agrees and the checks pass. Returns (fields, checks, left out)."""
+    out, checks, hidden = {}, [], []
+    agree = "two AI readers gave the same figures"
+    leave = lambda item, why: hidden.append({"item": item, "why": why, "by": "model"})
+    keep = lambda item, how: checks.append({"item": item, "how": how, "by": "model"})
+
+    # revenue, results and cash
+    fa, fb = first.get("financials") or {}, second.get("financials") or {}
+    ya, yb = table(fa, "years", "period_end"), table(fb, "years", "period_end")
+    scale = {"dollars": 1e-6, "thousands": 1e-3, "millions": 1}.get(fa.get("unit"))
+    keys = ("revenue", "operating", "net")
+    measure = next((k for k in ("operating", "net") if ya and all(row.get(k) is not None for row in ya.values())), None)
+    item = "Revenue, results and cash"
+    if not ya:
+        leave(item, "the readers found no full-year figures in the summary financial table")
+    elif str(fa.get("currency", "")).upper() != "USD":
+        leave(item, f"the company reports in {fa.get('currency')}, not US dollars")
+    elif set(ya) != set(yb) or fa.get("unit") != fb.get("unit") or not all(same(ya[e].get(k), yb[e].get(k)) for e in ya for k in keys):
+        leave(item, "the two AI readers gave different figures")
+    elif not scale or not measure:
+        leave(item, "the filing gives no operating or net result for every year")
+    elif not all(is_printed(row[k], text) for row in ya.values() for k in keys if row.get(k) is not None):
+        leave(item, "a figure the readers gave is not printed in the filing")
+    else:
+        m = lambda v: None if v is None else round(v * scale, 3)
+
+        def label(end):
+            day = dt.date.fromisoformat(end)
+            return str(day.year) if day.month == 12 else f"Year to {reader.MONTHS[day.month - 1]} {day.year}"
+        try:
+            ends = sorted(ya, key=dt.date.fromisoformat)[-3:]
+            block = {"unit": "USD millions", "measure": measure, "years": [{"label": label(e), "revenue": m(ya[e].get("revenue")), "operating": m(ya[e][measure])} for e in ends]}
+        except ValueError:
+            block = None
+        if not block:
+            leave(item, "the readers gave a year-end date that is not a date")
+        else:
+            latest, latest_label = ya[ends[-1]], block["years"][-1]["label"]
+            pa, pb = fa.get("part_year") or {}, fb.get("part_year") or {}
+            part = ("revenue", "operating", "net", "prior_revenue", "prior_operating", "prior_net")
+            if pa.get(measure) is not None and pa.get("prior_" + measure) is not None and all(same(pa.get(k), pb.get(k)) for k in part) \
+                    and all(is_printed(pa[k], text) for k in part if pa.get(k) is not None) and prose_ok(f"{pa.get('label')} {pa.get('prior_label')}", text):
+                block["ytd"] = {"label": str(pa.get("label")), "revenue": m(pa.get("revenue")), "operating": m(pa[measure]),
+                                "prior_label": str(pa.get("prior_label")), "prior_revenue": m(pa.get("prior_revenue")), "prior_operating": m(pa["prior_" + measure])}
+                latest, latest_label = pa, block["ytd"]["label"]
+            block["facts"] = []
+            ca, cb = fa.get("cash") or {}, fb.get("cash") or {}
+            if ca.get("value") is not None and same(ca.get("value"), cb.get("value")) and ca.get("date") == cb.get("date") and is_printed(ca["value"], text):
+                try:
+                    block["facts"].append({"value": m(ca["value"]), "label": "cash on " + reader.long_date(ca["date"])})
+                except (ValueError, TypeError):
+                    pass
+            if measure == "operating" and latest.get("net") is not None:
+                block["facts"].append({"value": m(latest["net"]), "label": f"net result, {latest_label}", "signed": True})
+            block["by"] = "model"
+            out["financials"] = block
+            keep("Revenue and results", agree + ", and each is printed in the filing")
+
+    # who is selling
+    sa, sb = table(first, "sellers"), table(second, "sellers")
+    cover = offer.get("holder_shares") or 0
+    item = "Who is selling"
+    if cover:
+        rows = list(sa.values())
+        if not sa:
+            leave(item, "the readers could not find the selling holders in the ownership table")
+        elif set(sa) != set(sb) or not all(same(sa[n].get(k), sb[n].get(k)) for n in sa for k in ("before", "sold")):
+            leave(item, "the two AI readers gave different names or figures")
+        elif not all(isinstance(r.get("before"), (int, float)) and isinstance(r.get("sold"), (int, float)) and r["before"] >= r["sold"] > 0 for r in rows):
+            leave(item, "a holder's figures do not make sense")
+        elif sum(r["sold"] for r in rows) != cover:
+            leave(item, f"the named holders' shares add up to {sum(r['sold'] for r in rows):,}, not the {cover:,} on the cover")
+        elif not all(is_printed(r[k], text) for r in rows for k in ("before", "sold")):
+            leave(item, "a figure the readers gave is not printed in the filing")
+        else:
+            out["sellers"] = [{"name": str(r["name"]), "role": str(r.get("role") or ""), "before": r["before"], "sold": r["sold"]} for r in rows]
+            keep(item, "two AI readers agree, and the shares add up to the number on the cover")
+    oa, ob = table(first, "others"), table(second, "others")
+    others = [r for n, r in oa.items() if n in ob and n not in sa and isinstance(r.get("before"), (int, float)) and r["before"] > 0
+              and same(r["before"], ob[n].get("before")) and is_printed(r["before"], text)]
+    if others:
+        out["others"] = [{"name": str(r["name"]), "role": str(r.get("role") or ""), "before": r["before"], "sold": 0} for r in others[:8]]
+
+    # what earlier rounds paid
+    ra, rb = table(first, "rounds"), table(second, "rounds")
+    item = "What earlier rounds paid"
+    price = offer.get("price") or (offer["low"] + offer["high"]) / 2
+    rows = list(ra.values())
+    if not ra:
+        leave(item, "the readers found no table of preferred stock prices")
+    elif not all(isinstance(r.get("price"), (int, float)) and r["price"] > 0 for r in rows):
+        leave(item, "a round has no price")
+    elif set(ra) != set(rb) or not all(same(ra[n]["price"], rb[n].get("price")) for n in ra):
+        leave(item, "the two AI readers gave different rounds or prices")
+    elif not all(is_printed(r["price"], text) for r in rows):
+        leave(item, "a price the readers gave is not printed in the filing")
+    elif offer.get("unit") == "ADS":
+        leave(item, "the offer is in depositary shares, so the prices cannot be compared directly")
+    elif not price / 200 <= max(r["price"] for r in rows) <= price * 3:
+        leave(item, "the last round's price does not sit believably next to the IPO price, which usually means a share split is not allowed for")
+    else:
+        out["rounds"] = [{"name": str(r["name"]), "when": str(r["when"]) if r.get("when") and same(r["when"], rb[norm(r["name"])].get("when")) else None, "price": r["price"]} for r in rows]
+        out["rounds_note"] = "Prices are the original issue prices in the notes to the financial statements."
+        keep(item, "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price")
+
+    # lock-up and the written summaries
+    la, lb = first.get("lockup") or {}, second.get("lockup") or {}
+    if la.get("summary") and la.get("days") is not None and same(la.get("days"), lb.get("days")) and is_printed(la["days"], text) and prose_ok(la["summary"], text):
+        out["lockup"] = {"summary": str(la["summary"]), "days": la["days"]}
+        keep("Lock-up length", "two AI readers agree on the number of days, and it is printed in the filing")
+    else:
+        leave("When insiders can sell", "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing")
+    for key in ("what", "short", "proceeds"):
+        if isinstance(first.get(key), str) and first[key].strip() and prose_ok(first[key], text):
+            out[key] = first[key].strip()
+    risks = [r.strip() for r in (first.get("risks") or []) if isinstance(r, str) and r.strip() and prose_ok(r, text)][:5]
+    if len(risks) >= 3:
+        out["risks"], out["risks_note"] = risks, f"The first {len(risks)} risk factors, summarised by AI."
+    return out, checks, hidden
+
+
+# ---------- reading the deals ----------
+
+MODEL_KEYS = ("financials", "sellers", "others", "rounds", "rounds_note", "lockup", "what", "short", "proceeds", "risks", "risks_note", "model")
+
+
+def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, max_deals=MAX_DEALS):
+    if not key:
+        log("model step: no API key, nothing done")
+        return {}
     records = {r["cik"]: r for r in tracker.load_json(list_path, {}).get("ipos", [])}
-    report = {"version": TEST_VERSION, "run": today.isoformat(), "asked_model": bool(key), "deals": []}
-    for cik in TEST_CIKS:
-        record = records.get(cik)
-        doc = reader.document_for(record) if record else None
-        if not doc:
+    compare = tracker.load_json(compare_path, {})
+    if compare.get("version") != MODEL_VERSION:
+        compare = {"version": MODEL_VERSION, "deals": []}
+    waiting = []
+    for path in sorted(Path(breakdown_dir).glob("*.json")):
+        b = tracker.load_json(path, {})
+        if b.get("method") == "auto" and b.get("cik") in records and (b.get("model") or {}).get("key") != [b["doc"], MODEL_VERSION]:
+            offer = b["offer"]
+            raising = (offer.get("price") or (offer["low"] + offer["high"]) / 2) * (offer["company_shares"] + offer.get("holder_shares", 0))
+            waiting.append(("price" in offer, -raising, path, b))
+    waiting.sort(key=lambda item: item[:2])
+    spent, done = 0.0, 0
+    for _, _, path, b in waiting[:max_deals]:
+        try:
+            page = fetcher.get(b["doc"])
+        except Exception as problem:
+            log(f"model step: could not fetch {b['doc']}: {problem}")
             continue
-        page = fetcher.get(doc[2])
         sections = cut(to_lines(page))
         text = reader.to_text(page)
-        offer = reader.offer_terms(text, doc[0])[0]
         user = "\n\n".join(f"=== {name.upper().replace('_', ' ')} ===\n{body}" for name, body in sections.items())
-        entry = {"cik": cik, "name": record["name"], "form": doc[0], "date": doc[1], "doc": doc[2],
-                 "sections": {name: {"characters": len(body), "starts": body[:90].replace("\n", " / ")} for name, body in sections.items()},
-                 "sections_not_found": [name for name in WANTED if name not in sections],
-                 "characters_sent": len(user) + len(SYSTEM), "tokens_estimated": round((len(user) + len(SYSTEM)) / 3.5), "models": {}}
-        manual = tracker.load_json(Path(breakdown_dir) / f"{cik}.json", None)
-        manual = manual if manual and manual.get("method") == "manual" else None
-        for model in MODELS if key else []:
-            answer, usage, error = ask(model, user, key)
-            result = {"tokens": {k: usage.get(k) for k in ("input_tokens", "output_tokens") if k in usage}}
-            if "input_tokens" in usage:
-                price_in, price_out = PRICES[model]
-                result["cost_usd"] = round((usage["input_tokens"] * price_in + usage.get("output_tokens", 0) * price_out) / 1e6, 5)
-            if error:
-                result["error"] = error
+        models = READERS + ([REFEREE] if len(compare["deals"]) < COMPARE_DEALS else [])
+        with ThreadPoolExecutor(max_workers=len(models)) as pool:
+            replies = dict(zip(models, pool.map(lambda model: ask(model, user, key), models)))
+        costs = {model: cost(model, usage) for model, (_, usage, _) in replies.items()}
+        spent += sum(costs.values())
+        errors = {model: error for model, (_, _, error) in replies.items() if error}
+        entry = {"cik": b["cik"], "name": records[b["cik"]]["name"], "doc": b["doc"], "read": today.isoformat(), "cost_usd": costs,
+                 "sections_not_found": [name for name in WANTED if name not in sections]}
+        tagged = b.get("financials") if (b.get("financials") or {}).get("by") != "model" else None      # figures from the SEC's tagged data stay
+        for old in MODEL_KEYS:
+            b.pop(old, None)
+        b["checks"] = [c for c in b.get("checks", []) if c.get("by") != "model"]
+        b["hidden"] = [h for h in b.get("hidden", []) if h.get("by") != "model" and h.get("item") != "Revenue, results and cash"]
+        first, second = replies[READERS[0]][0], replies[READERS[1]][0]
+        if errors.get(READERS[0]) or errors.get(READERS[1]):
+            entry["errors"] = errors
+            if any("HTTP 4" in e for e in errors.values()):
+                log(f"model step: stopped, the API refused a request: {next(iter(errors.values()))[:200]}")
+                break                                    # a refused request will be refused again: stop rather than repeat it
+            continue                                     # try this deal again on the next run
+        fields, checks, hidden = merge(first, second, text, b["offer"])
+        if tagged:
+            fields["financials"] = tagged
+            checks = [c for c in checks if c["item"] != "Revenue and results"]
+            hidden = [h for h in hidden if h["item"] != "Revenue, results and cash"]
+        b.update(fields)
+        b["checks"] += checks
+        b["hidden"] += hidden
+        b["model"] = {"key": [b["doc"], MODEL_VERSION], "readers": READERS, "read": today.isoformat()}
+        path.write_text(json.dumps(b, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        done += 1
+        entry["kept"] = [c["item"] for c in checks]
+        entry["left_out"] = {h["item"]: h["why"] for h in hidden}
+        entry["readers_differ"] = differences(first, second)
+        if REFEREE in replies:
+            third = replies[REFEREE][0]
+            if third:
+                entry["referee_differs_from_first"] = differences(first, third)
+                entry["referee_differs_from_second"] = differences(second, third)
+                entry["answers"] = {model: reply[0] for model, reply in replies.items()}
             else:
-                result["checks"] = check(answer, text, offer, manual)
-                result["answer"] = answer
-            entry["models"][model] = result
-        report["deals"].append(entry)
-    Path(out_path).write_text(json.dumps(report, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-    log(f"model test: {len(report['deals'])} filings cut" + (f", asked {len(MODELS)} models" if key else ", no API key so no model was asked"))
-    return report
+                entry["errors"] = errors
+            compare["deals"].append(entry)
+        else:
+            compare.setdefault("later", []).append({k: entry[k] for k in ("cik", "name", "cost_usd", "kept", "left_out", "readers_differ")})
+    compare["spent_usd"] = round(compare.get("spent_usd", 0) + spent, 4)
+    Path(compare_path).write_text(json.dumps(compare, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    log(f"model step: read {done} of {len(waiting)} waiting deals, about ${spent:.2f} this run")
+    return compare
 
 
 def main():
@@ -283,7 +495,7 @@ def main():
     if not fixtures and "@" not in user_agent:
         sys.exit("Set SEC_USER_AGENT to a name and contact email, for example: IPO Query info@ipoquery.com")
     run(tracker.Fetcher(user_agent, fixtures=fixtures), dt.datetime.now(dt.timezone.utc).date(), tracker.ROOT / "docs" / "data" / "ipos.json",
-        tracker.ROOT / "data" / "breakdowns", tracker.ROOT / "data" / "model_test.json", os.environ.get("ANTHROPIC_API_KEY", "").strip())
+        tracker.ROOT / "data" / "breakdowns", tracker.ROOT / "data" / "model_compare.json", os.environ.get("ANTHROPIC_API_KEY", "").strip())
 
 
 if __name__ == "__main__":

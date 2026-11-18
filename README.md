@@ -54,9 +54,24 @@ The reader never replaces a breakdown marked `"method": "manual"`.
 
     python test_reader.py      # offline tests, on made-up filings in real wording
 
-Not built yet: the printed financial statements, who is selling, what earlier
-rounds paid, lock-ups, use of proceeds and risks. Those need a model to read
-the filing.
+## The model step
+
+`reader_model.py` runs next, if an `ANTHROPIC_API_KEY` secret is set. For each
+breakdown the reader produced, it cuts the relevant sections out of the
+prospectus (about 28,000 tokens) and has two models read them separately. It
+adds the printed financial figures, who is selling, what earlier rounds paid,
+the lock-up, and plain-English summaries of the business, the use of proceeds
+and the first risk factors. A figure is added only when:
+
+- both readers give the same number, and it is printed in the filing
+- the named sellers' shares add up to the number on the cover
+- the last funding round's price sits believably next to the IPO price
+  (otherwise a share split has usually been missed)
+
+For the first 20 deals a third, stronger model reads the filing too, and every
+disagreement is written to `data/model_compare.json`. Cost is about 8 cents a
+filing with the two readers (25 cents with the third). At most 20 deals are
+read per run.
 
 ## How it decides
 
