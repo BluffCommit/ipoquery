@@ -31,7 +31,7 @@ from pathlib import Path
 import reader
 import tracker
 
-TEST_VERSION = 2                       # bump to run the test again
+TEST_VERSION = 3                       # bump to run the test again
 TEST_CIKS = [2130357, 1698506]         # Anthropic (a hand-made breakdown exists to compare with) and an ordinary small deal
 MODELS = ["claude-haiku-5-5", "claude-sonnet-5-5"]
 PRICES = {"claude-haiku-5-5": (0.10, 0.50), "claude-sonnet-5-5": (2.00, 10.00)}    # US$ per million tokens in, out (list prices, Nov 2026)
