@@ -1,5 +1,5 @@
 {
- "version": 4,
+ "version": 5,
  "deals": {
   "1907709": {
    "form": "424B4",
@@ -804,7 +804,7 @@
     "high": 78.0,
     "holder_shares": 23648646,
     "company_shares": 801351354,
-    "shares_after": 26173345184
+    "shares_after": 13086672593
    },
    "left_out": [
     "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
@@ -877,7 +877,7 @@
     "company_shares": 16666667
    },
    "left_out": [
-    "the shares outstanding after the offering do not fit with the number sold",
+    "the shares sold would be more than 60% of the company, which suggests a share class is missing from the count",
     "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
    ],
    "notes": [

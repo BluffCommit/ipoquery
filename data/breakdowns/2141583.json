@@ -29,7 +29,7 @@
  "hidden": [
   {
    "item": "Company value and the share that trades",
-   "why": "the shares outstanding after the offering do not fit with the number sold"
+   "why": "the shares sold would be more than 60% of the company, which suggests a share class is missing from the count"
   },
   {
    "item": "Revenue, results and cash",
