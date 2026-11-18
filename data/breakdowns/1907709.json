@@ -9,7 +9,8 @@
   "price": 18.0,
   "holder_shares": 0,
   "company_shares": 9722223,
-  "shares_after": 182483419
+  "low": 21.0,
+  "high": 24.0
  },
  "exchange": "NYSE",
  "checks": [
@@ -26,11 +27,15 @@
    "how": "price times shares sold equals the total on the cover"
   },
   {
-   "item": "Shares outstanding after the offering",
-   "how": "the sum of each share class; larger than the number sold"
+   "item": "Price range before pricing",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
   }
  ],
  "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "the share classes are not alike, so their counts cannot simply be added up"
+  },
   {
    "item": "Revenue, results and cash",
    "why": "the financial statements are not tagged with an operating or net result"

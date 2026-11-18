@@ -8,8 +8,7 @@
  "offer": {
   "price": 1.0,
   "holder_shares": 6092500,
-  "company_shares": 300000,
-  "shares_after": 15990000
+  "company_shares": 300000
  },
  "checks": [
   {
@@ -23,13 +22,13 @@
   {
    "item": "Final price",
    "how": "stated more than once in the filing"
-  },
-  {
-   "item": "Shares outstanding after the offering",
-   "how": "from the offering summary; larger than the number sold"
   }
  ],
  "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "only one share class's count could be read"
+  },
   {
    "item": "Revenue, results and cash",
    "why": "the financial statements are not tagged with an operating or net result"

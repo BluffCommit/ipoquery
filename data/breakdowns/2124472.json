@@ -1,0 +1,45 @@
+{
+ "cik": 2124472,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "Final prospectus filed Sep 21, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2124472/000162828026062794/orion180-424b4.htm",
+ "doc_date": "2026-09-21",
+ "offer": {
+  "price": 12.0,
+  "holder_shares": 0,
+  "company_shares": 20000000,
+  "shares_after": 99032452,
+  "low": 15.0,
+  "high": 17.0
+ },
+ "exchange": "Nasdaq",
+ "checks": [
+  {
+   "item": "No existing holder is selling",
+   "how": "the cover page and summary do not mention selling holders"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Final price",
+   "how": "price times shares sold equals the total on the cover"
+  },
+  {
+   "item": "Shares outstanding after the offering",
+   "how": "the filing's own total; larger than the number sold"
+  },
+  {
+   "item": "Price range before pricing",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Revenue, results and cash",
+   "why": "no full-year figures are tagged"
+  }
+ ]
+}

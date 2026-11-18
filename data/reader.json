@@ -1,5 +1,5 @@
 {
- "version": 1,
+ "version": 2,
  "deals": {
   "1907709": {
    "form": "424B4",
@@ -11,10 +11,15 @@
     "price": 18.0,
     "holder_shares": 0,
     "company_shares": 9722223,
-    "shares_after": 182483419
+    "low": 21.0,
+    "high": 24.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "the share classes are not alike, so their counts cannot simply be added up",
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2145089": {
@@ -26,11 +31,16 @@
    "found": {
     "price": 17.0,
     "holder_shares": 0,
-    "company_shares": 10294117
+    "company_shares": 10294117,
+    "low": 16.0,
+    "high": 18.0
    },
    "left_out": [
-    "Company value and the share that trades",
-    "Revenue, results and cash"
+    "the number of shares outstanding after the offering could not be read",
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2152644": {
@@ -63,10 +73,15 @@
     "price": 16.0,
     "holder_shares": 0,
     "company_shares": 10555555,
-    "shares_after": 50942430
+    "shares_after": 50942430,
+    "low": 15.0,
+    "high": 17.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2124080": {
@@ -79,10 +94,15 @@
     "price": 15.0,
     "holder_shares": 0,
     "company_shares": 9375000,
-    "shares_after": 29078600
+    "shares_after": 29078600,
+    "low": 15.0,
+    "high": 17.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "1070965": {
@@ -90,9 +110,9 @@
    "date": "2026-10-29",
    "url": "https://www.sec.gov/Archives/edgar/data/1070965/000110465926119890/tm2620318-22_424b4.htm",
    "read": "2026-11-18",
-   "result": "not confirmed",
+   "result": "resale",
    "notes": [
-    "no final price found"
+    "a resale by existing holders, such as a direct listing: nothing is sold at a set price"
    ]
   },
   "1907223": {
@@ -129,8 +149,11 @@
     "unit": "ADS"
    },
    "left_out": [
-    "Company value and the share that trades",
-    "Revenue, results and cash"
+    "the offer is in depositary shares, which are not counted the same way as the shares outstanding",
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "1806540": {
@@ -143,10 +166,15 @@
     "price": 18.0,
     "holder_shares": 0,
     "company_shares": 17640000,
-    "shares_after": 55034559
+    "shares_after": 55034559,
+    "low": 16.0,
+    "high": 18.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "1866501": {
@@ -189,10 +217,15 @@
     "price": 18.0,
     "holder_shares": 0,
     "company_shares": 11111111,
-    "shares_after": 51721168
+    "shares_after": 51721168,
+    "low": 17.0,
+    "high": 19.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "1997038": {
@@ -205,10 +238,15 @@
     "price": 16.0,
     "holder_shares": 0,
     "company_shares": 9375000,
-    "shares_after": 47400796
+    "shares_after": 47400796,
+    "low": 15.0,
+    "high": 17.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2141616": {
@@ -224,7 +262,10 @@
     "shares_after": 28539063
    },
    "left_out": [
-    "Revenue, results and cash"
+    "no full-year figures are tagged"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: no full-year figures are tagged"
    ]
   },
   "2139097": {
@@ -237,10 +278,15 @@
     "price": 14.0,
     "holder_shares": 0,
     "company_shares": 8333334,
-    "shares_after": 27445682
+    "shares_after": 27445682,
+    "low": 14.0,
+    "high": 16.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "no full-year figures are tagged"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: no full-year figures are tagged"
    ]
   },
   "2002988": {
@@ -256,7 +302,10 @@
     "shares_after": 8331599
    },
    "left_out": [
-    "Revenue, results and cash"
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2113605": {
@@ -272,8 +321,11 @@
     "unit": "ADS"
    },
    "left_out": [
-    "Company value and the share that trades",
-    "Revenue, results and cash"
+    "the offer is in depositary shares, which are not counted the same way as the shares outstanding",
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2141406": {
@@ -286,10 +338,15 @@
     "price": 18.0,
     "holder_shares": 20000000,
     "company_shares": 10000000,
-    "shares_after": 225000000
+    "shares_after": 225000000,
+    "low": 20.0,
+    "high": 24.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2075335": {
@@ -297,9 +354,9 @@
    "date": "2026-09-28",
    "url": "https://www.sec.gov/Archives/edgar/data/2075335/000121390026104150/ea0306875-424b4_roze.htm",
    "read": "2026-11-18",
-   "result": "not confirmed",
+   "result": "resale",
    "notes": [
-    "no final price found"
+    "a resale by existing holders, such as a direct listing: nothing is sold at a set price"
    ]
   },
   "1802369": {
@@ -311,11 +368,16 @@
    "found": {
     "price": 17.0,
     "holder_shares": 0,
-    "company_shares": 26250000
+    "company_shares": 26250000,
+    "low": 15.0,
+    "high": 17.0
    },
    "left_out": [
-    "Company value and the share that trades",
-    "Revenue, results and cash"
+    "the number of shares outstanding after the offering could not be read",
+    "no full-year figures are tagged"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: no full-year figures are tagged"
    ]
   },
   "2094989": {
@@ -327,11 +389,14 @@
    "found": {
     "price": 1.0,
     "holder_shares": 6092500,
-    "company_shares": 300000,
-    "shares_after": 15990000
+    "company_shares": 300000
    },
    "left_out": [
-    "Revenue, results and cash"
+    "only one share class's count could be read",
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2124472": {
@@ -339,9 +404,20 @@
    "date": "2026-09-21",
    "url": "https://www.sec.gov/Archives/edgar/data/2124472/000162828026062794/orion180-424b4.htm",
    "read": "2026-11-18",
-   "result": "not confirmed",
+   "result": "read",
+   "found": {
+    "price": 12.0,
+    "holder_shares": 0,
+    "company_shares": 20000000,
+    "shares_after": 99032452,
+    "low": 15.0,
+    "high": 17.0
+   },
+   "left_out": [
+    "no full-year figures are tagged"
+   ],
    "notes": [
-    "the number of shares the company is selling is not stated the same way twice"
+    "no tags in the filing; company facts file: no full-year figures are tagged"
    ]
   },
   "2088082": {
@@ -354,10 +430,15 @@
     "price": 15.0,
     "holder_shares": 0,
     "company_shares": 23333334,
-    "shares_after": 62766955
+    "shares_after": 62766955,
+    "low": 14.0,
+    "high": 16.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "no full-year figures are tagged"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: no full-year figures are tagged"
    ]
   },
   "2111453": {
@@ -367,7 +448,8 @@
    "read": "2026-11-18",
    "result": "not confirmed",
    "notes": [
-    "no final price found"
+    "no final price found",
+    "near: scription receipts convertible into common shares of the resulting issuer at an offering price of $1.00 per subscription receipt for proceeds of up to $20,000,000 (the \"offering\"). the company entered into an agreement with haywood securities inc. and scp resource finance lp, act"
    ]
   },
   "1972234": {
@@ -387,7 +469,8 @@
    "read": "2026-11-18",
    "result": "not confirmed",
    "notes": [
-    "no final price found"
+    "no final price found",
+    "near: hares at a fixed price of $2.00 per share for the duration of the offering. the offering price will remain fixed for the entire duration of the offering. any change to the fixed offering price will be effected only by a post-effective amendment to the registration statement of wh"
    ]
   },
   "1892704": {
@@ -395,9 +478,9 @@
    "date": "2026-08-20",
    "url": "https://www.sec.gov/Archives/edgar/data/1892704/000149315226039415/form424b4.htm",
    "read": "2026-11-18",
-   "result": "not confirmed",
+   "result": "resale",
    "notes": [
-    "no final price found"
+    "a resale by existing holders, such as a direct listing: nothing is sold at a set price"
    ]
   },
   "2132582": {
@@ -407,7 +490,8 @@
    "read": "2026-11-18",
    "result": "not confirmed",
    "notes": [
-    "the number of shares sold by existing holders is not stated the same way twice"
+    "the number of shares sold by existing holders is not stated the same way twice",
+    "near: ock only in jurisdictions where offers and sales are permitted. neither we, the selling stockholders nor the underwriters have done anything that would permit this offering or possession or distribution of this prospectus in any jurisdiction where action for that purpose is requi"
    ]
   },
   "2006960": {
@@ -420,11 +504,16 @@
     "price": 22.0,
     "holder_shares": 0,
     "company_shares": 4285714,
-    "unit": "ADS"
+    "unit": "ADS",
+    "low": 20.0,
+    "high": 22.0
    },
    "left_out": [
-    "Company value and the share that trades",
-    "Revenue, results and cash"
+    "the offer is in depositary shares, which are not counted the same way as the shares outstanding",
+    "the financial statements are not tagged with an operating or net result"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2101240": {
@@ -436,10 +525,14 @@
    "found": {
     "price": 5.0,
     "holder_shares": 0,
-    "company_shares": 3100000,
-    "shares_after": 23100000
+    "company_shares": 3100000
    },
-   "left_out": []
+   "left_out": [
+    "only one share class's count could be read"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file"
+   ]
   },
   "1903784": {
    "form": "424B4",
@@ -451,10 +544,15 @@
     "price": 13.0,
     "holder_shares": 0,
     "company_shares": 6250000,
-    "shares_after": 13917587
+    "shares_after": 13917587,
+    "low": 11.0,
+    "high": 13.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "no full-year figures are tagged"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: no full-year figures are tagged"
    ]
   },
   "2084227": {
@@ -462,9 +560,9 @@
    "date": "2026-08-12",
    "url": "https://www.sec.gov/Archives/edgar/data/2084227/000149315226037407/form424b4.htm",
    "read": "2026-11-18",
-   "result": "not confirmed",
+   "result": "resale",
    "notes": [
-    "no final price found"
+    "a resale by existing holders, such as a direct listing: nothing is sold at a set price"
    ]
   },
   "2104296": {
@@ -472,9 +570,18 @@
    "date": "2026-08-07",
    "url": "https://www.sec.gov/Archives/edgar/data/2104296/000121390026086641/ea0301091-424b4_ticket.htm",
    "read": "2026-11-18",
-   "result": "not confirmed",
+   "result": "read",
+   "found": {
+    "price": 8.0,
+    "holder_shares": 0,
+    "company_shares": 1875000,
+    "shares_after": 12064525
+   },
+   "left_out": [
+    "the financial statements are not tagged with an operating or net result"
+   ],
    "notes": [
-    "the number of shares the company is selling is not stated the same way twice"
+    "no tags in the filing; company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2056611": {
@@ -487,10 +594,15 @@
     "price": 18.0,
     "holder_shares": 0,
     "company_shares": 19200000,
-    "shares_after": 63238030
+    "shares_after": 63238030,
+    "low": 16.0,
+    "high": 18.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "no full-year figures are tagged"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: no full-year figures are tagged"
    ]
   },
   "1839970": {
@@ -503,10 +615,15 @@
     "price": 16.0,
     "holder_shares": 0,
     "company_shares": 9375000,
-    "shares_after": 30643660
+    "shares_after": 30643660,
+    "low": 15.0,
+    "high": 17.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "no full-year figures are tagged"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: no full-year figures are tagged"
    ]
   },
   "2131524": {
@@ -519,10 +636,15 @@
     "price": 18.0,
     "holder_shares": 0,
     "company_shares": 21250000,
-    "shares_after": 73152838
+    "shares_after": 73152838,
+    "low": 15.0,
+    "high": 17.0
    },
    "left_out": [
-    "Revenue, results and cash"
+    "no full-year figures are tagged"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: no full-year figures are tagged"
    ]
   },
   "2058707": {
@@ -538,7 +660,10 @@
     "shares_after": 43029017
    },
    "left_out": [
-    "Revenue, results and cash"
+    "no full-year figures are tagged"
+   ],
+   "notes": [
+    "no tags in the filing; company facts file: no full-year figures are tagged"
    ]
   }
  }

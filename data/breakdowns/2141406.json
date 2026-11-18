@@ -9,7 +9,9 @@
   "price": 18.0,
   "holder_shares": 20000000,
   "company_shares": 10000000,
-  "shares_after": 225000000
+  "shares_after": 225000000,
+  "low": 20.0,
+  "high": 24.0
  },
  "exchange": "Nasdaq",
  "checks": [
@@ -28,6 +30,10 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "the sum of each share class; larger than the number sold"
+  },
+  {
+   "item": "Price range before pricing",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
   }
  ],
  "hidden": [

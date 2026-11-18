@@ -8,7 +8,9 @@
  "offer": {
   "price": 17.0,
   "holder_shares": 0,
-  "company_shares": 10294117
+  "company_shares": 10294117,
+  "low": 16.0,
+  "high": 18.0
  },
  "exchange": "Nasdaq",
  "checks": [
@@ -23,6 +25,10 @@
   {
    "item": "Final price",
    "how": "price times shares sold equals the total on the cover"
+  },
+  {
+   "item": "Price range before pricing",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
   }
  ],
  "hidden": [

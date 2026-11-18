@@ -9,7 +9,9 @@
   "price": 22.0,
   "holder_shares": 0,
   "company_shares": 4285714,
-  "unit": "ADS"
+  "unit": "ADS",
+  "low": 20.0,
+  "high": 22.0
  },
  "exchange": "NYSE",
  "checks": [
@@ -19,11 +21,15 @@
   },
   {
    "item": "Shares sold by the company",
-   "how": "stated more than once in the filing"
+   "how": "stated on the cover and again in the offering summary"
   },
   {
    "item": "Final price",
    "how": "price times shares sold equals the total on the cover"
+  },
+  {
+   "item": "Price range before pricing",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
   }
  ],
  "hidden": [

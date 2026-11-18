@@ -8,8 +8,7 @@
  "offer": {
   "price": 5.0,
   "holder_shares": 0,
-  "company_shares": 3100000,
-  "shares_after": 23100000
+  "company_shares": 3100000
  },
  "exchange": "NYSE American",
  "financials": {
@@ -63,13 +62,14 @@
    "how": "price times shares sold equals the total on the cover"
   },
   {
-   "item": "Shares outstanding after the offering",
-   "how": "from the offering summary; larger than the number sold"
-  },
-  {
    "item": "Financial figures",
    "how": "taken from the tagged statements, and the latest year's figures also appear in the printed statements"
   }
  ],
- "hidden": []
+ "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "only one share class's count could be read"
+  }
+ ]
 }
