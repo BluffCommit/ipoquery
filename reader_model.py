@@ -41,7 +41,7 @@ CHECKS_VERSION = 1                     # bump to apply changed checks to every d
 MODEL_VERSION = [PROMPT_VERSION, CHECKS_VERSION]
 READERS = ["claude-sonnet-5-5", "claude-haiku-5-5"]     # the first one's wording is used; figures need both to agree
 REFEREE = "claude-opus-5-5"            # read 32 deals as a comparison in Nov 2026; the results are in data/model_compare.json
-MAX_DEALS = 40                         # deals read per run
+MAX_DEALS = 80                         # deals read per run
 PRICES = {"claude-haiku-5-5": (0.10, 0.50), "claude-sonnet-5-5": (2.00, 10.00), "claude-opus-5-5": (4.00, 20.00)}    # US$ per million tokens in, out (list prices, Nov 2026)
 API_URL = "https://api.anthropic.com/v1/messages"
 
