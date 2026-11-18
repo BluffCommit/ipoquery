@@ -45,6 +45,11 @@
    "item": "When insiders can sell",
    "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
    "by": "model"
+  },
+  {
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "by": "model"
   }
  ],
  "financials": {
@@ -75,32 +80,6 @@
   ],
   "by": "model"
  },
- "others": [
-  {
-   "name": "WISDOM FOCUS GROUP LTD.",
-   "role": "Controlling shareholder, owned by the CEO and CFO",
-   "before": 13506220,
-   "sold": 0
-  },
-  {
-   "name": "Shihai Bi",
-   "role": "Director, chief financial officer, 51% owner of Wisdom Focus Group",
-   "before": 6888172,
-   "sold": 0
-  },
-  {
-   "name": "Guanglang Jiang",
-   "role": "Chairman, chief executive, 49% owner of Wisdom Focus Group",
-   "before": 6618048,
-   "sold": 0
-  },
-  {
-   "name": "Kumo Capital Limited",
-   "role": "Shareholder, owned by Xiaoyu Zhao",
-   "before": 2117700,
-   "sold": 0
-  }
- ],
  "what": "It trades recyclable materials, mainly waste paper and scrap metal, from Japan to buyers across East and Southeast Asia.",
  "short": "Seahawk",
  "proceeds": "It plans to spend 30% on expanding into new markets, 20% on an AI trading system and 20% on facilities and environmental certification. It plans 15% for new recyclable products and 15% for working capital and reserves.",

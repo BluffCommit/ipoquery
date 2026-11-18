@@ -45,26 +45,11 @@
    "item": "When insiders can sell",
    "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
    "by": "model"
-  }
- ],
- "others": [
-  {
-   "name": "Audrey Chee Hui Ling",
-   "role": "Chairwoman, chief executive, controlling shareholder (holds shares through Comeback Investment Assets Limited)",
-   "before": 11250000,
-   "sold": 0
   },
   {
-   "name": "Jdeep Trading Limited",
-   "role": "Shareholder with 5% or more",
-   "before": 900000,
-   "sold": 0
-  },
-  {
-   "name": "Liu Chun Hung Clement",
-   "role": "Chief financial officer (shares held through his spouse's company, Morex Services Limited)",
-   "before": 675000,
-   "sold": 0
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "by": "model"
   }
  ],
  "what": "It runs digital advertising screens in elevator lobbies of office and commercial buildings across Singapore.",

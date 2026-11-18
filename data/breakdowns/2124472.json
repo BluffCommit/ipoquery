@@ -51,6 +51,11 @@
    "item": "What earlier rounds paid",
    "why": "the readers found no table of preferred stock prices",
    "by": "model"
+  },
+  {
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "by": "model"
   }
  ],
  "financials": {
@@ -84,32 +89,6 @@
   ],
   "by": "model"
  },
- "others": [
-  {
-   "name": "Kenneth Gregg",
-   "role": "Founder, chief executive (Class B shares)",
-   "before": 59935260,
-   "sold": 0
-  },
-  {
-   "name": "DARLING STRATEGIC INVESTMENTS LLC",
-   "role": "Shareholder owning more than 5%",
-   "before": 5703100,
-   "sold": 0
-  },
-  {
-   "name": "Ryan Jesenik",
-   "role": "Named executive officer or director",
-   "before": 3577248,
-   "sold": 0
-  },
-  {
-   "name": "Christoph Birchler",
-   "role": "Named executive officer or director",
-   "before": 104337,
-   "sold": 0
-  }
- ],
  "lockup": {
   "summary": "The company, its directors, executive officers and nearly all shareholders agreed not to sell shares for 180 days after the prospectus date, with some exceptions.",
   "days": 180

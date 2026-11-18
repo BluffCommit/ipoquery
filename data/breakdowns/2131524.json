@@ -41,17 +41,18 @@
    "by": "model"
   },
   {
-   "item": "What earlier rounds paid",
-   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
-   "by": "model"
-  },
-  {
    "item": "Lock-up length",
    "how": "two AI readers agree on the number of days, and it is printed in the filing",
    "by": "model"
   }
  ],
- "hidden": [],
+ "hidden": [
+  {
+   "item": "What earlier rounds paid",
+   "why": "the highest round price is less than a quarter of the IPO price or more than three times it, which usually means a share split is not allowed for",
+   "by": "model"
+  }
+ ],
  "financials": {
   "unit": "USD millions",
   "measure": "operating",
@@ -133,14 +134,6 @@
    "sold": 0
   }
  ],
- "rounds": [
-  {
-   "name": "Series A",
-   "when": "2025",
-   "price": 1.0
-  }
- ],
- "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
  "lockup": {
   "summary": "The company, its directors and officers, and holders of almost all its stock agree not to sell for at least 180 days after the prospectus date. The lead underwriters can allow sales sooner, and some exceptions apply.",
   "days": 180

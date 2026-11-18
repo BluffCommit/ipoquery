@@ -43,6 +43,11 @@
    "item": "When insiders can sell",
    "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
    "by": "model"
+  },
+  {
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "by": "model"
   }
  ],
  "financials": {
@@ -82,32 +87,6 @@
    }
   ]
  },
- "others": [
-  {
-   "name": "Mr. Edwin Cywinski",
-   "role": "Founder, chief executive, chairman",
-   "before": 6600000,
-   "sold": 0
-  },
-  {
-   "name": "Mr. Marc Cywinski",
-   "role": "Founder, chief operating officer",
-   "before": 5360000,
-   "sold": 0
-  },
-  {
-   "name": "Mr. Jacob Pretorius",
-   "role": "Director or executive officer",
-   "before": 1040000,
-   "sold": 0
-  },
-  {
-   "name": "Mr. Joshua Marotske",
-   "role": "Founder, director or executive officer",
-   "before": 920000,
-   "sold": 0
-  }
- ],
  "what": "It makes solar-powered robotic lawnmowers and also provides engineering products and solar power development services in New Zealand and the United States.",
  "short": "SunScout",
  "proceeds": "It plans to build a factory in Austin, Texas, and spend on marketing, product development and stock. It will also repay a loan, pay US$2,000,000 for Brightway Energy, and use the rest for working capital.",

@@ -51,50 +51,11 @@
    "item": "Revenue, results and cash",
    "why": "the two AI readers gave different figures",
    "by": "model"
-  }
- ],
- "others": [
-  {
-   "name": "Entities affiliated with OrbiMed",
-   "role": "Venture investor",
-   "before": 23255789,
-   "sold": 0
   },
   {
-   "name": "Entities affiliated with LAV Fund",
-   "role": "Venture investor",
-   "before": 11858655,
-   "sold": 0
-  },
-  {
-   "name": "Zhen Li, Ph.D.",
-   "role": "Director or named executive officer",
-   "before": 10748214,
-   "sold": 0
-  },
-  {
-   "name": "Entities affiliated with SR One",
-   "role": "Venture investor",
-   "before": 8336661,
-   "sold": 0
-  },
-  {
-   "name": "BCLS Fund III Investments, LP",
-   "role": "Venture investor",
-   "before": 5128970,
-   "sold": 0
-  },
-  {
-   "name": "Chen Yu, M.D., M.B.A.",
-   "role": "Director, holds shares through TCG Crossover Fund I",
-   "before": 3590279,
-   "sold": 0
-  },
-  {
-   "name": "A. Robert MacLeod, Ph.D.",
-   "role": "Director or named executive officer",
-   "before": 491898,
-   "sold": 0
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "by": "model"
   }
  ],
  "rounds": [

@@ -209,7 +209,7 @@ LONG = page(
     table(("Series", "Shares", "Original issue price"), ("Series A", "4,000,000", "$1.25"), ("Series B", "2,000,000", "$6.00")),
     p("Item 15. Recent Sales of Unregistered Securities."), p("In March 2024 we sold 4,000,000 shares of Series A preferred stock at $1.25 per share. " * 2))
 
-GOOD = {"what": "Testco makes widgets for hospitals.", "short": "Testco", "proceeds": "It will spend about 40% on a new factory and the rest on general costs.",
+GOOD = {"share_classes": 1, "what": "Testco makes widgets for hospitals.", "short": "Testco", "proceeds": "It will spend about 40% on a new factory and the rest on general costs.",
         "financials": {"unit": "thousands", "currency": "USD", "years": [{"period_end": "2024-12-31", "revenue": 12345, "operating": -1111, "net": -1500},
                                                                          {"period_end": "2025-12-31", "revenue": 23456, "operating": -2222, "net": -2900}],
                        "part_year": None, "cash": {"value": 8765, "date": "2025-12-31"}},
@@ -249,7 +249,9 @@ def model_checks(folder):
     both = changed(lambda a: a["financials"]["years"][1].update(revenue=99999))
     check("a figure both readers give but the filing does not print is left out", left(both, copy.deepcopy(both)), {"Revenue, results and cash": "a figure the readers gave is not printed in the filing"})
     both = changed(lambda a: a["rounds"][1].update(price=125.0))
-    check("a round priced far above the IPO is treated as a missed share split", left(both, copy.deepcopy(both))["What earlier rounds paid"][:52], "the last round's price does not sit believably next ")
+    check("a round priced far above the IPO is treated as a missed share split", left(both, copy.deepcopy(both))["What earlier rounds paid"][:52], "the highest round price is less than a quarter of th")
+    both = changed(lambda a: a.update(share_classes=2))
+    check("with two share classes the other holders are left out", ("others" in rm.merge(both, both, text, offer)[0], left(both, both)), (False, {"Other large holders": "the ownership table splits holdings between share classes, and they are not added up here"}))
     both = changed(lambda a: a.update(proceeds="It will raise $84.6 billion."))
     check("a summary with a number the filing does not print is dropped", "proceeds" in rm.merge(both, both, text, offer)[0], False)
     messy = changed(lambda a: (a["rounds"][0].update(price="$1.25"), a["sellers"].append({"name": "John Doe", "role": "Director", "before": "3,000,000", "sold": 0}), a.update(others=[])))
@@ -284,6 +286,9 @@ def model_checks(folder):
     asked.clear()
     go()
     check("run: a deal already read is not read again", asked, [])
+    rm.CHECKS_VERSION, rm.MODEL_VERSION = 2, [rm.PROMPT_VERSION, 2]
+    go()
+    check("run: changed checks are applied from the saved answers, without asking again", (asked, json.loads((bdir / "9200001.json").read_text())["model"]["key"][1]), ([], [2, 2]))
     priced = dict(offer, price=20.0)
     (bdir / "9200001.json").write_text(json.dumps({"cik": 9200001, "method": "auto", "doc": url, "offer": priced, "checks": [], "hidden": []}))
     report = go()

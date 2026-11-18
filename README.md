@@ -65,13 +65,15 @@ and the first risk factors. A figure is added only when:
 
 - both readers give the same number, and it is printed in the filing
 - the named sellers' shares add up to the number on the cover
-- the last funding round's price sits believably next to the IPO price
-  (otherwise a share split has usually been missed)
+- the highest funding round price is between a quarter of the IPO price and
+  three times it (otherwise a share split has usually been missed)
+- other large holders are shown only when the ownership table has a single
+  share class
 
-For the first 20 deals a third, stronger model reads the filing too, and every
-disagreement is written to `data/model_compare.json`. Cost is about 8 cents a
-filing with the two readers (25 cents with the third). At most 20 deals are
-read per run.
+A third, stronger model also read 32 deals as a comparison; every
+disagreement is in `data/model_compare.json`. The readers' answers are saved
+in `data/model_answers/`, so a change to the checks can be applied again
+without paying to ask the models again. Cost is about 7 cents a filing.
 
 ## How it decides
 

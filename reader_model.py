@@ -37,7 +37,9 @@ from pathlib import Path
 import reader
 import tracker
 
-MODEL_VERSION = 2                      # bump to have every deal read again
+PROMPT_VERSION = 2                     # bump to have the models read every deal again (costs money)
+CHECKS_VERSION = 1                     # bump to apply changed checks to every deal again (free where the answers are saved)
+MODEL_VERSION = [PROMPT_VERSION, CHECKS_VERSION]
 READERS = ["claude-sonnet-5-5", "claude-haiku-5-5"]     # the first one's wording is used; figures need both to agree
 REFEREE = "claude-opus-5-5"            # also reads the first COMPARE_DEALS deals, for the comparison only
 COMPARE_DEALS = 32                     # the first 20 were mostly small deals; the next 12 are priced IPOs, which have more to read
@@ -177,6 +179,7 @@ The JSON object has exactly these keys:
    "years": up to three full financial years, oldest first, each {"period_end": the last day of the year as "YYYY-MM-DD", "revenue": total revenue or null, "operating": profit or loss from operations or null, "net": net profit or loss or null},
    "part_year": null, or {"label": e.g. "Jan to Sep 2026", "period_end": "YYYY-MM-DD", "revenue", "operating", "net", "prior_label", "prior_revenue", "prior_operating", "prior_net"} for the latest period shorter than a year and the same period a year earlier,
    "cash": null, or {"value": cash and cash equivalents as printed, "date": the balance sheet date as "YYYY-MM-DD"}}
+"share_classes": how many classes of shares the ownership table shows holdings for, as a number.
 "sellers": only the existing holders who are selling shares in this offering, each {"name": exactly as printed, without footnote marks, "role": a few words such as "Co-founder, chief executive" or "Venture investor", "before": shares beneficially owned before the offering, "sold": shares being sold in the offering, not counting any option given to the underwriters}. Empty list if none.
 "others": up to eight of the largest holders named in the ownership table who are not selling, each {"name", "role", "before"}.
 "rounds": the company's series of preferred stock, oldest first, each {"name": e.g. "Series A", "when": the year it was first sold, or null if not stated, "price": the original issue price per share}. Take prices from the PREFERRED excerpt (the note to the financial statements), not from ITEM 15, which may predate a share split. Use ITEM 15 only for the year. Empty list if the PREFERRED excerpt has no price table.
@@ -407,7 +410,10 @@ def merge(first, second, text, offer):
     oa, ob = table(first, "others"), table(second, "others")
     others = [r for n, r in oa.items() if n in ob and n not in sa and isinstance(r.get("before"), (int, float)) and r["before"] > 0
               and same(r["before"], ob[n].get("before")) and is_printed(r["before"], text)]
-    if others:
+    if first.get("share_classes") != 1 or second.get("share_classes") != 1:
+        if others:                                       # with two classes a holder has two figures, and one alone would mislead
+            leave("Other large holders", "the ownership table splits holdings between share classes, and they are not added up here")
+    elif others:
         out["others"] = [{"name": str(r["name"]), "role": str(r.get("role") or ""), "before": r["before"], "sold": 0} for r in others[:8]]
 
     # what earlier rounds paid
@@ -425,8 +431,8 @@ def merge(first, second, text, offer):
         leave(item, "a price the readers gave is not printed in the filing")
     elif offer.get("unit") == "ADS":
         leave(item, "the offer is in depositary shares, so the prices cannot be compared directly")
-    elif not price / 200 <= max(r["price"] for r in rows) <= price * 3:
-        leave(item, "the last round's price does not sit believably next to the IPO price, which usually means a share split is not allowed for")
+    elif not price / 4 <= max(r["price"] for r in rows) <= price * 3:
+        leave(item, "the highest round price is less than a quarter of the IPO price or more than three times it, which usually means a share split is not allowed for")
     else:
         out["rounds"] = [{"name": str(r["name"]), "when": str(r["when"]) if r.get("when") and same(r["when"], rb[norm(r["name"])].get("when")) else None, "price": r["price"]} for r in rows]
         out["rounds_note"] = "Prices are the original issue prices in the notes to the financial statements."
@@ -466,7 +472,7 @@ def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, 
     waiting = []
     for path in sorted(Path(breakdown_dir).glob("*.json")):
         b = tracker.load_json(path, {})
-        if b.get("method") == "auto" and b.get("cik") in records and (b.get("model") or {}).get("key") != [b["doc"], MODEL_VERSION]:
+        if b.get("method") == "auto" and b.get("cik") in records and (b.get("model") or {}).get("key") not in ([b["doc"], MODEL_VERSION], [b["doc"], 2]):
             offer = b["offer"]
             raising = (offer.get("price") or (offer["low"] + offer["high"]) / 2) * (offer["company_shares"] + offer.get("holder_shares", 0))
             waiting.append(("price" in offer, -raising, path, b))
@@ -483,8 +489,16 @@ def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, 
         user = "\n\n".join(f"=== {name.upper().replace('_', ' ')} ===\n{body}" for name, body in sections.items())
         referee = len(compare["deals"]) < COMPARE_DEALS and b["cik"] not in compared and "price" in b["offer"]
         models = READERS + ([REFEREE] if referee else [])
-        with ThreadPoolExecutor(max_workers=len(models)) as pool:
-            replies = dict(zip(models, pool.map(lambda model: ask(model, user, key), models)))
+        saved_path = Path(breakdown_dir).parent / "model_answers" / f"{b['cik']}.json"
+        saved = tracker.load_json(saved_path, {})
+        if not referee and saved.get("key") == [b["doc"], PROMPT_VERSION] and all(model in saved["answers"] for model in READERS):
+            replies = {model: (saved["answers"][model], {}, None) for model in READERS}
+        else:
+            with ThreadPoolExecutor(max_workers=len(models)) as pool:
+                replies = dict(zip(models, pool.map(lambda model: ask(model, user, key), models)))
+            if all(replies[model][0] for model in READERS):
+                saved_path.parent.mkdir(parents=True, exist_ok=True)
+                saved_path.write_text(json.dumps({"key": [b["doc"], PROMPT_VERSION], "answers": {model: replies[model][0] for model in READERS}}, ensure_ascii=False) + "\n", encoding="utf-8")
         costs = {model: cost(model, usage) for model, (_, usage, _) in replies.items()}
         spent += sum(costs.values())
         errors = {model: error for model, (_, _, error) in replies.items() if error}

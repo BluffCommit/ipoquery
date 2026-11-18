@@ -50,6 +50,11 @@
    "item": "What earlier rounds paid",
    "why": "the readers found no table of preferred stock prices",
    "by": "model"
+  },
+  {
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "by": "model"
   }
  ],
  "financials": {
@@ -88,56 +93,6 @@
   ],
   "by": "model"
  },
- "others": [
-  {
-   "name": "Haley Abivardi",
-   "role": "Co-founder, co-chief executive",
-   "before": 14635193,
-   "sold": 0
-  },
-  {
-   "name": "Goly Abivardi",
-   "role": "Co-founder, co-chief executive",
-   "before": 14635193,
-   "sold": 0
-  },
-  {
-   "name": "vVardis Investment Holding AG",
-   "role": "Holding company controlled by the founders",
-   "before": 4275026,
-   "sold": 0
-  },
-  {
-   "name": "Cerebro Equity GmbH",
-   "role": "Investor",
-   "before": 2629565,
-   "sold": 0
-  },
-  {
-   "name": "Entities affiliated with OrbiMed Advisors LLC",
-   "role": "Investor",
-   "before": 2516883,
-   "sold": 0
-  },
-  {
-   "name": "Heartland Dental, LLC",
-   "role": "Customer and investor",
-   "before": 2160651,
-   "sold": 0
-  },
-  {
-   "name": "Curo Bidco Limited",
-   "role": "Investor, owned by Apollo funds",
-   "before": 1827374,
-   "sold": 0
-  },
-  {
-   "name": "Thomas Rondot",
-   "role": "Executive officer",
-   "before": 768013,
-   "sold": 0
-  }
- ],
  "lockup": {
   "summary": "Officers, directors and holders of nearly all shares agreed not to sell for 180 days after the prospectus date. The two co-founders and their related entities agreed to 270 days.",
   "days": 180
