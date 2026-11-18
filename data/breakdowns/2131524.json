@@ -49,7 +49,7 @@
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "the highest round price is less than a quarter of the IPO price or more than three times it, which usually means a share split is not allowed for",
+   "why": "the two AI readers named different rounds",
    "by": "model"
   }
  ],
@@ -105,13 +105,13 @@
   },
   {
    "name": "Travis Murdoch, M.D.",
-   "role": "Chief executive, president and director",
+   "role": "Chief executive, president, director",
    "before": 8250304,
    "sold": 0
   },
   {
    "name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
-   "role": "Drug licensor and shareholder",
+   "role": "Investor and licensor of BHB-1893",
    "before": 7420091,
    "sold": 0
   },
@@ -123,34 +123,31 @@
   },
   {
    "name": "Frazier Life Sciences Public Fund, L.P.",
-   "role": "Investor",
+   "role": "Venture investor",
    "before": 3424657,
-   "sold": 0
-  },
-  {
-   "name": "Jason Coloma, Ph.D., M.B.A.",
-   "role": "Director",
-   "before": 1100456,
    "sold": 0
   }
  ],
  "lockup": {
-  "summary": "The company, its directors and officers, and holders of almost all its stock agree not to sell for at least 180 days after the prospectus date. The lead underwriters can allow sales sooner, and some exceptions apply.",
+  "summary": "The company, its directors and officers, and holders of nearly all its stock agree not to sell for at least 180 days after the prospectus date without the lead underwriters' written consent. Some exceptions apply.",
   "days": 180
  },
- "what": "A drug developer testing an oral medicine for hypertrophic cardiomyopathy, a serious heart muscle disease, and other heart conditions.",
+ "what": "A drug company that is developing an oral medicine for hypertrophic cardiomyopathy, a heart muscle disease, and other serious heart conditions.",
  "short": "Braveheart Bio",
  "risks": [
-  "It is a young company with a short history and big losses, and it may never make a profit.",
-  "Even after this offering it will need much more money, and it may not be able to raise it.",
-  "Raising more money could dilute current owners, limit how the company operates, or force it to give up rights to its drug.",
-  "The process for getting regulators' approval is long and unpredictable, and without approval its business would be badly hurt."
+  "The company is young, has lost money every year since it began, expects more losses, and may never make a profit.",
+  "Even after this offering it will need a lot more money, and may not be able to raise it on good terms.",
+  "Raising more money could reduce existing owners' shares, limit how the company operates, or force it to give up rights to its drug.",
+  "Regulators like the FDA take a long time and are unpredictable, and the company's business would suffer badly if it cannot get approval."
  ],
  "risks_note": "The first 4 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2131524/000162828026054354/braveheartbioinc-sx1a2.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

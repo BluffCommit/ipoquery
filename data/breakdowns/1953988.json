@@ -33,17 +33,17 @@
   {
    "item": "Financial figures",
    "how": "taken from the tagged statements, and the latest year's figures also appear in the printed statements"
-  },
-  {
-   "item": "Lock-up length",
-   "how": "two AI readers agree on the number of days, and it is printed in the filing",
-   "by": "model"
   }
  ],
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "why": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
    "by": "model"
   }
  ],
@@ -83,25 +83,24 @@
    }
   ]
  },
- "lockup": {
-  "summary": "Executives, directors and holders of 5% or more have agreed not to sell for six months after the offering closes. The lead underwriter can give written consent to allow exceptions.",
-  "days": 180
- },
- "what": "Through its subsidiary Heliospace, Helio designs, builds and tests spacecraft hardware and provides space engineering services.",
+ "what": "It designs, builds and tests spacecraft hardware and provides space engineering services to NASA, private companies and non-profit groups.",
  "short": "Helio",
- "proceeds": "It expects net proceeds of about $7.993 million. It plans about $1 million to repay notes and up to $4.25 million for research and development. The rest goes to sales, facilities, manufacturing and working capital.",
+ "proceeds": "It expects about $7.993 million in net proceeds. Roughly $1 million would repay notes, up to $4.25 million would go to research and development, and the rest to sales, facilities, manufacturing and working capital.",
  "risks": [
-  "The company needs more money than it has and may not be able to raise it on good terms.",
-  "It has a history of missing payments on its loans. All have been resolved, but new ones could happen.",
-  "Its auditors have said there is serious doubt the company can keep operating.",
-  "It has weak internal financial controls, which could lead to late or wrong financial reports.",
-  "It has lost money every year, has built up large losses, and expects more losses."
+  "It will need more money than it has, and may not be able to raise it on good terms, or at all.",
+  "It has had promissory note defaults. All have been resolved, but its cash is tight and new defaults could happen.",
+  "Its auditors have said there is serious doubt the company can keep operating without raising more money.",
+  "It found weaknesses in its financial controls, which could lead to late or inaccurate financial reports.",
+  "It has lost money every year and has a large accumulated deficit. It expects more losses."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/1953988/000168316826008001/helio_s1.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

@@ -47,13 +47,13 @@
    "why": "the share classes are not alike, so their counts cannot simply be added up"
   },
   {
-   "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
    "by": "model"
   },
   {
-   "item": "Other large holders",
-   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "item": "What earlier rounds paid",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   }
  ],
@@ -94,24 +94,27 @@
   "by": "model"
  },
  "lockup": {
-  "summary": "Officers, directors and holders of nearly all shares agreed not to sell for 180 days after the prospectus date. The two co-founders and their related entities agreed to 270 days.",
+  "summary": "The company, its officers, directors and holders of nearly all its shares cannot sell for 180 days after the prospectus date. The co-founders and their related entities cannot sell for 270 days.",
   "days": 180
  },
- "what": "It makes Curodont, a peptide-based treatment that repairs early tooth cavities and helps keep the natural tooth.",
+ "what": "It makes Curodont, a peptide-based treatment that helps repair early tooth cavities and keep the natural tooth.",
  "short": "vVARDIS",
- "proceeds": "It expects about $154.5 million in net proceeds. It plans to use the money for general business needs such as working capital, operating costs and equipment, and it may use some to buy other businesses.",
+ "proceeds": "The company expects about $154.5 million in net proceeds. It plans to use the money for general costs such as working capital, operating expenses and equipment. It may also buy other businesses, but has no deals agreed.",
  "risks": [
-  "The company's success depends on dentists and patients accepting and understanding Curodont, a new kind of cavity treatment.",
-  "Its results depend on distributors, especially Henry Schein, and on large customers such as Heartland.",
-  "Growing revenue depends on building up its sales and marketing team.",
-  "It may have trouble managing its fast growth.",
-  "It relies on outside companies to make, supply and assemble its products."
+  "The company's success depends on dentists and patients learning about and accepting its new Curodont cavity treatment.",
+  "Its results depend on distributors, especially Henry Schein, and on key customers such as Heartland.",
+  "Growing revenue depends on expanding its sales and marketing capabilities.",
+  "The company may have trouble managing its growth.",
+  "It relies on third-party manufacturers and suppliers to make and assemble its products."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/1907709/000114036126043938/ny20076472x18_424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

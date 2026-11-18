@@ -41,17 +41,18 @@
    "by": "model"
   },
   {
-   "item": "What earlier rounds paid",
-   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
-   "by": "model"
-  },
-  {
    "item": "Lock-up length",
    "how": "two AI readers agree on the number of days, and it is printed in the filing",
    "by": "model"
   }
  ],
- "hidden": [],
+ "hidden": [
+  {
+   "item": "What earlier rounds paid",
+   "why": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
+   "by": "model"
+  }
+ ],
  "financials": {
   "unit": "USD millions",
   "measure": "operating",
@@ -134,38 +135,28 @@
    "sold": 0
   }
  ],
- "rounds": [
-  {
-   "name": "Series Seed",
-   "when": "2023",
-   "price": 1.0
-  },
-  {
-   "name": "Series A",
-   "when": "2024",
-   "price": 10.0295
-  }
- ],
- "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
  "lockup": {
-  "summary": "The company, its directors and officers, and holders of nearly all its stock cannot sell for at least 180 days after the prospectus date. Goldman Sachs and Jefferies can approve a sale earlier, and some exceptions apply.",
+  "summary": "The company, its directors and officers, and holders of nearly all its stock cannot sell for at least 180 days after the prospectus date. Goldman Sachs and Jefferies can give written consent to sell sooner, with some exceptions.",
   "days": 180
  },
- "what": "City Therapeutics is a clinical-stage biotech company developing RNA interference medicines that switch off proteins linked to disease.",
+ "what": "It develops RNA interference medicines meant to switch off disease-causing proteins. Its drug candidates are in or heading into clinical trials.",
  "short": "City Therapeutics",
- "proceeds": "It expects net proceeds of about $181.5 million. It plans about $30.0 million for CITY-FXI, $20.0 million for CITY-RBP4, $40.0 million for CITY-TFR2 and $70.0 million for its City Platform. The rest goes to working capital and general costs.",
+ "proceeds": "It expects net proceeds of about $181.5 million. It plans to spend about $30.0 million on CITY-FXI, $20.0 million on CITY-RBP4, $40.0 million on CITY-TFR2 and $70.0 million on its City Platform. The rest goes to working capital and general costs.",
  "risks": [
-  "The company is young, has no approved products, and has a short history, so it is hard to judge its prospects.",
-  "It has never earned revenue from selling drugs, and becoming profitable depends on many things going right.",
-  "Its way of finding and developing drugs is new and may never produce products that can be sold.",
-  "It has focused on RNAi technology and its City Platform, so its future depends heavily on them working.",
-  "Its approach to designing and developing programs is unproven, and it may fail to find product candidates of commercial value."
+  "It is an early-stage drug developer with a short history and no approved products, so its future is hard to judge.",
+  "It has never earned revenue from selling drugs, and becoming profitable depends on many factors.",
+  "Its approach to finding and making new medicines is new and may never produce products that can be sold.",
+  "Its work centers on RNAi technology, so its success depends on this technology and on its City Platform working.",
+  "It may lack the money to keep developing a drug if problems delay or block approval or sale."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2143850/000110465926116636/tm2619715-10_424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

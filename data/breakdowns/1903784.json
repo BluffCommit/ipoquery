@@ -44,7 +44,7 @@
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "why": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
    "by": "model"
   },
   {
@@ -89,13 +89,16 @@
   ],
   "by": "model"
  },
- "what": "A clinical-stage drug developer working on treatments for metabolic diseases, including post-bariatric hypoglycemia and gastroparesis.",
+ "what": "Clinical-stage drug developer working on treatments for metabolic diseases such as post-bariatric low blood sugar and gastroparesis.",
  "short": "Vogenx",
- "proceeds": "It plans to use the money, with its existing cash, to keep developing its lead drug mizagliflozin and to pay accrued expenses. The rest is for more research, general business needs and working capital.",
+ "proceeds": "It plans to use the money, along with its existing cash, to keep developing its lead drug mizagliflozin and to pay accrued expenses. The rest is for more research, general corporate purposes and working capital.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/1903784/000118518526003448/vogenx424b4081126.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

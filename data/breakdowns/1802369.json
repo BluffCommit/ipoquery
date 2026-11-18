@@ -36,11 +36,6 @@
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
   },
   {
-   "item": "What earlier rounds paid",
-   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
-   "by": "model"
-  },
-  {
    "item": "Lock-up length",
    "how": "two AI readers agree on the number of days, and it is printed in the filing",
    "by": "model"
@@ -53,51 +48,63 @@
    "by": "model"
   },
   {
-   "item": "Other large holders",
-   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "item": "What earlier rounds paid",
+   "why": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
    "by": "model"
   }
  ],
- "rounds": [
+ "others": [
   {
-   "name": "Series A",
-   "when": null,
-   "price": 1.1786
+   "name": "Entities affiliated with OrbiMed",
+   "role": "Venture investor",
+   "before": 23255789,
+   "sold": 0
   },
   {
-   "name": "Series B",
-   "when": null,
-   "price": 5.9971
+   "name": "Entities affiliated with LAV Fund",
+   "role": "Venture investor",
+   "before": 11858655,
+   "sold": 0
   },
   {
-   "name": "Series B-1",
-   "when": null,
-   "price": 7.7963
+   "name": "Zhen Li, Ph.D.",
+   "role": "Director or named executive officer",
+   "before": 10748214,
+   "sold": 0
   },
   {
-   "name": "Series C",
-   "when": null,
-   "price": 9.7485
+   "name": "Entities affiliated with SR One",
+   "role": "Venture investor",
+   "before": 8336661,
+   "sold": 0
+  },
+  {
+   "name": "BCLS Fund III Investments, LP",
+   "role": "Venture investor",
+   "before": 5128970,
+   "sold": 0
   }
  ],
- "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
  "lockup": {
-  "summary": "The company, its officers, directors and holders of nearly all its stock cannot sell for 180 days after the prospectus date without the lead banks' written consent. The banks say they do not plan to release any shares early.",
+  "summary": "The company, its officers, directors and holders of nearly all its stock agreed not to sell for 180 days after the prospectus date. The lead underwriters can allow earlier sales in writing but say they have no current plan to.",
   "days": 180
  },
- "what": "It develops RNA-based medicines called siRNA drugs to treat many diseases, with three in human trials.",
+ "what": "ADARx develops RNA-based medicines, called siRNA therapeutics, to treat a wide range of diseases.",
  "short": "ADARx",
- "proceeds": "It expects about $408.1 million from the offering and $87.2 million from a private sale to AbbVie. It plans about $180 million for agazisiran, $65 million for onvuzosiran, $80 million for ADX-626, $25 million for ADX-077 and $20 million for ADX-199, with the rest for research and general costs.",
+ "proceeds": "It expects about $495.3 million from the offering and a private sale of shares to AbbVie. It plans to spend this on five drug candidates, including about $180.0 million for agazisiran, with the rest for research, working capital and general costs.",
  "risks": [
-  "It is a young company with no approved products and has not finished any clinical program, so its future is hard to judge.",
-  "It expects to keep losing money for the foreseeable future and may never become profitable.",
-  "Even after this offering it will need much more money, which could dilute shareholders or force it to cut research programs."
+  "It has a short history, has finished no clinical programs and has no approved products, so its future is hard to judge.",
+  "It expects large losses for the foreseeable future and may never make a profit.",
+  "Even after this offering it will need much more money, which could dilute shareholders or force cuts to its programs."
  ],
  "risks_note": "The first 3 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/1802369/000119312526403094/d903461d424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

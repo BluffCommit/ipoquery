@@ -49,7 +49,7 @@
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "why": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
    "by": "model"
   }
  ],
@@ -92,37 +92,37 @@
  "others": [
   {
    "name": "Entities affiliated with Catalio",
-   "role": "Investor",
+   "role": "Investor, over 5% holder",
    "before": 4196585,
    "sold": 0
   },
   {
    "name": "Nexus Ventures V Ltd.",
-   "role": "Investor",
+   "role": "Investor, over 5% holder",
    "before": 3237199,
    "sold": 0
   },
   {
    "name": "Frederick Manby, Ph.D.",
-   "role": "Executive officer or director",
+   "role": "Named executive officer or director",
    "before": 1964408,
    "sold": 0
   },
   {
    "name": "Entities affiliated with Ascenta Capital",
-   "role": "Investor",
+   "role": "Investor, over 5% holder",
    "before": 1927252,
    "sold": 0
   },
   {
    "name": "Thomas Miller, Ph.D.",
-   "role": "Executive officer or director",
+   "role": "Named executive officer or director",
    "before": 1393924,
    "sold": 0
   },
   {
    "name": "Michael Secora, Ph.D.",
-   "role": "Executive officer or director",
+   "role": "Named executive officer or director",
    "before": 442851,
    "sold": 0
   },
@@ -134,29 +134,32 @@
   },
   {
    "name": "Peter Olson, Ph.D.",
-   "role": "Executive officer or director",
+   "role": "Named executive officer or director",
    "before": 97127,
    "sold": 0
   }
  ],
  "lockup": {
-  "summary": "The company, its directors and officers, and nearly all other holders agreed not to sell shares for 180 days after the prospectus date without the underwriters' consent. After that, the remaining shares can be sold.",
+  "summary": "Directors, officers and nearly all holders agreed not to sell shares for 180 days after the prospectus date without the lead banks' written consent. Remaining shares can be sold from day 181.",
   "days": 180
  },
- "what": "Iambic uses artificial intelligence and automated lab work to discover and develop new medicines, with drug candidates in clinical trials.",
+ "what": "It uses artificial intelligence and automated lab experiments to discover and develop new medicines.",
  "short": "Iambic",
  "risks": [
-  "Iambic is young and has no approved products, so it is hard to judge its prospects.",
-  "It has lost a lot of money since it started and may never become profitable.",
-  "It will need a large amount of extra money to develop its drug candidates and run its business.",
-  "Its quarterly and yearly results may swing widely, which could push its stock price down.",
-  "Future deals or acquisitions could raise its costs, dilute shareholders, add debt, or bring other risks."
+  "It has a short history and no approved products, which makes it hard to judge its prospects.",
+  "It has lost significant money since it began and may never become profitable.",
+  "It will need a lot more money to develop its drug candidates and fund its operations.",
+  "Its results may swing a lot from one period to the next, which could push its share price down.",
+  "Future deals it makes could raise its funding needs, dilute shareholders, add debt or bring other risks."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/1997038/000119312526422865/iambic_inception_424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

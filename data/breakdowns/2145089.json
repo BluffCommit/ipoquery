@@ -36,6 +36,11 @@
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
   },
   {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
    "item": "Lock-up length",
    "how": "two AI readers agree on the number of days, and it is printed in the filing",
    "by": "model"
@@ -43,32 +48,57 @@
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the two AI readers gave different figures",
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
    "by": "model"
   },
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
-   "by": "model"
-  },
-  {
-   "item": "Other large holders",
-   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   }
  ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2025",
+    "revenue": null,
+    "operating": -51.829
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": null,
+   "operating": -44.672,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": null,
+   "prior_operating": -23.276
+  },
+  "facts": [
+   {
+    "value": -42.636,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
  "lockup": {
-  "summary": "Directors, executive officers and certain shareholders agreed not to sell their shares for 180 days after the prospectus date, unless the lead underwriters give written consent.",
+  "summary": "Directors, executive officers and certain shareholders agreed not to sell their shares for 180 days after the date of the prospectus, with limited exceptions. The lead underwriters can give written consent to sell sooner.",
   "days": 180
  },
- "what": "Windward Bio develops long-acting antibody medicines for people with asthma, COPD and atopic dermatitis.",
+ "what": "It develops antibody medicines that last longer in the body, for lung and skin diseases such as asthma and COPD.",
  "short": "Windward Bio",
- "proceeds": "It plans to use the money, along with its existing cash, to pay for clinical trials of its two lead medicines, WIN378 and WIN027. It will also fund early work on bispecific antibody programs, with the rest going to general business costs.",
+ "proceeds": "It expects about $203.8 million in net proceeds from the offering and a private sale to Sanofi. It will use this and its existing cash to run trials of its two drug candidates, WIN378 and WIN027, and to take early research programs into pre-trial studies. The rest is for general costs.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2145089/000119312526461203/d111653d424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

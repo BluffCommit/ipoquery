@@ -34,16 +34,6 @@
   {
    "item": "Price range before pricing",
    "how": "the midpoint used elsewhere in the filing matches the range on the cover"
-  },
-  {
-   "item": "What earlier rounds paid",
-   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
-   "by": "model"
-  },
-  {
-   "item": "Lock-up length",
-   "how": "two AI readers agree on the number of days, and it is printed in the filing",
-   "by": "model"
   }
  ],
  "hidden": [
@@ -51,100 +41,86 @@
    "item": "Revenue, results and cash",
    "why": "the two AI readers gave different figures",
    "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
  ],
  "others": [
   {
    "name": "Salvia Investment",
-   "role": "Investor, over 5% holder",
+   "role": "Large investor; a director runs it",
    "before": 8889301,
    "sold": 0
   },
   {
    "name": "Shanshan Xu, M.D., Ph.D., M.B.A.",
-   "role": "Executive officer and director, over 5% holder",
+   "role": "Named executive officer or director",
    "before": 8623812,
    "sold": 0
   },
   {
    "name": "Entities Affiliated with RA Capital",
-   "role": "Investor, over 5% holder",
+   "role": "Investment fund group",
    "before": 4475938,
    "sold": 0
   },
   {
    "name": "Entities Affiliated with Biotechnology Value Fund",
-   "role": "Investor, over 5% holder",
+   "role": "Investment fund group",
    "before": 3239908,
    "sold": 0
   },
   {
    "name": "Entities Affiliated with Thomas Strüngmann, Ph.D.",
-   "role": "Investor, over 5% holder",
+   "role": "Investor group",
    "before": 2849057,
    "sold": 0
   },
   {
    "name": "Dawn Holdco",
-   "role": "Investor, over 5% holder",
+   "role": "Investment holder",
    "before": 2469108,
    "sold": 0
   },
   {
    "name": "Entities Affiliated with INCE Capital",
-   "role": "Investor, over 5% holder",
+   "role": "Investment fund group",
    "before": 2241919,
    "sold": 0
   },
   {
    "name": "Thang Ho, Ph.D.",
-   "role": "Named executive officer",
+   "role": "Named executive officer or director",
    "before": 228375,
    "sold": 0
   }
  ],
- "rounds": [
-  {
-   "name": "Series Seed",
-   "when": null,
-   "price": 0.957
-  },
-  {
-   "name": "Series Seed Plus",
-   "when": null,
-   "price": 2.4064
-  },
-  {
-   "name": "Series A-1",
-   "when": null,
-   "price": 5.6997
-  },
-  {
-   "name": "Series A-2",
-   "when": null,
-   "price": 12.1225
-  }
- ],
- "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
- "lockup": {
-  "summary": "The company, its directors and officers, and nearly all other holders agreed not to sell shares for 180 days after the prospectus date. All remaining shares can be sold from day 181.",
-  "days": 180
- },
- "what": "It develops long-acting antibody medicines for immune and inflammatory diseases and has no approved products yet.",
+ "what": "Bambusa Therapeutics develops long-acting antibody medicines for immune and inflammatory diseases. None are approved for sale yet.",
  "short": "Bambusa",
- "proceeds": "It expects net proceeds of about $152.4 million. About $90.0 million is for its lead drug BBT001 and about $40.0 million for BBT002. The rest is for two early-stage drugs, equipment, working capital and general costs.",
+ "proceeds": "It expects about $152.4 million in net proceeds. About $90.0 million is for its lead drug BBT001 and $40.0 million for BBT002. The rest is for two early-stage drugs, equipment, working capital and general costs.",
  "risks": [
-  "The company is young, has no approved products and has a short history, so it is hard to judge its future.",
-  "It has lost a lot of money since it started, expects more losses and may never make a profit.",
-  "Even if a drug is approved, doctors and patients may not use it, and the market may be smaller than expected.",
-  "It faces strong competition, and others may develop or sell rival treatments sooner or more successfully.",
+  "It is an early-stage drug developer with a short history and no approved products, so its future is hard to judge.",
+  "It has lost significant money since it began, expects more losses, and may never become profitable.",
+  "Even if a drug is approved, doctors and patients may not accept it, and the market may be smaller than expected.",
+  "It faces strong competition, and others may develop or sell treatments before it does or do it better.",
   "Raising more money could dilute current shareholders, limit how the company operates, or force it to give up rights to its drugs."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2044950/000162828026068563/bambusa-424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

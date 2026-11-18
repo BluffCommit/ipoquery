@@ -42,7 +42,7 @@
   },
   {
    "item": "What earlier rounds paid",
-   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
+   "how": "two AI readers agree on the conversion price of each round, each is printed in the filing, and the highest sits believably next to the IPO price",
    "by": "model"
   }
  ],
@@ -110,13 +110,13 @@
   },
   {
    "name": "Shionogi",
-   "role": "Large shareholder",
+   "role": "Drug company and investor",
    "before": 2953817,
    "sold": 0
   },
   {
    "name": "Lawrence G. Miller, M.D.",
-   "role": "Named executive officer or director",
+   "role": "Named executive officer and director",
    "before": 2451036,
    "sold": 0
   },
@@ -181,21 +181,24 @@
    "price": 9.66
   }
  ],
- "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
- "what": "Apnimed is a late-stage drug company developing Oxnimbi, an oral pill to treat obstructive sleep apnea.",
+ "rounds_note": "Prices are each round's conversion price: what it paid for each share of common stock it becomes.",
+ "what": "Apnimed is developing a pill to treat obstructive sleep apnea and has applied to the FDA for approval.",
  "short": "Apnimed",
- "proceeds": "It expects net proceeds of about $173.6 million. With its existing cash, about $237.8 million will go to getting Oxnimbi approved and, if approved, launching it. The rest will fund research on other drug candidates, working capital and general costs.",
+ "proceeds": "It plans to use the money, along with its existing cash, to seek FDA approval for Oxnimbi, its sleep apnea pill, and to launch it if approved. Any remainder will fund research on other drugs, day-to-day needs and general costs.",
  "risks": [
-  "The company has lost a lot of money since it started, expects more losses, and may never become profitable.",
-  "The pro forma financial figures rest on early estimates and assumptions, so real results could be very different.",
-  "Its current and future debt could make it harder to run the business.",
-  "Even after this offering, it will need much more money, and may have to delay or cut programs if it cannot raise it."
+  "It has lost a lot of money since it began, expects more losses, and may never become profitable.",
+  "The pro forma financial figures rest on early estimates and assumptions, so actual results could be very different.",
+  "Its current and future debt could hurt its ability to run the business.",
+  "Even after this offering, it will need a lot more money and may have to cut or delay its plans if it cannot raise it."
  ],
  "risks_note": "The first 4 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/1745648/000119312526328422/apmd_424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

@@ -39,17 +39,17 @@
    "item": "Revenue and results",
    "how": "two AI readers gave the same figures, and each is printed in the filing",
    "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "the two AI readers gave different rounds or prices",
-   "by": "model"
-  },
-  {
-   "item": "When insiders can sell",
-   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "why": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
    "by": "model"
   }
  ],
@@ -124,7 +124,7 @@
   },
   {
    "name": "Entities affiliated with Blue Owl",
-   "role": "Healthcare investor",
+   "role": "Investment firm",
    "before": 1955616,
    "sold": 0
   },
@@ -135,18 +135,25 @@
    "sold": 0
   }
  ],
- "what": "Lycia is a clinical-stage biotech company using its LYTAC platform to develop medicines, including an IgE portfolio and a Graves' disease program.",
+ "lockup": {
+  "summary": "Lycia, its officers, directors and holders of nearly all its shares agreed not to sell for 180 days after the prospectus date, with some exceptions.",
+  "days": 180
+ },
+ "what": "Lycia is a clinical-stage biotech company developing new medicines for allergic and autoimmune diseases using its LYTAC platform.",
  "short": "Lycia",
  "risks": [
-  "It is a young company with no approved products and no completed clinical trials, so it is hard to judge its chances of success.",
-  "It has lost a lot of money since it began, has no product sales, and may never make a profit.",
-  "Delays or trouble enrolling patients in clinical trials could hold up or block the approvals it needs."
+  "Lycia is a young company with no approved products and no completed clinical trials, so it is hard to judge its chances of success.",
+  "Lycia has lost a lot of money since it started, has no product sales, and may never become profitable.",
+  "If Lycia has trouble enrolling patients in its clinical trials, getting the regulatory approvals it needs could be delayed or blocked."
  ],
  "risks_note": "The first 3 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/1806540/000162828026067048/lyciatherapeutics-424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

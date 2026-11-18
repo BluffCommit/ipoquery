@@ -49,7 +49,7 @@
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "a price the readers gave is not printed in the filing",
+   "why": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
    "by": "model"
   }
  ],
@@ -88,72 +88,75 @@
  "others": [
   {
    "name": "Entities affiliated with OrbiMed Private Investments VII, LP",
-   "role": "Investment firm, 5% holder",
+   "role": "Venture investor",
    "before": 2589132,
    "sold": 0
   },
   {
    "name": "Entities affiliated with ARCH Venture Fund X, L.P.",
-   "role": "Venture investor, 5% holder",
+   "role": "Venture investor",
    "before": 2421589,
    "sold": 0
   },
   {
    "name": "Entities affiliated with Gilead Sciences, Inc.",
-   "role": "Drug company, 5% holder",
+   "role": "Drug company investor",
    "before": 1666663,
    "sold": 0
   },
   {
    "name": "Entities affiliated with Frazier Life Sciences X, L.P.",
-   "role": "Venture investor, 5% holder",
+   "role": "Venture investor",
    "before": 1340988,
    "sold": 0
   },
   {
    "name": "Entities affiliated with Q Healthcare Holding LLC",
-   "role": "Arm of Qatar Investment Authority, 5% holder",
+   "role": "Investor owned by Qatar Investment Authority",
    "before": 1333330,
    "sold": 0
   },
   {
    "name": "Entities affiliated with Abu Dhabi Investment Authority",
-   "role": "Abu Dhabi government investment body, 5% holder",
+   "role": "Investor, Abu Dhabi government institution",
    "before": 1296927,
    "sold": 0
   },
   {
    "name": "Entities affiliated with Medical Excellence Capital Partners, LP",
-   "role": "Investor, 5% holder",
+   "role": "Investor",
    "before": 1078524,
    "sold": 0
   },
   {
    "name": "Damien McDevitt",
-   "role": "Named executive officer",
+   "role": "Named executive officer or director",
    "before": 835259,
    "sold": 0
   }
  ],
  "lockup": {
-  "summary": "The company, its officers, directors and nearly all other holders agreed not to sell shares for 180 days after the prospectus date, unless the lead underwriters agree in writing. Nearly all shares then become eligible for sale.",
+  "summary": "The company, its officers, directors and nearly all other shareholders agreed not to sell shares for 180 days after the prospectus date, unless the lead underwriters give written consent.",
   "days": 180
  },
- "what": "Develops stem cell therapies, made from each patient's own cells, to treat Parkinson's disease and other brain diseases.",
+ "what": "Aspen Neuroscience is developing a Parkinson's disease treatment made from a patient's own stem cells.",
  "short": "Aspen Neuroscience",
- "proceeds": "It expects to raise about $125.8 million after costs. It plans to spend about $110.0 million on a Phase 3 trial of its Parkinson's treatment, $8.0 million on the current trial and $4.0 million on early-stage research, with the rest for general costs.",
+ "proceeds": "It expects net proceeds of about $125.8 million. About $110.0 million is for a Phase 3 trial of its Parkinson's treatment, $8.0 million for its current trial and $4.0 million for microglia research. The rest is for general business needs.",
  "risks": [
-  "It is a young company with no approved products, so it is hard to judge its approach or its future.",
-  "It has lost a lot of money since it started and may never make a profit.",
+  "It is an early-stage company with a short history and no approved products, so its future is hard to judge.",
+  "It has lost a lot of money since it began, expects more losses, and may never turn a profit.",
   "Its financial condition raises serious doubt about whether it can keep operating.",
-  "Even after this offering, it will need a lot more money, and may have to cut or stop programs without it.",
+  "Even if this offering succeeds, it will need much more money, and failing to raise it could force cutbacks.",
   "Raising more money could dilute shareholders, limit how it operates, or force it to give up rights to its technology."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2124080/000119312526441782/elevation_424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

@@ -49,7 +49,7 @@
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "the two AI readers gave different rounds or prices",
+   "why": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
    "by": "model"
   }
  ],
@@ -136,24 +136,27 @@
   }
  ],
  "lockup": {
-  "summary": "The company, its directors, officers and holders of nearly all its stock agreed not to sell for 180 days after the prospectus date without written consent from J.P. Morgan and Evercore.",
+  "summary": "Directors, executive officers and holders of almost all shares cannot sell for 180 days after the prospectus date unless J.P. Morgan and Evercore agree in writing.",
   "days": 180
  },
- "what": "TRex Bio is a drug company testing medicines that use immune cells in body tissue to treat autoimmune and inflammatory diseases.",
+ "what": "A clinical-stage drug company developing medicines for autoimmune and inflammatory diseases using immune cells called Tregs found in tissue.",
  "short": "TRex Bio",
- "proceeds": "It expects net proceeds of about $103.5 million. About $90.0 million is for Phase 2 trials of TRB-061 and about $10.0 million for a Phase 1 trial of TRB-071. The rest is for general business needs.",
+ "proceeds": "It will use the money, plus its existing cash, to fund Phase 2 trials of TRB-061 (about $90.0 million) and Phase 1 testing of TRB-071 (about $10.0 million). The rest is for general business needs.",
  "risks": [
-  "The company is young, has no approved products and has lost money in every year except one, and it expects more losses.",
-  "Raising more money later may dilute current shareholders, limit how the company operates, or force it to give up rights to its drug candidates.",
-  "The company depends heavily on two drug candidates, TRB-061 and TRB-071, and their clinical trials may not succeed.",
-  "Trouble enrolling and treating patients in clinical trials could delay the trials or block the approvals the company needs.",
-  "Serious side effects from its drug candidates could delay or stop approval or market acceptance, or cause problems after approval."
+  "It is an early-stage company with a short history and no approved products, and it has lost money in every year except one.",
+  "Raising more money may reduce existing owners' stakes, limit how the company operates, or force it to give up rights to its drug candidates.",
+  "It depends heavily on the success of its two main drug candidates, TRB-061 and TRB-071, and their trials may fail.",
+  "Delays or trouble signing up and dosing patients in trials could hold up or block regulatory approval.",
+  "Serious side effects from its drug candidates could delay or block approval, or hurt acceptance and cause problems after approval."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2139097/000119312526419203/project_dino_-_424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

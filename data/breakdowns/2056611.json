@@ -39,20 +39,19 @@
    "item": "Revenue and results",
    "how": "two AI readers gave the same figures, and each is printed in the filing",
    "by": "model"
-  }
- ],
- "hidden": [
+  },
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "how": "two AI readers agree on the conversion price of each round, each is printed in the filing, and the highest sits believably next to the IPO price",
    "by": "model"
   },
   {
-   "item": "When insiders can sell",
-   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
    "by": "model"
   }
  ],
+ "hidden": [],
  "financials": {
   "unit": "USD millions",
   "measure": "operating",
@@ -125,27 +124,51 @@
    "role": "Investment fund",
    "before": 2496656,
    "sold": 0
-  },
-  {
-   "name": "Neil Singla, M.D.",
-   "role": "Named executive officer",
-   "before": 532795,
-   "sold": 0
-  },
-  {
-   "name": "Timothy P. Walbert",
-   "role": "Named executive officer",
-   "before": 329819,
-   "sold": 0
   }
  ],
- "what": "It develops pain medicines that are not opioids and are still in human trials, aiming to stop pain signals without addiction risk.",
+ "rounds": [
+  {
+   "name": "Series Seed",
+   "when": "2019",
+   "price": 2.2794
+  },
+  {
+   "name": "Series A",
+   "when": "2020",
+   "price": 4.4412
+  },
+  {
+   "name": "Series A-2",
+   "when": "2022",
+   "price": 5.7736
+  },
+  {
+   "name": "Series B",
+   "when": "2025",
+   "price": 10.105
+  }
+ ],
+ "rounds_note": "Prices are each round's conversion price: what it paid for each share of common stock it becomes.",
+ "lockup": {
+  "summary": "The company, its directors, executive officers and holders of nearly all its shares agreed not to sell for 180 days after the prospectus date. The lead underwriters can give written consent to sell earlier.",
+  "days": 180
+ },
+ "what": "A clinical-stage drug company developing pain medicines that are not opioids and are meant to block pain signals without risk of addiction.",
  "short": "Latigo",
- "proceeds": "It expects about $315.7 million in net proceeds. With its existing cash, it plans to move its two lead pain drugs, LTG-001 and LTG-321, through further trials and toward approval. The rest is for other research, working capital and general costs.",
+ "proceeds": "The company expects net proceeds of about $315.7 million. About $124.7 million is for its lead drug LTG-001, through late-stage trials and an FDA application, and for getting ready to sell it. About $46.2 million is for LTG-321 trials. The rest is for other research, working capital and general costs.",
+ "risks": [
+  "Latigo is a young company with a short history and has never sold a product, so its future is hard to judge.",
+  "It has lost a lot of money since it began and expects larger losses, and it may never make a profit.",
+  "Even with this offering, it will need much more money, which could dilute shareholders or force it to cut or stop its programs."
+ ],
+ "risks_note": "The first 3 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2056611/000119312526340329/d38775d424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

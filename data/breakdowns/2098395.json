@@ -95,7 +95,10 @@
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2098395/000149315226035207/form424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

@@ -41,17 +41,18 @@
    "by": "model"
   },
   {
-   "item": "What earlier rounds paid",
-   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
-   "by": "model"
-  },
-  {
    "item": "Lock-up length",
    "how": "two AI readers agree on the number of days, and it is printed in the filing",
    "by": "model"
   }
  ],
- "hidden": [],
+ "hidden": [
+  {
+   "item": "What earlier rounds paid",
+   "why": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
+   "by": "model"
+  }
+ ],
  "financials": {
   "unit": "USD millions",
   "measure": "operating",
@@ -87,87 +88,67 @@
  "others": [
   {
    "name": "Entities affiliated with Andreessen Horowitz",
-   "role": "Venture investor, over 5% holder",
+   "role": "Venture investor",
    "before": 2749392,
    "sold": 0
   },
   {
    "name": "Eli Lilly and Company",
-   "role": "Drug company, over 5% holder",
+   "role": "Pharmaceutical company shareholder",
    "before": 1054828,
    "sold": 0
   },
   {
    "name": "Entities affiliated with Avoro Life Sciences Fund LLC",
-   "role": "Investment fund, over 5% holder; its manager is a director",
+   "role": "Investment fund linked to a director",
    "before": 697650,
    "sold": 0
   },
   {
    "name": "Benjamin L. Oakes, Ph.D.",
-   "role": "Director or named officer",
+   "role": "Director or named executive officer",
    "before": 660998,
    "sold": 0
   },
   {
    "name": "Jennifer A. Doudna",
-   "role": "Over 5% holder",
+   "role": "Shareholder owning over 5%",
    "before": 603547,
    "sold": 0
   },
   {
    "name": "Brett T. Staahl",
-   "role": "Over 5% holder",
+   "role": "Shareholder owning over 5%",
    "before": 550056,
    "sold": 0
   },
   {
    "name": "Carl L. Gordon, Ph.D., CFA",
-   "role": "Director; shares held by an OrbiMed fund",
+   "role": "Director, linked to OrbiMed",
    "before": 348825,
    "sold": 0
   }
  ],
- "rounds": [
-  {
-   "name": "Series A",
-   "when": "2018",
-   "price": 9.77
-  },
-  {
-   "name": "Series A-1",
-   "when": "2018",
-   "price": 7.82
-  },
-  {
-   "name": "Series A-2",
-   "when": "2019",
-   "price": 10.72
-  },
-  {
-   "name": "Series B",
-   "when": "2021",
-   "price": 35.83
-  }
- ],
- "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
  "lockup": {
-  "summary": "Directors, officers and almost all other holders cannot sell their shares for 180 days after the date of the prospectus. The lead underwriters can allow sales sooner by giving written consent.",
+  "summary": "Directors, officers and nearly all other holders agree not to sell shares for 180 days after the prospectus date. The lead underwriters can allow sales sooner by written consent, with some exceptions.",
   "days": 180
  },
- "what": "It develops CRISPR gene-editing medicines meant to prevent common heart and metabolic diseases, starting with high cholesterol.",
+ "what": "Scribe Therapeutics develops CRISPR gene-editing medicines meant to prevent and treat common heart and metabolic diseases.",
  "short": "Scribe Therapeutics",
  "risks": [
-  "It is a young company that has not finished any clinical trial and has no approved products, so its future is hard to judge.",
-  "It has lost money every period, has never earned product revenue, and expects to keep losing money.",
-  "Its management and auditors have serious doubt it can keep operating, because its cash will not last twelve months.",
+  "It is a young company that has not finished any clinical trial and has no approved product, so its future is hard to judge.",
+  "It has lost money every period since it started, has no product revenue, and expects losses to continue.",
+  "Its management and auditors have serious doubt it can keep operating, because current cash will not last twelve months.",
   "Even after this offering, it will need a lot more money, which may not be available on acceptable terms."
  ],
  "risks_note": "The first 4 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/1853921/000119312526316503/d21355d424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

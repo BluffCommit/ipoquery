@@ -7764,7 +7764,7 @@
    }
   }
  ],
- "spent_usd": 11.2709,
+ "spent_usd": 13.0386,
  "later": [
   {
    "cik": 2133022,
@@ -7937,6 +7937,453 @@
     "item15"
    ],
    "preferred_starts": "Protection / Except / for Exempt Issuances, if the Company issues securities at a price less than the Conversion Price, the Conversion Price shall be reduced / to the"
+  },
+  {
+   "cik": 1953988,
+   "name": "Helio Corp /FL/",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08373,
+    "claude-haiku-5-5": 0.00465
+   },
+   "kept": [],
+   "left_out": {
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "lock-up days: 180 / None"
+   ],
+   "sections_not_found": [
+    "holders"
+   ],
+   "preferred_starts": "Common Stock / On July 20, 2026, the Company completed a 1 for / 5 reverse stock split. The Company's financial statements have been retroactively adjusted to effec"
+  },
+  {
+   "cik": 1802369,
+   "name": "ADARx Pharmaceuticals, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08663,
+    "claude-haiku-5-5": 0.00515
+   },
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the two AI readers gave different figures",
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock"
+   },
+   "readers_differ": [
+    "revenue 2024-12-31: None / 0",
+    "preferred converts: None / other"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "and litigation arising in the ordinary course of business. The Company is not a party to any material legal proceedings, nor is it aware of any material pending"
+  },
+  {
+   "cik": 2131524,
+   "name": "Braveheart Bio, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.0832,
+    "claude-haiku-5-5": 0.00489
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the two AI readers named different rounds"
+   },
+   "readers_differ": [
+    "preferred converts: other / one_for_one",
+    "rounds non voting series a: named by one reader only"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "F-17 / Table of Contents / The Company has not recorded any such liabilities as of December 31, 2025. / 7. Convertible Preferred Stock and Stockholders' Deficit / Stock"
+  },
+  {
+   "cik": 2088082,
+   "name": "Electra Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08853,
+    "claude-haiku-5-5": 0.00536
+   },
+   "kept": [
+    "What earlier rounds paid"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the two AI readers gave different figures",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "revenue 2024-12-31: None / 0",
+    "revenue 2025-12-31: None / 0",
+    "part year revenue: None / 0",
+    "part year prior_revenue: None / 0",
+    "preferred converts: one_for_one / None"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "of any amounts paid for future potential claims. / The Company's exposure under these agreements is unknown because it involves claims that may be made against / it"
+  },
+  {
+   "cik": 2056611,
+   "name": "Latigo Biotherapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08756,
+    "claude-haiku-5-5": 0.005
+   },
+   "kept": [
+    "Revenue and results",
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {},
+   "readers_differ": [
+    "preferred converts: one_for_one / None"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "or director is or was serving in such capacity. The Company is also party to indemnification agreements with its officers and directors. In some cases, the inde"
+  },
+  {
+   "cik": 1806540,
+   "name": "Lycia Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07947,
+    "claude-haiku-5-5": 0.00507
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock"
+   },
+   "readers_differ": [
+    "rounds series d price: 2.0417 / 2.04"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "44 / Total restructuring and impairment charges / $1,407 / 10. Convertible Preferred Stock / In June 2026, the Company issued 36,734,094 shares of its Series D converti"
+  },
+  {
+   "cik": 2058707,
+   "name": "Attovia Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08794,
+    "claude-haiku-5-5": 0.00477
+   },
+   "kept": [
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the two AI readers gave different figures"
+   },
+   "readers_differ": [
+    "revenue 2024-12-31: None / 0",
+    "part year revenue: None / 0",
+    "part year prior_revenue: None / 0",
+    "preferred converts: other / one_for_one"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "costs to defend lawsuits or settle claims related to these indemnification provisions. The Company has also entered into indemnification agreements with its dir"
+  },
+  {
+   "cik": 2124472,
+   "name": "Orion180 Insurance Group Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07117,
+    "claude-haiku-5-5": 0.00408
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Other large holders": "the ownership table splits holdings between share classes, and they are not added up here",
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "Debt represents the unpaid principal balance on credit agreements for long-term loans payable, net of unamortized issuance costs. Amortization of issuance costs"
+  },
+  {
+   "cik": 2143850,
+   "name": "CITY THERAPEUTICS, INC.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.0918,
+    "claude-haiku-5-5": 0.00529
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock"
+   },
+   "readers_differ": [
+    "cash value: None / 172109",
+    "cash date: None / 2026-06-30"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "3,344 / ​ / ​ / 10. Convertible Preferred Stock / Series Seed Convertible Preferred Stock / Beginning in September 2023 and in multiple closings through March 2024, the C"
+  },
+  {
+   "cik": 1745648,
+   "name": "Apnimed, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08402,
+    "claude-haiku-5-5": 0.00505
+   },
+   "kept": [
+    "Revenue and results",
+    "What earlier rounds paid"
+   ],
+   "left_out": {
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "preferred converts: other / None"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "F-50 / Table of Contents / 11. / CONVERTIBLE PREFERRED STOCK / The Company has issued and outstanding convertible Series A Preferred Stock, Series A-2 Preferred Stock, "
+  },
+  {
+   "cik": 1907709,
+   "name": "vVARDIS Holding AG",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07679,
+    "claude-haiku-5-5": 0.00444
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Other large holders": "the ownership table splits holdings between share classes, and they are not added up here",
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock"
+   },
+   "readers_differ": [
+    "preferred converts: one_for_one / other"
+   ],
+   "sections_not_found": [
+    "future_sale",
+    "item15"
+   ],
+   "preferred_starts": "Consolidated Statements of Mezzanine Equity and Shareholders' Equity (Deficit) / (In thousands of U.S. Dollars, except share data) / Redeemable Series A / Convertible"
+  },
+  {
+   "cik": 2145089,
+   "name": "WINDWARD BIO GROUP AG",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08602,
+    "claude-haiku-5-5": 0.00532
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Other large holders": "the ownership table splits holdings between share classes, and they are not added up here",
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "that cost is recognized over the period in which the service, and, where applicable, any other vesting conditions are fulfilled (the vesting period) based on th"
+  },
+  {
+   "cik": 2044950,
+   "name": "Bambusa Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08926,
+    "claude-haiku-5-5": 0.00516
+   },
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the two AI readers gave different figures",
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "operating 2024-12-31: None / -13880",
+    "net 2024-12-31: None / -13741",
+    "preferred converts: None / other"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "As of December 31, 2025, the Company had cash equivalents consisting of money market funds classified as Level 1 financial assets, as these assets are valued us"
+  },
+  {
+   "cik": 1839970,
+   "name": "BlossomHill Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08354,
+    "claude-haiku-5-5": 0.00525
+   },
+   "kept": [
+    "Revenue and results",
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {},
+   "readers_differ": [],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "2,938 / $ / 8,431 / 6. Convertible preferred stock and stockholders' deficit / Stockholders' deficit / Under the Company's amended and / restated certificate of incorporati"
+  },
+  {
+   "cik": 1997038,
+   "name": "Iambic Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08087,
+    "claude-haiku-5-5": 0.00483
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock"
+   },
+   "readers_differ": [
+    "preferred converts: None / other"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "Deferred revenue as of June 30, 2026 / $ / 53,562 / 6. Convertible preferred stock and stockholders' deficit / Convertible preferred stock / As of June 30, 2026, the Comp"
+  },
+  {
+   "cik": 2124080,
+   "name": "Aspen Neuroscience, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08728,
+    "claude-haiku-5-5": 0.00488
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock"
+   },
+   "readers_differ": [
+    "preferred converts: None / other"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "$ / 6,857 / 6. / Convertible Preferred Stock and Stockholders' Deficit / The Company's convertible preferred stock has been classified as temporary equity on the accomp"
+  },
+  {
+   "cik": 1853921,
+   "name": "Scribe Therapeutics, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08338,
+    "claude-haiku-5-5": 0.00497
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "Agreements / The Company entered into the Regents Agreement and Acuitas Agreements (Note 6), which requires it to pay milestones / contingent upon the meeting of sp"
+  },
+  {
+   "cik": 2139097,
+   "name": "TRex Bio, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.09358,
+    "claude-haiku-5-5": 0.00547
+   },
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock"
+   },
+   "readers_differ": [
+    "rounds series a 1 conversion_price: None / 1.29",
+    "rounds series a 2 conversion_price: None / 3.87",
+    "rounds series a 3 conversion_price: None / 3.87",
+    "rounds series b conversion_price: None / 3.0897"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "Total / 3,141,388 / 2,874,761 / Redeemable Convertible Preferred Stock / Between June 2018 and February 2022, the Company issued its Series A-1 redeemable convertible p"
+  },
+  {
+   "cik": 1903784,
+   "name": "Vogenx, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06682,
+    "claude-haiku-5-5": 0.00376
+   },
+   "kept": [
+    "Revenue and results"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the filing does not say, in a way both AI readers agree on, what each round paid per share of common stock",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "In the event of any liquidation, / dissolution or winding up of the Company, the holders of Series A Convertible Preferred Stock are entitled to be paid out of Co"
+  },
+  {
+   "cik": 2002988,
+   "name": "Retension Pharmaceuticals, Inc.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07805,
+    "claude-haiku-5-5": 0.00466
+   },
+   "kept": [
+    "What earlier rounds paid",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the two AI readers gave different figures"
+   },
+   "readers_differ": [
+    "revenue 2024-12-31: None / 0",
+    "revenue 2025-12-31: None / 0",
+    "part year revenue: None / 0",
+    "part year prior_revenue: None / 0"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "$ / (7,780,521 / ) / 4. Convertible Preferred Stock / As of December 31, 2025, the Company was authorized to issue 23,436,264 shares of preferred stock, consisting of 1"
   }
  ]
 }

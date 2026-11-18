@@ -31,7 +31,7 @@
   },
   {
    "item": "What earlier rounds paid",
-   "how": "two AI readers agree, each price is printed in the filing, and the last round sits believably next to the IPO price",
+   "how": "two AI readers agree on the conversion price of each round, each is printed in the filing, and the highest sits believably next to the IPO price",
    "by": "model"
   },
   {
@@ -50,13 +50,13 @@
  "others": [
   {
    "name": "Eric Keller",
-   "role": "Executive or director",
+   "role": "Executive officer or director",
    "before": 577801,
    "sold": 0
   },
   {
    "name": "Paul Sweetnam",
-   "role": "Executive or director",
+   "role": "Executive officer or director",
    "before": 543434,
    "sold": 0
   },
@@ -68,13 +68,13 @@
   },
   {
    "name": "Michael Joseph Berendt",
-   "role": "Executive or director",
+   "role": "Executive officer or director",
    "before": 56987,
    "sold": 0
   },
   {
    "name": "Donald Olds",
-   "role": "Executive or director",
+   "role": "Executive officer or director",
    "before": 55958,
    "sold": 0
   },
@@ -97,26 +97,29 @@
    "price": 9.9869
   }
  ],
- "rounds_note": "Prices are the original issue prices in the notes to the financial statements.",
+ "rounds_note": "Prices are each round's conversion price: what it paid for each share of common stock it becomes.",
  "lockup": {
-  "summary": "The company, its directors, officers and holders of nearly all its stock agreed not to sell for 180 days after the prospectus date, with some exceptions. The lead banks can allow sales sooner with written consent.",
+  "summary": "Directors, officers and holders of nearly all shares agreed not to sell for 180 days after the prospectus date. The underwriters can allow exceptions with written consent, and other customary exceptions apply.",
   "days": 180
  },
- "what": "Retension is a drug company testing an once-a-day pill, RTN-001, to treat high blood pressure and other heart diseases.",
+ "what": "It is a drug developer testing RTN-001, a once-daily pill meant to treat high blood pressure and other heart diseases.",
  "short": "Retension",
- "proceeds": "It plans to use the money, with its existing cash, to finish its Phase 2b trial (about $18 million) and prepare for a Phase 3 trial (about $10 million). The rest is for general business costs.",
+ "proceeds": "It plans to use about $18 million to finish a Phase 2b trial of RTN-001 and about $10 million to prepare for a Phase 3 trial. The rest goes to general business costs.",
  "risks": [
-  "The company is young, has lost money since it started, expects more losses, and may never make a profit.",
-  "If the company cannot keep going as a business, it may have to sell its assets and investors could lose everything.",
-  "It needs a lot more money, and failing to raise it could force cuts or an end to its drug programs.",
-  "It must grow its team and operations, and it may struggle to manage that growth.",
-  "It depends on its senior managers and scientists, and losing them or failing to hire more would hurt the business."
+  "The company is young, has lost money since it began, expects more losses, and may never make a profit.",
+  "If the company cannot continue as a going concern, investors would likely lose all or part of their money.",
+  "The company needs a lot more money, and failing to raise it could force it to delay or stop its programs.",
+  "The company must grow its organization and may struggle to manage that growth well.",
+  "The company relies on its managers and scientists, and losing them or failing to hire more would hurt the business."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2002988/000121390026108587/ea0276911-10.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",

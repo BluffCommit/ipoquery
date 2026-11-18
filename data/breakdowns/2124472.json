@@ -48,13 +48,13 @@
  ],
  "hidden": [
   {
-   "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
    "by": "model"
   },
   {
-   "item": "Other large holders",
-   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "item": "What earlier rounds paid",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   }
  ],
@@ -90,24 +90,27 @@
   "by": "model"
  },
  "lockup": {
-  "summary": "The company, its directors, executive officers and nearly all shareholders agreed not to sell shares for 180 days after the prospectus date, with some exceptions.",
+  "summary": "The company, its directors, executive officers and almost all shareholders agreed not to sell shares for 180 days after the date of the prospectus, with some exceptions.",
   "days": 180
  },
- "what": "Orion180 sells home insurance, mainly in the excess and surplus market, through independent agents in 14 U.S. states.",
+ "what": "It is a specialty insurance group that sells homeowners and flood insurance across the United States through independent agents.",
  "short": "Orion180",
- "proceeds": "The company expects about $220 million in net proceeds. It plans to use them to grow its business and for general purposes, and may repay part of its $282 million credit facility debt.",
+ "proceeds": "It plans to use the money as capital to grow the business and for general corporate purposes. It may also use some of it to repay part of the $282 million owed under its New Credit Facility.",
  "risks": [
-  "The company relies on independent agents to sell its products, and losing key agents or their support could hurt its business.",
-  "The company has grown fast, but its recent growth rates may not continue in the future.",
-  "Fast growth may put heavy demands on the company's resources, systems and staff, which could hurt its business.",
-  "If the company handles insurance claims poorly, its business, results and prospects could suffer.",
-  "Competition in the industry is intense, and the company may struggle to compete, grow or keep its market share."
+  "It relies on independent agents to sell its products, and losing key agents or weak agent support could hurt the business.",
+  "It has grown fast, and that growth may not continue.",
+  "Fast growth may put heavy demands on its resources, systems and staff.",
+  "If it handles insurance claims poorly, its business and results could suffer.",
+  "Competition in its industry is intense, and it may not be able to compete well enough to keep or grow its market share."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2124472/000162828026062794/orion180-424b4.htm",
-   2
+   [
+    3,
+    1
+   ]
   ],
   "readers": [
    "claude-sonnet-5-5",
