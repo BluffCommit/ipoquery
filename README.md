@@ -10,6 +10,12 @@ uses no AI model, and needs no paid service.
 - `docs/data/ipos.json`: the same list as data, for the IPO pages built later.
 - `data/state.json`: the script's memory, so each run only fetches what is new.
 
+## Hosting
+
+The site is served by GitHub Pages from the `docs/` folder of `main`, at
+ipoquery.com. `docs/CNAME` (written by GitHub when the custom domain is set)
+holds the domain; `docs/.nojekyll` tells Pages to serve the files as they are.
+
 ## The site
 
 `site/report.html` is the report view: the homepage and the page for each IPO,
