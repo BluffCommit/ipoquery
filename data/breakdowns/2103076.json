@@ -1,0 +1,40 @@
+{
+ "cik": 2103076,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "F-1 amendment filed Oct 23, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2103076/000119312526430437/d56487df1a.htm",
+ "doc_date": "2026-10-23",
+ "offer": {
+  "low": 19.0,
+  "high": 21.0,
+  "holder_shares": 0,
+  "company_shares": 16000000,
+  "unit": "ADS"
+ },
+ "exchange": "NYSE",
+ "checks": [
+  {
+   "item": "Price range",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "No existing holder is selling",
+   "how": "the cover page and summary do not mention selling holders"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated more than once in the filing"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "the offer is in depositary shares, which are not counted the same way as the shares outstanding"
+  },
+  {
+   "item": "Revenue, results and cash",
+   "why": "the financial statements are not tagged with an operating or net result"
+  }
+ ]
+}

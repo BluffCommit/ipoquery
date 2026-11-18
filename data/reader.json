@@ -1,0 +1,545 @@
+{
+ "version": 1,
+ "deals": {
+  "1907709": {
+   "form": "424B4",
+   "date": "2026-11-16",
+   "url": "https://www.sec.gov/Archives/edgar/data/1907709/000114036126043938/ny20076472x18_424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 18.0,
+    "holder_shares": 0,
+    "company_shares": 9722223,
+    "shares_after": 182483419
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2145089": {
+   "form": "424B4",
+   "date": "2026-11-16",
+   "url": "https://www.sec.gov/Archives/edgar/data/2145089/000119312526461203/d111653d424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 17.0,
+    "holder_shares": 0,
+    "company_shares": 10294117
+   },
+   "left_out": [
+    "Company value and the share that trades",
+    "Revenue, results and cash"
+   ]
+  },
+  "2152644": {
+   "form": "S-1/A",
+   "date": "2026-11-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/2152644/000119312526451816/hfg-20261106.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2152813": {
+   "form": "S-1/A",
+   "date": "2026-11-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/2152813/000110465926123884/tm2624212-22_s1a.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2044950": {
+   "form": "424B4",
+   "date": "2026-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/2044950/000162828026068563/bambusa-424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 16.0,
+    "holder_shares": 0,
+    "company_shares": 10555555,
+    "shares_after": 50942430
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2124080": {
+   "form": "424B4",
+   "date": "2026-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/2124080/000119312526441782/elevation_424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 15.0,
+    "holder_shares": 0,
+    "company_shares": 9375000,
+    "shares_after": 29078600
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "1070965": {
+   "form": "424B4",
+   "date": "2026-10-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1070965/000110465926119890/tm2620318-22_424b4.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no final price found"
+   ]
+  },
+  "1907223": {
+   "form": "S-1",
+   "date": "2026-10-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1907223/000121390026112563/ea0309329-s1_greenland.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2091349": {
+   "form": "S-1",
+   "date": "2026-10-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/2091349/000119312526431033/d191573ds1.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2103076": {
+   "form": "F-1/A",
+   "date": "2026-10-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/2103076/000119312526430437/d56487df1a.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "low": 19.0,
+    "high": 21.0,
+    "holder_shares": 0,
+    "company_shares": 16000000,
+    "unit": "ADS"
+   },
+   "left_out": [
+    "Company value and the share that trades",
+    "Revenue, results and cash"
+   ]
+  },
+  "1806540": {
+   "form": "424B4",
+   "date": "2026-10-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1806540/000162828026067048/lyciatherapeutics-424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 18.0,
+    "holder_shares": 0,
+    "company_shares": 17640000,
+    "shares_after": 55034559
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "1866501": {
+   "form": "F-1/A",
+   "date": "2026-10-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/1866501/000119312526428990/d100826df1a.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2142855": {
+   "form": "S-1/A",
+   "date": "2026-10-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/2142855/000121390026111162/ea0299258-07.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2136571": {
+   "form": "S-1/A",
+   "date": "2026-10-16",
+   "url": "https://www.sec.gov/Archives/edgar/data/2136571/000213657126000007/forms1_a2.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2143850": {
+   "form": "424B4",
+   "date": "2026-10-16",
+   "url": "https://www.sec.gov/Archives/edgar/data/2143850/000110465926116636/tm2619715-10_424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 18.0,
+    "holder_shares": 0,
+    "company_shares": 11111111,
+    "shares_after": 51721168
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "1997038": {
+   "form": "424B4",
+   "date": "2026-10-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/1997038/000119312526422865/iambic_inception_424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 16.0,
+    "holder_shares": 0,
+    "company_shares": 9375000,
+    "shares_after": 47400796
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2141616": {
+   "form": "424B4",
+   "date": "2026-10-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/2141616/000119312526422334/project_alchemy_-_424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 4.25,
+    "holder_shares": 0,
+    "company_shares": 4705883,
+    "shares_after": 28539063
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2139097": {
+   "form": "424B4",
+   "date": "2026-10-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/2139097/000119312526419203/project_dino_-_424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 14.0,
+    "holder_shares": 0,
+    "company_shares": 8333334,
+    "shares_after": 27445682
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2002988": {
+   "form": "424B4",
+   "date": "2026-10-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/2002988/000121390026108587/ea0276911-10.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 12.0,
+    "holder_shares": 0,
+    "company_shares": 3750000,
+    "shares_after": 8331599
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2113605": {
+   "form": "424B1",
+   "date": "2026-10-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/2113605/000121390026106090/ea0307489-424b1_chilwa.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 5.6,
+    "holder_shares": 0,
+    "company_shares": 625000,
+    "unit": "ADS"
+   },
+   "left_out": [
+    "Company value and the share that trades",
+    "Revenue, results and cash"
+   ]
+  },
+  "2141406": {
+   "form": "424B4",
+   "date": "2026-10-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/2141406/000162828026064097/accelevationllc-424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 18.0,
+    "holder_shares": 20000000,
+    "company_shares": 10000000,
+    "shares_after": 225000000
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2075335": {
+   "form": "424B4",
+   "date": "2026-09-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/2075335/000121390026104150/ea0306875-424b4_roze.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no final price found"
+   ]
+  },
+  "1802369": {
+   "form": "424B4",
+   "date": "2026-09-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/1802369/000119312526403094/d903461d424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 17.0,
+    "holder_shares": 0,
+    "company_shares": 26250000
+   },
+   "left_out": [
+    "Company value and the share that trades",
+    "Revenue, results and cash"
+   ]
+  },
+  "2094989": {
+   "form": "424B4",
+   "date": "2026-09-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/2094989/000118518526004253/ruihold424b4092326.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 1.0,
+    "holder_shares": 6092500,
+    "company_shares": 300000,
+    "shares_after": 15990000
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2124472": {
+   "form": "424B4",
+   "date": "2026-09-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/2124472/000162828026062794/orion180-424b4.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "the number of shares the company is selling is not stated the same way twice"
+   ]
+  },
+  "2088082": {
+   "form": "424B4",
+   "date": "2026-09-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/2088082/000119312526395670/d61940d424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 15.0,
+    "holder_shares": 0,
+    "company_shares": 23333334,
+    "shares_after": 62766955
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2111453": {
+   "form": "424B4",
+   "date": "2026-09-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/2111453/000110465926107696/tm267430d16_424b4.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no final price found"
+   ]
+  },
+  "1972234": {
+   "form": "S-1/A",
+   "date": "2026-09-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/1972234/000121390026098864/ea0305160-s1a1_venhub.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2089447": {
+   "form": "424B4",
+   "date": "2026-09-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/2089447/000149315226040933/form424b4.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no final price found"
+   ]
+  },
+  "1892704": {
+   "form": "424B4",
+   "date": "2026-08-20",
+   "url": "https://www.sec.gov/Archives/edgar/data/1892704/000149315226039415/form424b4.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no final price found"
+   ]
+  },
+  "2132582": {
+   "form": "424B4",
+   "date": "2026-08-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/2132582/000119312526356916/d23330d424b4.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "the number of shares sold by existing holders is not stated the same way twice"
+   ]
+  },
+  "2006960": {
+   "form": "424B4",
+   "date": "2026-08-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/2006960/000119312526351136/d476818d424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 22.0,
+    "holder_shares": 0,
+    "company_shares": 4285714,
+    "unit": "ADS"
+   },
+   "left_out": [
+    "Company value and the share that trades",
+    "Revenue, results and cash"
+   ]
+  },
+  "2101240": {
+   "form": "424B4",
+   "date": "2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/2101240/000121390026088617/ea0268485-18.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 5.0,
+    "holder_shares": 0,
+    "company_shares": 3100000,
+    "shares_after": 23100000
+   },
+   "left_out": []
+  },
+  "1903784": {
+   "form": "424B4",
+   "date": "2026-08-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1903784/000118518526003448/vogenx424b4081126.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 13.0,
+    "holder_shares": 0,
+    "company_shares": 6250000,
+    "shares_after": 13917587
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2084227": {
+   "form": "424B4",
+   "date": "2026-08-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/2084227/000149315226037407/form424b4.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "no final price found"
+   ]
+  },
+  "2104296": {
+   "form": "424B4",
+   "date": "2026-08-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/2104296/000121390026086641/ea0301091-424b4_ticket.htm",
+   "read": "2026-11-18",
+   "result": "not confirmed",
+   "notes": [
+    "the number of shares the company is selling is not stated the same way twice"
+   ]
+  },
+  "2056611": {
+   "form": "424B4",
+   "date": "2026-08-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/2056611/000119312526340329/d38775d424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 18.0,
+    "holder_shares": 0,
+    "company_shares": 19200000,
+    "shares_after": 63238030
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "1839970": {
+   "form": "424B4",
+   "date": "2026-08-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1839970/000119312526340215/d98958d424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 16.0,
+    "holder_shares": 0,
+    "company_shares": 9375000,
+    "shares_after": 30643660
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2131524": {
+   "form": "424B4",
+   "date": "2026-08-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/2131524/000162828026054354/braveheartbioinc-sx1a2.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 18.0,
+    "holder_shares": 0,
+    "company_shares": 21250000,
+    "shares_after": 73152838
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  },
+  "2058707": {
+   "form": "424B4",
+   "date": "2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/2058707/000119312526334997/d40469d424b4.htm",
+   "read": "2026-11-18",
+   "result": "read",
+   "found": {
+    "price": 17.0,
+    "holder_shares": 0,
+    "company_shares": 17000000,
+    "shares_after": 43029017
+   },
+   "left_out": [
+    "Revenue, results and cash"
+   ]
+  }
+ }
+}

@@ -2216,7 +2216,7 @@
    "withdrawn_date": null
   },
   "1620704": {
-   "amendments": 3,
+   "amendments": 4,
    "cik": 1620704,
    "draft_date": "2022-02-10",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1620704",
@@ -2242,6 +2242,11 @@
      "date": "2026-11-05",
      "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226006714/medx_s1a.htm"
+    },
+    {
+     "date": "2026-11-17",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007117/medx_s1a.htm"
     }
    ],
    "first_filed": "2026-09-25",
@@ -2249,11 +2254,11 @@
    "form": "S-1",
    "industry": "Agricultural Chemicals",
    "kind": "company",
-   "last_activity": "2026-11-05",
+   "last_activity": "2026-11-17",
    "latest": {
-    "date": "2026-11-05",
+    "date": "2026-11-17",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226006714/medx_s1a.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007117/medx_s1a.htm"
    },
    "listing_date": null,
    "location": "CA",
@@ -6540,6 +6545,45 @@
     "ASFH"
    ],
    "unpriced": true,
+   "withdrawn_date": null
+  },
+  "1834261": {
+   "amendments": 0,
+   "cik": 1834261,
+   "draft_date": "2026-06-23",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1834261",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2026-11-16",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1834261/000162828026074231/corespecialtyinsurancehold.htm"
+    }
+   ],
+   "first_filed": "2026-11-16",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Fire, Marine & Casualty Insurance",
+   "kind": "company",
+   "last_activity": "2026-11-16",
+   "latest": {
+    "date": "2026-11-16",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/1834261/000162828026074231/corespecialtyinsurancehold.htm"
+   },
+   "listing_date": null,
+   "location": "SC",
+   "marketing": false,
+   "name": "Core Specialty Insurance Holdings, Inc.",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Finance",
+   "sic": 6331,
+   "stage": "filed",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
    "withdrawn_date": null
   },
   "1834868": {
@@ -18078,7 +18122,7 @@
    "sector": "Biotech and pharma",
    "sic": 2834,
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -27715,7 +27759,7 @@
    "sector": "Software and internet",
    "sic": 7372,
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -54214,7 +54258,7 @@
    "withdrawn_date": null
   },
   "2147831": {
-   "amendments": 0,
+   "amendments": 1,
    "cik": 2147831,
    "draft_date": "2026-08-10",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2147831",
@@ -54225,6 +54269,11 @@
      "date": "2026-10-30",
      "form": "S-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2147831/000121390026114455/ea0309932-s1_ucsbacq.htm"
+    },
+    {
+     "date": "2026-11-17",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2147831/000121390026121218/ea0312312-s1a1_ucsbacq.htm"
     }
    ],
    "first_filed": "2026-10-30",
@@ -54232,11 +54281,11 @@
    "form": "S-1",
    "industry": "Blank Checks",
    "kind": "spac",
-   "last_activity": "2026-10-30",
+   "last_activity": "2026-11-17",
    "latest": {
-    "date": "2026-10-30",
-    "form": "S-1",
-    "url": "https://www.sec.gov/Archives/edgar/data/2147831/000121390026114455/ea0309932-s1_ucsbacq.htm"
+    "date": "2026-11-17",
+    "form": "S-1/A",
+    "url": "https://www.sec.gov/Archives/edgar/data/2147831/000121390026121218/ea0312312-s1a1_ucsbacq.htm"
    },
    "listing_date": null,
    "location": "CA",
@@ -54246,9 +54295,11 @@
    "prior_attempts": 0,
    "sector": "Finance",
    "sic": 6770,
-   "stage": "filed",
+   "stage": "amended",
    "stalled": false,
-   "tickers": [],
+   "tickers": [
+    "UCSB"
+   ],
    "unpriced": false,
    "withdrawn_date": null
   },
@@ -55278,6 +55329,45 @@
    "unpriced": false,
    "withdrawn_date": null
   },
+  "2156248": {
+   "amendments": 0,
+   "cik": 2156248,
+   "draft_date": "2026-09-29",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2156248",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2026-11-16",
+     "form": "F-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226051984/formf-1.htm"
+    }
+   ],
+   "first_filed": "2026-11-16",
+   "foreign": true,
+   "form": "F-1",
+   "industry": "Wholesale-Professional & Commercial Equipment & Supplies",
+   "kind": "company",
+   "last_activity": "2026-11-16",
+   "latest": {
+    "date": "2026-11-16",
+    "form": "F-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226051984/formf-1.htm"
+   },
+   "listing_date": null,
+   "location": "Hong Kong",
+   "marketing": false,
+   "name": "B & T Global Holding Ltd.",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Industrials",
+   "sic": 5040,
+   "stage": "filed",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": null
+  },
   "2156369": {
    "amendments": 0,
    "cik": 2156369,
@@ -56045,7 +56135,7 @@
    "withdrawn_date": "2026-09-16"
   }
  },
- "index_day": "2026-11-17",
+ "index_day": "2026-11-18",
  "quarters_done": [
   "2025Q4",
   "2026Q1",

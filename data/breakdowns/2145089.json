@@ -1,0 +1,38 @@
+{
+ "cik": 2145089,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "Final prospectus filed Nov 16, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2145089/000119312526461203/d111653d424b4.htm",
+ "doc_date": "2026-11-16",
+ "offer": {
+  "price": 17.0,
+  "holder_shares": 0,
+  "company_shares": 10294117
+ },
+ "exchange": "Nasdaq",
+ "checks": [
+  {
+   "item": "No existing holder is selling",
+   "how": "the cover page and summary do not mention selling holders"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated more than once in the filing"
+  },
+  {
+   "item": "Final price",
+   "how": "price times shares sold equals the total on the cover"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "the number of shares outstanding after the offering could not be read"
+  },
+  {
+   "item": "Revenue, results and cash",
+   "why": "the financial statements are not tagged with an operating or net result"
+  }
+ ]
+}

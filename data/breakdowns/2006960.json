@@ -1,0 +1,39 @@
+{
+ "cik": 2006960,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "Final prospectus filed Aug 14, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2006960/000119312526351136/d476818d424b4.htm",
+ "doc_date": "2026-08-14",
+ "offer": {
+  "price": 22.0,
+  "holder_shares": 0,
+  "company_shares": 4285714,
+  "unit": "ADS"
+ },
+ "exchange": "NYSE",
+ "checks": [
+  {
+   "item": "No existing holder is selling",
+   "how": "the cover page and summary do not mention selling holders"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated more than once in the filing"
+  },
+  {
+   "item": "Final price",
+   "how": "price times shares sold equals the total on the cover"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Company value and the share that trades",
+   "why": "the offer is in depositary shares, which are not counted the same way as the shares outstanding"
+  },
+  {
+   "item": "Revenue, results and cash",
+   "why": "the financial statements are not tagged with an operating or net result"
+  }
+ ]
+}

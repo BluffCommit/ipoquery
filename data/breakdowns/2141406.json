@@ -1,0 +1,39 @@
+{
+ "cik": 2141406,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "Final prospectus filed Oct 1, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2141406/000162828026064097/accelevationllc-424b4.htm",
+ "doc_date": "2026-10-01",
+ "offer": {
+  "price": 18.0,
+  "holder_shares": 20000000,
+  "company_shares": 10000000,
+  "shares_after": 225000000
+ },
+ "exchange": "Nasdaq",
+ "checks": [
+  {
+   "item": "Shares sold by existing holders",
+   "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Final price",
+   "how": "price times shares sold equals the total on the cover"
+  },
+  {
+   "item": "Shares outstanding after the offering",
+   "how": "the sum of each share class; larger than the number sold"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Revenue, results and cash",
+   "why": "the financial statements are not tagged with an operating or net result"
+  }
+ ]
+}

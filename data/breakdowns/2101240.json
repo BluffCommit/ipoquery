@@ -1,0 +1,75 @@
+{
+ "cik": 2101240,
+ "method": "auto",
+ "loaded": "2026-11-18",
+ "basis": "Final prospectus filed Aug 13, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2101240/000121390026088617/ea0268485-18.htm",
+ "doc_date": "2026-08-13",
+ "offer": {
+  "price": 5.0,
+  "holder_shares": 0,
+  "company_shares": 3100000,
+  "shares_after": 23100000
+ },
+ "exchange": "NYSE American",
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to Jun 2024",
+    "revenue": 2.481,
+    "operating": 0.372
+   },
+   {
+    "label": "Year to Jun 2025",
+    "revenue": 4.805,
+    "operating": 0.988
+   },
+   {
+    "label": "Year to Jun 2026",
+    "revenue": 4.026,
+    "operating": -0.696
+   }
+  ],
+  "facts": [
+   {
+    "value": 0.349,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": -0.103,
+    "label": "cash from operations, Year to Jun 2026",
+    "signed": true
+   },
+   {
+    "value": -0.967,
+    "label": "net result, Year to Jun 2026",
+    "signed": true
+   }
+  ]
+ },
+ "checks": [
+  {
+   "item": "No existing holder is selling",
+   "how": "the cover page and summary do not mention selling holders"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated more than once in the filing"
+  },
+  {
+   "item": "Final price",
+   "how": "price times shares sold equals the total on the cover"
+  },
+  {
+   "item": "Shares outstanding after the offering",
+   "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Financial figures",
+   "how": "taken from the tagged statements, and the latest year's figures also appear in the printed statements"
+  }
+ ],
+ "hidden": []
+}
