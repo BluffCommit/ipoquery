@@ -33,7 +33,66 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the readers found no full-year figures in the summary financial table",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "WISDOM FOCUS GROUP LTD.",
+   "role": "Largest shareholder, owned by the CEO and CFO",
+   "before": 13506220,
+   "sold": 0
+  },
+  {
+   "name": "Shihai Bi",
+   "role": "Director, chief financial officer",
+   "before": 6888172,
+   "sold": 0
+  },
+  {
+   "name": "Guanglang Jiang",
+   "role": "Director, chairman, chief executive",
+   "before": 6618048,
+   "sold": 0
+  },
+  {
+   "name": "Kumo Capital Limited",
+   "role": "Shareholder, owned by Xiaoyu Zhao",
+   "before": 2117700,
+   "sold": 0
+  }
+ ],
+ "what": "It is a Tokyo-based company that trades waste paper, paper pulp and scrap metal across East Asia and Southeast Asia.",
+ "short": "Seahawk Recycling",
+ "proceeds": "It plans to spend the money on growing in other markets (30%), building an AI trading system (20%), and buying or building facilities (20%). It will also use it for new recyclable products (15%) and general working capital (15%).",
+ "risks": [
+  "Past results do not guarantee future results, because they change with the economy, interest rates and customer confidence.",
+  "It must keep improving its trade-matching system, or the system may become out of date and hurt its ability to compete.",
+  "It relies on suppliers for all its products and has no long-term supply contracts, so supply problems could hurt the business.",
+  "Its sales depend on consumer demand and spending in Japan, East Asia and Southeast Asia, which factors outside its control can change.",
+  "It relies on a small number of major suppliers, and losing business from them could seriously hurt its results."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2075786/000121390026068063/ea0249320-10.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

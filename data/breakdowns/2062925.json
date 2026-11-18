@@ -32,7 +32,54 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the company reports in HKD, not US dollars",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "Ting Fo Chan",
+   "role": "Founder, chairman, chief executive",
+   "before": 5200000,
+   "sold": 0
+  },
+  {
+   "name": "Uplift Champion Ninetysix limited",
+   "role": "Shareholder owned by Mr. Ching Hei Chan",
+   "before": 2900000,
+   "sold": 0
+  }
+ ],
+ "what": "It provides temperature-controlled logistics and warehousing services to customers in Hong Kong.",
+ "short": "Smart Pointer",
+ "proceeds": "It expects about $21.6 million after costs. About 40% is for buying or investing in logistics and warehouse firms, 30% for more handling capacity and 20% for warehouse technology. The rest is for running costs and working capital.",
+ "risks": [
+  "US rules on auditors that US regulators cannot inspect could be applied more strictly to companies like this one.",
+  "Cash and assets held in Hong Kong may not be freely moved out of Hong Kong.",
+  "Court judgments that shareholders win against the company may not be enforceable.",
+  "Its managers have no experience running a US public company or following the laws that apply to one.",
+  "It is a holding company and can pay dividends only if its Hong Kong subsidiary earns money and sends it up."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2062925/000121390026072996/ea0241525-12.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

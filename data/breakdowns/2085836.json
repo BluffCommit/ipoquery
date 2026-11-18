@@ -24,6 +24,11 @@
   {
    "item": "Shares sold by the company",
    "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
@@ -33,7 +38,37 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the readers found no full-year figures in the summary financial table",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "lockup": {
+  "summary": "The company, its directors and officers, and certain existing shareholders agreed not to sell shares for 180 days after the date of the prospectus, with some exceptions.",
+  "days": 180
+ },
+ "what": "It is a holding company that runs all of its business through a subsidiary in Hong Kong.",
+ "short": "Poche Technology",
+ "proceeds": "The company expects about US$33,907,010 in net proceeds at a US$6 share price. It plans to spend about 37.5% on market expansion, 27.5% on research and development, 17.5% on hiring, and 17.5% on working capital.",
+ "risks": [
+  "Though all operations are in Hong Kong, the Chinese government may step in and affect the business or the value of the shares.",
+  "It is unclear whether Chinese approval is needed for this offering. If it is needed and denied, the shares could lose much value or become worthless.",
+  "China has taken sudden regulatory steps in mainland China, and similar moves could hurt the company's operations or the value of its shares."
+ ],
+ "risks_note": "The first 3 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2085836/000149315226038929/formf-1a.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

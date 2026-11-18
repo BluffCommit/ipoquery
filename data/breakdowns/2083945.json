@@ -29,12 +29,57 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the readers found no full-year figures in the summary financial table",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "Andrew Teh Yao, HO",
+   "role": "Chief executive, board chair and controlling shareholder; also holds 2500000 Class B shares",
+   "before": 9500000,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors, its officers and holders of 5% or more have agreed not to sell shares for 180 days. For the company, this runs from the closing of the offering. For insiders, it runs from the date the prospectus takes effect.",
+  "days": 180
+ },
+ "what": "It provides employer-of-record, HR outsourcing, executive search and HR research services to clients in Hong Kong, through its subsidiary TalentQuest.",
+ "short": "CALM Chain",
+ "proceeds": "It expects net proceeds of about US$26.2 million. About 30% is for growth in the Asia Pacific market, 30% for adding artificial intelligence to the business, and 40% for general costs and working capital.",
+ "risks": [
+  "The Chinese government could step in or change the rules at any time, which could hurt the Hong Kong business and make the shares lose value.",
+  "Following Hong Kong's personal data privacy law and similar rules may cost a lot and could hurt the business.",
+  "The Hong Kong National Security Law could affect its Hong Kong subsidiary, which makes up almost all of its business.",
+  "There are political risks in doing business in Hong Kong.",
+  "It earns money in Hong Kong dollars but the shares trade in US dollars, so currency changes could affect your investment value."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2083945/000121390026093861/ea0254362-09.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

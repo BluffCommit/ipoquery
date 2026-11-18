@@ -34,7 +34,32 @@
  "hidden": [
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the readers found no full-year figures in the summary financial table",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "what": "It supplies staff to airport cargo, ground handling and passenger service companies in Hong Kong.",
+ "short": "Timwood",
+ "proceeds": "It plans to use the money to improve its operations with technology, grow its team and scale, and build its brand in aviation. The rest is for working capital and general needs.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

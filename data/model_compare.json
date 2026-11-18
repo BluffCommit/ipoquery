@@ -1,0 +1,3902 @@
+{
+ "version": 1,
+ "deals": [
+  {
+   "cik": 2133022,
+   "name": "Oura Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2133022/000119312526396051/d119865ds1a.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08626,
+    "claude-haiku-5-5": 0.00524,
+    "claude-opus-5-5": 0.17592
+   },
+   "sections_not_found": [],
+   "kept": [
+    "Revenue and results",
+    "Who is selling",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [
+    "sellers antti laitala: named by one reader only",
+    "sellers michael a chapp: named by one reader only",
+    "sellers sean brecker: named by one reader only",
+    "sellers teemu kurppa: named by one reader only",
+    "sellers thomas hale: named by one reader only",
+    "lock-up days: 181 / 180"
+   ],
+   "referee_differs_from_second": [
+    "sellers antti laitala: named by one reader only",
+    "sellers michael a chapp: named by one reader only",
+    "sellers sean brecker: named by one reader only",
+    "sellers teemu kurppa: named by one reader only",
+    "sellers thomas hale: named by one reader only",
+    "lock-up days: 181 / 180"
+   ],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "Oura makes the Oura Ring, a smart ring, and a paid membership app that tracks sleep, activity and other health signals.",
+     "short": "Oura",
+     "proceeds": "Oura expects about $532.6 million in net proceeds, and about $526.4 million of it will go to tax payments tied to employee stock units vesting at the IPO. The rest is for general business costs such as technology development, working capital, operating expenses and equipment.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-09-30",
+        "revenue": 406751,
+        "operating": 13440,
+        "net": 3649
+       },
+       {
+        "period_end": "2025-09-30",
+        "revenue": 907856,
+        "operating": 45332,
+        "net": 12
+       }
+      ],
+      "part_year": {
+       "label": "Nine months to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 1214506,
+       "operating": 71188,
+       "net": 60768,
+       "prior_label": "Nine months to Jun 2025",
+       "prior_revenue": 697569,
+       "prior_operating": 60265,
+       "prior_net": 1573
+      },
+      "cash": {
+       "value": 371764,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [
+      {
+       "name": "Entities affiliated with Forerunner Ventures",
+       "role": "Venture investor",
+       "before": 28679908,
+       "sold": 28679908
+      },
+      {
+       "name": "Entities affiliated with Lifeline Ventures",
+       "role": "Venture investor",
+       "before": 22564156,
+       "sold": 6947864
+      },
+      {
+       "name": "Elysian Park Ventures, LLC",
+       "role": "Investor",
+       "before": 1416342,
+       "sold": 872228
+      }
+     ],
+     "others": [
+      {
+       "name": "Entities affiliated with FMR LLC",
+       "role": "Investor, funds managed by FMR LLC",
+       "before": 33609862
+      },
+      {
+       "name": "Bedford Ridge Investment Company LLP",
+       "role": "Investor",
+       "before": 28510954
+      },
+      {
+       "name": "David Shuman",
+       "role": "Executive chairman",
+       "before": 12381830
+      },
+      {
+       "name": "Michael A. Chapp",
+       "role": "Executive officer",
+       "before": 7007291
+      },
+      {
+       "name": "Thomas Hale",
+       "role": "Executive officer",
+       "before": 3554065
+      },
+      {
+       "name": "Teemu Kurppa",
+       "role": "Existing shareholder",
+       "before": 1544463
+      },
+      {
+       "name": "Antti Laitala",
+       "role": "Existing shareholder",
+       "before": 1064277
+      },
+      {
+       "name": "Sean Brecker",
+       "role": "Chief financial officer",
+       "before": 622772
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 181,
+      "summary": "Existing holders are released in steps. The first group can sell 35 days after the prospectus date, and all remaining shares can be sold by day 181. Some shares can be released sooner if the stock price rises well above the IPO price.",
+      "early": true
+     },
+     "risks": [
+      "Oura's fast revenue growth may not last, and growth is expected to slow over time.",
+      "If Oura cannot attract new members or keep existing ones paying, its business and growth will suffer.",
+      "Oura faces strong competition from larger companies with more money, bigger brands and wider sales reach.",
+      "Oura has only recently become profitable and may not stay profitable as its costs rise.",
+      "If Oura cannot keep launching new and improved products and features, its sales and growth could suffer."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Oura makes a smart ring and membership service that turns body signals into health insights.",
+     "short": "Oura",
+     "proceeds": "The company plans to use about $526.4 million of the net proceeds to cover tax withholding and remittance obligations from the RSU Net Settlement. The rest will go to general corporate purposes, such as technology development, working capital, operating expenses, and capital expenditures.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-09-30",
+        "revenue": 406751,
+        "operating": 13440,
+        "net": 3649
+       },
+       {
+        "period_end": "2025-09-30",
+        "revenue": 907856,
+        "operating": 45332,
+        "net": 12
+       }
+      ],
+      "part_year": {
+       "label": "Nine months ended June 30, 2026",
+       "period_end": "2026-06-30",
+       "revenue": 1214506,
+       "operating": 71188,
+       "net": 60768,
+       "prior_label": "Nine months ended June 30, 2025",
+       "prior_revenue": 697569,
+       "prior_operating": 60265,
+       "prior_net": 1573
+      },
+      "cash": {
+       "value": 371764,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [
+      {
+       "name": "Entities affiliated with Forerunner Ventures",
+       "role": "Venture investor",
+       "before": 28679908,
+       "sold": 28679908
+      },
+      {
+       "name": "Entities affiliated with Lifeline Ventures",
+       "role": "Venture investor",
+       "before": 22564156,
+       "sold": 6947864
+      },
+      {
+       "name": "Elysian Park Ventures, LLC",
+       "role": "Venture investor",
+       "before": 1416342,
+       "sold": 872228
+      }
+     ],
+     "others": [
+      {
+       "name": "Entities affiliated with FMR LLC",
+       "role": "Investment manager for its funds",
+       "before": 33609862
+      },
+      {
+       "name": "Bedford Ridge Investment Company LLP",
+       "role": "Investment company",
+       "before": 28510954
+      },
+      {
+       "name": "David Shuman",
+       "role": "Executive Chairman",
+       "before": 12381830
+      },
+      {
+       "name": "Michael A. Chapp",
+       "role": "Executive officer",
+       "before": 7007291
+      },
+      {
+       "name": "Thomas Hale",
+       "role": "Executive officer",
+       "before": 3554065
+      },
+      {
+       "name": "Teemu Kurppa",
+       "role": "Stockholder",
+       "before": 1544463
+      },
+      {
+       "name": "Antti Laitala",
+       "role": "Stockholder",
+       "before": 1064277
+      },
+      {
+       "name": "Sean Brecker",
+       "role": "Chief financial officer",
+       "before": 622772
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 181,
+      "summary": "Shares held by insiders and existing holders are released in stages from day 35 through day 181 after the prospectus date. Some releases can happen earlier if the stock trades at least 25%, 33% or 40% above the offering price.",
+      "early": true
+     },
+     "risks": [
+      "The company's rapid past growth may not continue, and its growth rate is expected to slow over time.",
+      "If it fails to attract new members or keep existing ones, its business and growth could suffer.",
+      "It faces intense competition from larger companies with more resources and brand recognition.",
+      "It has only recently become profitable and may not stay profitable.",
+      "If it does not develop new and updated products, its results could be harmed."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Oura makes the Oura Ring, a smart ring with an app that tracks sleep, activity, stress and other health signals.",
+     "short": "Oura",
+     "proceeds": "Oura expects about $532.6 million. It plans to use about $526.4 million to pay taxes owed on employee stock awards that vest at the IPO, and the rest for general needs such as technology development and running the business.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-09-30",
+        "revenue": 406751,
+        "operating": 13440,
+        "net": 3649
+       },
+       {
+        "period_end": "2025-09-30",
+        "revenue": 907856,
+        "operating": 45332,
+        "net": 12
+       }
+      ],
+      "part_year": {
+       "label": "Oct 2025 to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 1214506,
+       "operating": 71188,
+       "net": 60768,
+       "prior_label": "Oct 2024 to Jun 2025",
+       "prior_revenue": 697569,
+       "prior_operating": 60265,
+       "prior_net": 1573
+      },
+      "cash": {
+       "value": 371764,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [
+      {
+       "name": "Entities affiliated with Forerunner Ventures",
+       "role": "Venture investor",
+       "before": 28679908,
+       "sold": 28679908
+      },
+      {
+       "name": "Entities affiliated with Lifeline Ventures",
+       "role": "Venture investor",
+       "before": 22564156,
+       "sold": 6947864
+      },
+      {
+       "name": "Elysian Park Ventures, LLC",
+       "role": "Venture investor",
+       "before": 1416342,
+       "sold": 872228
+      },
+      {
+       "name": "Thomas Hale",
+       "role": "Executive officer",
+       "before": 3554065,
+       "sold": 0
+      },
+      {
+       "name": "Michael A. Chapp",
+       "role": "Executive officer",
+       "before": 7007291,
+       "sold": 0
+      },
+      {
+       "name": "Sean Brecker",
+       "role": "Chief financial officer",
+       "before": 622772,
+       "sold": 0
+      },
+      {
+       "name": "Teemu Kurppa",
+       "role": "Existing shareholder",
+       "before": 1544463,
+       "sold": 0
+      },
+      {
+       "name": "Antti Laitala",
+       "role": "Existing shareholder",
+       "before": 1064277,
+       "sold": 0
+      }
+     ],
+     "others": [
+      {
+       "name": "Entities affiliated with FMR LLC",
+       "role": "Investment firm",
+       "before": 33609862
+      },
+      {
+       "name": "Bedford Ridge Investment Company LLP",
+       "role": "Investment firm",
+       "before": 28510954
+      },
+      {
+       "name": "David Shuman",
+       "role": "Executive chairman",
+       "before": 12381830
+      },
+      {
+       "name": "Wen Hsieh",
+       "role": "Director",
+       "before": 304242
+      },
+      {
+       "name": "Dennis Durkin",
+       "role": "Director",
+       "before": 279490
+      },
+      {
+       "name": "Mikko Kuusi",
+       "role": "Director nominee",
+       "before": 82184
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Insiders' shares unlock in stages starting 35 days after the IPO. All remaining shares are free to sell from the 181st day.",
+      "early": true
+     },
+     "risks": [
+      "Oura's very fast growth may not last, and it expects its growth rate to slow over time.",
+      "If Oura cannot attract new members or keep existing ones paying, its business and results will suffer.",
+      "Oura competes with larger companies that have more money, better-known brands and wider sales reach, and it may lose out.",
+      "Oura only recently became profitable and may not stay profitable as its costs rise.",
+      "Oura must keep launching new and improved rings and features, and it may fail to keep up with changing tastes."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2093018,
+   "name": "CopperTech Metals Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2093018/000157587226000437/ctm006_s1a.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06517,
+    "claude-haiku-5-5": 0.00339,
+    "claude-opus-5-5": 0.12481
+   },
+   "sections_not_found": [
+    "summary_financials"
+   ],
+   "kept": [
+    "Revenue and results"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It mines and processes copper, and some cobalt, in Zambia through its operating company, Konkola Copper Mines.",
+     "short": "CopperTech Metals",
+     "proceeds": "It expects net proceeds of about $372.0 million. It will pass all of this to a subsidiary, which will lend it to Konkola Plc for capital development and infrastructure at the Konkola Deep Mine Project.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-03-31",
+        "revenue": 397986,
+        "operating": -302380,
+        "net": 922528
+       },
+       {
+        "period_end": "2026-03-31",
+        "revenue": 1330105,
+        "operating": -46862,
+        "net": -339661
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "The company may miss its copper and cobalt production targets, which would hurt its cash flow and profits. Most of its mineral resources are only 'inferred' and may never prove viable."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Mines and processes copper and cobalt in Zambia through its Konkola and Nchanga operations.",
+     "short": "CopperTech Metals",
+     "proceeds": "The company plans to contribute all net proceeds to VRJL, its wholly owned subsidiary. VRJL will then loan the money to Konkola Plc for the Konkola Deep Mine Project.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-03-31",
+        "revenue": 397986,
+        "operating": -302380,
+        "net": 922528
+       },
+       {
+        "period_end": "2026-03-31",
+        "revenue": 1330105,
+        "operating": -46862,
+        "net": -339661
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "The company may not reach its production estimates, which could hurt its cash flows, profits and financial condition."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "CopperTech mines and processes copper in Zambia through its main business, Konkola Copper Mines.",
+     "short": "CopperTech",
+     "proceeds": "CopperTech plans to pass all of the money it raises to a subsidiary, which will lend it to Konkola Copper Mines. Konkola will use it to build and equip the Konkola Deep Mine Project.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-03-31",
+        "revenue": 397986,
+        "operating": -302380,
+        "net": 922528
+       },
+       {
+        "period_end": "2026-03-31",
+        "revenue": 1330105,
+        "operating": -46862,
+        "net": -339661
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "The company may not produce as much copper and cobalt as it expects, or as quickly, which could hurt its cash flow and profits."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2103076,
+   "name": "OPAY Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2103076/000119312526430437/d56487df1a.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08171,
+    "claude-haiku-5-5": 0.00485,
+    "claude-opus-5-5": 0.15194
+   },
+   "sections_not_found": [],
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "OPay runs a digital finance app that offers payments, money transfers and loans to consumers and businesses in Africa.",
+     "short": "OPay",
+     "proceeds": "It plans to use the money for general corporate purposes. These include investing in technology, distribution, new products and market growth, and possible acquisitions. It expects about US$291.0 million from the offering and about US$183.6 million from a concurrent private placement.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 205731,
+        "operating": -35102,
+        "net": -50827
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 536251,
+        "operating": 107100,
+        "net": 72470
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 467060,
+       "operating": 131237,
+       "net": 90874,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 197477,
+       "prior_operating": 35798,
+       "prior_net": 21714
+      },
+      "cash": {
+       "value": 385771,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "AFintronic Limited",
+       "role": "Holding company wholly owned by James Zhou, non-executive chairman",
+       "before": 257909521
+      },
+      {
+       "name": "OPay Tech",
+       "role": "Holding company for shares of Fang Han, Stephen Wen (co-CEO) and Lars Rahbaek Boilesen (co-CEO)",
+       "before": 186581278
+      },
+      {
+       "name": "Bloom Haven Limited",
+       "role": "Trust vehicle holding shares for the 2026 employee equity plan",
+       "before": 168664930
+      },
+      {
+       "name": "Opera",
+       "role": "Listed company, Opera Limited, existing shareholder",
+       "before": 159806239
+      },
+      {
+       "name": "Bright Holding Limited",
+       "role": "Holding company wholly owned by James Zhou, non-executive chairman",
+       "before": 137359180
+      },
+      {
+       "name": "Softbank Entities",
+       "role": "Investor, linked to SoftBank Vision Fund II",
+       "before": 123214065
+      },
+      {
+       "name": "SCC Entities",
+       "role": "Venture investor",
+       "before": 112389548
+      },
+      {
+       "name": "IDG Entities",
+       "role": "Venture investor",
+       "before": 111837577
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 365,
+      "summary": "Directors, executive officers, existing shareholders and the private placement investor agreed not to sell shares or ADSs for 365 days after the prospectus date, with some exceptions. The company itself agreed not to issue or sell shares for 180 days.",
+      "early": false
+     },
+     "risks": [
+      "OPay faces tough competition from fintech firms, banks and others, and many rivals have more money and users.",
+      "Failures in its computer systems or in the data centers and cloud services it relies on could disrupt its business.",
+      "Demand for its services could fall if it fails to keep up with new technology and changing customer needs.",
+      "OPay has grown fast but has a short operating history, which makes its future results hard to predict."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "OPay is a digital financial platform in Africa offering payments, lending and other financial services through its app.",
+     "short": "OPay",
+     "proceeds": "The company plans to use the net proceeds for general corporate purposes. These include investments in technology, distribution, new solutions and market expansion, and possible acquisitions or strategic investments.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 205731,
+        "operating": -35102,
+        "net": -50827
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 536251,
+        "operating": 107100,
+        "net": 72470
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 467060,
+       "operating": 131237,
+       "net": 90874,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 197477,
+       "prior_operating": 35798,
+       "prior_net": 21714
+      },
+      "cash": {
+       "value": 385771,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "AFintronic Limited",
+       "role": "Company owned by James Zhou",
+       "before": 257909521
+      },
+      {
+       "name": "OPay Tech",
+       "role": "Holding entity linked to Stephen Wen and Lars Rahbaek Boilesen",
+       "before": 186581278
+      },
+      {
+       "name": "Opera",
+       "role": "Listed company; its chairman is a principal shareholder",
+       "before": 159806239
+      },
+      {
+       "name": "Bloom Haven Limited",
+       "role": "Trustee holding shares for the 2026 equity incentive plan",
+       "before": 168664930
+      },
+      {
+       "name": "Bright Holding Limited",
+       "role": "Company owned by James Zhou",
+       "before": 137359180
+      },
+      {
+       "name": "Softbank Entities",
+       "role": "SoftBank-managed investor",
+       "before": 123214065
+      },
+      {
+       "name": "SCC Entities",
+       "role": "Venture investors linked to Enlightenment Trust",
+       "before": 112389548
+      },
+      {
+       "name": "IDG Entities",
+       "role": "IDG China venture capital funds",
+       "before": 111837577
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 365,
+      "summary": "Directors, executive officers, existing shareholders and the concurrent private placement investor agreed not to sell for 365 days after the prospectus date, subject to some exceptions. The company itself has agreed not to sell for 180 days.",
+      "early": false
+     },
+     "risks": [
+      "Intense and growing competition could hurt the company if it cannot compete effectively.",
+      "Disruptions to its IT systems or third-party data centers could harm the business.",
+      "Demand for its services may fall if it does not keep innovating or adapting to technology changes.",
+      "The company is growing fast but has a limited operating history, which makes future results hard to predict."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "OPay runs a mobile app for payments, credit and other financial services, mainly in Nigeria and other emerging markets.",
+     "short": "OPay",
+     "proceeds": "OPay plans to use the money for general business needs, including technology, distribution, new products and entering new markets. It may also use some for acquisitions or strategic investments.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 205731,
+        "operating": -35102,
+        "net": -50827
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 536251,
+        "operating": 107100,
+        "net": 72470
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": 467060,
+       "operating": 131237,
+       "net": 90874,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": 197477,
+       "prior_operating": 35798,
+       "prior_net": 21714
+      },
+      "cash": {
+       "value": 385771,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "AFintronic Limited",
+       "role": "Company owned by chairman James Zhou",
+       "before": 257909521
+      },
+      {
+       "name": "OPay Tech",
+       "role": "Holding company for co-CEOs and a shareholder",
+       "before": 186581278
+      },
+      {
+       "name": "Bloom Haven Limited",
+       "role": "Trust holding shares for staff awards",
+       "before": 168664930
+      },
+      {
+       "name": "Opera",
+       "role": "Listed tech company, early investor",
+       "before": 159806239
+      },
+      {
+       "name": "Bright Holding Limited",
+       "role": "Company owned by chairman James Zhou",
+       "before": 137359180
+      },
+      {
+       "name": "Softbank Entities",
+       "role": "Venture investor",
+       "before": 123214065
+      },
+      {
+       "name": "SCC Entities",
+       "role": "Investor",
+       "before": 112389548
+      },
+      {
+       "name": "IDG Entities",
+       "role": "Venture investor",
+       "before": 111837577
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 365,
+      "summary": "Directors, executives and existing shareholders agreed not to sell for 365 days after the prospectus date. The company itself agreed not to sell shares for 180 days.",
+      "early": false
+     },
+     "risks": [
+      "OPay faces strong and growing competition in financial technology, and could lose ground if it does not compete well.",
+      "Breakdowns in its computer systems or in outside data centers and cloud services could hurt its business.",
+      "Demand for its services could fall if it fails to keep up with new technology and changing customer needs.",
+      "OPay has grown fast but has a fairly short track record, which makes its future harder to predict."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2141583,
+   "name": "Rezera Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2141583/000110465926124074/tmq-20261109xs1a.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.09485,
+    "claude-haiku-5-5": 0.0055,
+    "claude-opus-5-5": 0.17653
+   },
+   "sections_not_found": [],
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "a round has no price"
+   },
+   "readers_differ": [
+    "rounds series c price: $2.8741 / 2.8741",
+    "rounds series d1 price: $1.50 / 1.5",
+    "rounds series d2 price: $0.75 / 0.75",
+    "rounds series d3 price: $0.7407 / 0.7407",
+    "rounds series d4: named by one reader only"
+   ],
+   "referee_differs_from_first": [
+    "rounds series a1 price: £1.00 / 1.0",
+    "rounds series a2 price: £2.4888 / 2.4888",
+    "rounds series b1 price: £2.9702 / 2.9702",
+    "rounds series b2 price: £3.1191 / 3.1191",
+    "rounds series c price: $2.8741 / 2.8741",
+    "rounds series d1 price: $1.50 / 1.5",
+    "rounds series d2 price: $0.75 / 0.75",
+    "rounds series d3 price: $0.7407 / 0.7407",
+    "rounds series d4: named by one reader only",
+    "rounds series junior: named by one reader only",
+    "rounds series junior preferred: named by one reader only"
+   ],
+   "referee_differs_from_second": [
+    "rounds series a1 price: £1.00 / 1.0",
+    "rounds series a2 price: £2.4888 / 2.4888",
+    "rounds series b1 price: £2.9702 / 2.9702",
+    "rounds series b2 price: £3.1191 / 3.1191",
+    "rounds series junior: named by one reader only",
+    "rounds series junior preferred: named by one reader only"
+   ],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "A clinical-stage biotech developing oral drugs that block NLRP3, a protein that drives inflammation in heart and brain diseases.",
+     "short": "Rezera",
+     "proceeds": "Rezera expects about $181.0 million in net proceeds at a $12.00 share price. It plans to use this and its existing cash to take its drug ruvonoflast through a Phase 3 trial in peripheral artery disease (PAD), with results expected in 2028, and for general business needs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -23398,
+        "net": -25205
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -40991,
+        "net": -42179
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": null,
+       "operating": -24553,
+       "net": -25537,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": null,
+       "prior_operating": -13924,
+       "prior_net": -13723
+      },
+      "cash": {
+       "value": 3851,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Novo Holdings A/S",
+       "role": "Investor",
+       "before": 1013118
+      },
+      {
+       "name": "Entities affiliated with Blue Owl Capital",
+       "role": "Investor",
+       "before": 996871
+      },
+      {
+       "name": "F-Prime Capital Partners Healthcare Fund V LP",
+       "role": "Investor",
+       "before": 545247
+      },
+      {
+       "name": "Sofinnova Capital VIII FPCI",
+       "role": "Investor",
+       "before": 500512
+      },
+      {
+       "name": "Entities affiliated with 5AM Ventures",
+       "role": "Venture investor",
+       "before": 479643
+      },
+      {
+       "name": "Entities affiliated with Epidarex Capital",
+       "role": "Investor",
+       "before": 299257
+      },
+      {
+       "name": "Aventis Inc.",
+       "role": "Investor, subsidiary of Sanofi",
+       "before": 249087
+      },
+      {
+       "name": "Alan Watt, Ph.D.",
+       "role": "Chief Scientific Officer",
+       "before": 122785
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series Junior",
+       "when": null,
+       "price": "£1.00"
+      },
+      {
+       "name": "Series A1",
+       "when": null,
+       "price": "£1.00"
+      },
+      {
+       "name": "Series A2",
+       "when": null,
+       "price": "£2.4888"
+      },
+      {
+       "name": "Series B1",
+       "when": null,
+       "price": "£2.9702"
+      },
+      {
+       "name": "Series B2",
+       "when": null,
+       "price": "£3.1191"
+      },
+      {
+       "name": "Series C",
+       "when": null,
+       "price": "$2.8741"
+      },
+      {
+       "name": "Series D1",
+       "when": "2025",
+       "price": "$1.50"
+      },
+      {
+       "name": "Series D2",
+       "when": "2025",
+       "price": "$0.75"
+      },
+      {
+       "name": "Series D3",
+       "when": "2025",
+       "price": "$0.7407"
+      },
+      {
+       "name": "Series D4",
+       "when": "2026",
+       "price": null
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and holders of almost all its stock cannot sell for at least 180 days after the prospectus date. The lead underwriters can give written consent to sell sooner, and some exceptions apply.",
+      "early": true
+     },
+     "risks": [
+      "Rezera is a young biotech with no drug sales, has lost money since it began, and may never make a profit.",
+      "Its recurring losses raise serious doubt that it can keep operating as a going concern.",
+      "None of its drug candidates is approved yet, and delays or failure to bring them to market would badly hurt the business.",
+      "Changes in currency exchange rates could raise its costs and use up its cash faster.",
+      "Its drugs target NLRP3, a new target, so development time, cost and chance of success are hard to predict."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Clinical-stage biotechnology company developing oral NLRP3 inhibitors for cardiovascular and neuroinflammatory diseases.",
+     "short": "Rezera",
+     "proceeds": "The company plans to use the net proceeds, with its existing cash, to advance ruvonoflast through topline data from a planned Phase 3 trial in PAD, expected in 2028, and for general corporate purposes. If proceeds exceed current estimates, part may fund a trabzanoflast trial.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -23398,
+        "net": -25205
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -40991,
+        "net": -42179
+       }
+      ],
+      "part_year": {
+       "label": "Six months to June 30, 2026",
+       "period_end": "2026-06-30",
+       "revenue": null,
+       "operating": -24553,
+       "net": -25537,
+       "prior_label": "Six months to June 30, 2025",
+       "prior_revenue": null,
+       "prior_operating": -13924,
+       "prior_net": -13723
+      },
+      "cash": {
+       "value": "3851",
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Novo Holdings A/S",
+       "role": "Existing stockholder",
+       "before": 1013118
+      },
+      {
+       "name": "Entities affiliated with Blue Owl Capital",
+       "role": "Existing stockholder",
+       "before": 996871
+      },
+      {
+       "name": "F-Prime Capital Partners Healthcare Fund V LP",
+       "role": "Existing stockholder",
+       "before": 545247
+      },
+      {
+       "name": "Sofinnova Capital VIII FPCI",
+       "role": "Existing stockholder",
+       "before": 500512
+      },
+      {
+       "name": "Entities affiliated with 5AM Ventures",
+       "role": "Existing stockholder",
+       "before": 479643
+      },
+      {
+       "name": "Entities affiliated with Epidarex Capital",
+       "role": "Existing stockholder",
+       "before": 299257
+      },
+      {
+       "name": "Aventis Inc.",
+       "role": "Existing stockholder",
+       "before": 249087
+      },
+      {
+       "name": "Alan Watt, Ph.D.",
+       "role": "Chief Scientific Officer",
+       "before": 122785
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series Junior",
+       "when": null,
+       "price": "£1.00"
+      },
+      {
+       "name": "Series A1",
+       "when": null,
+       "price": "£1.00"
+      },
+      {
+       "name": "Series A2",
+       "when": null,
+       "price": "£2.4888"
+      },
+      {
+       "name": "Series B1",
+       "when": null,
+       "price": "£2.9702"
+      },
+      {
+       "name": "Series B2",
+       "when": null,
+       "price": "£3.1191"
+      },
+      {
+       "name": "Series C",
+       "when": null,
+       "price": 2.8741
+      },
+      {
+       "name": "Series D1",
+       "when": "2025",
+       "price": 1.5
+      },
+      {
+       "name": "Series D2",
+       "when": "2025",
+       "price": 0.75
+      },
+      {
+       "name": "Series D3",
+       "when": "2025",
+       "price": 0.7407
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, its officers and holders of substantially all its capital stock agreed not to sell shares for at least 180 days from the prospectus date. Jefferies, TD Securities and Cantor must consent to any earlier sale.",
+      "early": false
+     },
+     "risks": [
+      "The company has a short operating history, has no drug sales revenue yet, and may never make a profit.",
+      "The company keeps losing money, which raises substantial doubt about whether it can keep operating.",
+      "Changes in foreign exchange rates could raise the company's costs and use up its cash faster.",
+      "Its product candidates target NLRP3, a new target, so timing, cost and chance of success are hard to predict.",
+      "Its business depends heavily on the success of ruvonoflast."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Rezera is a clinical-stage biotech developing pills that block NLRP3, a driver of inflammation in heart and brain disease.",
+     "short": "Rezera",
+     "proceeds": "Rezera plans to use the money, with its existing cash, a new loan and a recent share sale, to take its drug ruvonoflast through results of a planned late-stage (Phase 3) trial in PAD, expected in 2028, and for general purposes. If it raises more than expected, some of the extra will fund a trial of its second drug, trabzanoflast.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": null,
+        "operating": -23398,
+        "net": -25205
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": null,
+        "operating": -40991,
+        "net": -42179
+       }
+      ],
+      "part_year": {
+       "label": "Jan to Jun 2026",
+       "period_end": "2026-06-30",
+       "revenue": null,
+       "operating": -24553,
+       "net": -25537,
+       "prior_label": "Jan to Jun 2025",
+       "prior_revenue": null,
+       "prior_operating": -13924,
+       "prior_net": -13723
+      },
+      "cash": {
+       "value": 3851,
+       "date": "2026-06-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Novo Holdings A/S",
+       "role": "Investor",
+       "before": 1013118
+      },
+      {
+       "name": "Entities affiliated with Blue Owl Capital",
+       "role": "Investor",
+       "before": 996871
+      },
+      {
+       "name": "F-Prime Capital Partners Healthcare Fund V LP",
+       "role": "Venture investor",
+       "before": 545247
+      },
+      {
+       "name": "Sofinnova Capital VIII FPCI",
+       "role": "Venture investor",
+       "before": 500512
+      },
+      {
+       "name": "Entities affiliated with 5AM Ventures",
+       "role": "Venture investor",
+       "before": 479643
+      },
+      {
+       "name": "Entities affiliated with Epidarex Capital",
+       "role": "Venture investor",
+       "before": 299257
+      },
+      {
+       "name": "Aventis Inc.",
+       "role": "Investor, part of Sanofi",
+       "before": 249087
+      },
+      {
+       "name": "Alan Watt, Ph.D.",
+       "role": "Chief scientific officer",
+       "before": 122785
+      }
+     ],
+     "rounds": [
+      {
+       "name": "Series Junior Preferred",
+       "when": null,
+       "price": 1.0
+      },
+      {
+       "name": "Series A1",
+       "when": null,
+       "price": 1.0
+      },
+      {
+       "name": "Series A2",
+       "when": null,
+       "price": 2.4888
+      },
+      {
+       "name": "Series B1",
+       "when": null,
+       "price": 2.9702
+      },
+      {
+       "name": "Series B2",
+       "when": null,
+       "price": 3.1191
+      },
+      {
+       "name": "Series C",
+       "when": null,
+       "price": 2.8741
+      },
+      {
+       "name": "Series D1",
+       "when": 2025,
+       "price": 1.5
+      },
+      {
+       "name": "Series D2",
+       "when": 2025,
+       "price": 0.75
+      },
+      {
+       "name": "Series D3",
+       "when": 2025,
+       "price": 0.7407
+      }
+     ],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and holders of nearly all its shares agreed not to sell for at least 180 days after the offering. The lead underwriters can give written consent to an earlier sale, and some exceptions apply.",
+      "early": false
+     },
+     "risks": [
+      "Rezera has a short history, has never earned money from selling drugs, and may never make a profit.",
+      "It has lost a lot of money, expects more losses, and there is serious doubt it can keep operating.",
+      "None of its drugs is approved, and failing or being slow to bring them to market would badly hurt the business.",
+      "Changes in currency exchange rates could raise its costs and make it run through cash faster.",
+      "Its drugs target NLRP3, which is new, so the time, cost and chance of success are hard to predict."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2085836,
+   "name": "POCHE TECHNOLOGY CO., Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2085836/000149315226038929/formf-1a.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.04853,
+    "claude-haiku-5-5": 0.00276,
+    "claude-opus-5-5": 0.08281
+   },
+   "sections_not_found": [
+    "summary_financials",
+    "holders",
+    "preferred",
+    "item15"
+   ],
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the readers found no full-year figures in the summary financial table",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It is a holding company that runs all of its business through a subsidiary in Hong Kong.",
+     "short": "Poche Technology",
+     "proceeds": "The company expects about US$33,907,010 in net proceeds at a US$6 share price. It plans to spend about 37.5% on market expansion, 27.5% on research and development, 17.5% on hiring, and 17.5% on working capital.",
+     "financials": {
+      "unit": null,
+      "currency": "USD",
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "BrandVoy Global Limited",
+       "role": "Controlling shareholder",
+       "before": null
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and certain existing shareholders agreed not to sell shares for 180 days after the date of the prospectus, with some exceptions.",
+      "early": false
+     },
+     "risks": [
+      "Though all operations are in Hong Kong, the Chinese government may step in and affect the business or the value of the shares.",
+      "It is unclear whether Chinese approval is needed for this offering. If it is needed and denied, the shares could lose much value or become worthless.",
+      "China has taken sudden regulatory steps in mainland China, and similar moves could hurt the company's operations or the value of its shares."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": null,
+     "short": "Poche Technology",
+     "proceeds": "The company expects net proceeds of about US$33,907,010 at US$6 per share, the midpoint of the price range. It plans to use the money for market expansion (about 37.5%), research and development (about 27.5%), talent recruitment (about 17.5%) and working capital (about 17.5%).",
+     "financials": {
+      "unit": null,
+      "currency": "USD",
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and certain existing shareholders agreed not to sell or transfer Class A shares for 180 days after the prospectus date, subject to certain exceptions.",
+      "early": false
+     },
+     "risks": [
+      "The PRC government could exercise direct oversight over the company's Hong Kong business, which could change its operations or the value of its shares.",
+      "It is uncertain whether the company needs PRC government permission for this offering. If it is denied, the shares could fall sharply or become worthless.",
+      "Recent PRC regulatory actions, taken with little advance notice, could affect the company's operations or the value of its Class A shares."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "It is a Cayman Islands holding company that runs all of its business through a subsidiary in Hong Kong.",
+     "short": "Poche",
+     "proceeds": "It plans to spend about 37.5% of the money on market expansion and 27.5% on research and development. It plans to spend about 17.5% on hiring staff and 17.5% on day-to-day running costs.",
+     "financials": {
+      "unit": null,
+      "currency": "USD",
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and some existing shareholders agreed not to sell shares for 180 days after the prospectus date. Some exceptions apply.",
+      "early": false
+     },
+     "risks": [
+      "China's government could step in and control its Hong Kong business at any time, which could hurt operations and the share price.",
+      "It may later need China's permission to list in the U.S., and a refusal could make the shares lose much or all of their value.",
+      "China has suddenly tightened rules on businesses and overseas listings, which could hurt the company's operations and the value of its shares."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2000208,
+   "name": "Kepler Group Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2000208/000149315226039800/formf-1a.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.04752,
+    "claude-haiku-5-5": 0.00255,
+    "claude-opus-5-5": 0.09412
+   },
+   "sections_not_found": [
+    "offering",
+    "summary_financials",
+    "preferred",
+    "item15"
+   ],
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the company reports in HKD, not US dollars",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It is an insurance broker in Hong Kong that helps customers buy life, savings and health insurance from insurers.",
+     "short": "Kepler Group",
+     "proceeds": null,
+     "financials": {
+      "unit": "millions",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2025-03-31",
+        "revenue": 157.4,
+        "operating": null,
+        "net": null
+       },
+       {
+        "period_end": "2026-03-31",
+        "revenue": 322.1,
+        "operating": null,
+        "net": null
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Mr. KWOK Yu Hin",
+       "role": "Founder, director, chief executive",
+       "before": null
+      }
+     ],
+     "rounds": [],
+     "lockup": null,
+     "risks": []
+    },
+    "claude-haiku-5-5": {
+     "what": "Provides insurance brokerage services in Hong Kong, connecting policyholders with authorized insurers.",
+     "short": "Kepler Group",
+     "proceeds": null,
+     "financials": {
+      "unit": "millions",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2025-03-31",
+        "revenue": 157.4,
+        "operating": null,
+        "net": null
+       },
+       {
+        "period_end": "2026-03-31",
+        "revenue": 322.1,
+        "operating": null,
+        "net": null
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": null,
+     "risks": []
+    },
+    "claude-opus-5-5": {
+     "what": "Kepler is a Hong Kong insurance broker that helps customers buy mainly life, savings and health insurance from insurers.",
+     "short": "Kepler",
+     "proceeds": null,
+     "financials": {
+      "unit": "millions",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2025-03-31",
+        "revenue": 157.4,
+        "operating": null,
+        "net": null
+       },
+       {
+        "period_end": "2026-03-31",
+        "revenue": 322.1,
+        "operating": null,
+        "net": null
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "KWOK Yu Hin",
+       "role": "Founder, director and chief executive",
+       "before": null
+      }
+     ],
+     "rounds": [],
+     "lockup": null,
+     "risks": []
+    }
+   }
+  },
+  {
+   "cik": 2049323,
+   "name": "AM PM Group Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026100862/ea0224186-19.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.05863,
+    "claude-haiku-5-5": 0.00336,
+    "claude-opus-5-5": 0.10826
+   },
+   "sections_not_found": [
+    "summary_financials",
+    "preferred"
+   ],
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the readers found no full-year figures in the summary financial table",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It is a Hong Kong agency that runs events, produces content and designs, and holds IP exhibitions for marketing clients.",
+     "short": "AM PM Group",
+     "proceeds": "About 30% would go to growing content production and hiring talent. About 20% would go to expanding event business coverage and 20% to possible acquisitions. About 30% would go to working capital and general needs.",
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Ka Ming Kwong",
+       "role": "Chief executive, chairman, largest shareholder",
+       "before": 9030000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and all current shareholders agreed not to sell shares for 180 days from the start of sales in this offering. Some exceptions apply.",
+      "early": false
+     },
+     "risks": [
+      "Following Hong Kong's personal data privacy law and similar rules may cost a lot and could hurt the business.",
+      "New laws in the United States or China could affect the company's ability to list its shares and hurt their market price.",
+      "The company faces political risks because it does business in Hong Kong.",
+      "Changes in exchange rates could hurt the company's results and the value of your investment.",
+      "If the Hong Kong subsidiary cannot pay dividends or other payments to the parent, the company's growth and funding could suffer."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "A Hong Kong-based one-stop agency offering event management and decoration, content production and design, and IP exhibition services.",
+     "short": "AM PM Group",
+     "proceeds": "The company plans to use about 30% for expanding content production and recruiting talent, and about 20% for expanding geographic coverage of its event management and decoration business. It also plans about 20% for exploring acquisitions and about 30% for working capital and general corporate purposes.",
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Ka Ming Kwong",
+       "role": "Chief Executive Officer and Chairman; single largest shareholder",
+       "before": 9030000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, officers and all holders of its ordinary shares agreed not to sell or transfer shares for 180 days from the start of sales in this offering, subject to certain exceptions.",
+      "early": false
+     },
+     "risks": [
+      "The company is a holding company and conducts all its business through a Hong Kong operating subsidiary.",
+      "Complying with Hong Kong's privacy law and similar data rules may be costly and could materially affect the business.",
+      "New laws or rule changes in the United States and China could affect the company's ability to list its shares.",
+      "The company faces political risks from doing business in Hong Kong.",
+      "Changes in exchange rates could materially and adversely affect the company's results and the value of an investment."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "A Hong Kong agency that runs events and decorations, produces media content and design, and holds exhibitions.",
+     "short": "AM PM",
+     "proceeds": "It plans to use about 30% to grow its content production business and hire talent, 20% to expand its event and decoration business into new areas, and 20% for possible acquisitions. The remaining 30% is for working capital and general business needs.",
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Ka Ming Kwong",
+       "role": "Chief executive, chairman and largest shareholder",
+       "before": 9030000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and all existing shareholders have agreed not to sell shares for 180 days after sales in the offering begin, with certain exceptions.",
+      "early": false
+     },
+     "risks": [
+      "Following Hong Kong's privacy law and other data rules may be costly and could seriously affect the business.",
+      "New or changed laws in the United States or China could affect its ability to list its shares, which could hurt the share price.",
+      "Doing business in Hong Kong carries political risks.",
+      "Changes in currency exchange rates could hurt its results and the value of an investment.",
+      "Limits on the Hong Kong subsidiary's ability to pay money to the parent company could restrict growth, investments or dividends."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2097903,
+   "name": "UDynamics Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2097903/000121390026092454/ea0264362-07.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06499,
+    "claude-haiku-5-5": 0.00366,
+    "claude-opus-5-5": 0.11127
+   },
+   "sections_not_found": [
+    "summary_financials",
+    "preferred"
+   ],
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the readers found no full-year figures in the summary financial table",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [
+    "lock-up days: None / 180"
+   ],
+   "referee_differs_from_second": [
+    "lock-up days: None / 180"
+   ],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It offers web hosting, cybersecurity, blockchain and domain services from Hong Kong.",
+     "short": "UDynamics",
+     "proceeds": "It expects about $30.2 million at the $6.00 midpoint price. About 30% is for blockchain marketing and AI content tools, 30% to automate cybersecurity checks and move to subscriptions, and 40% for working capital and general needs.",
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "UDiverse Limited",
+       "role": "Controlling shareholder; also holds 2500000 Class B shares",
+       "before": 9500000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "The company, its directors, executive officers and holders of 5% or more agreed not to sell shares for six months after the offering closes. A few exceptions apply, such as gifts and transfers to family or trusts.",
+      "early": false
+     },
+     "risks": [
+      "China's government could step in and influence the Hong Kong business, which could greatly change its operations and the value of the shares.",
+      "Meeting Hong Kong's personal data privacy law and similar future rules could cost a lot and hurt the business.",
+      "The Hong Kong National Security Law could affect the Hong Kong subsidiary, which makes up nearly all of the business.",
+      "Political risks come with doing business in Hong Kong.",
+      "The business earns Hong Kong dollars while the shares are priced in US dollars, so exchange rate changes may affect the value of your investment."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "A Hong Kong web hosting firm offering cybersecurity services, blockchain solutions and AI-enabled tools.",
+     "short": "UDynamics",
+     "proceeds": "The company plans to use the net proceeds for marketing its blockchain solutions business and for automating cybersecurity services with AI monitoring. The rest will go to working capital and general corporate purposes.",
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "UDiverse Limited",
+       "role": "Controlling shareholder; also holds 2500000 Class B shares",
+       "before": 9500000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "The company, its directors, executive officers and 5% holders agreed not to sell shares for six months after the offering closes, with limited exceptions. Lock-up for directors and 5% holders starts on the prospectus date.",
+      "early": false
+     },
+     "risks": [
+      "The PRC government may exercise significant oversight over the Hong Kong subsidiary and could change its operations or share value.",
+      "Mainland China laws are evolving and may change quickly, which could affect the company's operations and the value of its shares.",
+      "Complying with laws and government directives may be costly and could delay development, bring penalties or lead to delisting.",
+      "Compliance with Hong Kong's Personal Data (Privacy) Ordinance may entail significant expenses and could materially affect the business.",
+      "The Hong Kong National Security Law could impact the Hong Kong subsidiary, which represents substantially all of the business."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "It provides web hosting, cybersecurity, domain registration and blockchain app services, operating entirely in Hong Kong.",
+     "short": "UDynamics",
+     "proceeds": "It plans to spend about 30% on blockchain media and AI tools to build its blockchain business, and about 30% on automating cybersecurity services so they can be sold as subscriptions. The remaining 40% is for day-to-day needs and general company purposes.",
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "UDiverse",
+       "role": "Controlling shareholder owned by company leaders; holds all Class B shares",
+       "before": 9500000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, its officers and holders of 5% or more of its shares agree not to sell shares for six months after the offering closes. Limited exceptions apply, such as gifts or transfers to family trusts.",
+      "early": false
+     },
+     "risks": [
+      "China's government could step in to oversee or change how the Hong Kong business runs, which could hurt it or the share value.",
+      "Following Hong Kong's personal data privacy law and other data rules could be costly and affect the business.",
+      "Hong Kong's National Security Law could affect the Hong Kong subsidiary, which makes up almost all of the business.",
+      "Doing business in Hong Kong carries political risks.",
+      "The business earns Hong Kong dollars while the shares are priced in US dollars, so exchange rate changes could reduce an investment's value."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2064551,
+   "name": "Ga Sai Tong Enterprise Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2064551/000121390026081785/ea0272009-03.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06952,
+    "claude-haiku-5-5": 0.00403,
+    "claude-opus-5-5": 0.1369
+   },
+   "sections_not_found": [
+    "preferred"
+   ],
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It runs three restaurants in Hong Kong serving Japanese yakitori, French-Japanese fusion and sashimi or sushi dishes.",
+     "short": "Ga Sai Tong",
+     "proceeds": "The company expects about $27.6 million after costs, at an assumed $5.00 per share. It plans 40% for new restaurants in Hong Kong and East Asia, 15% for hiring and training chefs, 15% for upgrading current restaurants and 30% for general costs and working capital.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 2276017,
+        "operating": 979540,
+        "net": 793670
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 2803502,
+        "operating": 829641,
+        "net": 559013
+       }
+      ],
+      "part_year": null,
+      "cash": {
+       "value": 1881224,
+       "date": "2025-12-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Wai Kit, NG",
+       "role": "Director or executive officer; owns Ga Sai Tong Limited",
+       "before": 5000000
+      },
+      {
+       "name": "Ga Sai Tong Limited",
+       "role": "Shareholder with 5% or more; owned by Wai Kit, NG",
+       "before": 5000000
+      },
+      {
+       "name": "Ga Sai Tong Capital Limited",
+       "role": "Shareholder with 5% or more; owned by Wai Lam, NG, sibling of Wai Kit, NG",
+       "before": 5000000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, its officers and holders of 5% or more of the shares agreed not to sell for 180 days after the shares first trade on the NYSE American. Sales need the underwriters' written consent, and some exceptions apply.",
+      "early": false
+     },
+     "risks": [
+      "The company's results depend on how well its three current restaurants and any new ones do.",
+      "It may struggle to manage and market its separately branded restaurants, and damage to a brand could hurt its business.",
+      "If it cannot raise enough money for new restaurants, its growth could be badly held back.",
+      "Its bank loans can be called back on demand, which could hurt its cash position if the lender asks for repayment.",
+      "It may not find good locations, may face higher rent, or may fail to renew its leases, which could hurt results."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Operates three Hong Kong restaurants serving Japanese yakitori, French-Japanese fusion and sashimi and sushi cuisine.",
+     "short": "Ga Sai Tong Enterprise",
+     "proceeds": "The company expects net proceeds of about $27.6 million, based on a $5.00 share price. About 40% will expand its restaurants, 15% will recruit and train chefs, 15% will upgrade existing restaurant facilities, and 30% will go to general administration and working capital.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 2276017,
+        "operating": 979540,
+        "net": 793670
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 2803502,
+        "operating": 829641,
+        "net": 559013
+       }
+      ],
+      "part_year": null,
+      "cash": {
+       "value": 1881224,
+       "date": "2025-12-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Wai Kit, NG",
+       "role": "Director, controlling shareholder",
+       "before": 5000000
+      },
+      {
+       "name": "Ga Sai Tong Limited",
+       "role": "Holding company wholly owned by Wai Kit, NG",
+       "before": 5000000
+      },
+      {
+       "name": "Ga Sai Tong Capital Limited",
+       "role": "Holding company wholly owned by Wai Lam, NG",
+       "before": 5000000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, directors, officers and holders of 5% or more agreed not to sell or transfer shares for 180 days after the shares first trade on NYSE American. The filing mentions limited exceptions.",
+      "early": false
+     },
+     "risks": [
+      "Its financial results depend heavily on how well its existing and new restaurants perform.",
+      "If it cannot manage and promote its restaurants, or its brands are damaged, its business and results could suffer.",
+      "Without enough funding for new restaurants, its business and growth could be badly held back.",
+      "Its bank loans can be demanded for repayment at any time, which could strain its cash and finances.",
+      "Poor locations, higher rent, or failing to renew leases could hurt its business and operating results."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "It runs three restaurants in Hong Kong serving Japanese and French-Japanese food, from casual dining to fine dining.",
+     "short": "Ga Sai Tong",
+     "proceeds": "It plans to spend about 40% opening new high-end restaurants in Hong Kong and East Asia, and 15% hiring and training chefs. It plans to spend 15% upgrading its existing restaurants and 30% on general running costs.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 2276017,
+        "operating": 979540,
+        "net": 793670
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 2803502,
+        "operating": 829641,
+        "net": 559013
+       }
+      ],
+      "part_year": null,
+      "cash": {
+       "value": 1881224,
+       "date": "2025-12-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Wai Kit, NG",
+       "role": "Director, controlling shareholder",
+       "before": 5000000
+      },
+      {
+       "name": "Ga Sai Tong Limited",
+       "role": "Holding company owned by Wai Kit Ng",
+       "before": 5000000
+      },
+      {
+       "name": "Ga Sai Tong Capital Limited",
+       "role": "Holding company owned by Wai Lam Ng",
+       "before": 5000000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and holders of 5% or more agreed not to sell shares for 180 days after trading starts. Selling earlier needs the underwriters' written consent.",
+      "early": false
+     },
+     "risks": [
+      "Its results depend heavily on how well its current and new restaurants perform.",
+      "It may fail to manage and market its restaurants well, and damage to its brands could hurt the business.",
+      "If it cannot raise enough money for new restaurants, its growth could be badly held back.",
+      "Its bank loans can be called for repayment at any time, which could strain its cash.",
+      "A lack of good locations, rising rents or failing to renew leases could hurt its business."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2075786,
+   "name": "Seahawk Recycling Holdings, Inc.",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2075786/000121390026068063/ea0249320-10.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06552,
+    "claude-haiku-5-5": 0.00371,
+    "claude-opus-5-5": 0.12707
+   },
+   "sections_not_found": [
+    "summary_financials",
+    "preferred"
+   ],
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the readers found no full-year figures in the summary financial table",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "lock-up days: 180 / None"
+   ],
+   "referee_differs_from_first": [
+    "lock-up days: 180 / None"
+   ],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It is a Tokyo-based company that trades waste paper, paper pulp and scrap metal across East Asia and Southeast Asia.",
+     "short": "Seahawk Recycling",
+     "proceeds": "It plans to spend the money on growing in other markets (30%), building an AI trading system (20%), and buying or building facilities (20%). It will also use it for new recyclable products (15%) and general working capital (15%).",
+     "financials": {
+      "unit": null,
+      "currency": "USD",
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "WISDOM FOCUS GROUP LTD.",
+       "role": "Largest shareholder, owned by the CEO and CFO",
+       "before": 13506220
+      },
+      {
+       "name": "Shihai Bi",
+       "role": "Director, chief financial officer",
+       "before": 6888172
+      },
+      {
+       "name": "Guanglang Jiang",
+       "role": "Director, chairman, chief executive",
+       "before": 6618048
+      },
+      {
+       "name": "Kumo Capital Limited",
+       "role": "Shareholder, owned by Xiaoyu Zhao",
+       "before": 2117700
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Officers, directors and holders of more than 4.5% of the shares agree not to sell for six months after the offering closes. The company also agrees not to sell or issue shares in that time. The underwriter can give written consent to sell earlier.",
+      "early": true
+     },
+     "risks": [
+      "Past results do not guarantee future results, because they change with the economy, interest rates and customer confidence.",
+      "It must keep improving its trade-matching system, or the system may become out of date and hurt its ability to compete.",
+      "It relies on suppliers for all its products and has no long-term supply contracts, so supply problems could hurt the business.",
+      "Its sales depend on consumer demand and spending in Japan, East Asia and Southeast Asia, which factors outside its control can change.",
+      "It relies on a small number of major suppliers, and losing business from them could seriously hurt its results."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Tokyo-based company that trades recyclable waste paper, paper pulp and scrap metal across East and Southeast Asia.",
+     "short": "Seahawk Recycling Holdings",
+     "proceeds": "The company plans to use the money for global market expansion, AI-powered trading system development, new recyclable categories, facilities and environmental certification, and working capital. Management has flexibility to change how the money is used.",
+     "financials": {
+      "unit": null,
+      "currency": "USD",
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Guanglang Jiang",
+       "role": "Director, chairman and chief executive officer",
+       "before": 6618048
+      },
+      {
+       "name": "Shihai Bi",
+       "role": "Director and chief financial officer",
+       "before": 6888172
+      },
+      {
+       "name": "WISDOM FOCUS GROUP LTD.",
+       "role": "Holding company, 49% owned by Guanglang Jiang and 51% by Shihai Bi",
+       "before": 13506220
+      },
+      {
+       "name": "Kumo Capital Limited",
+       "role": "Shareholder, 100% owned by Xiaoyu Zhao",
+       "before": 2117700
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "Directors, officers and holders of more than 4.5% of the shares agree not to sell for six months after closing. The company makes the same promise, and the underwriter can give or withhold consent.",
+      "early": false
+     },
+     "risks": [
+      "Historical financial and operating results are not a guarantee of future performance.",
+      "The company must keep improving its proprietary transaction matching system, and failing to do so could hurt the business.",
+      "The company depends on suppliers, and any loss or worsening of those relationships could disrupt operations.",
+      "The success of the business depends on consumer demand and discretionary spending in Japan, East Asia and Southeast Asia, which the company cannot control.",
+      "The company relies on a limited number of major suppliers, and losing them could materially harm its business and results."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Tokyo-based company that buys and sells recyclable materials such as waste paper, paper pulp and scrap metal across Asia.",
+     "short": "Seahawk Recycling",
+     "proceeds": "It plans to spend 30% on expanding into new markets, 20% on an AI-powered trading system, and 20% on processing facilities and environmental certification. It will spend 15% on new types of recyclables and 15% on day-to-day running costs and reserves.",
+     "financials": {
+      "unit": null,
+      "currency": "USD",
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "WISDOM FOCUS GROUP LTD.",
+       "role": "Controlling shareholder, owned by the CEO and CFO",
+       "before": 13506220
+      },
+      {
+       "name": "Shihai Bi",
+       "role": "Director, chief financial officer",
+       "before": 6888172
+      },
+      {
+       "name": "Guanglang Jiang",
+       "role": "Chairman, chief executive",
+       "before": 6618048
+      },
+      {
+       "name": "Kumo Capital Limited",
+       "role": "Investment company owned by Xiaoyu Zhao",
+       "before": 2117700
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "Directors, officers and holders of more than 4.5% of the shares cannot sell for six months after the offering closes. The underwriter can give written consent for them to sell sooner.",
+      "early": true
+     },
+     "risks": [
+      "Its past financial results do not guarantee how it will perform in the future.",
+      "It must keep improving its own system for matching buyers and sellers, or it may fall behind competitors.",
+      "It relies on suppliers for all its products, so its business could suffer if those relationships worsen.",
+      "It depends on a small number of major suppliers, which could hurt the business if any are lost.",
+      "Much of its revenue comes from a few major customers, so losing any of them could hurt results badly."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2083034,
+   "name": "JOYBYTE HOLDINGS Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2083034/000118518526002171/joybytef1a1040226.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.05427,
+    "claude-haiku-5-5": 0.00343,
+    "claude-opus-5-5": 0.10448
+   },
+   "sections_not_found": [
+    "summary_financials",
+    "preferred",
+    "item15"
+   ],
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the readers found no full-year figures in the summary financial table",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "financial unit: None / millions",
+    "revenue 2024-06-30: None / 1.1",
+    "revenue 2025-06-30: None / 2.9",
+    "part year period_end: None / 2025-12-31",
+    "part year revenue: None / 1.0",
+    "part year prior_revenue: None / 0.7"
+   ],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [
+    "financial unit: millions / None",
+    "revenue 2024-06-30: 1.1 / None",
+    "revenue 2025-06-30: 2.9 / None",
+    "part year period_end: 2025-12-31 / None",
+    "part year revenue: 1.0 / None",
+    "part year prior_revenue: 0.7 / None"
+   ],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It distributes casual and social mobile games worldwide, except mainland China, through its Hong Kong subsidiary.",
+     "short": "JoyByte",
+     "proceeds": null,
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Champion Wave Holdings Limited",
+       "role": "Significant shareholder, controlled by Ms. Yujie Chen",
+       "before": 9435000
+      }
+     ],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "Hong Kong's legal system is uncertain, which could limit the legal protection available to investors.",
+      "If its auditor can no longer be inspected by US regulators, the shares could be barred from trading or delisted from Nasdaq.",
+      "Unclear Chinese laws, or sudden changes to them, could greatly change how the company operates or what its shares are worth.",
+      "The Chinese government could step in and influence the company's operations at any time, which could change its business or cut the shares' value.",
+      "Chinese government controls on overseas share offerings could block the company from selling shares to investors and could make the shares nearly worthless."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "JoyByte distributes casual and social mobile games globally, except mainland China, through its Hong Kong subsidiary.",
+     "short": "JoyByte Holdings",
+     "proceeds": null,
+     "financials": {
+      "unit": "millions",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-06-30",
+        "revenue": 1.1,
+        "operating": null,
+        "net": null
+       },
+       {
+        "period_end": "2025-06-30",
+        "revenue": 2.9,
+        "operating": null,
+        "net": null
+       }
+      ],
+      "part_year": {
+       "label": "Jul to Dec 2025",
+       "period_end": "2025-12-31",
+       "revenue": 1.0,
+       "operating": null,
+       "net": null,
+       "prior_label": "Jul to Dec 2024",
+       "prior_revenue": 0.7,
+       "prior_operating": null,
+       "prior_net": null
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "The Hong Kong legal system has uncertainties that could limit the legal protections available to investors.",
+      "Future audit reports may not come from auditors that U.S. regulators can inspect, and Nasdaq could then delist the shares.",
+      "Uncertain PRC laws, unclear enforcement, and sudden law changes with little notice could materially change the business or share value.",
+      "The PRC government may intervene in or influence the business at any time, which could hurt operations and share value.",
+      "PRC action on overseas offerings or foreign investment could block future share sales and make the shares worthless."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "It distributes casual and social mobile games worldwide, except mainland China, through its Hong Kong subsidiary.",
+     "short": "JoyByte",
+     "proceeds": null,
+     "financials": {
+      "unit": null,
+      "currency": "USD",
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Champion Wave Holdings Limited",
+       "role": "Significant shareholder, controlled by Ms. Yujie Chen",
+       "before": 9435000
+      }
+     ],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "Hong Kong's legal system has uncertainties that could limit the legal protection available to the company and its investors.",
+      "If US regulators cannot inspect its auditor for two years in a row, its shares could be banned from US exchanges.",
+      "Sudden changes in Chinese laws, or uncertain enforcement of them, could harm its business and the value of its shares.",
+      "The Chinese government could step in at any time, which could change its operations or make its shares lose value.",
+      "More Chinese control over overseas share sales could stop it selling shares and make them fall sharply or become worthless."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2083843,
+   "name": "Student Living EduVation (Holdings) Corp",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2083843/000118518526003474/studentf1a6080326.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06156,
+    "claude-haiku-5-5": 0.00342,
+    "claude-opus-5-5": 0.11501
+   },
+   "sections_not_found": [
+    "preferred",
+    "item15"
+   ],
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It rents student dormitories near Hong Kong universities and refers students to education advisory services under the Student Living brand.",
+     "short": "Student Living EduVation",
+     "proceeds": "It plans to use about 55% for growing its Hong Kong business and 20% to expand into Southeast Asia. About 5% is for its dormitory management system and 20% for working capital and general costs.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-03-31",
+        "revenue": 2473,
+        "operating": null,
+        "net": 751
+       },
+       {
+        "period_end": "2026-03-31",
+        "revenue": 3249,
+        "operating": null,
+        "net": 755
+       }
+      ],
+      "part_year": null,
+      "cash": {
+       "value": 163,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Mr. Chun Kwok Ng",
+       "role": "Chief executive, chairman and controlling shareholder",
+       "before": 14120000
+      },
+      {
+       "name": "TechLiving Hub Solutions Corporation",
+       "role": "Holding company wholly owned by Mr. Chun Kwok Ng",
+       "before": 14120000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Directors, officers and all current shareholders, including six pre-IPO investors, agreed not to sell shares for 180 days after the offering closes. The company has agreed to the same restriction on issuing shares.",
+      "early": false
+     },
+     "risks": [
+      "Most customers are students who use the service only once, so the company must keep finding new students every year.",
+      "The company has a short operating history, so its past growth may not predict future results.",
+      "The company depends on its management, especially Mr. Chun Kwok Ng, and has no key man insurance.",
+      "All education referral revenue comes from one partner, Meta Academia, and either side can end the deal with one month's notice.",
+      "Meta Academia is a related party, so its deals may not be on terms an unrelated party would get."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Operates student dormitories in Hong Kong and provides education advisory referral services.",
+     "short": "Student Living EduVation",
+     "proceeds": "The company plans to use the money for Hong Kong business development (about 55%), building a presence in Southeast Asia (about 20%), working capital and general corporate purposes (about 20%), and its dormitory and ERP management systems (about 5%).",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-03-31",
+        "revenue": 2473,
+        "operating": null,
+        "net": 751
+       },
+       {
+        "period_end": "2026-03-31",
+        "revenue": 3249,
+        "operating": null,
+        "net": 755
+       }
+      ],
+      "part_year": null,
+      "cash": {
+       "value": "163",
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Mr. Chun Kwok Ng",
+       "role": "Chief executive officer and chairman; controlling shareholder",
+       "before": 14120000
+      },
+      {
+       "name": "TechLiving Hub Solutions Corporation",
+       "role": "Holding company wholly owned by Chun Kwok Ng",
+       "before": 14120000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Directors, officers and existing shareholders, including the six pre-IPO investors, agreed not to sell their shares for 180 days after closing. The company made the same promise to the underwriter.",
+      "early": false
+     },
+     "risks": [
+      "If the company fails to attract new customers continuously, its business and results could be harmed.",
+      "Its short operating history makes it hard for investors to judge its prospects and future results.",
+      "It depends heavily on its management team, especially Chun Kwok Ng, and may not keep them.",
+      "It relies on one referral partner, Meta Academia, for all its referral services revenue.",
+      "Its revenue from Meta Academia, a related party, carries extra risks of unfair terms and lost income."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Runs student dormitories near Hong Kong universities and refers students to an education advisory service.",
+     "short": "Student Living",
+     "proceeds": "About 55% will go to growing its Hong Kong business and 20% to expanding into Southeast Asia. About 5% will go to its dormitory management system and 20% to working capital and general purposes.",
+     "financials": {
+      "unit": "thousands",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-03-31",
+        "revenue": 2473,
+        "operating": null,
+        "net": 751
+       },
+       {
+        "period_end": "2026-03-31",
+        "revenue": 3249,
+        "operating": null,
+        "net": 755
+       }
+      ],
+      "part_year": null,
+      "cash": {
+       "value": 163,
+       "date": "2026-03-31"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Mr. Chun Kwok Ng",
+       "role": "Chief executive and chairman",
+       "before": 14120000
+      },
+      {
+       "name": "TechLiving Hub Solutions Corporation",
+       "role": "Holding company owned by the chief executive",
+       "before": 14120000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Directors, officers and existing shareholders, including six pre-IPO investors, agreed not to sell their shares for 180 days after the offering closes.",
+      "early": false
+     },
+     "risks": [
+      "Most customers are students who use its services only once, so it must keep finding new students every year.",
+      "It only began real operations in 2020, so its past growth may not continue.",
+      "It depends heavily on its chief executive, Chun Kwok Ng, and has no key-person insurance on him.",
+      "All of its education referral income comes from one partner, Meta Academia, which can end the deal with one month's notice.",
+      "Meta Academia is controlled by the chief executive's brother, so those deals may not be on fair market terms."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2092291,
+   "name": "Timwood Holdings Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07396,
+    "claude-haiku-5-5": 0.00391,
+    "claude-opus-5-5": 0.12872
+   },
+   "sections_not_found": [
+    "summary_financials",
+    "preferred"
+   ],
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the readers found no full-year figures in the summary financial table",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "financial unit: None / millions",
+    "revenue 2025-06-30: None / 7.2",
+    "revenue 2026-06-30: None / 7.8"
+   ],
+   "referee_differs_from_first": [
+    "financial unit: None / millions",
+    "revenue 2025-06-30: None / 7.2",
+    "revenue 2026-06-30: None / 7.8"
+   ],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It supplies staff to airport cargo, ground handling and passenger service companies in Hong Kong.",
+     "short": "Timwood",
+     "proceeds": "It plans to use the money to improve its operations with technology, grow its team and scale, and build its brand in aviation. The rest is for working capital and general needs.",
+     "financials": {
+      "unit": null,
+      "currency": "USD",
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Smart Legacy Limited",
+       "role": "Holding company owned by chief executive Chi Wai LAM",
+       "before": 10200000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "The company, its directors, its officers and holders of 5% or more have agreed not to sell shares for six months after the offering closes. The underwriters can give written consent to sell earlier.",
+      "early": true
+     },
+     "risks": [
+      "It relies on payments from its Hong Kong subsidiary, and Chinese rules could someday limit moving cash out of Hong Kong.",
+      "It may have to follow Chinese rules on mergers, overseas listings and data security, and breaking them could hurt its business."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Provides logistics staffing to airport terminal and aviation services providers in Hong Kong.",
+     "short": "Timwood Holdings",
+     "proceeds": "The company plans to use the net proceeds to leverage technology, grow its team and operating scale, and enhance its aviation brand. Remaining funds will go to working capital and general corporate purposes.",
+     "financials": {
+      "unit": "millions",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-06-30",
+        "revenue": 7.2,
+        "operating": null,
+        "net": null
+       },
+       {
+        "period_end": "2026-06-30",
+        "revenue": 7.8,
+        "operating": null,
+        "net": null
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "The company, its directors, officers and holders of 5% or more have agreed not to sell shares for six months after the offering closes, subject to certain exceptions.",
+      "early": false
+     },
+     "risks": [
+      "The company relies on dividends from its Hong Kong operating subsidiary, and limits on those payments could hurt its business.",
+      "Recent Chinese government regulatory actions could affect the company's operations and the value of its shares.",
+      "Chinese regulators could disallow the company's structure, which could cause the shares to decline sharply or become worthless.",
+      "The company may face PRC laws on mergers, overseas listings and data security, and failing to comply could harm it."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "It supplies trained workers to companies that handle cargo, ground services and passengers at Hong Kong's airport.",
+     "short": "Timwood",
+     "proceeds": "It plans to use the money to improve efficiency with technology, hire more skilled staff and grow, and build its brand in aviation. The rest will go to working capital and general company needs.",
+     "financials": {
+      "unit": "millions",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2025-06-30",
+        "revenue": 7.2,
+        "operating": null,
+        "net": null
+       },
+       {
+        "period_end": "2026-06-30",
+        "revenue": 7.8,
+        "operating": null,
+        "net": null
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "The company, its directors and officers, and holders of 5% or more of the shares agreed not to sell for six months after the offering closes. They need the underwriters' written consent to sell before then.",
+      "early": false
+     },
+     "risks": [
+      "The company is a holding company and depends on payments from its Hong Kong business, which China could restrict.",
+      "It could become subject to Chinese rules on mergers, overseas listings and data security, and breaking them could hurt the business."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2095150,
+   "name": "ChainOn Group Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2095150/000149315226030109/formf-1.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.02356,
+    "claude-haiku-5-5": 0.0017,
+    "claude-opus-5-5": 0.05643
+   },
+   "sections_not_found": [
+    "offering",
+    "summary_financials",
+    "holders",
+    "future_sale",
+    "preferred",
+    "item15"
+   ],
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the readers found no full-year figures in the summary financial table",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "ChainOn provides technology services in Hong Kong, including blockchain software projects, cloud hosting, and project and hardware maintenance.",
+     "short": "ChainOn",
+     "proceeds": "It expects net proceeds of about US$27.67 million. About 40% goes to research and technology, 20% to sales and marketing, 20% to hiring, 10% to possible strategic investments, and 10% to working capital.",
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its officers, directors and holders of 5% or more of Class A shares agreed not to sell shares for 180 days. The underwriter's representative can give written consent to sell earlier.",
+      "early": true
+     },
+     "risks": [
+      "ChainOn has a short operating history, starting in 2017, so it is hard for investors to judge how the business is doing or will do.",
+      "Errors, bugs or security flaws in its technology services could cost it customers, hurt its reputation and raise its costs.",
+      "If customers cannot complete or are unhappy with acceptance tests, projects may be delayed and final payment may not be received.",
+      "If it cannot raise the money needed to run and grow the business, its results and its ability to continue as a going concern could suffer.",
+      "If it fails to keep up with fast-changing technology in Hong Kong, its business and growth prospects could be seriously harmed."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "ChainOn provides software development, blockchain, cloud and maintenance technology services, mainly in Hong Kong.",
+     "short": "ChainOn Group",
+     "proceeds": "The company plans to use about 40% of the money for research, technology development and infrastructure. It also plans about 20% for sales and marketing, 20% for staff, 10% for possible strategic investments, and 10% for working capital and general purposes.",
+     "financials": {
+      "unit": null,
+      "currency": "USD",
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Officers, directors and holders of 5% or more of the Class A shares have agreed not to sell or transfer their shares for 180 days from the registration statement's effective date. The underwriter can give or withhold consent.",
+      "early": false
+     },
+     "risks": [
+      "The company has a limited operating history, which makes it hard for investors to judge its business and future.",
+      "Serious errors, defects, security flaws or bugs in its technology services could hurt its reputation, customers and finances.",
+      "If customers do not pass user acceptance tests, projects may be delayed and the company may not receive final payment.",
+      "If the company cannot raise the funds it needs, its operations and ability to continue as a going concern could suffer.",
+      "If the company fails to keep up with fast-changing technology and expand its services, its business could be materially harmed."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "ChainOn builds custom software, including blockchain and cloud systems, and maintains software and hardware for clients in Hong Kong.",
+     "short": "ChainOn",
+     "proceeds": "ChainOn expects about US$27.67 million. It plans to spend about 40% on research and technology, 20% on sales and marketing, 20% on staff, 10% on possible strategic investments and 10% on day-to-day running costs.",
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Officers, directors and holders of 5% or more of the Class A shares agreed not to sell for 180 days after the registration statement takes effect. Some exceptions apply.",
+      "early": true
+     },
+     "risks": [
+      "ChainOn has a short operating history, which makes its business and future results hard to judge.",
+      "Errors, defects, security gaps or bugs in its technology services could hurt its business and results.",
+      "If customers cannot complete or are unhappy with final acceptance tests, projects may stall and final payments may not come.",
+      "If ChainOn cannot raise the money it needs, its growth and ability to keep operating could suffer.",
+      "If ChainOn fails to keep up with fast-changing technology in Hong Kong, its business and growth could be badly hurt."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2138135,
+   "name": "Primagrove Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2138135/000121390026104919/ea0295228-06.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06513,
+    "claude-haiku-5-5": 0.00375,
+    "claude-opus-5-5": 0.12712
+   },
+   "sections_not_found": [
+    "preferred"
+   ],
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "Through its Hong Kong unit Oceanic Bounty, it builds custom software and sells smart office products such as lockers and booths.",
+     "short": "Primagrove",
+     "proceeds": "It plans to put about 30% toward hiring technical staff, 25% toward technology tools, and 20% toward its workspace products business. About 15% is for sales and expansion, and 10% for investments and general costs. Net proceeds are estimated at about $27.61 million.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 98227,
+        "operating": 24546,
+        "net": 20977
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 1833666,
+        "operating": 1255378,
+        "net": 1069698
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Lixia, HE",
+       "role": "Chief executive and controlling shareholder, through Aurora Grove Limited",
+       "before": 15020000
+      },
+      {
+       "name": "Hazber LTD",
+       "role": "Shareholder, wholly owned by Yumo, LAI",
+       "before": 4000000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and holders of 5% or more have agreed not to sell or transfer shares for 180 days after the offering closes. Some exceptions apply.",
+      "early": false
+     },
+     "risks": [
+      "It may not keep growing as fast as before, and fast growth could strain its management, staff and systems.",
+      "It only started its IT services business in early 2024, so its short history is a weak guide to the future.",
+      "Its market is crowded and easy to enter, so it may struggle to compete.",
+      "Harm to its reputation or brand could cost it clients and key employees.",
+      "If it fails to manage its cash well, it may need more money, which may not be available on good terms."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Provides system development, website design and workspace solutions with embedded software, mainly in Hong Kong.",
+     "short": "Primagrove",
+     "proceeds": "The company plans to use the net proceeds for workforce growth (about 30%), technology infrastructure (about 25%), workspace solutions (about 20%), business development (about 15%), and strategic investments and general purposes (about 10%). Management has flexibility to change how the money is used.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 98227,
+        "operating": 24546,
+        "net": 20977
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 1833666,
+        "operating": 1255378,
+        "net": 1069698
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Lixia, HE",
+       "role": "Chief executive officer, director, controlling shareholder",
+       "before": 15020000
+      },
+      {
+       "name": "Aurora Grove Limited",
+       "role": "Company wholly owned by Lixia, HE",
+       "before": 15020000
+      },
+      {
+       "name": "Yumo, LAI",
+       "role": "Owner of Hazber LTD",
+       "before": 4000000
+      },
+      {
+       "name": "Hazber LTD",
+       "role": "Company wholly owned by Yumo, LAI",
+       "before": 4000000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, officers and holders of 5% or more have agreed not to sell their shares for 180 days after the offering closes, subject to certain exceptions. The Representative's consent is needed for any earlier sale.",
+      "early": false
+     },
+     "risks": [
+      "The company may not keep growing at its past pace, and poor management of growth could hurt its business.",
+      "The company's short operating history may not show whether its future results will be good.",
+      "The market is intensely competitive, and the company may not compete effectively, which could harm its results.",
+      "Damage to the company's reputation or brand could hurt its ability to win and keep clients and its revenue.",
+      "Poor cash and liquidity management could hurt results, and the company may need extra funding that may not be available."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Primagrove, through its Hong Kong subsidiary, builds custom software and websites and supplies smart office equipment with built-in software.",
+     "short": "Primagrove",
+     "proceeds": "It plans to spend about 30% of the money on hiring technical staff, 25% on technology systems and 20% on its smart office products. It plans to spend 15% on sales and expansion, and 10% on acquisitions and day-to-day costs.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-12-31",
+        "revenue": 98227,
+        "operating": 24546,
+        "net": 20977
+       },
+       {
+        "period_end": "2025-12-31",
+        "revenue": 1833666,
+        "operating": 1255378,
+        "net": 1069698
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Lixia, HE",
+       "role": "Chief executive, controlling shareholder through Aurora Grove Limited",
+       "before": 15020000
+      },
+      {
+       "name": "Yumo, LAI",
+       "role": "Major shareholder through Hazber LTD",
+       "before": 4000000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and holders of 5% or more of the shares have agreed not to sell their shares for 180 days after the offering closes, with some exceptions.",
+      "early": false
+     },
+     "risks": [
+      "The company may not keep growing as fast as before, and poor handling of its growth could hurt the business.",
+      "Its main business only started in early 2024, so its short history may not show how it will do later.",
+      "Its market is crowded and easy for new rivals to enter, so losing out to competitors could hurt results.",
+      "Damage to its reputation or brand could drive away clients and staff and hurt its business.",
+      "If it handles its cash poorly, it may need more money, and it may not be able to raise it on good terms."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2083945,
+   "name": "CALM Chain International Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2083945/000121390026093861/ea0254362-09.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06219,
+    "claude-haiku-5-5": 0.00396,
+    "claude-opus-5-5": 0.11604
+   },
+   "sections_not_found": [
+    "summary_financials",
+    "preferred"
+   ],
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the readers found no full-year figures in the summary financial table",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It provides employer-of-record, HR outsourcing, executive search and HR research services to clients in Hong Kong, through its subsidiary TalentQuest.",
+     "short": "CALM Chain",
+     "proceeds": "It expects net proceeds of about US$26.2 million. About 30% is for growth in the Asia Pacific market, 30% for adding artificial intelligence to the business, and 40% for general costs and working capital.",
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Andrew Teh Yao, HO",
+       "role": "Chief executive, board chair and controlling shareholder; also holds 2500000 Class B shares",
+       "before": 9500000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, its officers and holders of 5% or more have agreed not to sell shares for 180 days. For the company, this runs from the closing of the offering. For insiders, it runs from the date the prospectus takes effect.",
+      "early": false
+     },
+     "risks": [
+      "The Chinese government could step in or change the rules at any time, which could hurt the Hong Kong business and make the shares lose value.",
+      "Following Hong Kong's personal data privacy law and similar rules may cost a lot and could hurt the business.",
+      "The Hong Kong National Security Law could affect its Hong Kong subsidiary, which makes up almost all of its business.",
+      "There are political risks in doing business in Hong Kong.",
+      "It earns money in Hong Kong dollars but the shares trade in US dollars, so currency changes could affect your investment value."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Provides EoR, HR outsourcing, executive search and HR research services in Hong Kong.",
+     "short": "CALM Chain",
+     "proceeds": "The company plans to use the net proceeds about 30% for business development and expansion into the Asia Pacific market, about 30% for applying artificial intelligence to its business, and about 40% for general administration and working capital.",
+     "financials": {
+      "unit": null,
+      "currency": "USD",
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Andrew Teh Yao, HO",
+       "role": "Chief executive officer and chair; also holds 2500000 Class B shares",
+       "before": 9500000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company agrees not to sell or transfer shares for 180 days after the offering closes. Directors, officers and holders of 5% or more agree not to sell for 180 days after the prospectus date.",
+      "early": false
+     },
+     "risks": [
+      "The PRC government may intervene in the Hong Kong operations at any time, possibly changing the business or share value.",
+      "Although Mainland China laws do not directly apply in Hong Kong, they could still be applied there, harming operations.",
+      "Greater PRC oversight of overseas offerings could limit or stop the company from offering securities to investors.",
+      "Mainland China laws are changing quickly, creating uncertainty that could materially change operations or security values.",
+      "Mainland China laws may be costly to comply with and could delay growth, bring penalties or force the business to stop."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "It hires staff on behalf of client companies, finds senior executives and provides HR outsourcing and research in Hong Kong.",
+     "short": "CALM Chain",
+     "proceeds": "It plans to use about 30% to grow its business and expand into the Asia Pacific region, and about 30% to use artificial intelligence to run the business more efficiently. The remaining 40% is for general running costs and day-to-day funding.",
+     "financials": {
+      "unit": null,
+      "currency": null,
+      "years": [],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Andrew Teh Yao, HO",
+       "role": "Chief executive, chair and director",
+       "before": 9500000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors and officers, and holders of 5% or more of its shares agreed not to sell their shares for 180 days. Some exceptions apply.",
+      "early": false
+     },
+     "risks": [
+      "All its business is in Hong Kong, and China's government could step in at any time, which could hurt the business or the share price.",
+      "Following Hong Kong's privacy and data laws could be costly and could seriously affect the business.",
+      "Hong Kong's National Security Law could affect its Hong Kong subsidiary, which makes up nearly all of its business.",
+      "Doing business in Hong Kong carries political risks.",
+      "It earns money in Hong Kong dollars but its shares trade in US dollars, so exchange rate changes could affect investors' value."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2078532,
+   "name": "Red Wisdom Creation Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2078532/000121390026020805/ea0250270-07.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06942,
+    "claude-haiku-5-5": 0.00415,
+    "claude-opus-5-5": 0.13293
+   },
+   "sections_not_found": [
+    "preferred"
+   ],
+   "kept": [
+    "Revenue and results",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no table of preferred stock prices"
+   },
+   "readers_differ": [
+    "others chen qiu before: 14140000 / 14140000 Class A; 5000000 Class B"
+   ],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [
+    "others chen qiu before: 14140000 Class A; 5000000 Class B / 14140000",
+    "others red wisdom cq limited before: 14140000 Class A; 5000000 Class B / 14140000"
+   ],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It is a Hong Kong online marketing firm that links brands with social media influencers and runs online ad campaigns.",
+     "short": "Red Wisdom Creation",
+     "proceeds": "It plans to use about 40% to grow its business and customer base, 30% to buy more online media resources, and 30% for working capital and general costs.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-03-31",
+        "revenue": 3046320,
+        "operating": 178137,
+        "net": 179300
+       },
+       {
+        "period_end": "2025-03-31",
+        "revenue": 8739436,
+        "operating": 1164261,
+        "net": 984822
+       }
+      ],
+      "part_year": {
+       "label": "Apr to Sep 2025",
+       "period_end": "2025-09-30",
+       "revenue": 11048993,
+       "operating": 1076115,
+       "net": 933159,
+       "prior_label": "Apr to Sep 2024",
+       "prior_revenue": 6247497,
+       "prior_operating": 1031995,
+       "prior_net": 875418
+      },
+      "cash": {
+       "value": 265383,
+       "date": "2025-09-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Chen Qiu",
+       "role": "Chief executive, chairman, controlling shareholder; also holds 5000000 Class B shares",
+       "before": 14140000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Directors, officers and holders of 5% or more have agreed not to sell for six months after the offering closes, with some exceptions. The company has agreed to the same six-month limit on issuing shares.",
+      "early": false
+     },
+     "risks": [
+      "Clients may stop buying or spend less, and most client contracts are short-term and can end at any time without notice.",
+      "Losing ties with media channel partners and influencer agencies could cost the company advertising channels, clients and revenue.",
+      "It relies on influencer agencies and their influencers to deliver ads, and it has no direct control over the influencers.",
+      "It relies on media channel partners and their platforms to deliver ads and to give accurate advertising performance data.",
+      "It partly depends on contractors for the work of its Hong Kong operating subsidiary."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Hong Kong marketing firm that connects brands with social media influencers to reach young people.",
+     "short": "Red Wisdom Creation",
+     "proceeds": "The company plans to use about 40% to expand its services, business areas and customer base, about 30% to buy online media resources, and about 30% for working capital and general corporate purposes.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-03-31",
+        "revenue": 3046320,
+        "operating": 178137,
+        "net": 179300
+       },
+       {
+        "period_end": "2025-03-31",
+        "revenue": 8739436,
+        "operating": 1164261,
+        "net": 984822
+       }
+      ],
+      "part_year": {
+       "label": "Apr to Sep 2025",
+       "period_end": "2025-09-30",
+       "revenue": 11048993,
+       "operating": 1076115,
+       "net": 933159,
+       "prior_label": "Apr to Sep 2024",
+       "prior_revenue": 6247497,
+       "prior_operating": 1031995,
+       "prior_net": 875418
+      },
+      "cash": {
+       "value": 265383,
+       "date": "2025-09-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Chen Qiu",
+       "role": "Chief executive officer, chairman, controlling shareholder",
+       "before": "14140000 Class A; 5000000 Class B"
+      },
+      {
+       "name": "Red Wisdom CQ Limited",
+       "role": "Holding company, 100% owned by Chen Qiu",
+       "before": "14140000 Class A; 5000000 Class B"
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Directors, executive officers and holders of 5% or more agreed not to sell their shares for 180 days from the prospectus date. The company agreed not to issue or sell shares for six months after closing.",
+      "early": false
+     },
+     "risks": [
+      "If advertiser clients stop buying its marketing services or spend less, the business could suffer.",
+      "Losing ties with media channel partners or influencer agencies could hurt the business and its revenue.",
+      "The company depends on influencer agency partners and their influencers to deliver services that clients buy.",
+      "The company depends on media channel partners and their platforms to deliver ads and accurate performance data.",
+      "The Hong Kong subsidiary partly relies on contractors to run its operations."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Red Wisdom is a Hong Kong company that runs influencer and targeted online ad campaigns aimed at people aged 14 to 35.",
+     "short": "Red Wisdom",
+     "proceeds": "It plans to use about 40% to grow its business and client base and about 30% to buy more online media space. The remaining 30% is for day-to-day running costs and general company purposes.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "USD",
+      "years": [
+       {
+        "period_end": "2024-03-31",
+        "revenue": 3046320,
+        "operating": 178137,
+        "net": 179300
+       },
+       {
+        "period_end": "2025-03-31",
+        "revenue": 8739436,
+        "operating": 1164261,
+        "net": 984822
+       }
+      ],
+      "part_year": {
+       "label": "Apr to Sep 2025",
+       "period_end": "2025-09-30",
+       "revenue": 11048993,
+       "operating": 1076115,
+       "net": 933159,
+       "prior_label": "Apr to Sep 2024",
+       "prior_revenue": 6247497,
+       "prior_operating": 1031995,
+       "prior_net": 875418
+      },
+      "cash": {
+       "value": 265383,
+       "date": "2025-09-30"
+      }
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Chen Qiu",
+       "role": "Chief executive, chairman and controlling shareholder",
+       "before": 14140000
+      },
+      {
+       "name": "Red Wisdom CQ Limited",
+       "role": "Chen Qiu's wholly owned holding company",
+       "before": 14140000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Directors, executive officers and holders of 5% or more of the shares agreed not to sell for 180 days, with some exceptions. The company also agreed not to issue new shares for six months without the underwriter's consent.",
+      "early": false
+     },
+     "risks": [
+      "If advertising clients stop buying its services or cut spending, its business and results could be badly hurt.",
+      "Losing its ties with media platforms or influencer agencies could hurt its business and results.",
+      "It depends on influencer agencies and their influencers to deliver the ads its clients pay for.",
+      "It depends on media platforms to run ads and to supply accurate data on how well ads perform.",
+      "Its Hong Kong business partly depends on outside contractors."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2058007,
+   "name": "ECST Holdings Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2058007/000149315226035904/formf-1a.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.06018,
+    "claude-haiku-5-5": 0.00306,
+    "claude-opus-5-5": 0.11777
+   },
+   "sections_not_found": [
+    "summary_financials",
+    "preferred",
+    "item15"
+   ],
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the company reports in HKD, not US dollars",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It sells cloud-based business management software, known as ERP, to companies in Hong Kong.",
+     "short": "ECST Holdings",
+     "proceeds": null,
+     "financials": {
+      "unit": "dollars",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2024-09-30",
+        "revenue": 31642865,
+        "operating": null,
+        "net": 6919666
+       },
+       {
+        "period_end": "2025-09-30",
+        "revenue": 28365488,
+        "operating": null,
+        "net": 5372153
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [
+      {
+       "name": "LKHL Limited",
+       "role": "Existing shareholder (resale)",
+       "before": 860000,
+       "sold": 860000
+      },
+      {
+       "name": "MYGTR Holding Limited",
+       "role": "Existing shareholder (resale)",
+       "before": 900000,
+       "sold": 900000
+      }
+     ],
+     "others": [
+      {
+       "name": "Yuk Chun Cathy Wong",
+       "role": "Controlling shareholder, held through YHC Group Limited",
+       "before": 11380000
+      }
+     ],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "Its shares could be barred from trading on a US exchange if US regulators cannot inspect its auditors' work."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Sells cloud-based software that helps Hong Kong businesses run operations, plus maintenance services.",
+     "short": "ECST Holdings",
+     "proceeds": null,
+     "financials": {
+      "unit": "dollars",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2024-09-30",
+        "revenue": 31642865,
+        "operating": null,
+        "net": 6919666
+       },
+       {
+        "period_end": "2025-09-30",
+        "revenue": 28365488,
+        "operating": null,
+        "net": 5372153
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [
+      {
+       "name": "LKHL Limited",
+       "role": "Resale shareholder",
+       "before": 860000,
+       "sold": 860000
+      },
+      {
+       "name": "MYGTR Holding Limited",
+       "role": "Resale shareholder",
+       "before": 900000,
+       "sold": 900000
+      }
+     ],
+     "others": [],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "Class A shares could be barred from trading on a US exchange if US regulators cannot inspect the company's auditors."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "ECST sells cloud-based business management software, known as ERP, to companies in Hong Kong.",
+     "short": "ECST",
+     "proceeds": null,
+     "financials": {
+      "unit": "dollars",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2024-09-30",
+        "revenue": 31642865,
+        "operating": null,
+        "net": 6919666
+       },
+       {
+        "period_end": "2025-09-30",
+        "revenue": 28365488,
+        "operating": null,
+        "net": 5372153
+       }
+      ],
+      "part_year": null,
+      "cash": null
+     },
+     "sellers": [
+      {
+       "name": "LKHL Limited",
+       "role": "Existing shareholder, separate resale",
+       "before": 860000,
+       "sold": 860000
+      },
+      {
+       "name": "MYGTR Holding Limited",
+       "role": "Existing shareholder, separate resale",
+       "before": 900000,
+       "sold": 900000
+      }
+     ],
+     "others": [
+      {
+       "name": "Yuk Chun Cathy Wong",
+       "role": "Controlling shareholder, through YHC Group Limited",
+       "before": 11380000
+      }
+     ],
+     "rounds": [],
+     "lockup": null,
+     "risks": [
+      "US authorities could ban trading in its shares if the US audit watchdog cannot inspect its auditors."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2062925,
+   "name": "Smart Pointer Group Holdings Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2062925/000121390026072996/ea0241525-12.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07139,
+    "claude-haiku-5-5": 0.00432,
+    "claude-opus-5-5": 0.14171
+   },
+   "sections_not_found": [
+    "preferred"
+   ],
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the company reports in HKD, not US dollars",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "lock-up days: None / 180"
+   ],
+   "referee_differs_from_first": [],
+   "referee_differs_from_second": [
+    "lock-up days: 180 / None"
+   ],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It provides temperature-controlled logistics and warehousing services to customers in Hong Kong.",
+     "short": "Smart Pointer",
+     "proceeds": "It expects about $21.6 million after costs. About 40% is for buying or investing in logistics and warehouse firms, 30% for more handling capacity and 20% for warehouse technology. The rest is for running costs and working capital.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2024-03-31",
+        "revenue": 52812991,
+        "operating": null,
+        "net": 6365050
+       },
+       {
+        "period_end": "2025-03-31",
+        "revenue": 52662848,
+        "operating": null,
+        "net": 6721909
+       }
+      ],
+      "part_year": {
+       "label": "Apr to Sep 2025",
+       "period_end": "2025-09-30",
+       "revenue": 32407295,
+       "operating": null,
+       "net": 3088725,
+       "prior_label": "Apr to Sep 2024",
+       "prior_revenue": 23055386,
+       "prior_operating": null,
+       "prior_net": 1836808
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Ting Fo Chan",
+       "role": "Founder, chairman, chief executive",
+       "before": 5200000
+      },
+      {
+       "name": "Uplift Champion Ninetysix limited",
+       "role": "Shareholder owned by Mr. Ching Hei Chan",
+       "before": 2900000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "The company, its officers, directors and holders of more than 5% of its securities agreed not to sell shares for six months after the offering closes. This is subject to certain exceptions and needs the underwriters' representative's written consent to sell earlier.",
+      "early": false
+     },
+     "risks": [
+      "US rules on auditors that US regulators cannot inspect could be applied more strictly to companies like this one.",
+      "Cash and assets held in Hong Kong may not be freely moved out of Hong Kong.",
+      "Court judgments that shareholders win against the company may not be enforceable.",
+      "Its managers have no experience running a US public company or following the laws that apply to one.",
+      "It is a holding company and can pay dividends only if its Hong Kong subsidiary earns money and sends it up."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Provides temperature-controlled logistics and warehousing services in Hong Kong.",
+     "short": "Smart Pointer Group Holdings",
+     "proceeds": "The company plans to use the net proceeds for acquisitions of logistics and warehousing providers (about 40%), expanding handling capacity (about 30%), warehousing technologies (about 20%), and general administration and working capital (the remainder). The net proceeds must first be remitted to Hong Kong before the company can use them to grow its business.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2024-03-31",
+        "revenue": 52812991,
+        "operating": null,
+        "net": 6365050
+       },
+       {
+        "period_end": "2025-03-31",
+        "revenue": 52662848,
+        "operating": null,
+        "net": 6721909
+       }
+      ],
+      "part_year": {
+       "label": "Apr to Sep 2025",
+       "period_end": "2025-09-30",
+       "revenue": 32407295,
+       "operating": null,
+       "net": 3088725,
+       "prior_label": "Apr to Sep 2024",
+       "prior_revenue": 23055386,
+       "prior_operating": null,
+       "prior_net": 1836808
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Ting Fo Chan",
+       "role": "Chairman, chief executive officer; controls AC Smart Capital Limited",
+       "before": 5200000
+      },
+      {
+       "name": "AC Smart Capital Limited",
+       "role": "Investment company controlled by Ting Fo Chan",
+       "before": 5200000
+      },
+      {
+       "name": "Uplift Champion Ninetysix Limited",
+       "role": "Shareholder controlled by Ching Hei Chan",
+       "before": 2900000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company, its directors, officers and holders of more than 5% of its securities have agreed not to sell shares for six months after the offering closes. The filing describes no early release.",
+      "early": false
+     },
+     "risks": [
+      "New SEC, PCAOB and HFCA Act rules may impose stricter checks on auditors who are not inspected by the PCAOB.",
+      "Cash or assets held in Hong Kong may not be available for use outside Hong Kong because of restrictions on transfers.",
+      "Some judgments that shareholders obtain against the company may not be enforceable.",
+      "The management team lacks experience running a U.S. public company and following the laws that apply to one.",
+      "As a holding company, the company depends on dividends from its Hong Kong subsidiary to pay dividends and cover its costs."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "It provides temperature-controlled trucking and warehousing services to customers in Hong Kong.",
+     "short": "Smart Pointer",
+     "proceeds": "It expects about $21.6 million and plans to spend about 40% on buying or investing in other logistics and warehousing firms, 30% on more handling capacity and 20% on warehouse technology. The rest goes to general running costs and working capital.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2024-03-31",
+        "revenue": 52812991,
+        "operating": null,
+        "net": 6365050
+       },
+       {
+        "period_end": "2025-03-31",
+        "revenue": 52662848,
+        "operating": null,
+        "net": 6721909
+       }
+      ],
+      "part_year": {
+       "label": "Apr to Sep 2025",
+       "period_end": "2025-09-30",
+       "revenue": 32407295,
+       "operating": null,
+       "net": 3088725,
+       "prior_label": "Apr to Sep 2024",
+       "prior_revenue": 23055386,
+       "prior_operating": null,
+       "prior_net": 1836808
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Ting Fo Chan",
+       "role": "Founder, chairman and chief executive",
+       "before": 5200000
+      },
+      {
+       "name": "AC Smart Capital Limited",
+       "role": "Holding company owned by Ting Fo Chan",
+       "before": 5200000
+      },
+      {
+       "name": "Uplift Champion Ninetysix limited",
+       "role": "Holding company owned by Ching Hei Chan",
+       "before": 2900000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "The company, its directors, officers and holders of more than 5% agreed not to sell shares for six months after the offering closes. Sales need the lead underwriter's written consent before then.",
+      "early": false
+     },
+     "risks": [
+      "US rules could ban trading in its shares if US regulators cannot inspect its auditor for two years in a row.",
+      "Cash held in Hong Kong may not be usable outside Hong Kong if limits are placed on moving money.",
+      "Court judgments that shareholders win against it may not be enforceable.",
+      "Its managers have no experience running a US-listed company or following the laws that apply to one.",
+      "It is a holding company, so any dividends depend on earnings paid up by its Hong Kong subsidiary."
+     ]
+    }
+   }
+  },
+  {
+   "cik": 2081641,
+   "name": "Worldstar Engineering Holdings Ltd",
+   "doc": "https://www.sec.gov/Archives/edgar/data/2081641/000121390026073347/ea0254465-08.htm",
+   "read": "2026-11-18",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07619,
+    "claude-haiku-5-5": 0.00414,
+    "claude-opus-5-5": 0.1429
+   },
+   "sections_not_found": [
+    "preferred"
+   ],
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the company reports in HKD, not US dollars",
+    "What earlier rounds paid": "the readers found no table of preferred stock prices",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "lock-up days: None / 180"
+   ],
+   "referee_differs_from_first": [
+    "lock-up days: None / 180"
+   ],
+   "referee_differs_from_second": [],
+   "answers": {
+    "claude-sonnet-5-5": {
+     "what": "It is a Hong Kong contractor that does building repair, maintenance, renovation and painting work, mainly on public sector projects.",
+     "short": "Worldstar Engineering",
+     "proceeds": "It plans to use about 40% for buying or investing in building work firms and 30% for painting equipment and machinery. About 20% is for hiring skilled staff, and the rest is for general costs and working capital.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2024-03-31",
+        "revenue": 89877952,
+        "operating": null,
+        "net": 5907168
+       },
+       {
+        "period_end": "2025-03-31",
+        "revenue": 200736535,
+        "operating": null,
+        "net": 8693648
+       }
+      ],
+      "part_year": {
+       "label": "Apr to Sep 2025",
+       "period_end": "2025-09-30",
+       "revenue": 93535624,
+       "operating": null,
+       "net": 6157965,
+       "prior_label": "Apr to Sep 2024",
+       "prior_revenue": 96035495,
+       "prior_operating": null,
+       "prior_net": 8069952
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Mr. Man Fai Lee",
+       "role": "Founder, chairman, chief executive; holds shares through Worldstar Pioneer Limited",
+       "before": 12800000
+      },
+      {
+       "name": "Skyrise Innovation Limited",
+       "role": "Shareholder owning more than 5%",
+       "before": 1600000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": null,
+      "summary": "Officers, directors and holders of more than 5% of its securities have agreed not to sell for six months after the registration statement takes effect. The lead underwriter can allow sales sooner by giving written consent.",
+      "early": true
+     },
+     "risks": [
+      "US rules on auditors of emerging market companies are getting stricter, which could affect the company if its auditor is not inspected by US regulators.",
+      "Cash and assets held in Hong Kong may be blocked from use outside Hong Kong by government limits on transfers.",
+      "Court judgments that shareholders win against the company may not be enforceable.",
+      "Its management has no experience running a US public company or following the laws that apply to one.",
+      "As a holding company, it relies on dividends from its Hong Kong subsidiary to pay its own dividends."
+     ]
+    },
+    "claude-haiku-5-5": {
+     "what": "Hong Kong contractor specializing in renovation, repair, maintenance, alteration and painting works.",
+     "short": "Worldstar Engineering Holdings",
+     "proceeds": "The company plans to use about 40% for potential investments or acquisitions of building work service providers, 30% for painting equipment and advanced machinery, and 20% for recruiting skilled professionals. The remaining amount will go to general administration and working capital.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2024-03-31",
+        "revenue": 89877952,
+        "operating": null,
+        "net": 5907168
+       },
+       {
+        "period_end": "2025-03-31",
+        "revenue": 200736535,
+        "operating": null,
+        "net": 8693648
+       }
+      ],
+      "part_year": {
+       "label": "Six months to Sep 30, 2025",
+       "period_end": "2025-09-30",
+       "revenue": 93535624,
+       "operating": null,
+       "net": 6157965,
+       "prior_label": "Six months to Sep 30, 2024",
+       "prior_revenue": 96035495,
+       "prior_operating": null,
+       "prior_net": 8069952
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Man Fai Lee",
+       "role": "Chairman, chief executive officer, director",
+       "before": 12800000
+      },
+      {
+       "name": "Skyrise Innovation Limited",
+       "role": "Shareholder, 5% or greater",
+       "before": 1600000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "The company and its directors, officers and holders of more than 5% of its securities agreed not to sell or transfer shares for six months. The filing gives the period from the offering completion in one place and from the registration statement's effective date in another.",
+      "early": false
+     },
+     "risks": [
+      "U.S. regulators are applying stricter rules to auditors who are not inspected by the PCAOB, which may affect the company.",
+      "Cash or assets held in Hong Kong may not be available for use outside Hong Kong if restrictions are imposed.",
+      "Some judgments that shareholders obtain against the company may not be enforceable.",
+      "The management team has little experience running a U.S. public company and following the laws that apply to one.",
+      "The company is a holding company, so its ability to pay dividends depends on earnings and payments from its Hong Kong subsidiary."
+     ]
+    },
+    "claude-opus-5-5": {
+     "what": "Hong Kong contractor doing building repair, maintenance, alteration, addition, fitting-out and painting work, mostly on public sector projects.",
+     "short": "Worldstar Engineering",
+     "proceeds": "About 40% will go to investing in or buying other building work firms, about 30% to painting equipment and machinery, and about 20% to hiring skilled staff. The rest will go to general administration and working capital.",
+     "financials": {
+      "unit": "dollars",
+      "currency": "HKD",
+      "years": [
+       {
+        "period_end": "2024-03-31",
+        "revenue": 89877952,
+        "operating": null,
+        "net": 5907168
+       },
+       {
+        "period_end": "2025-03-31",
+        "revenue": 200736535,
+        "operating": null,
+        "net": 8693648
+       }
+      ],
+      "part_year": {
+       "label": "Apr to Sep 2025",
+       "period_end": "2025-09-30",
+       "revenue": 93535624,
+       "operating": null,
+       "net": 6157965,
+       "prior_label": "Apr to Sep 2024",
+       "prior_revenue": 96035495,
+       "prior_operating": null,
+       "prior_net": 8069952
+      },
+      "cash": null
+     },
+     "sellers": [],
+     "others": [
+      {
+       "name": "Mr. Man Fai Lee",
+       "role": "Founder, chairman and chief executive; holds shares through Worldstar Pioneer Limited",
+       "before": 12800000
+      },
+      {
+       "name": "Skyrise Innovation Limited",
+       "role": "Investment company owned by Ms. Nga Ting Tung",
+       "before": 1600000
+      }
+     ],
+     "rounds": [],
+     "lockup": {
+      "days": 180,
+      "summary": "Directors, officers and holders of more than 5% have agreed not to sell for six months after the registration statement takes effect. They can sell earlier only with the written consent of the lead underwriter.",
+      "early": false
+     },
+     "risks": [
+      "US regulators and a US law set stricter rules for companies whose auditors the US audit watchdog cannot inspect.",
+      "Money or assets held in Hong Kong may not be movable out of Hong Kong if restrictions are imposed.",
+      "Shareholders may not be able to enforce court judgments they win against the company.",
+      "Its managers have no experience running a US-listed company or following the laws that apply to one.",
+      "It is a holding company, so its ability to pay dividends depends on payments from its Hong Kong subsidiary."
+     ]
+    }
+   }
+  }
+ ],
+ "spent_usd": 3.8482
+}

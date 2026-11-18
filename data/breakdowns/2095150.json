@@ -23,6 +23,11 @@
   {
    "item": "Shares sold by the company",
    "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
@@ -32,7 +37,38 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the readers found no full-year figures in the summary financial table",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "lockup": {
+  "summary": "The company, its officers, directors and holders of 5% or more of Class A shares agreed not to sell shares for 180 days. The underwriter's representative can give written consent to sell earlier.",
+  "days": 180
+ },
+ "what": "ChainOn provides technology services in Hong Kong, including blockchain software projects, cloud hosting, and project and hardware maintenance.",
+ "short": "ChainOn",
+ "proceeds": "It expects net proceeds of about US$27.67 million. About 40% goes to research and technology, 20% to sales and marketing, 20% to hiring, 10% to possible strategic investments, and 10% to working capital.",
+ "risks": [
+  "Errors, bugs or security flaws in its technology services could cost it customers, hurt its reputation and raise its costs.",
+  "If customers cannot complete or are unhappy with acceptance tests, projects may be delayed and final payment may not be received.",
+  "If it cannot raise the money needed to run and grow the business, its results and its ability to continue as a going concern could suffer.",
+  "If it fails to keep up with fast-changing technology in Hong Kong, its business and growth prospects could be seriously harmed."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2095150/000149315226030109/formf-1.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

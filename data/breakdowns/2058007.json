@@ -33,7 +33,31 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the company reports in HKD, not US dollars",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "what": "It sells cloud-based business management software, known as ERP, to companies in Hong Kong.",
+ "short": "ECST Holdings",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2058007/000149315226035904/formf-1a.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

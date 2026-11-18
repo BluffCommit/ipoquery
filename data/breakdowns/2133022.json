@@ -29,12 +29,152 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Who is selling",
+   "how": "two AI readers agree, and the shares add up to the number on the cover",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to Sep 2024",
+    "revenue": 406.751,
+    "operating": 13.44
+   },
+   {
+    "label": "Year to Sep 2025",
+    "revenue": 907.856,
+    "operating": 45.332
+   }
+  ],
+  "facts": [
+   {
+    "value": 371.764,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": 0.012,
+    "label": "net result, Year to Sep 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "sellers": [
+  {
+   "name": "Entities affiliated with Forerunner Ventures",
+   "role": "Venture investor",
+   "before": 28679908,
+   "sold": 28679908
+  },
+  {
+   "name": "Entities affiliated with Lifeline Ventures",
+   "role": "Venture investor",
+   "before": 22564156,
+   "sold": 6947864
+  },
+  {
+   "name": "Elysian Park Ventures, LLC",
+   "role": "Investor",
+   "before": 1416342,
+   "sold": 872228
+  }
+ ],
+ "others": [
+  {
+   "name": "Entities affiliated with FMR LLC",
+   "role": "Investor, funds managed by FMR LLC",
+   "before": 33609862,
+   "sold": 0
+  },
+  {
+   "name": "Bedford Ridge Investment Company LLP",
+   "role": "Investor",
+   "before": 28510954,
+   "sold": 0
+  },
+  {
+   "name": "David Shuman",
+   "role": "Executive chairman",
+   "before": 12381830,
+   "sold": 0
+  },
+  {
+   "name": "Michael A. Chapp",
+   "role": "Executive officer",
+   "before": 7007291,
+   "sold": 0
+  },
+  {
+   "name": "Thomas Hale",
+   "role": "Executive officer",
+   "before": 3554065,
+   "sold": 0
+  },
+  {
+   "name": "Teemu Kurppa",
+   "role": "Existing shareholder",
+   "before": 1544463,
+   "sold": 0
+  },
+  {
+   "name": "Antti Laitala",
+   "role": "Existing shareholder",
+   "before": 1064277,
+   "sold": 0
+  },
+  {
+   "name": "Sean Brecker",
+   "role": "Chief financial officer",
+   "before": 622772,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Existing holders are released in steps. The first group can sell 35 days after the prospectus date, and all remaining shares can be sold by day 181. Some shares can be released sooner if the stock price rises well above the IPO price.",
+  "days": 181
+ },
+ "what": "Oura makes the Oura Ring, a smart ring, and a paid membership app that tracks sleep, activity and other health signals.",
+ "short": "Oura",
+ "proceeds": "Oura expects about $532.6 million in net proceeds, and about $526.4 million of it will go to tax payments tied to employee stock units vesting at the IPO. The rest is for general business costs such as technology development, working capital, operating expenses and equipment.",
+ "risks": [
+  "Oura's fast revenue growth may not last, and growth is expected to slow over time.",
+  "If Oura cannot attract new members or keep existing ones paying, its business and growth will suffer.",
+  "Oura faces strong competition from larger companies with more money, bigger brands and wider sales reach.",
+  "Oura has only recently become profitable and may not stay profitable as its costs rise.",
+  "If Oura cannot keep launching new and improved products and features, its sales and growth could suffer."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2133022/000119312526396051/d119865ds1a.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

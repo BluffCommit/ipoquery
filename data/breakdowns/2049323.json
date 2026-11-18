@@ -28,12 +28,57 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the readers found no full-year figures in the summary financial table",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "Ka Ming Kwong",
+   "role": "Chief executive, chairman, largest shareholder",
+   "before": 9030000,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors and officers, and all current shareholders agreed not to sell shares for 180 days from the start of sales in this offering. Some exceptions apply.",
+  "days": 180
+ },
+ "what": "It is a Hong Kong agency that runs events, produces content and designs, and holds IP exhibitions for marketing clients.",
+ "short": "AM PM Group",
+ "proceeds": "About 30% would go to growing content production and hiring talent. About 20% would go to expanding event business coverage and 20% to possible acquisitions. About 30% would go to working capital and general needs.",
+ "risks": [
+  "Following Hong Kong's personal data privacy law and similar rules may cost a lot and could hurt the business.",
+  "New laws in the United States or China could affect the company's ability to list its shares and hurt their market price.",
+  "The company faces political risks because it does business in Hong Kong.",
+  "Changes in exchange rates could hurt the company's results and the value of your investment.",
+  "If the Hong Kong subsidiary cannot pay dividends or other payments to the parent, the company's growth and funding could suffer."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2049323/000121390026100862/ea0224186-19.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

@@ -29,12 +29,97 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 2.276,
+    "operating": 0.98
+   },
+   {
+    "label": "2025",
+    "revenue": 2.804,
+    "operating": 0.83
+   }
+  ],
+  "facts": [
+   {
+    "value": 1.881,
+    "label": "cash on Dec 31, 2025"
+   },
+   {
+    "value": 0.559,
+    "label": "net result, 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Wai Kit, NG",
+   "role": "Director or executive officer; owns Ga Sai Tong Limited",
+   "before": 5000000,
+   "sold": 0
+  },
+  {
+   "name": "Ga Sai Tong Limited",
+   "role": "Shareholder with 5% or more; owned by Wai Kit, NG",
+   "before": 5000000,
+   "sold": 0
+  },
+  {
+   "name": "Ga Sai Tong Capital Limited",
+   "role": "Shareholder with 5% or more; owned by Wai Lam, NG, sibling of Wai Kit, NG",
+   "before": 5000000,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors, its officers and holders of 5% or more of the shares agreed not to sell for 180 days after the shares first trade on the NYSE American. Sales need the underwriters' written consent, and some exceptions apply.",
+  "days": 180
+ },
+ "what": "It runs three restaurants in Hong Kong serving Japanese yakitori, French-Japanese fusion and sashimi or sushi dishes.",
+ "short": "Ga Sai Tong",
+ "proceeds": "The company expects about $27.6 million after costs, at an assumed $5.00 per share. It plans 40% for new restaurants in Hong Kong and East Asia, 15% for hiring and training chefs, 15% for upgrading current restaurants and 30% for general costs and working capital.",
+ "risks": [
+  "The company's results depend on how well its three current restaurants and any new ones do.",
+  "It may struggle to manage and market its separately branded restaurants, and damage to a brand could hurt its business.",
+  "If it cannot raise enough money for new restaurants, its growth could be badly held back.",
+  "Its bank loans can be called back on demand, which could hurt its cash position if the lender asks for repayment.",
+  "It may not find good locations, may face higher rent, or may fail to renew its leases, which could hurt results."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2064551/000121390026081785/ea0272009-03.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

@@ -32,7 +32,48 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the company reports in HKD, not US dollars",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "Skyrise Innovation Limited",
+   "role": "Shareholder owning more than 5%",
+   "before": 1600000,
+   "sold": 0
+  }
+ ],
+ "what": "It is a Hong Kong contractor that does building repair, maintenance, renovation and painting work, mainly on public sector projects.",
+ "short": "Worldstar Engineering",
+ "proceeds": "It plans to use about 40% for buying or investing in building work firms and 30% for painting equipment and machinery. About 20% is for hiring skilled staff, and the rest is for general costs and working capital.",
+ "risks": [
+  "US rules on auditors of emerging market companies are getting stricter, which could affect the company if its auditor is not inspected by US regulators.",
+  "Cash and assets held in Hong Kong may be blocked from use outside Hong Kong by government limits on transfers.",
+  "Court judgments that shareholders win against the company may not be enforceable.",
+  "Its management has no experience running a US public company or following the laws that apply to one.",
+  "As a holding company, it relies on dividends from its Hong Kong subsidiary to pay its own dividends."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2081641/000121390026073347/ea0254465-08.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

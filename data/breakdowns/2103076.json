@@ -25,6 +25,16 @@
   {
    "item": "Shares sold by the company",
    "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
@@ -33,8 +43,112 @@
    "why": "the offer is in depositary shares, which are not counted the same way as the shares outstanding"
   },
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 205.731,
+    "operating": -35.102
+   },
+   {
+    "label": "2025",
+    "revenue": 536.251,
+    "operating": 107.1
+   }
+  ],
+  "facts": [
+   {
+    "value": 385.771,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": 72.47,
+    "label": "net result, 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "AFintronic Limited",
+   "role": "Holding company wholly owned by James Zhou, non-executive chairman",
+   "before": 257909521,
+   "sold": 0
+  },
+  {
+   "name": "OPay Tech",
+   "role": "Holding company for shares of Fang Han, Stephen Wen (co-CEO) and Lars Rahbaek Boilesen (co-CEO)",
+   "before": 186581278,
+   "sold": 0
+  },
+  {
+   "name": "Bloom Haven Limited",
+   "role": "Trust vehicle holding shares for the 2026 employee equity plan",
+   "before": 168664930,
+   "sold": 0
+  },
+  {
+   "name": "Opera",
+   "role": "Listed company, Opera Limited, existing shareholder",
+   "before": 159806239,
+   "sold": 0
+  },
+  {
+   "name": "Bright Holding Limited",
+   "role": "Holding company wholly owned by James Zhou, non-executive chairman",
+   "before": 137359180,
+   "sold": 0
+  },
+  {
+   "name": "Softbank Entities",
+   "role": "Investor, linked to SoftBank Vision Fund II",
+   "before": 123214065,
+   "sold": 0
+  },
+  {
+   "name": "SCC Entities",
+   "role": "Venture investor",
+   "before": 112389548,
+   "sold": 0
+  },
+  {
+   "name": "IDG Entities",
+   "role": "Venture investor",
+   "before": 111837577,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Directors, executive officers, existing shareholders and the private placement investor agreed not to sell shares or ADSs for 365 days after the prospectus date, with some exceptions. The company itself agreed not to issue or sell shares for 180 days.",
+  "days": 365
+ },
+ "what": "OPay runs a digital finance app that offers payments, money transfers and loans to consumers and businesses in Africa.",
+ "short": "OPay",
+ "proceeds": "It plans to use the money for general corporate purposes. These include investing in technology, distribution, new products and market growth, and possible acquisitions. It expects about US$291.0 million from the offering and about US$183.6 million from a concurrent private placement.",
+ "risks": [
+  "OPay faces tough competition from fintech firms, banks and others, and many rivals have more money and users.",
+  "Failures in its computer systems or in the data centers and cloud services it relies on could disrupt its business.",
+  "Demand for its services could fall if it fails to keep up with new technology and changing customer needs.",
+  "OPay has grown fast but has a short operating history, which makes its future results hard to predict."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2103076/000119312526430437/d56487df1a.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

@@ -29,12 +29,86 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 0.098,
+    "operating": 0.025
+   },
+   {
+    "label": "2025",
+    "revenue": 1.834,
+    "operating": 1.255
+   }
+  ],
+  "facts": [
+   {
+    "value": 1.07,
+    "label": "net result, 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Lixia, HE",
+   "role": "Chief executive and controlling shareholder, through Aurora Grove Limited",
+   "before": 15020000,
+   "sold": 0
+  },
+  {
+   "name": "Hazber LTD",
+   "role": "Shareholder, wholly owned by Yumo, LAI",
+   "before": 4000000,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors and officers, and holders of 5% or more have agreed not to sell or transfer shares for 180 days after the offering closes. Some exceptions apply.",
+  "days": 180
+ },
+ "what": "Through its Hong Kong unit Oceanic Bounty, it builds custom software and sells smart office products such as lockers and booths.",
+ "short": "Primagrove",
+ "proceeds": "It plans to put about 30% toward hiring technical staff, 25% toward technology tools, and 20% toward its workspace products business. About 15% is for sales and expansion, and 10% for investments and general costs. Net proceeds are estimated at about $27.61 million.",
+ "risks": [
+  "It may not keep growing as fast as before, and fast growth could strain its management, staff and systems.",
+  "Its market is crowded and easy to enter, so it may struggle to compete.",
+  "Harm to its reputation or brand could cost it clients and key employees.",
+  "If it fails to manage its cash well, it may need more money, which may not be available on good terms."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2138135/000121390026104919/ea0295228-06.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

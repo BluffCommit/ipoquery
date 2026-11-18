@@ -29,12 +29,61 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to Mar 2025",
+    "revenue": 397.986,
+    "operating": -302.38
+   },
+   {
+    "label": "Year to Mar 2026",
+    "revenue": 1330.105,
+    "operating": -46.862
+   }
+  ],
+  "facts": [
+   {
+    "value": -339.661,
+    "label": "net result, Year to Mar 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "what": "It mines and processes copper, and some cobalt, in Zambia through its operating company, Konkola Copper Mines.",
+ "short": "CopperTech Metals",
+ "proceeds": "It expects net proceeds of about $372.0 million. It will pass all of this to a subsidiary, which will lend it to Konkola Plc for capital development and infrastructure at the Konkola Deep Mine Project.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2093018/000157587226000437/ctm006_s1a.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

@@ -29,12 +29,86 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "net",
+  "years": [
+   {
+    "label": "Year to Mar 2025",
+    "revenue": 2.473,
+    "operating": 0.751
+   },
+   {
+    "label": "Year to Mar 2026",
+    "revenue": 3.249,
+    "operating": 0.755
+   }
+  ],
+  "facts": [
+   {
+    "value": 0.163,
+    "label": "cash on Mar 31, 2026"
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Mr. Chun Kwok Ng",
+   "role": "Chief executive, chairman and controlling shareholder",
+   "before": 14120000,
+   "sold": 0
+  },
+  {
+   "name": "TechLiving Hub Solutions Corporation",
+   "role": "Holding company wholly owned by Mr. Chun Kwok Ng",
+   "before": 14120000,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Directors, officers and all current shareholders, including six pre-IPO investors, agreed not to sell shares for 180 days after the offering closes. The company has agreed to the same restriction on issuing shares.",
+  "days": 180
+ },
+ "what": "It rents student dormitories near Hong Kong universities and refers students to education advisory services under the Student Living brand.",
+ "short": "Student Living EduVation",
+ "proceeds": "It plans to use about 55% for growing its Hong Kong business and 20% to expand into Southeast Asia. About 5% is for its dormitory management system and 20% for working capital and general costs.",
+ "risks": [
+  "Most customers are students who use the service only once, so the company must keep finding new students every year.",
+  "The company has a short operating history, so its past growth may not predict future results.",
+  "The company depends on its management, especially Mr. Chun Kwok Ng, and has no key man insurance.",
+  "All education referral revenue comes from one partner, Meta Academia, and either side can end the deal with one month's notice.",
+  "Meta Academia is a related party, so its deals may not be on terms an unrelated party would get."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2083843/000118518526003474/studentf1a6080326.htm",
+   1
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }
