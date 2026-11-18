@@ -489,7 +489,8 @@ def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, 
         spent += sum(costs.values())
         errors = {model: error for model, (_, _, error) in replies.items() if error}
         entry = {"cik": b["cik"], "name": records[b["cik"]]["name"], "doc": b["doc"], "read": today.isoformat(), "cost_usd": costs,
-                 "sections_not_found": [name for name in WANTED if name not in sections]}
+                 "sections_not_found": [name for name in WANTED if name not in sections],
+                 "preferred_starts": sections.get("preferred", "")[:160].replace("\n", " / ")}
         tagged = b.get("financials") if (b.get("financials") or {}).get("by") != "model" else None      # figures from the SEC's tagged data stay
         for old in MODEL_KEYS:
             b.pop(old, None)
@@ -529,7 +530,7 @@ def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, 
                 entry["errors"] = errors
             compare["deals"].append(entry)
         else:
-            compare.setdefault("later", []).append({k: entry[k] for k in ("cik", "name", "cost_usd", "kept", "left_out", "readers_differ")})
+            compare.setdefault("later", []).append({k: entry[k] for k in ("cik", "name", "cost_usd", "kept", "left_out", "readers_differ", "sections_not_found", "preferred_starts")})
     compare["spent_usd"] = round(compare.get("spent_usd", 0) + spent, 4)
     Path(compare_path).write_text(json.dumps(compare, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     log(f"model step: read {done} of {len(waiting)} waiting deals, about ${spent:.2f} this run")
