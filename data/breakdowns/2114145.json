@@ -34,7 +34,66 @@
  "hidden": [
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the company reports in SGD, not US dollars",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "Queen Holdings Limited",
+   "role": "Investor owned by Korean private equity funds",
+   "before": 5489787,
+   "sold": 0
+  },
+  {
+   "name": "KC Small Medium Value up PEF I",
+   "role": "Korean private equity investor",
+   "before": 3829728,
+   "sold": 0
+  },
+  {
+   "name": "Nol Universe Co., Ltd.",
+   "role": "Shareholder, Korean company",
+   "before": 1059896,
+   "sold": 0
+  },
+  {
+   "name": "Rivendell Investments 2018-2 LLC",
+   "role": "Investor owned by Peter Thiel",
+   "before": 897563,
+   "sold": 0
+  }
+ ],
+ "what": "Tracx Logis provides technology-driven shipping and logistics services across borders for online sellers and for businesses.",
+ "short": "Tracx Logis",
+ "proceeds": "It expects about $16.4 million after costs. About 10% goes to improving its platforms, 10% to upkeep of fulfillment centers, and 40% to working capital, including paying suppliers. The rest is for general business needs, which may include acquisitions.",
+ "risks": [
+  "Trade barriers, inflation, wars and other economic problems could reduce demand for its shipping services in Asia and worldwide.",
+  "Higher trade tensions and tariffs will likely hurt its finances and results.",
+  "Pandemics, wars and higher oil and gas prices could cut consumer demand and raise transport costs, hurting its business.",
+  "Sudden or large rises in freight and transport costs could hurt its business and results.",
+  "Its business depends on continued growth of e-commerce platforms across Asia."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2114145/000121390026115596/ea0274222-16.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

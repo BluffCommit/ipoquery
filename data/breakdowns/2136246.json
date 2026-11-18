@@ -29,12 +29,100 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "net",
+  "years": [
+   {
+    "label": "Year to Oct 2024",
+    "revenue": null,
+    "operating": -0.097
+   },
+   {
+    "label": "Year to Oct 2025",
+    "revenue": null,
+    "operating": 0.846
+   }
+  ],
+  "ytd": {
+   "label": "Nov 2025 to Apr 2026",
+   "revenue": null,
+   "operating": -0.294,
+   "prior_label": "Nov 2024 to Apr 2025",
+   "prior_revenue": null,
+   "prior_operating": 0.608
+  },
+  "facts": [
+   {
+    "value": 1.986,
+    "label": "cash on Apr 30, 2026"
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Kepha Capital Limited",
+   "role": "Existing shareholder, owned by Koh Beng Kiok Anthony",
+   "before": 3220000,
+   "sold": 0
+  },
+  {
+   "name": "G86 Services Limited",
+   "role": "Existing shareholder, owned by Tan Hwa Li Gracia",
+   "before": 3040000,
+   "sold": 0
+  },
+  {
+   "name": "Abundance Enterprise Limited",
+   "role": "Existing shareholder, owned by Wong Aloysius",
+   "before": 1980000,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Directors, officers and holders of 5% or more of the shares agreed not to sell for 180 days after the offering closes, with limited exceptions.",
+  "days": 180
+ },
+ "what": "A Singapore company licensed to move money across borders, offering payment collection, payment on behalf of clients, and brokerage services.",
+ "short": "Behneh",
+ "proceeds": "It expects net proceeds of about US$17,872,982 and plans to spend 35% on new markets, 30% on an AI risk and compliance platform, 20% on payment settlement systems, and 15% on general business needs.",
+ "risks": [
+  "Its growth depends on keeping and attracting customers, and two main customers make up most of its processed volume and can leave at any time.",
+  "It has had both losses and profits in recent periods and may lose money in the future.",
+  "A few customers bring in most of its revenue, so losing one could seriously hurt its results.",
+  "If it fails to follow rules against money laundering and terrorism financing, its business could suffer.",
+  "Its new AI risk tools may not work as expected, which could harm its compliance, operations and reputation."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2136246/000121390026116798/ea0290215-08.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

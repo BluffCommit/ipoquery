@@ -61,38 +61,46 @@
     "operating": 1.164
    }
   ],
+  "ytd": {
+   "label": "Apr to Sep 2025",
+   "revenue": 11.049,
+   "operating": 1.076,
+   "prior_label": "Apr to Sep 2024",
+   "prior_revenue": 6.247,
+   "prior_operating": 1.032
+  },
   "facts": [
    {
     "value": 0.265,
     "label": "cash on Sep 30, 2025"
    },
    {
-    "value": 0.985,
-    "label": "net result, Year to Mar 2025",
+    "value": 0.933,
+    "label": "net result, Apr to Sep 2025",
     "signed": true
    }
   ],
   "by": "model"
  },
  "lockup": {
-  "summary": "Directors, officers and holders of 5% or more have agreed not to sell for six months after the offering closes, with some exceptions. The company has agreed to the same six-month limit on issuing shares.",
+  "summary": "Directors, executive officers and holders of 5% or more have agreed not to sell their shares for six months after the offering closes, with some exceptions.",
   "days": 180
  },
- "what": "It is a Hong Kong online marketing firm that links brands with social media influencers and runs online ad campaigns.",
+ "what": "It is a Hong Kong firm that links brands with online influencers and runs online ad campaigns aimed at people aged 14 to 35.",
  "short": "Red Wisdom Creation",
  "proceeds": "It plans to use about 40% to grow its business and customer base, 30% to buy more online media resources, and 30% for working capital and general costs.",
  "risks": [
-  "Clients may stop buying or spend less, and most client contracts are short-term and can end at any time without notice.",
-  "Losing ties with media channel partners and influencer agencies could cost the company advertising channels, clients and revenue.",
-  "It relies on influencer agencies and their influencers to deliver ads, and it has no direct control over the influencers.",
-  "It relies on media channel partners and their platforms to deliver ads and to give accurate advertising performance data.",
+  "Clients can stop buying its services at any time with no notice, because most contracts are short-term.",
+  "Its business could suffer if it loses its relationships with media channel partners and influencer agencies.",
+  "It relies on influencer agencies and their influencers to deliver ads, and it does not directly control the influencers.",
+  "It relies on media channel partners and their platforms to deliver ads and give accurate performance data.",
   "It partly depends on contractors for the work of its Hong Kong operating subsidiary."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2078532/000121390026020805/ea0250270-07.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

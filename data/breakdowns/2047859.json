@@ -24,6 +24,16 @@
   {
    "item": "Shares sold by the company",
    "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
@@ -32,8 +42,100 @@
    "why": "the number of shares outstanding after the offering could not be read"
   },
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to Jun 2024",
+    "revenue": 17.896,
+    "operating": 1.92
+   },
+   {
+    "label": "Year to Jun 2025",
+    "revenue": 22.645,
+    "operating": 1.854
+   }
+  ],
+  "facts": [
+   {
+    "value": 2.191,
+    "label": "cash on Jun 30, 2025"
+   },
+   {
+    "value": 1.501,
+    "label": "net result, Year to Jun 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Jie Zhao",
+   "role": "Director; owns Times Fortune Investement Company Limited",
+   "before": 4470000,
+   "sold": 0
+  },
+  {
+   "name": "Times Fortune Investement Company Limited",
+   "role": "Holding company owned by director Jie Zhao (same shares as above)",
+   "before": 4470000,
+   "sold": 0
+  },
+  {
+   "name": "Cheuk Man Chui",
+   "role": "Director; owns Fortune Centre International Limited",
+   "before": 3825000,
+   "sold": 0
+  },
+  {
+   "name": "Fortune Centre International Limited",
+   "role": "Holding company owned by director Cheuk Man Chui (same shares as above)",
+   "before": 3825000,
+   "sold": 0
+  },
+  {
+   "name": "Jinruo Zhang",
+   "role": "Director; owns Superb Capital Group Limited",
+   "before": 3825000,
+   "sold": 0
+  },
+  {
+   "name": "Superb Capital Group Limited",
+   "role": "Holding company owned by director Jinruo Zhang (same shares as above)",
+   "before": 3825000,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Officers, directors and some shareholders agreed not to sell for 180 days, per the detailed section. The offering summary says three months, so the filing is inconsistent. The lead underwriter may waive the lock-up at its discretion.",
+  "days": 180
+ },
+ "what": "Speed Group runs an e-commerce logistics business in Hong Kong, shipping small parcels to Europe and North America.",
+ "short": "Speed Group",
+ "proceeds": "It plans to put 30% toward market expansion and marketing, 20% toward technology, and 15% toward warehousing and distribution. The rest is for general business needs and working capital.",
+ "risks": [
+  "Natural disasters, wars and similar events could disrupt airports, ports and trade, and hurt the business.",
+  "Outbreaks of contagious disease could cause health crises that damage the economy and the company's business.",
+  "It usually has no long-term contracts with customers, so its freight forwarding revenue may not stay steady.",
+  "Hong Kong may not keep its position as a logistics hub in Asia."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2047859/000121390026022361/ea0227331-11.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

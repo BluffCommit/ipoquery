@@ -24,17 +24,17 @@
   {
    "item": "Shares sold by the company",
    "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
    "item": "Company value and the share that trades",
    "why": "only one share class's count could be read"
-  },
-  {
-   "item": "Revenue, results and cash",
-   "why": "the readers found no full-year figures in the summary financial table",
-   "by": "model"
   },
   {
    "item": "What earlier rounds paid",
@@ -47,22 +47,50 @@
    "by": "model"
   }
  ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to Mar 2025",
+    "revenue": 65.4,
+    "operating": 0.756
+   },
+   {
+    "label": "Year to Mar 2026",
+    "revenue": 102.258,
+    "operating": 0.583
+   }
+  ],
+  "facts": [
+   {
+    "value": 1.827,
+    "label": "cash on Mar 31, 2026"
+   },
+   {
+    "value": 0.786,
+    "label": "net result, Year to Mar 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
  "others": [
   {
    "name": "WISDOM FOCUS GROUP LTD.",
-   "role": "Largest shareholder, owned by the CEO and CFO",
+   "role": "Controlling shareholder, owned by the CEO and CFO",
    "before": 13506220,
    "sold": 0
   },
   {
    "name": "Shihai Bi",
-   "role": "Director, chief financial officer",
+   "role": "Director, chief financial officer, 51% owner of Wisdom Focus Group",
    "before": 6888172,
    "sold": 0
   },
   {
    "name": "Guanglang Jiang",
-   "role": "Director, chairman, chief executive",
+   "role": "Chairman, chief executive, 49% owner of Wisdom Focus Group",
    "before": 6618048,
    "sold": 0
   },
@@ -73,21 +101,21 @@
    "sold": 0
   }
  ],
- "what": "It is a Tokyo-based company that trades waste paper, paper pulp and scrap metal across East Asia and Southeast Asia.",
- "short": "Seahawk Recycling",
- "proceeds": "It plans to spend the money on growing in other markets (30%), building an AI trading system (20%), and buying or building facilities (20%). It will also use it for new recyclable products (15%) and general working capital (15%).",
+ "what": "It trades recyclable materials, mainly waste paper and scrap metal, from Japan to buyers across East and Southeast Asia.",
+ "short": "Seahawk",
+ "proceeds": "It plans to spend 30% on expanding into new markets, 20% on an AI trading system and 20% on facilities and environmental certification. It plans 15% for new recyclable products and 15% for working capital and reserves.",
  "risks": [
-  "Past results do not guarantee future results, because they change with the economy, interest rates and customer confidence.",
-  "It must keep improving its trade-matching system, or the system may become out of date and hurt its ability to compete.",
-  "It relies on suppliers for all its products and has no long-term supply contracts, so supply problems could hurt the business.",
-  "Its sales depend on consumer demand and spending in Japan, East Asia and Southeast Asia, which factors outside its control can change.",
-  "It relies on a small number of major suppliers, and losing business from them could seriously hurt its results."
+  "Past financial results do not guarantee future results, which can change for reasons the company cannot predict.",
+  "The company must keep improving its trading matching system, and its plans to add AI may fail or become outdated.",
+  "It relies on suppliers for all its products, mostly buys deal by deal without long-term contracts, and could be hurt if those relationships weaken.",
+  "Its sales depend on consumer demand and spending in Japan and Asia, which factors outside its control can reduce.",
+  "It relies on a few major suppliers and customers, so losing any of them could seriously harm its business."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2075786/000121390026068063/ea0249320-10.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

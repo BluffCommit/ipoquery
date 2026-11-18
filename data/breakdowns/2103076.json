@@ -63,14 +63,22 @@
     "operating": 107.1
    }
   ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 467.06,
+   "operating": 131.237,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 197.477,
+   "prior_operating": 35.798
+  },
   "facts": [
    {
     "value": 385.771,
     "label": "cash on Jun 30, 2026"
    },
    {
-    "value": 72.47,
-    "label": "net result, 2025",
+    "value": 90.874,
+    "label": "net result, Jan to Jun 2026",
     "signed": true
    }
   ],
@@ -85,19 +93,19 @@
   },
   {
    "name": "OPay Tech",
-   "role": "Holding company for shares of Fang Han, Stephen Wen (co-CEO) and Lars Rahbaek Boilesen (co-CEO)",
+   "role": "Holding vehicle for Stephen Wen, Lars Rahbaek Boilesen and Fang Han",
    "before": 186581278,
    "sold": 0
   },
   {
    "name": "Bloom Haven Limited",
-   "role": "Trust vehicle holding shares for the 2026 employee equity plan",
+   "role": "Trust vehicle for the 2026 employee equity plan",
    "before": 168664930,
    "sold": 0
   },
   {
    "name": "Opera",
-   "role": "Listed company, Opera Limited, existing shareholder",
+   "role": "Nasdaq-listed company, Opera Limited",
    "before": 159806239,
    "sold": 0
   },
@@ -109,7 +117,7 @@
   },
   {
    "name": "Softbank Entities",
-   "role": "Investor, linked to SoftBank Vision Fund II",
+   "role": "Investor, SoftBank Vision Fund II",
    "before": 123214065,
    "sold": 0
   },
@@ -127,23 +135,23 @@
   }
  ],
  "lockup": {
-  "summary": "Directors, executive officers, existing shareholders and the private placement investor agreed not to sell shares or ADSs for 365 days after the prospectus date, with some exceptions. The company itself agreed not to issue or sell shares for 180 days.",
+  "summary": "Directors, executive officers, existing shareholders and the private placement investor have agreed not to sell for 365 days after the prospectus date, with some exceptions. The company itself has agreed to a 180-day lock-up.",
   "days": 365
  },
- "what": "OPay runs a digital finance app that offers payments, money transfers and loans to consumers and businesses in Africa.",
+ "what": "OPay runs a mobile app for payments, loans and other financial services, mainly in Nigeria and other emerging markets.",
  "short": "OPay",
- "proceeds": "It plans to use the money for general corporate purposes. These include investing in technology, distribution, new products and market growth, and possible acquisitions. It expects about US$291.0 million from the offering and about US$183.6 million from a concurrent private placement.",
+ "proceeds": "It plans to use the money for general corporate purposes. This includes technology, distribution, new products, market expansion, and possible acquisitions or investments in other businesses.",
  "risks": [
-  "OPay faces tough competition from fintech firms, banks and others, and many rivals have more money and users.",
-  "Failures in its computer systems or in the data centers and cloud services it relies on could disrupt its business.",
-  "Demand for its services could fall if it fails to keep up with new technology and changing customer needs.",
-  "OPay has grown fast but has a short operating history, which makes its future results hard to predict."
+  "It faces strong and growing competition in fintech, including from banks, phone companies and rivals with more money and bigger user bases.",
+  "Outages or failures in its computer systems or third-party data centres could disrupt its services and hurt its business.",
+  "Demand for its services may fall if it fails to keep up with new technology and changing customer needs.",
+  "It is growing fast but has a short operating history, which makes its future results hard to predict."
  ],
  "risks_note": "The first 4 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2103076/000119312526430437/d56487df1a.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

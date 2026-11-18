@@ -24,6 +24,16 @@
   {
    "item": "Shares sold by the company",
    "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
@@ -32,8 +42,97 @@
    "why": "the shares outstanding after the offering do not fit with the number sold"
   },
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 15.244,
+    "operating": 1.508
+   },
+   {
+    "label": "2025",
+    "revenue": 16.157,
+    "operating": 1.242
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 6.414,
+   "operating": 0.386,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 9.96,
+   "prior_operating": 1.449
+  },
+  "facts": [
+   {
+    "value": 0.572,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": -0.086,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Robert Finley",
+   "role": "Chairman, chief executive",
+   "before": 2250000,
+   "sold": 0
+  },
+  {
+   "name": "Apex Prime Capital, LLC",
+   "role": "Large holder linked to Robert Finley",
+   "before": 1830000,
+   "sold": 0
+  },
+  {
+   "name": "JLG26 Trust",
+   "role": "Holder of more than 5%",
+   "before": 1404400,
+   "sold": 0
+  },
+  {
+   "name": "M.C. Jones Revocable Trust",
+   "role": "Holder of more than 5%",
+   "before": 641250,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Directors, officers and certain holders cannot sell shares for 180 days after the offering closes without the lead underwriter's consent. The company also agrees not to issue new stock in that time.",
+  "days": 180
+ },
+ "what": "It cuts, makes and installs stone countertops and surfaces for builders and homeowners in the Dallas-Fort Worth area.",
+ "short": "KAT Construction",
+ "proceeds": "It plans to spend about $10,000,000 of the $17,750,000 net proceeds buying smaller stone fabricators, none of which it has yet identified. The rest goes to working capital, marketing, repaying a credit line and equipment.",
+ "risks": [
+  "Demand for its work depends on the construction and remodeling industries, which rise and fall with the economy.",
+  "It competes with many stone fabricators, including small local shops that may charge less.",
+  "Lasting effects of COVID-19 or future health crises could disrupt construction, supply chains and its business.",
+  "It may struggle to hire and keep skilled workers, which could raise costs and delay projects.",
+  "Most of its revenue comes from the Dallas-Fort Worth area, so a local downturn or severe weather could hurt it badly."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2142104/000121390026113816/ea0297900-06.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

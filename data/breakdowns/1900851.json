@@ -28,12 +28,64 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 9.289,
+    "operating": -1.779
+   },
+   {
+    "label": "2025",
+    "revenue": 1.225,
+    "operating": -2.16
+   }
+  ],
+  "facts": [
+   {
+    "value": 0.001,
+    "label": "cash on Dec 31, 2025"
+   },
+   {
+    "value": -1.812,
+    "label": "net result, 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "what": "It sources, finances, develops and produces series and movies, and sells them to streaming services and movie studios.",
+ "short": "Ambitious Entertainment",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1900851/000149315226048068/forms-1a.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

@@ -24,6 +24,11 @@
   {
    "item": "Shares sold by the company",
    "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
@@ -32,8 +37,67 @@
    "why": "only one share class's count could be read"
   },
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "net",
+  "years": [
+   {
+    "label": "Year to Feb 2024",
+    "revenue": 1.442,
+    "operating": 0.266
+   },
+   {
+    "label": "Year to Feb 2025",
+    "revenue": 1.822,
+    "operating": 1.09
+   }
+  ],
+  "ytd": {
+   "label": "Mar to Aug 2025",
+   "revenue": 1.201,
+   "operating": 0.626,
+   "prior_label": "Mar to Aug 2024",
+   "prior_revenue": 0.195,
+   "prior_operating": -0.116
+  },
+  "facts": [
+   {
+    "value": 0.865,
+    "label": "cash on Aug 31, 2025"
+   }
+  ],
+  "by": "model"
+ },
+ "what": "It gives accounting, tax and compliance help, plus business and investor advice, to companies from small firms to listed ones.",
+ "short": "HAMA",
+ "proceeds": "It expects about $19.2 million after costs. About 30% is for business development and marketing, 30% for growing local operations and setting up overseas branches, and 40% for general running costs and working capital.",
+ "risks": [
+  "The company's results depend on keeping up demand for its services, and clients' needs change and are hard to predict.",
+  "A few customers bring in most of its income, so a customer failing to pay could hurt it.",
+  "Losing one or more of its largest customers could harm its business and results.",
+  "It has no long-term contracts with most clients, so it struggles to forecast demand and find staff in time.",
+  "It faces tough competition from firms with more money, and its services could become outdated or lose out on price."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2067016/000118518526000995/hamaf1a2031826.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

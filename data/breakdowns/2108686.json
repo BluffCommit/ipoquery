@@ -28,12 +28,116 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 59.226,
+    "operating": 0.519
+   },
+   {
+    "label": "2025",
+    "revenue": 56.97,
+    "operating": 0.468
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 39.853,
+   "operating": -0.246,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 22.692,
+   "prior_operating": -0.185
+  },
+  "facts": [
+   {
+    "value": 6.022,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": 0.089,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Jialin Wu",
+   "role": "Chief financial officer",
+   "before": 7122863,
+   "sold": 0
+  },
+  {
+   "name": "Haotech LLC",
+   "role": "Holder of more than 5%",
+   "before": 5118363,
+   "sold": 0
+  },
+  {
+   "name": "Nongwang Lai",
+   "role": "Founder, chairman of the board",
+   "before": 2643375,
+   "sold": 0
+  },
+  {
+   "name": "Hongkai Wang",
+   "role": "Chief executive, director",
+   "before": 2568563,
+   "sold": 0
+  },
+  {
+   "name": "Avarosan LLC",
+   "role": "Holder of more than 5%",
+   "before": 1995000,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Directors, officers and holders of 5% or more have agreed not to sell for six months after the prospectus date. The underwriters can give written consent to sell earlier.",
+  "days": 180
+ },
+ "what": "It provides shipping and logistics services within the United States, using technology and independent carriers to move packages for online sellers.",
+ "short": "CloudDepots",
+ "proceeds": "It expects net proceeds of about $14.59 million. Half is planned for technology and AI development, 25% for possible acquisitions, 5% for marketing and sales, and 20% for working capital and general costs.",
+ "risks": [
+  "It faces competition from current and new companies, which could cut its prices, margins and customers.",
+  "One customer and one carrier make up large shares of its revenue and purchases, so losing either could hurt it.",
+  "If customers do not pay what they owe, its results and cash could suffer.",
+  "Labor strikes or actions could disrupt the U.S. transport network it depends on."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2108686/000121390026119865/ea0275531-07.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

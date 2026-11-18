@@ -75,35 +75,35 @@
  "others": [
   {
    "name": "Lixia, HE",
-   "role": "Chief executive and controlling shareholder, through Aurora Grove Limited",
+   "role": "Chief executive, controlling shareholder (through Aurora Grove Limited)",
    "before": 15020000,
    "sold": 0
   },
   {
-   "name": "Hazber LTD",
-   "role": "Shareholder, wholly owned by Yumo, LAI",
+   "name": "Yumo, LAI",
+   "role": "Shareholder (through Hazber LTD)",
    "before": 4000000,
    "sold": 0
   }
  ],
  "lockup": {
-  "summary": "The company, its directors and officers, and holders of 5% or more have agreed not to sell or transfer shares for 180 days after the offering closes. Some exceptions apply.",
+  "summary": "The company, its directors, its officers and holders of 5% or more have agreed not to sell or transfer shares for 180 days after the offering closes.",
   "days": 180
  },
- "what": "Through its Hong Kong unit Oceanic Bounty, it builds custom software and sells smart office products such as lockers and booths.",
+ "what": "Through its Hong Kong subsidiary, it builds custom software and sells smart office products with built-in software.",
  "short": "Primagrove",
- "proceeds": "It plans to put about 30% toward hiring technical staff, 25% toward technology tools, and 20% toward its workspace products business. About 15% is for sales and expansion, and 10% for investments and general costs. Net proceeds are estimated at about $27.61 million.",
+ "proceeds": "It expects about $27.61 million at a $5 share price. It plans 30% for hiring technical staff, 25% for technology, 20% for its workspace business, 15% for sales and marketing, and 10% for acquisitions and general costs.",
  "risks": [
-  "It may not keep growing as fast as before, and fast growth could strain its management, staff and systems.",
-  "Its market is crowded and easy to enter, so it may struggle to compete.",
+  "It may not keep growing as fast as before, and fast growth strains its staff, systems and money.",
+  "Its market is crowded and changes fast, and new competitors can enter easily, which could hurt its results.",
   "Harm to its reputation or brand could cost it clients and key employees.",
-  "If it fails to manage its cash well, it may need more money, which may not be available on good terms."
+  "If it manages cash poorly, it may need more money, and that funding may not be available on fair terms."
  ],
  "risks_note": "The first 4 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2138135/000121390026104919/ea0295228-06.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

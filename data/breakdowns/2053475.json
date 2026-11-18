@@ -29,12 +29,112 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Who is selling",
+   "how": "two AI readers agree, and the shares add up to the number on the cover",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "net",
+  "years": [
+   {
+    "label": "Year to Aug 2024",
+    "revenue": 4.385,
+    "operating": 1.943
+   },
+   {
+    "label": "Year to Aug 2025",
+    "revenue": 4.579,
+    "operating": 0.828
+   }
+  ],
+  "facts": [],
+  "by": "model"
+ },
+ "sellers": [
+  {
+   "name": "SCM Fortune Investment Limited",
+   "role": "Existing shareholder",
+   "before": 750000,
+   "sold": 750000
+  },
+  {
+   "name": "TMK Education Investment Limited",
+   "role": "Existing shareholder",
+   "before": 500000,
+   "sold": 500000
+  }
+ ],
+ "others": [
+  {
+   "name": "TrumpEd Limited",
+   "role": "Controlling shareholder, controlled by the CEO",
+   "before": 20500000,
+   "sold": 0
+  },
+  {
+   "name": "Frontera Global Limited",
+   "role": "Existing shareholder",
+   "before": 750000,
+   "sold": 0
+  },
+  {
+   "name": "Prosper Shine Group Limited",
+   "role": "Existing shareholder",
+   "before": 750000,
+   "sold": 0
+  },
+  {
+   "name": "Rosy Ocean Limited",
+   "role": "Existing shareholder",
+   "before": 500000,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "Directors, executive officers and existing shareholders cannot sell shares for 180 days from the date of the prospectus. The shareholders selling in this offering are exempt for the shares they sell.",
+  "days": 180
+ },
+ "what": "It provides education technology and STEAM learning products and services to primary and secondary schools in Hong Kong.",
+ "short": "TDE Group",
+ "proceeds": "It expects about $7.0 million in net proceeds. It plans to spend 30% on research and development, 20% each on improving operations, expanding into ASEAN and the Middle East, and working capital, and 10% on sales and marketing.",
+ "risks": [
+  "Public school customers rely on Hong Kong government STEAM subsidies, so any cut or delay in those subsidies could hurt the company.",
+  "Schools can apply for subsidies only after a school term ends, so revenue and cash flow can swing sharply through the year.",
+  "It depends on its non-exclusive LEGO Education reseller deal, which either side can end with three months' notice.",
+  "New laws on for-profit education providers could raise its costs and restrict its operations.",
+  "Accidents with tools or model rocket engines during model-building activities could injure users, harm its reputation and lead to lawsuits."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2053475/000189341726000005/form1.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

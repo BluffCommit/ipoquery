@@ -29,12 +29,74 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the readers found no full-year figures in the summary financial table",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "Aurevia Education Limited",
+   "role": "Largest shareholder, part of the Jiayi Education group",
+   "before": 19750848,
+   "sold": 0
+  },
+  {
+   "name": "Yang Meng",
+   "role": "Director and shareholder, holds shares through Asa Education Holding Ltd",
+   "before": 9600000,
+   "sold": 0
+  },
+  {
+   "name": "Dongyu (Patrick) Lou",
+   "role": "Shareholder, holds shares through Annsprint Limited",
+   "before": 4480000,
+   "sold": 0
+  },
+  {
+   "name": "Jun Wang",
+   "role": "Shareholder, holds shares through Full Harvest UK Ltd",
+   "before": 2461568,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company agreed not to sell new shares for 180 days. Directors, executives and holders of 10% or more cannot sell for 12 months. Other existing shareholders cannot sell for 6 months. The lead underwriter can give written permission to sell earlier.",
+  "days": 180
+ },
+ "what": "It owns and runs 24 nursery centers in the United Kingdom, caring for children from three months to five years old.",
+ "short": "iStep Learning",
+ "proceeds": "It plans to use the money, plus its existing cash, mainly to pay for the Grolife acquisition (about £6.2 million up front and £1.7 million later) and the Bright Eyes acquisition (about £1.5 million). The rest goes to legal costs and general business needs.",
+ "risks": [
+  "It has grown fast and may struggle to manage that growth at its current size.",
+  "It has little experience in specialist education, and there is no guarantee it will succeed there.",
+  "It has lost money from operations in the past and may not stay profitable.",
+  "It may fail to find good acquisitions, or to combine them into its business, which could slow its growth."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2100713/000121390026110742/ea0270298-12.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

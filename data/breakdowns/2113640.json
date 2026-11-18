@@ -28,12 +28,94 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 188.794,
+    "operating": -52.573
+   },
+   {
+    "label": "2025",
+    "revenue": 52.051,
+    "operating": 15.98
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 25.012,
+   "operating": 0.919,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 40.315,
+   "prior_operating": -11.339
+  },
+  "facts": [
+   {
+    "value": 3.329,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": -0.59,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Michael Thomas",
+   "role": "Chief executive officer",
+   "before": 33139111,
+   "sold": 0
+  },
+  {
+   "name": "Kuoh Lee",
+   "role": "Executive vice president, chief operating officer",
+   "before": 31860889,
+   "sold": 0
+  }
+ ],
+ "what": "It designs and builds process equipment and modules for offshore and onshore energy projects, including floating oil production vessels.",
+ "short": "VME Companies",
+ "proceeds": "It expects to raise about $14.0 million after costs. Roughly $9.0 million is for project work and working capital, $3.0 million to repay some debt, and $2.0 million for engineering and general needs. It says this is not enough to fund all its needs.",
+ "risks": [
+  "Offshore oil and gas spending swings sharply, which could make the company's sales and profits rise and fall a lot.",
+  "Many contracts are fixed-price, so cost overruns, delays, supply problems or customer troubles could cut profits or cause losses.",
+  "The company faces strong competition, some from larger rivals, which could force lower prices or cost it projects.",
+  "The company depends on a few large customers and projects, so losing one could seriously hurt its revenue and results."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2113640/000157587226000779/vmec005_s1a.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

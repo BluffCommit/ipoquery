@@ -33,7 +33,60 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the company reports in SGD, not US dollars",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "Audrey Chee Hui Ling",
+   "role": "Chairwoman, chief executive, controlling shareholder (holds shares through Comeback Investment Assets Limited)",
+   "before": 11250000,
+   "sold": 0
+  },
+  {
+   "name": "Jdeep Trading Limited",
+   "role": "Shareholder with 5% or more",
+   "before": 900000,
+   "sold": 0
+  },
+  {
+   "name": "Liu Chun Hung Clement",
+   "role": "Chief financial officer (shares held through his spouse's company, Morex Services Limited)",
+   "before": 675000,
+   "sold": 0
+  }
+ ],
+ "what": "It runs digital advertising screens in elevator lobbies of office and commercial buildings across Singapore.",
+ "short": "Focus Media Network",
+ "proceeds": "It expects about US$22 million in net proceeds. About 36% is for more screens in Singapore, 28% for software, 16% for joint ventures and acquisitions, 10% for a reserve for regional growth, and 10% for working capital.",
+ "risks": [
+  "The company is a holding company and relies on payments from its Singapore subsidiaries, which may be limited by law or contract.",
+  "If it cannot attract and keep advertisers, its revenue, profit and growth could suffer.",
+  "If it cannot keep or add venue partners, its screen network, advertiser demand and results could suffer.",
+  "Social, economic, political or legal changes, or new government policies, in Singapore could hurt its business.",
+  "Its business depends on advertising demand, which rises and falls with the Singapore economy and can sharply cut client spending."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2123920/000121390026117373/ea0284557-09.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

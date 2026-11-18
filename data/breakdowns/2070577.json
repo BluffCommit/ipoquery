@@ -24,6 +24,16 @@
   {
    "item": "Shares sold by the company",
    "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
@@ -32,8 +42,53 @@
    "why": "the number of shares outstanding after the offering could not be read"
   },
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "net",
+  "years": [
+   {
+    "label": "Year to Jun 2024",
+    "revenue": null,
+    "operating": -1.94
+   },
+   {
+    "label": "Year to Jun 2025",
+    "revenue": null,
+    "operating": -1.224
+   }
+  ],
+  "ytd": {
+   "label": "Jul to Dec 2025",
+   "revenue": null,
+   "operating": -0.451,
+   "prior_label": "Jul to Dec 2024",
+   "prior_revenue": null,
+   "prior_operating": -0.399
+  },
+  "facts": [],
+  "by": "model"
+ },
+ "lockup": {
+  "summary": "Directors and executive officers agreed not to sell for six months after the offering closes, unless the lead underwriter agrees. The company itself agreed not to sell shares for four months.",
+  "days": 181
+ },
+ "what": "It is a clinical-stage drug company developing BIV201, a treatment for fluid buildup and other serious complications of advanced liver cirrhosis.",
+ "short": "Option Therapeutics",
+ "proceeds": "It expects net proceeds of about $17.0 million. It will use them for general running costs, including a quarterly support fee to BioVie, and the rest to fund a Phase 3 trial of BIV201.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2070577/000152013826000074/opti-202603_s1a1.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

@@ -48,12 +48,12 @@
    "by": "model"
   }
  ],
- "what": "It is an insurance broker in Hong Kong that helps customers buy life, savings and health insurance from insurers.",
- "short": "Kepler Group",
+ "what": "It is an insurance broker in Hong Kong that helps customers buy life, savings and health insurance.",
+ "short": "Kepler",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2000208/000149315226039800/formf-1a.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

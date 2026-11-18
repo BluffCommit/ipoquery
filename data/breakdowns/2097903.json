@@ -46,29 +46,21 @@
    "by": "model"
   }
  ],
- "others": [
-  {
-   "name": "UDiverse Limited",
-   "role": "Controlling shareholder; also holds 2500000 Class B shares",
-   "before": 9500000,
-   "sold": 0
-  }
- ],
- "what": "It offers web hosting, cybersecurity, blockchain and domain services from Hong Kong.",
+ "what": "It is a Hong Kong technology company offering cloud hosting, IT solutions and domain registration services to businesses.",
  "short": "UDynamics",
- "proceeds": "It expects about $30.2 million at the $6.00 midpoint price. About 30% is for blockchain marketing and AI content tools, 30% to automate cybersecurity checks and move to subscriptions, and 40% for working capital and general needs.",
+ "proceeds": "It expects about $30.2 million in net proceeds. About 30% is for blockchain and AI marketing tools, 30% for automated security checks and AI monitoring, and 40% for working capital and general needs.",
  "risks": [
-  "China's government could step in and influence the Hong Kong business, which could greatly change its operations and the value of the shares.",
-  "Meeting Hong Kong's personal data privacy law and similar future rules could cost a lot and hurt the business.",
+  "The Chinese government may oversee or step into the Hong Kong business, which could change its operations and sharply cut the value of its shares.",
+  "Mainland China laws might be applied to the Hong Kong operating subsidiary, which could hurt its ability to run profitably.",
+  "Following Hong Kong's personal data privacy law and related rules may be costly and could affect the business.",
   "The Hong Kong National Security Law could affect the Hong Kong subsidiary, which makes up nearly all of the business.",
-  "Political risks come with doing business in Hong Kong.",
-  "The business earns Hong Kong dollars while the shares are priced in US dollars, so exchange rate changes may affect the value of your investment."
+  "Political risks of doing business in Hong Kong could harm the company."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2097903/000121390026092454/ea0264362-07.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

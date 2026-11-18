@@ -29,12 +29,114 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to Jun 2025",
+    "revenue": 23.904,
+    "operating": 2.307
+   },
+   {
+    "label": "Year to Jun 2026",
+    "revenue": 22.971,
+    "operating": 1.52
+   }
+  ],
+  "facts": [
+   {
+    "value": 5.328,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": 1.142,
+    "label": "net result, Year to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "EPHRON INC",
+   "role": "Holding company of the controlling shareholder",
+   "before": 12125000,
+   "sold": 0
+  },
+  {
+   "name": "Ong Chuan Lam",
+   "role": "Controlling shareholder, chairman, chief executive",
+   "before": 12125000,
+   "sold": 0
+  },
+  {
+   "name": "YONG POI CHING",
+   "role": "5% shareholder, owns EYPC INC",
+   "before": 1425000,
+   "sold": 0
+  },
+  {
+   "name": "EYPC INC",
+   "role": "5% shareholder, owned by Yong Poi Ching",
+   "before": 1425000,
+   "sold": 0
+  },
+  {
+   "name": "EKLC INC",
+   "role": "5% shareholder, owned by Khoo Lay Cheng",
+   "before": 1425000,
+   "sold": 0
+  },
+  {
+   "name": "Khoo Lay Cheng",
+   "role": "5% shareholder, spouse of the controlling shareholder",
+   "before": 1425000,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors and officers, and holders of 5% or more of its shares agreed not to sell for 180 days after the offering closes, with some exceptions.",
+  "days": 180
+ },
+ "what": "It supplies transformers, switchgear and other electrical equipment to customers across Malaysia, and helps with testing and setup.",
+ "short": "LPC",
+ "risks": [
+  "It has grown quickly and has limited experience at its current size, so poor management of growth could hurt its results.",
+  "It may not respond well to changes in technology or in how its industry does business, which could harm the company.",
+  "It relies on many outside providers, and losing a major one could hurt its operations.",
+  "If it cannot build a strong brand, it may not keep or win customers.",
+  "If its product and service quality slips, its reputation and results could suffer."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/715837/000121390026106329/ea0281335-09.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

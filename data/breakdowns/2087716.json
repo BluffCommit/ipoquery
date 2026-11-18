@@ -29,12 +29,85 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 3.098,
+    "operating": 0.907
+   },
+   {
+    "label": "2025",
+    "revenue": 7.43,
+    "operating": 2.221
+   }
+  ],
+  "facts": [
+   {
+    "value": 0.209,
+    "label": "cash on Mar 31, 2026"
+   },
+   {
+    "value": 1.586,
+    "label": "net result, 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "ROKIT Healthcare, Inc.",
+   "role": "Parent company",
+   "before": 25000100,
+   "sold": 0
+  }
+ ],
+ "lockup": {
+  "summary": "The company, its directors, officers and current holders agree not to sell shares for 180 days after the offering becomes effective, unless the lead underwriter, Maxim, agrees in writing.",
+  "days": 180
+ },
+ "what": "It sells NMN anti-aging dietary supplements in the U.S. and plans organ regeneration products from its parent company.",
+ "short": "ROKIT America",
+ "proceeds": "The company expects to raise about $21.9 million after costs. It plans about 30% for skin regeneration sales and marketing, 20% for cartilage research and 20% for kidney research. The rest is for general business needs.",
+ "risks": [
+  "Its results may swing widely because of many factors outside its control.",
+  "If it does not carry out its business priorities, its results and finances could suffer.",
+  "It keeps spending heavily on sales and marketing, and there is no promise that sales will rise much.",
+  "Product quality problems could hurt its brand and its business results.",
+  "It may face product liability claims and may not be able to get or keep enough insurance."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2087716/000147793226003627/rokit_s1a.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

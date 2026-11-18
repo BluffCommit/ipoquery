@@ -43,7 +43,7 @@
   },
   {
    "item": "What earlier rounds paid",
-   "why": "a round has no price",
+   "why": "a round has no price in US dollars",
    "by": "model"
   }
  ],
@@ -62,14 +62,22 @@
     "operating": -40.991
    }
   ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": null,
+   "operating": -24.553,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": null,
+   "prior_operating": -13.924
+  },
   "facts": [
    {
     "value": 3.851,
     "label": "cash on Jun 30, 2026"
    },
    {
-    "value": -42.179,
-    "label": "net result, 2025",
+    "value": -25.537,
+    "label": "net result, Jan to Jun 2026",
     "signed": true
    }
   ],
@@ -90,13 +98,13 @@
   },
   {
    "name": "F-Prime Capital Partners Healthcare Fund V LP",
-   "role": "Investor",
+   "role": "Venture investor",
    "before": 545247,
    "sold": 0
   },
   {
    "name": "Sofinnova Capital VIII FPCI",
-   "role": "Investor",
+   "role": "Venture investor",
    "before": 500512,
    "sold": 0
   },
@@ -108,7 +116,7 @@
   },
   {
    "name": "Entities affiliated with Epidarex Capital",
-   "role": "Investor",
+   "role": "Venture investor",
    "before": 299257,
    "sold": 0
   },
@@ -120,29 +128,29 @@
   },
   {
    "name": "Alan Watt, Ph.D.",
-   "role": "Chief Scientific Officer",
+   "role": "Chief scientific officer",
    "before": 122785,
    "sold": 0
   }
  ],
  "lockup": {
-  "summary": "The company, its directors and officers, and holders of almost all its stock cannot sell for at least 180 days after the prospectus date. The lead underwriters can give written consent to sell sooner, and some exceptions apply.",
+  "summary": "The company, its directors and officers, and holders of nearly all its stock cannot sell for at least 180 days after the prospectus date. The lead banks can allow sales earlier by written consent, and some exceptions apply.",
   "days": 180
  },
- "what": "A clinical-stage biotech developing oral drugs that block NLRP3, a protein that drives inflammation in heart and brain diseases.",
+ "what": "Rezera develops pills that block NLRP3, a protein that drives harmful inflammation in heart and brain diseases.",
  "short": "Rezera",
  "risks": [
-  "Rezera is a young biotech with no drug sales, has lost money since it began, and may never make a profit.",
-  "Its recurring losses raise serious doubt that it can keep operating as a going concern.",
-  "None of its drug candidates is approved yet, and delays or failure to bring them to market would badly hurt the business.",
+  "It has a short history, has earned no drug sales revenue, and may never turn a profit; its losses raise doubt it can keep operating.",
+  "None of its drug candidates is approved, and its business will be badly hurt if it cannot sell them or is delayed.",
   "Changes in currency exchange rates could raise its costs and use up its cash faster.",
-  "Its drugs target NLRP3, a new target, so development time, cost and chance of success are hard to predict."
+  "Its drugs target NLRP3, a new target, so development time, cost and chance of success are hard to predict.",
+  "Its business depends heavily on the success of one drug, ruvonoflast."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2141583/000110465926124074/tmq-20261109xs1a.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

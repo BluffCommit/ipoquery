@@ -49,26 +49,26 @@
  "others": [
   {
    "name": "Skyrise Innovation Limited",
-   "role": "Shareholder owning more than 5%",
+   "role": "Shareholder owning more than 5% (owned by Ms. Nga Ting Tung)",
    "before": 1600000,
    "sold": 0
   }
  ],
- "what": "It is a Hong Kong contractor that does building repair, maintenance, renovation and painting work, mainly on public sector projects.",
+ "what": "It is a Hong Kong contractor that does building repair, renovation, maintenance and painting work, mostly on public projects.",
  "short": "Worldstar Engineering",
- "proceeds": "It plans to use about 40% for buying or investing in building work firms and 30% for painting equipment and machinery. About 20% is for hiring skilled staff, and the rest is for general costs and working capital.",
+ "proceeds": "It expects about $21.6 million after costs. About 40% is for buying or investing in building work firms, 30% for painting equipment and machinery, 20% for hiring skilled staff, and the rest for running costs.",
  "risks": [
-  "US rules on auditors of emerging market companies are getting stricter, which could affect the company if its auditor is not inspected by US regulators.",
-  "Cash and assets held in Hong Kong may be blocked from use outside Hong Kong by government limits on transfers.",
+  "New US rules may set tougher tests for foreign auditors who US regulators do not inspect, which could affect the company.",
+  "Cash and assets held in Hong Kong may not be free to move out of Hong Kong.",
   "Court judgments that shareholders win against the company may not be enforceable.",
-  "Its management has no experience running a US public company or following the laws that apply to one.",
-  "As a holding company, it relies on dividends from its Hong Kong subsidiary to pay its own dividends."
+  "The management team has no experience running a US public company or following the laws that apply to one.",
+  "The parent company depends on its Hong Kong subsidiary's earnings and payments to pay dividends."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2081641/000121390026073347/ea0254465-08.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

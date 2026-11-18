@@ -29,12 +29,77 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 16.485,
+    "operating": -14.843
+   },
+   {
+    "label": "2025",
+    "revenue": 0.169,
+    "operating": -23.187
+   }
+  ],
+  "facts": [
+   {
+    "value": 4.896,
+    "label": "cash on Dec 31, 2025"
+   },
+   {
+    "value": -28.618,
+    "label": "net result, 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "lockup": {
+  "summary": "The company, its directors and officers, and nearly all other holders agreed not to sell shares for at least 180 days after the prospectus date, unless ThinkEquity LLC agrees in writing.",
+  "days": 180
+ },
+ "what": "Akston is a pet biotech company that develops biologic medicines for cats, dogs and other companion animals.",
+ "short": "Akston",
+ "proceeds": "It expects net proceeds of about $16.1 million. It plans to finish a new manufacturing facility, make batches of its lead dog cancer drug, run studies in dogs and cats, and cover general costs.",
+ "risks": [
+  "Akston is young, has lost a lot of money since it began, expects more losses, and so its future is hard to judge.",
+  "Its controls for catching errors and fraud in its reporting may fail to find every problem.",
+  "Its business depends on customers, who may face rising costs and lower income.",
+  "Customers merging into larger groups could push down the prices Akston can charge for its products.",
+  "Limits may restrict how much Akston can use its past tax losses to reduce future taxable income."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1776612/000110465926054475/tm2516611-30_s1a.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

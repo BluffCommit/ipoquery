@@ -29,12 +29,87 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2024",
+    "revenue": 2.038,
+    "operating": -0.496
+   },
+   {
+    "label": "2025",
+    "revenue": 1.461,
+    "operating": -0.75
+   }
+  ],
+  "ytd": {
+   "label": "Jan to Jun 2026",
+   "revenue": 0.706,
+   "operating": -0.123,
+   "prior_label": "Jan to Jun 2025",
+   "prior_revenue": 0.813,
+   "prior_operating": -0.312
+  },
+  "facts": [
+   {
+    "value": 0.02,
+    "label": "cash on Jun 30, 2026"
+   },
+   {
+    "value": -0.198,
+    "label": "net result, Jan to Jun 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Veg House Holdings Inc.",
+   "role": "Parent company and only current stockholder",
+   "before": 5000000,
+   "sold": 0
+  }
+ ],
+ "what": "Little West makes and sells cold-pressed juices and other health-focused drinks from its base in California.",
+ "short": "Little West",
+ "proceeds": "It plans to split the net proceeds equally, 20% each, across growing distribution, marketing, working capital, hiring staff, and general corporate purposes. It says it has broad freedom in how it uses the money.",
+ "risks": [
+  "Little West is a holding company, so it depends on cash and payments from its subsidiaries to cover its costs and pay any dividends.",
+  "Produce and other raw materials may become scarce or costly because of weather, disasters and competition for supply, which could cut sales and raise costs.",
+  "It relies on a few outside partners, mainly for produce, and has no formal contracts requiring suppliers to provide what it needs."
+ ],
+ "risks_note": "The first 3 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2065821/000121390026099701/ea0305381-s1a9_little.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

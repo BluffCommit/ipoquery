@@ -26,6 +26,11 @@
    "how": "stated on the cover and again in the offering summary"
   },
   {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
    "item": "Lock-up length",
    "how": "two AI readers agree on the number of days, and it is printed in the filing",
    "by": "model"
@@ -37,33 +42,56 @@
    "why": "only one share class's count could be read"
   },
   {
-   "item": "Revenue, results and cash",
-   "why": "the readers found no full-year figures in the summary financial table",
-   "by": "model"
-  },
-  {
    "item": "What earlier rounds paid",
    "why": "the readers found no table of preferred stock prices",
    "by": "model"
   }
  ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to Mar 2025",
+    "revenue": 24.207,
+    "operating": 1.154
+   },
+   {
+    "label": "Year to Mar 2026",
+    "revenue": 33.063,
+    "operating": 1.209
+   }
+  ],
+  "facts": [
+   {
+    "value": 1.211,
+    "label": "cash on Mar 31, 2026"
+   },
+   {
+    "value": 1.078,
+    "label": "net result, Year to Mar 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
  "lockup": {
-  "summary": "The company, its directors and officers, and certain existing shareholders agreed not to sell shares for 180 days after the date of the prospectus, with some exceptions.",
+  "summary": "The company, its directors and officers, and certain existing shareholders agreed not to sell or transfer shares for 180 days after the date of the prospectus, with some exceptions.",
   "days": 180
  },
- "what": "It is a holding company that runs all of its business through a subsidiary in Hong Kong.",
+ "what": "It provides one-stop online marketing services to businesses in Hong Kong.",
  "short": "Poche Technology",
- "proceeds": "The company expects about US$33,907,010 in net proceeds at a US$6 share price. It plans to spend about 37.5% on market expansion, 27.5% on research and development, 17.5% on hiring, and 17.5% on working capital.",
+ "proceeds": "It expects net proceeds of about US$33,907,010. It plans to spend them on market expansion (about 37.5%), research and development (27.5%), hiring (17.5%) and working capital (17.5%).",
  "risks": [
-  "Though all operations are in Hong Kong, the Chinese government may step in and affect the business or the value of the shares.",
-  "It is unclear whether Chinese approval is needed for this offering. If it is needed and denied, the shares could lose much value or become worthless.",
-  "China has taken sudden regulatory steps in mainland China, and similar moves could hurt the company's operations or the value of its shares."
+  "All operations are in Hong Kong, but the Chinese government may step in and change how the business runs or what the shares are worth.",
+  "It is unclear whether the company needs Chinese government approval for this offering, and a refusal could stop the listing or make the shares nearly worthless.",
+  "China has recently acted quickly on securities, cybersecurity and competition rules, which could hurt the company's operations or share value."
  ],
  "risks_note": "The first 3 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2085836/000149315226038929/formf-1a.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

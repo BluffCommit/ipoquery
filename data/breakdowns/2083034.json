@@ -29,14 +29,14 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
-  {
-   "item": "Revenue, results and cash",
-   "why": "the readers found no full-year figures in the summary financial table",
-   "by": "model"
-  },
   {
    "item": "What earlier rounds paid",
    "why": "the readers found no table of preferred stock prices",
@@ -48,20 +48,56 @@
    "by": "model"
   }
  ],
- "what": "It distributes casual and social mobile games worldwide, except mainland China, through its Hong Kong subsidiary.",
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to Jun 2024",
+    "revenue": 1.131,
+    "operating": -0.219
+   },
+   {
+    "label": "Year to Jun 2025",
+    "revenue": 2.935,
+    "operating": 1.293
+   }
+  ],
+  "facts": [
+   {
+    "value": 1.945,
+    "label": "cash on Jun 30, 2025"
+   },
+   {
+    "value": 1.084,
+    "label": "net result, Year to Jun 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "others": [
+  {
+   "name": "Champion Wave Holdings Limited",
+   "role": "Significant shareholder, controlled by Ms. Yujie Chen",
+   "before": 9435000,
+   "sold": 0
+  }
+ ],
+ "what": "It distributes casual and social mobile games around the world, except mainland China, through its Hong Kong operating subsidiary.",
  "short": "JoyByte",
  "risks": [
   "Hong Kong's legal system is uncertain, which could limit the legal protection available to investors.",
-  "If its auditor can no longer be inspected by US regulators, the shares could be barred from trading or delisted from Nasdaq.",
-  "Unclear Chinese laws, or sudden changes to them, could greatly change how the company operates or what its shares are worth.",
-  "The Chinese government could step in and influence the company's operations at any time, which could change its business or cut the shares' value.",
-  "Chinese government controls on overseas share offerings could block the company from selling shares to investors and could make the shares nearly worthless."
+  "If its auditors cannot be inspected by US regulators, the shares could be barred from trading or delisted.",
+  "Unclear Chinese laws, or sudden changes to them, could greatly change the company's operations or the value of its shares.",
+  "The Chinese government could step in and influence the company's operations at any time, which could change the business or share value.",
+  "Tighter Chinese control over overseas share offerings could block the company from selling shares and make its shares nearly worthless."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2083034/000118518526002171/joybytef1a1040226.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

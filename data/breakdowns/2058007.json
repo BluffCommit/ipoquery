@@ -47,12 +47,12 @@
    "by": "model"
   }
  ],
- "what": "It sells cloud-based business management software, known as ERP, to companies in Hong Kong.",
+ "what": "It provides cloud-based business management software, known as ERP, to companies in Hong Kong.",
  "short": "ECST Holdings",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2058007/000149315226035904/formf-1a.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

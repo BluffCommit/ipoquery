@@ -48,33 +48,27 @@
  ],
  "others": [
   {
-   "name": "Ting Fo Chan",
-   "role": "Founder, chairman, chief executive",
-   "before": 5200000,
-   "sold": 0
-  },
-  {
    "name": "Uplift Champion Ninetysix limited",
-   "role": "Shareholder owned by Mr. Ching Hei Chan",
+   "role": "Shareholder owned by Ching Hei Chan",
    "before": 2900000,
    "sold": 0
   }
  ],
- "what": "It provides temperature-controlled logistics and warehousing services to customers in Hong Kong.",
+ "what": "It provides temperature-controlled trucking and warehouse services to customers in Hong Kong.",
  "short": "Smart Pointer",
- "proceeds": "It expects about $21.6 million after costs. About 40% is for buying or investing in logistics and warehouse firms, 30% for more handling capacity and 20% for warehouse technology. The rest is for running costs and working capital.",
+ "proceeds": "It expects net proceeds of about $21.6 million. About 40% is for buying logistics and warehousing firms, 30% for more handling capacity and 20% for warehousing technology. The rest is for running costs and working capital.",
  "risks": [
-  "US rules on auditors that US regulators cannot inspect could be applied more strictly to companies like this one.",
-  "Cash and assets held in Hong Kong may not be freely moved out of Hong Kong.",
-  "Court judgments that shareholders win against the company may not be enforceable.",
-  "Its managers have no experience running a US public company or following the laws that apply to one.",
-  "It is a holding company and can pay dividends only if its Hong Kong subsidiary earns money and sends it up."
+  "New U.S. rules could bar the shares from trading if its auditor cannot be inspected by U.S. regulators for two years in a row.",
+  "Cash and assets held in Hong Kong may be hard to move out of Hong Kong if restrictions are imposed.",
+  "Shareholders may not be able to enforce court judgments they win against the company.",
+  "Its managers have no experience running a U.S. public company or following the laws that apply to one.",
+  "It is a holding company, so its ability to pay dividends depends on payouts from its Hong Kong subsidiary."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2062925/000121390026072996/ea0241525-12.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

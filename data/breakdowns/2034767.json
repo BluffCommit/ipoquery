@@ -29,12 +29,72 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "Who is selling",
+   "why": "the readers could not find the selling holders in the ownership table",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "net",
+  "years": [
+   {
+    "label": "Year to Mar 2024",
+    "revenue": 7.329,
+    "operating": 0.848
+   },
+   {
+    "label": "Year to Mar 2025",
+    "revenue": 9.505,
+    "operating": 0.929
+   }
+  ],
+  "facts": [
+   {
+    "value": 0.214,
+    "label": "cash on Mar 31, 2025"
+   }
+  ],
+  "by": "model"
+ },
+ "what": "It provides healthcare IT solutions, software support and hardware and software sales to hospitals and clinics in Hong Kong.",
+ "short": "Ultra High Point",
+ "risks": [
+  "The company could be hurt if it loses its three major customers or cannot win new ones.",
+  "New or upgraded healthcare IT products may not be promoted well or accepted by the market.",
+  "Errors, defects or outages in its software could disrupt customers' IT systems and reduce demand.",
+  "Its contracts have fixed prices, so misjudging the time and resources needed could hurt results.",
+  "Most of its revenue comes from competitive tenders or quotations."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2034767/000149315226009485/formf-1a.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

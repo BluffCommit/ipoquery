@@ -29,14 +29,14 @@
   {
    "item": "Shares outstanding after the offering",
    "how": "from the offering summary; larger than the number sold"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
-  {
-   "item": "Revenue, results and cash",
-   "why": "the readers found no full-year figures in the summary financial table",
-   "by": "model"
-  },
   {
    "item": "What earlier rounds paid",
    "why": "the readers found no table of preferred stock prices",
@@ -48,13 +48,42 @@
    "by": "model"
   }
  ],
- "what": "It supplies staff to airport cargo, ground handling and passenger service companies in Hong Kong.",
+ "financials": {
+  "unit": "USD millions",
+  "measure": "net",
+  "years": [
+   {
+    "label": "Year to Jun 2025",
+    "revenue": 7.218,
+    "operating": 0.901
+   },
+   {
+    "label": "Year to Jun 2026",
+    "revenue": 7.796,
+    "operating": 0.917
+   }
+  ],
+  "facts": [
+   {
+    "value": 0.069,
+    "label": "cash on Jun 30, 2026"
+   }
+  ],
+  "by": "model"
+ },
+ "what": "It supplies workers to airport cargo, ground handling and passenger service companies in Hong Kong.",
  "short": "Timwood",
- "proceeds": "It plans to use the money to improve its operations with technology, grow its team and scale, and build its brand in aviation. The rest is for working capital and general needs.",
+ "proceeds": "It plans to use the money to improve operations with technology, hire more skilled staff and grow, build its brand in aviation, and fund working capital and general needs. It expects about US$27,510,000 in net proceeds at a US$5.00 share price.",
+ "risks": [
+  "The Cayman holding company relies on its Hong Kong subsidiary for cash, and any limit on payments to it could hurt the business.",
+  "China could limit moving money out of Hong Kong, or change rules in ways that raise costs or make the shares worthless.",
+  "The company may become subject to Chinese rules on overseas listings and data security, and failing to comply could seriously harm it."
+ ],
+ "risks_note": "The first 3 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

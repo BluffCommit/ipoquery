@@ -33,7 +33,59 @@
   },
   {
    "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "why": "the readers found no full-year figures in the summary financial table",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
   }
- ]
+ ],
+ "others": [
+  {
+   "name": "Lon Ronald Chiu",
+   "role": "Controlling shareholder, director or officer (also deemed to hold 1,000,000 Class B shares)",
+   "before": 6827625,
+   "sold": 0
+  },
+  {
+   "name": "Chun Pong Jonathan Chau",
+   "role": "Controlling shareholder (also deemed to hold 1,000,000 Class B shares)",
+   "before": 3467625,
+   "sold": 0
+  },
+  {
+   "name": "CSC Collective Investment Limited",
+   "role": "Holding company of the controlling shareholders, owns all Class B shares",
+   "before": 1000000,
+   "sold": 0
+  }
+ ],
+ "what": "It runs high-end Japanese-style restaurants in Hong Kong, currently two restaurants under four brand names.",
+ "short": "CSC Collective",
+ "proceeds": "It expects net proceeds of about $17,281,044. It plans 6.3% to repay loans, 25.0% to expand restaurants, 30.0% for possible acquisitions, and 38.7% for working capital.",
+ "risks": [
+  "It works in a very competitive Hong Kong restaurant market, and many rivals have more money, longer histories and stronger brands.",
+  "Its success depends on meeting customer expectations and keeping up with changing tastes through new menu items.",
+  "Its success depends on Japanese food staying popular in Hong Kong, and that popularity may fade.",
+  "Its growth depends on customers recognizing its brands, and factors outside its control could weaken them."
+ ],
+ "risks_note": "The first 4 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2068711/000121390026041546/ea0277207-f1a2_csccollect.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }

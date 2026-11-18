@@ -31,6 +31,11 @@
    "how": "from the offering summary; larger than the number sold"
   },
   {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
    "item": "Lock-up length",
    "how": "two AI readers agree on the number of days, and it is printed in the filing",
    "by": "model"
@@ -38,43 +43,58 @@
  ],
  "hidden": [
   {
-   "item": "Revenue, results and cash",
-   "why": "the readers found no full-year figures in the summary financial table",
-   "by": "model"
-  },
-  {
    "item": "What earlier rounds paid",
    "why": "the readers found no table of preferred stock prices",
    "by": "model"
   }
  ],
- "others": [
-  {
-   "name": "Andrew Teh Yao, HO",
-   "role": "Chief executive, board chair and controlling shareholder; also holds 2500000 Class B shares",
-   "before": 9500000,
-   "sold": 0
-  }
- ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to May 2024",
+    "revenue": 5.503,
+    "operating": -0.332
+   },
+   {
+    "label": "Year to May 2025",
+    "revenue": 7.988,
+    "operating": 1.288
+   }
+  ],
+  "facts": [
+   {
+    "value": 1.036,
+    "label": "cash on May 31, 2025"
+   },
+   {
+    "value": 1.007,
+    "label": "net result, Year to May 2025",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
  "lockup": {
-  "summary": "The company, its directors, its officers and holders of 5% or more have agreed not to sell shares for 180 days. For the company, this runs from the closing of the offering. For insiders, it runs from the date the prospectus takes effect.",
+  "summary": "Directors, officers and holders of 5% or more agree not to sell for 180 days from the effective date of the prospectus. The company itself agrees not to issue or sell shares for 180 days from closing.",
   "days": 180
  },
- "what": "It provides employer-of-record, HR outsourcing, executive search and HR research services to clients in Hong Kong, through its subsidiary TalentQuest.",
+ "what": "It provides staff outsourcing, executive search and human resources research services to companies in Hong Kong.",
  "short": "CALM Chain",
- "proceeds": "It expects net proceeds of about US$26.2 million. About 30% is for growth in the Asia Pacific market, 30% for adding artificial intelligence to the business, and 40% for general costs and working capital.",
+ "proceeds": "It expects net proceeds of about US$26.2 million. It plans 30% for expanding into the Asia Pacific market, 30% for using artificial intelligence to optimize resources, and 40% for general administration and working capital.",
  "risks": [
-  "The Chinese government could step in or change the rules at any time, which could hurt the Hong Kong business and make the shares lose value.",
-  "Following Hong Kong's personal data privacy law and similar rules may cost a lot and could hurt the business.",
-  "The Hong Kong National Security Law could affect its Hong Kong subsidiary, which makes up almost all of its business.",
+  "Mainland China's government may step in or influence its Hong Kong operations at any time, which could sharply cut the value of the shares.",
+  "Complying with Hong Kong's personal data privacy law and similar rules may be costly and could hurt the business.",
+  "The Hong Kong National Security Law could affect its Hong Kong subsidiary, which makes up substantially all of its business.",
   "There are political risks in doing business in Hong Kong.",
-  "It earns money in Hong Kong dollars but the shares trade in US dollars, so currency changes could affect your investment value."
+  "It earns money in Hong Kong dollars but its shares are priced in US dollars, so currency changes may affect your investment."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
    "https://www.sec.gov/Archives/edgar/data/2083945/000121390026093861/ea0254362-09.htm",
-   1
+   2
   ],
   "readers": [
    "claude-sonnet-5-5",

@@ -24,6 +24,16 @@
   {
    "item": "Shares sold by the company",
    "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
   }
  ],
  "hidden": [
@@ -32,8 +42,63 @@
    "why": "the number of shares outstanding after the offering could not be read"
   },
   {
-   "item": "Revenue, results and cash",
-   "why": "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   "item": "What earlier rounds paid",
+   "why": "the readers found no table of preferred stock prices",
+   "by": "model"
   }
- ]
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "Year to Oct 2024",
+    "revenue": null,
+    "operating": -11.643
+   },
+   {
+    "label": "Year to Oct 2025",
+    "revenue": null,
+    "operating": -15.752
+   }
+  ],
+  "ytd": {
+   "label": "Nov 2025 to Jul 2026",
+   "revenue": null,
+   "operating": -27.229,
+   "prior_label": "Nov 2024 to Jul 2025",
+   "prior_revenue": null,
+   "prior_operating": -12.138
+  },
+  "facts": [
+   {
+    "value": 18.792,
+    "label": "cash on Jul 31, 2026"
+   },
+   {
+    "value": -29.688,
+    "label": "net result, Nov 2025 to Jul 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "lockup": {
+  "summary": "Executive officers, directors and their affiliates cannot sell shares for 180 days after the date of the prospectus. Some other large holders face limits on how much they can sell for 90 to 180 days.",
+  "days": 180
+ },
+ "what": "It is developing laser and separator technology to enrich uranium for nuclear fuel.",
+ "short": "LIS Technologies",
+ "proceeds": "It plans to spend the money on research and development of its uranium enrichment technology, site work at its LIST Island site, and marketing and business development. The rest goes to working capital and general business costs.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/1973276/000149315226050287/forms-1a.htm",
+   2
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-18"
+ }
 }
