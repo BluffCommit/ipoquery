@@ -41,8 +41,10 @@ BIG = page(
       "stock on the Nasdaq Global Select Market under the symbol &#8220;TAI.&#8221;"),
     p("THE OFFERING"),
     table(("Class A common stock offered by us", "801,351,354 shares"), ("Class A common stock offered by the selling stockholders", "23,648,646 shares"),
-          ("Class A common stock to be outstanding after this offering", "9,000,000,000 shares"), ("Class B common stock to be outstanding after this offering", "4,086,672,593 shares"),
-          ("Total Class A and Class B common stock to be outstanding after this offering", "13,086,672,593 shares")),
+          ("Class A common stock to be outstanding after this offering and the concurrent private placement", "7,427,991,791 shares (7,551,741,791 shares if the underwriters exercise their option in full)"),
+          ("Class N common stock to be outstanding after this offering and the concurrent private placement", "5,658,680,800 shares"),
+          ("Class T common stock to be outstanding after this offering and the concurrent private placement", "1 share"),
+          ("Total Class A, Class N, Class T, Class E and Class F common stock to be outstanding after this offering and the concurrent private placement", "13,086,672,593 shares")),
     p("Unless otherwise indicated, this prospectus assumes an initial public offering price of $74.00 per share, which is the midpoint of the estimated offering price range set forth on the cover page."),
     FILLER, p("Consolidated statements of operations (in millions)"),
     table(("", "2023", "2024", "2025"), ("Revenue", "$", "41", "$", "386", "$", "4,585"), ("Loss from operations", "(551)", "(2,980)", "(8,060)")),
@@ -50,7 +52,7 @@ BIG = page(
 
 SMALL = page(
     p("PRELIMINARY PROSPECTUS"), p("Testco Trading Ltd"),
-    p("This is an initial public offering of our ordinary shares. We are offering 1,500,000 ordinary shares, par value US$0.0001 per share. Prior to this offering, there has "
+    p("This is an initial public offering of our ordinary shares. We are offering an aggregate of 1,500,000 ordinary shares, par value US$0.0001 per share. Prior to this offering, there has "
       "been no public market for our ordinary shares. We anticipate that the initial public offering price will be between US$4.00 and US$6.00 per ordinary share."),
     p("We have applied to list our ordinary shares on the Nasdaq Capital Market under the symbol \"TTL\"."),
     table(("Ordinary shares offered by us", "1,500,000 ordinary shares"), ("Ordinary shares outstanding immediately after this offering", "12,500,000 ordinary shares")),
@@ -107,6 +109,9 @@ UNLIKE_CLASSES = page(
           ("Class B Voting Rights Shares to be Outstanding After This Offering", "143,888,790 Class B voting rights shares")), FILLER)
 WEAK_PRICE = page(p("We are offering 300,000 shares of our common stock. The public offering price is $1.00 per share. The public offering price of $1.00 per share was set by us."),
                   table(("Common stock offered by us", "300,000 shares"), ("Common stock to be outstanding after this offering", "15,990,000 shares")), FILLER)
+MOST_OF_COMPANY = page(p("We are offering 16,666,667 shares of our common stock. We expect the initial public offering price to be between $11.00 and $13.00 per share."),
+                       table(("Common stock offered by us", "16,666,667 shares"), ("Common stock to be outstanding immediately after this offering", "20,776,793 shares")),
+                       p("an assumed initial public offering price of $12.00 per share, which is the midpoint of the price range"), FILLER)
 DIRECT = page(p("This prospectus relates to the registration of the resale of up to 70,728,866 shares of our common stock by the registered stockholders. "
                 "We are not selling any shares and will not receive any proceeds."), FILLER)
 
@@ -150,6 +155,7 @@ DEALS = {
     9100014: ("Testco Tickets Ltd", "priced", "424B4", "2026-10-21", SHARES_OFFERED, None),
     9100015: ("Testco Holding AG", "priced", "424B4", "2026-10-22", UNLIKE_CLASSES, None),
     9100016: ("TESTCO DIRECT INC", "priced", "424B4", "2026-10-23", DIRECT, None),
+    9100017: ("TESTCO NONVOTING INC", "amended", "S-1/A", "2026-11-09", MOST_OF_COMPANY, None),
 }
 
 
@@ -186,7 +192,7 @@ def main():
         first = go()
         state = json.loads((folder / "reader.json").read_text())["deals"]
         load = lambda cik: json.loads((folder / "breakdowns" / f"{cik}.json").read_text())
-        check("shells and withdrawn deals are not read", (first["queued"], "9100010" in state, "9100011" in state), (14, False, False))
+        check("shells and withdrawn deals are not read", (first["queued"], "9100010" in state, "9100011" in state), (15, False, False))
 
         big = load(9100001)
         check("large deal: offer terms", big["offer"], {"low": 70.0, "high": 78.0, "holder_shares": 23648646, "company_shares": 801351354, "shares_after": 13086672593})
@@ -227,6 +233,8 @@ def main():
         unlike = load(9100015)
         check("share classes that are not alike are not added up", (unlike["offer"], unlike["hidden"][0]["why"]),
               ({"price": 18.0, "holder_shares": 0, "company_shares": 9722223}, "the share classes are not alike, so their counts cannot simply be added up"))
+        check("a sale of most of the company gets no company value", ("shares_after" in load(9100017)["offer"], load(9100017)["hidden"][0]["why"][:41]),
+              (False, "the shares sold would be more than 60% of"))
         check("a direct listing is recognised, not read", state["9100016"]["result"], "resale")
         check("range stated once and nowhere else: no breakdown", state["9100008"]["result"], "not confirmed")
         check("a hand-made breakdown is kept", (load(9100009)["method"], state["9100009"]["note"]), ("manual", "a hand-made breakdown exists and was kept"))

@@ -40,7 +40,7 @@ READ_FORMS = tracker.INITIAL | tracker.AMEND | tracker.PRICED
 MAX_DOCS = 80                 # prospectuses downloaded per run; a backlog clears over a few runs
 PRICED_DAYS = 120             # keep reading deals that priced this recently
 FRONT = 400_000               # characters of text that hold the cover page and the summary
-STATE_VERSION = 3              # bump to read every deal again after the reader changes
+STATE_VERSION = 4              # bump to read every deal again after the reader changes
 NO_RANGE = "no price range in this filing yet"
 RESALE_ONLY = "a resale by existing holders, such as a direct listing: nothing is sold at a set price"
 
@@ -83,10 +83,10 @@ FINAL_ROW = re.compile(r"public offering price(?: per (?:[a-z]+ ){0,3}?(?:share|
 SELL_COVER = re.compile(HOLDERS + r"[^.;]{0,140}? (?:are|is) (?:offering|selling) (?:an additional |up to )?" + NUM + r" ")
 SELL_ROW = re.compile(r"offered by (?:the )?" + HOLDERS + r"[^\d.]{0,60}" + NUM + r" ")
 KIND = r"(?:shares|ordinary|american|adss?|class|common)"
-US_COVER = re.compile(r"(?:(?:\bwe are|[a-z0-9 ,&'.-]{3,80}? is) (?:offering|selling)|initial public offering of) " + NUM + r" " + KIND)
+US_COVER = re.compile(r"(?:(?:\bwe are|[a-z0-9 ,&'.-]{3,80}? is) (?:offering|selling)|initial public offering of) (?:an aggregate (?:of )?|a total of )?" + NUM + r" " + KIND)
 US_ROW = re.compile(r"offered by us[^\d.]{0,40}?" + NUM + r" ")
 ANY_ROW = re.compile(r"(?:shares|stock|securities|adss?) (?:being )?offered(?: hereby)?(?:[ :.]|\(\d\))*" + NUM + r" ")      # "Shares offered: 1,875,000"
-AFTER = re.compile(r"outstanding (?:immediately )?after (?:this|the|our) offering(?:[ :.]|\(\d\))*" + NUM + r" " + KIND)
+AFTER = re.compile(r"outstanding (?:immediately )?after (?:this|the|our) offering(?: and [a-z ]{0,60}?)?(?:[ :.]|\(\d\))*" + NUM + r" " + KIND)
 RESALE = re.compile(r"registration of the resale|resale of up to|direct listing")
 LISTING = re.compile(r"(?:list|listing|listed|quot|trad)[^.]{0,200}? on (?:the )?(nasdaq|new york stock exchange|nyse american|nyse|cboe)[^.]{0,80}?under the (?:ticker )?symbol \"?([a-z]{1,5}(?:\.[a-z])?)\b")
 EXCHANGES = {"nasdaq": "Nasdaq", "new york stock exchange": "NYSE", "nyse": "NYSE", "nyse american": "NYSE American", "cboe": "Cboe"}
@@ -223,6 +223,8 @@ def offer_terms(text, form):
             shares_after, how = Counter(n for n, _, _, _ in after).most_common(1)[0][0], "from the offering summary"
         if not why and not (sold and 0.002 <= sold / shares_after <= 0.9):
             why = "the shares outstanding after the offering do not fit with the number sold"
+        elif not why and sold / shares_after > 0.6:
+            why = "the shares sold would be more than 60% of the company, which suggests a share class is missing from the count"
         if not why:
             offer["shares_after"] = shares_after
             checks.append({"item": "Shares outstanding after the offering", "how": how + "; larger than the number sold"})
