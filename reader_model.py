@@ -152,8 +152,10 @@ The JSON object has exactly these keys:
 
 def ask(model, user, key):
     body = json.dumps({"model": model, "max_tokens": 5000, "system": SYSTEM, "messages": [{"role": "user", "content": user}]}).encode()
-    request = urllib.request.Request(API_URL, data=body, headers={
-        "x-api-key": key, "anthropic-version": os.environ.get("ANTHROPIC_VERSION", "2023-06-01"), "content-type": "application/json"})
+    headers = {"x-api-key": key, "anthropic-version": os.environ.get("ANTHROPIC_VERSION", "2023-06-01"), "content-type": "application/json"}
+    if os.environ.get("ANTHROPIC_WORKSPACE_ID", "").strip():        # only needed for a key that is not tied to one workspace
+        headers["anthropic-workspace-id"] = os.environ["ANTHROPIC_WORKSPACE_ID"].strip()
+    request = urllib.request.Request(API_URL, data=body, headers=headers)
     try:
         with urllib.request.urlopen(request, timeout=600) as response:
             data = json.load(response)
@@ -235,7 +237,8 @@ def check(answer, text, offer, manual):
 
 def run(fetcher, today, list_path, breakdown_dir, out_path, key, log=print):
     previous = tracker.load_json(out_path, {})
-    if previous.get("version") == TEST_VERSION and (previous.get("asked_model") or not key):
+    failed = any("error" in result for deal in previous.get("deals", []) for result in deal.get("models", {}).values())
+    if previous.get("version") == TEST_VERSION and not (key and (failed or not previous.get("asked_model"))):
         log("model test: nothing new to do")
         return previous
     records = {r["cik"]: r for r in tracker.load_json(list_path, {}).get("ipos", [])}
