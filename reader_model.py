@@ -37,11 +37,11 @@ from pathlib import Path
 import reader
 import tracker
 
-MODEL_VERSION = 1                      # bump to have every deal read again
+MODEL_VERSION = 2                      # bump to have every deal read again
 READERS = ["claude-sonnet-5-5", "claude-haiku-5-5"]     # the first one's wording is used; figures need both to agree
 REFEREE = "claude-opus-5-5"            # also reads the first COMPARE_DEALS deals, for the comparison only
-COMPARE_DEALS = 20
-MAX_DEALS = 20                         # deals read per run
+COMPARE_DEALS = 32                     # the first 20 were mostly small deals; the next 12 are priced IPOs, which have more to read
+MAX_DEALS = 40                         # deals read per run
 PRICES = {"claude-haiku-5-5": (0.10, 0.50), "claude-sonnet-5-5": (2.00, 10.00), "claude-opus-5-5": (4.00, 20.00)}    # US$ per million tokens in, out (list prices, Nov 2026)
 API_URL = "https://api.anthropic.com/v1/messages"
 
@@ -74,7 +74,7 @@ HEADINGS = {
     "index": r"index to (?:the )?(?:consolidated |combined )?financial statements",
     "item15": r"(?:item )?recent sales of unregistered securities",
 }
-WANTED = {"cover": 7000, "summary": 3000, "offering": 9000, "summary_financials": 9000, "risks": 12000, "proceeds": 5000, "holders": 18000,
+WANTED = {"cover": 7000, "summary": 3000, "offering": 9000, "summary_financials": 10000, "risks": 12000, "proceeds": 5000, "holders": 18000,
           "future_sale": 9000, "preferred": 7000, "item15": 9000}
 PREFERRED = re.compile(r"(?:note )?\d*\.? ?(?:redeemable )?(?:convertible )?(?:redeemable )?preferred (?:stock|shares)(?: and .{0,60})?", re.I)
 
@@ -128,6 +128,15 @@ def cut(lines):
     for name, limit in WANTED.items():
         if name in best:
             out[name] = take(best[name][1], limit)
+    if "summary_financials" not in out:
+        # no summary table under that name: use the selected financial data, or failing that the income statement itself
+        statements = [i for i, line in enumerate(lines) if len(line) < 110 and re.fullmatch(
+            r"(?:(?:unaudited|audited|condensed|interim) )*(?:consolidated |combined )*statements? of (?:operations|income|profit or loss|comprehensive (?:income|loss))(?: and .{0,60})?", line.strip(" .:").lower())]
+        if "selected" in best:
+            out["summary_financials"] = take(best["selected"][1], WANTED["summary_financials"])
+        elif statements:
+            bodies = [take(i, WANTED["summary_financials"]) for i in statements]
+            out["summary_financials"] = max(bodies, key=lambda body: len(re.findall(r"\d,\d{3}", body)))
     if "risks" in best:
         # risk factors run to dozens of pages: keep the headings and short paragraphs, drop the long explanations
         start = best["risks"][1]
@@ -156,7 +165,7 @@ SYSTEM = """You pull facts out of excerpts from an IPO prospectus, for a website
 
 Rules:
 - Use only the excerpts. If something is not stated there, give null or an empty list. Never estimate, calculate or fill in from memory.
-- Copy every figure exactly as the filing prints it, as a plain number with no commas. A loss printed in brackets is a negative number.
+- Copy every figure exactly as the filing prints it, as a JSON number: no commas, no currency signs, no words. A loss printed in brackets is a negative number.
 - Text you write must be plain English a general reader understands at once: short sentences, no jargon, no opinions. Write about the company as "it" or by name, never "we" or "our".
 - Reply with one JSON object and nothing else. Keep it compact.
 
@@ -168,7 +177,7 @@ The JSON object has exactly these keys:
    "years": up to three full financial years, oldest first, each {"period_end": the last day of the year as "YYYY-MM-DD", "revenue": total revenue or null, "operating": profit or loss from operations or null, "net": net profit or loss or null},
    "part_year": null, or {"label": e.g. "Jan to Sep 2026", "period_end": "YYYY-MM-DD", "revenue", "operating", "net", "prior_label", "prior_revenue", "prior_operating", "prior_net"} for the latest period shorter than a year and the same period a year earlier,
    "cash": null, or {"value": cash and cash equivalents as printed, "date": the balance sheet date as "YYYY-MM-DD"}}
-"sellers": the existing holders selling shares in this offering, each {"name": exactly as printed, without footnote marks, "role": a few words such as "Co-founder, chief executive" or "Venture investor", "before": shares beneficially owned before the offering, "sold": shares being sold in the offering, not counting any option given to the underwriters}. Empty list if none.
+"sellers": only the existing holders who are selling shares in this offering, each {"name": exactly as printed, without footnote marks, "role": a few words such as "Co-founder, chief executive" or "Venture investor", "before": shares beneficially owned before the offering, "sold": shares being sold in the offering, not counting any option given to the underwriters}. Empty list if none.
 "others": up to eight of the largest holders named in the ownership table who are not selling, each {"name", "role", "before"}.
 "rounds": the company's series of preferred stock, oldest first, each {"name": e.g. "Series A", "when": the year it was first sold, or null if not stated, "price": the original issue price per share}. Take prices from the PREFERRED excerpt (the note to the financial statements), not from ITEM 15, which may predate a share split. Use ITEM 15 only for the year. Empty list if the PREFERRED excerpt has no price table.
 "lockup": null, or {"days": the main lock-up length in days, "summary": one or two sentences on when insiders may sell, "early": true if the filing describes any release before that period ends}
@@ -246,6 +255,31 @@ def same(a, b):
         return abs(float(a) - float(b)) <= abs(float(a)) * 1e-9
     except (TypeError, ValueError):
         return a == b
+
+
+NUMERIC = ("revenue", "operating", "net", "prior_revenue", "prior_operating", "prior_net", "value", "before", "sold", "price", "days")
+
+
+def tidy(answer):
+    """Small repairs to a reader's answer: figures given as text ("$1.25", "1,000") become numbers, and
+    holders listed as sellers who sell nothing are moved to the other holders."""
+    def fix(node):
+        if isinstance(node, dict):
+            for k, v in node.items():
+                if k in NUMERIC and isinstance(v, str) and re.fullmatch(r"\(?-?\$?-?[\d,]+(?:\.\d+)?\)?", v.strip()):
+                    number = float(re.sub(r"[$,()]", "", v))
+                    number = -abs(number) if v.strip().startswith("(") else number
+                    node[k] = int(number) if number.is_integer() else number
+                else:
+                    fix(v)
+        elif isinstance(node, list):
+            for item in node:
+                fix(item)
+    fix(answer)
+    sellers = [r for r in (answer.get("sellers") or []) if isinstance(r, dict)]
+    answer["sellers"] = [r for r in sellers if r.get("sold")]
+    answer["others"] = [r for r in sellers if not r.get("sold")] + [r for r in (answer.get("others") or []) if isinstance(r, dict)]
+    return answer
 
 
 def table(answer, key, name="name"):
@@ -326,10 +360,17 @@ def merge(first, second, text, offer):
             latest, latest_label = ya[ends[-1]], block["years"][-1]["label"]
             pa, pb = fa.get("part_year") or {}, fb.get("part_year") or {}
             part = ("revenue", "operating", "net", "prior_revenue", "prior_operating", "prior_net")
-            if pa.get(measure) is not None and pa.get("prior_" + measure) is not None and all(same(pa.get(k), pb.get(k)) for k in part) \
-                    and all(is_printed(pa[k], text) for k in part if pa.get(k) is not None) and prose_ok(f"{pa.get('label')} {pa.get('prior_label')}", text):
-                block["ytd"] = {"label": str(pa.get("label")), "revenue": m(pa.get("revenue")), "operating": m(pa[measure]),
-                                "prior_label": str(pa.get("prior_label")), "prior_revenue": m(pa.get("prior_revenue")), "prior_operating": m(pa["prior_" + measure])}
+            try:                                         # the part year runs from the day after the last full year to its own end date
+                start = dt.date.fromisoformat(ends[-1]) + dt.timedelta(days=1)
+                end = dt.date.fromisoformat(str(pa.get("period_end")))
+                spans = (reader.period_label(str(start), str(end)), reader.period_label(str(start.replace(year=start.year - 1)), str(end.replace(year=end.year - 1)))) \
+                    if 60 <= (end - start).days <= 300 and same(pa.get("period_end"), pb.get("period_end")) else None
+            except ValueError:
+                spans = None
+            if spans and pa.get(measure) is not None and pa.get("prior_" + measure) is not None and all(same(pa.get(k), pb.get(k)) for k in part) \
+                    and all(is_printed(pa[k], text) for k in part if pa.get(k) is not None):
+                block["ytd"] = {"label": spans[0], "revenue": m(pa.get("revenue")), "operating": m(pa[measure]),
+                                "prior_label": spans[1], "prior_revenue": m(pa.get("prior_revenue")), "prior_operating": m(pa["prior_" + measure])}
                 latest, latest_label = pa, block["ytd"]["label"]
             block["facts"] = []
             ca, cb = fa.get("cash") or {}, fb.get("cash") or {}
@@ -377,7 +418,7 @@ def merge(first, second, text, offer):
     if not ra:
         leave(item, "the readers found no table of preferred stock prices")
     elif not all(isinstance(r.get("price"), (int, float)) and r["price"] > 0 for r in rows):
-        leave(item, "a round has no price")
+        leave(item, "a round has no price in US dollars")
     elif set(ra) != set(rb) or not all(same(ra[n]["price"], rb[n].get("price")) for n in ra):
         leave(item, "the two AI readers gave different rounds or prices")
     elif not all(is_printed(r["price"], text) for r in rows):
@@ -418,8 +459,10 @@ def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, 
         return {}
     records = {r["cik"]: r for r in tracker.load_json(list_path, {}).get("ipos", [])}
     compare = tracker.load_json(compare_path, {})
-    if compare.get("version") != MODEL_VERSION:
-        compare = {"version": MODEL_VERSION, "deals": []}
+    compare.setdefault("deals", [])
+    if compare.get("version") != MODEL_VERSION:              # a new version reads every deal again; the three-reader comparisons already made are kept
+        compare.update(version=MODEL_VERSION, later=[])
+    compared = {deal["cik"] for deal in compare["deals"]}
     waiting = []
     for path in sorted(Path(breakdown_dir).glob("*.json")):
         b = tracker.load_json(path, {})
@@ -438,7 +481,8 @@ def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, 
         sections = cut(to_lines(page))
         text = reader.to_text(page)
         user = "\n\n".join(f"=== {name.upper().replace('_', ' ')} ===\n{body}" for name, body in sections.items())
-        models = READERS + ([REFEREE] if len(compare["deals"]) < COMPARE_DEALS else [])
+        referee = len(compare["deals"]) < COMPARE_DEALS and b["cik"] not in compared and "price" in b["offer"]
+        models = READERS + ([REFEREE] if referee else [])
         with ThreadPoolExecutor(max_workers=len(models)) as pool:
             replies = dict(zip(models, pool.map(lambda model: ask(model, user, key), models)))
         costs = {model: cost(model, usage) for model, (_, usage, _) in replies.items()}
@@ -451,6 +495,9 @@ def run(fetcher, today, list_path, breakdown_dir, compare_path, key, log=print, 
             b.pop(old, None)
         b["checks"] = [c for c in b.get("checks", []) if c.get("by") != "model"]
         b["hidden"] = [h for h in b.get("hidden", []) if h.get("by") != "model" and h.get("item") != "Revenue, results and cash"]
+        for reply in replies.values():
+            if reply[0]:
+                tidy(reply[0])
         first, second = replies[READERS[0]][0], replies[READERS[1]][0]
         if errors.get(READERS[0]) or errors.get(READERS[1]):
             entry["errors"] = errors

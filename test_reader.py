@@ -252,6 +252,14 @@ def model_checks(folder):
     check("a round priced far above the IPO is treated as a missed share split", left(both, copy.deepcopy(both))["What earlier rounds paid"][:52], "the last round's price does not sit believably next ")
     both = changed(lambda a: a.update(proceeds="It will raise $84.6 billion."))
     check("a summary with a number the filing does not print is dropped", "proceeds" in rm.merge(both, both, text, offer)[0], False)
+    messy = changed(lambda a: (a["rounds"][0].update(price="$1.25"), a["sellers"].append({"name": "John Doe", "role": "Director", "before": "3,000,000", "sold": 0}), a.update(others=[])))
+    tidied = rm.tidy(messy)
+    check("answers are tidied: text figures become numbers, non-sellers leave the sellers list",
+          (tidied["rounds"][0]["price"], [r["name"] for r in tidied["sellers"]], tidied["others"][0]["before"], rm.merge(GOOD, tidied, text, offer)[2]), (1.25, ["Jane Roe", "Venture Fund I"], 3000000, []))
+    part = changed(lambda a: a["financials"].update(part_year={"period_end": "2026-09-30", "revenue": 23456, "operating": -1111, "net": -1500, "prior_revenue": 12345, "prior_operating": -2222, "prior_net": -2900}))
+    check("a part year is labelled from its dates", (lambda y: (y["label"], y["prior_label"]))(rm.merge(part, copy.deepcopy(part), text, offer)[0]["financials"]["ytd"]), ("Jan to Sep 2026", "Jan to Sep 2025"))
+    no_summary = rm.cut(rm.to_lines(LONG.replace(b"Summary Consolidated Financial Data", b"Consolidated Statements of Operations")))
+    check("sections: with no summary table, the income statement is used", no_summary["summary_financials"].split("\n")[1], "(in thousands) 2024 2025")
     check("differences between readers are listed", rm.differences(GOOD, changed(lambda a: (a["rounds"][0].update(price=12.5), a["lockup"].update(days=90)))),
           ["rounds series a price: 1.25 / 12.5", "lock-up days: 180 / 90"])
 
@@ -269,13 +277,18 @@ def model_checks(folder):
     go = lambda: rm.run(tracker.Fetcher("test", fixtures=folder / "fixtures"), TODAY, folder / "list.json", bdir, folder / "compare.json", "key", log=lambda *_: None)
     report = go()
     b = json.loads((bdir / "9200001.json").read_text())
-    check("run: both readers and the referee are asked, hand-made breakdowns are left alone", (sorted(asked), json.loads((bdir / "9100009.json").read_text()).get("model")),
-          (["claude-haiku-5-5", "claude-opus-5-5", "claude-sonnet-5-5"], None))
+    check("run: an upcoming deal gets the two readers, hand-made breakdowns are left alone", (sorted(asked), json.loads((bdir / "9100009.json").read_text()).get("model")),
+          (["claude-haiku-5-5", "claude-sonnet-5-5"], None))
     check("run: the breakdown gains the checked fields and loses the 'not tagged' note", ("sellers" in b, "financials" in b, [h["item"] for h in b["hidden"]], len(b["checks"])), (True, True, [], 5))
-    check("run: the comparison records agreement and cost", (report["deals"][0]["readers_differ"], report["deals"][0]["referee_differs_from_first"], report["spent_usd"]), ([], [], 0.2257))
+    check("run: the log records agreement and cost", (report["later"][0]["readers_differ"], report["spent_usd"]), ([], 0.0777))
     asked.clear()
     go()
     check("run: a deal already read is not read again", asked, [])
+    priced = dict(offer, price=20.0)
+    (bdir / "9200001.json").write_text(json.dumps({"cik": 9200001, "method": "auto", "doc": url, "offer": priced, "checks": [], "hidden": []}))
+    report = go()
+    check("run: a priced deal is also read by the referee, and differences are logged", (sorted(asked), report["deals"][0]["referee_differs_from_first"]),
+          (["claude-haiku-5-5", "claude-opus-5-5", "claude-sonnet-5-5"], []))
     check("without a key nothing is asked", rm.run(None, TODAY, folder / "list.json", bdir, folder / "compare.json", "", log=lambda *_: None), {})
 
 
