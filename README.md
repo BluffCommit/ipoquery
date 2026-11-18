@@ -30,20 +30,21 @@ works out everything else (amounts raised, company value, returns) from those.
 ## The reader
 
 `reader.py` runs after the tracker. For each upcoming deal, and each deal that
-priced in the last 120 days, it downloads the newest prospectus (at most 40 a
+priced in the last 120 days, it downloads the newest prospectus (at most 80 a
 run, and each document only once) and writes `data/breakdowns/<CIK>.json`.
 This first part uses no model and costs nothing. It reads:
 
 - the offer terms: price range or final price, shares sold by the company and
   by existing holders, shares outstanding afterwards
-- revenue, operating or net result and cash, from the figures tagged (XBRL)
-  inside the filing. For a deal that has priced it also reads the filing
-  before pricing, which has the price range and the tagged statements.
+- for a deal that has priced, the price range from the filing before pricing
+- revenue, operating or net result and cash, but only for a company that
+  already files tagged (XBRL) reports. IPO filings themselves carry no tagged
+  financial statements, so for most deals this waits for the model step.
 
 A figure is kept only if a consistency check passes: the filing states it in
 two places, the midpoint used in the filing matches the range on the cover,
-price times shares equals the total on the cover, or no figure is tagged
-with two different values. Anything that fails is left out, and the
+price times shares equals the total on the cover, or a tagged figure also
+appears in the printed statements. Anything that fails is left out, and the
 page lists what was left out and why. If the offer terms fail, no breakdown is
 written. `data/reader.json` records what happened for every deal; when a
 share count fails it keeps a short piece of the filing to show why. Direct
@@ -53,8 +54,9 @@ The reader never replaces a breakdown marked `"method": "manual"`.
 
     python test_reader.py      # offline tests, on made-up filings in real wording
 
-Not built yet: who is selling, what earlier rounds paid, lock-ups, use of
-proceeds and risks. Those need a model to read the filing.
+Not built yet: the printed financial statements, who is selling, what earlier
+rounds paid, lock-ups, use of proceeds and risks. Those need a model to read
+the filing.
 
 ## How it decides
 

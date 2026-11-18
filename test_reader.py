@@ -16,27 +16,9 @@ import tracker
 TODAY = dt.date(2026, 11, 16)
 
 
-PERIODS = {"y23": ("2023-01-01", "2023-12-31"), "y24": ("2024-01-01", "2024-12-31"), "y25": ("2025-01-01", "2025-12-31"), "p25": ("2025-01-01", "2025-09-30"),
-           "p26": ("2026-01-01", "2026-09-30"), "i26": (None, "2026-09-30")}
-CONTEXTS = "".join(
-    f"<xbrli:context id='{key}'><xbrli:entity><xbrli:identifier scheme='http://www.sec.gov/CIK'>1</xbrli:identifier></xbrli:entity><xbrli:period>"
-    + (f"<xbrli:startDate>{start}</xbrli:startDate><xbrli:endDate>{end}</xbrli:endDate>" if start else f"<xbrli:instant>{end}</xbrli:instant>")
-    + "</xbrli:period></xbrli:context>" for key, (start, end) in PERIODS.items())
-CONTEXTS += ("<xbrli:context id='seg'><xbrli:entity><xbrli:identifier scheme='x'>1</xbrli:identifier><xbrli:segment><xbrldi:explicitMember dimension='us-gaap:StatementBusinessSegmentsAxis'>"
-             "x:CloudMember</xbrldi:explicitMember></xbrli:segment></xbrli:entity><xbrli:period><xbrli:startDate>2025-01-01</xbrli:startDate><xbrli:endDate>2025-12-31</xbrli:endDate></xbrli:period></xbrli:context>"
-             "<xbrli:unit id='usd'><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unit>"
-             "<xbrli:unit id='usdPerShare'><xbrli:divide><xbrli:unitNumerator><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unitNumerator></xbrli:divide></xbrli:unit>")
-
-
 def page(*blocks):
-    return ("<html><head><title>S-1</title><style>p{margin:0}</style></head><body><div style='display:none'><ix:header><ix:hidden>801,351,354 9,999,999</ix:hidden>"
-            "<ix:resources>" + CONTEXTS + "</ix:resources></ix:header></div>" + "".join(blocks) + "</body></html>").encode()
-
-
-def ix(name, context, shown, negative=False, scale=6, unit="usd"):
-    """A tagged figure, the way filings print them: in millions, negatives in brackets."""
-    return (f"<ix:nonFraction name=\"us-gaap:{name}\" contextRef=\"{context}\" unitRef=\"{unit}\" decimals=\"-{scale}\" scale=\"{scale}\" format=\"ixt:num-dot-decimal\""
-            + (" sign=\"-\"" if negative else "") + f">{shown}</ix:nonFraction>")
+    return ("<html><head><title>S-1</title><style>p{margin:0}</style></head><body><div style='display:none'><ix:header><ix:hidden>801,351,354 9,999,999</ix:hidden></ix:header></div>"
+            + "".join(blocks) + "</body></html>").encode()
 
 
 def p(text):
@@ -65,17 +47,6 @@ BIG = page(
     FILLER, p("Consolidated statements of operations (in millions)"),
     table(("", "2023", "2024", "2025"), ("Revenue", "$", "41", "$", "386", "$", "4,585"), ("Loss from operations", "(551)", "(2,980)", "(8,060)")),
     table(("Nine months ended September 30", "2025", "2026"), ("Revenue", "2,545", "33,242"), ("Loss from operations", "(5,224)", "(1,260)")))
-
-# the same deal with the figures tagged inside the filing, as real filings with a price range have
-BIG_TAGGED = BIG.replace(b"</body>", (
-    table(("Revenue", ix("Revenues", "y23", "41"), ix("Revenues", "y24", "386"), ix("Revenues", "y25", "4,585"), ix("Revenues", "p25", "2,545"), ix("Revenues", "p26", "33,242")),
-          ("Loss from operations", "(" + ix("OperatingIncomeLoss", "y23", "551", True) + ")", "(" + ix("OperatingIncomeLoss", "y24", "2,980", True) + ")",
-           "(" + ix("OperatingIncomeLoss", "y25", "8,060", True) + ")", "(" + ix("OperatingIncomeLoss", "p25", "5,224", True) + ")", "(" + ix("OperatingIncomeLoss", "p26", "1,260", True) + ")"),
-          ("Cloud segment revenue", ix("Revenues", "seg", "999")),
-          ("Net loss", "(" + ix("NetIncomeLoss", "p26", "104,000", True) + ")", "Net loss per share", ix("EarningsPerShareBasic", "p26", "8.10", True, 0, "usdPerShare")),
-          ("Cash", ix("CashAndCashEquivalentsAtCarryingValue", "i26", "131,845"), "Cash from operations", ix("NetCashProvidedByUsedInOperatingActivities", "p26", "6,569")),
-          ("Summary, in billions: revenue", ix("Revenues", "y25", "4.6", scale=9), "net loss tagged twice with different values",
-           ix("NetIncomeLoss", "y25", "9,000", True), ix("NetIncomeLoss", "y25", "7,000", True))) + "</body>").encode())
 
 SMALL = page(
     p("PRELIMINARY PROSPECTUS"), p("Testco Trading Ltd"),
@@ -134,6 +105,8 @@ UNLIKE_CLASSES = page(
     table(("Class A Ordinary Shares Offered by Us", "9,722,223 Class A ordinary shares"),
           ("Class A Ordinary Shares to be Outstanding After This Offering", "38,594,629 Class A ordinary shares (40,052,962 if the over-allotment option is exercised in full)"),
           ("Class B Voting Rights Shares to be Outstanding After This Offering", "143,888,790 Class B voting rights shares")), FILLER)
+WEAK_PRICE = page(p("We are offering 300,000 shares of our common stock. The public offering price is $1.00 per share. The public offering price of $1.00 per share was set by us."),
+                  table(("Common stock offered by us", "300,000 shares"), ("Common stock to be outstanding after this offering", "15,990,000 shares")), FILLER)
 DIRECT = page(p("This prospectus relates to the registration of the resale of up to 70,728,866 shares of our common stock by the registered stockholders. "
                 "We are not selling any shares and will not receive any proceeds."), FILLER)
 
@@ -161,7 +134,7 @@ NOT_PRINTED = {"facts": {"us-gaap": {"NetIncomeLoss": {"units": {"USD": [fact("2
 
 # cik: (name, stage, form of the document, date, document, tagged facts or None)
 DEALS = {
-    9100001: ("TESTCO AI PBC", "amended", "S-1/A", "2026-11-10", BIG_TAGGED, None),
+    9100001: ("TESTCO AI PBC", "amended", "S-1/A", "2026-11-10", BIG, FACTS),
     9100002: ("Testco Trading Ltd", "amended", "F-1/A", "2026-11-12", SMALL, None),
     9100003: ("TESTCO BLANK INC", "filed", "S-1", "2026-11-03", BLANK, None),
     9100004: ("TESTCO CHIPS INC", "priced", "424B4", "2026-11-13", PRICED, NOT_PRINTED),
@@ -172,7 +145,7 @@ DEALS = {
     9100009: ("TESTCO HAND INC", "amended", "S-1/A", "2026-11-01", SMALL, None),
     9100010: ("TESTCO ACQUISITION CORP", "amended", "S-1/A", "2026-11-01", SMALL, None),
     9100011: ("TESTCO WITHDRAWN INC", "withdrawn", "S-1/A", "2026-06-01", SMALL, None),
-    9100012: ("TESTCO UNTAGGED PBC", "amended", "S-1/A", "2026-11-10", BIG, FACTS),
+    9100012: ("TESTCO WEAK PRICE INC", "priced", "424B4", "2026-10-19", WEAK_PRICE, None),
     9100013: ("TESTCO INSURANCE GROUP INC", "priced", "424B4", "2026-10-20", IN_THIS_OFFERING, None),
     9100014: ("Testco Tickets Ltd", "priced", "424B4", "2026-10-21", SHARES_OFFERED, None),
     9100015: ("Testco Holding AG", "priced", "424B4", "2026-10-22", UNLIKE_CLASSES, None),
@@ -225,18 +198,13 @@ def main():
                                                     "prior_revenue": 2545.0, "prior_operating": -5224.0})
         check("large deal: facts", [(f["value"], f["label"]) for f in fin["facts"]],
               [(131845.0, "cash on Sep 30, 2026"), (6569.0, "cash from operations, Jan to Sep 2026"), (-104000.0, "net result, Jan to Sep 2026")])
-        check("large deal: a figure tagged with two different values is dropped", "NetIncomeLoss" in str(reader.inline_facts(BIG_TAGGED)[0]) and
-              all(row["end"] != "2025-12-31" for row in reader.inline_facts(BIG_TAGGED)[0]["facts"]["us-gaap"]["NetIncomeLoss"]["units"]["USD"]), True)
-        check("large deal: figures come from the tags inside the filing", (big["checks"][-1]["how"][:38], state["9100001"]["notes"]),
-              ("tagged in the filing's own financial s", ["14 tagged figures in the filing, 1 disagree"]))
         check("large deal: nothing left out, five checks", (big["hidden"], len(big["checks"])), ([], 5))
-        other = load(9100012)
-        check("same deal without tags: falls back on the company facts file", (other["financials"]["years"] == fin["years"], other["checks"][-1]["how"][:32]),
-              (True, "taken from the tagged statements"))
+        check("a final price with no cover total and no earlier range: no breakdown", state["9100012"]["notes"][0], "the final price is not confirmed by a total on the cover or by an earlier price range")
 
         small = load(9100002)
         check("small foreign deal: offer terms", small["offer"], {"low": 4.0, "high": 6.0, "holder_shares": 0, "company_shares": 1500000, "shares_after": 12500000})
         check("small foreign deal: untagged financials are left out", ("financials" in small, [h["item"] for h in small["hidden"]]), (False, ["Revenue, results and cash"]))
+        check("small foreign deal: says why", small["hidden"][0]["why"], "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet")
 
         check("blank price range: no breakdown", (state["9100003"]["result"], state["9100003"]["notes"]), ("not confirmed", ["no price range in this filing yet"]))
 

@@ -8,8 +8,10 @@ This is the no-cost part of the reader. It uses no model. It reads:
 
     the offer terms     price range or final price, shares sold by the company
                         and by existing holders, shares outstanding afterwards
-    the financials      revenue, operating or net result and cash, from the
-                        tagged (XBRL) financial statements
+    the financials      revenue, operating or net result and cash, but only
+                        for a company that already files tagged (XBRL)
+                        reports. IPO filings themselves are not tagged, so
+                        for most deals this part waits for the model step.
 
 A figure is kept only if a consistency check passes: the filing has to state it
 in two places, or two figures have to agree with each other. A figure that
@@ -35,10 +37,10 @@ from pathlib import Path
 import tracker
 
 READ_FORMS = tracker.INITIAL | tracker.AMEND | tracker.PRICED
-MAX_DOCS = 40                 # prospectuses downloaded per run; a backlog clears over a few runs
+MAX_DOCS = 80                 # prospectuses downloaded per run; a backlog clears over a few runs
 PRICED_DAYS = 120             # keep reading deals that priced this recently
 FRONT = 400_000               # characters of text that hold the cover page and the summary
-STATE_VERSION = 2              # bump to read every deal again after the reader changes
+STATE_VERSION = 3              # bump to read every deal again after the reader changes
 NO_RANGE = "no price range in this filing yet"
 RESALE_ONLY = "a resale by existing holders, such as a direct listing: nothing is sold at a set price"
 
@@ -77,7 +79,7 @@ RANGE_A = re.compile(r"price[^$]{0,160}?between " + USD + r" and " + USD)
 RANGE_B = re.compile(r"between " + USD + r" and " + USD + r" per (?:[a-z]+ ){0,3}?(?:share|ads)")
 MIDPOINT = re.compile(r"offering price of " + USD + r" per (?:[a-z]+ ){0,4}?(?:share|ads)[^.]{0,80}?mid-?point")
 FINAL = re.compile(r"public offering price(?: per (?:[a-z]+ ){0,3}?(?:share|ads))? (?:is|of|was) " + USD)
-FINAL_ROW = re.compile(r"public offering price(?: per (?:[a-z]+ ){0,3}?(?:share|ads))?[ :]{1,3}" + USD + r" " + USD)
+FINAL_ROW = re.compile(r"public offering price(?: per (?:[a-z]+ ){0,3}?(?:share|ads))?(?:[ :.]|\(\d\))+" + USD + r" " + USD)
 SELL_COVER = re.compile(HOLDERS + r"[^.;]{0,140}? (?:are|is) (?:offering|selling) (?:an additional |up to )?" + NUM + r" ")
 SELL_ROW = re.compile(r"offered by (?:the )?" + HOLDERS + r"[^\d.]{0,60}" + NUM + r" ")
 KIND = r"(?:shares|ordinary|american|adss?|class|common)"
@@ -155,7 +157,7 @@ def offer_terms(text, form):
     if sell_cover or sell_row:
         holder, how = agree(sell_cover, sell_row, text)
         if holder is None:
-            return None, None, [], ["the number of shares sold by existing holders is not stated the same way twice"] + near(front, HOLDERS + r"[^.]{0,80}offering")
+            return None, None, [], ["the number of shares sold by existing holders is not stated the same way twice"] + near(front, HOLDERS + r"[^.]{0,140}?\d,\d{3}")
         checks.append({"item": "Shares sold by existing holders", "how": how})
     elif re.search(HOLDERS, front[:60_000]):
         return None, None, [], ["existing holders are selling, but the number of shares could not be read"]
@@ -184,7 +186,7 @@ def offer_terms(text, form):
         if any(p == offer["price"] and abs(t - total) <= total * 0.005 for p, t in rows):
             checks.append({"item": "Final price", "how": "price times shares sold equals the total on the cover"})
         elif prices and prices.most_common(1)[0][1] >= 2:
-            checks.append({"item": "Final price", "how": "stated more than once in the filing"})
+            checks.append({"item": "Final price", "how": "stated more than once in the filing", "weak": True})
         else:
             return None, None, [], ["the final price is not confirmed by the total on the cover"] + near(front, r"public offering price")
 
@@ -260,62 +262,6 @@ def tagged(facts, names):
     return {}, None
 
 
-CONTEXT = re.compile(r"<(?:xbrli:)?context\b[^>]*?\bid=[\"']([^\"']+)[\"'][^>]*>(.*?)</(?:xbrli:)?context>", re.S | re.I)
-UNIT = re.compile(r"<(?:xbrli:)?unit\b[^>]*?\bid=[\"']([^\"']+)[\"'][^>]*>(.*?)</(?:xbrli:)?unit>", re.S | re.I)
-FACT = re.compile(r"<ix:nonfraction\b([^>]*)>(.*?)</ix:nonfraction>", re.S | re.I)
-ATTR = re.compile(r"([a-z:]+)\s*=\s*[\"']([^\"']*)[\"']", re.I)
-
-
-def inline_facts(page):
-    """The figures tagged inside the filing itself, in the same shape as the SEC's company facts file.
-    Only company-wide figures are kept (no segments). Returns (facts, how many tagged figures, how many disagree)."""
-    page = page.decode("utf-8", errors="replace") if isinstance(page, bytes) else page
-    date = lambda name, body: (re.search(r"<(?:xbrli:)?" + name + r">\s*(\d{4}-\d\d-\d\d)", body, re.I) or [None, None])[1]
-    contexts = {}
-    for key, body in CONTEXT.findall(page):
-        if re.search(r"<(?:xbrli:)?(?:segment|scenario)\b", body, re.I):
-            continue
-        start, end = date("startdate", body), date("enddate", body) or date("instant", body)
-        if end:
-            contexts[key] = (start, end)
-    currencies = {}
-    for key, body in UNIT.findall(page):
-        measure = re.search(r"iso4217:([a-z]{3})", body, re.I)
-        if measure and "divide" not in body.lower():
-            currencies[key] = measure.group(1).upper()
-    seen = {}
-    for attributes, inner in FACT.findall(page):
-        a = {k.lower(): v for k, v in ATTR.findall(attributes)}
-        taxonomy, _, name = a.get("name", "").partition(":")
-        period, currency = contexts.get(a.get("contextref")), currencies.get(a.get("unitref"))
-        if taxonomy not in ("us-gaap", "ifrs-full") or not period or not currency:
-            continue
-        shown = TAG.sub("", inner).replace("\u00a0", "").replace(" ", "").strip("()")
-        layout = a.get("format", "").lower()
-        if "zerodash" in layout or "fixed-zero" in layout or shown in ("", "-", "\u2014", "\u2013"):
-            value = 0.0
-        else:
-            shown = shown.replace(".", "").replace(",", ".") if "commadecimal" in layout else shown.replace(",", "")
-            try:
-                value = float(shown)
-            except ValueError:
-                continue
-        scale = int(a.get("scale") or 0)
-        value = value * 10 ** scale * (-1 if a.get("sign") == "-" else 1)
-        seen.setdefault((taxonomy, name, currency, period), []).append((scale, value))
-    facts, clash = {}, 0
-    for (taxonomy, name, currency, (start, end)), values in seen.items():
-        scale, value = min(values)                       # the most exact statement of the figure
-        if any(abs(v - value) > max(abs(value) * 0.01, 10 ** max(sc, scale)) for sc, v in values):
-            clash += 1                                   # the filing tags this figure with two different values
-            continue
-        row = {"end": end, "val": value, "filed": ""}
-        if start:
-            row["start"] = start
-        facts.setdefault(taxonomy, {}).setdefault(name, {"units": {}})["units"].setdefault(currency, []).append(row)
-    return {"facts": facts}, len(seen), clash
-
-
 def days(start, end):
     return (dt.date.fromisoformat(end) - dt.date.fromisoformat(start)).days
 
@@ -334,7 +280,7 @@ def printed(value, text):
     return any(len(shape) >= 3 and re.search(r"(?<![\d,.])" + re.escape(shape) + r"(?![\d,]|\.\d)", text) for shape in shapes)
 
 
-def financials(facts, text, doc_date, inline=False):
+def financials(facts, text, doc_date):
     """Revenue, result and cash from the tagged statements. Returns (block, checks, reason it was left out)."""
     revenue, rev_currency = tagged(facts, REVENUE)
     result, currency = tagged(facts, OPERATING)
@@ -364,7 +310,7 @@ def financials(facts, text, doc_date, inline=False):
         return str(day.replace(year=day.year - 1, day=min(day.day, 28) if day.month == 2 else day.day))
 
     to_print = [result[last]] + ([near(last, revenue)] if near(last, revenue) is not None else [])
-    if not inline and not all(printed(v, text) for v in to_print):
+    if not all(printed(v, text) for v in to_print):
         return None, [], "the tagged figures for the latest year could not be found in the printed statements"
 
     m = lambda v: None if v is None else round(v / 1e6, 3)
@@ -376,7 +322,7 @@ def financials(facts, text, doc_date, inline=False):
         k = max(part, key=lambda k: k[1])
         before = (year_before(k[0]), year_before(k[1]))
         prior = near(before, result)
-        if prior is not None and (inline or printed(result[k], text)):
+        if prior is not None and printed(result[k], text):
             block["ytd"] = {"label": period_label(*k), "revenue": m(near(k, revenue)), "operating": m(result[k]),
                             "prior_label": period_label(*before), "prior_revenue": m(near(before, revenue)), "prior_operating": m(prior)}
             latest = k
@@ -395,9 +341,7 @@ def financials(facts, text, doc_date, inline=False):
         if near(latest, net) is not None and net_currency == "USD":
             facts_out.append({"value": m(near(latest, net)), "label": f"net result, {period_label(*latest)}", "signed": True})
     block["facts"] = facts_out
-    how = ("tagged in the filing's own financial statements; no figure used is tagged with two different values" if inline
-           else "taken from the tagged statements, and the latest year's figures also appear in the printed statements")
-    return block, [{"item": "Financial figures", "how": how}], None
+    return block, [{"item": "Financial figures", "how": "taken from the tagged statements, and the latest year's figures also appear in the printed statements"}], None
 
 
 # ---------- reading one deal ----------
@@ -431,21 +375,20 @@ def read_deal(fetcher, record, doc, earlier, today):
     offer, exchange, checks, hidden = offer_terms(text, form)
     if offer is None:
         return None, hidden
-    facts, count, clash = inline_facts(page)
-    if form in tracker.PRICED:                           # the filing before pricing has the range, and usually the tagged statements
+    if form in tracker.PRICED:                           # the filing before pricing has the price range
         before = [e for e in record.get("filings", []) if e["form"] in tracker.INITIAL | tracker.AMEND and e["date"] <= date]
-        if before:
-            try:
-                page_before = fetcher.get(before[-1]["url"])
-            except tracker.NotFound:
-                page_before = None
-            if page_before:
-                low, high, how = price_range(to_text(page_before))
-                if low is not None:
-                    offer["low"], offer["high"] = low, high
-                    checks.append({"item": "Price range before pricing", "how": how})
-                if not count:
-                    facts, count, clash = inline_facts(page_before)
+        try:
+            low, high, how = price_range(to_text(fetcher.get(before[-1]["url"]))) if before else (None, None, None)
+        except tracker.NotFound:
+            low = None
+        if low is not None:
+            offer["low"], offer["high"] = low, high
+            checks.append({"item": "Price range before pricing", "how": how})
+        weak = [c for c in checks if c.pop("weak", False)]
+        if weak:                                         # the price did not match a cover total: it must at least fit the earlier range
+            if low is None or not low * 0.6 <= offer["price"] <= high * 1.5:
+                return None, ["the final price is not confirmed by a total on the cover or by an earlier price range"] + near(text[:FRONT], r"public offering price")
+            weak[0]["how"] += ", and in line with the range set before pricing"
     if "low" not in offer and earlier and earlier.get("method") == "auto" and earlier.get("offer", {}).get("low"):
         offer["low"], offer["high"] = earlier["offer"]["low"], earlier["offer"]["high"]
     out = {"cik": record["cik"], "method": "auto", "loaded": today.isoformat(), "basis": f"{FORM_NAMES[form]} filed {long_date(date)}",
@@ -454,18 +397,15 @@ def read_deal(fetcher, record, doc, earlier, today):
         out["exchange"] = exchange
     if earlier and earlier.get("method") == "auto" and earlier.get("range_set"):
         out["range_set"] = earlier["range_set"]
-    block, why, log = None, "the financial statements in this filing are not tagged yet", "no tags in the filing"
-    if count:
-        block, fin_checks, why = financials(facts, text, date, inline=True)
-        log = f"{count} tagged figures in the filing, {clash} disagree" + ("" if block else f": {why}")
-    if not block:                                        # fall back on the SEC's company facts file
-        try:
-            block, fin_checks, why2 = financials(json.loads(fetcher.get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{record['cik']:010d}.json")), text, date)
-            log += "; company facts file" + ("" if block else f": {why2}")
-            if not block and not count:
-                why = why2
-        except tracker.NotFound:
-            log += "; no company facts file"
+    # IPO filings do not carry tagged financial statements; the SEC's company facts file has them once the company reports
+    block, why, log = None, "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet", "no company facts file"
+    try:
+        block, fin_checks, reason = financials(json.loads(fetcher.get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{record['cik']:010d}.json")), text, date)
+        log = "company facts file" + ("" if block else f": {reason}")
+        if not block and ("printed" in reason or "reports in" in reason):
+            why = reason
+    except tracker.NotFound:
+        pass
     if block:
         out["financials"] = block
         checks += fin_checks
@@ -489,10 +429,10 @@ def run(fetcher, today, list_path, breakdown_dir, state_path, max_docs=MAX_DOCS,
     for record in records:
         doc = document_for(record) if wanted(record, today) else None
         if doc and deals.get(str(record["cik"]), {}).get("url") != doc[2]:
-            queue.append((record["stage"] not in ("priced", "effective"), doc[1], record, doc))
-    queue.sort(key=lambda item: (item[0], -dt.date.fromisoformat(item[1]).toordinal()))
+            queue.append((record["stage"] not in ("priced", "effective"), not record.get("tickers"), doc[1], record, doc))
+    queue.sort(key=lambda item: (item[0], item[1], -dt.date.fromisoformat(item[2]).toordinal()))
     written = 0
-    for _, _, record, doc in queue[:max_docs]:
+    for _, _, _, record, doc in queue[:max_docs]:
         cik = str(record["cik"])
         path = breakdown_dir / f"{cik}.json"
         earlier = tracker.load_json(path, None)
