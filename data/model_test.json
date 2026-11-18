@@ -1,7 +1,7 @@
 {
  "version": 2,
  "run": "2026-11-18",
- "asked_model": false,
+ "asked_model": true,
  "deals": [
   {
    "cik": 2130357,
@@ -54,7 +54,16 @@
    "sections_not_found": [],
    "characters_sent": 86155,
    "tokens_estimated": 24616,
-   "models": {}
+   "models": {
+    "claude-haiku-5-5": {
+     "tokens": {},
+     "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.\"},\"request_id\":\"req_011Ch"
+    },
+    "claude-sonnet-5-5": {
+     "tokens": {},
+     "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.\"},\"request_id\":\"req_011Ch"
+    }
+   }
   },
   {
    "cik": 1698506,
@@ -105,7 +114,16 @@
    ],
    "characters_sent": 78046,
    "tokens_estimated": 22299,
-   "models": {}
+   "models": {
+    "claude-haiku-5-5": {
+     "tokens": {},
+     "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.\"},\"request_id\":\"req_011Ch"
+    },
+    "claude-sonnet-5-5": {
+     "tokens": {},
+     "error": "HTTP 400: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"This API key is not scoped to a workspace, so this request must include the anthropic-workspace-id header with the ID of the workspace to use. Add the header, or use an API key that is scoped to a workspace.\"},\"request_id\":\"req_011Ch"
+    }
+   }
   }
  ]
 }
