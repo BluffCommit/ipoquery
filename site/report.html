@@ -495,7 +495,11 @@ function newsHTML(items, note){
 }
 const newsBox = r => `<div id="news">${newsHTML(NEWS[r.cik] || [], '')}</div>`;
 const newsFound = {};
-let newsAsked = 0, newsTimer = null;
+let newsTimer = null;
+/* The index allows one request every five seconds from an address. The time of the last one is kept in the browser,
+   so the gap also holds across a refresh or a second tab. */
+const lastAsked = () => { try { return Number(localStorage.getItem('news-asked')) || 0; } catch (e) { return 0; } };
+const markAsked = () => { try { localStorage.setItem('news-asked', String(Date.now())); } catch (e) {} };
 function loadNews(r){
   const name = searchName(r), here = () => location.hash.slice(1) === 'ipo-' + r.cik;
   const show = (items, note) => { const box = document.getElementById('news'); if (box && here()) box.innerHTML = newsHTML(items.length ? items : (NEWS[r.cik] || []), note); };
@@ -503,20 +507,25 @@ function loadNews(r){
   if (name.length < 4) return;
   if (!newsFound[r.cik]) { try { const kept = JSON.parse(sessionStorage.getItem('news-' + r.cik)); if (Array.isArray(kept)) newsFound[r.cik] = kept; } catch (e) {} }
   if (newsFound[r.cik]) return show(newsFound[r.cik], DEBUG ? 'Headlines lookup: already done this visit.' : '');
-  newsTimer = setTimeout(() => {                          // the index asks for no more than one request every five seconds
+  const term = name.includes(' ') ? `"${name}"` : name;
+  const url = 'https://api.gdeltproject.org/api/v2/doc/doc?' + new URLSearchParams({query: `${term} (ipo OR "initial public offering" OR "public offering" OR listing) sourcelang:english`,
+    mode: 'artlist', maxrecords: '40', sort: 'datedesc', timespan: '3m', format: 'jsonp', callback: 'got'});
+  const ask = tries => { newsTimer = setTimeout(() => {
     if (!here()) return;
-    newsAsked = Date.now();
-    const term = name.includes(' ') ? `"${name}"` : name;
-    const url = 'https://api.gdeltproject.org/api/v2/doc/doc?' + new URLSearchParams({query: `${term} (ipo OR "initial public offering" OR "public offering" OR listing) sourcelang:english`,
-      mode: 'artlist', maxrecords: '40', sort: 'datedesc', timespan: '3m', format: 'jsonp', callback: 'got'});
+    markAsked();
     askIndex(url, (data, why) => {
-      if (!data || typeof data !== 'object') { if (DEBUG) show([], 'Headlines lookup failed: ' + why + '.'); return; }
+      if (!data || typeof data !== 'object') {
+        if (tries < 2 && here()) { if (DEBUG) show([], `Headlines lookup: ${why}; trying again in a few seconds.`); return ask(tries + 1); }
+        if (DEBUG) show([], 'Headlines lookup failed: ' + why + '.');
+        return;
+      }
       const articles = Array.isArray(data.articles) ? data.articles.slice(0, 60) : [], items = pickNews(articles, name);
       newsFound[r.cik] = items;
       try { sessionStorage.setItem('news-' + r.cik, JSON.stringify(items)); } catch (e) {}
-      show(items, DEBUG ? `Headlines lookup worked: ${articles.length} articles found, ${items.length} name the company.` : '');
+      show(items, DEBUG ? `Headlines lookup worked: ${articles.length} articles found, ${items.length} kept.` : '');
     });
-  }, Math.max(0, 6000 - (Date.now() - newsAsked)));
+  }, Math.max(0, 6500 - (Date.now() - lastAsked()))); };
+  ask(0);
 }
 /* The index does not let web pages read its answers directly, only as a script. That script runs inside a sealed,
    invisible frame that cannot touch this page; all it can do is hand back the list of articles. */
@@ -524,7 +533,7 @@ function askIndex(url, done){
   const id = 'n' + Math.random().toString(36).slice(2), frame = document.createElement('iframe');
   const finish = (data, why) => { window.removeEventListener('message', heard); clearTimeout(timer); frame.remove(); done(data, why); };
   const heard = e => { if (e.source === frame.contentWindow && e.data && e.data.id === id) finish(e.data.data || null, String(e.data.why || 'no headlines came back')); };
-  const timer = setTimeout(() => finish(null, 'no answer in 20 seconds'), 20000);
+  const timer = setTimeout(() => finish(null, 'no answer in 30 seconds'), 30000);
   window.addEventListener('message', heard);
   frame.setAttribute('sandbox', 'allow-scripts');
   frame.style.display = 'none';
