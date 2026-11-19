@@ -117,7 +117,7 @@ button,input,select{font:inherit;color:inherit}
 .tabs button+button{border-left:1px solid var(--ink2)}
 .tabs button[aria-pressed="true"]{background:var(--band);color:var(--band-ink)}
 .filters label{display:grid;gap:3px;font:600 11px var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
-.filters select{height:38px;min-width:150px;border:1px solid var(--line);background:var(--bg);padding:0 8px;font:14px var(--body);color:var(--ink);border-radius:0}
+.filters select{height:38px;min-width:132px;border:1px solid var(--line);background:var(--bg);padding:0 8px;font:14px var(--body);color:var(--ink);border-radius:0}
 .filters label.chk{display:flex;align-items:center;gap:7px;min-height:38px;font:14px var(--body);text-transform:none;letter-spacing:0;color:var(--ink)}
 .tbox{border:1px solid var(--line);border-top:0}
 .tbl{width:100%;min-width:640px;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
@@ -327,11 +327,17 @@ const units = b => b.offer.unit === 'ADS' ? 'depositary shares' : 'shares';
 const bestRound = b => (b.rounds || []).reduce((m, r) => Math.max(m, mid(b) / r.price), 0);
 
 /* ---------- home ---------- */
-const F = {tab:'upcoming', q:'', sector:'', stage:'', ticker:false, shells:false, bd:false, limit:40};
-const pool = () => ALL.filter(r => (F.shells || r.kind === 'company') && (!F.ticker || r.tickers.length) && (!F.bd || BD[r.cik]));
+const F = {tab:'upcoming', q:'', sector:'', stage:'', raise:'', value:'', sort:'', ticker:false, shells:false, bd:false, limit:40};
+const BANDS = {raise: [['Under $25M', 0, 25e6], ['$25M to $100M', 25e6, 100e6], ['$100M to $1B', 100e6, 1e9], ['Over $1B', 1e9, Infinity]],
+               value: [['Under $250M', 0, 250e6], ['$250M to $1B', 250e6, 1e9], ['$1B to $10B', 1e9, 10e9], ['Over $10B', 10e9, Infinity]]};
+const valueOf = r => BD[r.cik] ? calc(BD[r.cik], mid(BD[r.cik])).val : null;
+const inBand = (amount, kind) => { if (F[kind] === '') return true; const b = BANDS[kind][F[kind]]; return amount != null && amount > 0 && amount >= b[1] && amount < b[2]; };
+const pool = () => ALL.filter(r => (F.shells || r.kind === 'company') && (!F.ticker || r.tickers.length) && (!F.bd || BD[r.cik]) && inBand(raising(r), 'raise') && inBand(valueOf(r), 'value'));
 function rows(){ const q = F.q.trim().toLowerCase();
-  return pool().filter(r => bucket(r) === F.tab && (!F.sector || r.sector === F.sector) && (!F.stage || r.stage === F.stage)
-    && (!q || r.name.toLowerCase().includes(q) || r.tickers.some(t => t.toLowerCase().includes(q)))); }
+  const list = pool().filter(r => bucket(r) === F.tab && (!F.sector || r.sector === F.sector) && (!F.stage || r.stage === F.stage)
+    && (!q || r.name.toLowerCase().includes(q) || r.tickers.some(t => t.toLowerCase().includes(q))));
+  const size = F.sort === 'raise' ? raising : F.sort === 'value' ? r => valueOf(r) || 0 : null;
+  return size ? [...list].sort((a, b) => size(b) - size(a)) : list; }
 function search(q){ F.q = q; F.limit = 40; F.stage = '';
   if (q.trim() && !rows().length) { const hit = ['upcoming','priced','closed'].find(t => { F.tab = t; return rows().length; }); if (!hit) F.tab = 'upcoming'; } }
 function tableHTML(){
@@ -339,13 +345,14 @@ function tableHTML(){
   const co = r => `<td><div class="co"><a href="#ipo-${r.cik}">${esc(nice(r.name))}</a>${BD[r.cik] ? ' <span class="tag">Breakdown</span>' : ''}</div><small>${subline(r)}</small></td>`;
   const doc = r => `<td><a href="${esc(r.latest.url)}">${esc(r.latest.form)} ↗</a><small>${day(r.latest.date)}</small></td>`;
   const amt = r => `<td class="num">${BD[r.cik] ? money(raising(r)) : '<span class="muted">—</span>'}</td>`;
+  const val = r => `<td class="num">${valueOf(r) ? money(valueOf(r)) : '<span class="muted">—</span>'}</td>`;
   let head, body;
   if (F.tab === 'upcoming') {
-    head = '<th>Company</th><th>Stage</th><th>First filed</th><th class="num">Amendments</th><th class="num">Raising</th><th>Latest document</th>';
-    body = shown.map(r => `<tr>${co(r)}<td>${stageHTML(r)}</td><td>${day(r.first_filed)}${r.draft_date ? `<small>draft sent ${day(r.draft_date)}</small>` : ''}</td><td class="num">${r.amendments}</td>${amt(r)}${doc(r)}</tr>`).join('');
+    head = '<th>Company</th><th>Stage</th><th>First filed</th><th class="num">Raising</th><th class="num">Company value</th><th>Latest document</th>';
+    body = shown.map(r => `<tr>${co(r)}<td>${stageHTML(r)}</td><td>${day(r.first_filed)}${r.draft_date ? `<small>draft sent ${day(r.draft_date)}</small>` : ''}${r.amendments ? `<small>amended ${r.amendments === 1 ? 'once' : r.amendments + ' times'}</small>` : ''}</td>${amt(r)}${val(r)}${doc(r)}</tr>`).join('');
   } else if (F.tab === 'priced') {
-    head = '<th>Company</th><th>Final prospectus</th><th>Exchange</th><th class="num">Raised</th><th class="num">Filing to pricing</th><th>Latest document</th>';
-    body = shown.map(r => `<tr>${co(r)}<td>${day(r.priced_date)}</td><td>${esc(r.exchanges.join(', ')) || '<span class="muted">Not listed in EDGAR</span>'}</td>${amt(r)}<td class="num">${daysBetween(r.first_filed, r.priced_date)} days</td>${doc(r)}</tr>`).join('');
+    head = '<th>Company</th><th>Final prospectus</th><th class="num">Raised</th><th class="num">Company value</th><th class="num">Filing to pricing</th><th>Latest document</th>';
+    body = shown.map(r => `<tr>${co(r)}<td>${day(r.priced_date)}${r.direct ? '<small>direct listing</small>' : ''}</td>${amt(r)}${val(r)}<td class="num">${daysBetween(r.first_filed, r.priced_date)} days</td>${doc(r)}</tr>`).join('');
   } else {
     head = '<th>Company</th><th>What happened</th><th>First filed</th><th class="num">Amendments</th><th>Latest document</th>';
     body = shown.map(r => `<tr>${co(r)}<td>${stageHTML(r)}</td><td>${day(r.first_filed)}</td><td class="num">${r.amendments}</td>${doc(r)}</tr>`).join('');
@@ -360,9 +367,12 @@ function filtersHTML(){
   const tab = (k, l) => `<button type="button" data-tab="${k}" aria-pressed="${F.tab === k}">${l} · ${n(k)}</button>`;
   const opt = (v, l, cur) => `<option value="${esc(v)}"${v === cur ? ' selected' : ''}>${esc(l)}</option>`;
   const sectors = [...new Set(ALL.filter(r => r.kind === 'company').map(r => r.sector))].sort();
-  return `<div class="tabs" role="group" aria-label="Which IPOs">${tab('upcoming','Upcoming')}${tab('priced','Priced')}${tab('closed','Withdrawn or stalled')}</div>
+  return `<div class="tabs" role="group" aria-label="Which IPOs">${tab('upcoming','Upcoming')}${tab('priced','Priced')}${tab('closed','Withdrawn or stalled')}</div><span style="flex-basis:100%;height:0"></span>
     <label for="f-sector">Sector<select id="f-sector">${opt('','All sectors',F.sector)}${sectors.map(s => opt(s, s, F.sector)).join('')}</select></label>
     <label for="f-stage">Stage<select id="f-stage"${F.tab !== 'upcoming' ? ' disabled' : ''}>${opt('','Any stage',F.stage)}${opt('filed','Filed',F.stage)}${opt('amended','Amended',F.stage)}${opt('effective','Cleared by the SEC',F.stage)}</select></label>
+    <label for="f-raise">Amount raised<select id="f-raise"${F.tab === 'closed' ? ' disabled' : ''}>${opt('','Any amount',F.raise)}${BANDS.raise.map((b, i) => opt(String(i), b[0], F.raise)).join('')}</select></label>
+    <label for="f-value">Company value<select id="f-value"${F.tab === 'closed' ? ' disabled' : ''}>${opt('','Any value',F.value)}${BANDS.value.map((b, i) => opt(String(i), b[0], F.value)).join('')}</select></label>
+    <label for="f-sort">Sort by<select id="f-sort">${opt('','Latest filing',F.sort)}${opt('raise','Amount raised',F.sort)}${opt('value','Company value',F.sort)}</select></label>
     <label class="chk" for="f-ticker"><input id="f-ticker" type="checkbox"${F.ticker ? ' checked' : ''}> Has a ticker symbol</label>
     <label class="chk" for="f-bd"><input id="f-bd" type="checkbox"${F.bd ? ' checked' : ''}> Has a breakdown</label>
     <label class="chk" for="f-shells"><input id="f-shells" type="checkbox"${F.shells ? ' checked' : ''}> Include shells and funds</label>`;
@@ -370,9 +380,9 @@ function filtersHTML(){
 function refresh(){
   document.getElementById('filters').innerHTML = filtersHTML();
   document.getElementById('tbl').innerHTML = tableHTML();
-  document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { F.tab = b.dataset.tab; F.limit = 40; if (F.tab !== 'upcoming') F.stage = ''; refresh(); });
+  document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { F.tab = b.dataset.tab; F.limit = 40; if (F.tab !== 'upcoming') F.stage = ''; if (F.tab === 'closed') F.raise = F.value = ''; refresh(); });
   const on = (id, k, chk) => { const el = document.getElementById(id); if (el) el.onchange = e => { F[k] = chk ? e.target.checked : e.target.value; F.limit = 40; refresh(); }; };
-  on('f-sector','sector'); on('f-stage','stage'); on('f-ticker','ticker',true); on('f-bd','bd',true); on('f-shells','shells',true);
+  on('f-sector','sector'); on('f-stage','stage'); on('f-raise','raise'); on('f-value','value'); on('f-sort','sort'); on('f-ticker','ticker',true); on('f-bd','bd',true); on('f-shells','shells',true);
   const m = document.getElementById('more'); if (m) m.onclick = () => { F.limit += 40; refresh(); };
 }
 function featCard(r, solo){ const b = BD[r.cik], m = calc(b, mid(b)), o = b.offer, ahead = o.expected_pricing && o.expected_pricing >= today();
@@ -417,7 +427,7 @@ function home(){
     ${feats.length ? `<section><div class="bar"><h2>Breakdowns</h2><span>The largest upcoming deals with a price range</span></div><div class="hair feat">${feats.map(r => featCard(r, feats.length === 1)).join('')}</div></section>` : ''}
     <div class="cols">
       <div class="main">
-        <section><div class="bar" id="all-ipos"><h2>All IPOs</h2><span>Filter by stage or sector</span></div>
+        <section><div class="bar" id="all-ipos"><h2>All IPOs</h2><span>Filter by stage, sector or size</span></div>
           <div class="filters" id="filters"></div><div class="tbox" id="tbl"></div></section>
       </div>
       <aside class="rail">
