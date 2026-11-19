@@ -20,10 +20,46 @@
    "problem": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "2133022": {
-   "checked": "",
+   "checked": "2026-11-19T02:02",
    "name": "Oura",
-   "items": [],
-   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
+   "items": [
+    {
+     "title": "Is the Oura Ring losing its aura? Recent setbacks raise questions",
+     "source": "pocket-lint.com",
+     "date": "2026-10-20",
+     "url": "https://www.pocket-lint.com/oura-ring-losing-its-aura/"
+    },
+    {
+     "title": "Oura Delays IPO Amid Market Uncertainty | Talk Radio 105. 9",
+     "source": "talkradio1059.iheart.com",
+     "date": "2026-09-30",
+     "url": "https://talkradio1059.iheart.com/content/2026-09-30-oura-delays-ipo-amid-market-uncertainty/"
+    },
+    {
+     "title": "Oura Delays IPO Amid Market Uncertainty | News Radio 1400 WRAK",
+     "source": "wrak.iheart.com",
+     "date": "2026-09-30",
+     "url": "https://wrak.iheart.com/content/2026-09-30-oura-delays-ipo-amid-market-uncertainty/"
+    },
+    {
+     "title": "Oura Delays IPO Amid Market Uncertainty",
+     "source": "650keni.iheart.com",
+     "date": "2026-09-30",
+     "url": "https://650keni.iheart.com/content/2026-09-30-oura-delays-ipo-amid-market-uncertainty/"
+    },
+    {
+     "title": "Oura Delays IPO Amid Market Uncertainty | PowerTalk 1360 KFIV",
+     "source": "powertalk1360.iheart.com",
+     "date": "2026-09-30",
+     "url": "https://powertalk1360.iheart.com/content/2026-09-30-oura-delays-ipo-amid-market-uncertainty/"
+    },
+    {
+     "title": "Oura Delays IPO Amid Market Uncertainty | News Radio 101. 9 Big WAAX",
+     "source": "1019bigwaax.iheart.com",
+     "date": "2026-09-30",
+     "url": "https://1019bigwaax.iheart.com/content/2026-09-30-oura-delays-ipo-amid-market-uncertainty/"
+    }
+   ]
   },
   "2093018": {
    "checked": "2026-11-19T01:37",
