@@ -18,6 +18,24 @@
    "name": "vVARDIS",
    "items": [],
    "problem": "HTTPError: HTTP Error 429: Too Many Requests"
+  },
+  "2133022": {
+   "checked": "",
+   "name": "Oura",
+   "items": [],
+   "problem": "The specified phrase is too short."
+  },
+  "2093018": {
+   "checked": "",
+   "name": "CopperTech",
+   "items": [],
+   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
+  },
+  "2103076": {
+   "checked": "",
+   "name": "OPay",
+   "items": [],
+   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
   }
  }
 }
