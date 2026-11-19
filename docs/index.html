@@ -525,7 +525,7 @@ function loadNews(r){
     markAsked();
     askIndex(url, (data, why) => {
       if (!data || typeof data !== 'object') {
-        if (tries < 2 && here()) { if (DEBUG) show([], `Headlines lookup: ${why}; trying again in a few seconds.`); return ask(tries + 1); }
+        if (tries < 3 && here()) { if (DEBUG) show([], `Headlines lookup: ${why}; trying again in ${[7, 15, 30][tries]} seconds (try ${tries + 2} of 4).`); return ask(tries + 1); }
         if (DEBUG) show([], 'Headlines lookup failed: ' + why + '.');
         return;
       }
@@ -534,7 +534,7 @@ function loadNews(r){
       try { sessionStorage.setItem('news-' + r.cik, JSON.stringify(items)); } catch (e) {}
       show(items, DEBUG ? `Headlines lookup worked: ${articles.length} articles found, ${items.length} kept.` : '');
     });
-  }, Math.max(0, 6500 - (Date.now() - lastAsked()))); };
+  }, Math.max([0, 7000, 15000, 30000][tries], 6500 - (Date.now() - lastAsked()))); };
   ask(0);
 }
 /* The index does not let web pages read its answers directly, only as a script. That script runs inside a sealed,
