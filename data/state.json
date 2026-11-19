@@ -89,7 +89,7 @@
    "withdrawn_date": null
   },
   "1114859": {
-   "amendments": 1,
+   "amendments": 2,
    "cik": 1114859,
    "draft_date": null,
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1114859",
@@ -107,6 +107,11 @@
      "date": "2026-10-28",
      "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008135/glow_s1a1.htm"
+    },
+    {
+     "date": "2026-11-18",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008934/glow_s1a2.htm"
     }
    ],
    "first_filed": "2026-09-22",
@@ -114,11 +119,11 @@
    "form": "S-1",
    "industry": "Services-Prepackaged Software",
    "kind": "company",
-   "last_activity": "2026-10-28",
+   "last_activity": "2026-11-18",
    "latest": {
-    "date": "2026-10-28",
+    "date": "2026-11-18",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008135/glow_s1a1.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008934/glow_s1a2.htm"
    },
    "listing_date": null,
    "location": "NV",
@@ -17695,7 +17700,7 @@
    "withdrawn_date": null
   },
   "2045873": {
-   "amendments": 2,
+   "amendments": 3,
    "cik": 2045873,
    "draft_date": "2025-03-14",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2045873",
@@ -17716,6 +17721,11 @@
      "date": "2026-06-04",
      "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026064975/ea0233217-06.htm"
+    },
+    {
+     "date": "2026-11-18",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026121817/ea0233217-08.htm"
     }
    ],
    "first_filed": "2025-10-10",
@@ -17723,11 +17733,11 @@
    "form": "F-1",
    "industry": "Optical Instruments & Lenses",
    "kind": "company",
-   "last_activity": "2026-06-04",
+   "last_activity": "2026-11-18",
    "latest": {
-    "date": "2026-06-04",
+    "date": "2026-11-18",
     "form": "F-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026064975/ea0233217-06.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026121817/ea0233217-08.htm"
    },
    "listing_date": null,
    "location": "China",
@@ -18235,7 +18245,7 @@
    "withdrawn_date": null
   },
   "2048740": {
-   "amendments": 0,
+   "amendments": 1,
    "cik": 2048740,
    "draft_date": "2025-01-28",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048740",
@@ -18246,6 +18256,11 @@
      "date": "2026-11-10",
      "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026117945/ea0309743-f1_euroev.htm"
+    },
+    {
+     "date": "2026-11-18",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026121800/ea0312709-f1a1_euroev.htm"
     }
    ],
    "first_filed": "2026-11-10",
@@ -18253,11 +18268,11 @@
    "form": "F-1",
    "industry": "Motor Vehicles & Passenger Car Bodies",
    "kind": "company",
-   "last_activity": "2026-11-10",
+   "last_activity": "2026-11-18",
    "latest": {
-    "date": "2026-11-10",
-    "form": "F-1",
-    "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026117945/ea0309743-f1_euroev.htm"
+    "date": "2026-11-18",
+    "form": "F-1/A",
+    "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026121800/ea0312709-f1a1_euroev.htm"
    },
    "listing_date": null,
    "location": "Germany",
@@ -18267,9 +18282,11 @@
    "prior_attempts": 0,
    "sector": "Industrials",
    "sic": 3711,
-   "stage": "filed",
+   "stage": "amended",
    "stalled": false,
-   "tickers": [],
+   "tickers": [
+    "EUEV"
+   ],
    "unpriced": false,
    "withdrawn_date": null
   },
@@ -18352,7 +18369,7 @@
    "withdrawn_date": null
   },
   "2049203": {
-   "amendments": 0,
+   "amendments": 1,
    "cik": 2049203,
    "draft_date": "2025-01-28",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2049203",
@@ -18363,6 +18380,11 @@
      "date": "2026-11-10",
      "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026117945/ea0309743-f1_euroev.htm"
+    },
+    {
+     "date": "2026-11-18",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026121800/ea0312709-f1a1_euroev.htm"
     }
    ],
    "first_filed": "2026-11-10",
@@ -18370,11 +18392,11 @@
    "form": "F-1",
    "industry": "Motor Vehicles & Passenger Car Bodies",
    "kind": "company",
-   "last_activity": "2026-11-10",
+   "last_activity": "2026-11-18",
    "latest": {
-    "date": "2026-11-10",
-    "form": "F-1",
-    "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026117945/ea0309743-f1_euroev.htm"
+    "date": "2026-11-18",
+    "form": "F-1/A",
+    "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026121800/ea0312709-f1a1_euroev.htm"
    },
    "listing_date": null,
    "location": "Germany",
@@ -18384,7 +18406,7 @@
    "prior_attempts": 0,
    "sector": "Industrials",
    "sic": 3711,
-   "stage": "filed",
+   "stage": "amended",
    "stalled": false,
    "tickers": [],
    "unpriced": false,
@@ -55081,6 +55103,45 @@
    "unpriced": false,
    "withdrawn_date": null
   },
+  "2152975": {
+   "amendments": 0,
+   "cik": 2152975,
+   "draft_date": "2026-09-03",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2152975",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2026-11-17",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2152975/000119312526465692/ck0002152975-20261117.htm"
+    }
+   ],
+   "first_filed": "2026-11-17",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Commodity Contracts Brokers & Dealers",
+   "kind": "fund",
+   "last_activity": "2026-11-17",
+   "latest": {
+    "date": "2026-11-17",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2152975/000119312526465692/ck0002152975-20261117.htm"
+   },
+   "listing_date": null,
+   "location": "CA",
+   "marketing": false,
+   "name": "Bitwise Zcash ETF",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Finance",
+   "sic": 6221,
+   "stage": "filed",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": null
+  },
   "2153476": {
    "amendments": 1,
    "cik": 2153476,
@@ -56159,7 +56220,7 @@
    "withdrawn_date": "2026-09-16"
   }
  },
- "index_day": "2026-11-18",
+ "index_day": "2026-11-19",
  "quarters_done": [
   "2025Q4",
   "2026Q1",
@@ -57289,6 +57350,10 @@
   },
   "1894693": {
    "name": "SaverOne 2014 Ltd.",
+   "reason": "outside_window"
+  },
+  "1894954": {
+   "name": "Expion Energy, Inc.",
    "reason": "outside_window"
   },
   "1895249": {

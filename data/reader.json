@@ -1020,9 +1020,9 @@
   },
   "1114859": {
    "form": "S-1/A",
-   "date": "2026-10-28",
-   "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008135/glow_s1a1.htm",
-   "read": "2026-11-18",
+   "date": "2026-11-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008934/glow_s1a2.htm",
+   "read": "2026-11-19",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"
@@ -1758,10 +1758,10 @@
    ]
   },
   "2048740": {
-   "form": "F-1",
-   "date": "2026-11-10",
-   "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026117945/ea0309743-f1_euroev.htm",
-   "read": "2026-11-18",
+   "form": "F-1/A",
+   "date": "2026-11-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026121800/ea0312709-f1a1_euroev.htm",
+   "read": "2026-11-19",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"
@@ -1778,10 +1778,10 @@
    ]
   },
   "2049203": {
-   "form": "F-1",
-   "date": "2026-11-10",
-   "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026117945/ea0309743-f1_euroev.htm",
-   "read": "2026-11-18",
+   "form": "F-1/A",
+   "date": "2026-11-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026121800/ea0312709-f1a1_euroev.htm",
+   "read": "2026-11-19",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"
@@ -2767,9 +2767,9 @@
   },
   "2045873": {
    "form": "F-1/A",
-   "date": "2026-06-04",
-   "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026064975/ea0233217-06.htm",
-   "read": "2026-11-18",
+   "date": "2026-11-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026121817/ea0233217-08.htm",
+   "read": "2026-11-19",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"

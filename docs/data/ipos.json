@@ -1,12 +1,12 @@
 {
  "source": "SEC EDGAR",
- "data_changed": "2026-11-18",
+ "data_changed": "2026-11-19",
  "counts": {
-  "amended": 227,
+  "amended": 229,
   "effective": 155,
+  "filed": 131,
   "priced": 306,
-  "withdrawn": 41,
-  "filed": 132
+  "withdrawn": 41
  },
  "ipos": [
   {
@@ -74,6 +74,159 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1973276"
+  },
+  {
+   "cik": 1114859,
+   "name": "Glow Holdings, Inc.",
+   "tickers": [
+    "GLOH"
+   ],
+   "exchanges": [
+    "OTC"
+   ],
+   "sic": 7372,
+   "industry": "Services-Prepackaged Software",
+   "sector": "Software and internet",
+   "kind": "company",
+   "location": "NV",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-09-22",
+   "draft_date": null,
+   "amendments": 2,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-18",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-18",
+    "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008934/glow_s1a2.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-09-22",
+     "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826007288/glow_s1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-10-28",
+     "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008135/glow_s1a1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008934/glow_s1a2.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1114859"
+  },
+  {
+   "cik": 2048740,
+   "name": "EUROEV Holdings Ltd",
+   "tickers": [
+    "EUEV"
+   ],
+   "exchanges": [],
+   "sic": 3711,
+   "industry": "Motor Vehicles & Passenger Car Bodies",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "Germany",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-10",
+   "draft_date": "2025-01-28",
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-18",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-18",
+    "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026121800/ea0312709-f1a1_euroev.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-11-10",
+     "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026117945/ea0309743-f1_euroev.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026121800/ea0312709-f1a1_euroev.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048740"
+  },
+  {
+   "cik": 2045873,
+   "name": "BOUNDLESS GROUP",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 3827,
+   "industry": "Optical Instruments & Lenses",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "China",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2025-10-10",
+   "draft_date": "2025-03-14",
+   "amendments": 3,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-18",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-18",
+    "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026121817/ea0233217-08.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2025-10-10",
+     "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390025098197/ea0233217-04.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-04-02",
+     "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026039231/ea0233217-05.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-06-04",
+     "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026064975/ea0233217-06.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026121817/ea0233217-08.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2045873"
   },
   {
    "cik": 2130357,
@@ -170,6 +323,50 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2130357"
+  },
+  {
+   "cik": 2049203,
+   "name": "Aiways Automobile Europe GmbH",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 3711,
+   "industry": "Motor Vehicles & Passenger Car Bodies",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "Germany",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-10",
+   "draft_date": "2025-01-28",
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-18",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-18",
+    "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026121800/ea0312709-f1a1_euroev.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-11-10",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026117945/ea0309743-f1_euroev.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026121800/ea0312709-f1a1_euroev.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2049203"
   },
   {
    "cik": 2147831,
@@ -365,6 +562,45 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1620704"
+  },
+  {
+   "cik": 2152975,
+   "name": "Bitwise Zcash ETF",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 6221,
+   "industry": "Commodity Contracts Brokers & Dealers",
+   "sector": "Finance",
+   "kind": "fund",
+   "location": "CA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-17",
+   "draft_date": "2026-09-03",
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-17",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-17",
+    "url": "https://www.sec.gov/Archives/edgar/data/2152975/000119312526465692/ck0002152975-20261117.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/2152975/000119312526465692/ck0002152975-20261117.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2152975"
   },
   {
    "cik": 1907709,
@@ -1973,45 +2209,6 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136571"
   },
   {
-   "cik": 2048740,
-   "name": "EUROEV Holdings Ltd",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 3711,
-   "industry": "Motor Vehicles & Passenger Car Bodies",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "Germany",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "filed",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-11-10",
-   "draft_date": "2025-01-28",
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-10",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1",
-    "date": "2026-11-10",
-    "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026117945/ea0309743-f1_euroev.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-11-10",
-     "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026117945/ea0309743-f1_euroev.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048740"
-  },
-  {
    "cik": 2115027,
    "name": "Cryptex Digital Market Cap ETF",
    "tickers": [
@@ -2125,45 +2322,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2162540"
-  },
-  {
-   "cik": 2049203,
-   "name": "Aiways Automobile Europe GmbH",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 3711,
-   "industry": "Motor Vehicles & Passenger Car Bodies",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "Germany",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "filed",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-11-10",
-   "draft_date": "2025-01-28",
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-10",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1",
-    "date": "2026-11-10",
-    "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026117945/ea0309743-f1_euroev.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-11-10",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026117945/ea0309743-f1_euroev.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2049203"
   },
   {
    "cik": 2127714,
@@ -4901,54 +5059,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2070237"
-  },
-  {
-   "cik": 1114859,
-   "name": "Glow Holdings, Inc.",
-   "tickers": [
-    "GLOH"
-   ],
-   "exchanges": [
-    "OTC"
-   ],
-   "sic": 7372,
-   "industry": "Services-Prepackaged Software",
-   "sector": "Software and internet",
-   "kind": "company",
-   "location": "NV",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-09-22",
-   "draft_date": null,
-   "amendments": 1,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-10-28",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-10-28",
-    "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008135/glow_s1a1.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-09-22",
-     "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826007288/glow_s1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-10-28",
-     "url": "https://www.sec.gov/Archives/edgar/data/1114859/000168316826008135/glow_s1a1.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1114859"
   },
   {
    "cik": 2131303,
@@ -27348,55 +27458,6 @@
    ],
    "unpriced": false,
    "withdrawn_date": null
-  },
-  {
-   "cik": 2045873,
-   "name": "BOUNDLESS GROUP",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 3827,
-   "industry": "Optical Instruments & Lenses",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "China",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2025-10-10",
-   "draft_date": "2025-03-14",
-   "amendments": 2,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-06-04",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-06-04",
-    "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026064975/ea0233217-06.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2025-10-10",
-     "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390025098197/ea0233217-04.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-04-02",
-     "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026039231/ea0233217-05.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-06-04",
-     "url": "https://www.sec.gov/Archives/edgar/data/2045873/000121390026064975/ea0233217-06.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2045873"
   },
   {
    "amendments": 1,
