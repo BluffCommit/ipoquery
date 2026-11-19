@@ -18413,18 +18413,13 @@
    "withdrawn_date": null
   },
   "2049323": {
-   "amendments": 10,
+   "amendments": 11,
    "cik": 2049323,
    "draft_date": "2025-03-14",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2049323",
    "effective_date": null,
    "exchanges": [],
    "filings": [
-    {
-     "date": "2025-08-18",
-     "form": "F-1",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390025077965/ea0224186-06.htm"
-    },
     {
      "date": "2025-09-02",
      "form": "FWP",
@@ -18479,6 +18474,11 @@
      "date": "2026-09-17",
      "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026100862/ea0224186-19.htm"
+    },
+    {
+     "date": "2026-11-19",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026122098/ea0224186-23.htm"
     }
    ],
    "first_filed": "2025-08-18",
@@ -18486,11 +18486,11 @@
    "form": "F-1",
    "industry": "Services-Amusement & Recreation Services",
    "kind": "company",
-   "last_activity": "2026-09-17",
+   "last_activity": "2026-11-19",
    "latest": {
-    "date": "2026-09-17",
+    "date": "2026-11-19",
     "form": "F-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026100862/ea0224186-19.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026122098/ea0224186-23.htm"
    },
    "listing_date": null,
    "location": "Hong Kong",
@@ -49840,24 +49840,9 @@
    "cik": 2130357,
    "draft_date": "2026-06-01",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2130357",
-   "effective_date": null,
+   "effective_date": "2026-11-18",
    "exchanges": [],
    "filings": [
-    {
-     "date": "2026-10-26",
-     "form": "S-1",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
-    },
-    {
-     "date": "2026-11-02",
-     "form": "S-1/A",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm"
-    },
-    {
-     "date": "2026-11-10",
-     "form": "S-1/A",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm"
-    },
     {
      "date": "2026-11-12",
      "form": "FWP",
@@ -49902,6 +49887,21 @@
      "date": "2026-11-18",
      "form": "CERT",
      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000135445726001088/ANT_8A_Cert_0002130357.pdf"
+    },
+    {
+     "date": "2026-11-18",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/999999999526003574/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2026-11-19",
+     "form": "FWP",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+    },
+    {
+     "date": "2026-11-19",
+     "form": "424B4",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
     }
    ],
    "first_filed": "2026-10-26",
@@ -49909,21 +49909,21 @@
    "form": "S-1",
    "industry": "Services-Prepackaged Software",
    "kind": "company",
-   "last_activity": "2026-11-18",
+   "last_activity": "2026-11-19",
    "latest": {
-    "date": "2026-11-17",
-    "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm"
+    "date": "2026-11-19",
+    "form": "424B4",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
    },
    "listing_date": "2026-11-18",
    "location": "CA",
    "marketing": true,
    "name": "Anthropic, PBC",
-   "priced_date": null,
+   "priced_date": "2026-11-19",
    "prior_attempts": 0,
    "sector": "Software and internet",
    "sic": 7372,
-   "stage": "amended",
+   "stage": "priced",
    "stalled": false,
    "tickers": [
     "ANT"
@@ -50800,7 +50800,7 @@
    "withdrawn_date": null
   },
   "2133037": {
-   "amendments": 2,
+   "amendments": 3,
    "cik": 2133037,
    "draft_date": "2026-05-22",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2133037",
@@ -50821,6 +50821,11 @@
      "date": "2026-09-21",
      "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026062846/sbenergy-sx1a2.htm"
+    },
+    {
+     "date": "2026-11-19",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026075026/sbenergy-sx1a3.htm"
     }
    ],
    "first_filed": "2026-09-01",
@@ -50828,11 +50833,11 @@
    "form": "S-1",
    "industry": "Electric Services",
    "kind": "company",
-   "last_activity": "2026-09-21",
+   "last_activity": "2026-11-19",
    "latest": {
-    "date": "2026-09-21",
+    "date": "2026-11-19",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026062846/sbenergy-sx1a2.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026075026/sbenergy-sx1a3.htm"
    },
    "listing_date": null,
    "location": "CA",
@@ -51655,7 +51660,7 @@
    "withdrawn_date": null
   },
   "2136449": {
-   "amendments": 2,
+   "amendments": 3,
    "cik": 2136449,
    "draft_date": null,
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136449",
@@ -51676,6 +51681,11 @@
      "date": "2026-08-04",
      "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226036009/forms-1a.htm"
+    },
+    {
+     "date": "2026-11-19",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226053189/forms-1a.htm"
     }
    ],
    "first_filed": "2026-05-26",
@@ -51683,11 +51693,11 @@
    "form": "S-1",
    "industry": "Blank Checks",
    "kind": "spac",
-   "last_activity": "2026-08-04",
+   "last_activity": "2026-11-19",
    "latest": {
-    "date": "2026-08-04",
+    "date": "2026-11-19",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226036009/forms-1a.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226053189/forms-1a.htm"
    },
    "listing_date": null,
    "location": "NY",
@@ -51699,9 +51709,7 @@
    "sic": 6770,
    "stage": "amended",
    "stalled": false,
-   "tickers": [
-    "CSCM"
-   ],
+   "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
   },

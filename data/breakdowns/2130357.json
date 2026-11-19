@@ -1,84 +1,168 @@
 {
-  "cik": 2130357,
-  "method": "manual",
-  "loaded": "2026-11-15",
-  "basis": "Amendment No. 2 to the S-1, filed Nov 10, 2026",
-  "doc": "https://www.sec.gov/Archives/edgar/data/0002130357/000162828026072484/anthropicpbc-sx1ax2.htm",
-  "short": "Anthropic",
-  "what": "Maker of the Claude AI models.",
-  "exchange": "Nasdaq",
-  "range_set": "2026-11-10",
-  "offer": {
-    "low": 70,
-    "high": 78,
-    "company_shares": 801351354,
-    "holder_shares": 23648646,
-    "shares_after": 13086672593,
-    "option_shares": 123750000,
-    "expected_pricing": "2026-11-18",
-    "expected_trading": "2026-11-19",
-    "dates_from": "Company announcement, as reported by Yahoo Finance",
-    "dates_url": "https://finance.yahoo.com/technology/ai/article/anthropic-ipo-what-we-know-143321078.html"
+ "cik": 2130357,
+ "method": "auto",
+ "loaded": "2026-11-19",
+ "basis": "Final prospectus filed Nov 19, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+ "doc_date": "2026-11-19",
+ "offer": {
+  "price": 83.0,
+  "holder_shares": 23648646,
+  "company_shares": 956351354,
+  "shares_after": 13219642276,
+  "low": 70.0,
+  "high": 78.0
+ },
+ "exchange": "Nasdaq",
+ "checks": [
+  {
+   "item": "Shares sold by existing holders",
+   "how": "stated on the cover and again in the offering summary"
   },
-  "side_sale": "Separately, seven suppliers and partners agreed to buy $26.0B of non-voting shares at the IPO price. Those shares have no lock-up.",
-  "proceeds": "General corporate purposes, including compute and infrastructure, operations and hiring. About $3.8B is set aside for tax bills on employee stock awards.",
-  "financials": {
-    "unit": "USD millions",
-    "years": [
-      {"label": "2023", "revenue": 41, "operating": -551},
-      {"label": "2024", "revenue": 386, "operating": -2980},
-      {"label": "2025", "revenue": 4585, "operating": -8060}
-    ],
-    "ytd": {"label": "Jan to Sep 2026", "revenue": 33242, "operating": -1260, "prior_label": "Jan to Sep 2025", "prior_revenue": 2545, "prior_operating": -5224},
-    "facts": [
-      {"value": 131845, "label": "cash and short-term investments on Sep 30, 2026"},
-      {"value": 6569, "label": "cash produced by operations, Jan to Sep 2026", "signed": true},
-      {"value": 900900, "label": "committed to compute and infrastructure through 2045"}
-    ],
-    "note": "The net loss for Jan to Sep 2026 was far larger, $104.0B. Of that, $94.3B is a non-cash accounting charge for the rising value of convertible notes."
+  {
+   "item": "Shares sold by the company",
+   "how": "stated on the cover and again in the offering summary"
   },
-  "sellers": [
-    {"name": "Dario Amodei", "role": "Co-founder, chief executive", "before": 240637980, "sold": 3378378},
-    {"name": "Daniela Amodei", "role": "Co-founder, president", "before": 241408940, "sold": 3378378},
-    {"name": "Tom Brown", "role": "Co-founder, chief compute officer", "before": 244173040, "sold": 3378378},
-    {"name": "Jack Clark", "role": "Co-founder, leads the Anthropic Institute", "before": 242271840, "sold": 3378378},
-    {"name": "Jared Kaplan", "role": "Co-founder, chief science officer", "before": 242351170, "sold": 3378378},
-    {"name": "Sam McCandlish", "role": "Co-founder, chief architect", "before": 243383850, "sold": 3378378},
-    {"name": "Christopher Olah", "role": "Co-founder, leads interpretability research", "before": 242882420, "sold": 3378378}
-  ],
-  "others": [
-    {"name": "Krishna Rao", "role": "Chief financial officer", "before": 9497900, "sold": 0}
-  ],
-  "holders_note": "The filing's ownership table covers voting shares only. Amazon and Google hold non-voting shares, so they are not in it. Press summaries of the filing put them at about 1.92B and 1.79B shares after the IPO, more than any co-founder.",
-  "control_note": "The seven co-founders also vote one special share that carries 50.1% of all votes, and a trust elects most of the board.",
-  "rounds": [
-    {"name": "Series A", "price": 0.257},
-    {"name": "Series B", "price": 1.1226},
-    {"name": "Series C", "price": 1.1226, "when": "2023"},
-    {"name": "Series D", "price": 3.0005, "when": "2024"},
-    {"name": "Series E", "price": 5.6087, "when": "2025"},
-    {"name": "Series F", "price": 14.0968, "when": "2025"},
-    {"name": "Series G", "price": 25.9136, "when": "2026"},
-    {"name": "Series H", "price": 58.901, "when": "2026"}
-  ],
-  "rounds_note": "Prices are adjusted for the 10-for-1 share split in September 2026. The filing dates only the rounds of the last three years.",
-  "lockup": {
-    "summary": "Insider shares are released in stages over 365 days, not on a single date.",
-    "events": [
-      {"when": "First trading day", "what": "Up to 10% of what employees and non-founder insiders hold", "shares": 316000000},
-      {"when": "Days 27 to 76", "what": "Four early releases", "shares": 1296000000},
-      {"when": "After full-year results", "what": "One release, then five more two weeks apart", "shares": 4070000000},
-      {"when": "By day 180", "what": "End of the 180-day lock-up; co-founders may sell up to 29% of theirs", "shares": 3000000000},
-      {"when": "Mid 2027", "what": "Releases tied to first- and second-quarter results", "shares": 4883000000},
-      {"when": "By day 365", "what": "End of the 365-day lock-up for co-founders and large holders", "shares": 1900000000}
-    ]
+  {
+   "item": "Final price",
+   "how": "price times shares sold equals the total on the cover"
   },
-  "risks": [
-    "Its AI models have behaved, and may behave, in unintended ways, including taking harmful actions no user directed.",
-    "Its success depends on building the most capable AI models.",
-    "It may fail to secure enough computing power to train models and serve customers.",
-    "If its computing needs differ from its forecasts, it may have too little or be committed to too much.",
-    "Shortages of chips, memory, power or data-centre capacity could limit its access to computing power."
+  {
+   "item": "Shares outstanding after the offering",
+   "how": "the filing's own total; larger than the number sold"
+  },
+  {
+   "item": "Price range before pricing",
+   "how": "the midpoint used elsewhere in the filing matches the range on the cover"
+  },
+  {
+   "item": "Revenue and results",
+   "how": "two AI readers gave the same figures, and each is printed in the filing",
+   "by": "model"
+  },
+  {
+   "item": "Who is selling",
+   "how": "two AI readers agree, and the shares add up to the number on the cover",
+   "by": "model"
+  },
+  {
+   "item": "Lock-up length",
+   "how": "two AI readers agree on the number of days, and it is printed in the filing",
+   "by": "model"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the two AI readers named different rounds",
+   "by": "model"
+  }
+ ],
+ "financials": {
+  "unit": "USD millions",
+  "measure": "operating",
+  "years": [
+   {
+    "label": "2023",
+    "revenue": 41,
+    "operating": -551
+   },
+   {
+    "label": "2024",
+    "revenue": 386,
+    "operating": -2980
+   },
+   {
+    "label": "2025",
+    "revenue": 4585,
+    "operating": -8060
+   }
   ],
-  "risks_note": "The first five risk factors, summarised."
+  "ytd": {
+   "label": "Jan to Sep 2026",
+   "revenue": 33242,
+   "operating": -1260,
+   "prior_label": "Jan to Sep 2025",
+   "prior_revenue": 2545,
+   "prior_operating": -5224
+  },
+  "facts": [
+   {
+    "value": -104039,
+    "label": "net result, Jan to Sep 2026",
+    "signed": true
+   }
+  ],
+  "by": "model"
+ },
+ "sellers": [
+  {
+   "name": "Dario Amodei",
+   "role": "Co-founder, chief executive",
+   "before": 240637980,
+   "sold": 3378378
+  },
+  {
+   "name": "Daniela Amodei",
+   "role": "Co-founder, president and chairperson",
+   "before": 241408940,
+   "sold": 3378378
+  },
+  {
+   "name": "Tom Brown",
+   "role": "Co-founder, chief compute officer",
+   "before": 244173040,
+   "sold": 3378378
+  },
+  {
+   "name": "Jack Clark",
+   "role": "Co-founder, leads the Anthropic Institute",
+   "before": 242271840,
+   "sold": 3378378
+  },
+  {
+   "name": "Jared Kaplan",
+   "role": "Co-founder",
+   "before": 242351170,
+   "sold": 3378378
+  },
+  {
+   "name": "Sam McCandlish",
+   "role": "Co-founder",
+   "before": 243383850,
+   "sold": 3378378
+  },
+  {
+   "name": "Christopher Olah",
+   "role": "Co-founder",
+   "before": 242882420,
+   "sold": 3378378
+  }
+ ],
+ "lockup": {
+  "summary": "Most insiders cannot sell for up to 180 days after the prospectus date. Co-founders and some large holders cannot sell for up to 365 days.",
+  "days": 180
+ },
+ "what": "Anthropic builds Claude, an AI system that it sells to businesses and consumers through models, a platform and apps.",
+ "short": "Anthropic",
+ "proceeds": "It plans to use the money for general costs such as running the business, computer systems, and hiring staff. It will also pay tax bills linked to employee stock units, and it may buy other businesses.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+   [
+    3,
+    1
+   ]
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-19"
+ }
 }

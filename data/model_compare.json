@@ -7764,7 +7764,7 @@
    }
   }
  ],
- "spent_usd": 13.0962,
+ "spent_usd": 13.2718,
  "later": [
   {
    "cik": 2133022,
@@ -8407,6 +8407,52 @@
     "item15"
    ],
    "preferred_starts": "Rights. Holders of shares of common stock are entitled to ratably receive dividends when and if declared by the board of directors / out of funds legally availabl"
+  },
+  {
+   "cik": 2049323,
+   "name": "AM PM Group Ltd",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.0688,
+    "claude-haiku-5-5": 0.00438
+   },
+   "kept": [
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Revenue, results and cash": "the readers found no full-year figures in the summary financial table",
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "preferred"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 2130357,
+   "name": "Anthropic, PBC",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.09622,
+    "claude-haiku-5-5": 0.00621
+   },
+   "kept": [
+    "Revenue and results",
+    "Who is selling",
+    "Lock-up length"
+   ],
+   "left_out": {
+    "Other large holders": "the ownership table splits holdings between share classes, and they are not added up here",
+    "What earlier rounds paid": "the two AI readers named different rounds"
+   },
+   "readers_differ": [
+    "others long term benefit trust before: 1 / 0",
+    "rounds series f 3: named by one reader only",
+    "rounds series f 4: named by one reader only"
+   ],
+   "sections_not_found": [
+    "item15"
+   ],
+   "preferred_starts": "10. Redeemable Convertible Preferred Stock, Common Stock and / Stockholders' Deficit / Redeemable Convertible Preferred Stock / Redeemable convertible preferred stock"
   }
  ]
 }

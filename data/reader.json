@@ -794,25 +794,25 @@
    ]
   },
   "2130357": {
-   "form": "S-1/A",
-   "date": "2026-11-17",
-   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm",
-   "read": "2026-11-18",
+   "form": "424B4",
+   "date": "2026-11-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+   "read": "2026-11-19",
    "result": "read",
    "found": {
-    "low": 70.0,
-    "high": 78.0,
+    "price": 83.0,
     "holder_shares": 23648646,
-    "company_shares": 801351354,
-    "shares_after": 13086672593
+    "company_shares": 956351354,
+    "shares_after": 13219642276,
+    "low": 70.0,
+    "high": 78.0
    },
    "left_out": [
     "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
    ],
    "notes": [
     "company facts file: the financial statements are not tagged with an operating or net result"
-   ],
-   "note": "a hand-made breakdown exists and was kept"
+   ]
   },
   "1838003": {
    "form": "S-1/A",
@@ -1241,9 +1241,9 @@
   },
   "2133037": {
    "form": "S-1/A",
-   "date": "2026-09-21",
-   "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026062846/sbenergy-sx1a2.htm",
-   "read": "2026-11-18",
+   "date": "2026-11-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026075026/sbenergy-sx1a3.htm",
+   "read": "2026-11-19",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"
@@ -2214,9 +2214,9 @@
   },
   "2049323": {
    "form": "F-1/A",
-   "date": "2026-09-17",
-   "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026100862/ea0224186-19.htm",
-   "read": "2026-11-18",
+   "date": "2026-11-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026122098/ea0224186-23.htm",
+   "read": "2026-11-19",
    "result": "read",
    "found": {
     "low": 4.0,

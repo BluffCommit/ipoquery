@@ -1,10 +1,10 @@
 {
  "cik": 2049323,
  "method": "auto",
- "loaded": "2026-11-18",
- "basis": "F-1 amendment filed Sep 17, 2026",
- "doc": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026100862/ea0224186-19.htm",
- "doc_date": "2026-09-17",
+ "loaded": "2026-11-19",
+ "basis": "F-1 amendment filed Nov 19, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026122098/ea0224186-23.htm",
+ "doc_date": "2026-11-19",
  "offer": {
   "low": 4.0,
   "high": 5.0,
@@ -12,6 +12,7 @@
   "company_shares": 7500000,
   "shares_after": 27500000
  },
+ "exchange": "Nasdaq",
  "checks": [
   {
    "item": "Price range",
@@ -30,11 +31,6 @@
    "how": "from the offering summary; larger than the number sold"
   },
   {
-   "item": "Revenue and results",
-   "how": "two AI readers gave the same figures, and each is printed in the filing",
-   "by": "model"
-  },
-  {
    "item": "Lock-up length",
    "how": "two AI readers agree on the number of days, and it is printed in the filing",
    "by": "model"
@@ -42,65 +38,42 @@
  ],
  "hidden": [
   {
+   "item": "Revenue, results and cash",
+   "why": "the readers found no full-year figures in the summary financial table",
+   "by": "model"
+  },
+  {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   }
  ],
- "financials": {
-  "unit": "USD millions",
-  "measure": "operating",
-  "years": [
-   {
-    "label": "2024",
-    "revenue": 8.806,
-    "operating": 1.015
-   },
-   {
-    "label": "2025",
-    "revenue": 12.017,
-    "operating": 1.621
-   }
-  ],
-  "facts": [
-   {
-    "value": 0.009,
-    "label": "cash on Dec 31, 2025"
-   },
-   {
-    "value": 0.951,
-    "label": "net result, 2025",
-    "signed": true
-   }
-  ],
-  "by": "model"
- },
  "others": [
   {
    "name": "Ka Ming Kwong",
-   "role": "Chief executive, chairman, largest shareholder",
+   "role": "Chairman, chief executive, largest shareholder",
    "before": 9030000,
    "sold": 0
   }
  ],
  "lockup": {
-  "summary": "The company, its directors and officers, and all current shareholders have agreed not to sell shares for 180 days from the start of sales in this offering, with some exceptions.",
+  "summary": "The company, its directors and officers, and all holders of its shares agreed not to sell or transfer shares for 180 days after sales of this offering begin. Some exceptions apply.",
   "days": 180
  },
- "what": "It is a Hong Kong agency that plans events and decorations and produces content and designs for businesses.",
- "short": "AM PM Group",
- "proceeds": "It expects net proceeds of about US$29.6 million. About 30% is for growing content production and hiring, 20% for expanding event and decoration coverage, 20% for possible acquisitions, and 30% for working capital and general costs.",
+ "what": "It is a Hong Kong agency that plans events, decorates shopping malls, and produces content and designs for marketing.",
+ "short": "AM PM",
+ "proceeds": "It plans to spend about 30% on growing content production and hiring talent, 20% on expanding its event business to new areas, 20% on possible acquisitions, and 30% on working capital and general needs. It has not picked any acquisition targets.",
  "risks": [
-  "It is a British Virgin Islands holding company, and all of its operations run through its subsidiary in Hong Kong.",
-  "Following Hong Kong's personal data privacy law and similar rules may cost a lot and could hurt the business.",
-  "New laws in the United States or China could limit its ability to list its shares and hurt their market price.",
-  "Political events in Hong Kong create risks for its business.",
-  "Changes in exchange rates could hurt its results and the value of your investment, and it does not hedge this risk."
+  "Rules on handling personal data in Hong Kong could be costly to follow and could harm the business.",
+  "New laws in the US or China could affect the company's ability to list its shares and hurt their price.",
+  "There are political risks in doing business in Hong Kong.",
+  "Changes in exchange rates could hurt the company's results and the value of an investment.",
+  "Limits on its Hong Kong subsidiary paying dividends to the parent could hurt the company's growth and its ability to fund the business."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
-   "https://www.sec.gov/Archives/edgar/data/2049323/000121390026100862/ea0224186-19.htm",
+   "https://www.sec.gov/Archives/edgar/data/2049323/000121390026122098/ea0224186-23.htm",
    [
     3,
     1
@@ -110,6 +83,6 @@
    "claude-sonnet-5-5",
    "claude-haiku-5-5"
   ],
-  "read": "2026-11-18"
+  "read": "2026-11-19"
  }
 }

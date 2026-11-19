@@ -2,13 +2,313 @@
  "source": "SEC EDGAR",
  "data_changed": "2026-11-19",
  "counts": {
-  "amended": 229,
+  "amended": 228,
+  "priced": 307,
   "effective": 155,
   "filed": 131,
-  "priced": 306,
   "withdrawn": 41
  },
  "ipos": [
+  {
+   "cik": 2133037,
+   "name": "SB Energy, Inc.",
+   "tickers": [
+    "SBE"
+   ],
+   "exchanges": [],
+   "sic": 4911,
+   "industry": "Electric Services",
+   "sector": "Energy and utilities",
+   "kind": "company",
+   "location": "CA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-09-01",
+   "draft_date": "2026-05-22",
+   "amendments": 3,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-19",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-19",
+    "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026075026/sbenergy-sx1a3.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-09-01",
+     "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026059639/sbenergy-sx1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-09-04",
+     "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026060761/sbenergy-sx1a1exhibitsonly.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-09-21",
+     "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026062846/sbenergy-sx1a2.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026075026/sbenergy-sx1a3.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2133037"
+  },
+  {
+   "cik": 2136449,
+   "name": "Crestone Strategic Capital Acquisition Corp",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 6770,
+   "industry": "Blank Checks",
+   "sector": "Finance",
+   "kind": "spac",
+   "location": "NY",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-05-26",
+   "draft_date": null,
+   "amendments": 3,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-19",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-19",
+    "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226053189/forms-1a.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-05-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226025267/forms-1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-07-14",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226033152/forms-1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-08-04",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226036009/forms-1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226053189/forms-1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136449"
+  },
+  {
+   "cik": 2130357,
+   "name": "Anthropic, PBC",
+   "tickers": [
+    "ANT"
+   ],
+   "exchanges": [],
+   "sic": 7372,
+   "industry": "Services-Prepackaged Software",
+   "sector": "Software and internet",
+   "kind": "company",
+   "location": "CA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "priced",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-10-26",
+   "draft_date": "2026-06-01",
+   "amendments": 3,
+   "marketing": true,
+   "effective_date": "2026-11-18",
+   "listing_date": "2026-11-18",
+   "priced_date": "2026-11-19",
+   "withdrawn_date": null,
+   "last_activity": "2026-11-19",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "424B4",
+    "date": "2026-11-19",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
+   },
+   "filings": [
+    {
+     "form": "FWP",
+     "date": "2026-11-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072949/anthropicpbc-fwpipowebsi.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072952/anthropicpbc-fwpukmaterials.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072953/anthropicpbc-fwpauswrapcap.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073040/anthropicpbc-fwpxeeaprospea.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073045/anthropicpbc-fwpjapanamend.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm"
+    },
+    {
+     "form": "8-A12B",
+     "date": "2026-11-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074342/anthropic-8xa12b.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074628/anthropicpbc-fwpjapanprospa.htm"
+    },
+    {
+     "form": "CERT",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000135445726001088/ANT_8A_Cert_0002130357.pdf"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/999999999526003574/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+    },
+    {
+     "form": "424B4",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2130357"
+  },
+  {
+   "cik": 2049323,
+   "name": "AM PM Group Ltd",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 7900,
+   "industry": "Services-Amusement & Recreation Services",
+   "sector": "Consumer and retail",
+   "kind": "company",
+   "location": "Hong Kong",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2025-08-18",
+   "draft_date": "2025-03-14",
+   "amendments": 11,
+   "marketing": true,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-19",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-19",
+    "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026122098/ea0224186-23.htm"
+   },
+   "filings": [
+    {
+     "form": "FWP",
+     "date": "2025-09-02",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390025083141/ea0255234-fwp_ampm.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-09-15",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390025087567/ea0224186-07.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-09-30",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390025093976/ea0224186-09.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-12-08",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390025119085/ea0224186-10.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-01-05",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026000855/ea0224186-12.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-01-09",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026002815/ea0224186-14.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-01-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026005315/ea0224186-15.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-02-03",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026010930/ea0224186-16.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-04-29",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026049285/ea0224186-17.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-08-27",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026094116/ea0224186-18.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-09-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026100862/ea0224186-19.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026122098/ea0224186-23.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2049323"
+  },
   {
    "cik": 1973276,
    "name": "LIS Technologies Inc",
@@ -227,102 +527,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2045873"
-  },
-  {
-   "cik": 2130357,
-   "name": "Anthropic, PBC",
-   "tickers": [
-    "ANT"
-   ],
-   "exchanges": [],
-   "sic": 7372,
-   "industry": "Services-Prepackaged Software",
-   "sector": "Software and internet",
-   "kind": "company",
-   "location": "CA",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-10-26",
-   "draft_date": "2026-06-01",
-   "amendments": 3,
-   "marketing": true,
-   "effective_date": null,
-   "listing_date": "2026-11-18",
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-18",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-11-17",
-    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-10-26",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-11-02",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-11-10",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072949/anthropicpbc-fwpipowebsi.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072952/anthropicpbc-fwpukmaterials.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072953/anthropicpbc-fwpauswrapcap.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073040/anthropicpbc-fwpxeeaprospea.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026073045/anthropicpbc-fwpjapanamend.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-11-17",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm"
-    },
-    {
-     "form": "8-A12B",
-     "date": "2026-11-17",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074342/anthropic-8xa12b.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074628/anthropicpbc-fwpjapanprospa.htm"
-    },
-    {
-     "form": "CERT",
-     "date": "2026-11-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000135445726001088/ANT_8A_Cert_0002130357.pdf"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2130357"
   },
   {
    "cik": 2049203,
@@ -11957,57 +12161,6 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2145826"
   },
   {
-   "cik": 2133037,
-   "name": "SB Energy, Inc.",
-   "tickers": [
-    "SBE"
-   ],
-   "exchanges": [],
-   "sic": 4911,
-   "industry": "Electric Services",
-   "sector": "Energy and utilities",
-   "kind": "company",
-   "location": "CA",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-09-01",
-   "draft_date": "2026-05-22",
-   "amendments": 2,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-09-21",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-09-21",
-    "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026062846/sbenergy-sx1a2.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-09-01",
-     "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026059639/sbenergy-sx1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-09-04",
-     "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026060761/sbenergy-sx1a1exhibitsonly.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-09-21",
-     "url": "https://www.sec.gov/Archives/edgar/data/2133037/000162828026062846/sbenergy-sx1a2.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2133037"
-  },
-  {
    "amendments": 1,
    "cik": 2124472,
    "draft_date": "2026-04-27",
@@ -13047,100 +13200,6 @@
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": "2026-09-17"
-  },
-  {
-   "cik": 2049323,
-   "name": "AM PM Group Ltd",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 7900,
-   "industry": "Services-Amusement & Recreation Services",
-   "sector": "Consumer and retail",
-   "kind": "company",
-   "location": "Hong Kong",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2025-08-18",
-   "draft_date": "2025-03-14",
-   "amendments": 10,
-   "marketing": true,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-09-17",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-09-17",
-    "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026100862/ea0224186-19.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2025-08-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390025077965/ea0224186-06.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2025-09-02",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390025083141/ea0255234-fwp_ampm.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-09-15",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390025087567/ea0224186-07.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-09-30",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390025093976/ea0224186-09.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-12-08",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390025119085/ea0224186-10.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-01-05",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026000855/ea0224186-12.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-01-09",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026002815/ea0224186-14.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-01-20",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026005315/ea0224186-15.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-02-03",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026010930/ea0224186-16.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-04-29",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026049285/ea0224186-17.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-08-27",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026094116/ea0224186-18.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-09-17",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049323/000121390026100862/ea0224186-19.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2049323"
   },
   {
    "cik": 2049348,
@@ -18926,57 +18985,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2058007"
-  },
-  {
-   "cik": 2136449,
-   "name": "Crestone Strategic Capital Acquisition Corp",
-   "tickers": [
-    "CSCM"
-   ],
-   "exchanges": [],
-   "sic": 6770,
-   "industry": "Blank Checks",
-   "sector": "Finance",
-   "kind": "spac",
-   "location": "NY",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-05-26",
-   "draft_date": null,
-   "amendments": 2,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-08-04",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-08-04",
-    "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226036009/forms-1a.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-05-26",
-     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226025267/forms-1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-07-14",
-     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226033152/forms-1a.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-08-04",
-     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226036009/forms-1a.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136449"
   },
   {
    "amendments": 6,
