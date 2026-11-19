@@ -12,6 +12,16 @@ uses no AI model, and needs no paid service.
 
 ## Headlines
 
+Headlines on an IPO page are looked up live, in the reader's own browser, from
+the GDELT Project's open news index (the code is in `site/report.html`). The
+index limits requests per network address, and the update job's shared
+machines are almost always over that limit, so collecting on the server does
+not work well. `headlines.py` still tries a few deals each run and feeds the
+homepage's "In the news" list with whatever it gets. Add `?debug` to the
+address of an IPO page to see what the live lookup returned.
+
+What follows describes that collector.
+
 `headlines.py` runs after the model step. For each deal with a breakdown, and
 each upcoming deal with a ticker, it asks the GDELT Project's open news index
 for recent English-language articles that mention the company and an IPO or

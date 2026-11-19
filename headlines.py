@@ -46,9 +46,10 @@ STATE_VERSION = 1
 
 
 class Lookup:
-    """One request at a time to the news index, never faster than every eight seconds. When it says "too many
-    requests" (it counts everyone sharing our address, and the update job runs on shared machines) the lookup
-    waits and asks twice more; after that the deal is left for a later run."""
+    """One request at a time to the news index, never faster than every eight seconds. The index counts everyone
+    sharing our address, and the update job runs on shared machines, so it usually answers "too many requests".
+    That is why the site also looks headlines up from each reader's own browser; this collector only gathers
+    what it can for the homepage, asks once per deal, and stops for the run after three refusals in a row."""
 
     def __init__(self, contact, fixtures=None):
         self.contact, self.fixtures, self._last = contact, Path(fixtures) if fixtures else None, 0.0
@@ -60,14 +61,14 @@ class Lookup:
                 raise RuntimeError("no answer")
             return path.read_text(encoding="utf-8")
         request = urllib.request.Request(url, headers={"User-Agent": self.contact})
-        for attempt in range(3):
+        for attempt in range(1):
             time.sleep(max(0.0, 8 - (time.monotonic() - self._last)))
             self._last = time.monotonic()
             try:
                 with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
                     return response.read().decode("utf-8", "replace")
             except urllib.error.HTTPError as problem:
-                if problem.code != 429 or attempt == 2:
+                if problem.code != 429 or attempt == 0:
                     raise
                 time.sleep(35)                           # the index asks callers on shared addresses to slow down: wait and ask again
 
