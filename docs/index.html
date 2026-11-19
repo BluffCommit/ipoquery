@@ -261,7 +261,7 @@ button,input,select{font:inherit;color:inherit}
 <main id="app"></main>
 <footer class="ftr">
   <div class="wrap ftr-in">
-    <span>IPO Query · Built from SEC filings, partly read by AI. Every number links to the filing it came from. A number that fails a consistency check is hidden, not guessed. News headlines are found through the <a href="https://www.gdeltproject.org/">GDELT Project</a>.</span>
+    <span>IPO Query · Built from SEC filings, partly read by AI. Every number links to the filing it came from. A number that fails a consistency check is hidden, not guessed. Opening an IPO page asks the <a href="https://www.gdeltproject.org/">GDELT Project</a>, an open news index, for recent headlines about that company.</span>
     <span>Not investment advice. · <a href="mailto:info@ipoquery.com">info@ipoquery.com</a></span>
   </div>
 </footer>
@@ -453,11 +453,62 @@ function stepsHTML(r, b){
   const last = s.map(x => x[2]).lastIndexOf(1);
   return `<div class="stepsbox scroll"><ol class="steps">${s.map((x, i) => `<li class="${i === last ? 'now' : x[2] ? 'done' : ''}"><b>${esc(x[0])}</b><small>${esc([x[1], i === last ? 'we are here' : ''].filter(Boolean).join(' · '))}</small></li>`).join('')}</ol></div>`;
 }
-function newsBox(r){
-  const items = NEWS[r.cik] || [];
-  if (!items.length) return '';
-  return `<section class="rbox"><h2>Headlines</h2><ul>${items.map(n => `<li><a href="${esc(n.url)}" rel="noopener nofollow">${esc(n.title)} ↗</a><small>${n.release ? '<span class="tag">Company announcement</span> ' : ''}${esc(n.source)} · ${day(n.date)}</small></li>`).join('')}</ul>
-    <p>Headlines link to the publisher. Found through the <a href="https://www.gdeltproject.org/">GDELT Project</a>.</p></section>`;
+/* Headlines are looked up live, from the reader's own browser, in the GDELT Project's open news index.
+   Only the headline, outlet, date and link are used. A headline is shown only if it names the company. */
+const WIRES = {'globenewswire.com':'GlobeNewswire', 'prnewswire.com':'PR Newswire', 'businesswire.com':'Business Wire', 'accessnewswire.com':'ACCESS Newswire', 'accesswire.com':'ACCESS Newswire', 'newsfilecorp.com':'Newsfile'};
+const DEBUG = /[?&]debug\b/.test(location.search);
+const plainText = t => String(t).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+function searchName(r){
+  const b = BD[r.cik], name = ' ' + ((b && b.short) || r.name).replace(/[^A-Za-z0-9&' -]/g, ' ').trim();
+  return name.replace(/(?:\s+(?:inc|incorporated|corp|corporation|co|company|ltd|limited|llc|lp|plc|pbc|ag|sa|nv|se|ab|holdings?|group))+\s*$/i, '').replace(/\s+/g, ' ').trim();
+}
+function pickNews(articles, name){
+  const wanted = plainText(name), seen = new Set(), out = [];
+  for (const a of articles) {
+    const title = String(a.title || '').replace(/\s+/g, ' ').replace(/\s+([,.:;!?%])/g, '$1').trim(), url = String(a.url || ''), stamp = String(a.seendate || ''), key = plainText(title);
+    if (!/^https?:\/\//.test(url) || !/^\d{8}/.test(stamp) || !(' ' + key + ' ').includes(' ' + wanted + ' ') || seen.has(key) || title.length > 300) continue;
+    seen.add(key);
+    let domain = String(a.domain || '').toLowerCase().replace(/^www\./, '');
+    if (!domain) { try { domain = new URL(url).hostname.replace(/^www\./, ''); } catch (e) { continue; } }
+    out.push({title, source: WIRES[domain] || domain, date: stamp.slice(0, 4) + '-' + stamp.slice(4, 6) + '-' + stamp.slice(6, 8), url, release: domain in WIRES});
+  }
+  out.sort((a, b) => b.date.localeCompare(a.date));
+  const releases = out.filter(n => n.release).slice(0, 2), rest = out.filter(n => !releases.includes(n)).slice(0, 6 - releases.length);
+  return [...releases, ...rest].sort((a, b) => b.date.localeCompare(a.date));
+}
+function newsHTML(items, note){
+  if (!items.length && !note) return '';
+  return `<section class="rbox"><h2>Headlines</h2>${items.length ? `<ul>${items.map(n => `<li><a href="${esc(n.url)}" rel="noopener nofollow">${esc(n.title)} ↗</a><small>${n.release ? '<span class="tag">Company announcement</span> ' : ''}${esc(n.source)} · ${day(n.date)}</small></li>`).join('')}</ul>
+    <p>Headlines link to the publisher. Found through the <a href="https://www.gdeltproject.org/">GDELT Project</a>.</p>` : ''}${note ? `<p>${esc(note)}</p>` : ''}</section>`;
+}
+const newsBox = r => `<div id="news">${newsHTML(NEWS[r.cik] || [], '')}</div>`;
+const newsFound = {};
+let newsAsked = 0, newsTimer = null;
+function loadNews(r){
+  const name = searchName(r), here = () => location.hash.slice(1) === 'ipo-' + r.cik;
+  const show = (items, note) => { const box = document.getElementById('news'); if (box && here()) box.innerHTML = newsHTML(items.length ? items : (NEWS[r.cik] || []), note); };
+  clearTimeout(newsTimer);
+  if (name.length < 4) return;
+  if (!newsFound[r.cik]) { try { const kept = JSON.parse(sessionStorage.getItem('news-' + r.cik)); if (Array.isArray(kept)) newsFound[r.cik] = kept; } catch (e) {} }
+  if (newsFound[r.cik]) return show(newsFound[r.cik], DEBUG ? 'Headlines lookup: already done this visit.' : '');
+  newsTimer = setTimeout(async () => {                    // the index asks for no more than one request every five seconds
+    if (!here()) return;
+    newsAsked = Date.now();
+    const term = name.includes(' ') ? `"${name}"` : name;
+    const url = 'https://api.gdeltproject.org/api/v2/doc/doc?' + new URLSearchParams({query: `${term} (ipo OR "initial public offering" OR "public offering" OR listing) sourcelang:english`,
+      mode: 'artlist', format: 'json', maxrecords: '40', sort: 'datedesc', timespan: '3m'});
+    let status = 'no answer';
+    try {
+      const answer = await fetch(url, {referrerPolicy: 'no-referrer', credentials: 'omit'});
+      status = 'HTTP ' + answer.status;
+      const text = (await answer.text()).trim();
+      if (!text.startsWith('{')) throw new Error(text.slice(0, 90) || 'empty answer');
+      const articles = JSON.parse(text).articles || [], items = pickNews(articles, name);
+      newsFound[r.cik] = items;
+      try { sessionStorage.setItem('news-' + r.cik, JSON.stringify(items)); } catch (e) {}
+      show(items, DEBUG ? `Headlines lookup worked: ${articles.length} articles found, ${items.length} name the company.` : '');
+    } catch (e) { if (DEBUG) show([], `Headlines lookup failed (${status}): ${e.message}`); }
+  }, Math.max(0, 6000 - (Date.now() - newsAsked)));
 }
 function filingsBox(r){
   const NAMES = {'S-1':'S-1, the registration statement', 'F-1':'F-1, the registration statement', 'S-1/A':'S-1 amendment', 'F-1/A':'F-1 amendment', '424B4':'Final prospectus (424B4)', '424B1':'Final prospectus (424B1)',
@@ -633,7 +684,7 @@ function ipoPage(r){
 function render(){
   const h = (location.hash || '').slice(1), app = document.getElementById('app');
   const m = /^ipo-(\d+)$/.exec(h), r = m && BY[m[1]];
-  if (r) { app.innerHTML = ipoPage(r); document.title = nice(r.name) + ' · IPO Query'; }
+  if (r) { app.innerHTML = ipoPage(r); document.title = nice(r.name) + ' · IPO Query'; loadNews(r); }
   else { app.innerHTML = home(); bindHome(); document.title = 'IPO Query'; }
 }
 window.addEventListener('hashchange', () => { render(); window.scrollTo(0, 0); });
