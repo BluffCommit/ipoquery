@@ -6,7 +6,7 @@ on:
   workflow_dispatch:        # lets you press "Run workflow" by hand
   push:                     # also run when the tracker itself changes
     branches: [main]
-    paths: ["tracker.py", "reader.py", "reader_model.py", "site/**", "data/breakdowns/**", ".github/workflows/update.yml"]
+    paths: ["tracker.py", "reader.py", "reader_model.py", "headlines.py", "site/**", "data/breakdowns/**", ".github/workflows/update.yml"]
 
 permissions:
   contents: write           # so the job can save the updated list back to the repository
@@ -41,6 +41,11 @@ jobs:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'IPO Query info@ipoquery.com' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID || vars.ANTHROPIC_WORKSPACE_ID }}
+      - name: Collect recent headlines for each deal
+        continue-on-error: true
+        run: python headlines.py
+        env:
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'IPO Query info@ipoquery.com' }}
       - name: Rebuild the page with the breakdowns
         run: python tracker.py --render-only
       - name: Save changes

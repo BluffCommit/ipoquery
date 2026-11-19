@@ -458,7 +458,8 @@ def render_page(payload):
         base = f"https://www.sec.gov/Archives/edgar/data/{r['cik']}/"
         slim["ev"] = [[e["form"], e["date"], e["url"].replace(base, "")] for e in r.get("filings", [])[-10:]]
         ipos.append(slim)
-    data = {"data_changed": payload["data_changed"], "ipos": ipos, "breakdowns": load_breakdowns({r["cik"] for r in payload["ipos"]})}
+    news = {cik: deal["items"] for cik, deal in load_json(ROOT / "data" / "headlines.json", {}).get("deals", {}).items() if deal.get("items")}
+    data = {"data_changed": payload["data_changed"], "ipos": ipos, "breakdowns": load_breakdowns({r["cik"] for r in payload["ipos"]}), "headlines": news}
     template = (ROOT / "site" / "report.html").read_text(encoding="utf-8")
     return template.replace("/*DATA*/null", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
 

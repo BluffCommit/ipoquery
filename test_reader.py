@@ -301,6 +301,37 @@ def model_checks(folder):
     check("without a key nothing is asked", rm.run(None, TODAY, folder / "list.json", bdir, folder / "compare.json", "", log=lambda *_: None), {})
 
 
+def headline_checks(folder):
+    import headlines
+    check("search names drop the legal endings", [headlines.search_name({"name": n}, None) for n in ("Simwon America Corp.", "WINDWARD BIO GROUP AG", "Jersey Mike's Holdings, Inc.", "Oura Inc.")],
+          ["Simwon America", "WINDWARD BIO", "Jersey Mike's", "Oura"])
+    articles = [
+        {"title": "Oura files for IPO , seeks $2 billion", "url": "https://example-news.com/a", "seendate": "20261117T120000Z", "domain": "example-news.com"},
+        {"title": "Oura Files For IPO, seeks $2 billion", "url": "https://other.com/b", "seendate": "20261116T120000Z", "domain": "other.com"},
+        {"title": "Oura Announces Launch of Initial Public Offering", "url": "https://www.globenewswire.com/c", "seendate": "20261110T090000Z", "domain": "globenewswire.com"},
+        {"title": "Ten smart rings compared ahead of the holidays", "url": "https://example-news.com/d", "seendate": "20261118T120000Z", "domain": "example-news.com"},
+        {"title": "Tourage plans IPO", "url": "https://example-news.com/e", "seendate": "20261118T120000Z", "domain": "example-news.com"},
+        {"title": "Oura IPO: what to know", "url": "javascript:alert(1)", "seendate": "20261118T120000Z", "domain": "bad.com"}]
+    picked = headlines.pick(articles, "Oura")
+    check("headlines: must name the company, one per story, announcements marked, only web links",
+          [(i["title"], i["source"], i["date"], i.get("release", False)) for i in picked],
+          [("Oura files for IPO, seeks $2 billion", "example-news.com", "2026-11-17", False), ("Oura Announces Launch of Initial Public Offering", "GlobeNewswire", "2026-11-10", True)])
+    fixtures = folder / "news"
+    fixtures.mkdir()
+    (fixtures / tracker.Fetcher.fixture_name(headlines.query_url("Oura"))).write_text(json.dumps({"articles": articles}))
+    (fixtures / tracker.Fetcher.fixture_name(headlines.query_url("Quiet"))).write_text("{}")
+    (folder / "news.json").write_text(json.dumps({"ipos": [
+        {"cik": 1, "name": "Oura Inc.", "kind": "company", "stage": "amended", "tickers": ["OURA"]}, {"cik": 2, "name": "Quiet Corp", "kind": "company", "stage": "amended", "tickers": ["QT"]},
+        {"cik": 3, "name": "No Ticker Yet Inc", "kind": "company", "stage": "filed", "tickers": []}, {"cik": 4, "name": "Broken Lookup Ltd", "kind": "company", "stage": "amended", "tickers": ["BL"]}]}))
+    now = dt.datetime(2026, 11, 18, 12, 0)
+    go = lambda when: headlines.run(tracker.Fetcher("test", fixtures=fixtures), when, folder / "news.json", folder / "none", folder / "headlines.json", log=lambda *_: None)
+    first = go(now)
+    saved = json.loads((folder / "headlines.json").read_text())["deals"]
+    check("headlines run: deals with a ticker are looked up; a failed lookup is recorded, not fatal",
+          (first, len(saved["1"]["items"]), saved["2"]["items"], "problem" in saved["4"], "3" in saved), ({"due": 3, "found": 1, "failed": 1}, 2, [], True, False))
+    check("headlines run: nothing is looked up again the same day, everything the day after", (go(now + dt.timedelta(hours=3))["due"], go(now + dt.timedelta(hours=30))["due"]), (0, 3))
+
+
 def main():
     folder = Path(tempfile.mkdtemp())
     try:
@@ -374,6 +405,7 @@ def main():
         check("an amended filing is read again and the range date recorded", (third["queued"], load(9100003)["range_set"]), (1, "2026-11-15"))
         check("text: hidden tagging data is ignored", "9,999,999" in reader.to_text(BIG), False)
         model_checks(folder)
+        headline_checks(folder)
         print("\nall checks passed")
     finally:
         shutil.rmtree(folder, ignore_errors=True)

@@ -10,6 +10,17 @@ uses no AI model, and needs no paid service.
 - `docs/data/ipos.json`: the same list as data, for the IPO pages built later.
 - `data/state.json`: the script's memory, so each run only fetches what is new.
 
+## Headlines
+
+`headlines.py` runs after the model step. For each deal with a breakdown, and
+each upcoming deal with a ticker, it asks the GDELT Project's open news index
+for recent English-language articles that mention the company and an IPO or
+listing. It keeps up to six headlines whose own text names the company, with
+the outlet, date and link. Press-release wires are marked as company
+announcements. Each deal is looked up about once a day, 45 deals a run, one
+request every six seconds. Results are in `data/headlines.json`. GDELT's terms
+allow any use with credit, which the site gives in the footer.
+
 ## Hosting
 
 The site is served by GitHub Pages from the `docs/` folder of `main`, at

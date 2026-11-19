@@ -261,7 +261,7 @@ button,input,select{font:inherit;color:inherit}
 <main id="app"></main>
 <footer class="ftr">
   <div class="wrap ftr-in">
-    <span>IPO Query · Built from SEC filings, partly read by AI. Every number links to the filing it came from. A number that fails a consistency check is hidden, not guessed.</span>
+    <span>IPO Query · Built from SEC filings, partly read by AI. Every number links to the filing it came from. A number that fails a consistency check is hidden, not guessed. News headlines are found through the <a href="https://www.gdeltproject.org/">GDELT Project</a>.</span>
     <span>Not investment advice. · <a href="mailto:info@ipoquery.com">info@ipoquery.com</a></span>
   </div>
 </footer>
@@ -270,6 +270,7 @@ button,input,select{font:inherit;color:inherit}
 const DATA = /*DATA*/null;
 const D = DATA || {ipos: [], breakdowns: {}, data_changed: ''};
 const BD = D.breakdowns || {};
+const NEWS = D.headlines || {};
 const ALL = D.ipos || [];
 const BY = Object.fromEntries(ALL.map(r => [String(r.cik), r]));
 const NOW = new Date();
@@ -388,6 +389,7 @@ function home(){
   const ranged = ALL.filter(r => BD[r.cik] && bucket(r) === 'upcoming' && BD[r.cik].offer.price == null);
   const feats = [...ranged].sort((a, b) => raising(b) - raising(a)).slice(0, 3);
   const latest = [...co].sort((a, b) => b.latest.date.localeCompare(a.latest.date)).slice(0, 8);
+  const inNews = Object.entries(NEWS).flatMap(([cik, items]) => BY[cik] ? items.slice(0, 2).map(n => ({...n, cik})) : []).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 7);
   const bySector = Object.entries(co.filter(up).reduce((m, r) => (m[r.sector] = (m[r.sector] || 0) + 1, m), {})).sort((a, b) => b[1] - a[1]);
   return `
   <section class="wrap hero">
@@ -419,6 +421,7 @@ function home(){
           <div class="filters" id="filters"></div><div class="tbox" id="tbl"></div></section>
       </div>
       <aside class="rail">
+        ${inNews.length ? `<section class="rbox"><h2>In the news</h2><ul>${inNews.map(n => `<li><a href="${esc(n.url)}" rel="noopener nofollow">${esc(n.title)} ↗</a><small>${esc(n.source)} · ${day(n.date)} · <a href="#ipo-${n.cik}" style="font-weight:400;text-decoration:underline">${esc(nice(BY[n.cik].name))}</a></small></li>`).join('')}</ul></section>` : ''}
         <section class="rbox"><h2>Latest filings</h2><ul>${latest.map(r => `<li><a href="#ipo-${r.cik}">${esc(nice(r.name))}</a><small>${esc(r.latest.form)} · ${day(r.latest.date)}</small></li>`).join('')}</ul></section>
         <section class="rbox"><h2>Upcoming, by sector</h2><ul>${bySector.map(([s, c]) => `<li class="kv"><button type="button" data-sector="${esc(s)}">${esc(s)}</button><span>${c}</span></li>`).join('')}</ul></section>
         <section class="rbox"><h2>How this page is made</h2><p>A script reads SEC EDGAR every six hours and works out each deal’s stage from the filings made. Breakdowns are read from the filing itself, and a figure is shown only if it passes a consistency check.</p></section>
@@ -449,6 +452,12 @@ function stepsHTML(r, b){
   }
   const last = s.map(x => x[2]).lastIndexOf(1);
   return `<div class="stepsbox scroll"><ol class="steps">${s.map((x, i) => `<li class="${i === last ? 'now' : x[2] ? 'done' : ''}"><b>${esc(x[0])}</b><small>${esc([x[1], i === last ? 'we are here' : ''].filter(Boolean).join(' · '))}</small></li>`).join('')}</ol></div>`;
+}
+function newsBox(r){
+  const items = NEWS[r.cik] || [];
+  if (!items.length) return '';
+  return `<section class="rbox"><h2>Headlines</h2><ul>${items.map(n => `<li><a href="${esc(n.url)}" rel="noopener nofollow">${esc(n.title)} ↗</a><small>${n.release ? '<span class="tag">Company announcement</span> ' : ''}${esc(n.source)} · ${day(n.date)}</small></li>`).join('')}</ul>
+    <p>Headlines link to the publisher. Found through the <a href="https://www.gdeltproject.org/">GDELT Project</a>.</p></section>`;
 }
 function filingsBox(r){
   const NAMES = {'S-1':'S-1, the registration statement', 'F-1':'F-1, the registration statement', 'S-1/A':'S-1 amendment', 'F-1/A':'F-1 amendment', '424B4':'Final prospectus (424B4)', '424B1':'Final prospectus (424B1)',
@@ -481,7 +490,7 @@ function ipoPage(r){
           <p>So far this page shows only what the filing index tells us: when the company filed, how often it has amended and where the deal stands. Once the filing itself is read, this page adds:</p>
           <ul><li>the price range, the amount being raised and what that values the company at</li><li>revenue, profit or loss, and cash</li><li>who is selling shares in the IPO and how much they receive</li><li>what earlier funding rounds paid per share</li><li>the dates that matter next</li></ul>
           <p><a href="${esc(r.latest.url)}">Read the latest filing yourself ↗</a></p></div></div></section>`}
-    </div><aside class="rail">${filingsBox(r)}</aside></div></div>`;
+    </div><aside class="rail">${newsBox(r)}${filingsBox(r)}</aside></div></div>`;
   }
   const o = b.offer, P = mid(b), m = calc(b, P), priced = o.price != null, hasRange = o.low != null && o.high != null;
   const fin = b.financials, short = b.short || nice(r.name), U = units(b), sellers = b.sellers || [], rounds = b.rounds || [];
@@ -611,7 +620,7 @@ function ipoPage(r){
       ${b.risks && b.risks.length ? `<section><div class="bar"><h2>Risks the company lists first</h2><span>${esc(b.risks_note || '')}</span></div>
         <div class="hair"><ol class="risks">${b.risks.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div><p class="note">${src(b, 'Risk factors')}</p></section>` : ''}
     </div>
-    <aside class="rail">${filingsBox(r)}
+    <aside class="rail">${newsBox(r)}${filingsBox(r)}
       <section class="rbox"><h2>How this page is made</h2><p>${manual ? `This breakdown was read by hand from ${esc(b.basis)}, as the first test of the format. The automated reader will replace it.` : b.model ? `Read automatically from ${esc(b.basis)}. The offer terms are read by fixed rules. The rest is read by two AI models working separately: a figure is shown only when both give the same number and it is printed in the filing. The written summaries are by AI.`
         : `Read automatically from ${esc(b.basis)}. A figure is shown only if it passes a consistency check.`} ${priced ? '' : 'Dollar figures use the midpoint of the price range until the deal prices.'}</p></section>
       ${b.checks && b.checks.length ? `<section class="rbox"><h2>Checks passed</h2><ul>${b.checks.map(c => `<li><b style="font-weight:600">${esc(c.item)}</b><small>${esc(c.how)}</small></li>`).join('')}</ul></section>` : ''}
