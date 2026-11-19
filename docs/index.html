@@ -462,19 +462,31 @@ function searchName(r){
   const b = BD[r.cik], name = ' ' + ((b && b.short) || r.name).replace(/[^A-Za-z0-9&' -]/g, ' ').trim();
   return name.replace(/(?:\s+(?:inc|incorporated|corp|corporation|co|company|ltd|limited|llc|lp|plc|pbc|ag|sa|nv|se|ab|holdings?|group))+\s*$/i, '').replace(/\s+/g, ' ').trim();
 }
+const ABOUT_IPO = /\b(ipo|public offering|go public|goes public|going public|listing|lists?|debut|shares|stock|nasdaq|nyse|files|filing|filed|prices|priced|pricing|valuation)\b/;
 function pickNews(articles, name){
-  const wanted = plainText(name), seen = new Set(), out = [];
+  const wanted = plainText(name), seen = new Set(), perSite = {}, out = [];
   for (const a of articles) {
-    const title = String(a.title || '').replace(/\s+/g, ' ').replace(/\s+([,.:;!?%])/g, '$1').trim(), url = String(a.url || ''), stamp = String(a.seendate || ''), key = plainText(title);
-    if (!/^https?:\/\//.test(url) || !/^\d{8}/.test(stamp) || !(' ' + key + ' ').includes(' ' + wanted + ' ') || seen.has(key) || title.length > 300) continue;
-    seen.add(key);
+    let title = String(a.title || '').replace(/\s+/g, ' ').replace(/\s+([,.:;!?%])/g, '$1').trim();
+    const url = String(a.url || ''), stamp = String(a.seendate || '');
+    const names = t => (' ' + plainText(t) + ' ').includes(' ' + wanted + ' ');
+    const head = title.split(' | ')[0];                                   // "Story | Station name": the outlet is shown separately
+    if (head.length >= 20 && names(head)) title = head;
+    const dash = title.lastIndexOf(' - ');                                // "Story - Outlet"
+    if (dash >= 25 && title.slice(dash + 3).split(' ').length <= 4 && names(title.slice(0, dash))) title = title.slice(0, dash);
+    const key = plainText(title);
+    if (!/^https?:\/\//.test(url) || !/^\d{8}/.test(stamp) || !names(title) || seen.has(key) || title.length > 300) continue;
     let domain = String(a.domain || '').toLowerCase().replace(/^www\./, '');
     if (!domain) { try { domain = new URL(url).hostname.replace(/^www\./, ''); } catch (e) { continue; } }
-    out.push({title, source: WIRES[domain] || domain, date: stamp.slice(0, 4) + '-' + stamp.slice(4, 6) + '-' + stamp.slice(6, 8), url, release: domain in WIRES});
+    const site = domain.split('.').slice(-2).join('.');
+    if ((perSite[site] = (perSite[site] || 0) + 1) > 2) continue;         // at most two from one publisher
+    seen.add(key);
+    out.push({title, source: WIRES[domain] || domain, date: stamp.slice(0, 4) + '-' + stamp.slice(4, 6) + '-' + stamp.slice(6, 8), url, release: domain in WIRES, ipo: ABOUT_IPO.test(key)});
   }
-  out.sort((a, b) => b.date.localeCompare(a.date));
-  const releases = out.filter(n => n.release).slice(0, 2), rest = out.filter(n => !releases.includes(n)).slice(0, 6 - releases.length);
-  return [...releases, ...rest].sort((a, b) => b.date.localeCompare(a.date));
+  const newest = (a, b) => b.date.localeCompare(a.date);
+  out.sort(newest);
+  const releases = out.filter(n => n.release).slice(0, 2), onTopic = out.filter(n => n.ipo && !n.release).slice(0, 6 - releases.length);
+  const first = [...releases, ...onTopic].sort(newest);                   // headlines about the offering come first, then up to two others
+  return [...first, ...out.filter(n => !n.ipo && !n.release).slice(0, Math.min(2, 6 - first.length))];
 }
 function newsHTML(items, note){
   if (!items.length && !note) return '';
