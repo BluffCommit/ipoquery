@@ -316,6 +316,7 @@ def headline_checks(folder):
     check("headlines: must name the company, one per story, announcements marked, only web links",
           [(i["title"], i["source"], i["date"], i.get("release", False)) for i in picked],
           [("Oura files for IPO, seeks $2 billion", "example-news.com", "2026-11-17", False), ("Oura Announces Launch of Initial Public Offering", "GlobeNewswire", "2026-11-10", True)])
+    check("a one-word name is searched without quotes, a longer one as a phrase", ("query=Oura+%28ipo" in headlines.query_url("Oura"), "%22Simwon+America%22" in headlines.query_url("Simwon America")), (True, True))
     fixtures = folder / "news"
     fixtures.mkdir()
     (fixtures / tracker.Fetcher.fixture_name(headlines.query_url("Oura"))).write_text(json.dumps({"articles": articles}))

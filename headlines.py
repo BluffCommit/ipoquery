@@ -85,7 +85,8 @@ def plain(text):
 
 
 def query_url(name):
-    query = f'"{name}" (ipo OR "initial public offering" OR "public offering" OR listing) sourcelang:english'
+    term = f'"{name}"' if " " in name else name            # the index refuses a short quoted phrase; one word needs no quotes
+    query = f'{term} (ipo OR "initial public offering" OR "public offering" OR listing) sourcelang:english'
     return API + "?" + urllib.parse.urlencode({"query": query, "mode": "artlist", "format": "json", "maxrecords": 40, "sort": "datedesc", "timespan": "3m"})
 
 
