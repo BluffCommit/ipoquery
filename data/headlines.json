@@ -1,0 +1,23 @@
+{
+ "version": 1,
+ "deals": {
+  "1973276": {
+   "checked": "2026-11-19T01:27",
+   "name": "LIS Technologies",
+   "items": [],
+   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
+  },
+  "2130357": {
+   "checked": "2026-11-19T01:27",
+   "name": "Anthropic",
+   "items": [],
+   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
+  },
+  "1907709": {
+   "checked": "2026-11-19T01:27",
+   "name": "vVARDIS",
+   "items": [],
+   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
+  }
+ }
+}
