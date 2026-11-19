@@ -329,7 +329,7 @@ def headline_checks(folder):
     saved = json.loads((folder / "headlines.json").read_text())["deals"]
     check("headlines run: deals with a ticker are looked up; a failed lookup is recorded, not fatal",
           (first, len(saved["1"]["items"]), saved["2"]["items"], "problem" in saved["4"], "3" in saved), ({"due": 3, "found": 1, "failed": 1}, 2, [], True, False))
-    check("headlines run: nothing is looked up again the same day, everything the day after", (go(now + dt.timedelta(hours=3))["due"], go(now + dt.timedelta(hours=30))["due"]), (0, 3))
+    check("headlines run: only the failed lookup is due again the same day, everything the day after", (go(now + dt.timedelta(hours=3))["due"], go(now + dt.timedelta(hours=30))["due"]), (1, 3))
 
 
 def main():

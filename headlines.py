@@ -35,7 +35,7 @@ import tracker
 
 API = "https://api.gdeltproject.org/api/v2/doc/doc"
 PER_RUN = 45
-TIME_LIMIT = 420                       # seconds a run may spend; the rest waits for the next run
+TIME_LIMIT = 480                       # seconds a run may spend; the rest waits for the next run
 TIMEOUT = 25                           # seconds to wait for one answer
 RECHECK_HOURS = 20
 KEEP = 6                               # headlines kept per deal
@@ -46,8 +46,9 @@ STATE_VERSION = 1
 
 
 class Lookup:
-    """One request at a time to the news index, never faster than every six seconds, and never waiting long:
-    a slow or failed lookup is simply tried again on a later run."""
+    """One request at a time to the news index, never faster than every eight seconds. When it says "too many
+    requests" (it counts everyone sharing our address, and the update job runs on shared machines) the lookup
+    waits and asks twice more; after that the deal is left for a later run."""
 
     def __init__(self, contact, fixtures=None):
         self.contact, self.fixtures, self._last = contact, Path(fixtures) if fixtures else None, 0.0
@@ -58,11 +59,17 @@ class Lookup:
             if not path.exists():
                 raise RuntimeError("no answer")
             return path.read_text(encoding="utf-8")
-        time.sleep(max(0.0, 6 - (time.monotonic() - self._last)))
-        self._last = time.monotonic()
         request = urllib.request.Request(url, headers={"User-Agent": self.contact})
-        with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
-            return response.read().decode("utf-8", "replace")
+        for attempt in range(3):
+            time.sleep(max(0.0, 8 - (time.monotonic() - self._last)))
+            self._last = time.monotonic()
+            try:
+                with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
+                    return response.read().decode("utf-8", "replace")
+            except urllib.error.HTTPError as problem:
+                if problem.code != 429 or attempt == 2:
+                    raise
+                time.sleep(35)                           # the index asks callers on shared addresses to slow down: wait and ask again
 
 
 def search_name(record, breakdown):
@@ -119,14 +126,17 @@ def run(fetcher, now, list_path, breakdown_dir, state_path, per_run=PER_RUN, log
             continue
         checked = deals.get(str(record["cik"]), {}).get("checked", "")
         if not checked or (now - dt.datetime.fromisoformat(checked)).total_seconds() > RECHECK_HOURS * 3600:
-            queue.append((checked, bool(not breakdown), record, name))
-    queue.sort(key=lambda item: item[:2])
+            offer = (breakdown or {}).get("offer") or {}
+            size = (offer.get("price") or (offer.get("low", 0) + offer.get("high", 0)) / 2) * (offer.get("company_shares", 0) + offer.get("holder_shares", 0))
+            queue.append((checked, record["stage"] == "priced", -size, record, name))       # never looked up first, then upcoming, then the largest
+    queue.sort(key=lambda item: item[:3])
     found = failed = in_a_row = 0
     started = time.monotonic()
-    for _, _, record, name in queue[:per_run]:
+    for _, _, _, record, name in queue[:per_run]:
         if in_a_row >= 3 or time.monotonic() - started > TIME_LIMIT:
             break                                        # the service is not answering, or time is up: leave the rest for the next run
-        entry = {"checked": now.isoformat(timespec="minutes"), "name": name, "items": deals.get(str(record["cik"]), {}).get("items", [])}
+        earlier = deals.get(str(record["cik"]), {})
+        entry = {"checked": now.isoformat(timespec="minutes"), "name": name, "items": earlier.get("items", [])}
         try:
             body = fetcher.get(query_url(name)).strip()
             articles = json.loads(body).get("articles", []) if body.startswith("{") else None
@@ -134,6 +144,7 @@ def run(fetcher, now, list_path, breakdown_dir, state_path, per_run=PER_RUN, log
             articles, body = None, f"{type(problem).__name__}: {problem}"
         if articles is None:
             entry["problem"] = body[:160]
+            entry["checked"] = earlier.get("checked", "")        # not looked up: still due on the next run
             failed += 1
             in_a_row += 1
         else:
