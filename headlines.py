@@ -24,7 +24,10 @@ import json
 import os
 import re
 import sys
+import time
+import urllib.error
 import urllib.parse
+import urllib.request
 from pathlib import Path
 
 import reader
@@ -32,12 +35,34 @@ import tracker
 
 API = "https://api.gdeltproject.org/api/v2/doc/doc"
 PER_RUN = 45
+TIME_LIMIT = 420                       # seconds a run may spend; the rest waits for the next run
+TIMEOUT = 25                           # seconds to wait for one answer
 RECHECK_HOURS = 20
 KEEP = 6                               # headlines kept per deal
 WIRES = {"globenewswire.com": "GlobeNewswire", "prnewswire.com": "PR Newswire", "businesswire.com": "Business Wire",
          "accessnewswire.com": "ACCESS Newswire", "accesswire.com": "ACCESS Newswire", "newsfilecorp.com": "Newsfile"}
 LEGAL = r"(?:inc|incorporated|corp|corporation|co|company|ltd|limited|llc|lp|plc|pbc|ag|sa|nv|se|ab|holdings?|group)"
 STATE_VERSION = 1
+
+
+class Lookup:
+    """One request at a time to the news index, never faster than every six seconds, and never waiting long:
+    a slow or failed lookup is simply tried again on a later run."""
+
+    def __init__(self, contact, fixtures=None):
+        self.contact, self.fixtures, self._last = contact, Path(fixtures) if fixtures else None, 0.0
+
+    def get(self, url):
+        if self.fixtures is not None:
+            path = self.fixtures / tracker.Fetcher.fixture_name(url)
+            if not path.exists():
+                raise RuntimeError("no answer")
+            return path.read_text(encoding="utf-8")
+        time.sleep(max(0.0, 6 - (time.monotonic() - self._last)))
+        self._last = time.monotonic()
+        request = urllib.request.Request(url, headers={"User-Agent": self.contact})
+        with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
+            return response.read().decode("utf-8", "replace")
 
 
 def search_name(record, breakdown):
@@ -97,12 +122,13 @@ def run(fetcher, now, list_path, breakdown_dir, state_path, per_run=PER_RUN, log
             queue.append((checked, bool(not breakdown), record, name))
     queue.sort(key=lambda item: item[:2])
     found = failed = in_a_row = 0
+    started = time.monotonic()
     for _, _, record, name in queue[:per_run]:
-        if in_a_row >= 3:
-            break                                        # the service is not answering: leave the rest for the next run
+        if in_a_row >= 3 or time.monotonic() - started > TIME_LIMIT:
+            break                                        # the service is not answering, or time is up: leave the rest for the next run
         entry = {"checked": now.isoformat(timespec="minutes"), "name": name, "items": deals.get(str(record["cik"]), {}).get("items", [])}
         try:
-            body = fetcher.get(query_url(name)).decode("utf-8", "replace").strip()
+            body = fetcher.get(query_url(name)).strip()
             articles = json.loads(body).get("articles", []) if body.startswith("{") else None
         except Exception as problem:                     # a failed lookup keeps the headlines it had
             articles, body = None, f"{type(problem).__name__}: {problem}"
@@ -130,7 +156,7 @@ def main(argv=None):
     contact = os.environ.get("SEC_USER_AGENT", "").strip()
     if not args.fixtures and "@" not in contact:
         sys.exit("Set SEC_USER_AGENT to a name and contact email, for example: IPO Query info@ipoquery.com")
-    run(tracker.Fetcher(contact, fixtures=args.fixtures, pause=6), dt.datetime.now(dt.timezone.utc).replace(tzinfo=None),
+    run(Lookup(contact, args.fixtures), dt.datetime.now(dt.timezone.utc).replace(tzinfo=None),
         tracker.ROOT / "docs" / "data" / "ipos.json", tracker.ROOT / "data" / "breakdowns", tracker.ROOT / "data" / "headlines.json")
 
 

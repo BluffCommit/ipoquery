@@ -324,7 +324,7 @@ def headline_checks(folder):
         {"cik": 1, "name": "Oura Inc.", "kind": "company", "stage": "amended", "tickers": ["OURA"]}, {"cik": 2, "name": "Quiet Corp", "kind": "company", "stage": "amended", "tickers": ["QT"]},
         {"cik": 3, "name": "No Ticker Yet Inc", "kind": "company", "stage": "filed", "tickers": []}, {"cik": 4, "name": "Broken Lookup Ltd", "kind": "company", "stage": "amended", "tickers": ["BL"]}]}))
     now = dt.datetime(2026, 11, 18, 12, 0)
-    go = lambda when: headlines.run(tracker.Fetcher("test", fixtures=fixtures), when, folder / "news.json", folder / "none", folder / "headlines.json", log=lambda *_: None)
+    go = lambda when: headlines.run(headlines.Lookup("test", fixtures), when, folder / "news.json", folder / "none", folder / "headlines.json", log=lambda *_: None)
     first = go(now)
     saved = json.loads((folder / "headlines.json").read_text())["deals"]
     check("headlines run: deals with a ticker are looked up; a failed lookup is recorded, not fatal",

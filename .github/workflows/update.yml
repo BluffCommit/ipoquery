@@ -43,6 +43,7 @@ jobs:
           ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID || vars.ANTHROPIC_WORKSPACE_ID }}
       - name: Collect recent headlines for each deal
         continue-on-error: true
+        timeout-minutes: 10
         run: python headlines.py
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT || 'IPO Query info@ipoquery.com' }}
