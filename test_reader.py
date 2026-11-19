@@ -306,16 +306,21 @@ def headline_checks(folder):
     check("search names drop the legal endings", [headlines.search_name({"name": n}, None) for n in ("Simwon America Corp.", "WINDWARD BIO GROUP AG", "Jersey Mike's Holdings, Inc.", "Oura Inc.")],
           ["Simwon America", "WINDWARD BIO", "Jersey Mike's", "Oura"])
     articles = [
-        {"title": "Oura files for IPO , seeks $2 billion", "url": "https://example-news.com/a", "seendate": "20261117T120000Z", "domain": "example-news.com"},
-        {"title": "Oura Files For IPO, seeks $2 billion", "url": "https://other.com/b", "seendate": "20261116T120000Z", "domain": "other.com"},
-        {"title": "Oura Announces Launch of Initial Public Offering", "url": "https://www.globenewswire.com/c", "seendate": "20261110T090000Z", "domain": "globenewswire.com"},
-        {"title": "Ten smart rings compared ahead of the holidays", "url": "https://example-news.com/d", "seendate": "20261118T120000Z", "domain": "example-news.com"},
-        {"title": "Tourage plans IPO", "url": "https://example-news.com/e", "seendate": "20261118T120000Z", "domain": "example-news.com"},
+        {"title": "Is the Oura Ring losing its aura? Recent setbacks raise questions", "url": "https://pocket.example/a", "seendate": "20261020T120000Z", "domain": "pocket.example"},
+        {"title": "Oura Delays IPO Amid Market Uncertainty | Talk Radio 105. 9", "url": "https://talkradio1059.iheart.example/b", "seendate": "20260930T120000Z", "domain": "talkradio1059.iheart.example"},
+        {"title": "Oura Delays IPO Amid Market Uncertainty | News Radio 1400 WRAK", "url": "https://wrak.iheart.example/c", "seendate": "20260930T120000Z", "domain": "wrak.iheart.example"},
+        {"title": "Oura Delays IPO Amid Market Uncertainty", "url": "https://650keni.iheart.example/d", "seendate": "20260930T120000Z", "domain": "650keni.iheart.example"},
+        {"title": "Oura files for IPO , seeks $2 billion - Example Wire", "url": "https://example-news.com/e", "seendate": "20261117T120000Z", "domain": "example-news.com"},
+        {"title": "Oura Announces Launch of Initial Public Offering", "url": "https://www.globenewswire.com/f", "seendate": "20261110T090000Z", "domain": "globenewswire.com"},
+        {"title": "Ten smart rings compared ahead of the holidays", "url": "https://example-news.com/g", "seendate": "20261118T120000Z", "domain": "example-news.com"},
+        {"title": "Tourage plans IPO", "url": "https://example-news.com/h", "seendate": "20261118T120000Z", "domain": "example-news.com"},
         {"title": "Oura IPO: what to know", "url": "javascript:alert(1)", "seendate": "20261118T120000Z", "domain": "bad.com"}]
     picked = headlines.pick(articles, "Oura")
-    check("headlines: must name the company, one per story, announcements marked, only web links",
+    check("headlines: name the company, one per story however many stations repeat it, the offering first, only web links",
           [(i["title"], i["source"], i["date"], i.get("release", False)) for i in picked],
-          [("Oura files for IPO, seeks $2 billion", "example-news.com", "2026-11-17", False), ("Oura Announces Launch of Initial Public Offering", "GlobeNewswire", "2026-11-10", True)])
+          [("Oura files for IPO, seeks $2 billion", "example-news.com", "2026-11-17", False), ("Oura Announces Launch of Initial Public Offering", "GlobeNewswire", "2026-11-10", True),
+           ("Oura Delays IPO Amid Market Uncertainty", "talkradio1059.iheart.example", "2026-09-30", False),
+           ("Is the Oura Ring losing its aura? Recent setbacks raise questions", "pocket.example", "2026-10-20", False)])
     check("a one-word name is searched without quotes, a longer one as a phrase", ("query=Oura+%28ipo" in headlines.query_url("Oura"), "%22Simwon+America%22" in headlines.query_url("Simwon America")), (True, True))
     fixtures = folder / "news"
     fixtures.mkdir()
@@ -329,7 +334,7 @@ def headline_checks(folder):
     first = go(now)
     saved = json.loads((folder / "headlines.json").read_text())["deals"]
     check("headlines run: deals with a ticker are looked up; a failed lookup is recorded, not fatal",
-          (first, len(saved["1"]["items"]), saved["2"]["items"], "problem" in saved["4"], "3" in saved), ({"due": 3, "found": 1, "failed": 1}, 2, [], True, False))
+          (first, len(saved["1"]["items"]), saved["2"]["items"], "problem" in saved["4"], "3" in saved), ({"due": 3, "found": 1, "failed": 1}, 4, [], True, False))
     check("headlines run: only the failed lookup is due again the same day, everything the day after", (go(now + dt.timedelta(hours=3))["due"], go(now + dt.timedelta(hours=30))["due"]), (1, 3))
 
 

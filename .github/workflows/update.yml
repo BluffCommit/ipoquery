@@ -2,7 +2,7 @@ name: Update IPO tracker
 
 on:
   schedule:
-    - cron: "17 */6 * * *"   # every 6 hours at :17 (UTC). On a public repository this can be hourly: "17 * * * *"
+    - cron: "23 */3 * * *"   # every 3 hours (UTC). GitHub often starts scheduled runs late and skips some, so ask more often than strictly needed
   workflow_dispatch:        # lets you press "Run workflow" by hand
   push:                     # also run when the tracker itself changes
     branches: [main]

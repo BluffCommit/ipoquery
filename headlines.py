@@ -91,25 +91,41 @@ def query_url(name):
     return API + "?" + urllib.parse.urlencode({"query": query, "mode": "artlist", "format": "json", "maxrecords": 40, "sort": "datedesc", "timespan": "3m"})
 
 
+ABOUT_IPO = re.compile(r"\b(ipo|public offering|go public|goes public|going public|listing|lists?|debut|shares|stock|nasdaq|nyse|files|filing|filed|prices|priced|pricing|valuation)\b")
+
+
 def pick(articles, name):
-    """The headlines worth showing: they name the company, one per story, newest first, announcements marked."""
-    wanted, seen, out = plain(name), set(), []
+    """The headlines worth showing: they name the company, one per story, at most two per publisher.
+    Headlines about the offering come first, newest first, then up to two others. (The site's page does the same.)"""
+    wanted, seen, per_site, out = plain(name), set(), {}, []
+    names = lambda text: f" {wanted} " in f" {plain(text)} "
     for article in articles:
         title = re.sub(r"\s+([,.:;!?%])", r"\1", re.sub(r"\s+", " ", str(article.get("title", "")))).strip()
         url, stamp = str(article.get("url", "")), str(article.get("seendate", ""))
+        head = title.split(" | ")[0]                     # "Story | Station name": the outlet is shown separately
+        if len(head) >= 20 and names(head):
+            title = head
+        dash = title.rfind(" - ")                        # "Story - Outlet"
+        if dash >= 25 and len(title[dash + 3:].split(" ")) <= 4 and names(title[:dash]):
+            title = title[:dash]
         key = plain(title)
-        if not re.match(r"https?://", url) or len(stamp) < 8 or not stamp[:8].isdigit() or f" {wanted} " not in f" {key} " or key in seen or len(title) > 300:
+        if not re.match(r"https?://", url) or len(stamp) < 8 or not stamp[:8].isdigit() or not names(title) or key in seen or len(title) > 300:
+            continue
+        domain = re.sub(r"^www\.", "", str(article.get("domain", "")).lower()) or urllib.parse.urlparse(url).netloc
+        site = ".".join(domain.split(".")[-2:])
+        per_site[site] = per_site.get(site, 0) + 1
+        if per_site[site] > 2:
             continue
         seen.add(key)
-        domain = re.sub(r"^www\.", "", str(article.get("domain", "")).lower()) or urllib.parse.urlparse(url).netloc
         item = {"title": title, "source": WIRES.get(domain, domain), "date": f"{stamp[:4]}-{stamp[4:6]}-{stamp[6:8]}", "url": url}
         if domain in WIRES:
             item["release"] = True                       # the company's own announcement
-        out.append(item)
-    out.sort(key=lambda item: item["date"], reverse=True)
-    releases = [item for item in out if item.get("release")][:2]          # always leave room for the company's own word
-    rest = [item for item in out if item not in releases][:KEEP - len(releases)]
-    return sorted(releases + rest, key=lambda item: item["date"], reverse=True)
+        out.append((bool(ABOUT_IPO.search(key)), item))
+    out.sort(key=lambda pair: pair[1]["date"], reverse=True)
+    releases = [item for _, item in out if item.get("release")][:2]
+    on_topic = [item for about, item in out if about and not item.get("release")][:KEEP - len(releases)]
+    first = sorted(releases + on_topic, key=lambda item: item["date"], reverse=True)
+    return first + [item for about, item in out if not about and not item.get("release")][:min(2, KEEP - len(first))]
 
 
 def run(fetcher, now, list_path, breakdown_dir, state_path, per_run=PER_RUN, log=print):
