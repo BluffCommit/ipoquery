@@ -491,24 +491,35 @@ function loadNews(r){
   if (name.length < 4) return;
   if (!newsFound[r.cik]) { try { const kept = JSON.parse(sessionStorage.getItem('news-' + r.cik)); if (Array.isArray(kept)) newsFound[r.cik] = kept; } catch (e) {} }
   if (newsFound[r.cik]) return show(newsFound[r.cik], DEBUG ? 'Headlines lookup: already done this visit.' : '');
-  newsTimer = setTimeout(async () => {                    // the index asks for no more than one request every five seconds
+  newsTimer = setTimeout(() => {                          // the index asks for no more than one request every five seconds
     if (!here()) return;
     newsAsked = Date.now();
     const term = name.includes(' ') ? `"${name}"` : name;
     const url = 'https://api.gdeltproject.org/api/v2/doc/doc?' + new URLSearchParams({query: `${term} (ipo OR "initial public offering" OR "public offering" OR listing) sourcelang:english`,
-      mode: 'artlist', format: 'json', maxrecords: '40', sort: 'datedesc', timespan: '3m'});
-    let status = 'no answer';
-    try {
-      const answer = await fetch(url, {referrerPolicy: 'no-referrer', credentials: 'omit'});
-      status = 'HTTP ' + answer.status;
-      const text = (await answer.text()).trim();
-      if (!text.startsWith('{')) throw new Error(text.slice(0, 90) || 'empty answer');
-      const articles = JSON.parse(text).articles || [], items = pickNews(articles, name);
+      mode: 'artlist', maxrecords: '40', sort: 'datedesc', timespan: '3m', format: 'jsonp', callback: 'got'});
+    askIndex(url, (data, why) => {
+      if (!data || typeof data !== 'object') { if (DEBUG) show([], 'Headlines lookup failed: ' + why + '.'); return; }
+      const articles = Array.isArray(data.articles) ? data.articles.slice(0, 60) : [], items = pickNews(articles, name);
       newsFound[r.cik] = items;
       try { sessionStorage.setItem('news-' + r.cik, JSON.stringify(items)); } catch (e) {}
       show(items, DEBUG ? `Headlines lookup worked: ${articles.length} articles found, ${items.length} name the company.` : '');
-    } catch (e) { if (DEBUG) show([], `Headlines lookup failed (${status}): ${e.message}`); }
+    });
   }, Math.max(0, 6000 - (Date.now() - newsAsked)));
+}
+/* The index does not let web pages read its answers directly, only as a script. That script runs inside a sealed,
+   invisible frame that cannot touch this page; all it can do is hand back the list of articles. */
+function askIndex(url, done){
+  const id = 'n' + Math.random().toString(36).slice(2), frame = document.createElement('iframe');
+  const finish = (data, why) => { window.removeEventListener('message', heard); clearTimeout(timer); frame.remove(); done(data, why); };
+  const heard = e => { if (e.source === frame.contentWindow && e.data && e.data.id === id) finish(e.data.data || null, String(e.data.why || 'no headlines came back')); };
+  const timer = setTimeout(() => finish(null, 'no answer in 20 seconds'), 20000);
+  window.addEventListener('message', heard);
+  frame.setAttribute('sandbox', 'allow-scripts');
+  frame.style.display = 'none';
+  frame.srcdoc = `<script>function got(d){parent.postMessage({id:"${id}",data:d},"*")}<\/script>`
+    + `<script referrerpolicy="no-referrer" src="${url.replace(/&/g, '&amp;')}" onerror="parent.postMessage({id:'${id}',why:'the request was refused or blocked'},'*')"`
+    + ` onload="setTimeout(function(){parent.postMessage({id:'${id}',why:'the index answered, but not with headlines'},'*')},100)"><\/script>`;
+  document.body.appendChild(frame);
 }
 function filingsBox(r){
   const NAMES = {'S-1':'S-1, the registration statement', 'F-1':'F-1, the registration statement', 'S-1/A':'S-1 amendment', 'F-1/A':'F-1 amendment', '424B4':'Final prospectus (424B4)', '424B1':'Final prospectus (424B1)',

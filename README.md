@@ -14,6 +14,9 @@ uses no AI model, and needs no paid service.
 
 Headlines on an IPO page are looked up live, in the reader's own browser, from
 the GDELT Project's open news index (the code is in `site/report.html`). The
+index only lets web pages read its answers as a script, so the page runs that
+script inside a sealed, invisible frame that cannot touch the page and can
+only hand back the list of articles. The
 index limits requests per network address, and the update job's shared
 machines are almost always over that limit, so collecting on the server does
 not work well. `headlines.py` still tries a few deals each run and feeds the
