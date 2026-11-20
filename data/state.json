@@ -11779,7 +11779,7 @@
    "withdrawn_date": null
   },
   "1973276": {
-   "amendments": 2,
+   "amendments": 3,
    "cik": 1973276,
    "draft_date": "2026-07-20",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1973276",
@@ -11815,6 +11815,11 @@
      "date": "2026-11-18",
      "form": "FWP",
      "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226053019/formfwp.htm"
+    },
+    {
+     "date": "2026-11-20",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226053406/forms-1a.htm"
     }
    ],
    "first_filed": "2026-10-26",
@@ -11822,11 +11827,11 @@
    "form": "S-1",
    "industry": "Industrial Inorganic Chemicals",
    "kind": "company",
-   "last_activity": "2026-11-18",
+   "last_activity": "2026-11-20",
    "latest": {
-    "date": "2026-11-18",
+    "date": "2026-11-20",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226052907/forms-1a.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226053406/forms-1a.htm"
    },
    "listing_date": null,
    "location": "NY",
@@ -43134,14 +43139,19 @@
      "date": "2026-01-23",
      "form": "S-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026007062/ea027372602-s1_arkcoin20.htm"
+    },
+    {
+     "date": "2026-11-20",
+     "form": "RW",
+     "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026122580/ea0313104-02_rw.htm"
     }
    ],
    "first_filed": "2026-01-23",
    "foreign": false,
    "form": "S-1",
-   "industry": "",
+   "industry": "Commodity Contracts Brokers & Dealers",
    "kind": "fund",
-   "last_activity": "2026-01-23",
+   "last_activity": "2026-11-20",
    "latest": {
     "date": "2026-01-23",
     "form": "S-1",
@@ -43153,13 +43163,13 @@
    "name": "ARK CoinDesk 20 ex-Bitcoin Crypto ETF",
    "priced_date": null,
    "prior_attempts": 0,
-   "sector": "Not yet classified",
-   "sic": 0,
-   "stage": "filed",
-   "stalled": true,
+   "sector": "Finance",
+   "sic": 6221,
+   "stage": "withdrawn",
+   "stalled": false,
    "tickers": [],
    "unpriced": false,
-   "withdrawn_date": null
+   "withdrawn_date": "2026-11-20"
   },
   "2106116": {
    "amendments": 0,
@@ -43173,14 +43183,19 @@
      "date": "2026-01-23",
      "form": "S-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026007058/ea027372601-s1_arkcoin20.htm"
+    },
+    {
+     "date": "2026-11-20",
+     "form": "RW",
+     "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026122577/ea0313104-01_rw.htm"
     }
    ],
    "first_filed": "2026-01-23",
    "foreign": false,
    "form": "S-1",
-   "industry": "",
+   "industry": "Commodity Contracts Brokers & Dealers",
    "kind": "fund",
-   "last_activity": "2026-01-23",
+   "last_activity": "2026-11-20",
    "latest": {
     "date": "2026-01-23",
     "form": "S-1",
@@ -43192,13 +43207,13 @@
    "name": "ARK CoinDesk 20 Crypto ETF",
    "priced_date": null,
    "prior_attempts": 0,
-   "sector": "Not yet classified",
-   "sic": 0,
-   "stage": "filed",
-   "stalled": true,
+   "sector": "Finance",
+   "sic": 6221,
+   "stage": "withdrawn",
+   "stalled": false,
    "tickers": [],
    "unpriced": false,
-   "withdrawn_date": null
+   "withdrawn_date": "2026-11-20"
   },
   "2106436": {
    "amendments": 2,

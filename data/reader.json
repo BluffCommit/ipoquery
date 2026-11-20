@@ -927,22 +927,12 @@
   },
   "1973276": {
    "form": "S-1/A",
-   "date": "2026-11-18",
-   "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226052907/forms-1a.htm",
-   "read": "2026-11-18",
-   "result": "read",
-   "found": {
-    "low": 5.0,
-    "high": 7.0,
-    "holder_shares": 0,
-    "company_shares": 3100000
-   },
-   "left_out": [
-    "the number of shares outstanding after the offering could not be read",
-    "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
-   ],
+   "date": "2026-11-20",
+   "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226053406/forms-1a.htm",
+   "read": "2026-11-20",
+   "result": "not confirmed",
    "notes": [
-    "company facts file: the financial statements are not tagged with an operating or net result"
+    "no price range in this filing yet"
    ]
   },
   "2114145": {

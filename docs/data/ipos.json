@@ -3,12 +3,171 @@
  "data_changed": "2026-11-20",
  "counts": {
   "amended": 229,
+  "withdrawn": 43,
   "effective": 155,
   "priced": 307,
-  "filed": 130,
-  "withdrawn": 41
+  "filed": 128
  },
  "ipos": [
+  {
+   "cik": 1973276,
+   "name": "LIS Technologies Inc",
+   "tickers": [
+    "LIS"
+   ],
+   "exchanges": [],
+   "sic": 2810,
+   "industry": "Industrial Inorganic Chemicals",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "NY",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-10-26",
+   "draft_date": "2026-07-20",
+   "amendments": 3,
+   "marketing": true,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-20",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-20",
+    "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226053406/forms-1a.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-10-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226048438/forms-1.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-10-30",
+     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226049430/formfwp.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-05",
+     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226050287/forms-1a.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-06",
+     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226050302/formfwp.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226052907/forms-1a.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226053019/formfwp.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226053406/forms-1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1973276"
+  },
+  {
+   "cik": 2105930,
+   "name": "ARK CoinDesk 20 ex-Bitcoin Crypto ETF",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 6221,
+   "industry": "Commodity Contracts Brokers & Dealers",
+   "sector": "Finance",
+   "kind": "fund",
+   "location": "FL",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "withdrawn",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-01-23",
+   "draft_date": null,
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": "2026-11-20",
+   "last_activity": "2026-11-20",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-01-23",
+    "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026007062/ea027372602-s1_arkcoin20.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-01-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026007062/ea027372602-s1_arkcoin20.htm"
+    },
+    {
+     "form": "RW",
+     "date": "2026-11-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026122580/ea0313104-02_rw.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2105930"
+  },
+  {
+   "cik": 2106116,
+   "name": "ARK CoinDesk 20 Crypto ETF",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 6221,
+   "industry": "Commodity Contracts Brokers & Dealers",
+   "sector": "Finance",
+   "kind": "fund",
+   "location": "FL",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "withdrawn",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-01-23",
+   "draft_date": null,
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": "2026-11-20",
+   "last_activity": "2026-11-20",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-01-23",
+    "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026007058/ea027372601-s1_arkcoin20.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-01-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026007058/ea027372601-s1_arkcoin20.htm"
+    },
+    {
+     "form": "RW",
+     "date": "2026-11-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026122577/ea0313104-01_rw.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2106116"
+  },
   {
    "cik": 2128185,
    "name": "TFP Group Ltd",
@@ -567,72 +726,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2049323"
-  },
-  {
-   "cik": 1973276,
-   "name": "LIS Technologies Inc",
-   "tickers": [
-    "LIS"
-   ],
-   "exchanges": [],
-   "sic": 2810,
-   "industry": "Industrial Inorganic Chemicals",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "NY",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-10-26",
-   "draft_date": "2026-07-20",
-   "amendments": 2,
-   "marketing": true,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-18",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-11-18",
-    "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226052907/forms-1a.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-10-26",
-     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226048438/forms-1.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-10-30",
-     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226049430/formfwp.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-11-05",
-     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226050287/forms-1a.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-06",
-     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226050302/formfwp.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-11-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226052907/forms-1a.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/1973276/000149315226053019/formfwp.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1973276"
   },
   {
    "cik": 1114859,
@@ -50655,84 +50748,6 @@
    ],
    "unpriced": false,
    "withdrawn_date": null
-  },
-  {
-   "cik": 2105930,
-   "name": "ARK CoinDesk 20 ex-Bitcoin Crypto ETF",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 0,
-   "industry": "",
-   "sector": "Not yet classified",
-   "kind": "fund",
-   "location": "FL",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "filed",
-   "stalled": true,
-   "unpriced": false,
-   "first_filed": "2026-01-23",
-   "draft_date": null,
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-01-23",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1",
-    "date": "2026-01-23",
-    "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026007062/ea027372602-s1_arkcoin20.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-01-23",
-     "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026007062/ea027372602-s1_arkcoin20.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2105930"
-  },
-  {
-   "cik": 2106116,
-   "name": "ARK CoinDesk 20 Crypto ETF",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 0,
-   "industry": "",
-   "sector": "Not yet classified",
-   "kind": "fund",
-   "location": "FL",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "filed",
-   "stalled": true,
-   "unpriced": false,
-   "first_filed": "2026-01-23",
-   "draft_date": null,
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-01-23",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1",
-    "date": "2026-01-23",
-    "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026007058/ea027372601-s1_arkcoin20.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-01-23",
-     "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026007058/ea027372601-s1_arkcoin20.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2106116"
   },
   {
    "cik": 1755101,
