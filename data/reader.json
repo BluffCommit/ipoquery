@@ -785,9 +785,9 @@
   },
   "1620704": {
    "form": "S-1/A",
-   "date": "2026-11-17",
-   "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007117/medx_s1a.htm",
-   "read": "2026-11-18",
+   "date": "2026-11-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007188/medx_s1a.htm",
+   "read": "2026-11-20",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"
@@ -1190,10 +1190,10 @@
    ]
   },
   "2128185": {
-   "form": "F-1",
-   "date": "2026-09-25",
-   "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026063550/tfpgrouplimited-fx1.htm",
-   "read": "2026-11-18",
+   "form": "F-1/A",
+   "date": "2026-11-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026075089/tfpgrouplimited-fx1a1.htm",
+   "read": "2026-11-20",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"
@@ -2123,9 +2123,9 @@
   },
   "1670747": {
    "form": "S-1/A",
-   "date": "2026-10-09",
-   "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226046585/forms-1a.htm",
-   "read": "2026-11-18",
+   "date": "2026-11-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226053312/forms-1a.htm",
+   "read": "2026-11-20",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"

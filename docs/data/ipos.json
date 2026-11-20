@@ -1,14 +1,158 @@
 {
  "source": "SEC EDGAR",
- "data_changed": "2026-11-19",
+ "data_changed": "2026-11-20",
  "counts": {
-  "amended": 228,
-  "priced": 307,
+  "amended": 229,
   "effective": 155,
-  "filed": 131,
+  "priced": 307,
+  "filed": 130,
   "withdrawn": 41
  },
  "ipos": [
+  {
+   "cik": 2128185,
+   "name": "TFP Group Ltd",
+   "tickers": [
+    "TFP"
+   ],
+   "exchanges": [],
+   "sic": 6411,
+   "industry": "Insurance Agents, Brokers & Service",
+   "sector": "Finance",
+   "kind": "company",
+   "location": "United Kingdom",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-09-25",
+   "draft_date": "2026-05-22",
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-19",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-19",
+    "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026075089/tfpgrouplimited-fx1a1.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-09-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026063550/tfpgrouplimited-fx1.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026075089/tfpgrouplimited-fx1a1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2128185"
+  },
+  {
+   "cik": 2089855,
+   "name": "T. Rowe Price Active Crypto ETF",
+   "tickers": [
+    "TKNZ"
+   ],
+   "exchanges": [
+    "NYSE"
+   ],
+   "sic": 6221,
+   "industry": "Commodity Contracts Brokers & Dealers",
+   "sector": "Finance",
+   "kind": "fund",
+   "location": "MD",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "effective",
+   "stalled": false,
+   "unpriced": true,
+   "first_filed": "2025-10-22",
+   "draft_date": null,
+   "amendments": 5,
+   "marketing": true,
+   "effective_date": "2026-06-18",
+   "listing_date": "2026-07-14",
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-19",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-06-16",
+    "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126012919/tknz-s1a_061626.htm"
+   },
+   "filings": [
+    {
+     "form": "FWP",
+     "date": "2026-09-16",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126020648/tknx-fwp_091626.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-09-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126021325/tknz-fwp_092526.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-10-02",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126021930/tknz-fwp_100126.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-10-08",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126022414/tknz-fwp_100826.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-10-08",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126022480/tknz-fwp_100826.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-10-15",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126022857/tknz-fwp_101526.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-10-22",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126023266/trpactive-fwp_102226.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-10-28",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126023675/acx-fwp102826.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-04",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126024441/acx-fwp_110426.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-05",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126024526/tknz-fwp_110526.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126025128/tknz-fwp_111026.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126025820/tknz-fwp_111926.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2089855"
+  },
   {
    "cik": 2133037,
    "name": "SB Energy, Inc.",
@@ -66,6 +210,72 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2133037"
   },
   {
+   "cik": 1620704,
+   "name": "MED-X, INC.",
+   "tickers": [
+    "MXRX"
+   ],
+   "exchanges": [],
+   "sic": 2870,
+   "industry": "Agricultural Chemicals",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "CA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-09-25",
+   "draft_date": "2022-02-10",
+   "amendments": 5,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-19",
+   "prior_attempts": 1,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-19",
+    "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007188/medx_s1a.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-09-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226005809/medx_s1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-10-15",
+     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226006268/medx_s1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-10-29",
+     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226006517/medx_s1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-05",
+     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226006714/medx_s1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007117/medx_s1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007188/medx_s1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1620704"
+  },
+  {
    "cik": 2136449,
    "name": "Crestone Strategic Capital Acquisition Corp",
    "tickers": [],
@@ -118,6 +328,55 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136449"
+  },
+  {
+   "cik": 1670747,
+   "name": "BirchBioMed Inc.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 2834,
+   "industry": "Pharmaceutical Preparations",
+   "sector": "Biotech and pharma",
+   "kind": "company",
+   "location": "Ontario, Canada",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-08-12",
+   "draft_date": "2025-12-23",
+   "amendments": 2,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-19",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-19",
+    "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226053312/forms-1a.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-08-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226037435/forms-1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-10-09",
+     "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226046585/forms-1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226053312/forms-1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1670747"
   },
   {
    "cik": 2130357,
@@ -705,67 +964,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1770069"
-  },
-  {
-   "cik": 1620704,
-   "name": "MED-X, INC.",
-   "tickers": [
-    "MXRX"
-   ],
-   "exchanges": [],
-   "sic": 2870,
-   "industry": "Agricultural Chemicals",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "CA",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-09-25",
-   "draft_date": "2022-02-10",
-   "amendments": 4,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-17",
-   "prior_attempts": 1,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-11-17",
-    "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007117/medx_s1a.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-09-25",
-     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226005809/medx_s1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-10-15",
-     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226006268/medx_s1a.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-10-29",
-     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226006517/medx_s1a.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-11-05",
-     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226006714/medx_s1a.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-11-17",
-     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007117/medx_s1a.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1620704"
   },
   {
    "cik": 2152975,
@@ -1685,104 +1883,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046370"
-  },
-  {
-   "cik": 2089855,
-   "name": "T. Rowe Price Active Crypto ETF",
-   "tickers": [
-    "TKNZ"
-   ],
-   "exchanges": [
-    "NYSE"
-   ],
-   "sic": 6221,
-   "industry": "Commodity Contracts Brokers & Dealers",
-   "sector": "Finance",
-   "kind": "fund",
-   "location": "MD",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "effective",
-   "stalled": false,
-   "unpriced": true,
-   "first_filed": "2025-10-22",
-   "draft_date": null,
-   "amendments": 5,
-   "marketing": true,
-   "effective_date": "2026-06-18",
-   "listing_date": "2026-07-14",
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-12",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-06-16",
-    "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126012919/tknz-s1a_061626.htm"
-   },
-   "filings": [
-    {
-     "form": "FWP",
-     "date": "2026-09-15",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126020547/trp-fwp_091526.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-09-16",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126020648/tknx-fwp_091626.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-09-25",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126021325/tknz-fwp_092526.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-10-02",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126021930/tknz-fwp_100126.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-10-08",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126022414/tknz-fwp_100826.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-10-08",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126022480/tknz-fwp_100826.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-10-15",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126022857/tknz-fwp_101526.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-10-22",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126023266/trpactive-fwp_102226.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-10-28",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126023675/acx-fwp102826.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-04",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126024441/acx-fwp_110426.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-05",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126024526/tknz-fwp_110526.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-11-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126025128/tknz-fwp_111026.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2089855"
   },
   {
    "cik": 2108671,
@@ -8686,50 +8786,6 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2131124"
   },
   {
-   "cik": 1670747,
-   "name": "BirchBioMed Inc.",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 2834,
-   "industry": "Pharmaceutical Preparations",
-   "sector": "Biotech and pharma",
-   "kind": "company",
-   "location": "Ontario, Canada",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-08-12",
-   "draft_date": "2025-12-23",
-   "amendments": 1,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-10-09",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-10-09",
-    "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226046585/forms-1a.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-08-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226037435/forms-1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-10-09",
-     "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226046585/forms-1a.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1670747"
-  },
-  {
    "cik": 1658678,
    "name": "BioStem Technologies, Inc.",
    "tickers": [
@@ -11138,47 +11194,6 @@
    ],
    "unpriced": false,
    "withdrawn_date": null
-  },
-  {
-   "cik": 2128185,
-   "name": "TFP Group Ltd",
-   "tickers": [
-    "TFP"
-   ],
-   "exchanges": [],
-   "sic": 6411,
-   "industry": "Insurance Agents, Brokers & Service",
-   "sector": "Finance",
-   "kind": "company",
-   "location": "United Kingdom",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "filed",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-09-25",
-   "draft_date": "2026-05-22",
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-09-25",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1",
-    "date": "2026-09-25",
-    "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026063550/tfpgrouplimited-fx1.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-09-25",
-     "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026063550/tfpgrouplimited-fx1.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2128185"
   },
   {
    "cik": 2112634,

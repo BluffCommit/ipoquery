@@ -2220,7 +2220,7 @@
    "withdrawn_date": null
   },
   "1620704": {
-   "amendments": 4,
+   "amendments": 5,
    "cik": 1620704,
    "draft_date": "2022-02-10",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1620704",
@@ -2251,6 +2251,11 @@
      "date": "2026-11-17",
      "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007117/medx_s1a.htm"
+    },
+    {
+     "date": "2026-11-19",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007188/medx_s1a.htm"
     }
    ],
    "first_filed": "2026-09-25",
@@ -2258,11 +2263,11 @@
    "form": "S-1",
    "industry": "Agricultural Chemicals",
    "kind": "company",
-   "last_activity": "2026-11-17",
+   "last_activity": "2026-11-19",
    "latest": {
-    "date": "2026-11-17",
+    "date": "2026-11-19",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007117/medx_s1a.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/1620704/000147793226007188/medx_s1a.htm"
    },
    "listing_date": null,
    "location": "CA",
@@ -3197,7 +3202,7 @@
    "withdrawn_date": null
   },
   "1670747": {
-   "amendments": 1,
+   "amendments": 2,
    "cik": 1670747,
    "draft_date": "2025-12-23",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1670747",
@@ -3213,6 +3218,11 @@
      "date": "2026-10-09",
      "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226046585/forms-1a.htm"
+    },
+    {
+     "date": "2026-11-19",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226053312/forms-1a.htm"
     }
    ],
    "first_filed": "2026-08-12",
@@ -3220,11 +3230,11 @@
    "form": "S-1",
    "industry": "Pharmaceutical Preparations",
    "kind": "company",
-   "last_activity": "2026-10-09",
+   "last_activity": "2026-11-19",
    "latest": {
-    "date": "2026-10-09",
+    "date": "2026-11-19",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226046585/forms-1a.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/1670747/000149315226053312/forms-1a.htm"
    },
    "listing_date": null,
    "location": "Ontario, Canada",
@@ -34297,11 +34307,6 @@
    ],
    "filings": [
     {
-     "date": "2026-09-15",
-     "form": "FWP",
-     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126020547/trp-fwp_091526.htm"
-    },
-    {
      "date": "2026-09-16",
      "form": "FWP",
      "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126020648/tknx-fwp_091626.htm"
@@ -34355,6 +34360,11 @@
      "date": "2026-11-12",
      "form": "FWP",
      "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126025128/tknz-fwp_111026.htm"
+    },
+    {
+     "date": "2026-11-19",
+     "form": "FWP",
+     "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937126025820/tknz-fwp_111926.htm"
     }
    ],
    "first_filed": "2025-10-22",
@@ -34362,7 +34372,7 @@
    "form": "S-1",
    "industry": "Commodity Contracts Brokers & Dealers",
    "kind": "fund",
-   "last_activity": "2026-11-12",
+   "last_activity": "2026-11-19",
    "latest": {
     "date": "2026-06-16",
     "form": "S-1/A",
@@ -49351,7 +49361,7 @@
    "withdrawn_date": null
   },
   "2128185": {
-   "amendments": 0,
+   "amendments": 1,
    "cik": 2128185,
    "draft_date": "2026-05-22",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2128185",
@@ -49362,6 +49372,11 @@
      "date": "2026-09-25",
      "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026063550/tfpgrouplimited-fx1.htm"
+    },
+    {
+     "date": "2026-11-19",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026075089/tfpgrouplimited-fx1a1.htm"
     }
    ],
    "first_filed": "2026-09-25",
@@ -49369,11 +49384,11 @@
    "form": "F-1",
    "industry": "Insurance Agents, Brokers & Service",
    "kind": "company",
-   "last_activity": "2026-09-25",
+   "last_activity": "2026-11-19",
    "latest": {
-    "date": "2026-09-25",
-    "form": "F-1",
-    "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026063550/tfpgrouplimited-fx1.htm"
+    "date": "2026-11-19",
+    "form": "F-1/A",
+    "url": "https://www.sec.gov/Archives/edgar/data/2128185/000162828026075089/tfpgrouplimited-fx1a1.htm"
    },
    "listing_date": null,
    "location": "United Kingdom",
@@ -49383,7 +49398,7 @@
    "prior_attempts": 0,
    "sector": "Finance",
    "sic": 6411,
-   "stage": "filed",
+   "stage": "amended",
    "stalled": false,
    "tickers": [
     "TFP"
@@ -56228,7 +56243,7 @@
    "withdrawn_date": "2026-09-16"
   }
  },
- "index_day": "2026-11-19",
+ "index_day": "2026-11-20",
  "quarters_done": [
   "2025Q4",
   "2026Q1",
