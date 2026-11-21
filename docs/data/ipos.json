@@ -1,14 +1,58 @@
 {
  "source": "SEC EDGAR",
- "data_changed": "2026-11-20",
+ "data_changed": "2026-11-21",
  "counts": {
+  "filed": 128,
   "amended": 229,
-  "withdrawn": 43,
-  "effective": 155,
-  "priced": 307,
-  "filed": 128
+  "withdrawn": 45,
+  "effective": 154,
+  "priced": 307
  },
  "ipos": [
+  {
+   "cik": 2095898,
+   "name": "Tongda International Group Co., Ltd",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 7374,
+   "industry": "Services-Computer Processing & Data Preparation",
+   "sector": "Software and internet",
+   "kind": "company",
+   "location": "China",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2025-11-25",
+   "draft_date": null,
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-20",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1",
+    "date": "2026-11-20",
+    "url": "https://www.sec.gov/Archives/edgar/data/2095898/000109991026000317/form_f-1.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2025-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2095898/000109991025000246/tongda.htm"
+    },
+    {
+     "form": "F-1",
+     "date": "2026-11-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/2095898/000109991026000317/form_f-1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2095898"
+  },
   {
    "cik": 1973276,
    "name": "LIS Technologies Inc",
@@ -81,66 +125,189 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1973276"
   },
   {
-   "cik": 2105930,
-   "name": "ARK CoinDesk 20 ex-Bitcoin Crypto ETF",
+   "cik": 2046216,
+   "name": "Beta FinTech Holdings Ltd",
    "tickers": [],
    "exchanges": [],
-   "sic": 6221,
-   "industry": "Commodity Contracts Brokers & Dealers",
+   "sic": 6199,
+   "industry": "Finance Services",
    "sector": "Finance",
-   "kind": "fund",
-   "location": "FL",
-   "foreign": false,
-   "form": "S-1",
+   "kind": "company",
+   "location": "Hong Kong",
+   "foreign": true,
+   "form": "F-1",
    "stage": "withdrawn",
    "stalled": false,
    "unpriced": false,
-   "first_filed": "2026-01-23",
-   "draft_date": null,
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
+   "first_filed": "2025-06-04",
+   "draft_date": "2024-12-13",
+   "amendments": 4,
+   "marketing": true,
+   "effective_date": "2025-09-30",
    "listing_date": null,
    "priced_date": null,
    "withdrawn_date": "2026-11-20",
    "last_activity": "2026-11-20",
    "prior_attempts": 0,
    "latest": {
-    "form": "S-1",
-    "date": "2026-01-23",
-    "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026007062/ea027372602-s1_arkcoin20.htm"
+    "form": "F-1",
+    "date": "2026-02-12",
+    "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026015502/ea0276334-01.htm"
    },
    "filings": [
     {
-     "form": "S-1",
+     "form": "F-1",
+     "date": "2025-06-04",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025050918/ea0223281-10.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-06-27",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025059029/ea0223281-12.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-07-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025065549/ea0223281-14.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-08-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025074505/ea0223281-15.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-09-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025087161/ea0223281-17.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2025-09-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025089026/ea0257847-fwp_betafin.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2025-09-30",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/999999999525003180/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "F-1",
+     "date": "2026-02-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026015502/ea0276334-01.htm"
+    },
+    {
+     "form": "RW",
+     "date": "2026-11-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026122768/ea0313068-rw_beta.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046216"
+  },
+  {
+   "amendments": 0,
+   "cik": 2105930,
+   "draft_date": null,
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2105930",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
      "date": "2026-01-23",
+     "form": "S-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026007062/ea027372602-s1_arkcoin20.htm"
     },
     {
-     "form": "RW",
      "date": "2026-11-20",
+     "form": "RW",
      "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026122580/ea0313104-02_rw.htm"
     }
    ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2105930"
-  },
-  {
-   "cik": 2106116,
-   "name": "ARK CoinDesk 20 Crypto ETF",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 6221,
-   "industry": "Commodity Contracts Brokers & Dealers",
-   "sector": "Finance",
-   "kind": "fund",
-   "location": "FL",
+   "first_filed": "2026-01-23",
    "foreign": false,
    "form": "S-1",
+   "industry": "Commodity Contracts Brokers & Dealers",
+   "kind": "fund",
+   "last_activity": "2026-11-20",
+   "latest": {
+    "date": "2026-01-23",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2105930/000121390026007062/ea027372602-s1_arkcoin20.htm"
+   },
+   "listing_date": null,
+   "location": "FL",
+   "marketing": false,
+   "name": "ARK CoinDesk 20 ex-Bitcoin Crypto ETF",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Finance",
+   "sic": 6221,
+   "stage": "withdrawn",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": "2026-11-20"
+  },
+  {
+   "amendments": 0,
+   "cik": 2106116,
+   "draft_date": null,
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2106116",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2026-01-23",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026007058/ea027372601-s1_arkcoin20.htm"
+    },
+    {
+     "date": "2026-11-20",
+     "form": "RW",
+     "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026122577/ea0313104-01_rw.htm"
+    }
+   ],
+   "first_filed": "2026-01-23",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Commodity Contracts Brokers & Dealers",
+   "kind": "fund",
+   "last_activity": "2026-11-20",
+   "latest": {
+    "date": "2026-01-23",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026007058/ea027372601-s1_arkcoin20.htm"
+   },
+   "listing_date": null,
+   "location": "FL",
+   "marketing": false,
+   "name": "ARK CoinDesk 20 Crypto ETF",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Finance",
+   "sic": 6221,
+   "stage": "withdrawn",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": "2026-11-20"
+  },
+  {
+   "cik": 2048803,
+   "name": "AOJE INC.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 2510,
+   "industry": "Household Furniture",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "China",
+   "foreign": true,
+   "form": "F-1",
    "stage": "withdrawn",
    "stalled": false,
    "unpriced": false,
-   "first_filed": "2026-01-23",
-   "draft_date": null,
+   "first_filed": "2025-12-23",
+   "draft_date": "2025-01-10",
    "amendments": 0,
    "marketing": false,
    "effective_date": null,
@@ -150,23 +317,62 @@
    "last_activity": "2026-11-20",
    "prior_attempts": 0,
    "latest": {
-    "form": "S-1",
-    "date": "2026-01-23",
-    "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026007058/ea027372601-s1_arkcoin20.htm"
+    "form": "F-1",
+    "date": "2025-12-23",
+    "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315225029129/formf-1.htm"
    },
    "filings": [
     {
-     "form": "S-1",
-     "date": "2026-01-23",
-     "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026007058/ea027372601-s1_arkcoin20.htm"
+     "form": "F-1",
+     "date": "2025-12-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315225029129/formf-1.htm"
     },
     {
      "form": "RW",
      "date": "2026-11-20",
-     "url": "https://www.sec.gov/Archives/edgar/data/2106116/000121390026122577/ea0313104-01_rw.htm"
+     "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315226053472/formrw.htm"
     }
    ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2106116"
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048803"
+  },
+  {
+   "cik": 2136881,
+   "name": "Zeno42 Inc.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 7372,
+   "industry": "Services-Prepackaged Software",
+   "sector": "Software and internet",
+   "kind": "company",
+   "location": "NY",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-19",
+   "draft_date": null,
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-19",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-19",
+    "url": "https://www.sec.gov/Archives/edgar/data/2136881/000109690626001825/zeno_s1.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136881/000109690626001825/zeno_s1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136881"
   },
   {
    "cik": 2128185,
@@ -9505,106 +9711,106 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2112466"
   },
   {
+   "amendments": 7,
    "cik": 2076561,
-   "name": "Pine Tree Acquisition Corp.",
-   "tickers": [
-    "PAXG",
-    "PAXGR",
-    "PAXGU"
-   ],
+   "draft_date": "2025-09-12",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2076561",
+   "effective_date": "2026-10-05",
    "exchanges": [
     "Nasdaq",
     "Nasdaq",
     "Nasdaq"
    ],
-   "sic": 6770,
-   "industry": "Blank Checks",
-   "sector": "Finance",
-   "kind": "spac",
-   "location": "Cayman Islands",
-   "foreign": true,
-   "form": "S-1",
-   "stage": "priced",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2025-12-19",
-   "draft_date": "2025-09-12",
-   "amendments": 7,
-   "marketing": false,
-   "effective_date": "2026-10-05",
-   "listing_date": "2026-10-05",
-   "priced_date": "2026-10-06",
-   "withdrawn_date": null,
-   "last_activity": "2026-10-06",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "424B4",
-    "date": "2026-10-06",
-    "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226006063/ptree_424b4.htm"
-   },
    "filings": [
     {
-     "form": "S-1",
      "date": "2025-12-19",
+     "form": "S-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793225009097/ptree_s1.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-01-15",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226000218/ptree_s1a.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-02-04",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226000632/ptree_s1a.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-03-17",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226001393/ptree_s1a.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-03-30",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226001712/ptree_s1a.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-07-21",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226004429/ptree_s1a.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-09-18",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226005673/ptree_s1a.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-09-29",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226005904/ptree_s1a.htm"
     },
     {
-     "form": "8-A12B",
      "date": "2026-10-05",
+     "form": "8-A12B",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226006041/ptree_8a12b.htm"
     },
     {
-     "form": "CERT",
      "date": "2026-10-05",
+     "form": "CERT",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000135445726000947/8A_CERT_PAXG_0002076561.pdf"
     },
     {
-     "form": "EFFECT",
      "date": "2026-10-05",
+     "form": "EFFECT",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/999999999526003147/xslEFFECTX01/primary_doc.xml"
     },
     {
-     "form": "424B4",
      "date": "2026-10-06",
+     "form": "424B4",
      "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226006063/ptree_424b4.htm"
     }
    ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2076561"
+   "first_filed": "2025-12-19",
+   "foreign": true,
+   "form": "S-1",
+   "industry": "Blank Checks",
+   "kind": "spac",
+   "last_activity": "2026-10-06",
+   "latest": {
+    "date": "2026-10-06",
+    "form": "424B4",
+    "url": "https://www.sec.gov/Archives/edgar/data/2076561/000147793226006063/ptree_424b4.htm"
+   },
+   "listing_date": "2026-10-05",
+   "location": "Cayman Islands",
+   "marketing": false,
+   "name": "Pine Tree Acquisition Corp.",
+   "priced_date": "2026-10-06",
+   "prior_attempts": 0,
+   "sector": "Finance",
+   "sic": 6770,
+   "stage": "priced",
+   "stalled": false,
+   "tickers": [
+    "PAXG",
+    "PAXGR",
+    "PAXGU"
+   ],
+   "unpriced": false,
+   "withdrawn_date": null
   },
   {
    "cik": 2074850,
@@ -43425,7 +43631,7 @@
    "foreign": false,
    "form": "S-1",
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "unpriced": false,
    "first_filed": "2025-07-21",
    "draft_date": "2025-04-25",
@@ -43509,7 +43715,7 @@
    "foreign": false,
    "form": "S-1",
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "unpriced": false,
    "first_filed": "2025-12-19",
    "draft_date": null,
@@ -43562,7 +43768,7 @@
    "foreign": false,
    "form": "S-1",
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "unpriced": false,
    "first_filed": "2025-05-01",
    "draft_date": null,
@@ -45578,80 +45784,6 @@
    ],
    "unpriced": false,
    "withdrawn_date": null
-  },
-  {
-   "cik": 2046216,
-   "name": "Beta FinTech Holdings Ltd",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 6199,
-   "industry": "Finance Services",
-   "sector": "Finance",
-   "kind": "company",
-   "location": "Hong Kong",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "effective",
-   "stalled": false,
-   "unpriced": true,
-   "first_filed": "2025-06-04",
-   "draft_date": "2024-12-13",
-   "amendments": 4,
-   "marketing": true,
-   "effective_date": "2025-09-30",
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-02-12",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1",
-    "date": "2026-02-12",
-    "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026015502/ea0276334-01.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2025-06-04",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025050918/ea0223281-10.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-06-27",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025059029/ea0223281-12.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-07-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025065549/ea0223281-14.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-08-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025074505/ea0223281-15.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-09-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025087161/ea0223281-17.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2025-09-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025089026/ea0257847-fwp_betafin.htm"
-    },
-    {
-     "form": "EFFECT",
-     "date": "2025-09-30",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/999999999525003180/xslEFFECTX01/primary_doc.xml"
-    },
-    {
-     "form": "F-1",
-     "date": "2026-02-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026015502/ea0276334-01.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046216"
   },
   {
    "cik": 2107062,
@@ -53031,45 +53163,6 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2055187"
   },
   {
-   "cik": 2048803,
-   "name": "AOJE INC.",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 2510,
-   "industry": "Household Furniture",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "China",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "filed",
-   "stalled": true,
-   "unpriced": false,
-   "first_filed": "2025-12-23",
-   "draft_date": "2025-01-10",
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2025-12-23",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1",
-    "date": "2025-12-23",
-    "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315225029129/formf-1.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2025-12-23",
-     "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315225029129/formf-1.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048803"
-  },
-  {
    "cik": 2076167,
    "name": "Synera Studio Inc",
    "tickers": [],
@@ -55647,45 +55740,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1779303"
-  },
-  {
-   "cik": 2095898,
-   "name": "Tongda International Group Co., Ltd",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 7374,
-   "industry": "Services-Computer Processing & Data Preparation",
-   "sector": "Software and internet",
-   "kind": "company",
-   "location": "China",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "filed",
-   "stalled": true,
-   "unpriced": false,
-   "first_filed": "2025-11-25",
-   "draft_date": null,
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2025-11-25",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1",
-    "date": "2025-11-25",
-    "url": "https://www.sec.gov/Archives/edgar/data/2095898/000109991025000246/tongda.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2025-11-25",
-     "url": "https://www.sec.gov/Archives/edgar/data/2095898/000109991025000246/tongda.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2095898"
   },
   {
    "cik": 2016864,

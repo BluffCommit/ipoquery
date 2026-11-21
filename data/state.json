@@ -17913,6 +17913,11 @@
      "date": "2026-02-12",
      "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026015502/ea0276334-01.htm"
+    },
+    {
+     "date": "2026-11-20",
+     "form": "RW",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026122768/ea0313068-rw_beta.htm"
     }
    ],
    "first_filed": "2025-06-04",
@@ -17920,7 +17925,7 @@
    "form": "F-1",
    "industry": "Finance Services",
    "kind": "company",
-   "last_activity": "2026-02-12",
+   "last_activity": "2026-11-20",
    "latest": {
     "date": "2026-02-12",
     "form": "F-1",
@@ -17934,11 +17939,11 @@
    "prior_attempts": 0,
    "sector": "Finance",
    "sic": 6199,
-   "stage": "effective",
+   "stage": "withdrawn",
    "stalled": false,
    "tickers": [],
-   "unpriced": true,
-   "withdrawn_date": null
+   "unpriced": false,
+   "withdrawn_date": "2026-11-20"
   },
   "2046370": {
    "amendments": 13,
@@ -18317,6 +18322,11 @@
      "date": "2025-12-23",
      "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315225029129/formf-1.htm"
+    },
+    {
+     "date": "2026-11-20",
+     "form": "RW",
+     "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315226053472/formrw.htm"
     }
    ],
    "first_filed": "2025-12-23",
@@ -18324,7 +18334,7 @@
    "form": "F-1",
    "industry": "Household Furniture",
    "kind": "company",
-   "last_activity": "2025-12-23",
+   "last_activity": "2026-11-20",
    "latest": {
     "date": "2025-12-23",
     "form": "F-1",
@@ -18338,11 +18348,11 @@
    "prior_attempts": 0,
    "sector": "Industrials",
    "sic": 2510,
-   "stage": "filed",
-   "stalled": true,
+   "stage": "withdrawn",
+   "stalled": false,
    "tickers": [],
    "unpriced": false,
-   "withdrawn_date": null
+   "withdrawn_date": "2026-11-20"
   },
   "2049184": {
    "amendments": 0,
@@ -20664,7 +20674,7 @@
    "sector": "Finance",
    "sic": 6221,
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "tickers": [
     "TSUI"
    ],
@@ -21631,7 +21641,7 @@
    "sector": "Industrials",
    "sic": 5010,
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -37848,6 +37858,11 @@
      "date": "2025-11-25",
      "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2095898/000109991025000246/tongda.htm"
+    },
+    {
+     "date": "2026-11-20",
+     "form": "F-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2095898/000109991026000317/form_f-1.htm"
     }
    ],
    "first_filed": "2025-11-25",
@@ -37855,11 +37870,11 @@
    "form": "F-1",
    "industry": "Services-Computer Processing & Data Preparation",
    "kind": "company",
-   "last_activity": "2025-11-25",
+   "last_activity": "2026-11-20",
    "latest": {
-    "date": "2025-11-25",
+    "date": "2026-11-20",
     "form": "F-1",
-    "url": "https://www.sec.gov/Archives/edgar/data/2095898/000109991025000246/tongda.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2095898/000109991026000317/form_f-1.htm"
    },
    "listing_date": null,
    "location": "China",
@@ -37870,7 +37885,7 @@
    "sector": "Software and internet",
    "sic": 7374,
    "stage": "filed",
-   "stalled": true,
+   "stalled": false,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -41335,7 +41350,7 @@
    "sector": "Finance",
    "sic": 6770,
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -51869,6 +51884,45 @@
    "unpriced": false,
    "withdrawn_date": null
   },
+  "2136881": {
+   "amendments": 0,
+   "cik": 2136881,
+   "draft_date": null,
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136881",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2026-11-19",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136881/000109690626001825/zeno_s1.htm"
+    }
+   ],
+   "first_filed": "2026-11-19",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Services-Prepackaged Software",
+   "kind": "company",
+   "last_activity": "2026-11-19",
+   "latest": {
+    "date": "2026-11-19",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2136881/000109690626001825/zeno_s1.htm"
+   },
+   "listing_date": null,
+   "location": "NY",
+   "marketing": false,
+   "name": "Zeno42 Inc.",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Software and internet",
+   "sic": 7372,
+   "stage": "filed",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": null
+  },
   "2137360": {
    "amendments": 5,
    "cik": 2137360,
@@ -56258,7 +56312,7 @@
    "withdrawn_date": "2026-09-16"
   }
  },
- "index_day": "2026-11-20",
+ "index_day": "2026-11-21",
  "quarters_done": [
   "2025Q4",
   "2026Q1",

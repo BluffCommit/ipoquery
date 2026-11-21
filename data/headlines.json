@@ -113,10 +113,16 @@
    "items": []
   },
   "2000208": {
-   "checked": "",
+   "checked": "2026-11-21T02:34",
    "name": "Kepler",
-   "items": [],
-   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
+   "items": [
+    {
+     "title": "Flash update from Kepler Trust Intelligence",
+     "source": "investegate.co.uk",
+     "date": "2026-09-22",
+     "url": "https://www.investegate.co.uk/announcement/rns/baillie-gifford-us-growth-trust--usa/flash-update-from-kepler-trust-intelligence/9785391"
+    }
+   ]
   },
   "2049323": {
    "checked": "2026-11-19T09:56",
