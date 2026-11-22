@@ -4140,6 +4140,104 @@
    "unpriced": true,
    "withdrawn_date": null
   },
+  "1711754": {
+   "amendments": 3,
+   "cik": 1711754,
+   "draft_date": "2017-12-01",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1711754",
+   "effective_date": "2024-08-07",
+   "exchanges": [
+    "Nasdaq"
+   ],
+   "filings": [
+    {
+     "date": "2019-06-21",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/000164033419001189/inmb_s1.htm"
+    },
+    {
+     "date": "2019-07-02",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999519001521/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2019-07-18",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/000164033419001410/inmb_s1.htm"
+    },
+    {
+     "date": "2019-07-26",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999519001719/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2020-04-02",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999520000673/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2020-04-20",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999520000788/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2020-12-30",
+     "form": "8-A12B",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/000121390020045474/ea132342-8a12b_inmune.htm"
+    },
+    {
+     "date": "2021-05-05",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999521001801/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2021-05-05",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999521001796/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2021-09-17",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999521003580/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2024-08-07",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999524002448/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2026-11-20",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/000121390026122693/ea0312507-s1_inmune.htm"
+    }
+   ],
+   "first_filed": "2018-08-30",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Biological Products, (No Diagnostic Substances)",
+   "kind": "company",
+   "last_activity": "2026-11-20",
+   "latest": {
+    "date": "2026-11-20",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/1711754/000121390026122693/ea0312507-s1_inmune.htm"
+   },
+   "listing_date": "2020-12-30",
+   "location": "FL",
+   "marketing": true,
+   "name": "Inmune Bio Inc.",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Biotech and pharma",
+   "sic": 2836,
+   "stage": "effective",
+   "stalled": false,
+   "tickers": [
+    "INMB"
+   ],
+   "unpriced": true,
+   "withdrawn_date": null
+  },
   "1718728": {
    "amendments": 2,
    "cik": 1718728,
@@ -12436,6 +12534,84 @@
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": "2026-09-18"
+  },
+  "1985554": {
+   "amendments": 5,
+   "cik": 1985554,
+   "draft_date": null,
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1985554",
+   "effective_date": "2023-12-29",
+   "exchanges": [
+    "OTC"
+   ],
+   "filings": [
+    {
+     "date": "2023-08-22",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823005989/londax_s1.htm"
+    },
+    {
+     "date": "2023-09-26",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823006691/londax_s1a1.htm"
+    },
+    {
+     "date": "2023-10-25",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823007400/londax_s1a2.htm"
+    },
+    {
+     "date": "2023-11-17",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823008240/londax_s1a3.htm"
+    },
+    {
+     "date": "2023-12-08",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823008718/londax_s1a4.htm"
+    },
+    {
+     "date": "2023-12-14",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823008839/londax_s1a5.htm"
+    },
+    {
+     "date": "2023-12-29",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/999999999524000007/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2026-11-20",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316826008986/alphadig_s1.htm"
+    }
+   ],
+   "first_filed": "2023-08-22",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Services-Computer Programming Services",
+   "kind": "company",
+   "last_activity": "2026-11-20",
+   "latest": {
+    "date": "2026-11-20",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316826008986/alphadig_s1.htm"
+   },
+   "listing_date": null,
+   "location": "OH",
+   "marketing": false,
+   "name": "ALPHA DIGITAL VOLTZ INC.",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Software and internet",
+   "sic": 7371,
+   "stage": "effective",
+   "stalled": false,
+   "tickers": [
+    "ADVI"
+   ],
+   "unpriced": true,
+   "withdrawn_date": null
   },
   "1993296": {
    "amendments": 3,
@@ -21092,7 +21268,7 @@
    "sector": "Industrials",
    "sic": 5130,
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -56312,7 +56488,7 @@
    "withdrawn_date": "2026-09-16"
   }
  },
- "index_day": "2026-11-21",
+ "index_day": "2026-11-22",
  "quarters_done": [
   "2025Q4",
   "2026Q1",
@@ -57280,6 +57456,10 @@
    "name": "Twin Vee PowerCats, Co.",
    "reason": "outside_window"
   },
+  "1857086": {
+   "name": "TruGolf Holdings, Inc.",
+   "reason": "outside_window"
+  },
   "1858685": {
    "name": "Biofrontera Inc.",
    "reason": "outside_window"
@@ -57768,6 +57948,10 @@
    "name": "iOThree Ltd",
    "reason": "outside_window"
   },
+  "1998560": {
+   "name": "Axonex AI Group Ltd",
+   "reason": "outside_window"
+  },
   "2000366": {
    "name": "Scage Future",
    "reason": "already_public"
@@ -57972,6 +58156,10 @@
    "name": "Robin Energy Ltd.",
    "reason": "already_public"
   },
+  "2041208": {
+   "name": "Tactical Resources Corp.",
+   "reason": "already_public"
+  },
   "2041338": {
    "name": "Dreamland Ltd",
    "reason": "outside_window"
@@ -58114,6 +58302,10 @@
   },
   "2097725": {
    "name": "AIR Global PLC",
+   "reason": "already_public"
+  },
+  "2101833": {
+   "name": "Forge Nano Holdings, Inc.",
    "reason": "already_public"
   },
   "2108121": {

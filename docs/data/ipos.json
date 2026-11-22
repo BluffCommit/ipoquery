@@ -1,11 +1,11 @@
 {
  "source": "SEC EDGAR",
- "data_changed": "2026-11-21",
+ "data_changed": "2026-11-22",
  "counts": {
   "filed": 128,
   "amended": 229,
+  "effective": 156,
   "withdrawn": 45,
-  "effective": 154,
   "priced": 307
  },
  "ipos": [
@@ -125,83 +125,181 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1973276"
   },
   {
-   "cik": 2046216,
-   "name": "Beta FinTech Holdings Ltd",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 6199,
-   "industry": "Finance Services",
-   "sector": "Finance",
+   "cik": 1711754,
+   "name": "Inmune Bio Inc.",
+   "tickers": [
+    "INMB"
+   ],
+   "exchanges": [
+    "Nasdaq"
+   ],
+   "sic": 2836,
+   "industry": "Biological Products, (No Diagnostic Substances)",
+   "sector": "Biotech and pharma",
    "kind": "company",
-   "location": "Hong Kong",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "withdrawn",
+   "location": "FL",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "effective",
    "stalled": false,
-   "unpriced": false,
-   "first_filed": "2025-06-04",
-   "draft_date": "2024-12-13",
-   "amendments": 4,
+   "unpriced": true,
+   "first_filed": "2018-08-30",
+   "draft_date": "2017-12-01",
+   "amendments": 3,
    "marketing": true,
-   "effective_date": "2025-09-30",
-   "listing_date": null,
+   "effective_date": "2024-08-07",
+   "listing_date": "2020-12-30",
    "priced_date": null,
-   "withdrawn_date": "2026-11-20",
+   "withdrawn_date": null,
    "last_activity": "2026-11-20",
    "prior_attempts": 0,
    "latest": {
-    "form": "F-1",
-    "date": "2026-02-12",
-    "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026015502/ea0276334-01.htm"
+    "form": "S-1",
+    "date": "2026-11-20",
+    "url": "https://www.sec.gov/Archives/edgar/data/1711754/000121390026122693/ea0312507-s1_inmune.htm"
    },
    "filings": [
     {
-     "form": "F-1",
-     "date": "2025-06-04",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025050918/ea0223281-10.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-06-27",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025059029/ea0223281-12.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-07-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025065549/ea0223281-14.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-08-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025074505/ea0223281-15.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-09-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025087161/ea0223281-17.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2025-09-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025089026/ea0257847-fwp_betafin.htm"
+     "form": "S-1",
+     "date": "2019-06-21",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/000164033419001189/inmb_s1.htm"
     },
     {
      "form": "EFFECT",
+     "date": "2019-07-02",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999519001521/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "S-1",
+     "date": "2019-07-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/000164033419001410/inmb_s1.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2019-07-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999519001719/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2020-04-02",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999520000673/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2020-04-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999520000788/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "8-A12B",
+     "date": "2020-12-30",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/000121390020045474/ea132342-8a12b_inmune.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2021-05-05",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999521001801/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2021-05-05",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999521001796/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2021-09-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999521003580/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2024-08-07",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/999999999524002448/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "S-1",
+     "date": "2026-11-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/1711754/000121390026122693/ea0312507-s1_inmune.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1711754"
+  },
+  {
+   "amendments": 4,
+   "cik": 2046216,
+   "draft_date": "2024-12-13",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046216",
+   "effective_date": "2025-09-30",
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2025-06-04",
+     "form": "F-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025050918/ea0223281-10.htm"
+    },
+    {
+     "date": "2025-06-27",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025059029/ea0223281-12.htm"
+    },
+    {
+     "date": "2025-07-18",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025065549/ea0223281-14.htm"
+    },
+    {
+     "date": "2025-08-12",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025074505/ea0223281-15.htm"
+    },
+    {
+     "date": "2025-09-12",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025087161/ea0223281-17.htm"
+    },
+    {
+     "date": "2025-09-18",
+     "form": "FWP",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390025089026/ea0257847-fwp_betafin.htm"
+    },
+    {
      "date": "2025-09-30",
+     "form": "EFFECT",
      "url": "https://www.sec.gov/Archives/edgar/data/2046216/999999999525003180/xslEFFECTX01/primary_doc.xml"
     },
     {
-     "form": "F-1",
      "date": "2026-02-12",
+     "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026015502/ea0276334-01.htm"
     },
     {
-     "form": "RW",
      "date": "2026-11-20",
+     "form": "RW",
      "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026122768/ea0313068-rw_beta.htm"
     }
    ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046216"
+   "first_filed": "2025-06-04",
+   "foreign": true,
+   "form": "F-1",
+   "industry": "Finance Services",
+   "kind": "company",
+   "last_activity": "2026-11-20",
+   "latest": {
+    "date": "2026-02-12",
+    "form": "F-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2046216/000121390026015502/ea0276334-01.htm"
+   },
+   "listing_date": null,
+   "location": "Hong Kong",
+   "marketing": true,
+   "name": "Beta FinTech Holdings Ltd",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Finance",
+   "sic": 6199,
+   "stage": "withdrawn",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": "2026-11-20"
   },
   {
    "amendments": 0,
@@ -292,48 +390,126 @@
    "withdrawn_date": "2026-11-20"
   },
   {
-   "cik": 2048803,
-   "name": "AOJE INC.",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 2510,
-   "industry": "Household Furniture",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "China",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "withdrawn",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2025-12-23",
-   "draft_date": "2025-01-10",
    "amendments": 0,
-   "marketing": false,
+   "cik": 2048803,
+   "draft_date": "2025-01-10",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048803",
    "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": "2026-11-20",
-   "last_activity": "2026-11-20",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1",
-    "date": "2025-12-23",
-    "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315225029129/formf-1.htm"
-   },
+   "exchanges": [],
    "filings": [
     {
-     "form": "F-1",
      "date": "2025-12-23",
+     "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315225029129/formf-1.htm"
     },
     {
-     "form": "RW",
      "date": "2026-11-20",
+     "form": "RW",
      "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315226053472/formrw.htm"
     }
    ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048803"
+   "first_filed": "2025-12-23",
+   "foreign": true,
+   "form": "F-1",
+   "industry": "Household Furniture",
+   "kind": "company",
+   "last_activity": "2026-11-20",
+   "latest": {
+    "date": "2025-12-23",
+    "form": "F-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2048803/000149315225029129/formf-1.htm"
+   },
+   "listing_date": null,
+   "location": "China",
+   "marketing": false,
+   "name": "AOJE INC.",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Industrials",
+   "sic": 2510,
+   "stage": "withdrawn",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": "2026-11-20"
+  },
+  {
+   "cik": 1985554,
+   "name": "ALPHA DIGITAL VOLTZ INC.",
+   "tickers": [
+    "ADVI"
+   ],
+   "exchanges": [
+    "OTC"
+   ],
+   "sic": 7371,
+   "industry": "Services-Computer Programming Services",
+   "sector": "Software and internet",
+   "kind": "company",
+   "location": "OH",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "effective",
+   "stalled": false,
+   "unpriced": true,
+   "first_filed": "2023-08-22",
+   "draft_date": null,
+   "amendments": 5,
+   "marketing": false,
+   "effective_date": "2023-12-29",
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-20",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-20",
+    "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316826008986/alphadig_s1.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2023-08-22",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823005989/londax_s1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2023-09-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823006691/londax_s1a1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2023-10-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823007400/londax_s1a2.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2023-11-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823008240/londax_s1a3.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2023-12-08",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823008718/londax_s1a4.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2023-12-14",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316823008839/londax_s1a5.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2023-12-29",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/999999999524000007/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "S-1",
+     "date": "2026-11-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/1985554/000168316826008986/alphadig_s1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1985554"
   },
   {
    "cik": 2136881,
@@ -43503,7 +43679,7 @@
    "foreign": true,
    "form": "F-1",
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "unpriced": false,
    "first_filed": "2025-09-12",
    "draft_date": "2025-05-27",
