@@ -145,10 +145,9 @@
    "items": []
   },
   "2083843": {
-   "checked": "",
+   "checked": "2026-11-22T11:42",
    "name": "Student Living EduVation",
-   "items": [],
-   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
+   "items": []
   },
   "2064551": {
    "checked": "2026-11-20T02:28",
