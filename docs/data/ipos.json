@@ -3,8 +3,8 @@
  "data_changed": "2026-11-23",
  "counts": {
   "filed": 128,
-  "amended": 229,
   "effective": 156,
+  "amended": 229,
   "withdrawn": 45,
   "priced": 307
  },
@@ -52,6 +52,99 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2095898"
+  },
+  {
+   "cik": 1770069,
+   "name": "MapLight Therapeutics, Inc.",
+   "tickers": [
+    "MPLT"
+   ],
+   "exchanges": [
+    "Nasdaq"
+   ],
+   "sic": 2834,
+   "industry": "Pharmaceutical Preparations",
+   "sector": "Biotech and pharma",
+   "kind": "company",
+   "location": "CA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "effective",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2025-09-19",
+   "draft_date": "2024-03-08",
+   "amendments": 2,
+   "marketing": true,
+   "effective_date": "2026-11-20",
+   "listing_date": "2025-10-24",
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-20",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-09-18",
+    "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312526395559/d546679ds1a.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2025-09-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312525209084/d741179ds1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2025-10-06",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312525231829/d90027ds1a.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2025-10-06",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312525232052/d74846dfwp.htm"
+    },
+    {
+     "form": "8-A12B",
+     "date": "2025-10-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312525249941/d48773d8a12b.htm"
+    },
+    {
+     "form": "CERT",
+     "date": "2025-10-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000135445725001060/MPLT_8A_Cert_1770069.pdf"
+    },
+    {
+     "form": "FWP",
+     "date": "2025-10-27",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312525250609/d33606dfwp.htm"
+    },
+    {
+     "form": "S-1",
+     "date": "2026-09-09",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312526386648/d546679ds1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-09-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312526395559/d546679ds1a.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2026-09-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/999999999526003044/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2026-11-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/999999999526003560/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2026-11-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/999999999526003601/xslEFFECTX01/primary_doc.xml"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1770069"
   },
   {
    "cik": 1973276,
@@ -1351,94 +1444,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2147831"
-  },
-  {
-   "cik": 1770069,
-   "name": "MapLight Therapeutics, Inc.",
-   "tickers": [
-    "MPLT"
-   ],
-   "exchanges": [
-    "Nasdaq"
-   ],
-   "sic": 2834,
-   "industry": "Pharmaceutical Preparations",
-   "sector": "Biotech and pharma",
-   "kind": "company",
-   "location": "CA",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "effective",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2025-09-19",
-   "draft_date": "2024-03-08",
-   "amendments": 2,
-   "marketing": true,
-   "effective_date": "2026-11-17",
-   "listing_date": "2025-10-24",
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-17",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-09-18",
-    "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312526395559/d546679ds1a.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2025-09-19",
-     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312525209084/d741179ds1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2025-10-06",
-     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312525231829/d90027ds1a.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2025-10-06",
-     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312525232052/d74846dfwp.htm"
-    },
-    {
-     "form": "8-A12B",
-     "date": "2025-10-24",
-     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312525249941/d48773d8a12b.htm"
-    },
-    {
-     "form": "CERT",
-     "date": "2025-10-24",
-     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000135445725001060/MPLT_8A_Cert_1770069.pdf"
-    },
-    {
-     "form": "FWP",
-     "date": "2025-10-27",
-     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312525250609/d33606dfwp.htm"
-    },
-    {
-     "form": "S-1",
-     "date": "2026-09-09",
-     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312526386648/d546679ds1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-09-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/1770069/000119312526395559/d546679ds1a.htm"
-    },
-    {
-     "form": "EFFECT",
-     "date": "2026-09-23",
-     "url": "https://www.sec.gov/Archives/edgar/data/1770069/999999999526003044/xslEFFECTX01/primary_doc.xml"
-    },
-    {
-     "form": "EFFECT",
-     "date": "2026-11-17",
-     "url": "https://www.sec.gov/Archives/edgar/data/1770069/999999999526003560/xslEFFECTX01/primary_doc.xml"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1770069"
   },
   {
    "cik": 2152975,

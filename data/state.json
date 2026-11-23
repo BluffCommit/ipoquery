@@ -5208,7 +5208,7 @@
    "cik": 1770069,
    "draft_date": "2024-03-08",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1770069",
-   "effective_date": "2026-11-17",
+   "effective_date": "2026-11-20",
    "exchanges": [
     "Nasdaq"
    ],
@@ -5262,6 +5262,11 @@
      "date": "2026-11-17",
      "form": "EFFECT",
      "url": "https://www.sec.gov/Archives/edgar/data/1770069/999999999526003560/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2026-11-20",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1770069/999999999526003601/xslEFFECTX01/primary_doc.xml"
     }
    ],
    "first_filed": "2025-09-19",
@@ -5269,7 +5274,7 @@
    "form": "S-1",
    "industry": "Pharmaceutical Preparations",
    "kind": "company",
-   "last_activity": "2026-11-17",
+   "last_activity": "2026-11-20",
    "latest": {
     "date": "2026-09-18",
     "form": "S-1/A",
