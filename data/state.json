@@ -10952,7 +10952,7 @@
    "tickers": [
     "TANAF"
    ],
-   "unpriced": false,
+   "unpriced": true,
    "withdrawn_date": null
   },
   "1952670": {
@@ -53616,7 +53616,7 @@
    "stage": "effective",
    "stalled": false,
    "tickers": [],
-   "unpriced": false,
+   "unpriced": true,
    "withdrawn_date": null
   },
   "2143038": {
@@ -56488,7 +56488,7 @@
    "withdrawn_date": "2026-09-16"
   }
  },
- "index_day": "2026-11-22",
+ "index_day": "2026-11-23",
  "quarters_done": [
   "2025Q4",
   "2026Q1",

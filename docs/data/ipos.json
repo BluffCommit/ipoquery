@@ -1,6 +1,6 @@
 {
  "source": "SEC EDGAR",
- "data_changed": "2026-11-22",
+ "data_changed": "2026-11-23",
  "counts": {
   "filed": 128,
   "amended": 229,
@@ -3941,7 +3941,7 @@
    "form": "S-1",
    "stage": "effective",
    "stalled": false,
-   "unpriced": false,
+   "unpriced": true,
    "first_filed": "2026-07-29",
    "draft_date": null,
    "amendments": 4,
@@ -6345,7 +6345,7 @@
    "form": "F-1",
    "stage": "effective",
    "stalled": false,
-   "unpriced": false,
+   "unpriced": true,
    "first_filed": "2022-09-15",
    "draft_date": null,
    "amendments": 6,
