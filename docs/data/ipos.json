@@ -2,13 +2,118 @@
  "source": "SEC EDGAR",
  "data_changed": "2026-11-24",
  "counts": {
-  "amended": 230,
+  "amended": 227,
+  "withdrawn": 46,
+  "effective": 158,
   "filed": 127,
-  "effective": 156,
-  "withdrawn": 45,
   "priced": 307
  },
  "ipos": [
+  {
+   "cik": 2065232,
+   "name": "Fitness Fanatics Ltd",
+   "tickers": [
+    "FIT"
+   ],
+   "exchanges": [],
+   "sic": 5190,
+   "industry": "Wholesale-Miscellaneous Nondurable Goods",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "Hong Kong",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-08-14",
+   "draft_date": "2025-05-02",
+   "amendments": 3,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-24",
+   "prior_attempts": 1,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-24",
+    "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226053883/formf-1a.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-08-14",
+     "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226038172/formf-1.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-09-22",
+     "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226043668/formf-1a.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-03",
+     "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226049736/formf-1a.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226053883/formf-1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2065232"
+  },
+  {
+   "cik": 2065290,
+   "name": "Cafe Deco Group Ltd",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 5812,
+   "industry": "Retail-Eating  Places",
+   "sector": "Consumer and retail",
+   "kind": "company",
+   "location": "Hong Kong",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "withdrawn",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2025-12-29",
+   "draft_date": "2025-06-05",
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": "2026-11-24",
+   "last_activity": "2026-11-24",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-01-28",
+    "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000003/formf1a.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2025-12-29",
+     "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341725000037/filename1.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-01-28",
+     "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000003/formf1a.htm"
+    },
+    {
+     "form": "RW",
+     "date": "2026-11-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000024/withdrawalletter.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2065290"
+  },
   {
    "cik": 2160422,
    "name": "Kartoon Studios Acquisition Corp",
@@ -54,6 +159,106 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2160422"
+  },
+  {
+   "cik": 2048740,
+   "name": "EUROEV Holdings Ltd",
+   "tickers": [
+    "EUEV"
+   ],
+   "exchanges": [],
+   "sic": 3711,
+   "industry": "Motor Vehicles & Passenger Car Bodies",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "Germany",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "effective",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-10",
+   "draft_date": "2025-01-28",
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": "2026-11-23",
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-23",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-18",
+    "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026121800/ea0312709-f1a1_euroev.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-11-10",
+     "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026117945/ea0309743-f1_euroev.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026121800/ea0312709-f1a1_euroev.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2026-11-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2048740/999999999526003604/xslEFFECTX01/primary_doc.xml"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048740"
+  },
+  {
+   "cik": 2049203,
+   "name": "Aiways Automobile Europe GmbH",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 3711,
+   "industry": "Motor Vehicles & Passenger Car Bodies",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "Germany",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "effective",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-10",
+   "draft_date": "2025-01-28",
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": "2026-11-23",
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-23",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-18",
+    "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026121800/ea0312709-f1a1_euroev.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-11-10",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026117945/ea0309743-f1_euroev.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026121800/ea0312709-f1a1_euroev.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2026-11-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049203/999999999526003604/xslEFFECTX01/primary_doc.xml"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2049203"
   },
   {
    "cik": 2095898,
@@ -1304,52 +1509,6 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1114859"
   },
   {
-   "cik": 2048740,
-   "name": "EUROEV Holdings Ltd",
-   "tickers": [
-    "EUEV"
-   ],
-   "exchanges": [],
-   "sic": 3711,
-   "industry": "Motor Vehicles & Passenger Car Bodies",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "Germany",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-11-10",
-   "draft_date": "2025-01-28",
-   "amendments": 1,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-18",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-11-18",
-    "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026121800/ea0312709-f1a1_euroev.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-11-10",
-     "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026117945/ea0309743-f1_euroev.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-11-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026121800/ea0312709-f1a1_euroev.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048740"
-  },
-  {
    "cik": 2045873,
    "name": "BOUNDLESS GROUP",
    "tickers": [],
@@ -1402,50 +1561,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2045873"
-  },
-  {
-   "cik": 2049203,
-   "name": "Aiways Automobile Europe GmbH",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 3711,
-   "industry": "Motor Vehicles & Passenger Car Bodies",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "Germany",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-11-10",
-   "draft_date": "2025-01-28",
-   "amendments": 1,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-18",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-11-18",
-    "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026121800/ea0312709-f1a1_euroev.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-11-10",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026117945/ea0309743-f1_euroev.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-11-18",
-     "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026121800/ea0312709-f1a1_euroev.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2049203"
   },
   {
    "cik": 2147831,
@@ -4441,57 +4556,6 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1907223"
   },
   {
-   "cik": 2065232,
-   "name": "Fitness Fanatics Ltd",
-   "tickers": [
-    "FIT"
-   ],
-   "exchanges": [],
-   "sic": 5190,
-   "industry": "Wholesale-Miscellaneous Nondurable Goods",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "Hong Kong",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-08-14",
-   "draft_date": "2025-05-02",
-   "amendments": 2,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-03",
-   "prior_attempts": 1,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-11-03",
-    "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226049736/formf-1a.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-08-14",
-     "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226038172/formf-1.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-09-22",
-     "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226043668/formf-1a.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-11-03",
-     "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226049736/formf-1a.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2065232"
-  },
-  {
    "cik": 1866501,
    "name": "Wallbox N.V.",
    "tickers": [
@@ -5562,9 +5626,12 @@
    "cik": 2133939,
    "name": "Football Manager SPAC Inc.",
    "tickers": [
-    "FBLL"
+    "FBLL",
+    "FBLLU"
    ],
-   "exchanges": [],
+   "exchanges": [
+    "Nasdaq"
+   ],
    "sic": 6770,
    "industry": "Blank Checks",
    "sector": "Finance",
@@ -50114,50 +50181,6 @@
    ],
    "unpriced": false,
    "withdrawn_date": null
-  },
-  {
-   "cik": 2065290,
-   "name": "Cafe Deco Group Ltd",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 5812,
-   "industry": "Retail-Eating  Places",
-   "sector": "Consumer and retail",
-   "kind": "company",
-   "location": "Hong Kong",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "amended",
-   "stalled": true,
-   "unpriced": false,
-   "first_filed": "2025-12-29",
-   "draft_date": "2025-06-05",
-   "amendments": 1,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-01-28",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-01-28",
-    "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000003/formf1a.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2025-12-29",
-     "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341725000037/filename1.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-01-28",
-     "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000003/formf1a.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2065290"
   },
   {
    "cik": 2054459,

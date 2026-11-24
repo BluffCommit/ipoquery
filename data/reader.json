@@ -957,13 +957,12 @@
   },
   "2065232": {
    "form": "F-1/A",
-   "date": "2026-11-03",
-   "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226049736/formf-1a.htm",
-   "read": "2026-11-18",
+   "date": "2026-11-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226053883/formf-1a.htm",
+   "read": "2026-11-24",
    "result": "not confirmed",
    "notes": [
-    "the number of shares the company is selling is not stated the same way twice",
-    "near: ia through our wholly-owned subsidiary, fit food tech sdn. bhd (\"fit food\"). we are offering an aggregate 7,000,000 ordinary shares on a firm commitment basis (the \"offering\"). we anticipate that the offering price of the ordinary shares will be between $4.00 and $6.00 per ordina"
+    "no price range in this filing yet"
    ]
   },
   "2092291": {

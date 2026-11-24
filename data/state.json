@@ -18450,7 +18450,7 @@
    "cik": 2048740,
    "draft_date": "2025-01-28",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048740",
-   "effective_date": null,
+   "effective_date": "2026-11-23",
    "exchanges": [],
    "filings": [
     {
@@ -18462,6 +18462,11 @@
      "date": "2026-11-18",
      "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2048740/000121390026121800/ea0312709-f1a1_euroev.htm"
+    },
+    {
+     "date": "2026-11-23",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/2048740/999999999526003604/xslEFFECTX01/primary_doc.xml"
     }
    ],
    "first_filed": "2026-11-10",
@@ -18469,7 +18474,7 @@
    "form": "F-1",
    "industry": "Motor Vehicles & Passenger Car Bodies",
    "kind": "company",
-   "last_activity": "2026-11-18",
+   "last_activity": "2026-11-23",
    "latest": {
     "date": "2026-11-18",
     "form": "F-1/A",
@@ -18483,7 +18488,7 @@
    "prior_attempts": 0,
    "sector": "Industrials",
    "sic": 3711,
-   "stage": "amended",
+   "stage": "effective",
    "stalled": false,
    "tickers": [
     "EUEV"
@@ -18579,7 +18584,7 @@
    "cik": 2049203,
    "draft_date": "2025-01-28",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2049203",
-   "effective_date": null,
+   "effective_date": "2026-11-23",
    "exchanges": [],
    "filings": [
     {
@@ -18591,6 +18596,11 @@
      "date": "2026-11-18",
      "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2049203/000121390026121800/ea0312709-f1a1_euroev.htm"
+    },
+    {
+     "date": "2026-11-23",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/2049203/999999999526003604/xslEFFECTX01/primary_doc.xml"
     }
    ],
    "first_filed": "2026-11-10",
@@ -18598,7 +18608,7 @@
    "form": "F-1",
    "industry": "Motor Vehicles & Passenger Car Bodies",
    "kind": "company",
-   "last_activity": "2026-11-18",
+   "last_activity": "2026-11-23",
    "latest": {
     "date": "2026-11-18",
     "form": "F-1/A",
@@ -18612,7 +18622,7 @@
    "prior_attempts": 0,
    "sector": "Industrials",
    "sic": 3711,
-   "stage": "amended",
+   "stage": "effective",
    "stalled": false,
    "tickers": [],
    "unpriced": false,
@@ -21455,7 +21465,7 @@
    "withdrawn_date": null
   },
   "2065232": {
-   "amendments": 2,
+   "amendments": 3,
    "cik": 2065232,
    "draft_date": "2025-05-02",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2065232",
@@ -21476,6 +21486,11 @@
      "date": "2026-11-03",
      "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226049736/formf-1a.htm"
+    },
+    {
+     "date": "2026-11-24",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226053883/formf-1a.htm"
     }
    ],
    "first_filed": "2026-08-14",
@@ -21483,11 +21498,11 @@
    "form": "F-1",
    "industry": "Wholesale-Miscellaneous Nondurable Goods",
    "kind": "company",
-   "last_activity": "2026-11-03",
+   "last_activity": "2026-11-24",
    "latest": {
-    "date": "2026-11-03",
+    "date": "2026-11-24",
     "form": "F-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226049736/formf-1a.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2065232/000149315226053883/formf-1a.htm"
    },
    "listing_date": null,
    "location": "Hong Kong",
@@ -21522,6 +21537,11 @@
      "date": "2026-01-28",
      "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000003/formf1a.htm"
+    },
+    {
+     "date": "2026-11-24",
+     "form": "RW",
+     "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000024/withdrawalletter.htm"
     }
    ],
    "first_filed": "2025-12-29",
@@ -21529,7 +21549,7 @@
    "form": "F-1",
    "industry": "Retail-Eating  Places",
    "kind": "company",
-   "last_activity": "2026-01-28",
+   "last_activity": "2026-11-24",
    "latest": {
     "date": "2026-01-28",
     "form": "F-1/A",
@@ -21543,11 +21563,11 @@
    "prior_attempts": 0,
    "sector": "Consumer and retail",
    "sic": 5812,
-   "stage": "amended",
-   "stalled": true,
+   "stage": "withdrawn",
+   "stalled": false,
    "tickers": [],
    "unpriced": false,
-   "withdrawn_date": null
+   "withdrawn_date": "2026-11-24"
   },
   "2065636": {
    "amendments": 2,
@@ -51468,7 +51488,9 @@
    "draft_date": "2026-06-29",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2133939",
    "effective_date": null,
-   "exchanges": [],
+   "exchanges": [
+    "Nasdaq"
+   ],
    "filings": [
     {
      "date": "2026-09-09",
@@ -51508,7 +51530,8 @@
    "stage": "amended",
    "stalled": false,
    "tickers": [
-    "FBLL"
+    "FBLL",
+    "FBLLU"
    ],
    "unpriced": false,
    "withdrawn_date": null
