@@ -1,14 +1,60 @@
 {
  "source": "SEC EDGAR",
- "data_changed": "2026-11-23",
+ "data_changed": "2026-11-24",
  "counts": {
-  "filed": 128,
+  "amended": 230,
+  "filed": 127,
   "effective": 156,
-  "amended": 229,
   "withdrawn": 45,
   "priced": 307
  },
  "ipos": [
+  {
+   "cik": 2160422,
+   "name": "Kartoon Studios Acquisition Corp",
+   "tickers": [
+    "KACQ"
+   ],
+   "exchanges": [],
+   "sic": 6770,
+   "industry": "Blank Checks",
+   "sector": "Finance",
+   "kind": "spac",
+   "location": "CA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-05",
+   "draft_date": "2026-10-16",
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-23",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-23",
+    "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926131085/tmb-20261123xs1a.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-05",
+     "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926123104/tmb-20261105xs1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926131085/tmb-20261123xs1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2160422"
+  },
   {
    "cik": 2095898,
    "name": "Tongda International Group Co., Ltd",
@@ -1018,7 +1064,9 @@
    "tickers": [
     "ANT"
    ],
-   "exchanges": [],
+   "exchanges": [
+    "Nasdaq"
+   ],
    "sic": 7372,
    "industry": "Services-Prepackaged Software",
    "sector": "Software and internet",
@@ -4005,45 +4053,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2142855"
-  },
-  {
-   "cik": 2160422,
-   "name": "Kartoon Studios Acquisition Corp",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 6770,
-   "industry": "Blank Checks",
-   "sector": "Finance",
-   "kind": "spac",
-   "location": "CA",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "filed",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-11-05",
-   "draft_date": "2026-10-16",
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-05",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1",
-    "date": "2026-11-05",
-    "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926123104/tmb-20261105xs1.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-11-05",
-     "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926123104/tmb-20261105xs1.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2160422"
   },
   {
    "cik": 2161470,
@@ -8989,145 +8998,145 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2137360"
   },
   {
+   "amendments": 1,
    "cik": 2139097,
-   "name": "TRex Bio, Inc.",
-   "tickers": [
-    "TRXB"
-   ],
+   "draft_date": "2026-06-26",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2139097",
+   "effective_date": "2026-10-08",
    "exchanges": [
     "Nasdaq"
    ],
-   "sic": 2836,
-   "industry": "Biological Products, (No Diagnostic Substances)",
-   "sector": "Biotech and pharma",
-   "kind": "company",
-   "location": "CA",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "priced",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-09-18",
-   "draft_date": "2026-06-26",
-   "amendments": 1,
-   "marketing": false,
-   "effective_date": "2026-10-08",
-   "listing_date": "2026-10-08",
-   "priced_date": "2026-10-09",
-   "withdrawn_date": null,
-   "last_activity": "2026-10-09",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "424B4",
-    "date": "2026-10-09",
-    "url": "https://www.sec.gov/Archives/edgar/data/2139097/000119312526419203/project_dino_-_424b4.htm"
-   },
    "filings": [
     {
-     "form": "S-1",
      "date": "2026-09-18",
+     "form": "S-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2139097/000119312526395671/ck0002139097-20260918.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-10-05",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2139097/000119312526413060/ck0002139097-20261005.htm"
     },
     {
-     "form": "8-A12B",
      "date": "2026-10-06",
+     "form": "8-A12B",
      "url": "https://www.sec.gov/Archives/edgar/data/2139097/000119312526415520/project_dino_-_8-a12b.htm"
     },
     {
-     "form": "CERT",
      "date": "2026-10-08",
+     "form": "CERT",
      "url": "https://www.sec.gov/Archives/edgar/data/2139097/000135445726000964/8A_Cert_2139097.pdf"
     },
     {
-     "form": "EFFECT",
      "date": "2026-10-08",
+     "form": "EFFECT",
      "url": "https://www.sec.gov/Archives/edgar/data/2139097/999999999526003188/xslEFFECTX01/primary_doc.xml"
     },
     {
-     "form": "424B4",
      "date": "2026-10-09",
+     "form": "424B4",
      "url": "https://www.sec.gov/Archives/edgar/data/2139097/000119312526419203/project_dino_-_424b4.htm"
     }
    ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2139097"
+   "first_filed": "2026-09-18",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Biological Products, (No Diagnostic Substances)",
+   "kind": "company",
+   "last_activity": "2026-10-09",
+   "latest": {
+    "date": "2026-10-09",
+    "form": "424B4",
+    "url": "https://www.sec.gov/Archives/edgar/data/2139097/000119312526419203/project_dino_-_424b4.htm"
+   },
+   "listing_date": "2026-10-08",
+   "location": "CA",
+   "marketing": false,
+   "name": "TRex Bio, Inc.",
+   "priced_date": "2026-10-09",
+   "prior_attempts": 0,
+   "sector": "Biotech and pharma",
+   "sic": 2836,
+   "stage": "priced",
+   "stalled": false,
+   "tickers": [
+    "TRXB"
+   ],
+   "unpriced": false,
+   "withdrawn_date": null
   },
   {
+   "amendments": 2,
    "cik": 2002988,
-   "name": "Retension Pharmaceuticals, Inc.",
-   "tickers": [
-    "RTSN"
-   ],
+   "draft_date": "2026-02-17",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2002988",
+   "effective_date": "2026-10-08",
    "exchanges": [
     "Nasdaq"
    ],
-   "sic": 2834,
-   "industry": "Pharmaceutical Preparations",
-   "sector": "Biotech and pharma",
-   "kind": "company",
-   "location": "VA",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "priced",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-09-18",
-   "draft_date": "2026-02-17",
-   "amendments": 2,
-   "marketing": false,
-   "effective_date": "2026-10-08",
-   "listing_date": "2026-10-08",
-   "priced_date": "2026-10-09",
-   "withdrawn_date": null,
-   "last_activity": "2026-10-09",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "424B4",
-    "date": "2026-10-09",
-    "url": "https://www.sec.gov/Archives/edgar/data/2002988/000121390026108587/ea0276911-10.htm"
-   },
    "filings": [
     {
-     "form": "S-1",
      "date": "2026-09-18",
+     "form": "S-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2002988/000121390026101499/ea0276911-07.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-10-05",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2002988/000121390026106636/ea0276911-08.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-10-07",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2002988/000121390026107572/ea0276911-09.htm"
     },
     {
-     "form": "8-A12B",
      "date": "2026-10-08",
+     "form": "8-A12B",
      "url": "https://www.sec.gov/Archives/edgar/data/2002988/000121390026107730/ea030785803-8a12b_retension.htm"
     },
     {
-     "form": "CERT",
      "date": "2026-10-08",
+     "form": "CERT",
      "url": "https://www.sec.gov/Archives/edgar/data/2002988/000135445726000966/RTSN_8A_Cert_0002002988.pdf"
     },
     {
-     "form": "EFFECT",
      "date": "2026-10-08",
+     "form": "EFFECT",
      "url": "https://www.sec.gov/Archives/edgar/data/2002988/999999999526003189/xslEFFECTX01/primary_doc.xml"
     },
     {
-     "form": "424B4",
      "date": "2026-10-09",
+     "form": "424B4",
      "url": "https://www.sec.gov/Archives/edgar/data/2002988/000121390026108587/ea0276911-10.htm"
     }
    ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2002988"
+   "first_filed": "2026-09-18",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Pharmaceutical Preparations",
+   "kind": "company",
+   "last_activity": "2026-10-09",
+   "latest": {
+    "date": "2026-10-09",
+    "form": "424B4",
+    "url": "https://www.sec.gov/Archives/edgar/data/2002988/000121390026108587/ea0276911-10.htm"
+   },
+   "listing_date": "2026-10-08",
+   "location": "VA",
+   "marketing": false,
+   "name": "Retension Pharmaceuticals, Inc.",
+   "priced_date": "2026-10-09",
+   "prior_attempts": 0,
+   "sector": "Biotech and pharma",
+   "sic": 2834,
+   "stage": "priced",
+   "stalled": false,
+   "tickers": [
+    "RTSN"
+   ],
+   "unpriced": false,
+   "withdrawn_date": null
   },
   {
    "cik": 2148546,
@@ -43423,7 +43432,7 @@
    "foreign": true,
    "form": "F-1",
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "unpriced": false,
    "first_filed": "2026-01-16",
    "draft_date": "2025-08-12",

@@ -25898,7 +25898,7 @@
    "sector": "Business services",
    "sic": 7310,
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -50067,7 +50067,9 @@
    "draft_date": "2026-06-01",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2130357",
    "effective_date": "2026-11-18",
-   "exchanges": [],
+   "exchanges": [
+    "Nasdaq"
+   ],
    "filings": [
     {
      "date": "2026-11-12",
@@ -56160,7 +56162,7 @@
    "withdrawn_date": null
   },
   "2160422": {
-   "amendments": 0,
+   "amendments": 1,
    "cik": 2160422,
    "draft_date": "2026-10-16",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2160422",
@@ -56171,6 +56173,11 @@
      "date": "2026-11-05",
      "form": "S-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926123104/tmb-20261105xs1.htm"
+    },
+    {
+     "date": "2026-11-23",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926131085/tmb-20261123xs1a.htm"
     }
    ],
    "first_filed": "2026-11-05",
@@ -56178,11 +56185,11 @@
    "form": "S-1",
    "industry": "Blank Checks",
    "kind": "spac",
-   "last_activity": "2026-11-05",
+   "last_activity": "2026-11-23",
    "latest": {
-    "date": "2026-11-05",
-    "form": "S-1",
-    "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926123104/tmb-20261105xs1.htm"
+    "date": "2026-11-23",
+    "form": "S-1/A",
+    "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926131085/tmb-20261123xs1a.htm"
    },
    "listing_date": null,
    "location": "CA",
@@ -56192,9 +56199,11 @@
    "prior_attempts": 0,
    "sector": "Finance",
    "sic": 6770,
-   "stage": "filed",
+   "stage": "amended",
    "stalled": false,
-   "tickers": [],
+   "tickers": [
+    "KACQ"
+   ],
    "unpriced": false,
    "withdrawn_date": null
   },
@@ -56493,7 +56502,7 @@
    "withdrawn_date": "2026-09-16"
   }
  },
- "index_day": "2026-11-23",
+ "index_day": "2026-11-24",
  "quarters_done": [
   "2025Q4",
   "2026Q1",
