@@ -2506,6 +2506,7 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1631487",
    "effective_date": "2026-07-16",
    "exchanges": [
+    "Nasdaq",
     "Nasdaq"
    ],
    "filings": [
@@ -2592,6 +2593,7 @@
    "stage": "effective",
    "stalled": false,
    "tickers": [
+    "OPHI",
     "CLGN"
    ],
    "unpriced": true,
@@ -8514,18 +8516,13 @@
    "withdrawn_date": null
   },
   "1880995": {
-   "amendments": 21,
+   "amendments": 22,
    "cik": 1880995,
    "draft_date": "2022-01-07",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1880995",
    "effective_date": null,
    "exchanges": [],
    "filings": [
-    {
-     "date": "2023-02-01",
-     "form": "S-1/A",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000138713123001140/alopexx-s1a_013123.htm"
-    },
     {
      "date": "2023-02-01",
      "form": "FWP",
@@ -8580,6 +8577,11 @@
      "date": "2026-11-06",
      "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026116942/ea0231844-11.htm"
+    },
+    {
+     "date": "2026-11-24",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026123702/ea0231844-13.htm"
     }
    ],
    "first_filed": "2022-03-07",
@@ -8587,11 +8589,11 @@
    "form": "S-1",
    "industry": "Biological Products, (No Diagnostic Substances)",
    "kind": "company",
-   "last_activity": "2026-11-06",
+   "last_activity": "2026-11-24",
    "latest": {
-    "date": "2026-11-06",
+    "date": "2026-11-24",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026116942/ea0231844-11.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026123702/ea0231844-13.htm"
    },
    "listing_date": "2022-10-06",
    "location": "MA",
@@ -23378,7 +23380,7 @@
    "withdrawn_date": "2026-07-10"
   },
   "2070087": {
-   "amendments": 2,
+   "amendments": 3,
    "cik": 2070087,
    "draft_date": "2025-05-29",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2070087",
@@ -23399,6 +23401,11 @@
      "date": "2026-09-16",
      "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226042913/formf-1a.htm"
+    },
+    {
+     "date": "2026-11-24",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226053976/formf-1a.htm"
     }
    ],
    "first_filed": "2026-06-29",
@@ -23406,11 +23413,11 @@
    "form": "F-1",
    "industry": "Refuse Systems",
    "kind": "company",
-   "last_activity": "2026-09-16",
+   "last_activity": "2026-11-24",
    "latest": {
-    "date": "2026-09-16",
+    "date": "2026-11-24",
     "form": "F-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226042913/formf-1a.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226053976/formf-1a.htm"
    },
    "listing_date": null,
    "location": "Japan",
@@ -48563,7 +48570,7 @@
    "withdrawn_date": null
   },
   "2123920": {
-   "amendments": 1,
+   "amendments": 2,
    "cik": 2123920,
    "draft_date": "2026-05-13",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2123920",
@@ -48579,6 +48586,11 @@
      "date": "2026-11-09",
      "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026117373/ea0284557-09.htm"
+    },
+    {
+     "date": "2026-11-24",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026123456/ea0284557-11.htm"
     }
    ],
    "first_filed": "2026-10-28",
@@ -48586,11 +48598,11 @@
    "form": "F-1",
    "industry": "Services-Advertising Agencies",
    "kind": "company",
-   "last_activity": "2026-11-09",
+   "last_activity": "2026-11-24",
    "latest": {
-    "date": "2026-11-09",
+    "date": "2026-11-24",
     "form": "F-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026117373/ea0284557-09.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026123456/ea0284557-11.htm"
    },
    "listing_date": null,
    "location": "Singapore",
@@ -54817,7 +54829,7 @@
    "withdrawn_date": null
   },
   "2148546": {
-   "amendments": 0,
+   "amendments": 1,
    "cik": 2148546,
    "draft_date": "2026-08-12",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2148546",
@@ -54828,6 +54840,11 @@
      "date": "2026-10-09",
      "form": "S-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926115093/tm2621701-5_s1.htm"
+    },
+    {
+     "date": "2026-11-24",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926131695/tm2621701-8_s1.htm"
     }
    ],
    "first_filed": "2026-10-09",
@@ -54835,11 +54852,11 @@
    "form": "S-1",
    "industry": "Radiotelephone Communications",
    "kind": "company",
-   "last_activity": "2026-10-09",
+   "last_activity": "2026-11-24",
    "latest": {
-    "date": "2026-10-09",
-    "form": "S-1",
-    "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926115093/tm2621701-5_s1.htm"
+    "date": "2026-11-24",
+    "form": "S-1/A",
+    "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926131695/tm2621701-8_s1.htm"
    },
    "listing_date": null,
    "location": "TX",
@@ -54849,7 +54866,7 @@
    "prior_attempts": 0,
    "sector": "Telecom and media",
    "sic": 4812,
-   "stage": "filed",
+   "stage": "amended",
    "stalled": false,
    "tickers": [],
    "unpriced": false,

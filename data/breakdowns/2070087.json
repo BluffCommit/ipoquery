@@ -1,0 +1,76 @@
+{
+ "cik": 2070087,
+ "method": "auto",
+ "loaded": "2026-11-25",
+ "basis": "F-1 amendment filed Nov 24, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226053976/formf-1a.htm",
+ "doc_date": "2026-11-24",
+ "offer": {
+  "low": 7.5,
+  "high": 9.5,
+  "holder_shares": 0,
+  "company_shares": 2666667,
+  "shares_after": 9244667
+ },
+ "exchange": "Nasdaq",
+ "checks": [
+  {
+   "item": "Price range",
+   "how": "stated more than once in the filing, always the same"
+  },
+  {
+   "item": "No existing holder is selling",
+   "how": "the cover page and summary do not mention selling holders"
+  },
+  {
+   "item": "Shares sold by the company",
+   "how": "stated on the cover and again in the offering summary"
+  },
+  {
+   "item": "Shares outstanding after the offering",
+   "how": "from the offering summary; larger than the number sold"
+  }
+ ],
+ "hidden": [
+  {
+   "item": "Revenue, results and cash",
+   "why": "the readers found no full-year figures in the summary financial table",
+   "by": "model"
+  },
+  {
+   "item": "What earlier rounds paid",
+   "why": "the readers found no prices for the company's preferred stock",
+   "by": "model"
+  },
+  {
+   "item": "When insiders can sell",
+   "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
+   "by": "model"
+  }
+ ],
+ "range_set": "2026-11-24",
+ "what": "Koei is a Japan-based company that recycles materials, securely disposes of used IT equipment, and manages industrial waste.",
+ "short": "Koei",
+ "risks": [
+  "Koei is a holding company and relies on its operating subsidiaries for its cash flow.",
+  "Koei may find it hard to raise money in future, which could stop it from growing.",
+  "Koei may be a passive foreign investment company, which could cause bad U.S. tax results for U.S. investors.",
+  "It may be hard for investors to sue Koei's directors and officers in the U.S. or enforce U.S. court rulings against them.",
+  "New technologies or materials could make some of Koei's recycling methods ineffective or out of date."
+ ],
+ "risks_note": "The first 5 risk factors, summarised by AI.",
+ "model": {
+  "key": [
+   "https://www.sec.gov/Archives/edgar/data/2070087/000149315226053976/formf-1a.htm",
+   [
+    3,
+    1
+   ]
+  ],
+  "readers": [
+   "claude-sonnet-5-5",
+   "claude-haiku-5-5"
+  ],
+  "read": "2026-11-25"
+ }
+}

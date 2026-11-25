@@ -234,6 +234,12 @@
    "name": "Option Therapeutics",
    "items": [],
    "problem": "HTTPError: HTTP Error 429: Too Many Requests"
+  },
+  "2070087": {
+   "checked": "",
+   "name": "Koei",
+   "items": [],
+   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
   }
  }
 }

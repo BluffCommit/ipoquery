@@ -886,9 +886,9 @@
   },
   "2123920": {
    "form": "F-1/A",
-   "date": "2026-11-09",
-   "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026117373/ea0284557-09.htm",
-   "read": "2026-11-18",
+   "date": "2026-11-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026123456/ea0284557-11.htm",
+   "read": "2026-11-25",
    "result": "read",
    "found": {
     "low": 4.0,
@@ -1323,12 +1323,22 @@
   },
   "2070087": {
    "form": "F-1/A",
-   "date": "2026-09-16",
-   "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226042913/formf-1a.htm",
-   "read": "2026-11-18",
-   "result": "not confirmed",
+   "date": "2026-11-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226053976/formf-1a.htm",
+   "read": "2026-11-25",
+   "result": "read",
+   "found": {
+    "low": 7.5,
+    "high": 9.5,
+    "holder_shares": 0,
+    "company_shares": 2666667,
+    "shares_after": 9244667
+   },
+   "left_out": [
+    "the financial statements are printed in the filing but not tagged, and the printed ones have not been read yet"
+   ],
    "notes": [
-    "no price range in this filing yet"
+    "company facts file: the financial statements are not tagged with an operating or net result"
    ]
   },
   "2075589": {
@@ -1828,13 +1838,13 @@
   },
   "1880995": {
    "form": "S-1/A",
-   "date": "2026-11-06",
-   "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026116942/ea0231844-11.htm",
-   "read": "2026-11-18",
+   "date": "2026-11-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026123702/ea0231844-13.htm",
+   "read": "2026-11-25",
    "result": "not confirmed",
    "notes": [
     "the number of shares the company is selling is not stated the same way twice",
-    "near: r 6, 2026 3,000,000 shares common stock alopexx, inc. this is a firm commitment initial public offering of shares of common stock of alopexx, inc. prior to this offering, there has been no public market for our common stock. we estimate that the initial public offering price of o"
+    "near:  24, 2026 3,000,000 shares common stock alopexx, inc. this is a firm commitment initial public offering of shares of common stock of alopexx, inc. prior to this offering, there has been no public market for our common stock. we estimate that the initial public offering price of o"
    ]
   },
   "2161470": {
@@ -2101,10 +2111,10 @@
    ]
   },
   "2148546": {
-   "form": "S-1",
-   "date": "2026-10-09",
-   "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926115093/tm2621701-5_s1.htm",
-   "read": "2026-11-18",
+   "form": "S-1/A",
+   "date": "2026-11-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926131695/tm2621701-8_s1.htm",
+   "read": "2026-11-25",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"

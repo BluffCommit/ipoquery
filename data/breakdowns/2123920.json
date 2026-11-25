@@ -1,10 +1,10 @@
 {
  "cik": 2123920,
  "method": "auto",
- "loaded": "2026-11-18",
- "basis": "F-1 amendment filed Nov 9, 2026",
- "doc": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026117373/ea0284557-09.htm",
- "doc_date": "2026-11-09",
+ "loaded": "2026-11-25",
+ "basis": "F-1 amendment filed Nov 24, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026123456/ea0284557-11.htm",
+ "doc_date": "2026-11-24",
  "offer": {
   "low": 4.0,
   "high": 6.0,
@@ -37,35 +37,35 @@
    "by": "model"
   },
   {
+   "item": "Other large holders",
+   "why": "the ownership table splits holdings between share classes, and they are not added up here",
+   "by": "model"
+  },
+  {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   },
   {
    "item": "When insiders can sell",
    "why": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing",
    "by": "model"
-  },
-  {
-   "item": "Other large holders",
-   "why": "the ownership table splits holdings between share classes, and they are not added up here",
-   "by": "model"
   }
  ],
- "what": "It runs digital advertising screens in elevator lobbies of office and commercial buildings across Singapore.",
+ "what": "It runs digital advertising screens in office and commercial building lobbies across Singapore and sells advertising on them.",
  "short": "Focus Media Network",
- "proceeds": "It expects about US$22 million in net proceeds. About 36% is for more screens in Singapore, 28% for software, 16% for joint ventures and acquisitions, 10% for a reserve for regional growth, and 10% for working capital.",
+ "proceeds": "It plans to spend about 36% on more screens in Singapore and 28% on software. About 16% is for joint ventures or buying businesses, 10% for a reserve for regional growth, and 10% for working capital.",
  "risks": [
-  "The company is a holding company and relies on payments from its Singapore subsidiaries, which may be limited by law or contract.",
+  "The parent company has no real operations and relies on payments from its Singapore subsidiaries, which could be limited by law or contract.",
   "If it cannot attract and keep advertisers, its revenue, profit and growth could suffer.",
-  "If it cannot keep or add venue partners, its screen network, advertiser demand and results could suffer.",
+  "If it cannot keep or win building and venue partners, its screen network, advertiser demand and results could suffer.",
   "Social, economic, political or legal changes, or new government policies, in Singapore could hurt its business.",
-  "Its business depends on advertising demand, which rises and falls with the Singapore economy and can sharply cut client spending."
+  "Advertising demand rises and falls with the Singapore economy, which could sharply cut client spending and hurt its results."
  ],
  "risks_note": "The first 5 risk factors, summarised by AI.",
  "model": {
   "key": [
-   "https://www.sec.gov/Archives/edgar/data/2123920/000121390026117373/ea0284557-09.htm",
+   "https://www.sec.gov/Archives/edgar/data/2123920/000121390026123456/ea0284557-11.htm",
    [
     3,
     1
@@ -75,6 +75,6 @@
    "claude-sonnet-5-5",
    "claude-haiku-5-5"
   ],
-  "read": "2026-11-18"
+  "read": "2026-11-25"
  }
 }

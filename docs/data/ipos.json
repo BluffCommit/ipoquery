@@ -2,13 +2,164 @@
  "source": "SEC EDGAR",
  "data_changed": "2026-11-24",
  "counts": {
-  "amended": 227,
+  "amended": 228,
   "withdrawn": 46,
   "effective": 158,
-  "filed": 127,
+  "filed": 126,
   "priced": 307
  },
  "ipos": [
+  {
+   "cik": 2148546,
+   "name": "Patriot Mobile Inc.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 4812,
+   "industry": "Radiotelephone Communications",
+   "sector": "Telecom and media",
+   "kind": "company",
+   "location": "TX",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-10-09",
+   "draft_date": "2026-08-12",
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-24",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-24",
+    "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926131695/tm2621701-8_s1.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-10-09",
+     "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926115093/tm2621701-5_s1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926131695/tm2621701-8_s1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2148546"
+  },
+  {
+   "cik": 2070087,
+   "name": "Koei Group Co., Ltd.",
+   "tickers": [
+    "KOEI"
+   ],
+   "exchanges": [],
+   "sic": 4953,
+   "industry": "Refuse Systems",
+   "sector": "Energy and utilities",
+   "kind": "company",
+   "location": "Japan",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-06-29",
+   "draft_date": "2025-05-29",
+   "amendments": 3,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-24",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-24",
+    "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226053976/formf-1a.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-06-29",
+     "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226031115/formf-1.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-08-06",
+     "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226036409/formf-1a.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-09-16",
+     "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226042913/formf-1a.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226053976/formf-1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2070087"
+  },
+  {
+   "cik": 2123920,
+   "name": "Focus Media Network Ltd",
+   "tickers": [
+    "FMSN"
+   ],
+   "exchanges": [],
+   "sic": 7311,
+   "industry": "Services-Advertising Agencies",
+   "sector": "Business services",
+   "kind": "company",
+   "location": "Singapore",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-10-28",
+   "draft_date": "2026-05-13",
+   "amendments": 2,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-24",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-24",
+    "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026123456/ea0284557-11.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-10-28",
+     "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026113189/ea0284557-07.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-09",
+     "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026117373/ea0284557-09.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026123456/ea0284557-11.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2123920"
+  },
   {
    "cik": 2065232,
    "name": "Fitness Fanatics Ltd",
@@ -66,53 +217,147 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2065232"
   },
   {
-   "cik": 2065290,
-   "name": "Cafe Deco Group Ltd",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 5812,
-   "industry": "Retail-Eating  Places",
-   "sector": "Consumer and retail",
-   "kind": "company",
-   "location": "Hong Kong",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "withdrawn",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2025-12-29",
-   "draft_date": "2025-06-05",
    "amendments": 1,
-   "marketing": false,
+   "cik": 2065290,
+   "draft_date": "2025-06-05",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2065290",
    "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": "2026-11-24",
-   "last_activity": "2026-11-24",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-01-28",
-    "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000003/formf1a.htm"
-   },
+   "exchanges": [],
    "filings": [
     {
-     "form": "F-1",
      "date": "2025-12-29",
+     "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341725000037/filename1.htm"
     },
     {
-     "form": "F-1/A",
      "date": "2026-01-28",
+     "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000003/formf1a.htm"
     },
     {
-     "form": "RW",
      "date": "2026-11-24",
+     "form": "RW",
      "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000024/withdrawalletter.htm"
     }
    ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2065290"
+   "first_filed": "2025-12-29",
+   "foreign": true,
+   "form": "F-1",
+   "industry": "Retail-Eating  Places",
+   "kind": "company",
+   "last_activity": "2026-11-24",
+   "latest": {
+    "date": "2026-01-28",
+    "form": "F-1/A",
+    "url": "https://www.sec.gov/Archives/edgar/data/2065290/000189341726000003/formf1a.htm"
+   },
+   "listing_date": null,
+   "location": "Hong Kong",
+   "marketing": false,
+   "name": "Cafe Deco Group Ltd",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Consumer and retail",
+   "sic": 5812,
+   "stage": "withdrawn",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": "2026-11-24"
+  },
+  {
+   "cik": 1880995,
+   "name": "Alopexx, Inc.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 2836,
+   "industry": "Biological Products, (No Diagnostic Substances)",
+   "sector": "Biotech and pharma",
+   "kind": "company",
+   "location": "MA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2022-03-07",
+   "draft_date": "2022-01-07",
+   "amendments": 22,
+   "marketing": true,
+   "effective_date": null,
+   "listing_date": "2022-10-06",
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-24",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-24",
+    "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026123702/ea0231844-13.htm"
+   },
+   "filings": [
+    {
+     "form": "FWP",
+     "date": "2023-02-01",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000138713123001142/alopexx-fwp_013123.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2023-12-27",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000199937123001220/alopexx-s1a_092923.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2024-03-14",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000199937124003528/alopexx-s1a_031424.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2024-09-09",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000199937124011702/alopexx-s1a_090924.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2025-01-08",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000183988225001330/alopexx-s1a_010725.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2025-02-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390025016709/ea0231844-01.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-06-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026072480/ea0231844-03.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-08-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026090319/ea0231844-05.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-09-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026101026/ea0231844-07.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-10-27",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026112569/ea0231844-09.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-06",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026116942/ea0231844-11.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026123702/ea0231844-13.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1880995"
   },
   {
    "cik": 2160422,
@@ -3476,52 +3721,6 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2137779"
   },
   {
-   "cik": 2123920,
-   "name": "Focus Media Network Ltd",
-   "tickers": [
-    "FMSN"
-   ],
-   "exchanges": [],
-   "sic": 7311,
-   "industry": "Services-Advertising Agencies",
-   "sector": "Business services",
-   "kind": "company",
-   "location": "Singapore",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-10-28",
-   "draft_date": "2026-05-13",
-   "amendments": 1,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-09",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-11-09",
-    "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026117373/ea0284557-09.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-10-28",
-     "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026113189/ea0284557-07.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-11-09",
-     "url": "https://www.sec.gov/Archives/edgar/data/2123920/000121390026117373/ea0284557-09.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2123920"
-  },
-  {
    "cik": 2092592,
    "name": "Evernorth Holdings Inc.",
    "tickers": [
@@ -3961,100 +4160,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136246"
-  },
-  {
-   "cik": 1880995,
-   "name": "Alopexx, Inc.",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 2836,
-   "industry": "Biological Products, (No Diagnostic Substances)",
-   "sector": "Biotech and pharma",
-   "kind": "company",
-   "location": "MA",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2022-03-07",
-   "draft_date": "2022-01-07",
-   "amendments": 21,
-   "marketing": true,
-   "effective_date": null,
-   "listing_date": "2022-10-06",
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-06",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-11-06",
-    "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026116942/ea0231844-11.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1/A",
-     "date": "2023-02-01",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000138713123001140/alopexx-s1a_013123.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2023-02-01",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000138713123001142/alopexx-fwp_013123.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2023-12-27",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000199937123001220/alopexx-s1a_092923.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2024-03-14",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000199937124003528/alopexx-s1a_031424.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2024-09-09",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000199937124011702/alopexx-s1a_090924.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2025-01-08",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000183988225001330/alopexx-s1a_010725.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2025-02-25",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390025016709/ea0231844-01.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-06-26",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026072480/ea0231844-03.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-08-17",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026090319/ea0231844-05.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-09-17",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026101026/ea0231844-07.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-10-27",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026112569/ea0231844-09.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-11-06",
-     "url": "https://www.sec.gov/Archives/edgar/data/1880995/000121390026116942/ea0231844-11.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1880995"
   },
   {
    "cik": 2114402,
@@ -9206,45 +9311,6 @@
    "withdrawn_date": null
   },
   {
-   "cik": 2148546,
-   "name": "Patriot Mobile Inc.",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 4812,
-   "industry": "Radiotelephone Communications",
-   "sector": "Telecom and media",
-   "kind": "company",
-   "location": "TX",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "filed",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-10-09",
-   "draft_date": "2026-08-12",
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-10-09",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1",
-    "date": "2026-10-09",
-    "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926115093/tm2621701-5_s1.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-10-09",
-     "url": "https://www.sec.gov/Archives/edgar/data/2148546/000110465926115093/tm2621701-5_s1.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2148546"
-  },
-  {
    "cik": 2120528,
    "name": "Kainan Holding Group Ltd",
    "tickers": [
@@ -13917,57 +13983,6 @@
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": "2026-09-16"
-  },
-  {
-   "cik": 2070087,
-   "name": "Koei Group Co., Ltd.",
-   "tickers": [
-    "KOEI"
-   ],
-   "exchanges": [],
-   "sic": 4953,
-   "industry": "Refuse Systems",
-   "sector": "Energy and utilities",
-   "kind": "company",
-   "location": "Japan",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-06-29",
-   "draft_date": "2025-05-29",
-   "amendments": 2,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-09-16",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-09-16",
-    "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226042913/formf-1a.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-06-29",
-     "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226031115/formf-1.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-08-06",
-     "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226036409/formf-1a.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-09-16",
-     "url": "https://www.sec.gov/Archives/edgar/data/2070087/000149315226042913/formf-1a.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2070087"
   },
   {
    "cik": 2084038,
@@ -22191,9 +22206,11 @@
    "cik": 1631487,
    "name": "CollPlant Biotechnologies Ltd",
    "tickers": [
+    "OPHI",
     "CLGN"
    ],
    "exchanges": [
+    "Nasdaq",
     "Nasdaq"
    ],
    "sic": 3842,

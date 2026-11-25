@@ -7764,7 +7764,7 @@
    }
   }
  ],
- "spent_usd": 13.2718,
+ "spent_usd": 13.4113,
  "later": [
   {
    "cik": 2133022,
@@ -8453,6 +8453,49 @@
     "item15"
    ],
    "preferred_starts": "10. Redeemable Convertible Preferred Stock, Common Stock and / Stockholders' Deficit / Redeemable Convertible Preferred Stock / Redeemable convertible preferred stock"
+  },
+  {
+   "cik": 2123920,
+   "name": "Focus Media Network Ltd",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.07259,
+    "claude-haiku-5-5": 0.00405
+   },
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the company reports in SGD, not US dollars",
+    "Other large holders": "the ownership table splits holdings between share classes, and they are not added up here",
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "lock-up days: 180 / None"
+   ],
+   "sections_not_found": [
+    "preferred"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 2070087,
+   "name": "Koei Group Co., Ltd.",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.05945,
+    "claude-haiku-5-5": 0.00345
+   },
+   "kept": [],
+   "left_out": {
+    "Revenue, results and cash": "the readers found no full-year figures in the summary financial table",
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [],
+   "sections_not_found": [
+    "offering",
+    "preferred",
+    "item15"
+   ],
+   "preferred_starts": ""
   }
  ]
 }
