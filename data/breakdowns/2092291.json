@@ -1,10 +1,10 @@
 {
  "cik": 2092291,
  "method": "auto",
- "loaded": "2026-11-18",
- "basis": "F-1 amendment filed Oct 30, 2026",
- "doc": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm",
- "doc_date": "2026-10-30",
+ "loaded": "2026-11-25",
+ "basis": "F-1 amendment filed Nov 25, 2026",
+ "doc": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005610/timwoodf1a4112026.htm",
+ "doc_date": "2026-11-25",
  "offer": {
   "low": 4.0,
   "high": 6.0,
@@ -39,7 +39,7 @@
  "hidden": [
   {
    "item": "What earlier rounds paid",
-   "why": "the readers found no table of preferred stock prices",
+   "why": "the readers found no prices for the company's preferred stock",
    "by": "model"
   },
   {
@@ -71,18 +71,18 @@
   ],
   "by": "model"
  },
- "what": "It supplies workers to airport cargo, ground handling and passenger service companies in Hong Kong.",
+ "what": "It supplies staff to airport cargo, ground handling and passenger service companies in Hong Kong.",
  "short": "Timwood",
- "proceeds": "It plans to use the money to improve operations with technology, hire more skilled staff and grow, build its brand in aviation, and fund working capital and general needs. It expects about US$27,510,000 in net proceeds at a US$5.00 share price.",
+ "proceeds": "It expects net proceeds of about US$27,510,000 at US$5.00 a share. It plans to use them for technology, hiring and growth, brand building, and general working capital.",
  "risks": [
-  "The Cayman holding company relies on its Hong Kong subsidiary for cash, and any limit on payments to it could hurt the business.",
-  "China could limit moving money out of Hong Kong, or change rules in ways that raise costs or make the shares worthless.",
-  "The company may become subject to Chinese rules on overseas listings and data security, and failing to comply could seriously harm it."
+  "The holding company relies on its Hong Kong subsidiary for cash, and any limit on payments from it could harm the business.",
+  "Chinese rules and any future changes could hurt the Hong Kong business and sharply cut the value of the shares.",
+  "The company may become subject to Chinese rules on mergers, overseas listings and data security, and failing to comply could harm the business."
  ],
  "risks_note": "The first 3 risk factors, summarised by AI.",
  "model": {
   "key": [
-   "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm",
+   "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005610/timwoodf1a4112026.htm",
    [
     3,
     1
@@ -92,6 +92,6 @@
    "claude-sonnet-5-5",
    "claude-haiku-5-5"
   ],
-  "read": "2026-11-18"
+  "read": "2026-11-25"
  }
 }

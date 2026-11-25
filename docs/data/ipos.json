@@ -2,13 +2,230 @@
  "source": "SEC EDGAR",
  "data_changed": "2026-11-25",
  "counts": {
-  "amended": 228,
-  "filed": 130,
+  "amended": 229,
+  "filed": 129,
   "withdrawn": 46,
   "effective": 160,
   "priced": 307
  },
  "ipos": [
+  {
+   "cik": 2092291,
+   "name": "Timwood Holdings Ltd",
+   "tickers": [
+    "TIWD"
+   ],
+   "exchanges": [],
+   "sic": 4581,
+   "industry": "Airports, Flying Fields & Airport Terminal Services",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "Hong Kong",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-07-10",
+   "draft_date": "2025-11-05",
+   "amendments": 4,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005610/timwoodf1a4112026.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-07-10",
+     "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526002878/timwoodf1070326.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-07-31",
+     "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526003196/timwoodf1a1073026.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-08-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526003639/timwoodf1a2081826.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-10-30",
+     "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005610/timwoodf1a4112026.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2092291"
+  },
+  {
+   "cik": 2160422,
+   "name": "Kartoon Studios Acquisition Corp",
+   "tickers": [
+    "KACQ"
+   ],
+   "exchanges": [],
+   "sic": 6770,
+   "industry": "Blank Checks",
+   "sector": "Finance",
+   "kind": "spac",
+   "location": "CA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-05",
+   "draft_date": "2026-10-16",
+   "amendments": 2,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926132022/tm2627415-8_s1a.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-05",
+     "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926123104/tmb-20261105xs1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926131085/tmb-20261123xs1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926132022/tm2627415-8_s1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2160422"
+  },
+  {
+   "cik": 2127447,
+   "name": "Guitar Group Ltd",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 7900,
+   "industry": "Services-Amusement & Recreation Services",
+   "sector": "Consumer and retail",
+   "kind": "company",
+   "location": "Hong Kong",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-05",
+   "draft_date": "2026-04-28",
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005604/guitarf1a1111726.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-11-05",
+     "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005201/guitarf1102726.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005604/guitarf1a1111726.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2127447"
+  },
+  {
+   "cik": 2136449,
+   "name": "Crestone Strategic Capital Acquisition Corp",
+   "tickers": [
+    "CSCM"
+   ],
+   "exchanges": [],
+   "sic": 6770,
+   "industry": "Blank Checks",
+   "sector": "Finance",
+   "kind": "spac",
+   "location": "NY",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-05-26",
+   "draft_date": null,
+   "amendments": 4,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226054154/forms-1a.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-05-26",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226025267/forms-1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-07-14",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226033152/forms-1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-08-04",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226036009/forms-1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226053189/forms-1a.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226054154/forms-1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136449"
+  },
   {
    "cik": 2148546,
    "name": "Patriot Mobile Inc.",
@@ -618,52 +835,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2107904"
-  },
-  {
-   "cik": 2160422,
-   "name": "Kartoon Studios Acquisition Corp",
-   "tickers": [
-    "KACQ"
-   ],
-   "exchanges": [],
-   "sic": 6770,
-   "industry": "Blank Checks",
-   "sector": "Finance",
-   "kind": "spac",
-   "location": "CA",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-11-05",
-   "draft_date": "2026-10-16",
-   "amendments": 1,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-23",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-11-23",
-    "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926131085/tmb-20261123xs1a.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-11-05",
-     "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926123104/tmb-20261105xs1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-11-23",
-     "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926131085/tmb-20261123xs1a.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2160422"
   },
   {
    "cik": 2048740,
@@ -1705,60 +1876,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1620704"
-  },
-  {
-   "cik": 2136449,
-   "name": "Crestone Strategic Capital Acquisition Corp",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 6770,
-   "industry": "Blank Checks",
-   "sector": "Finance",
-   "kind": "spac",
-   "location": "NY",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-05-26",
-   "draft_date": null,
-   "amendments": 3,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-19",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-11-19",
-    "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226053189/forms-1a.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-05-26",
-     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226025267/forms-1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-07-14",
-     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226033152/forms-1a.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-08-04",
-     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226036009/forms-1a.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-11-19",
-     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226053189/forms-1a.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136449"
   },
   {
    "cik": 1670747,
@@ -4615,45 +4732,6 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2161470"
   },
   {
-   "cik": 2127447,
-   "name": "Guitar Group Ltd",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 3931,
-   "industry": "Musical Instruments",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "Hong Kong",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "filed",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-11-05",
-   "draft_date": "2026-04-28",
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-05",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1",
-    "date": "2026-11-05",
-    "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005201/guitarf1102726.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-11-05",
-     "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005201/guitarf1102726.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2127447"
-  },
-  {
    "cik": 2073616,
    "name": "Canary Staked INJ ETF",
    "tickers": [
@@ -5356,62 +5434,6 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1793497"
   },
   {
-   "cik": 2092291,
-   "name": "Timwood Holdings Ltd",
-   "tickers": [
-    "TIWD"
-   ],
-   "exchanges": [],
-   "sic": 4581,
-   "industry": "Airports, Flying Fields & Airport Terminal Services",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "Hong Kong",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-07-10",
-   "draft_date": "2025-11-05",
-   "amendments": 3,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-10-30",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-10-30",
-    "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-07-10",
-     "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526002878/timwoodf1070326.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-07-31",
-     "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526003196/timwoodf1a1073026.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-08-20",
-     "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526003639/timwoodf1a2081826.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-10-30",
-     "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2092291"
-  },
-  {
    "amendments": 1,
    "cik": 1840102,
    "draft_date": null,
@@ -5759,7 +5781,7 @@
    "stalled": false,
    "unpriced": false,
    "first_filed": "2026-10-29",
-   "draft_date": null,
+   "draft_date": "2026-08-28",
    "amendments": 0,
    "marketing": false,
    "effective_date": null,

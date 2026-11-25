@@ -36088,7 +36088,7 @@
    "withdrawn_date": null
   },
   "2092291": {
-   "amendments": 3,
+   "amendments": 4,
    "cik": 2092291,
    "draft_date": "2025-11-05",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2092291",
@@ -36114,6 +36114,11 @@
      "date": "2026-10-30",
      "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm"
+    },
+    {
+     "date": "2026-11-25",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005610/timwoodf1a4112026.htm"
     }
    ],
    "first_filed": "2026-07-10",
@@ -36121,11 +36126,11 @@
    "form": "F-1",
    "industry": "Airports, Flying Fields & Airport Terminal Services",
    "kind": "company",
-   "last_activity": "2026-10-30",
+   "last_activity": "2026-11-25",
    "latest": {
-    "date": "2026-10-30",
+    "date": "2026-11-25",
     "form": "F-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005610/timwoodf1a4112026.htm"
    },
    "listing_date": null,
    "location": "Hong Kong",
@@ -49654,7 +49659,7 @@
    "withdrawn_date": null
   },
   "2127447": {
-   "amendments": 0,
+   "amendments": 1,
    "cik": 2127447,
    "draft_date": "2026-04-28",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2127447",
@@ -49665,18 +49670,23 @@
      "date": "2026-11-05",
      "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005201/guitarf1102726.htm"
+    },
+    {
+     "date": "2026-11-25",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005604/guitarf1a1111726.htm"
     }
    ],
    "first_filed": "2026-11-05",
    "foreign": true,
    "form": "F-1",
-   "industry": "Musical Instruments",
+   "industry": "Services-Amusement & Recreation Services",
    "kind": "company",
-   "last_activity": "2026-11-05",
+   "last_activity": "2026-11-25",
    "latest": {
-    "date": "2026-11-05",
-    "form": "F-1",
-    "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005201/guitarf1102726.htm"
+    "date": "2026-11-25",
+    "form": "F-1/A",
+    "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005604/guitarf1a1111726.htm"
    },
    "listing_date": null,
    "location": "Hong Kong",
@@ -49684,9 +49694,9 @@
    "name": "Guitar Group Ltd",
    "priced_date": null,
    "prior_attempts": 0,
-   "sector": "Industrials",
-   "sic": 3931,
-   "stage": "filed",
+   "sector": "Consumer and retail",
+   "sic": 7900,
+   "stage": "amended",
    "stalled": false,
    "tickers": [],
    "unpriced": false,
@@ -52185,7 +52195,7 @@
    "withdrawn_date": null
   },
   "2136449": {
-   "amendments": 3,
+   "amendments": 4,
    "cik": 2136449,
    "draft_date": null,
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136449",
@@ -52211,6 +52221,11 @@
      "date": "2026-11-19",
      "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226053189/forms-1a.htm"
+    },
+    {
+     "date": "2026-11-25",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226054154/forms-1a.htm"
     }
    ],
    "first_filed": "2026-05-26",
@@ -52218,11 +52233,11 @@
    "form": "S-1",
    "industry": "Blank Checks",
    "kind": "spac",
-   "last_activity": "2026-11-19",
+   "last_activity": "2026-11-25",
    "latest": {
-    "date": "2026-11-19",
+    "date": "2026-11-25",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226053189/forms-1a.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2136449/000149315226054154/forms-1a.htm"
    },
    "listing_date": null,
    "location": "NY",
@@ -52234,7 +52249,9 @@
    "sic": 6770,
    "stage": "amended",
    "stalled": false,
-   "tickers": [],
+   "tickers": [
+    "CSCM"
+   ],
    "unpriced": false,
    "withdrawn_date": null
   },
@@ -55482,7 +55499,7 @@
   "2152549": {
    "amendments": 0,
    "cik": 2152549,
-   "draft_date": null,
+   "draft_date": "2026-08-28",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2152549",
    "effective_date": null,
    "exchanges": [],
@@ -56503,7 +56520,7 @@
    "withdrawn_date": null
   },
   "2160422": {
-   "amendments": 1,
+   "amendments": 2,
    "cik": 2160422,
    "draft_date": "2026-10-16",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2160422",
@@ -56519,6 +56536,11 @@
      "date": "2026-11-23",
      "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926131085/tmb-20261123xs1a.htm"
+    },
+    {
+     "date": "2026-11-25",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926132022/tm2627415-8_s1a.htm"
     }
    ],
    "first_filed": "2026-11-05",
@@ -56526,11 +56548,11 @@
    "form": "S-1",
    "industry": "Blank Checks",
    "kind": "spac",
-   "last_activity": "2026-11-23",
+   "last_activity": "2026-11-25",
    "latest": {
-    "date": "2026-11-23",
+    "date": "2026-11-25",
     "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926131085/tmb-20261123xs1a.htm"
+    "url": "https://www.sec.gov/Archives/edgar/data/2160422/000110465926132022/tm2627415-8_s1a.htm"
    },
    "listing_date": null,
    "location": "CA",

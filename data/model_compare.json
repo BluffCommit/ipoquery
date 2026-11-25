@@ -7764,7 +7764,7 @@
    }
   }
  ],
- "spent_usd": 13.4113,
+ "spent_usd": 13.4975,
  "later": [
   {
    "cik": 2133022,
@@ -8494,6 +8494,28 @@
     "offering",
     "preferred",
     "item15"
+   ],
+   "preferred_starts": ""
+  },
+  {
+   "cik": 2092291,
+   "name": "Timwood Holdings Ltd",
+   "cost_usd": {
+    "claude-sonnet-5-5": 0.08193,
+    "claude-haiku-5-5": 0.00425
+   },
+   "kept": [
+    "Revenue and results"
+   ],
+   "left_out": {
+    "What earlier rounds paid": "the readers found no prices for the company's preferred stock",
+    "When insiders can sell": "the two AI readers did not agree on the lock-up, or gave a number that is not in the filing"
+   },
+   "readers_differ": [
+    "lock-up days: 180 / None"
+   ],
+   "sections_not_found": [
+    "preferred"
    ],
    "preferred_starts": ""
   }

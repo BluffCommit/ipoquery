@@ -967,9 +967,9 @@
   },
   "2092291": {
    "form": "F-1/A",
-   "date": "2026-10-30",
-   "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005095/timwoodf1a3101226.htm",
-   "read": "2026-11-18",
+   "date": "2026-11-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/2092291/000118518526005610/timwoodf1a4112026.htm",
+   "read": "2026-11-25",
    "result": "read",
    "found": {
     "low": 4.0,
@@ -1858,10 +1858,10 @@
    ]
   },
   "2127447": {
-   "form": "F-1",
-   "date": "2026-11-05",
-   "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005201/guitarf1102726.htm",
-   "read": "2026-11-18",
+   "form": "F-1/A",
+   "date": "2026-11-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/2127447/000118518526005604/guitarf1a1111726.htm",
+   "read": "2026-11-25",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"
