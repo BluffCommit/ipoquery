@@ -3376,6 +3376,46 @@
    "notes": [
     "no price range in this filing yet"
    ]
+  },
+  "2053365": {
+   "form": "S-1",
+   "date": "2026-11-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/2053365/000205336526000010/biointra_forms-1_nov20.htm",
+   "read": "2026-11-25",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "1490171": {
+   "form": "S-1",
+   "date": "2026-11-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/1490171/000119312526472933/na-20261124.htm",
+   "read": "2026-11-25",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2159455": {
+   "form": "S-1",
+   "date": "2026-11-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/2159455/000152013826000519/pggc_s1.htm",
+   "read": "2026-11-25",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2107904": {
+   "form": "S-1",
+   "date": "2026-11-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/2107904/000162828026075512/libertystream-sx1.htm",
+   "read": "2026-11-25",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
   }
  }
 }

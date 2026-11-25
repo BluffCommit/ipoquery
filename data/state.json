@@ -88,6 +88,94 @@
    "unpriced": false,
    "withdrawn_date": null
   },
+  "1099160": {
+   "amendments": 4,
+   "cik": 1099160,
+   "draft_date": null,
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1099160",
+   "effective_date": "2026-06-04",
+   "exchanges": [
+    "Nasdaq"
+   ],
+   "filings": [
+    {
+     "date": "1999-11-24",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000095013399003769/0000950133-99-003769-d1.html"
+    },
+    {
+     "date": "2000-01-12",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000095013300000048/0000950133-00-000048-d1.html"
+    },
+    {
+     "date": "2000-01-31",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000095013300000233/0000950133-00-000233-d1.html"
+    },
+    {
+     "date": "2000-02-11",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000095013300000425/0000950133-00-000425-d1.html"
+    },
+    {
+     "date": "2000-02-11",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000095013300000414/0000950133-00-000414-d1.html"
+    },
+    {
+     "date": "2016-12-30",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/999999999517000007/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2018-07-11",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/999999999518001763/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2018-07-24",
+     "form": "FWP",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000119312518224269/d546417dfwp.htm"
+    },
+    {
+     "date": "2026-06-04",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/999999999526001885/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2026-11-24",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000119312526475735/d39079ds1.htm"
+    }
+   ],
+   "first_filed": "1999-11-24",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Radio Broadcasting Stations",
+   "kind": "company",
+   "last_activity": "2026-11-24",
+   "latest": {
+    "date": "2026-11-24",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/1099160/000119312526475735/d39079ds1.htm"
+   },
+   "listing_date": null,
+   "location": "FL",
+   "marketing": true,
+   "name": "BEASLEY BROADCAST GROUP INC",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Telecom and media",
+   "sic": 4832,
+   "stage": "effective",
+   "stalled": false,
+   "tickers": [
+    "BBGI"
+   ],
+   "unpriced": true,
+   "withdrawn_date": null
+  },
   "1114859": {
    "amendments": 2,
    "cik": 1114859,
@@ -1188,6 +1276,45 @@
    "unpriced": false,
    "withdrawn_date": null
   },
+  "1490171": {
+   "amendments": 0,
+   "cik": 1490171,
+   "draft_date": "2026-09-16",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1490171",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2026-11-24",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1490171/000119312526472933/na-20261124.htm"
+    }
+   ],
+   "first_filed": "2026-11-24",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Orthopedic, Prosthetic & Surgical Appliances & Supplies",
+   "kind": "company",
+   "last_activity": "2026-11-24",
+   "latest": {
+    "date": "2026-11-24",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/1490171/000119312526472933/na-20261124.htm"
+   },
+   "listing_date": null,
+   "location": "CA",
+   "marketing": false,
+   "name": "Earlens Corp",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Health care",
+   "sic": 3842,
+   "stage": "filed",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": null
+  },
   "1498148": {
    "amendments": 0,
    "cik": 1498148,
@@ -1887,6 +2014,61 @@
    "stalled": false,
    "tickers": [
     "ADMQ"
+   ],
+   "unpriced": true,
+   "withdrawn_date": null
+  },
+  "1589150": {
+   "amendments": 0,
+   "cik": 1589150,
+   "draft_date": null,
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1589150",
+   "effective_date": "2023-09-29",
+   "exchanges": [
+    "OTC",
+    "OTC"
+   ],
+   "filings": [
+    {
+     "date": "2023-09-25",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1589150/000160706223000438/rgbp091923forms1.htm"
+    },
+    {
+     "date": "2023-09-29",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1589150/999999999523002915/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2026-11-23",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1589150/000149315226053831/forms-1.htm"
+    }
+   ],
+   "first_filed": "2023-09-25",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Pharmaceutical Preparations",
+   "kind": "company",
+   "last_activity": "2026-11-23",
+   "latest": {
+    "date": "2026-11-23",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/1589150/000149315226053831/forms-1.htm"
+   },
+   "listing_date": null,
+   "location": "CA",
+   "marketing": false,
+   "name": "Regen BioPharma Inc",
+   "priced_date": null,
+   "prior_attempts": 1,
+   "sector": "Biotech and pharma",
+   "sic": 2834,
+   "stage": "effective",
+   "stalled": false,
+   "tickers": [
+    "RGBP",
+    "RGBPP"
    ],
    "unpriced": true,
    "withdrawn_date": null
@@ -19494,6 +19676,47 @@
    "unpriced": false,
    "withdrawn_date": null
   },
+  "2053365": {
+   "amendments": 0,
+   "cik": 2053365,
+   "draft_date": null,
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2053365",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2026-11-23",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2053365/000205336526000010/biointra_forms-1_nov20.htm"
+    }
+   ],
+   "first_filed": "2026-11-23",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Services-Commercial Physical & Biological Research",
+   "kind": "company",
+   "last_activity": "2026-11-23",
+   "latest": {
+    "date": "2026-11-23",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2053365/000205336526000010/biointra_forms-1_nov20.htm"
+   },
+   "listing_date": null,
+   "location": "DE",
+   "marketing": false,
+   "name": "Biointra, Corp",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Biotech and pharma",
+   "sic": 8731,
+   "stage": "filed",
+   "stalled": false,
+   "tickers": [
+    "BCRP"
+   ],
+   "unpriced": false,
+   "withdrawn_date": null
+  },
   "2053475": {
    "amendments": 0,
    "cik": 2053475,
@@ -19528,7 +19751,7 @@
    "sector": "Consumer and retail",
    "sic": 8200,
    "stage": "filed",
-   "stalled": false,
+   "stalled": true,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -44057,6 +44280,45 @@
    "unpriced": true,
    "withdrawn_date": null
   },
+  "2107904": {
+   "amendments": 0,
+   "cik": 2107904,
+   "draft_date": "2026-08-10",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2107904",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2026-11-23",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2107904/000162828026075512/libertystream-sx1.htm"
+    }
+   ],
+   "first_filed": "2026-11-23",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Industrial Inorganic Chemicals",
+   "kind": "company",
+   "last_activity": "2026-11-23",
+   "latest": {
+    "date": "2026-11-23",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2107904/000162828026075512/libertystream-sx1.htm"
+   },
+   "listing_date": null,
+   "location": "TX",
+   "marketing": false,
+   "name": "LIBERTYSTREAM INFRASTRUCTURE PARTNERS INC.",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Industrials",
+   "sic": 2810,
+   "stage": "filed",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": null
+  },
   "2108164": {
    "amendments": 2,
    "cik": 2108164,
@@ -55965,6 +56227,45 @@
    "unpriced": false,
    "withdrawn_date": null
   },
+  "2159455": {
+   "amendments": 0,
+   "cik": 2159455,
+   "draft_date": null,
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2159455",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2026-11-23",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2159455/000152013826000519/pggc_s1.htm"
+    }
+   ],
+   "first_filed": "2026-11-23",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "",
+   "kind": "company",
+   "last_activity": "2026-11-23",
+   "latest": {
+    "date": "2026-11-23",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2159455/000152013826000519/pggc_s1.htm"
+   },
+   "listing_date": null,
+   "location": "NY",
+   "marketing": false,
+   "name": "PGGC Technology Holding Group Inc.",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Not yet classified",
+   "sic": 0,
+   "stage": "filed",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": null
+  },
   "2159516": {
    "amendments": 0,
    "cik": 2159516,
@@ -56542,7 +56843,7 @@
    "withdrawn_date": "2026-09-16"
   }
  },
- "index_day": "2026-11-24",
+ "index_day": "2026-11-25",
  "quarters_done": [
   "2025Q4",
   "2026Q1",
@@ -56644,6 +56945,10 @@
   },
   "1108205": {
    "name": "CURIS INC",
+   "reason": "already_public"
+  },
+  "1110607": {
+   "name": "Koil Energy Solutions, Inc.",
    "reason": "already_public"
   },
   "1113313": {
@@ -58221,6 +58526,10 @@
   "2044112": {
    "name": "INTEGRATED RAIL & RESOURCES INC.",
    "reason": "already_public"
+  },
+  "2044241": {
+   "name": "TryHard Holdings Ltd",
+   "reason": "outside_window"
   },
   "2044725": {
    "name": "Evommune, Inc.",

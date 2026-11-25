@@ -1,11 +1,11 @@
 {
  "source": "SEC EDGAR",
- "data_changed": "2026-11-24",
+ "data_changed": "2026-11-25",
  "counts": {
   "amended": 228,
+  "filed": 130,
   "withdrawn": 46,
-  "effective": 158,
-  "filed": 126,
+  "effective": 160,
   "priced": 307
  },
  "ipos": [
@@ -217,6 +217,45 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2065232"
   },
   {
+   "cik": 1490171,
+   "name": "Earlens Corp",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 3842,
+   "industry": "Orthopedic, Prosthetic & Surgical Appliances & Supplies",
+   "sector": "Health care",
+   "kind": "company",
+   "location": "CA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-24",
+   "draft_date": "2026-09-16",
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-24",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-24",
+    "url": "https://www.sec.gov/Archives/edgar/data/1490171/000119312526472933/na-20261124.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/1490171/000119312526472933/na-20261124.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1490171"
+  },
+  {
    "amendments": 1,
    "cik": 2065290,
    "draft_date": "2025-06-05",
@@ -264,6 +303,94 @@
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": "2026-11-24"
+  },
+  {
+   "cik": 1099160,
+   "name": "BEASLEY BROADCAST GROUP INC",
+   "tickers": [
+    "BBGI"
+   ],
+   "exchanges": [
+    "Nasdaq"
+   ],
+   "sic": 4832,
+   "industry": "Radio Broadcasting Stations",
+   "sector": "Telecom and media",
+   "kind": "company",
+   "location": "FL",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "effective",
+   "stalled": false,
+   "unpriced": true,
+   "first_filed": "1999-11-24",
+   "draft_date": null,
+   "amendments": 4,
+   "marketing": true,
+   "effective_date": "2026-06-04",
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-24",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-24",
+    "url": "https://www.sec.gov/Archives/edgar/data/1099160/000119312526475735/d39079ds1.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "1999-11-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000095013399003769/0000950133-99-003769-d1.html"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2000-01-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000095013300000048/0000950133-00-000048-d1.html"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2000-01-31",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000095013300000233/0000950133-00-000233-d1.html"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2000-02-11",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000095013300000425/0000950133-00-000425-d1.html"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2000-02-11",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000095013300000414/0000950133-00-000414-d1.html"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2016-12-30",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/999999999517000007/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2018-07-11",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/999999999518001763/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "FWP",
+     "date": "2018-07-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000119312518224269/d546417dfwp.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2026-06-04",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/999999999526001885/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "S-1",
+     "date": "2026-11-24",
+     "url": "https://www.sec.gov/Archives/edgar/data/1099160/000119312526475735/d39079ds1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1099160"
   },
   {
    "cik": 1880995,
@@ -358,6 +485,139 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1880995"
+  },
+  {
+   "cik": 1589150,
+   "name": "Regen BioPharma Inc",
+   "tickers": [
+    "RGBP",
+    "RGBPP"
+   ],
+   "exchanges": [
+    "OTC",
+    "OTC"
+   ],
+   "sic": 2834,
+   "industry": "Pharmaceutical Preparations",
+   "sector": "Biotech and pharma",
+   "kind": "company",
+   "location": "CA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "effective",
+   "stalled": false,
+   "unpriced": true,
+   "first_filed": "2023-09-25",
+   "draft_date": null,
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": "2023-09-29",
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-23",
+   "prior_attempts": 1,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-23",
+    "url": "https://www.sec.gov/Archives/edgar/data/1589150/000149315226053831/forms-1.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2023-09-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1589150/000160706223000438/rgbp091923forms1.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2023-09-29",
+     "url": "https://www.sec.gov/Archives/edgar/data/1589150/999999999523002915/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "S-1",
+     "date": "2026-11-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/1589150/000149315226053831/forms-1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1589150"
+  },
+  {
+   "cik": 2159455,
+   "name": "PGGC Technology Holding Group Inc.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 0,
+   "industry": "",
+   "sector": "Not yet classified",
+   "kind": "company",
+   "location": "NY",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-23",
+   "draft_date": null,
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-23",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-23",
+    "url": "https://www.sec.gov/Archives/edgar/data/2159455/000152013826000519/pggc_s1.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2159455/000152013826000519/pggc_s1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2159455"
+  },
+  {
+   "cik": 2107904,
+   "name": "LIBERTYSTREAM INFRASTRUCTURE PARTNERS INC.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 2810,
+   "industry": "Industrial Inorganic Chemicals",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "TX",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-23",
+   "draft_date": "2026-08-10",
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-23",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-23",
+    "url": "https://www.sec.gov/Archives/edgar/data/2107904/000162828026075512/libertystream-sx1.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2107904/000162828026075512/libertystream-sx1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2107904"
   },
   {
    "cik": 2160422,
@@ -455,6 +715,47 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2048740"
+  },
+  {
+   "cik": 2053365,
+   "name": "Biointra, Corp",
+   "tickers": [
+    "BCRP"
+   ],
+   "exchanges": [],
+   "sic": 8731,
+   "industry": "Services-Commercial Physical & Biological Research",
+   "sector": "Biotech and pharma",
+   "kind": "company",
+   "location": "DE",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-23",
+   "draft_date": null,
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-23",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-23",
+    "url": "https://www.sec.gov/Archives/edgar/data/2053365/000205336526000010/biointra_forms-1_nov20.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2053365/000205336526000010/biointra_forms-1_nov20.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2053365"
   },
   {
    "cik": 2049203,
@@ -43099,7 +43400,7 @@
    "foreign": true,
    "form": "F-1",
    "stage": "filed",
-   "stalled": false,
+   "stalled": true,
    "unpriced": false,
    "first_filed": "2026-02-27",
    "draft_date": "2025-02-07",
