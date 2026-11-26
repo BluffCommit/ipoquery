@@ -3416,6 +3416,57 @@
    "notes": [
     "no price range in this filing yet"
    ]
+  },
+  "2135148": {
+   "form": "S-1",
+   "date": "2026-11-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/2135148/000149315226054198/forms-1.htm",
+   "read": "2026-11-26",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "1889417": {
+   "form": "F-1",
+   "date": "2026-11-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/1889417/000117184326007729/f1_112426.htm",
+   "read": "2026-11-26",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2166611": {
+   "form": "S-1",
+   "date": "2026-11-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/2166611/000119312526477751/d85304ds1.htm",
+   "read": "2026-11-26",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2101280": {
+   "form": "S-1",
+   "date": "2026-11-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/2101280/000149315226054262/forms-1.htm",
+   "read": "2026-11-26",
+   "result": "not confirmed",
+   "notes": [
+    "no price range in this filing yet"
+   ]
+  },
+  "2136084": {
+   "form": "F-1",
+   "date": "2026-11-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/2136084/000121390026124049/ea0311447-f1_algobizz.htm",
+   "read": "2026-11-26",
+   "result": "not confirmed",
+   "notes": [
+    "the number of shares the company is selling is not stated the same way twice",
+    "near: ring the class a shares, no par value per share of algobizz limited. prior to this offering, there has been no public market for our class a shares. we are offering 4,000,000 of our class a shares, no par value. it is currently estimated that the initial public offering price per"
+   ]
   }
  }
 }

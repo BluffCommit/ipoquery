@@ -1,9 +1,9 @@
 {
  "source": "SEC EDGAR",
- "data_changed": "2026-11-25",
+ "data_changed": "2026-11-26",
  "counts": {
-  "amended": 229,
-  "filed": 129,
+  "amended": 230,
+  "filed": 133,
   "withdrawn": 46,
   "effective": 160,
   "priced": 307
@@ -122,6 +122,84 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2160422"
   },
   {
+   "cik": 2135148,
+   "name": "Kalohexis, Inc.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 2834,
+   "industry": "Pharmaceutical Preparations",
+   "sector": "Biotech and pharma",
+   "kind": "company",
+   "location": "IL",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-25",
+   "draft_date": "2026-07-02",
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/2135148/000149315226054198/forms-1.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2135148/000149315226054198/forms-1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2135148"
+  },
+  {
+   "cik": 1889417,
+   "name": "Indrocorp Technologies Inc.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 3721,
+   "industry": "Aircraft",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "British Columbia, Canada",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-25",
+   "draft_date": "2026-09-01",
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1",
+    "date": "2026-11-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/1889417/000117184326007729/f1_112426.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/1889417/000117184326007729/f1_112426.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1889417"
+  },
+  {
    "cik": 2127447,
    "name": "Guitar Group Ltd",
    "tickers": [],
@@ -164,6 +242,45 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2127447"
+  },
+  {
+   "cik": 2166611,
+   "name": "Fidelity Chainlink Fund",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 0,
+   "industry": "",
+   "sector": "Not yet classified",
+   "kind": "company",
+   "location": "MA",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-25",
+   "draft_date": null,
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/2166611/000119312526477751/d85304ds1.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2166611/000119312526477751/d85304ds1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2166611"
   },
   {
    "cik": 2136449,
@@ -225,6 +342,130 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136449"
+  },
+  {
+   "cik": 2158099,
+   "name": "Compute AI Acquisition Corp.",
+   "tickers": [
+    "AICP"
+   ],
+   "exchanges": [],
+   "sic": 6770,
+   "industry": "Blank Checks",
+   "sector": "Finance",
+   "kind": "spac",
+   "location": "NY",
+   "foreign": false,
+   "form": "S-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-13",
+   "draft_date": null,
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-11-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/2158099/000149315226054294/forms-1a.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-13",
+     "url": "https://www.sec.gov/Archives/edgar/data/2158099/000149315226051694/forms-1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2158099/000149315226054294/forms-1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2158099"
+  },
+  {
+   "cik": 2101280,
+   "name": "CSTS Enterprises Inc.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 4700,
+   "industry": "Transportation Services",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "Hong Kong",
+   "foreign": true,
+   "form": "S-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-25",
+   "draft_date": "2025-12-18",
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1",
+    "date": "2026-11-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/2101280/000149315226054262/forms-1.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2101280/000149315226054262/forms-1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2101280"
+  },
+  {
+   "cik": 2136084,
+   "name": "ALGOBIZZ Ltd",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 7372,
+   "industry": "Services-Prepackaged Software",
+   "sector": "Software and internet",
+   "kind": "company",
+   "location": "Virgin Islands, British",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "filed",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-25",
+   "draft_date": "2026-06-29",
+   "amendments": 0,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1",
+    "date": "2026-11-25",
+    "url": "https://www.sec.gov/Archives/edgar/data/2136084/000121390026124049/ea0311447-f1_algobizz.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2136084/000121390026124049/ea0311447-f1_algobizz.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2136084"
   },
   {
    "cik": 2148546,
@@ -2919,45 +3160,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2088223"
-  },
-  {
-   "cik": 2158099,
-   "name": "Compute AI Acquisition Corp.",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 0,
-   "industry": "",
-   "sector": "Not yet classified",
-   "kind": "spac",
-   "location": "NY",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "filed",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-11-13",
-   "draft_date": null,
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-13",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1",
-    "date": "2026-11-13",
-    "url": "https://www.sec.gov/Archives/edgar/data/2158099/000149315226051694/forms-1.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2026-11-13",
-     "url": "https://www.sec.gov/Archives/edgar/data/2158099/000149315226051694/forms-1.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2158099"
   },
   {
    "cik": 2108686,
