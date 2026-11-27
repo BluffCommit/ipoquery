@@ -1647,10 +1647,10 @@
    ]
   },
   "2156248": {
-   "form": "F-1",
-   "date": "2026-11-16",
-   "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226051984/formf-1.htm",
-   "read": "2026-11-18",
+   "form": "F-1/A",
+   "date": "2026-11-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226054330/formf-1a.htm",
+   "read": "2026-11-27",
    "result": "not confirmed",
    "notes": [
     "no price range in this filing yet"

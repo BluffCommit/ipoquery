@@ -18354,14 +18354,9 @@
    "cik": 2046370,
    "draft_date": "2025-01-10",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046370",
-   "effective_date": null,
+   "effective_date": "2026-11-25",
    "exchanges": [],
    "filings": [
-    {
-     "date": "2025-07-11",
-     "form": "F-1/A",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025063111/ea0221953-14.htm"
-    },
     {
      "date": "2025-07-23",
      "form": "F-1/A",
@@ -18416,6 +18411,11 @@
      "date": "2026-11-12",
      "form": "F-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026118316/ea0221953-28.htm"
+    },
+    {
+     "date": "2026-11-25",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/999999999526003623/xslEFFECTX01/primary_doc.xml"
     }
    ],
    "first_filed": "2025-05-20",
@@ -18423,7 +18423,7 @@
    "form": "F-1",
    "industry": "General Bldg Contractors - Nonresidential Bldgs",
    "kind": "company",
-   "last_activity": "2026-11-12",
+   "last_activity": "2026-11-25",
    "latest": {
     "date": "2026-11-12",
     "form": "F-1/A",
@@ -18437,7 +18437,7 @@
    "prior_attempts": 0,
    "sector": "Industrials",
    "sic": 1540,
-   "stage": "amended",
+   "stage": "effective",
    "stalled": false,
    "tickers": [],
    "unpriced": false,
@@ -18548,6 +18548,11 @@
      "date": "2026-02-20",
      "form": "FWP",
      "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026018793/ea0277856-fwp_exxel.htm"
+    },
+    {
+     "date": "2026-11-27",
+     "form": "RW",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026124236/ea0313615-rw_exxel.htm"
     }
    ],
    "first_filed": "2025-09-19",
@@ -18555,7 +18560,7 @@
    "form": "S-1",
    "industry": "Pharmaceutical Preparations",
    "kind": "company",
-   "last_activity": "2026-02-20",
+   "last_activity": "2026-11-27",
    "latest": {
     "date": "2026-02-02",
     "form": "S-1/A",
@@ -18569,11 +18574,11 @@
    "prior_attempts": 0,
    "sector": "Biotech and pharma",
    "sic": 2834,
-   "stage": "amended",
-   "stalled": true,
+   "stage": "withdrawn",
+   "stalled": false,
    "tickers": [],
    "unpriced": false,
-   "withdrawn_date": null
+   "withdrawn_date": "2026-11-27"
   },
   "2047713": {
    "amendments": 0,
@@ -56165,7 +56170,7 @@
    "withdrawn_date": null
   },
   "2156248": {
-   "amendments": 0,
+   "amendments": 1,
    "cik": 2156248,
    "draft_date": "2026-09-29",
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2156248",
@@ -56176,6 +56181,11 @@
      "date": "2026-11-16",
      "form": "F-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226051984/formf-1.htm"
+    },
+    {
+     "date": "2026-11-27",
+     "form": "F-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226054330/formf-1a.htm"
     }
    ],
    "first_filed": "2026-11-16",
@@ -56183,11 +56193,11 @@
    "form": "F-1",
    "industry": "Wholesale-Professional & Commercial Equipment & Supplies",
    "kind": "company",
-   "last_activity": "2026-11-16",
+   "last_activity": "2026-11-27",
    "latest": {
-    "date": "2026-11-16",
-    "form": "F-1",
-    "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226051984/formf-1.htm"
+    "date": "2026-11-27",
+    "form": "F-1/A",
+    "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226054330/formf-1a.htm"
    },
    "listing_date": null,
    "location": "Hong Kong",
@@ -56197,7 +56207,7 @@
    "prior_attempts": 0,
    "sector": "Industrials",
    "sic": 5040,
-   "stage": "filed",
+   "stage": "amended",
    "stalled": false,
    "tickers": [],
    "unpriced": false,

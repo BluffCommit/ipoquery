@@ -1,14 +1,216 @@
 {
  "source": "SEC EDGAR",
- "data_changed": "2026-11-26",
+ "data_changed": "2026-11-27",
  "counts": {
-  "amended": 230,
-  "filed": 133,
-  "withdrawn": 46,
-  "effective": 160,
+  "withdrawn": 47,
+  "amended": 229,
+  "effective": 161,
+  "filed": 132,
   "priced": 307
  },
  "ipos": [
+  {
+   "cik": 2046638,
+   "name": "Exxel Pharma, INC.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 2834,
+   "industry": "Pharmaceutical Preparations",
+   "sector": "Biotech and pharma",
+   "kind": "company",
+   "location": "British Columbia, Canada",
+   "foreign": true,
+   "form": "S-1",
+   "stage": "withdrawn",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2025-09-19",
+   "draft_date": null,
+   "amendments": 2,
+   "marketing": true,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": "2026-11-27",
+   "last_activity": "2026-11-27",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "S-1/A",
+    "date": "2026-02-02",
+    "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026010410/ea0238698-06.htm"
+   },
+   "filings": [
+    {
+     "form": "S-1",
+     "date": "2025-09-19",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390025089404/ea0256939-s1_exxel.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2025-10-14",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390025098577/ea0260195-s1a1_exxel.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-02-02",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026010410/ea0238698-06.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-02-13",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026015696/ea0276417-fwp_exxel.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2026-02-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026018793/ea0277856-fwp_exxel.htm"
+    },
+    {
+     "form": "RW",
+     "date": "2026-11-27",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026124236/ea0313615-rw_exxel.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046638"
+  },
+  {
+   "cik": 2156248,
+   "name": "B & T Global Holding Ltd.",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 5040,
+   "industry": "Wholesale-Professional & Commercial Equipment & Supplies",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "Hong Kong",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "amended",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2026-11-16",
+   "draft_date": "2026-09-29",
+   "amendments": 1,
+   "marketing": false,
+   "effective_date": null,
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-27",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-27",
+    "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226054330/formf-1a.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1",
+     "date": "2026-11-16",
+     "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226051984/formf-1.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-27",
+     "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226054330/formf-1a.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2156248"
+  },
+  {
+   "cik": 2046370,
+   "name": "Uptrend Holdings Ltd",
+   "tickers": [],
+   "exchanges": [],
+   "sic": 1540,
+   "industry": "General Bldg Contractors - Nonresidential Bldgs",
+   "sector": "Industrials",
+   "kind": "company",
+   "location": "Hong Kong",
+   "foreign": true,
+   "form": "F-1",
+   "stage": "effective",
+   "stalled": false,
+   "unpriced": false,
+   "first_filed": "2025-05-20",
+   "draft_date": "2025-01-10",
+   "amendments": 13,
+   "marketing": true,
+   "effective_date": "2026-11-25",
+   "listing_date": null,
+   "priced_date": null,
+   "withdrawn_date": null,
+   "last_activity": "2026-11-25",
+   "prior_attempts": 0,
+   "latest": {
+    "form": "F-1/A",
+    "date": "2026-11-12",
+    "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026118316/ea0221953-28.htm"
+   },
+   "filings": [
+    {
+     "form": "F-1/A",
+     "date": "2025-07-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025066892/ea0221953-15.htm"
+    },
+    {
+     "form": "FWP",
+     "date": "2025-07-29",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025068416/ea0250260-fwp_uptrend.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-08-01",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025070465/ea0221953-17.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-08-15",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025077232/ea0221953-19.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-10-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025101591/ea0221953-21.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2025-11-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025108826/ea0221953-22.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-02-10",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026014122/ea0221953-23.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-04-27",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026047926/ea0221953-24.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-05-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026054909/ea0221953-25.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-10-23",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026112113/ea0221953-27.htm"
+    },
+    {
+     "form": "F-1/A",
+     "date": "2026-11-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026118316/ea0221953-28.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2026-11-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/2046370/999999999526003623/xslEFFECTX01/primary_doc.xml"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046370"
+  },
   {
    "cik": 2092291,
    "name": "Timwood Holdings Ltd",
@@ -2989,45 +3191,6 @@
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1834261"
   },
   {
-   "cik": 2156248,
-   "name": "B & T Global Holding Ltd.",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 5040,
-   "industry": "Wholesale-Professional & Commercial Equipment & Supplies",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "Hong Kong",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "filed",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2026-11-16",
-   "draft_date": "2026-09-29",
-   "amendments": 0,
-   "marketing": false,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-16",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1",
-    "date": "2026-11-16",
-    "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226051984/formf-1.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1",
-     "date": "2026-11-16",
-     "url": "https://www.sec.gov/Archives/edgar/data/2156248/000149315226051984/formf-1.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2156248"
-  },
-  {
    "cik": 2125056,
    "name": "Wella Co",
    "tickers": [
@@ -3297,100 +3460,6 @@
     }
    ],
    "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1972234"
-  },
-  {
-   "cik": 2046370,
-   "name": "Uptrend Holdings Ltd",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 1540,
-   "industry": "General Bldg Contractors - Nonresidential Bldgs",
-   "sector": "Industrials",
-   "kind": "company",
-   "location": "Hong Kong",
-   "foreign": true,
-   "form": "F-1",
-   "stage": "amended",
-   "stalled": false,
-   "unpriced": false,
-   "first_filed": "2025-05-20",
-   "draft_date": "2025-01-10",
-   "amendments": 13,
-   "marketing": true,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-11-12",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "F-1/A",
-    "date": "2026-11-12",
-    "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026118316/ea0221953-28.htm"
-   },
-   "filings": [
-    {
-     "form": "F-1/A",
-     "date": "2025-07-11",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025063111/ea0221953-14.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-07-23",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025066892/ea0221953-15.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2025-07-29",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025068416/ea0250260-fwp_uptrend.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-08-01",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025070465/ea0221953-17.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-08-15",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025077232/ea0221953-19.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-10-23",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025101591/ea0221953-21.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2025-11-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390025108826/ea0221953-22.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-02-10",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026014122/ea0221953-23.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-04-27",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026047926/ea0221953-24.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-05-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026054909/ea0221953-25.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-10-23",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026112113/ea0221953-27.htm"
-    },
-    {
-     "form": "F-1/A",
-     "date": "2026-11-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046370/000121390026118316/ea0221953-28.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046370"
   },
   {
    "cik": 2108671,
@@ -44710,65 +44779,6 @@
    ],
    "unpriced": false,
    "withdrawn_date": null
-  },
-  {
-   "cik": 2046638,
-   "name": "Exxel Pharma, INC.",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 2834,
-   "industry": "Pharmaceutical Preparations",
-   "sector": "Biotech and pharma",
-   "kind": "company",
-   "location": "British Columbia, Canada",
-   "foreign": true,
-   "form": "S-1",
-   "stage": "amended",
-   "stalled": true,
-   "unpriced": false,
-   "first_filed": "2025-09-19",
-   "draft_date": null,
-   "amendments": 2,
-   "marketing": true,
-   "effective_date": null,
-   "listing_date": null,
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-02-20",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-02-02",
-    "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026010410/ea0238698-06.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2025-09-19",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390025089404/ea0256939-s1_exxel.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2025-10-14",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390025098577/ea0260195-s1a1_exxel.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-02-02",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026010410/ea0238698-06.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-02-13",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026015696/ea0276417-fwp_exxel.htm"
-    },
-    {
-     "form": "FWP",
-     "date": "2026-02-20",
-     "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026018793/ea0277856-fwp_exxel.htm"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046638"
   },
   {
    "cik": 2081737,
