@@ -2,76 +2,164 @@
  "source": "SEC EDGAR",
  "data_changed": "2026-11-27",
  "counts": {
+  "effective": 161,
   "withdrawn": 47,
   "amended": 229,
-  "effective": 161,
   "filed": 132,
   "priced": 307
  },
  "ipos": [
   {
-   "cik": 2046638,
-   "name": "Exxel Pharma, INC.",
-   "tickers": [],
-   "exchanges": [],
-   "sic": 2834,
-   "industry": "Pharmaceutical Preparations",
-   "sector": "Biotech and pharma",
+   "cik": 1795851,
+   "name": "Stewards, Inc.",
+   "tickers": [
+    "SWRD"
+   ],
+   "exchanges": [
+    "Nasdaq"
+   ],
+   "sic": 6153,
+   "industry": "Short-Term Business Credit Institutions",
+   "sector": "Finance",
    "kind": "company",
-   "location": "British Columbia, Canada",
-   "foreign": true,
+   "location": "FL",
+   "foreign": false,
    "form": "S-1",
-   "stage": "withdrawn",
+   "stage": "effective",
    "stalled": false,
-   "unpriced": false,
-   "first_filed": "2025-09-19",
-   "draft_date": null,
-   "amendments": 2,
-   "marketing": true,
-   "effective_date": null,
-   "listing_date": null,
+   "unpriced": true,
+   "first_filed": "2025-11-17",
+   "draft_date": "2025-02-13",
+   "amendments": 5,
+   "marketing": false,
+   "effective_date": "2026-07-14",
+   "listing_date": "2026-09-09",
    "priced_date": null,
-   "withdrawn_date": "2026-11-27",
+   "withdrawn_date": null,
    "last_activity": "2026-11-27",
    "prior_attempts": 0,
    "latest": {
-    "form": "S-1/A",
-    "date": "2026-02-02",
-    "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026010410/ea0238698-06.htm"
+    "form": "S-1",
+    "date": "2026-11-27",
+    "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000370/swrd_s1.htm"
    },
    "filings": [
     {
      "form": "S-1",
+     "date": "2025-11-17",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357725000334/favo_s1a2.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-01-29",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000027/favo_s1a1.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-04-28",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000119/favo_s1a2.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-06-01",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000181/favo_s1a3.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-06-12",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000189/swrd_s1a4.htm"
+    },
+    {
+     "form": "S-1/A",
+     "date": "2026-07-01",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000199/swrd_s1a5.htm"
+    },
+    {
+     "form": "EFFECT",
+     "date": "2026-07-14",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/999999999526002287/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "form": "8-A12B",
+     "date": "2026-09-09",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000264/swrd_8a.htm"
+    },
+    {
+     "form": "CERT",
+     "date": "2026-09-09",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000135445726000865/SWRD_8A_Cert_0001795851.pdf"
+    },
+    {
+     "form": "S-1",
+     "date": "2026-11-27",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000370/swrd_s1.htm"
+    }
+   ],
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1795851"
+  },
+  {
+   "amendments": 2,
+   "cik": 2046638,
+   "draft_date": null,
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046638",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
      "date": "2025-09-19",
+     "form": "S-1",
      "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390025089404/ea0256939-s1_exxel.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2025-10-14",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390025098577/ea0260195-s1a1_exxel.htm"
     },
     {
-     "form": "S-1/A",
      "date": "2026-02-02",
+     "form": "S-1/A",
      "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026010410/ea0238698-06.htm"
     },
     {
-     "form": "FWP",
      "date": "2026-02-13",
+     "form": "FWP",
      "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026015696/ea0276417-fwp_exxel.htm"
     },
     {
-     "form": "FWP",
      "date": "2026-02-20",
+     "form": "FWP",
      "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026018793/ea0277856-fwp_exxel.htm"
     },
     {
-     "form": "RW",
      "date": "2026-11-27",
+     "form": "RW",
      "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026124236/ea0313615-rw_exxel.htm"
     }
    ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2046638"
+   "first_filed": "2025-09-19",
+   "foreign": true,
+   "form": "S-1",
+   "industry": "Pharmaceutical Preparations",
+   "kind": "company",
+   "last_activity": "2026-11-27",
+   "latest": {
+    "date": "2026-02-02",
+    "form": "S-1/A",
+    "url": "https://www.sec.gov/Archives/edgar/data/2046638/000121390026010410/ea0238698-06.htm"
+   },
+   "listing_date": null,
+   "location": "British Columbia, Canada",
+   "marketing": true,
+   "name": "Exxel Pharma, INC.",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Biotech and pharma",
+   "sic": 2834,
+   "stage": "withdrawn",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": "2026-11-27"
   },
   {
    "cik": 2156248,
@@ -15333,89 +15421,6 @@
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": "2026-09-10"
-  },
-  {
-   "cik": 1795851,
-   "name": "Stewards, Inc.",
-   "tickers": [
-    "SWRD"
-   ],
-   "exchanges": [
-    "Nasdaq"
-   ],
-   "sic": 6153,
-   "industry": "Short-Term Business Credit Institutions",
-   "sector": "Finance",
-   "kind": "company",
-   "location": "FL",
-   "foreign": false,
-   "form": "S-1",
-   "stage": "effective",
-   "stalled": false,
-   "unpriced": true,
-   "first_filed": "2025-11-17",
-   "draft_date": "2025-02-13",
-   "amendments": 5,
-   "marketing": false,
-   "effective_date": "2026-07-14",
-   "listing_date": "2026-09-09",
-   "priced_date": null,
-   "withdrawn_date": null,
-   "last_activity": "2026-09-09",
-   "prior_attempts": 0,
-   "latest": {
-    "form": "S-1/A",
-    "date": "2026-07-01",
-    "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000199/swrd_s1a5.htm"
-   },
-   "filings": [
-    {
-     "form": "S-1",
-     "date": "2025-11-17",
-     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357725000334/favo_s1a2.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-01-29",
-     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000027/favo_s1a1.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-04-28",
-     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000119/favo_s1a2.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-06-01",
-     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000181/favo_s1a3.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-06-12",
-     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000189/swrd_s1a4.htm"
-    },
-    {
-     "form": "S-1/A",
-     "date": "2026-07-01",
-     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000199/swrd_s1a5.htm"
-    },
-    {
-     "form": "EFFECT",
-     "date": "2026-07-14",
-     "url": "https://www.sec.gov/Archives/edgar/data/1795851/999999999526002287/xslEFFECTX01/primary_doc.xml"
-    },
-    {
-     "form": "8-A12B",
-     "date": "2026-09-09",
-     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000264/swrd_8a.htm"
-    },
-    {
-     "form": "CERT",
-     "date": "2026-09-09",
-     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000135445726000865/SWRD_8A_Cert_0001795851.pdf"
-    }
-   ],
-   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1795851"
   },
   {
    "cik": 2064768,

@@ -6193,6 +6193,11 @@
      "date": "2026-09-09",
      "form": "CERT",
      "url": "https://www.sec.gov/Archives/edgar/data/1795851/000135445726000865/SWRD_8A_Cert_0001795851.pdf"
+    },
+    {
+     "date": "2026-11-27",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000370/swrd_s1.htm"
     }
    ],
    "first_filed": "2025-11-17",
@@ -6200,11 +6205,11 @@
    "form": "S-1",
    "industry": "Short-Term Business Credit Institutions",
    "kind": "company",
-   "last_activity": "2026-09-09",
+   "last_activity": "2026-11-27",
    "latest": {
-    "date": "2026-07-01",
-    "form": "S-1/A",
-    "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000199/swrd_s1a5.htm"
+    "date": "2026-11-27",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/1795851/000166357726000370/swrd_s1.htm"
    },
    "listing_date": "2026-09-09",
    "location": "FL",
