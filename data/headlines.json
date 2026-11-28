@@ -217,10 +217,9 @@
    "items": []
   },
   "2068711": {
-   "checked": "",
+   "checked": "2026-11-28T17:41",
    "name": "CSC Collective",
-   "items": [],
-   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
+   "items": []
   },
   "2142104": {
    "checked": "2026-11-27T23:36",
