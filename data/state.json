@@ -4834,6 +4834,104 @@
    "unpriced": false,
    "withdrawn_date": null
   },
+  "1741489": {
+   "amendments": 4,
+   "cik": 1741489,
+   "draft_date": null,
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=1741489",
+   "effective_date": "2020-04-17",
+   "exchanges": [
+    "OTC"
+   ],
+   "filings": [
+    {
+     "date": "2018-05-25",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/000152013818000110/thenablers_s1.htm"
+    },
+    {
+     "date": "2018-07-05",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/000152013818000139/thenablers_s1a1.htm"
+    },
+    {
+     "date": "2018-08-14",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/000152013818000193/thenablers_s1a2.htm"
+    },
+    {
+     "date": "2018-08-31",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/000152013818000223/thenablers_s1a3.htm"
+    },
+    {
+     "date": "2018-10-10",
+     "form": "S-1/A",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/000152013818000274/thenablers_s1a4.htm"
+    },
+    {
+     "date": "2018-10-12",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/999999999518002604/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2019-04-30",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/999999999519000923/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2019-11-26",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/999999999519002666/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2020-04-07",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/000152013820000151/elvg-20200407_s1.htm"
+    },
+    {
+     "date": "2020-04-17",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/999999999520000779/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2020-04-17",
+     "form": "EFFECT",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/999999999520000783/xslEFFECTX01/primary_doc.xml"
+    },
+    {
+     "date": "2026-11-27",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/1741489/000121390026124391/ea0311704-s1_elvictor.htm"
+    }
+   ],
+   "first_filed": "2018-05-25",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Services-Management Consulting Services",
+   "kind": "company",
+   "last_activity": "2026-11-27",
+   "latest": {
+    "date": "2026-11-27",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/1741489/000121390026124391/ea0311704-s1_elvictor.htm"
+   },
+   "listing_date": null,
+   "location": "Greece",
+   "marketing": false,
+   "name": "Elvictor Group, Inc.",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Business services",
+   "sic": 8742,
+   "stage": "effective",
+   "stalled": false,
+   "tickers": [
+    "ELVG"
+   ],
+   "unpriced": true,
+   "withdrawn_date": null
+  },
   "1745621": {
    "amendments": 1,
    "cik": 1745621,
@@ -18673,7 +18771,7 @@
    "sector": "Industrials",
    "sic": 4731,
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -19308,7 +19406,7 @@
    "sector": "Industrials",
    "sic": 3861,
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -27273,7 +27371,7 @@
    "sector": "Business services",
    "sic": 8742,
    "stage": "amended",
-   "stalled": false,
+   "stalled": true,
    "tickers": [],
    "unpriced": false,
    "withdrawn_date": null
@@ -55662,6 +55760,45 @@
    "unpriced": false,
    "withdrawn_date": null
   },
+  "2152050": {
+   "amendments": 0,
+   "cik": 2152050,
+   "draft_date": "2026-09-01",
+   "edgar_url": "https://www.sec.gov/edgar/browse/?CIK=2152050",
+   "effective_date": null,
+   "exchanges": [],
+   "filings": [
+    {
+     "date": "2026-11-27",
+     "form": "S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2152050/000118518526005651/sseacs1111026.htm"
+    }
+   ],
+   "first_filed": "2026-11-27",
+   "foreign": false,
+   "form": "S-1",
+   "industry": "Blank Checks",
+   "kind": "spac",
+   "last_activity": "2026-11-27",
+   "latest": {
+    "date": "2026-11-27",
+    "form": "S-1",
+    "url": "https://www.sec.gov/Archives/edgar/data/2152050/000118518526005651/sseacs1111026.htm"
+   },
+   "listing_date": null,
+   "location": "CA",
+   "marketing": false,
+   "name": "Spirit SPAC Europa Acquisition Corp",
+   "priced_date": null,
+   "prior_attempts": 0,
+   "sector": "Finance",
+   "sic": 6770,
+   "stage": "filed",
+   "stalled": false,
+   "tickers": [],
+   "unpriced": false,
+   "withdrawn_date": null
+  },
   "2152549": {
    "amendments": 0,
    "cik": 2152549,
@@ -57082,7 +57219,7 @@
    "withdrawn_date": "2026-09-16"
   }
  },
- "index_day": "2026-11-27",
+ "index_day": "2026-11-28",
  "quarters_done": [
   "2025Q4",
   "2026Q1",
@@ -58900,6 +59037,10 @@
   },
   "2092446": {
    "name": "Avalanche Treasury Corp",
+   "reason": "already_public"
+  },
+  "2093101": {
+   "name": "Atrium Therapeutics, Inc.",
    "reason": "already_public"
   },
   "2097163": {

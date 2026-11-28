@@ -209,7 +209,7 @@
    "checked": "",
    "name": "HAMA",
    "items": [],
-   "problem": "URLError: <urlopen error _ssl.c:1018: The handshake operation timed out>"
+   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "2120204": {
    "checked": "2026-11-24T02:24",
@@ -220,7 +220,7 @@
    "checked": "",
    "name": "CSC Collective",
    "items": [],
-   "problem": "URLError: <urlopen error timed out>"
+   "problem": "HTTPError: HTTP Error 429: Too Many Requests"
   },
   "2142104": {
    "checked": "2026-11-27T23:36",
